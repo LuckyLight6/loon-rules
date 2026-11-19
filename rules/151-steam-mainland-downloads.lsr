@@ -1,0 +1,18 @@
+# name: steam-mainland-downloads
+# priority: 151
+# section: games
+# description: Steam 中国下载镜像与蒸汽平台内容
+# boundary: 国内静态下载在前；游戏账户、商店和社区分到 152。不会放宽整个第三方 CDN。
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 8
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+
+DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
+DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
+DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
+DOMAIN,dl.steam.clngaa.com
+DOMAIN,dl.steam.ksyna.com
+DOMAIN,st.dl.bscstorage.net
+DOMAIN,st.dl.eccdnx.com
+DOMAIN,st.dl.pinyuncloud.com

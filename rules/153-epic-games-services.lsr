@@ -1,0 +1,15 @@
+# name: epic-games-services
+# priority: 153
+# section: games
+# description: Epic Games 商店、登录及 Unreal 服务
+# boundary: 保留游戏厂商的专用域，不接管客服 SaaS 或共享 Amazon/CloudFront 域。
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 5
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+
+DOMAIN-SUFFIX,epicgames.com
+DOMAIN-SUFFIX,epicgames.dev
+DOMAIN-SUFFIX,fortnite.com
+DOMAIN-SUFFIX,unrealengine.com
+DOMAIN-SUFFIX,unrealtournament.com

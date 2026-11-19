@@ -1,0 +1,312 @@
+{
+  "checked-at": "2026-11-19T13:43:40Z",
+  "inputs-read": 74,
+  "critical": 421,
+  "inputs-requested": 74,
+  "reviewed-inputs": {
+    "general-ad-and-tracking": {
+      "state": "current"
+    },
+    "extended-ad-and-tracking": {
+      "state": "current"
+    },
+    "apple-private-relay-connections": {
+      "state": "current"
+    },
+    "apple-siri-and-search": {
+      "state": "current"
+    },
+    "claude-connections": {
+      "state": "current"
+    },
+    "grok-connections": {
+      "state": "current"
+    },
+    "cursor-editor-and-api": {
+      "state": "current"
+    },
+    "windsurf-editor-and-api": {
+      "state": "current"
+    },
+    "devin-cloud-coding": {
+      "state": "current"
+    },
+    "perplexity-search-and-api": {
+      "state": "current"
+    },
+    "poe-chat-and-api": {
+      "state": "current"
+    },
+    "openrouter-gateway": {
+      "state": "current"
+    },
+    "mistral-model-services": {
+      "state": "current"
+    },
+    "groq-inference": {
+      "state": "current"
+    },
+    "cohere-model-services": {
+      "state": "current"
+    },
+    "hugging-face-model-hub": {
+      "state": "current"
+    },
+    "midjourney-image-tools": {
+      "state": "current"
+    },
+    "microsoft-connectivity": {
+      "state": "review",
+      "new-matches": 5,
+      "missing-rules": 0
+    },
+    "bahamut-video-and-community": {
+      "state": "current"
+    },
+    "google-drive-and-documents": {
+      "state": "current"
+    },
+    "overseas-media-remainder": {
+      "state": "current"
+    },
+    "overseas-media-with-client-matches": {
+      "state": "current"
+    },
+    "overseas-media-address-compatibility": {
+      "state": "current"
+    },
+    "overseas-site-fallback": {
+      "state": "current"
+    },
+    "overseas-site-wide-compatibility": {
+      "state": "review",
+      "new-matches": 7,
+      "missing-rules": 0
+    },
+    "overseas-address-and-client-matching": {
+      "state": "current"
+    },
+    "restricted-sites-and-addresses": {
+      "state": "review",
+      "new-matches": 7,
+      "missing-rules": 0
+    },
+    "direct-domain-exceptions": {
+      "state": "current"
+    },
+    "direct-domain-exceptions-extended": {
+      "state": "current"
+    },
+    "apple-mainland-service-alternative": {
+      "state": "current"
+    },
+    "mainland-domain-families": {
+      "state": "current"
+    },
+    "mainland-service-domains": {
+      "state": "review",
+      "new-matches": 4,
+      "missing-rules": 0
+    },
+    "mainland-extended-coverage": {
+      "state": "current"
+    },
+    "mainland-allocated-networks": {
+      "state": "current"
+    },
+    "mainland-address-registry": {
+      "state": "current"
+    },
+    "mainland-asn-classification": {
+      "state": "current"
+    },
+    "mainland-asn-with-resolution": {
+      "state": "current"
+    },
+    "mainland-geoip-fallback": {
+      "state": "current"
+    }
+  },
+  "official-endpoints": {
+    "apple-network": {
+      "mode": "table",
+      "assigned": 130,
+      "shared": 4
+    },
+    "claude-code": {
+      "mode": "table",
+      "assigned": 13,
+      "shared": 5
+    },
+    "claude-web-and-desktop": {
+      "mode": "named",
+      "assigned": 2,
+      "shared": 0
+    },
+    "google-drive": {
+      "mode": "named",
+      "assigned": 9,
+      "shared": 0
+    },
+    "google-meet": {
+      "mode": "named",
+      "assigned": 7,
+      "shared": 0
+    },
+    "google-account": {
+      "mode": "named",
+      "assigned": 1,
+      "shared": 0
+    },
+    "google-oauth": {
+      "mode": "named",
+      "assigned": 2,
+      "shared": 0
+    },
+    "google-smtp-relay": {
+      "mode": "named",
+      "assigned": 1,
+      "shared": 0
+    },
+    "microsoft-365": {
+      "mode": "named",
+      "assigned": 24,
+      "shared": 0
+    },
+    "microsoft-windows": {
+      "mode": "named",
+      "assigned": 7,
+      "shared": 0
+    }
+  },
+  "shared-negatives": 20,
+  "changed": [],
+  "scope-negatives": 61,
+  "ip-cases": 26,
+  "rules": {
+    "local-links-and-addresses": 139,
+    "network-sign-in-and-probes": 18,
+    "tailscale-control-and-tailnet": 3,
+    "apple-and-ai-privacy-exceptions": 3,
+    "general-ad-and-tracking": 6184,
+    "extended-ad-and-tracking": 61862,
+    "privacy-public-stun-endpoints": 2,
+    "apple-all": 254,
+    "apple-account-authentication": 8,
+    "apple-association-services": 2,
+    "apple-app-and-device-verification": 8,
+    "apple-wallet-payments": 4,
+    "apple-beta-distribution": 2,
+    "apple-store-transactions": 17,
+    "apple-app-package-downloads": 2,
+    "apple-push-connection": 11,
+    "apple-location-services": 11,
+    "apple-private-relay-connections": 6,
+    "apple-mainland-delivery-aliases": 1,
+    "apple-cloud-sync": 9,
+    "apple-music-and-radio": 4,
+    "apple-video-and-fitness": 6,
+    "apple-news-and-sports": 9,
+    "apple-intelligence-relays": 4,
+    "apple-siri-and-search": 5,
+    "apple-update-control": 75,
+    "apple-certificate-validation": 12,
+    "apple-developer-downloads": 7,
+    "apple-system-connectivity": 47,
+    "apple-shared-store-assets": 2,
+    "apple-icloud-content-domains": 1,
+    "apple-messaging-identity": 2,
+    "apple-update-downloads": 10,
+    "apple-music-audio-delivery": 5,
+    "apple-tv-video-delivery": 2,
+    "apple-icloud-mainland": 3,
+    "apple-schoolwork-handouts": 3,
+    "ai-overseas-all": 131,
+    "claude-connections": 16,
+    "chatgpt-connections": 16,
+    "gemini-connections": 51,
+    "grok-connections": 3,
+    "cursor-editor-and-api": 8,
+    "github-copilot-connections": 8,
+    "windsurf-editor-and-api": 4,
+    "devin-cloud-coding": 1,
+    "perplexity-search-and-api": 5,
+    "poe-chat-and-api": 2,
+    "openrouter-gateway": 1,
+    "mistral-model-services": 1,
+    "groq-inference": 1,
+    "cohere-model-services": 2,
+    "hugging-face-model-hub": 3,
+    "midjourney-image-tools": 1,
+    "muse-agent": 1,
+    "elevenlabs-voice-and-api": 1,
+    "meta-ai-assistant": 1,
+    "grokipedia-encyclopedia": 1,
+    "microsoft-copilot-connections": 4,
+    "ai-cn": 40,
+    "ai-cn-international": 36,
+    "telegram-messaging": 24,
+    "discord-messaging-and-voice": 15,
+    "x-social-and-media": 8,
+    "wechat-global-portal": 4,
+    "wechat-shared-and-mainland": 19,
+    "microsoft-all": 646,
+    "microsoft-account-authentication": 16,
+    "microsoft-outlook-mail": 9,
+    "microsoft-teams-meetings": 4,
+    "microsoft-windows-update-services": 3,
+    "microsoft-update-and-store-downloads": 5,
+    "microsoft-xbox-services": 4,
+    "microsoft-store-services": 3,
+    "microsoft-files-and-sharepoint": 14,
+    "microsoft-office-downloads": 3,
+    "microsoft-connectivity": 638,
+    "github-code-and-packages": 13,
+    "overseas-media-all": 70,
+    "youtube-video-and-cdn": 12,
+    "netflix-video-and-delivery": 11,
+    "disney-plus-streaming": 3,
+    "prime-video-streaming": 11,
+    "spotify-audio": 6,
+    "twitch-live-video": 7,
+    "tiktok-international-video": 12,
+    "bilibili-global-video": 3,
+    "bahamut-video-and-community": 5,
+    "bilibili-mainland-video": 10,
+    "douyin-mainland-video": 8,
+    "steam-mainland-downloads": 8,
+    "steam-global-platform": 10,
+    "epic-games-services": 5,
+    "google-all": 224,
+    "google-account-authentication": 5,
+    "google-gmail-mail": 6,
+    "google-meet-meetings": 2,
+    "google-drive-and-documents": 13,
+    "google-play-services": 2,
+    "google-software-downloads": 3,
+    "google-platform-services": 219,
+    "paypal-payments": 5,
+    "alipay-mainland-payments": 6,
+    "taobao-and-xianyu-shopping": 5,
+    "jingdong-shopping": 4,
+    "xiaohongshu-community": 3,
+    "overseas-media-remainder": 259,
+    "overseas-media-with-client-matches": 307,
+    "overseas-media-address-compatibility": 1020,
+    "overseas-site-fallback": 3148,
+    "overseas-site-wide-compatibility": 16967,
+    "overseas-address-and-client-matching": 165,
+    "restricted-sites-and-addresses": 7449,
+    "direct-domain-exceptions": 34,
+    "direct-domain-exceptions-extended": 195,
+    "apple-mainland-service-alternative": 165,
+    "mainland-domain-families": 12790,
+    "mainland-service-domains": 6383,
+    "mainland-extended-coverage": 12622,
+    "mainland-allocated-networks": 7342,
+    "mainland-address-registry": 9665,
+    "mainland-asn-classification": 1009,
+    "mainland-asn-with-resolution": 5076,
+    "mainland-geoip-fallback": 1
+  }
+}

@@ -1,0 +1,26 @@
+# name: microsoft-account-authentication
+# priority: 103
+# section: microsoft
+# description: Microsoft 个人账户与 Entra 登录
+# boundary: 只收账号管理、共享登录与 Entra 身份主机；不把整个 microsoftonline.com 或 Microsoft Graph 当认证。
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T13:33:48Z
+# rule-count: 16
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+
+DOMAIN,account.live.com
+DOMAIN,login.live.com
+DOMAIN,login.microsoftonline.com
+DOMAIN,login.microsoft.com
+DOMAIN,login.windows.net
+DOMAIN,device.login.microsoftonline.com
+DOMAIN,ccs.login.microsoftonline.com
+DOMAIN-SUFFIX,auth.microsoft.com
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN,login-us.microsoftonline.com
+DOMAIN,logincert.microsoftonline.com
+DOMAIN,autologon.microsoftazuread-sso.com
+DOMAIN,api.passwordreset.microsoftonline.com
+DOMAIN,passwordreset.microsoftonline.com
+DOMAIN-SUFFIX,msftidentity.com

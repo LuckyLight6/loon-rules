@@ -1,0 +1,25 @@
+# name: discord-messaging-and-voice
+# priority: 092
+# section: social
+# description: Discord 消息、语音、活动和附件
+# boundary: 仅 Discord 专用域及精确附件存储主机；不给整个 Google Storage 或含 discord 的域名选路。
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 15
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
+
+DOMAIN-SUFFIX,dis.gd
+DOMAIN-SUFFIX,discord-activities.com
+DOMAIN,discord-attachments-uploads-prd.storage.googleapis.com
+DOMAIN-SUFFIX,discord.co
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discord.gg
+DOMAIN-SUFFIX,discord.gift
+DOMAIN-SUFFIX,discord.gifts
+DOMAIN-SUFFIX,discord.media
+DOMAIN-SUFFIX,discordactivities.com
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,discordcdn.com
+DOMAIN-SUFFIX,discordpartygames.com
+DOMAIN-SUFFIX,discordstatus.com

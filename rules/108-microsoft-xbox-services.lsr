@@ -1,0 +1,15 @@
+# name: microsoft-xbox-services
+# priority: 108
+# section: microsoft
+# description: Xbox Live 已知登录与服务端点
+# boundary: 明确的 Xbox 令牌与服务、资产主机；不代表全部游戏下载、语音、联机流量均可按域名识别。
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T11:46:30Z
+# rule-count: 4
+# source: https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints
+# source: https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/s2s-auth-calls/service-authentication/live-website-authentication
+
+DOMAIN,user.auth.xboxlive.com
+DOMAIN,xsts.auth.xboxlive.com
+DOMAIN,dlassets-ssl.xboxlive.com
+DOMAIN,da.xboxservices.com

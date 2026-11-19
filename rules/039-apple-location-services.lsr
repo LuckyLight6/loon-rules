@@ -1,0 +1,27 @@
+# name: apple-location-services
+# priority: 039
+# section: apple
+# description: 定位与 Find My 已识别的专用端点
+# boundary: 含已核对的 Find My 移动端入口和数字分片。共用 iCloud 网页、推送和账户保留各自策略。
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T12:33:32Z
+# rule-count: 11
+# source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
+# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
+# source: https://support.apple.com/en-us/104978
+# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
+
+DOMAIN,gsp9-ssl.apple.com
+DOMAIN,gsp10-ssl.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,gs-loc.apple.com
+DOMAIN,fmipmobile.icloud.com
+DOMAIN,fmfmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
+DOMAIN,fmfmobile.fe2.apple-dns.net
+DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com

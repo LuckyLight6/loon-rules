@@ -1,0 +1,13 @@
+# name: apple-messaging-identity
+# priority: 054
+# section: apple
+# description: Apple 消息及 FaceTime 共用设备身份服务
+# boundary: 将社区确认的 IDS 名称与位置和推送分开。仅覆盖身份服务，不按它声称覆盖消息媒体或 FaceTime 中继 UDP。
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
+# source: https://support.apple.com/guide/security/sec70e68c949/web
+
+DOMAIN-SUFFIX,ess.apple.com
+DOMAIN,identity.apple.com

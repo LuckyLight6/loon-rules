@@ -1,0 +1,88 @@
+# name: apple-update-control
+# priority: 048
+# section: apple
+# description: 系统更新目录、检查、登记和控制端点
+# boundary: 含 OTA/Rosetta 检查、系统恢复服务和 Beta 登记；已确认的二进制内容下载另在 055，不按整个 cdn-apple.com 或整段 Apple IP 分类。
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T13:33:48Z
+# rule-count: 75
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# source: https://support.apple.com/en-us/101555
+# source: https://beta.apple.com/
+
+DOMAIN,appldnld-cdn.apple.com.akadns.net
+DOMAIN,appldnld-cdn.origin-apple.com.akadns.net
+DOMAIN,gdmf-cdn.apple.com.akadns.net
+DOMAIN,gdmf-cdn.origin-apple.com.akadns.net
+DOMAIN,gdmf-lb.apple.com.akadns.net
+DOMAIN,gdmf.apple.com.mwcname.com
+DOMAIN,gdmf.g.aaplimg.com
+DOMAIN,gg-cdn.apple.com.akadns.net
+DOMAIN,gg-cdn.origin-apple.com.akadns.net
+DOMAIN,gg-lb.apple.com.akadns.net
+DOMAIN,gg.apple.com.akadns.net
+DOMAIN,gg.apple.com.mwcname.com
+DOMAIN,gg.g.aaplimg.com
+DOMAIN,gnf-mdn.apple.com
+DOMAIN,gnf-mr.apple.com
+DOMAIN,mesu-lb.apple.com.akadns.net
+DOMAIN,mesu.apple.com.akadns.net
+DOMAIN,mesu.apple.com.mwcname.com
+DOMAIN,ns.itunes.apple.com
+DOMAIN,ocsp-cdn.apple.com.akadns.net
+DOMAIN,ocsp-cdn.origin-apple.com.akadns.net
+DOMAIN,ocsp.apple.com.akadns.net
+DOMAIN,ocsp.apple.com.mwcname.com
+DOMAIN,radarsubmissions-cdn.apple.com.akadns.net
+DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net
+DOMAIN,radarsubmissions-lb.apple.com.akadns.net
+DOMAIN,radarsubmissions.apple.com
+DOMAIN,radarsubmissions.apple.com.akadns.net
+DOMAIN,radarsubmissions.apple.com.mwcname.com
+DOMAIN,radarsubmissions.g.aaplimg.com
+DOMAIN,swpost.apple.com
+DOMAIN,swscan-cdn.apple.com.akadns.net
+DOMAIN,swscan-cdn.origin-apple.com.akadns.net
+DOMAIN,swscan-lb.apple.com.akadns.net
+DOMAIN,swscan.apple.com.akadns.net
+DOMAIN,swscan.apple.com.mwcname.com
+DOMAIN,swscan.g.aaplimg.com
+DOMAIN,xp-cdn.apple.com.akadns.net
+DOMAIN,xp-cdn.origin-apple.com.akadns.net
+DOMAIN,xp-lb.apple.com.akadns.net
+DOMAIN,xp.apple.com.akadns.net
+DOMAIN,xp.apple.com.mwcname.com
+DOMAIN,xp.g.aaplimg.com
+DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net
+DOMAIN-SUFFIX,gdmf.apple.com
+DOMAIN-SUFFIX,gdmf.apple.com.akadns.net
+DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net
+DOMAIN-SUFFIX,mesu-cdn.origin-apple.com.akadns.net
+DOMAIN-SUFFIX,mesu.apple.com
+DOMAIN-SUFFIX,mesu.g.aaplimg.com
+DOMAIN-SUFFIX,ocsp-lb.apple.com.akadns.net
+DOMAIN-SUFFIX,ocsp.g.aaplimg.com
+DOMAIN-SUFFIX,configuration.apple.com
+DOMAIN-SUFFIX,fcs-keys-pub-prod.cdn-apple.com
+DOMAIN-SUFFIX,gdmf-ados.apple.com
+DOMAIN-SUFFIX,gg.apple.com
+DOMAIN-SUFFIX,gs.apple.com
+DOMAIN-SUFFIX,gsra.apple.com
+DOMAIN-SUFFIX,ig.apple.com
+DOMAIN-SUFFIX,osrecovery.apple.com
+DOMAIN-SUFFIX,skl.apple.com
+DOMAIN-SUFFIX,swdist.apple.com
+DOMAIN-SUFFIX,swscan.apple.com
+DOMAIN-SUFFIX,wkms-public.apple.com
+DOMAIN-SUFFIX,xp.apple.com
+DOMAIN,bpapi.apple.com
+DOMAIN,cssubmissions.apple.com
+DOMAIN,fba.apple.com
+DOMAIN,itunes.com
+DOMAIN,lcdn-locator.apple.com
+DOMAIN,lcdn-registration.apple.com
+DOMAIN,serverstatus.apple.com
+DOMAIN,suconfig.apple.com
+DOMAIN,xp-cdn.apple.com
+DOMAIN,beta.apple.com

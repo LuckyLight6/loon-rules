@@ -1,0 +1,19 @@
+# name: github-copilot-connections
+# priority: 066
+# section: ai
+# description: Copilot API、补全、对话及已证实的附件服务
+# boundary: 只匹配 Copilot 专用主机。共享登录和 GitHub API 仍由 121 处理。
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 8
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+
+DOMAIN,origin-tracker.githubusercontent.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,copilot-workspace.githubnext.com
+DOMAIN,production-copilot-host-westus.webpubsub.azure.com
+DOMAIN,copilotprodattachments.blob.core.windows.net
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN,copilot-telemetry-service.githubusercontent.com
+DOMAIN,copilot-telemetry.githubusercontent.com

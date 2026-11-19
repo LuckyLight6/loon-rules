@@ -1,0 +1,15 @@
+# name: microsoft-teams-meetings
+# priority: 105
+# section: microsoft
+# description: Teams 工作版与个人版会话、会议入口
+# boundary: 专用产品域先于 Microsoft 通用规则。会议 UDP 中继不能只靠域名证明命中；不纳入整段 Microsoft IP。
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T11:46:30Z
+# rule-count: 4
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+# source: https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints
+
+DOMAIN-SUFFIX,teams.microsoft.com
+DOMAIN-SUFFIX,teams.cloud.microsoft
+DOMAIN,teams.live.com
+DOMAIN,statics.teams.cdn.live.net

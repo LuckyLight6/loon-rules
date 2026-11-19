@@ -1,0 +1,20 @@
+# name: steam-global-platform
+# priority: 152
+# section: games
+# description: Steam 国际商店、社区、联机和下载
+# boundary: 国内下载镜像另有 151；不含第三方游戏分销商和与 Steam 共享的整个网段。
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 10
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+
+DOMAIN-SUFFIX,dota2.com
+DOMAIN-SUFFIX,playartifact.com
+DOMAIN-SUFFIX,s.team
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steam.tv
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamdeck.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,valvesoftware.com

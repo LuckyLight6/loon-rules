@@ -1,0 +1,16 @@
+# name: microsoft-update-and-store-downloads
+# priority: 107
+# section: microsoft
+# description: Windows 更新和 Microsoft Store 已知内容下载
+# boundary: 仅已知下载和精确 CDN 别名，不扩到整个 delivery.mp.microsoft.com。大文件确认可用后直连。
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T13:33:48Z
+# rule-count: 5
+# source: https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints
+# source: https://dns.google/resolve?name=download.windowsupdate.com&type=A
+
+DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
+DOMAIN,download.windowsupdate.com
+DOMAIN,download.windowsupdate.com.delivery.microsoft.com
+DOMAIN,wu-f-net.trafficmanager.net
+DOMAIN,definitionupdates.microsoft.com

@@ -1,0 +1,17 @@
+# name: apple-siri-and-search
+# priority: 047
+# section: apple
+# description: Siri 与 Spotlight 的专用域名
+# boundary: Siri、听写和系统搜索可共用主机；未能按主机区分普通 Siri 与 Siri AI 时，保留独立策略供真机对照，不把所有 Siri 当 PCC。
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 5
+# source: https://raw.githubusercontent.com/Kianuni/AppleFlow/main/rules/surge/Siri-Direct.list
+# source: https://support.apple.com/en-us/101555
+# source: https://support.apple.com/en-hk/127893
+
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN,dejavu.apple.com
+DOMAIN,sequoia.apple.com
+DOMAIN-SUFFIX,smoot.apple.com

@@ -1,0 +1,17 @@
+# name: twitch-live-video
+# priority: 136
+# section: media
+# description: Twitch 直播、聊天室和内容 CDN
+# boundary: 不导入整个来源 ASN/IP 或关键词。Twitch 专属后缀独立于其他视频服务。
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 7
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list
+
+DOMAIN-SUFFIX,ext-twitch.tv
+DOMAIN-SUFFIX,jtvnw.net
+DOMAIN-SUFFIX,live-video.net
+DOMAIN-SUFFIX,ttvnw.net
+DOMAIN-SUFFIX,twitch.tv
+DOMAIN-SUFFIX,twitchcdn.net
+DOMAIN-SUFFIX,twitchsvc.net

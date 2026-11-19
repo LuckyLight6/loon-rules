@@ -1,0 +1,12 @@
+# name: google-meet-meetings
+# priority: 163
+# section: google
+# description: Google Meet 会议主机与专用 API
+# boundary: 仅产品与会议直播主机；共用字体、账号、Google Chat 与未证实的媒体地址不冠以 Meet。
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T11:46:30Z
+# rule-count: 2
+# source: https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams
+
+DOMAIN-SUFFIX,meet.google.com
+DOMAIN,meetings.googleapis.com

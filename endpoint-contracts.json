@@ -1,0 +1,396 @@
+[
+  {
+    "id": "apple-network",
+    "source": "https://support.apple.com/en-us/101555",
+    "format": "apple-host-table",
+    "routes": {
+      "network-sign-in-and-probes": [
+        "captive.apple.com",
+        "token.safebrowsing.apple"
+      ],
+      "apple-account-authentication": [
+        "account.apple.com",
+        "appleid.cdn-apple.com",
+        "gsa.apple.com",
+        "idmsa.apple.com",
+        "setup.icloud.com"
+      ],
+      "apple-association-services": [
+        "app-site-association.cdn-apple.com",
+        "app-site-association.networking.apple"
+      ],
+      "apple-app-and-device-verification": [
+        "*.appattest.apple.com",
+        "api.apple-cloudkit.com",
+        "idv-prod1.apple.com",
+        "idv.cdn-apple.com",
+        "play.itunes.apple.com",
+        "ppq.apple.com",
+        "s.mzstatic.com",
+        "smp-device-content.apple.com"
+      ],
+      "apple-wallet-payments": [
+        "humb.apple.com",
+        "pos-device.apple.com"
+      ],
+      "apple-store-transactions": [
+        "*.apps-marketplace.apple.com",
+        "*.apps.apple.com",
+        "itunes.apple.com"
+      ],
+      "apple-push-connection": [
+        "*.push.apple.com"
+      ],
+      "apple-private-relay-connections": [
+        "mask-api.icloud.com",
+        "mask-h2.icloud.com",
+        "mask.icloud.com"
+      ],
+      "apple-cloud-sync": [
+        "*.apple-cloudkit.com",
+        "*.apple-dns.net",
+        "*.apple-livephotoskit.com",
+        "*.gc.apple.com",
+        "*.icloud.apple.com",
+        "*.icloud.com",
+        "*.iwork.apple.com",
+        "gateway.icloud.com",
+        "metrics.icloud.com",
+        "pong.icloud.com",
+        "probe.icloud.com",
+        "statici.icloud.com",
+        "ws-ee-maidsvc.icloud.com"
+      ],
+      "apple-intelligence-relays": [
+        "apple-relay.apple.com",
+        "apple-relay.cloudflare.com",
+        "apple-relay.fastly-edge.com",
+        "cp4.cloudflare.com"
+      ],
+      "apple-siri-and-search": [
+        "*.smoot.apple.com",
+        "guzzoni.apple.com"
+      ],
+      "apple-update-control": [
+        "bpapi.apple.com",
+        "configuration.apple.com",
+        "cssubmissions.apple.com",
+        "fba.apple.com",
+        "fcs-keys-pub-prod.cdn-apple.com",
+        "gdmf-ados.apple.com",
+        "gdmf.apple.com",
+        "gg.apple.com",
+        "gs.apple.com",
+        "gsra.apple.com",
+        "ig.apple.com",
+        "itunes.com",
+        "lcdn-locator.apple.com",
+        "lcdn-registration.apple.com",
+        "mesu.apple.com",
+        "osrecovery.apple.com",
+        "serverstatus.apple.com",
+        "skl.apple.com",
+        "suconfig.apple.com",
+        "swdist.apple.com",
+        "swscan.apple.com",
+        "wkms-public.apple.com",
+        "xp-cdn.apple.com",
+        "xp.apple.com"
+      ],
+      "apple-certificate-validation": [
+        "certs.apple.com",
+        "crl.apple.com",
+        "crl3.digicert.com",
+        "crl4.digicert.com",
+        "ocsp.apple.com",
+        "ocsp.digicert.cn",
+        "ocsp.digicert.com",
+        "ocsp2.apple.com",
+        "valid.apple.com"
+      ],
+      "apple-developer-downloads": [
+        "devimages-cdn.apple.com",
+        "download.developer.apple.com",
+        "playground-assets-cdn.apple.com",
+        "playground-cdn.apple.com"
+      ],
+      "apple-system-connectivity": [
+        "*.apple-mapkit.com",
+        "*.business.apple.com",
+        "*.school.apple.com",
+        "albert.apple.com",
+        "api-business.apple.com",
+        "api-school.apple.com",
+        "api.edu.apple.com",
+        "api.ent.apple.com",
+        "apple-native-relay.apple.com",
+        "audiocontentdownload.apple.com",
+        "axm-adm-enroll.apple.com",
+        "axm-adm-mdm.apple.com",
+        "axm-adm-scep.apple.com",
+        "axm-app.apple.com",
+        "axm-servicediscovery.apple.com",
+        "deviceenrollment.apple.com",
+        "deviceservices-external.apple.com",
+        "diagassets.apple.com",
+        "doh.dns.apple.com",
+        "icons.axm-usercontent-apple.com",
+        "iphonesubmissions.apple.com",
+        "iprofiles.apple.com",
+        "mdmenrollment.apple.com",
+        "sq-device.apple.com",
+        "static.ips.apple.com",
+        "sylvan.apple.com",
+        "tbsc.apple.com",
+        "time-ios.apple.com",
+        "time-macos.apple.com",
+        "time.apple.com",
+        "upload.appleschoolcontent.com",
+        "vpp.itunes.apple.com",
+        "ws.school.apple.com"
+      ],
+      "apple-shared-store-assets": [
+        "*.mzstatic.com"
+      ],
+      "apple-icloud-content-domains": [
+        "*.icloud-content.com"
+      ],
+      "apple-messaging-identity": [
+        "identity.apple.com"
+      ],
+      "apple-update-downloads": [
+        "appldnld.apple.com",
+        "appldnld.apple.com.edgesuite.net",
+        "oscdn.apple.com",
+        "swcdn.apple.com",
+        "swdownload.apple.com",
+        "updates-http.cdn-apple.com",
+        "updates.cdn-apple.com"
+      ],
+      "apple-icloud-mainland": [
+        "*.apzones.com",
+        "*.icloud.com.cn"
+      ],
+      "apple-schoolwork-handouts": [
+        "cls-ingest.itunes.apple.com",
+        "cls-iosclient.itunes.apple.com",
+        "pg-bootstrap.itunes.apple.com"
+      ]
+    },
+    "sections": [
+      "devicesetup",
+      "devicemanagement",
+      "asmab",
+      "abdm",
+      "classschool",
+      "software",
+      "appscontent",
+      "carrier",
+      "caching",
+      "beta",
+      "diagnostics",
+      "dns",
+      "certificate",
+      "appleaccount",
+      "icloud",
+      "aisirisearch",
+      "domains",
+      "taptopay",
+      "idverifier"
+    ],
+    "shared": {
+      "*.itunes.apple.com": "商店、媒体、下载、验证与运营商探测共用；只挑已确认的子域和具体主机。",
+      "*.cdn-apple.com": "iCloud、账户、验证及系统更新共用；不整段指定一个出口。",
+      "*.vertexsmb.com": "机构税务校验用的第三方域，留给独立业务或兜底。",
+      "www.apple.com": "Apple 官网有许多不同用途，不能只当语言字体的下载主机。"
+    },
+    "guard-sections": [
+      "apple"
+    ]
+  },
+  {
+    "id": "claude-code",
+    "source": "https://code.claude.com/docs/en/network-config.md",
+    "format": "claude-code-table",
+    "routes": {
+      "claude-connections": [
+        "*.frame.claudeusercontent.com",
+        "api.anthropic.com",
+        "bridge.claudeusercontent.com",
+        "claude.ai",
+        "claude.com",
+        "code.claude.com",
+        "downloads.claude.ai",
+        "mcp-proxy.anthropic.com",
+        "platform.claude.com",
+        "sso.claude.com"
+      ],
+      "github-code-and-packages": [
+        "github.com",
+        "raw.githubusercontent.com"
+      ],
+      "google-platform-services": [
+        "storage.googleapis.com"
+      ]
+    },
+    "shared": {
+      "registry.npmjs.org": "通用 npm 依赖，不因为 Claude 安装插件就归为 Claude。",
+      "*-review.googlesource.com": "读 Gerrit 的通用开发依赖；用户在什么项目工作不决定 AI 专组范围。",
+      "http-intake.logs.us5.datadoghq.com": "可选遥测，保持通用规则。",
+      "browser-intake-us5-datadoghq.com": "可选错误报告，保持通用规则。",
+      "formulae.brew.sh": "Homebrew 软件包更新检查，保持通用规则。"
+    },
+    "guard-sections": [
+      "ai"
+    ]
+  },
+  {
+    "id": "claude-web-and-desktop",
+    "source": "https://code.claude.com/docs/en/network-config.md",
+    "format": "named-endpoints",
+    "routes": {
+      "claude-connections": [
+        "*.claudeusercontent.com",
+        "assets-proxy.anthropic.com"
+      ]
+    }
+  },
+  {
+    "id": "google-drive",
+    "source": "https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings",
+    "format": "named-endpoints",
+    "routes": {
+      "google-account-authentication": [
+        "accounts.google.com"
+      ],
+      "google-drive-and-documents": [
+        "docs.google.com",
+        "drive-data-export-eu.usercontent.google.com",
+        "drive-data-export.usercontent.google.com",
+        "drive.google.com",
+        "drive.usercontent.google.com",
+        "sheets.google.com",
+        "slides.google.com"
+      ],
+      "google-platform-services": [
+        "www.google.com"
+      ]
+    }
+  },
+  {
+    "id": "google-meet",
+    "source": "https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams",
+    "format": "named-endpoints",
+    "routes": {
+      "google-account-authentication": [
+        "accounts.google.com"
+      ],
+      "google-meet-meetings": [
+        "meet.google.com",
+        "meetings.googleapis.com",
+        "stream.meet.google.com"
+      ],
+      "google-platform-services": [
+        "apis.google.com",
+        "chat.google.com",
+        "fonts.gstatic.com"
+      ]
+    }
+  },
+  {
+    "id": "google-account",
+    "source": "https://www.google.com/account/about/",
+    "format": "named-endpoints",
+    "routes": {
+      "google-account-authentication": [
+        "myaccount.google.com"
+      ]
+    }
+  },
+  {
+    "id": "google-oauth",
+    "source": "https://developers.google.com/identity/protocols/oauth2/web-server",
+    "format": "named-endpoints",
+    "routes": {
+      "google-account-authentication": [
+        "oauth2.googleapis.com"
+      ],
+      "google-platform-services": [
+        "www.googleapis.com"
+      ]
+    }
+  },
+  {
+    "id": "google-smtp-relay",
+    "source": "https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google",
+    "format": "named-endpoints",
+    "routes": {
+      "google-gmail-mail": [
+        "smtp-relay.gmail.com"
+      ]
+    }
+  },
+  {
+    "id": "microsoft-365",
+    "source": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
+    "format": "named-endpoints",
+    "routes": {
+      "microsoft-account-authentication": [
+        "*.auth.microsoft.com",
+        "*.msauth.net",
+        "*.msftauth.net",
+        "*.msftidentity.com",
+        "api.passwordreset.microsoftonline.com",
+        "autologon.microsoftazuread-sso.com",
+        "ccs.login.microsoftonline.com",
+        "device.login.microsoftonline.com",
+        "login-us.microsoftonline.com",
+        "login.microsoft.com",
+        "login.microsoftonline.com",
+        "login.windows.net",
+        "passwordreset.microsoftonline.com"
+      ],
+      "microsoft-outlook-mail": [
+        "*.outlookmobile.com",
+        "outlook.cloud.microsoft",
+        "outlook.office.com",
+        "outlook.office365.com",
+        "smtp.office365.com"
+      ],
+      "microsoft-teams-meetings": [
+        "teams.cloud.microsoft",
+        "teams.microsoft.com"
+      ],
+      "microsoft-files-and-sharepoint": [
+        "*.sharepoint.com",
+        "storage.live.com"
+      ],
+      "microsoft-office-downloads": [
+        "officecdn.microsoft.com"
+      ],
+      "microsoft-connectivity": [
+        "graph.microsoft.com"
+      ]
+    }
+  },
+  {
+    "id": "microsoft-windows",
+    "source": "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints",
+    "format": "named-endpoints",
+    "routes": {
+      "microsoft-windows-update-services": [
+        "*.prod.do.dsp.mp.microsoft.com",
+        "*.update.microsoft.com",
+        "tsfe.trafficshaping.dsp.mp.microsoft.com"
+      ],
+      "microsoft-update-and-store-downloads": [
+        "*.dl.delivery.mp.microsoft.com",
+        "definitionupdates.microsoft.com"
+      ],
+      "microsoft-store-services": [
+        "livetileedge.dsx.mp.microsoft.com",
+        "storeedgefd.dsx.mp.microsoft.com"
+      ]
+    }
+  }
+]

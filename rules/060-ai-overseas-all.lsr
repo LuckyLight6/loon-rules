@@ -1,0 +1,167 @@
+# name: ai-overseas-all
+# priority: 060
+# section: ai
+# description: Claude、ChatGPT、Gemini、Grok 和其他海外 AI 的汇总规则。
+# boundary: 与细分二选一；Apple Intelligence 保持独立，国产国内版和国际版不变。不合并共享云。
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T11:46:30Z
+# rule-count: 131
+# source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
+# source: https://code.claude.com/docs/en/network-config#network-access-requirements
+# source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
+# source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cursor.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/windsurf.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/devin.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/perplexity.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/poe.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openrouter.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/mistral-ai.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/groq.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cohere.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/huggingface.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/midjourney.list
+# source: https://muse.ai/
+# source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
+# source: https://elevenlabs.io/docs/eleven-api/resources/mcp-server
+# source: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/
+# source: https://grokipedia.com/
+# source: https://support.microsoft.com/en-us/microsoft-365-copilot/what-is-microsoft-copilot-app
+# source: https://learn.microsoft.com/en-us/copilot/plan/copilot-app-overview
+# source: https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/
+
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR,153.61.224.0/22,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
+IP-ASN,399358,no-resolve
+DOMAIN,openaiassets.blob.core.windows.net
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN,cdn.openaimerge.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN,appsgenaiserver-pa.clients.google.com
+DOMAIN,geminiweb-pa.clients.google.com
+DOMAIN,alkalicore-pa.clients6.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,appsgenaiserver-pa.clients6.google.com
+DOMAIN,geminiweb-pa.clients6.google.com
+DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,flow.google.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,jules.google.com
+DOMAIN-SUFFIX,labs.google.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,notebook.google.com
+DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,opal.google.com
+DOMAIN-SUFFIX,aicode.googleapis.com
+DOMAIN-SUFFIX,aida.googleapis.com
+DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
+DOMAIN,antigravity.googleapis.com
+DOMAIN,antigravity-pa.googleapis.com
+DOMAIN,appsgenaiserver-pa.googleapis.com
+DOMAIN,cloudaicompanion.googleapis.com
+DOMAIN,cloudcode-pa.googleapis.com
+DOMAIN,daily-cloudcode-pa.googleapis.com
+DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN,notebooklm.googleapis.com
+DOMAIN,notebooklm-pa.googleapis.com
+DOMAIN-SUFFIX,labstailwind.pa.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
+DOMAIN-SUFFIX,gemini.gstatic.com
+DOMAIN-SUFFIX,stitch.withgoogle.com
+DOMAIN,ai.google.dev
+DOMAIN-SUFFIX,antigravity-unleash.goog
+DOMAIN-SUFFIX,antigravity.google
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,flow.google
+DOMAIN-SUFFIX,gemini.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,jules.google
+DOMAIN-SUFFIX,labs.google
+DOMAIN-SUFFIX,notebook.google
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,opal.google
+DOMAIN-SUFFIX,ai.studio
+DOMAIN,webchannel-robinfrontend-pa.googleapis.com
+DOMAIN,geminiweb-pa.googleapis.com
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,grok.x.com
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursorapi.com
+DOMAIN-SUFFIX,cursorvm.com
+PROCESS-NAME,Cursor
+PROCESS-NAME,Cursor.exe
+PROCESS-NAME,cursor
+DOMAIN,origin-tracker.githubusercontent.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,copilot-workspace.githubnext.com
+DOMAIN,production-copilot-host-westus.webpubsub.azure.com
+DOMAIN,copilotprodattachments.blob.core.windows.net
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN,copilot-telemetry-service.githubusercontent.com
+DOMAIN,copilot-telemetry.githubusercontent.com
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,windsurf.build
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,devin.ai
+DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
+DOMAIN,pplx-res.cloudinary.com
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,perplexity.com
+DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,poecdn.net
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,hf.space
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,grokipedia.com
+DOMAIN,copilot.com
+DOMAIN,www.copilot.com
+DOMAIN,copilot.microsoft.com
+DOMAIN,copilot.cloud.microsoft
