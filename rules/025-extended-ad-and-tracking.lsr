@@ -4,8 +4,8 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 扩展拦截默认关闭。只收上游、广告或隐私过滤表和 DNS 过滤表都明确整域拦截的范围；不把按路径、脚本或第三方请求生效的规则扩大到整站。
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-20T03:10:12Z
-# rule-count: 43989
+# updated-at: 2026-11-20T12:07:05Z
+# rule-count: 43988
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
@@ -22838,7 +22838,6 @@ DOMAIN-SUFFIX,abh.jp
 DOMAIN-SUFFIX,smetrics.kawai-juku.ac.jp
 DOMAIN-SUFFIX,t.adclr.jp
 DOMAIN-SUFFIX,adnico.jp
-DOMAIN-SUFFIX,sy.ameba.jp
 DOMAIN-SUFFIX,counter.asobeans.jp
 DOMAIN,analytics.contents.by-fw.jp
 DOMAIN-SUFFIX,analytics.castel.jp

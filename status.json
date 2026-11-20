@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-20T05:17:49Z",
+  "checked-at": "2026-11-20T12:07:05Z",
   "inputs-read": 93,
   "critical": 462,
   "inputs-requested": 93,
@@ -162,9 +162,9 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 18236,
+      "not-whole-host-consensus": 18237,
       "admitted-rules": 0,
-      "retired-rules": 0
+      "retired-rules": 1
     },
     "apple-private-relay-connections": {
       "state": "current",
@@ -388,7 +388,9 @@
     }
   },
   "shared-negatives": 20,
-  "changed": [],
+  "changed": [
+    "extended-ad-and-tracking"
+  ],
   "scope-negatives": 101,
   "ip-cases": 37,
   "rules": {
@@ -398,7 +400,7 @@
     "ip-egress-checks": 22,
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 6183,
-    "extended-ad-and-tracking": 43989,
+    "extended-ad-and-tracking": 43988,
     "privacy-public-stun-endpoints": 2,
     "apple-all": 256,
     "apple-account-authentication": 8,
