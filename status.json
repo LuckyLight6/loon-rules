@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-20T05:00:34Z",
+  "checked-at": "2026-11-20T05:17:49Z",
   "inputs-read": 93,
   "critical": 462,
   "inputs-requested": 93,
@@ -388,10 +388,7 @@
     }
   },
   "shared-negatives": 20,
-  "changed": [
-    "google-all",
-    "google-software-downloads"
-  ],
+  "changed": [],
   "scope-negatives": 101,
   "ip-cases": 37,
   "rules": {
