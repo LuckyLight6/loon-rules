@@ -30,12 +30,22 @@ def rule_filename(entry):
     return f'{entry["priority"]:03d}-{entry["id"]}.lsr'
 
 
+def subscription_order(config, entries):
+    bands=config.get('routing-bands')
+    if bands is None:  # Legacy catalog schema and standalone library callers
+        return sorted(entries,key=lambda key:entries[key]['priority'])
+    order=[key for band in bands for key in band['ids']]
+    if len(order)!=len(set(order)) or set(order)!=set(entries):
+        raise rules.Invalid('订阅顺序必须为每份规则安排唯一位置')
+    return order
+
+
 def route_order(config, entries, views=()):
     active=set(config['detailed']+config['general'])
     for key in views:
         active.difference_update(entries[key]['members'])
         active.add(key)
-    return sorted(active,key=lambda key:entries[key]['priority'])
+    return [key for key in subscription_order(config,entries) if key in active]
 
 
 def shadowed_domains(order, data):
@@ -231,12 +241,13 @@ def outside_domain_scopes(rows,reserved):
 
 def calibration_urls(spec):
     if not spec:return []
+    if spec['method']=='asn-allocation-consensus':return [spec['allocation'],spec['witness']]
     if spec['method']=='allocation-and-routing':return [spec['allocation'],spec['routes']]
     if spec['method']=='domain-ad-consensus':return [*spec['filter-lists'],spec['dns-list']]
     raise rules.Invalid('未知校准方式')
 
 
-def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(), corroborated=(), adopt_ads=False):
+def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(), corroborated=(), official=(), observation=None, revision=None, epoch=None, adopt_ads=False):
     """Report arbitrary source drift without publishing candidate names or addresses."""
     excluded=set(entry.get('excluded-rules',()))
     last=outside_domain_scopes(without_protected([r for r in last if r not in excluded],protected),reserved)
@@ -265,6 +276,14 @@ def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(),
         if len(scoped)!=len(now): outside['outside-purpose']=len(now)-len(scoped)
         now=scoped
     if spec:
+        if spec['method']=='asn-allocation-consensus':
+            try:
+                result,stats=calibration.asn_additions(last,now,downloaded[spec['witness']],downloaded[spec['allocation']])
+            except (ValueError,rules.Invalid):
+                return last,{'state':'invalid'}
+            if len(result)-len(last)>max(1,len(last)//20):
+                return last,{'state':'review','new-matches':len(result)-len(last),'missing-rules':0,**stats}
+            return result,{'state':'current',**stats}
         if spec['method']=='allocation-and-routing':
             try:
                 result,stats=calibration.networks(last,now,downloaded[spec['allocation']],downloaded[spec['routes']])
@@ -293,6 +312,17 @@ def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(),
         if not admitted or max(lost,gain)>max(1,len(last)//20):
             return last,{'state':'review','new-matches':gain,'missing-rules':lost,**outside}
         return stable_order(admitted,last),{'state':'current',**outside}
+    if entry.get('reconcile')=='confirmed-withdrawals' and revision is not None:
+        last,observed=calibration.withdrawals(last,now,observation or {},revision,epoch)
+        if observed:outside['withdrawal-observation']=observed
+    if entry.get('official-hosts'):
+        # The vendor assigns a hostname, not the rest of a shared CDN. Retain
+        # independently documented coverage even if the community feed lacks it.
+        exact=['DOMAIN,'+h for h in sorted(set(official)) if '*' not in h and rules.valid_host(h)]
+        extra=[r for r in exact if uncovered_count([r],last)]
+        last=stable_order(compact(last+extra),last)
+        now=compact(now+exact)
+        outside['official-exact-additions']=len(extra)
     added=uncovered_count(now,last)
     removed=uncovered_count(last,now)
     if entry.get('reconcile')=='ad-withdrawals' and removed and removed<=len(last)//20:
@@ -439,6 +469,7 @@ def validate_declarations(config):
             raise rules.Invalid('重复或不合规的编号：'+name)
         priorities.add(rank)
         entries[name]=e
+    subscription_order(config,entries)
     names=[*config['detailed'],*config['general']]
     if len(set(names))!=len(names) or any(entries[k]['mode']=='view' for k in names):
         raise rules.Invalid('细分或通用视图误启用合并表')
@@ -468,11 +499,13 @@ def validate_declarations(config):
             if (e['mode']!='managed' or not set(calibration_urls(spec))<=set(e['sources'])
                     or not e.get('feed-sources') or ('reconcile' in e)
                     or (spec['method']=='domain-ad-consensus' and (e.get('policy-hint')!='reject' or set(e['kinds'])!={'DOMAIN','DOMAIN-SUFFIX'}))
+                    or (spec['method']=='asn-allocation-consensus' and set(e['kinds'])!={'IP-ASN'})
                     or (spec['method']=='allocation-and-routing' and (e.get('ip-match')!='allow-dns' or set(e['kinds'])!={'IP-CIDR','IP-CIDR6'}))):
                 raise rules.Invalid('交叉核对与订阅用途不符：'+e['id'])
-        if 'reconcile' in e and (e['reconcile']!='ad-withdrawals' or e['mode']!='managed'
-                                   or e.get('policy-hint')!='reject'):
-            raise rules.Invalid('自动撤销只适用于订阅广告拦截表：'+e['id'])
+        if 'reconcile' in e and (e['mode']!='managed' or
+                e['reconcile'] not in ('ad-withdrawals','confirmed-withdrawals') or
+                (e['reconcile']=='ad-withdrawals' and e.get('policy-hint')!='reject')):
+            raise rules.Invalid('自动撤回不适用于该订阅：'+e['id'])
         if set(e.get('flags',()))-{'no-resolve'}:
             raise rules.Invalid('来源含未确认的 Loon 参数：'+e['id'])
         if e['mode']=='compiled' and not any(e.get(field) for field in
@@ -545,6 +578,9 @@ def audit_inventory(spec, downloaded, data):
 def maintenance_method(entry):
     if entry['mode']=='view' or entry.get('merge-domains'):
         return '组合生成'
+    if entry.get('reconcile')=='confirmed-withdrawals':return '连续两次确认撤回'
+    if entry.get('calibration',{}).get('method')=='asn-allocation-consensus':return 'ASN 来源与注册记录交叉核对'
+    if entry.get('official-hosts'):return '官方业务端点自动补入'
     if entry.get('confirm-additions-with'):return '新增域名与国内业务表交叉核对'
     if spec:=entry.get('calibration'):
         return '整域拦截交叉核对' if spec['method']=='domain-ad-consensus' else '分配与路由交叉核对'
@@ -574,14 +610,19 @@ def render_review(status,entries):
     for k,v in inventories.items():
         lines.append(f"- 来源覆盖核对 {k}："+labels[v['state']]+
                      (f"：{v['outside-scope']} 条未归类" if 'outside-scope' in v else ''))
-    if not (pending or inventories): lines.append('本次没有需要处理的差异。')
-    checked=[k for k in ordered if 'unconfirmed-prefixes' in states[k] or 'not-whole-host-consensus' in states[k] or 'unconfirmed-domains' in states[k]]
+    held={k:v['outside-confirmed-scope'] for k,v in status.get('official-endpoints',{}).items() if v.get('outside-confirmed-scope')}
+    for source,n in held.items():
+        lines.append(f'- {source}：官方新增 {n} 个尚不能确定用途的主机，本次未加入，下一轮重新核对。')
+    if not (pending or inventories or held): lines.append('本次没有需要处理的差异。')
+    checked=[k for k in ordered if 'unconfirmed-prefixes' in states[k] or 'not-whole-host-consensus' in states[k] or 'unconfirmed-domains' in states[k] or 'unconfirmed-asns' in states[k]]
     if checked:
         lines+=['','## 已校准的范围','']
         for k in checked:
             v=states[k]; tag=f"{entries[k]['priority']:03d}"
             if 'unconfirmed-domains' in v:
                 lines.append(f"- {tag}：{v['unconfirmed-domains']} 条新增范围没有独立的国内业务依据，不纳入订阅。")
+            elif 'unconfirmed-asns' in v:
+                lines.append(f"- {tag}：新增 {v['admitted-asns']} 个 ASN；{v['unconfirmed-asns']} 个没有同时得到另一份清单和 CN 分配记录印证。")
             elif 'unconfirmed-prefixes' in v:
                 lines.append(f"- {tag}：新增 {v['accepted-prefixes']} 个已核网段，撤回 {v['retired-prefixes']} 个；缺少分配或路由依据的 {v['unconfirmed-prefixes']} 个没有加入。")
             else:
@@ -617,9 +658,21 @@ def render_index(config, entries):
         return rows
 
     lines=['# 规则订阅清单','',
-           '按用途选规则。同一来源和匹配阶段内按编号排；选合集就不用再订阅它的成员。'
+           '按用途选规则。文件编号用于定位订阅；实际匹配顺序见下表。选合集就不用再订阅它的成员。'
            '备选与可选项按表里的使用条件启用，不默认叠加。',
            '', '打开规则后点 **Raw** 复制订阅地址。来源和更新时间在文件开头；[最近的检查](REVIEW.md)只列实际差异和未能读取的来源。']
+    if bands:=config.get('routing-bands'):
+        lines+=['','## 在 Loon 中怎么排','','下列由前到后；只读你启用的项。组内从左到右，文件名不参与 Loon 匹配。'
+                '先看「细分订阅」列；只在想换成合集、备选或开启额外功能时看最后一列。'
+                '本地规则、插件规则和订阅规则不是同一优先层。','',
+                '| 顺位 | 用途 | 细分订阅 | 合集、备选及可选项 |','|---|---|---|---|']
+        regular=set(route_order(config,entries))
+        for i,band in enumerate(bands,1):
+            def numbers(selected):
+                return ' → '.join(f'{entries[k]["priority"]:03d}' for k in band['ids'] if (k in regular)==selected) or '—'
+            lines.append(f'| {i:02d} | {band["title"]} | {numbers(True)} | {numbers(False)} |')
+        lines+=['','Google 登录、Drive、Meet、YouTube 紧跟 AI。Google 通用后缀靠后，因为 Discord 附件也使用 Google 云。'
+                '国内专项在海外专项之后，在宽泛的网站和地区兜底之前。']
     ordered=sorted(entries.values(),key=lambda e:e['priority'])
     for section in config['sections']:
         group=[e for e in ordered if e['section']==section['id']]
@@ -864,7 +917,8 @@ def run(check=False, offline=False, adopt_ads=False):
     requested=sorted(urls|watched)
     with ThreadPoolExecutor(max_workers=8) as pool:
         downloaded={u:t for u,t in zip(requested,pool.map(fetch,requested)) if t is not None}
-    contracts=endpoint_contracts.resolve_additions(contracts,entries,downloaded)
+    contracts=endpoint_contracts.resolve_additions(contracts,entries,downloaded,
+        shared_hosts=SHARED_PARENT|set(config['shared-negatives']))
     contract_status=endpoint_contracts.verify_sources(contracts,downloaded)
     source_status={}
     for k,e in file_entries.items():
@@ -880,11 +934,16 @@ def run(check=False, offline=False, adopt_ads=False):
         data[k]=stable_order(candidate,previous)
         lint_content(k,data[k],e.get('allowed-shared',()))
         rules.verify_ip_options(e,rules.ip_options(data[k]),complete=True)
+    prior_report=json.loads((ROOT/'status.json').read_text()) if (ROOT/'status.json').is_file() else {}
+    epoch=int(datetime.now(timezone.utc).timestamp())
     for k,e in reviewed.items():
         reserved=[row for owner in e.get('reserve-domains-for',()) for row in data[owner]]
         data[k],source_status[k]=refresh_reviewed_feed(e,data[k],downloaded,
             protected=protected_hosts(e,config,entries,contracts),reserved=reserved,adopt_ads=adopt_ads,
-            corroborated=domain_rows(data,e.get('confirm-additions-with',())))
+            corroborated=domain_rows(data,e.get('confirm-additions-with',())),
+            observation=prior_report.get('reviewed-inputs',{}).get(k,{}).get('withdrawal-observation'),
+            revision=metadata(old[k]).get('updated-at') if old[k] else None,epoch=epoch,
+            official=[h for contract in contracts for h in contract['routes'].get(k,())])
     for key,rows in derive_domain_merges(config,entries,data).items():
         data[key]=rows
         lint_content(key,rows,entries[key].get('allowed-shared',()))

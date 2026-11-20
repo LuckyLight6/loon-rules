@@ -27,14 +27,22 @@ def apple_table_hosts(text, sections):
     return hosts
 
 
-def claude_table_hosts(text):
+def claude_table_records(text):
     section=re.search(r'(?ms)^## Network access requirements\s*\n(.*?)(?=^## |\Z)',text)
     if not section:
         raise rules.Invalid('没有找到 Claude Code 网络端点表')
     rows=re.search(r'(?m)^\| URL \| Required for \|[^\n]*\n\|[ \t|:-]+\|[^\n]*\n((?:\|[^\n]*\n?)+)',section[1])
     if not rows:
         raise rules.Invalid('Claude Code 端点表格式变了')
-    return {_host(line.split('|',2)[1].strip().strip('`')) for line in rows[1].splitlines()}
+    result={}
+    for line in rows[1].splitlines():
+        _,host,purpose=line.split('|',2)
+        result.setdefault(_host(host.strip().strip('`')),[]).append(purpose.strip().strip('|').strip().casefold())
+    return result
+
+
+def claude_table_hosts(text):
+    return set(claude_table_records(text))
 
 
 def declared_hosts(contract):
@@ -49,7 +57,7 @@ def _mentioned(text, host):
     return re.search(r'(?<![\w.*-])'+re.escape(host)+r'(?![\w.-]*[\w-])',text) is not None
 
 
-def resolve_additions(contracts, entries, downloaded):
+def resolve_additions(contracts, entries, downloaded, *, shared_hosts=()):
     """Assign new official table entries only when product evidence identifies exactly one owner."""
     resolved = deepcopy(contracts)
     for spec in resolved:
@@ -80,11 +88,28 @@ def resolve_additions(contracts, entries, downloaded):
                     if 'DOMAIN,'+host in rows:
                         matches[host].add(owner)
             else:
+                terms=policy.get('feed-and-purpose',())
+                confirmed=set()
+                if terms:
+                    if spec['format']!='claude-code-table':
+                        raise rules.Invalid('当前来源没有可核对的业务用途列：'+spec['id'])
+                    records=claude_table_records(text)
+                    entry=entries[owner]
+                    for url in entry['feed-sources']:
+                        if url not in downloaded:continue
+                        for row in rules.read_rules(downloaded[url],set(entry['kinds']),set(entry['flags'])):
+                            kind,name,*flags=row.split(',')
+                            if kind in ('DOMAIN','DOMAIN-SUFFIX') and not flags:confirmed.add(name)
                 for host in extra:
-                    if '*' not in host and within(host,policy['roots']):
+                    if '*' in host or host in shared_hosts:continue
+                    if within(host,policy['roots']) or (host in confirmed and any(
+                            term in role for term in terms for role in records[host])):
                         matches[host].add(owner)
         for host,owners in sorted(matches.items()):
             if len(owners)!=1:
+                if not owners and spec.get('unassigned')=='hold':
+                    spec.setdefault('_unassigned',[]).append(host)
+                    continue
                 raise rules.Invalid(spec['id']+' 新端点待归属：'+host)
             spec['routes'][owners.pop()].append(host)
     return resolved
@@ -107,7 +132,7 @@ def verify_sources(contracts, downloaded):
             actual={host for host in expected if _mentioned(body,host)}
         else:
             raise rules.Invalid('未知的端点核对方式：'+form)
-        extra=actual-expected
+        extra=actual-expected-set(contract.get('_unassigned',()))
         missing=expected-actual
         if extra or missing:
             detail=[]
@@ -118,6 +143,8 @@ def verify_sources(contracts, downloaded):
             raise rules.Invalid(f'{name} 公开端点变化；'+ '；'.join(detail))
         summary[name]={'mode':'table' if form!='named-endpoints' else 'named',
                        'assigned':len(required),'shared':len(shared)}
+        if contract.get('_unassigned'):
+            summary[name]['outside-confirmed-scope']=len(contract['_unassigned'])
     return summary
 
 

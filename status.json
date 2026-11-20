@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-20T03:16:48Z",
-  "inputs-read": 89,
-  "critical": 457,
-  "inputs-requested": 89,
+  "checked-at": "2026-11-20T05:00:34Z",
+  "inputs-read": 93,
+  "critical": 462,
+  "inputs-requested": 93,
   "maintenance": {
     "已核清单": [
       11,
@@ -11,8 +11,6 @@
       26,
       37,
       39,
-      50,
-      51,
       52,
       54,
       77,
@@ -20,16 +18,8 @@
       79,
       80,
       81,
-      106,
-      107,
-      108,
-      109,
       114,
-      161,
-      162,
-      163,
-      165,
-      166
+      165
     ],
     "按来源筛选": [
       12,
@@ -49,6 +39,8 @@
       46,
       48,
       49,
+      50,
+      51,
       53,
       55,
       56,
@@ -69,6 +61,10 @@
       103,
       104,
       105,
+      106,
+      107,
+      108,
+      109,
       113,
       121,
       131,
@@ -84,6 +80,10 @@
       151,
       152,
       153,
+      161,
+      162,
+      163,
+      166,
       169,
       170,
       171,
@@ -107,10 +107,14 @@
       185,
       192
     ],
-    "比较上游，保留已审范围": [
+    "官方业务端点自动补入": [
       40,
       47,
       61,
+      115,
+      164
+    ],
+    "连续两次确认撤回": [
       64,
       65,
       67,
@@ -123,23 +127,21 @@
       74,
       75,
       76,
-      115,
       139,
-      164,
       181,
       182,
       183,
       184,
       186,
-      187,
       188,
       190,
       191,
       193,
       194,
-      197,
-      202,
-      203,
+      197
+    ],
+    "比较上游，保留已审范围": [
+      187,
       204
     ],
     "新增域名与国内业务表交叉核对": [
@@ -148,6 +150,10 @@
     "分配与路由交叉核对": [
       200,
       201
+    ],
+    "ASN 来源与注册记录交叉核对": [
+      202,
+      203
     ]
   },
   "reviewed-inputs": {
@@ -161,13 +167,16 @@
       "retired-rules": 0
     },
     "apple-private-relay-connections": {
-      "state": "current"
+      "state": "current",
+      "official-exact-additions": 0
     },
     "apple-siri-and-search": {
-      "state": "current"
+      "state": "current",
+      "official-exact-additions": 0
     },
     "claude-connections": {
-      "state": "current"
+      "state": "current",
+      "official-exact-additions": 0
     },
     "grok-connections": {
       "state": "current"
@@ -207,13 +216,15 @@
     },
     "microsoft-connectivity": {
       "state": "current",
-      "outside-purpose": 5
+      "outside-purpose": 5,
+      "official-exact-additions": 0
     },
     "bahamut-video-and-community": {
       "state": "current"
     },
     "google-drive-and-documents": {
-      "state": "current"
+      "state": "current",
+      "official-exact-additions": 0
     },
     "overseas-media-remainder": {
       "state": "current"
@@ -272,10 +283,14 @@
       "retired-prefixes": 0
     },
     "mainland-asn-classification": {
-      "state": "current"
+      "state": "current",
+      "admitted-asns": 0,
+      "unconfirmed-asns": 0
     },
     "mainland-asn-with-resolution": {
-      "state": "current"
+      "state": "current",
+      "admitted-asns": 0,
+      "unconfirmed-asns": 0
     },
     "mainland-geoip-fallback": {
       "state": "current"
@@ -373,8 +388,11 @@
     }
   },
   "shared-negatives": 20,
-  "changed": [],
-  "scope-negatives": 100,
+  "changed": [
+    "google-all",
+    "google-software-downloads"
+  ],
+  "scope-negatives": 101,
   "ip-cases": 37,
   "rules": {
     "local-links-and-addresses": 139,
@@ -406,10 +424,10 @@
     "apple-update-control": 75,
     "apple-certificate-validation": 12,
     "apple-developer-downloads": 6,
-    "apple-system-connectivity": 47,
+    "apple-system-connectivity": 48,
     "apple-shared-store-assets": 2,
     "apple-icloud-content-domains": 1,
-    "apple-messaging-identity": 2,
+    "apple-messaging-identity": 1,
     "apple-update-downloads": 13,
     "apple-music-audio-delivery": 5,
     "apple-tv-video-delivery": 2,
@@ -452,7 +470,7 @@
     "microsoft-windows-update-services": 3,
     "microsoft-update-and-store-downloads": 5,
     "microsoft-xbox-services": 4,
-    "microsoft-store-services": 3,
+    "microsoft-store-services": 4,
     "microsoft-files-and-sharepoint": 14,
     "microsoft-office-downloads": 3,
     "microsoft-connectivity": 638,
@@ -472,13 +490,13 @@
     "steam-mainland-downloads": 8,
     "steam-global-platform": 12,
     "epic-games-services": 5,
-    "google-all": 224,
-    "google-account-authentication": 5,
+    "google-all": 227,
+    "google-account-authentication": 6,
     "google-gmail-mail": 6,
-    "google-meet-meetings": 2,
+    "google-meet-meetings": 3,
     "google-drive-and-documents": 13,
     "google-play-services": 2,
-    "google-software-downloads": 3,
+    "google-software-downloads": 6,
     "google-platform-services": 219,
     "paypal-payments": 5,
     "alipay-mainland-payments": 6,

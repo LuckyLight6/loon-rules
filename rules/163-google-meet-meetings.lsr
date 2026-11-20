@@ -4,9 +4,11 @@
 # description: Google Meet 会议主机与专用 API
 # boundary: 仅产品与会议直播主机；共用字体、账号、Google Chat 与未证实的媒体地址不冠以 Meet。
 # created-at: 2026-11-19T11:46:30Z
-# updated-at: 2026-11-19T11:46:30Z
-# rule-count: 2
+# updated-at: 2026-11-20T04:45:15Z
+# rule-count: 3
 # source: https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams
+# source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/apps/meet/v2/service.proto
 
 DOMAIN-SUFFIX,meet.google.com
 DOMAIN,meetings.googleapis.com
+DOMAIN,meet.googleapis.com

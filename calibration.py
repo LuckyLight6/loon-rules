@@ -111,3 +111,55 @@ def confirmed_ads(rows,sources):
         if any(p in exceptions for p in parents(host)) or (kind=='DOMAIN-SUFFIX' and host in ancestors):continue
         confirmed.append(row)
     return confirmed
+
+
+def withdrawals(last, current, previous, revision, now):
+    """Retire small, complete domain withdrawals; never expand membership from one feed."""
+    exact=set(); suffix=set(); ancestors=set()
+    # Refuse to remove a domain still covered by a parent or refined to children.
+    for row in current:
+        kind,host,*flags=row.lower().split(',')
+        if kind not in ('domain','domain-suffix') or flags:continue
+        exact.add(host)
+        if kind=='domain-suffix':suffix.add(host)
+        parts=host.split('.')
+        ancestors.update('.'.join(parts[i:]) for i in range(1,len(parts)))
+    gone=[]
+    for i,row in enumerate(last):
+        kind,host,*flags=row.lower().split(',')
+        if kind not in ('domain','domain-suffix') or flags or host in exact:continue
+        parts=host.split('.')
+        if any('.'.join(parts[k:]) in suffix for k in range(1,len(parts))):continue
+        if kind=='domain-suffix' and host in ancestors:continue
+        gone.append(i)
+    if not gone or len(gone)*20>len(last):return last,{}
+    eligible=(previous.get('body')==revision and 0<=now-previous.get('last-read',-1)<=3*86400)
+    first=previous.get('first',{}) if eligible else {}
+    since={str(i):first.get(str(i),now) for i in gone}
+    drop={i for i in gone if now-since[str(i)]>=20*3600}
+    result=[row for i,row in enumerate(last) if i not in drop]
+    if not result:return last,{}
+    # Only positions in the previously published file, never candidate names.
+    return result,({} if drop else {'body':revision,'first':since,'last-read':now})
+
+
+def asn_additions(last,current,witness,registry):
+    """Require an explicit ASN in both feeds and a matching APNIC CN allocation."""
+    agreed={int(m[1]) for line in witness.splitlines()
+            if (m:=re.fullmatch(r'IP-ASN,(\d+)(?:,no-resolve)?',line.strip(),re.I))}
+    allocations=[]
+    for line in registry.splitlines():
+        p=line.split('|')
+        if (len(p)>=7 and p[:3]==['apnic','CN','asn'] and p[6] in ('allocated','assigned')
+                and p[3].isdigit() and p[4].isdigit() and int(p[4])>0):
+            allocations.append((int(p[3]),int(p[3])+int(p[4])-1))
+    if not agreed or not allocations:raise Invalid('缺少 ASN 来源或中国分配记录')
+    spans=merged(allocations);starts=[s for s,_ in spans]
+    out=list(last);known=set(last);unconfirmed=0
+    for row in current:
+        if row in known:continue
+        n=int(row.split(',')[1]);i=bisect_right(starts,n)-1
+        if n in agreed and i>=0 and n<=spans[i][1]:
+            out.append(row);known.add(row)
+        else:unconfirmed+=1
+    return out,{'admitted-asns':len(out)-len(last),'unconfirmed-asns':unconfirmed}

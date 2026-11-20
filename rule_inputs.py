@@ -2,6 +2,8 @@
 from html.parser import HTMLParser
 from ipaddress import ip_network
 import re
+import json
+import xml.etree.ElementTree as ET
 from urllib.parse import urlsplit
 
 from maintain import HostTables, AppleTables, Invalid, read_rules, valid_host
@@ -36,6 +38,28 @@ def host_table(text, recipe):
                     continue
                 yield ('DOMAIN-SUFFIX,' if wildcard else 'DOMAIN,')+host
                 break
+
+
+class DestinationTables(HostTables):
+    """Only read rows below the vendor's host, port and purpose headings."""
+    def __init__(self):
+        super().__init__()
+        self.matched=False
+        self.heading=False
+
+    def handle_starttag(self,tag,attrs):
+        if tag=='table':self.heading=False
+        if tag in ('li','p') and self.cell is not None:self.cell.append(' ')
+        super().handle_starttag(tag,attrs)
+
+    def handle_endtag(self,tag):
+        super().handle_endtag(tag)
+        if tag=='table':self.heading=False
+
+    def record(self,row):
+        if [c.casefold() for c in row]==['destination host','ports','purpose']:
+            self.matched=self.heading=True
+        elif self.heading and len(row)==3:super().record(row)
 
 
 class LabelledLists(HTMLParser):
@@ -133,6 +157,52 @@ def http_provider_hosts(recipe, text):
 
 def extract_rows(recipe, text):
     form = recipe['format']
+    if form == 'openid-discovery':
+        doc=json.loads(text)
+        if doc.get('issuer')!=recipe['issuer']:raise Invalid('OpenID 签发方发生变化')
+        found=set()
+        for field in recipe['fields']:
+            url=urlsplit(doc.get(field,''))
+            if url.scheme!='https' or not url.hostname or url.username is not None:
+                raise Invalid('OpenID 端点无效：'+field)
+            if within(url.hostname,recipe['roots']) and url.hostname not in recipe['exclude']:
+                found.add('DOMAIN,'+url.hostname)
+        return found
+    if form == 'mail-autoconfig':
+        found=set()
+        for provider in ET.fromstring(text).findall('emailProvider'):
+            if recipe['domain'] not in [x.text for x in provider.findall('domain')]:continue
+            for role,proto in [('incomingServer','imap'),('incomingServer','pop3'),('outgoingServer','smtp')]:
+                for server in provider.findall(role):
+                    host=server.findtext('hostname','').strip().lower()
+                    if server.get('type')==proto and valid_host(host) and within(host,recipe['roots']):
+                        found.add('DOMAIN,'+host)
+        return found
+    if form == 'destination-table':
+        table=DestinationTables();table.feed(text)
+        if not table.matched:raise Invalid('来源缺少主机、端口和用途列')
+        return {'DOMAIN,'+host for rows in table.rows.values() for hosts,ports,purpose in rows
+                if recipe['purpose'] in purpose.casefold() and recipe['ports']==ports.strip()
+                for host in hosts.lower().split() if valid_host(host) and within(host,recipe['roots'])}
+    if form == 'windows-purpose':
+        table=HostTables()
+        table.feed(text)
+        product=purpose=''
+        result=set()
+        for cells in table.rows.get(recipe['section'],()):
+            if len(cells)!=4:continue
+            topic,reason,protocol,host=cells
+            if topic:
+                product=topic.strip()
+                purpose=''
+            if reason:purpose=reason.strip().casefold()
+            host=host.strip().casefold()
+            if product!=recipe['product'] or not protocol.strip():continue
+            if not any(term in purpose for term in recipe['purpose']):continue
+            if valid_host(host) and within(host,recipe['roots']):result.add('DOMAIN,'+host)
+            elif host in recipe.get('documented-wildcards',()):result.add('DOMAIN-SUFFIX,'+host[2:])
+        if not result: raise Invalid('Windows 官方端点表未找到该业务：'+recipe['product'])
+        return result
     if form == 'http-provider-lists':
         return http_provider_hosts(recipe,text)
     if form == 'service-default-host':

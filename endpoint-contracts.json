@@ -135,6 +135,7 @@
         "diagassets.apple.com",
         "doh.dns.apple.com",
         "icons.axm-usercontent-apple.com",
+        "identity.apple.com",
         "iphonesubmissions.apple.com",
         "iprofiles.apple.com",
         "mdmenrollment.apple.com",
@@ -154,9 +155,6 @@
       ],
       "apple-icloud-content-domains": [
         "*.icloud-content.com"
-      ],
-      "apple-messaging-identity": [
-        "identity.apple.com"
       ],
       "apple-update-downloads": [
         "appldnld.apple.com",
@@ -216,7 +214,9 @@
       "apple-update-downloads": "extract",
       "apple-association-services": "extract",
       "apple-app-and-device-verification": "extract",
-      "apple-wallet-payments": "extract"
+      "apple-wallet-payments": "extract",
+      "apple-developer-downloads": "extract",
+      "apple-system-connectivity": "extract"
     }
   },
   {
@@ -261,9 +261,18 @@
           "anthropic.com",
           "claude.com",
           "claudeusercontent.com"
+        ],
+        "feed-and-purpose": [
+          "claude api requests",
+          "claude.ai account authentication",
+          "anthropic console account authentication",
+          "native installer",
+          "plugin executable downloads",
+          "extension websocket bridge"
         ]
       }
-    }
+    },
+    "unassigned": "hold"
   },
   {
     "id": "claude-web-and-desktop",

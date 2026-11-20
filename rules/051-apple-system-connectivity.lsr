@@ -4,8 +4,8 @@
 # description: Apple 激活、设备管理、诊断与设备素材
 # boundary: 激活、设备管理、诊断、校时和设备素材走本组。不收整个 Apple 网段或共用 CDN，也不替代账号、推送与钱包组。
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-19T13:33:48Z
-# rule-count: 47
+# updated-at: 2026-11-20T04:32:59Z
+# rule-count: 48
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
 # source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
 # source: https://support.apple.com/en-us/101555
@@ -57,3 +57,4 @@ DOMAIN,iphonesubmissions.apple.com
 DOMAIN,iphonesubmissions.apple.com.akadns.net
 DOMAIN,iphonesubmissions.apple.com.mwcname.com
 DOMAIN,iphonesubmissions.g.aaplimg.com
+DOMAIN,identity.apple.com

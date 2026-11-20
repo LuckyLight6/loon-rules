@@ -4,16 +4,19 @@
 # description: Google 账户、邮箱、办公、Meet、Play、下载和通用服务合集
 # boundary: 替换本章成员，共用一个出口；更早的 Gemini、YouTube 等专项照常生效。需要节省下载配额时选细分。
 # created-at: 2026-11-19T12:26:59Z
-# updated-at: 2026-11-19T12:26:59Z
-# rule-count: 224
+# updated-at: 2026-11-20T05:00:34Z
+# rule-count: 227
 # source: https://developers.google.com/identity/protocols/oauth2/web-server
 # source: https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings
 # source: https://support.google.com/work/android/answer/10513641
 # source: https://www.google.com/account/about/
+# source: https://accounts.google.com/.well-known/openid-configuration
 # source: https://developers.google.com/workspace/gmail/api/reference/rest
 # source: https://developers.google.com/workspace/gmail/imap/imap-smtp
 # source: https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google
+# source: https://autoconfig.thunderbird.net/v1.1/gmail.com
 # source: https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams
+# source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/apps/meet/v2/service.proto
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GoogleDrive.lsr
 # source: https://support.google.com/chrome/a/answer/6334001
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
@@ -23,6 +26,9 @@ USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*
 USER-AGENT,*com.google.Drive*
 USER-AGENT,Google.Drive*
 DOMAIN,edgedl.me.gvt1.com
+DOMAIN,ota-cache1.googlezip.net
+DOMAIN,ota-cache3.googlezip.net
+DOMAIN,ota.googlezip.net
 DOMAIN,voice.telephony.goog
 DOMAIN-SUFFIX,1e100.net
 DOMAIN-SUFFIX,android.com

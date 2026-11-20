@@ -28,6 +28,8 @@ jobs:
       - name: Check sources and refresh rules
         run: |
           python3 -B maintain.py --refresh
+          python3 -B scoped_dns.py
+          python3 -B scoped_dns.py --check
           python3 -B maintain.py --verify-files
       - name: Summarize source changes
         run: |
@@ -37,6 +39,9 @@ jobs:
           result=json.loads(Path('status.json').read_text())
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as report:
               print(f"读取 {result['inputs-read']} / {result['inputs-requested']} 个来源；更新 {len(result['changed'])} 份订阅。",file=report)
+              for source, state in result['official-endpoints'].items():
+                  if held:=state.get('outside-confirmed-scope'):
+                      print(f"- {source}：{held} 个官方新主机尚未确认归属，未发布",file=report)
               for source, state in result['source-inventories'].items():
                   if state['state']!='current':
                       print(f"- {source}：{state['state']}，未归属范围 {state.get('outside-scope','—')}",file=report)
@@ -46,7 +51,7 @@ jobs:
           PYTHON
       - name: Commit validated outputs
         run: |
-          git add -- ':(glob)rules/*.lsr' status.json REVIEW.md
+          git add -- ':(glob)rules/*.lsr' plugins/public-services-doh.plugin status.json REVIEW.md
           if git diff --cached --quiet; then
             exit 0
           fi

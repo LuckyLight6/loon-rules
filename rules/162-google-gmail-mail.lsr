@@ -9,6 +9,7 @@
 # source: https://developers.google.com/workspace/gmail/api/reference/rest
 # source: https://developers.google.com/workspace/gmail/imap/imap-smtp
 # source: https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google
+# source: https://autoconfig.thunderbird.net/v1.1/gmail.com
 
 DOMAIN,mail.google.com
 DOMAIN,gmail.googleapis.com
