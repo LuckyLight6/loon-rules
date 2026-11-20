@@ -1,11 +1,11 @@
 # name: mainland-service-domains
 # priority: 196
-# section: fallback
-# description: xkww 国内域名备选
-# boundary: 替换 194，不叠加。只保留国内公网服务；路由器管理名由 011 处理。
+# section: mainland-fallback
+# description: 国内服务域名的兼容备选
+# boundary: 只用于替换 194，不与 192 叠加。国际版 AI 的专域和覆盖它们的父后缀不作国内域名；未核实的新条目不发布。
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-19T11:46:30Z
-# rule-count: 6383
+# updated-at: 2026-11-20T02:52:18Z
+# rule-count: 6380
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -15,12 +15,9 @@ DOMAIN-SUFFIX,uoj.ac
 DOMAIN-SUFFIX,daogou.ai
 DOMAIN-SUFFIX,doctoryou.ai
 DOMAIN-SUFFIX,dui.ai
-DOMAIN-SUFFIX,qwen.ai
-DOMAIN-SUFFIX,qwenlm.ai
 DOMAIN-SUFFIX,shengyi.ai
 DOMAIN-SUFFIX,tidb.ai
 DOMAIN-SUFFIX,tmjl.ai
-DOMAIN-SUFFIX,z.ai
 DOMAIN-SUFFIX,71.am
 DOMAIN-SUFFIX,rrsp.app
 DOMAIN-SUFFIX,szu.app

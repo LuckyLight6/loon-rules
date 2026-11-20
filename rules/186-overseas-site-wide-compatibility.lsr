@@ -1,8 +1,8 @@
 # name: overseas-site-wide-compatibility
 # priority: 186
-# section: fallback
-# description: 海外站点覆盖较宽的兼容来源
-# boundary: 只在确有覆盖需要时替换 184；含关键字和 IP 规则，有误匹配风险。
+# section: overseas-fallback
+# description: 海外站点的宽版域名与地址兼容表
+# boundary: 常规用 185；这份保留 IP 和 USER-AGENT，含非标准网段写法。仅为确有需要的客户端保留，不与 185 叠加。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T12:26:59Z
 # rule-count: 16967

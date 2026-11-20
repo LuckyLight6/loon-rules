@@ -1,8 +1,8 @@
 # name: restricted-sites-and-addresses
 # priority: 188
-# section: fallback
-# description: 受限站点及地址的备选代理规则
-# boundary: 作为更窄的通用代理名单替代 184；选一个来源，不同名叠加。
+# section: overseas-fallback
+# description: GFW 域名与地址兼容表
+# boundary: 常规用 185 的已审核域名；这份还含 IP、USER-AGENT 及非标准网段写法，需要这些匹配时单独试用。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T12:26:59Z
 # rule-count: 7449

@@ -1,12 +1,12 @@
 {
-  "version": 4,
+  "version": 5,
   "entries": [
     {
       "id": "local-links-and-addresses",
       "mode": "compiled",
       "policy-hint": "direct",
       "description": "局域网名称、路由器、反查与保留地址",
-      "boundary": "管理入口用精确域名；保留私网的 DNS 匹配，不把公网翻译地址或协议任播整段当局域网。文档示例等只匹配裸 IP。",
+      "boundary": "路由器和局域网名称优先；私网、VPN 和回环保留用名称访问。链路本地、组播、保留及文档用地址只匹配已知目标 IP。",
       "sources": [
         "https://www.iana.org/assignments/iana-ipv4-special-registry/",
         "https://www.iana.org/assignments/iana-ipv6-special-registry/",
@@ -19,7 +19,11 @@
         "https://www.mi.com/global/support/faq/details/KA-226613/",
         "https://service.mercurycom.com.cn/article-86.html",
         "https://www.tp-link.com/us/support/faq/2394/",
-        "https://static.tenda.com.cn/tdeweb/download/A23/Wi-Fi%20Range%20Extender%28Repeater%29%20Installation%20Guide%28multi-language%29.pdf"
+        "https://static.tenda.com.cn/tdeweb/download/A23/Wi-Fi%20Range%20Extender%28Repeater%29%20Installation%20Guide%28multi-language%29.pdf",
+        "https://www.rfc-editor.org/rfc/rfc3927.html",
+        "https://www.rfc-editor.org/rfc/rfc4472.html",
+        "https://www.rfc-editor.org/rfc/rfc6762.html",
+        "https://www.rfc-editor.org/rfc/rfc6761.html"
       ],
       "allowed-shared": [
         "home",
@@ -29,19 +33,151 @@
       "dns_required": [
         "IP-CIDR,10.0.0.0/8",
         "IP-CIDR,100.64.0.0/10",
+        "IP-CIDR,127.0.0.0/8",
         "IP-CIDR,172.16.0.0/12",
         "IP-CIDR,192.168.0.0/16",
         "IP-CIDR6,fc00::/7",
-        "IP-CIDR6,fe80::/10"
+        "IP-CIDR6,::/127"
       ],
       "literal_ips": [
+        "IP-CIDR,0.0.0.0/8",
+        "IP-CIDR,169.254.0.0/16",
         "IP-CIDR,192.0.2.0/24",
         "IP-CIDR,198.51.100.0/24",
         "IP-CIDR,203.0.113.0/24",
-        "IP-CIDR6,2001:db8::/32"
+        "IP-CIDR,224.0.0.0/3",
+        "IP-CIDR,198.18.0.0/15",
+        "IP-CIDR6,fe80::/10",
+        "IP-CIDR6,100::/64",
+        "IP-CIDR6,2001:10::/28",
+        "IP-CIDR6,2001:db8::/32",
+        "IP-CIDR6,ff00::/8"
       ],
       "priority": 11,
-      "section": "network"
+      "section": "network",
+      "ip-match": "per-rule",
+      "include": [
+        "DOMAIN-SUFFIX,home",
+        "DOMAIN-SUFFIX,lan",
+        "DOMAIN-SUFFIX,local",
+        "DOMAIN,asusrouter.com",
+        "DOMAIN,router.asus.com",
+        "DOMAIN,www.asusrouter.com",
+        "DOMAIN-SUFFIX,1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa",
+        "DOMAIN-SUFFIX,10.in-addr.arpa",
+        "DOMAIN-SUFFIX,100.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,100.51.198.in-addr.arpa",
+        "DOMAIN-SUFFIX,101.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,102.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,103.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,104.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,105.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,106.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,107.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,108.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,109.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,110.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,111.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,112.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,113.0.203.in-addr.arpa",
+        "DOMAIN-SUFFIX,113.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,114.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,115.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,116.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,117.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,118.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,119.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,120.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,121.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,122.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,123.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,124.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,125.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,126.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,127.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,127.in-addr.arpa",
+        "DOMAIN-SUFFIX,16.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,168.192.in-addr.arpa",
+        "DOMAIN-SUFFIX,17.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,18.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,19.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,2.0.192.in-addr.arpa",
+        "DOMAIN-SUFFIX,20.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,21.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,22.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,23.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,24.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,25.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,254.169.in-addr.arpa",
+        "DOMAIN-SUFFIX,255.255.255.255.in-addr.arpa",
+        "DOMAIN-SUFFIX,26.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,27.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,28.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,29.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,30.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,31.172.in-addr.arpa",
+        "DOMAIN-SUFFIX,64.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,65.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,66.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,67.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,68.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,69.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,70.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,71.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,72.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,73.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,74.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,75.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,76.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,77.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,78.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,79.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,8.b.d.0.1.0.0.2.ip6.arpa",
+        "DOMAIN-SUFFIX,8.e.f.ip6.arpa",
+        "DOMAIN-SUFFIX,80.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,81.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,82.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,83.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,84.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,85.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,86.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,87.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,88.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,89.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,9.e.f.ip6.arpa",
+        "DOMAIN-SUFFIX,90.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,91.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,92.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,93.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,94.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,95.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,96.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,97.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,98.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,99.100.in-addr.arpa",
+        "DOMAIN-SUFFIX,a.e.f.ip6.arpa",
+        "DOMAIN-SUFFIX,b.e.f.ip6.arpa",
+        "DOMAIN-SUFFIX,d.f.ip6.arpa",
+        "DOMAIN-SUFFIX,my.router",
+        "DOMAIN-SUFFIX,phicomm.me",
+        "DOMAIN-SUFFIX,router.ctc",
+        "DOMAIN-SUFFIX,routerlogin.com",
+        "DOMAIN-SUFFIX,tendawifi.com",
+        "DOMAIN-SUFFIX,tplinkwifi.net",
+        "DOMAIN-SUFFIX,tplogin.cn",
+        "DOMAIN-SUFFIX,home.arpa",
+        "DOMAIN,miwifi.com",
+        "DOMAIN,www.miwifi.com",
+        "DOMAIN,router.miwifi.com",
+        "DOMAIN,melogin.cn",
+        "DOMAIN,tplinkdeco.net",
+        "DOMAIN,tplinkmodem.net",
+        "DOMAIN,tplinkmifi.net",
+        "DOMAIN,tplinkrepeater.net",
+        "DOMAIN,tplinkap.net",
+        "DOMAIN,tplinkplc.net",
+        "DOMAIN,re.tenda.cn"
+      ]
     },
     {
       "id": "network-sign-in-and-probes",
@@ -96,7 +232,126 @@
         "https://tailscale.com/kb/1082/firewall-ports"
       ],
       "priority": 13,
-      "section": "network"
+      "section": "network",
+      "include": [
+        "DOMAIN-SUFFIX,tailscale.com",
+        "DOMAIN-SUFFIX,tailscale.net",
+        "DOMAIN-SUFFIX,ts.net"
+      ]
+    },
+    {
+      "id": "ip-egress-checks",
+      "mode": "compiled",
+      "policy-hint": "global",
+      "description": "查询当前公网出口：国内检测页、IPv4、IPv6 和双栈 API",
+      "boundary": "只收用途明确的查询主机，不接管 IP 资料站、DNS、STUN 或多用途网站。设为代理后，用这些主机查地址的 DDNS 客户端也会看到代理出口。",
+      "sources": [
+        "https://2026.ip138.com/",
+        "https://my.ip.cn/",
+        "https://www.ipip.net/myip.html",
+        "https://raw.githubusercontent.com/qdm12/ddns-updater/master/README.md",
+        "https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-sg.html",
+        "https://www.ipify.org/",
+        "https://www.ip138.com/"
+      ],
+      "priority": 14,
+      "section": "network",
+      "include": [
+        "DOMAIN,2026.ip138.com",
+        "DOMAIN,my.ip.cn"
+      ],
+      "extract": [
+        {
+          "source": "https://www.ipip.net/myip.html",
+          "format": "named-hosts",
+          "exact": [
+            "myip.ipip.net",
+            "myip.la",
+            "www.myip.la"
+          ]
+        },
+        {
+          "source": "https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-sg.html",
+          "format": "https-hosts",
+          "exact": [
+            "checkip.amazonaws.com",
+            "checkip.global.api.aws"
+          ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/qdm12/ddns-updater/master/README.md",
+          "format": "http-provider-lists",
+          "sections": [
+            "PUBLICIP_HTTP_PROVIDERS",
+            "PUBLICIPV4_HTTP_PROVIDERS",
+            "PUBLICIPV6_HTTP_PROVIDERS"
+          ],
+          "providers": {
+            "ipify": {
+              "exact": [
+                "api.ipify.org",
+                "api6.ipify.org",
+                "api64.ipify.org"
+              ],
+              "paths": [
+                "/"
+              ]
+            },
+            "icanhazip": {
+              "roots": [
+                "icanhazip.com"
+              ],
+              "paths": [
+                "/"
+              ]
+            },
+            "ident": {
+              "exact": [
+                "ident.me",
+                "v4.ident.me",
+                "v6.ident.me"
+              ],
+              "paths": [
+                "/"
+              ]
+            },
+            "spdyn": {
+              "exact": [
+                "checkip.spdyn.de"
+              ],
+              "paths": [
+                "/"
+              ]
+            },
+            "ifconfig": {
+              "exact": [
+                "ifconfig.io"
+              ],
+              "paths": [
+                "/ip"
+              ]
+            },
+            "changeip": {
+              "exact": [
+                "ip.changeip.com"
+              ],
+              "paths": [
+                "/"
+              ]
+            },
+            "nnev": {
+              "exact": [
+                "ip.nnev.de",
+                "ip4.nnev.de",
+                "ip6.nnev.de"
+              ],
+              "paths": [
+                "/"
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "id": "apple-and-ai-privacy-exceptions",
@@ -109,7 +364,12 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list"
       ],
       "priority": 21,
-      "section": "privacy"
+      "section": "privacy",
+      "include": [
+        "DOMAIN,tr.iadsdk.apple.com",
+        "DOMAIN,bzr.openai.com",
+        "DOMAIN,bzrcdn.openai.com"
+      ]
     },
     {
       "id": "general-ad-and-tracking",
@@ -138,16 +398,23 @@
         "DOMAIN",
         "DOMAIN-SUFFIX",
         "IP-CIDR"
-      ]
+      ],
+      "ip-match": "target-ip",
+      "reconcile": "ad-withdrawals"
     },
     {
       "id": "extended-ad-and-tracking",
       "mode": "managed",
       "policy-hint": "reject",
-      "description": "覆盖更多广告与追踪域的备选表",
-      "boundary": "较广；启用前注意原有应用例外。",
+      "description": "可选的扩展广告与统计拦截",
+      "boundary": "扩展拦截默认关闭。只收上游、广告或隐私过滤表和 DNS 过滤表都明确整域拦截的范围；不把按路径、脚本或第三方请求生效的规则扩大到整站。",
       "sources": [
-        "https://rules.xkww3n.cyou/classical/reject.txt"
+        "https://rules.xkww3n.cyou/classical/reject.txt",
+        "https://docs.statsig.com/infrastructure/statsig_domains",
+        "https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/",
+        "https://easylist.to/easylist/easylist.txt",
+        "https://easylist.to/easylist/easyprivacy.txt",
+        "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
       ],
       "kinds": [
         "DOMAIN",
@@ -158,7 +425,28 @@
       "notice": "xkww3n--Rules.txt",
       "priority": 25,
       "section": "privacy",
-      "fallback": true
+      "fallback": true,
+      "feed-sources": [
+        "https://rules.xkww3n.cyou/classical/reject.txt"
+      ],
+      "excluded-rules": [
+        "DOMAIN-SUFFIX,featuregates.org",
+        "DOMAIN-SUFFIX,api.statsigcdn.com",
+        "DOMAIN-SUFFIX,assetsconfigcdn.org",
+        "DOMAIN-SUFFIX,beyondwickedmapping.org",
+        "DOMAIN-SUFFIX,static.cloudflareinsights.com"
+      ],
+      "include": [
+        "DOMAIN,static.cloudflareinsights.com"
+      ],
+      "calibration": {
+        "method": "domain-ad-consensus",
+        "filter-lists": [
+          "https://easylist.to/easylist/easylist.txt",
+          "https://easylist.to/easylist/easyprivacy.txt"
+        ],
+        "dns-list": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
+      }
     },
     {
       "id": "privacy-public-stun-endpoints",
@@ -171,7 +459,11 @@
         "https://developers.cloudflare.com/realtime/turn/generate-credentials/"
       ],
       "priority": 26,
-      "section": "privacy"
+      "section": "privacy",
+      "include": [
+        "DOMAIN,stun.l.google.com",
+        "DOMAIN,stun.cloudflare.com"
+      ]
     },
     {
       "id": "apple-all",
@@ -179,50 +471,6 @@
       "policy-hint": "apple-services",
       "description": "Apple 已审业务合集：账户、系统、海外媒体、智能与 iCloud",
       "boundary": "替换所列成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立。",
-      "sources": [
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list",
-        "https://support.apple.com/en-us/101555",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list",
-        "https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list",
-        "https://developer.apple.com/documentation/applepaywebmerchantregistrationapi",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/TestFlight.lsr",
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/TestFlight.list",
-        "https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl",
-        "https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list",
-        "https://books.apple.com/us/charts",
-        "https://royli.dev/blog/2019/better-proxy-rules-for-apple-services",
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
-        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/APNs.list",
-        "https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-APNS.list",
-        "https://support.apple.com/guide/deployment/configure-devices-to-work-with-apns-dep2de55389a/web",
-        "https://support.apple.com/en-us/102266",
-        "https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list",
-        "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
-        "https://support.apple.com/en-us/104978",
-        "https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A",
-        "https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A",
-        "https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A",
-        "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list",
-        "https://support.apple.com/en-us/118230",
-        "https://support.apple.com/zh-cn/111754",
-        "https://rules.xkww3n.cyou/classical/apple-music.txt",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
-        "https://support.apple.com/zh-cn/118205",
-        "https://tv.apple.com/",
-        "https://news.apple.com/",
-        "https://dns.google/resolve?name=news.apple.com&type=A",
-        "https://rules.xkww3n.cyou/classical/apple-intelligence.txt",
-        "https://support.apple.com/en-us/121115",
-        "https://raw.githubusercontent.com/Kianuni/AppleFlow/main/rules/surge/Siri-Direct.list",
-        "https://support.apple.com/en-hk/127893",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list",
-        "https://beta.apple.com/",
-        "https://support.apple.com/guide/security/sec70e68c949/web",
-        "https://dns.google/resolve?name=icloud-content.com.cn&type=SOA"
-      ],
       "members": [
         "apple-account-authentication",
         "apple-association-services",
@@ -272,9 +520,34 @@
         "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list",
         "https://support.apple.com/en-us/101555"
       ],
-      "selector": "apple-account",
       "priority": 31,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "appleaccount"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com",
+                "cdn-apple.com"
+              ],
+              "purpose-contains": [
+                "apple account authentication"
+              ]
+            }
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN,iforgot.apple.com",
+        "DOMAIN,setup.icloud.com",
+        "DOMAIN,auth.itunes.apple.com",
+        "DOMAIN,appleid.apple.com"
+      ]
     },
     {
       "id": "apple-association-services",
@@ -286,7 +559,28 @@
         "https://support.apple.com/en-us/101555"
       ],
       "priority": 32,
-      "section": "apple"
+      "section": "apple",
+      "include": [],
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "domains"
+          ],
+          "select": [
+            {
+              "roots": [
+                "cdn-apple.com",
+                "networking.apple"
+              ],
+              "role": [
+                "associated domains for universal links"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "apple-app-and-device-verification",
@@ -298,7 +592,54 @@
         "https://support.apple.com/en-us/101555"
       ],
       "priority": 33,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,s.mzstatic.com",
+        "DOMAIN,play.itunes.apple.com",
+        "DOMAIN-SUFFIX,appattest.apple.com"
+      ],
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "idverifier"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com",
+                "cdn-apple.com"
+              ],
+              "role": [
+                "id verifier on iphone"
+              ],
+              "exclude": [
+                "humb.apple.com"
+              ]
+            }
+          ]
+        },
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "appscontent"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com",
+                "apple-cloudkit.com"
+              ],
+              "role": [
+                "enterprise app validation",
+                "app notarization"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "apple-wallet-payments",
@@ -313,7 +654,31 @@
         "https://support.apple.com/en-us/101555"
       ],
       "priority": 34,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,smp-paymentservices.apple.com",
+        "DOMAIN,cn-smp-paymentservices.apple.com"
+      ],
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "taptopay"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com"
+              ],
+              "role": [
+                "tap to pay on iphone",
+                "tap to pay on iphone setup"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "apple-beta-distribution",
@@ -344,18 +709,39 @@
       "mode": "compiled",
       "policy-hint": "apple-store-api",
       "description": "App Store API、购买与安装指令、Apple Books 商店",
-      "boundary": "账户认证、App 下载和 TestFlight 分开。含第三方市场安装入口和 Apple Books 门户，不包揽整个 itunes.apple.com。",
+      "boundary": "包括 iTunes 签名初始化、第三方市场安装入口和 Apple Books 门户。账户认证、App 下载和 TestFlight 分开，不包揽整个 itunes.apple.com。",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/TestFlight.list",
         "https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl",
         "https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list",
         "https://books.apple.com/us/charts",
-        "https://support.apple.com/en-us/101555"
+        "https://support.apple.com/en-us/101555",
+        "https://init.itunes.apple.com/bag.xml?ix=6"
       ],
-      "selector": "apple-store",
       "priority": 36,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl",
+          "format": "annotated-domains",
+          "tag": "{{ api_rule }}",
+          "host-pattern": "(?:bag|se(?:-edge)?[0-9]*|su|upp)\\.itunes\\.apple\\.com|(?:amp-)?api(?:-[a-z0-9-]+)?\\.apps\\.apple\\.com"
+        }
+      ],
+      "include": [
+        "DOMAIN-WILDCARD,*.apps.apple.com",
+        "DOMAIN-WILDCARD,*buy.itunes.apple.com",
+        "DOMAIN,sandbox.itunes.apple.com",
+        "DOMAIN-SUFFIX,appstore.com",
+        "DOMAIN,apps.apple.com",
+        "DOMAIN,itunes.apple.com",
+        "DOMAIN,lookup-api.apple.com",
+        "DOMAIN-SUFFIX,appsto.re",
+        "DOMAIN,books.apple.com",
+        "DOMAIN-SUFFIX,apps-marketplace.apple.com",
+        "DOMAIN,fpinit.itunes.apple.com"
+      ]
     },
     {
       "id": "apple-app-package-downloads",
@@ -369,7 +755,11 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
       "priority": 37,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,iosapps.itunes.apple.com",
+        "DOMAIN,iosapps.itunes.g.aaplimg.com"
+      ]
     },
     {
       "id": "apple-push-connection",
@@ -383,21 +773,39 @@
         "https://support.apple.com/guide/deployment/configure-devices-to-work-with-apns-dep2de55389a/web",
         "https://support.apple.com/en-us/102266"
       ],
-      "literal_ips": [
-        "IP-CIDR,17.188.128.0/18",
-        "IP-CIDR,17.188.20.0/23",
-        "IP-CIDR,17.249.0.0/16",
-        "IP-CIDR,17.252.0.0/16",
-        "IP-CIDR,17.57.144.0/22",
-        "IP-CIDR6,2403:300:a42::/48",
-        "IP-CIDR6,2403:300:a51::/48",
-        "IP-CIDR6,2620:149:a44::/48",
-        "IP-CIDR6,2a01:b740:a42::/48"
-      ],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 38,
-      "section": "apple"
+      "section": "apple",
+      "ip-match": "target-ip",
+      "include": [
+        "DOMAIN-SUFFIX,push.apple.com",
+        "DOMAIN-SUFFIX,push-apple.com.akadns.net"
+      ],
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/102266",
+          "format": "labelled-networks",
+          "lists": {
+            "IPv4": {
+              "family": 4,
+              "parents": [
+                "17.0.0.0/8"
+              ],
+              "min-prefix": 16
+            },
+            "IPv6": {
+              "family": 6,
+              "parents": [
+                "2403:300::/32",
+                "2620:149::/32",
+                "2a01:b740::/32"
+              ],
+              "min-prefix": 48
+            }
+          }
+        }
+      ]
     },
     {
       "id": "apple-location-services",
@@ -415,7 +823,20 @@
         "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A"
       ],
       "priority": 39,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,gsp9-ssl.apple.com",
+        "DOMAIN,gsp10-ssl.apple.com",
+        "DOMAIN-SUFFIX,ls.apple.com",
+        "DOMAIN-SUFFIX,gs-loc.apple.com",
+        "DOMAIN,fmipmobile.icloud.com",
+        "DOMAIN,fmfmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com",
+        "DOMAIN,fmfmobile.fe2.apple-dns.net",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com"
+      ]
     },
     {
       "id": "apple-private-relay-connections",
@@ -445,9 +866,17 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
-      "selector": "apple-mainland-download-aliases",
       "priority": 41,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
+          "format": "rules",
+          "exact": [
+            "is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net"
+          ]
+        }
+      ]
     },
     {
       "id": "apple-cloud-sync",
@@ -460,9 +889,48 @@
         "https://support.apple.com/en-us/118230",
         "https://support.apple.com/zh-cn/111754"
       ],
-      "selector": "apple-cloud",
       "priority": 42,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "icloud"
+          ],
+          "select": [
+            {
+              "wildcards": true,
+              "exact": [
+                "apple-cloudkit.com",
+                "apple-livephotoskit.com",
+                "gc.apple.com",
+                "icloud.com",
+                "icloud.apple.com",
+                "iwork.apple.com"
+              ],
+              "role": [
+                "icloud services",
+                "iwork documents"
+              ]
+            },
+            {
+              "exact": [
+                "probe.icloud.com",
+                "pong.icloud.com"
+              ],
+              "role": [
+                "icloud connection testing"
+              ]
+            }
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN,www-cdn.icloud.com.akadns.net",
+        "DOMAIN-SUFFIX,me.com",
+        "DOMAIN-SUFFIX,apple-dns.net"
+      ]
     },
     {
       "id": "apple-music-and-radio",
@@ -475,7 +943,23 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr"
       ],
       "priority": 43,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,amp-api.media.apple.com"
+      ],
+      "projection": [
+        {
+          "source": "https://rules.xkww3n.cyou/classical/apple-music.txt",
+          "roots": [
+            "music.apple.com",
+            "applemusic.com"
+          ],
+          "exact": [
+            "amp-api.media.apple.com",
+            "mvod.itunes.apple.com"
+          ]
+        }
+      ]
     },
     {
       "id": "apple-video-and-fitness",
@@ -487,10 +971,25 @@
         "https://rules.xkww3n.cyou/classical/apple-music.txt",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
         "https://support.apple.com/zh-cn/118205",
-        "https://tv.apple.com/"
+        "https://tv.apple.com/",
+        "https://itunespartner.apple.com/music/assets/music-artist-api.pdf"
       ],
       "priority": 44,
-      "section": "apple"
+      "section": "apple",
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
+          "roots": [
+            "fitness.apple.com",
+            "tv.apple.com"
+          ],
+          "exact": [
+            "np-edge.itunes.apple.com",
+            "play-edge.itunes.apple.com",
+            "uts-api.itunes.apple.com"
+          ]
+        }
+      ]
     },
     {
       "id": "apple-news-and-sports",
@@ -507,7 +1006,31 @@
         "https://dns.google/resolve?name=news.apple.com&type=A"
       ],
       "priority": 45,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,news-events.apple.com",
+        "DOMAIN-SUFFIX,sports.apple.com",
+        "DOMAIN,news.apple.com",
+        "DOMAIN,prod-domep-news-apple.v.aaplimg.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
+          "roots": [
+            "news-assets.apple.com",
+            "news-client.apple.com",
+            "news-edge.apple.com",
+            "apple.news",
+            "sports.apple.com"
+          ],
+          "exact": [
+            "news-client-search.apple.com",
+            "news-events.apple.com",
+            "news.apple.com",
+            "prod-domep-news-apple.v.aaplimg.com"
+          ]
+        }
+      ]
     },
     {
       "id": "apple-intelligence-relays",
@@ -522,7 +1045,31 @@
       ],
       "priority": 46,
       "section": "apple",
-      "selector": "apple-intelligence"
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "aisirisearch"
+          ],
+          "select": [
+            {
+              "role": [
+                "private cloud compute",
+                "apple intelligence extensions"
+              ],
+              "roots": [
+                "apple.com"
+              ],
+              "exact": [
+                "apple-relay.cloudflare.com",
+                "apple-relay.fastly-edge.com",
+                "cp4.cloudflare.com"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "apple-siri-and-search",
@@ -560,9 +1107,144 @@
         "https://support.apple.com/en-us/101555",
         "https://beta.apple.com/"
       ],
-      "selector": "apple-update",
       "priority": 48,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "software",
+            "carrier",
+            "caching",
+            "beta"
+          ],
+          "select": [
+            {
+              "exact": [
+                "bpapi.apple.com",
+                "configuration.apple.com",
+                "cssubmissions.apple.com",
+                "fba.apple.com",
+                "gdmf-ados.apple.com",
+                "gdmf.apple.com",
+                "gg.apple.com",
+                "gs.apple.com",
+                "gsra.apple.com",
+                "ig.apple.com",
+                "itunes.com",
+                "lcdn-locator.apple.com",
+                "lcdn-registration.apple.com",
+                "mesu.apple.com",
+                "osrecovery.apple.com",
+                "serverstatus.apple.com",
+                "skl.apple.com",
+                "suconfig.apple.com",
+                "swdist.apple.com",
+                "swscan.apple.com",
+                "wkms-public.apple.com",
+                "xp-cdn.apple.com",
+                "xp.apple.com"
+              ]
+            },
+            {
+              "roots": [
+                "apple.com"
+              ],
+              "exclude": [
+                "itunes.apple.com",
+                "appldnld.apple.com",
+                "appldnld.apple.com.akadns.net",
+                "appldnld.apple.com.edgesuite.net",
+                "appldnld.apple.com.mwcname.com",
+                "appldnld.g.aaplimg.com",
+                "oscdn.apple.com",
+                "swcdn.apple.com",
+                "swdownload.apple.com",
+                "updates-http.cdn-apple.com",
+                "updates.cdn-apple.com"
+              ],
+              "role": [
+                "Software update catalog",
+                "Hosts software update catalogs",
+                "Software update catalog for additional components",
+                "Carrier bundle update discovery",
+                "Content caching locator service",
+                "Beta update enrollment",
+                "Server registration"
+              ]
+            }
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN,appldnld-cdn.apple.com.akadns.net",
+        "DOMAIN,appldnld-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,gdmf-cdn.apple.com.akadns.net",
+        "DOMAIN,gdmf-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,gdmf-lb.apple.com.akadns.net",
+        "DOMAIN,gdmf.apple.com.mwcname.com",
+        "DOMAIN,gdmf.g.aaplimg.com",
+        "DOMAIN,gg-cdn.apple.com.akadns.net",
+        "DOMAIN,gg-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,gg-lb.apple.com.akadns.net",
+        "DOMAIN,gg.apple.com.akadns.net",
+        "DOMAIN,gg.apple.com.mwcname.com",
+        "DOMAIN,gg.g.aaplimg.com",
+        "DOMAIN,gnf-mdn.apple.com",
+        "DOMAIN,gnf-mr.apple.com",
+        "DOMAIN,mesu-lb.apple.com.akadns.net",
+        "DOMAIN,mesu.apple.com.akadns.net",
+        "DOMAIN,mesu.apple.com.mwcname.com",
+        "DOMAIN,ns.itunes.apple.com",
+        "DOMAIN,ocsp-cdn.apple.com.akadns.net",
+        "DOMAIN,ocsp-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,ocsp.apple.com.akadns.net",
+        "DOMAIN,ocsp.apple.com.mwcname.com",
+        "DOMAIN,radarsubmissions-cdn.apple.com.akadns.net",
+        "DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,radarsubmissions-lb.apple.com.akadns.net",
+        "DOMAIN,radarsubmissions.apple.com",
+        "DOMAIN,radarsubmissions.apple.com.akadns.net",
+        "DOMAIN,radarsubmissions.apple.com.mwcname.com",
+        "DOMAIN,radarsubmissions.g.aaplimg.com",
+        "DOMAIN,swpost.apple.com",
+        "DOMAIN,swscan-cdn.apple.com.akadns.net",
+        "DOMAIN,swscan-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,swscan-lb.apple.com.akadns.net",
+        "DOMAIN,swscan.apple.com.akadns.net",
+        "DOMAIN,swscan.apple.com.mwcname.com",
+        "DOMAIN,swscan.g.aaplimg.com",
+        "DOMAIN,xp-cdn.apple.com.akadns.net",
+        "DOMAIN,xp-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,xp-lb.apple.com.akadns.net",
+        "DOMAIN,xp.apple.com.akadns.net",
+        "DOMAIN,xp.apple.com.mwcname.com",
+        "DOMAIN,xp.g.aaplimg.com",
+        "DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net",
+        "DOMAIN-SUFFIX,gdmf.apple.com",
+        "DOMAIN-SUFFIX,gdmf.apple.com.akadns.net",
+        "DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net",
+        "DOMAIN-SUFFIX,mesu-cdn.origin-apple.com.akadns.net",
+        "DOMAIN-SUFFIX,mesu.apple.com",
+        "DOMAIN-SUFFIX,mesu.g.aaplimg.com",
+        "DOMAIN-SUFFIX,ocsp-lb.apple.com.akadns.net",
+        "DOMAIN-SUFFIX,ocsp.g.aaplimg.com",
+        "DOMAIN-SUFFIX,configuration.apple.com",
+        "DOMAIN-SUFFIX,fcs-keys-pub-prod.cdn-apple.com",
+        "DOMAIN-SUFFIX,gdmf-ados.apple.com",
+        "DOMAIN-SUFFIX,gg.apple.com",
+        "DOMAIN-SUFFIX,gs.apple.com",
+        "DOMAIN-SUFFIX,gsra.apple.com",
+        "DOMAIN-SUFFIX,ig.apple.com",
+        "DOMAIN-SUFFIX,osrecovery.apple.com",
+        "DOMAIN-SUFFIX,skl.apple.com",
+        "DOMAIN-SUFFIX,swdist.apple.com",
+        "DOMAIN-SUFFIX,swscan.apple.com",
+        "DOMAIN-SUFFIX,wkms-public.apple.com",
+        "DOMAIN-SUFFIX,xp.apple.com",
+        "DOMAIN,beta.apple.com"
+      ]
     },
     {
       "id": "apple-certificate-validation",
@@ -574,9 +1256,37 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
         "https://support.apple.com/en-us/101555"
       ],
-      "selector": "apple-certificate",
       "priority": 49,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "certificate"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com"
+              ],
+              "role": [
+                "certificate validation",
+                "certificate validation in china"
+              ]
+            }
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN,certs-lb.apple.com.akadns.net",
+        "DOMAIN,crl-lb.apple.com.akadns.net",
+        "DOMAIN,valid.origin-apple.com.akadns.net",
+        "DOMAIN,crl3.digicert.com",
+        "DOMAIN,crl4.digicert.com",
+        "DOMAIN,ocsp.digicert.cn",
+        "DOMAIN,ocsp.digicert.com"
+      ]
     },
     {
       "id": "apple-developer-downloads",
@@ -586,10 +1296,20 @@
       "boundary": "开发下载与 App Store、OTA 和共享的 App 公证端点分开。",
       "sources": [
         "https://support.apple.com/en-us/101555",
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
+        "https://developer.apple.com/account/",
+        "https://developer.apple.com/download/"
       ],
       "priority": 50,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,adcdownload.apple.com",
+        "DOMAIN,adcdownload.apple.com.akadns.net",
+        "DOMAIN,devimages-cdn.apple.com",
+        "DOMAIN,download.developer.apple.com",
+        "DOMAIN,playground-assets-cdn.apple.com",
+        "DOMAIN,playground-cdn.apple.com"
+      ]
     },
     {
       "id": "apple-system-connectivity",
@@ -603,7 +1323,56 @@
         "https://support.apple.com/en-us/101555"
       ],
       "priority": 51,
-      "section": "apple"
+      "section": "apple",
+      "include": [
+        "DOMAIN,doh.dns.apple.com",
+        "DOMAIN,apple-native-relay.apple.com",
+        "DOMAIN,konut-cdn.apple.com",
+        "DOMAIN-SUFFIX,gnip.apple.com",
+        "DOMAIN-SUFFIX,time.apple.com",
+        "DOMAIN,wps.apple.com",
+        "DOMAIN-SUFFIX,sandbox.apple.com",
+        "DOMAIN-SUFFIX,apple-mapkit.com",
+        "DOMAIN-SUFFIX,business.apple.com",
+        "DOMAIN-SUFFIX,school.apple.com",
+        "DOMAIN,www.apple.com.cn",
+        "DOMAIN-SUFFIX,cn.apple.com",
+        "DOMAIN,albert.apple.com",
+        "DOMAIN,static.ips.apple.com",
+        "DOMAIN,sq-device.apple.com",
+        "DOMAIN,tbsc.apple.com",
+        "DOMAIN,time-ios.apple.com",
+        "DOMAIN,time-macos.apple.com",
+        "DOMAIN,deviceenrollment.apple.com",
+        "DOMAIN,deviceservices-external.apple.com",
+        "DOMAIN,iprofiles.apple.com",
+        "DOMAIN,mdmenrollment.apple.com",
+        "DOMAIN,axm-servicediscovery.apple.com",
+        "DOMAIN,api.ent.apple.com",
+        "DOMAIN,api.edu.apple.com",
+        "DOMAIN,upload.appleschoolcontent.com",
+        "DOMAIN,api-business.apple.com",
+        "DOMAIN,api-school.apple.com",
+        "DOMAIN,axm-adm-enroll.apple.com",
+        "DOMAIN,axm-adm-mdm.apple.com",
+        "DOMAIN,axm-adm-scep.apple.com",
+        "DOMAIN,axm-app.apple.com",
+        "DOMAIN,icons.axm-usercontent-apple.com",
+        "DOMAIN,audiocontentdownload.apple.com",
+        "DOMAIN,playgrounds-assets-cdn.apple.com",
+        "DOMAIN,playgrounds-cdn.apple.com",
+        "DOMAIN,diagassets.apple.com",
+        "DOMAIN,fpservices-prod1.apple.com",
+        "DOMAIN,vpp.itunes.apple.com",
+        "DOMAIN,sylvan.apple.com",
+        "DOMAIN,iphonesubmissions-cdn.apple.com.akadns.net",
+        "DOMAIN,iphonesubmissions-cdn.origin-apple.com.akadns.net",
+        "DOMAIN,iphonesubmissions-lb.apple.com.akadns.net",
+        "DOMAIN,iphonesubmissions.apple.com",
+        "DOMAIN,iphonesubmissions.apple.com.akadns.net",
+        "DOMAIN,iphonesubmissions.apple.com.mwcname.com",
+        "DOMAIN,iphonesubmissions.g.aaplimg.com"
+      ]
     },
     {
       "id": "apple-shared-store-assets",
@@ -617,7 +1386,11 @@
         "https://royli.dev/blog/2019/better-proxy-rules-for-apple-services",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
-      "policy-hint": "apple-shared-assets"
+      "policy-hint": "apple-shared-assets",
+      "include": [
+        "DOMAIN-SUFFIX,mzstatic.com",
+        "DOMAIN,store.storeimages.cdn-apple.com"
+      ]
     },
     {
       "id": "apple-icloud-content-domains",
@@ -630,7 +1403,26 @@
         "https://support.apple.com/en-us/101555"
       ],
       "policy-hint": "apple-icloud-content",
-      "selector": "apple-cloud-content"
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "icloud"
+          ],
+          "select": [
+            {
+              "wildcards": true,
+              "exact": [
+                "icloud-content.com"
+              ],
+              "role": [
+                "icloud services"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "apple-messaging-identity",
@@ -643,7 +1435,11 @@
         "https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list",
         "https://support.apple.com/guide/security/sec70e68c949/web"
       ],
-      "policy-hint": "apple-messaging"
+      "policy-hint": "apple-messaging",
+      "include": [
+        "DOMAIN-SUFFIX,ess.apple.com",
+        "DOMAIN,identity.apple.com"
+      ]
     },
     {
       "id": "apple-update-downloads",
@@ -651,14 +1447,65 @@
       "section": "apple",
       "mode": "compiled",
       "description": "系统更新包与恢复内容下载",
-      "boundary": "系统恢复、更新包和运营商设置包的下载主机及其已核对的别名。目录、激活和证书走各自的组。",
+      "boundary": "收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断。",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list",
-        "https://support.apple.com/en-us/101555"
+        "https://support.apple.com/en-us/101555",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
       "policy-hint": "apple-update-download",
-      "selector": "apple-update-downloads"
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "software",
+            "carrier",
+            "caching",
+            "beta"
+          ],
+          "select": [
+            {
+              "exact": [
+                "appldnld.apple.com",
+                "appldnld.apple.com.akadns.net",
+                "appldnld.apple.com.edgesuite.net",
+                "appldnld.apple.com.mwcname.com",
+                "appldnld.g.aaplimg.com",
+                "oscdn.apple.com",
+                "swcdn.apple.com",
+                "swdownload.apple.com",
+                "updates-http.cdn-apple.com",
+                "updates.cdn-apple.com"
+              ]
+            },
+            {
+              "roots": [
+                "apple.com",
+                "cdn-apple.com"
+              ],
+              "role": [
+                "software update downloads"
+              ]
+            }
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN,appldnld.apple.com.mwcname.com",
+        "DOMAIN-SUFFIX,appldnld.apple.com",
+        "DOMAIN-SUFFIX,appldnld.apple.com.akadns.net",
+        "DOMAIN-SUFFIX,appldnld.g.aaplimg.com",
+        "DOMAIN-SUFFIX,oscdn.apple.com",
+        "DOMAIN-SUFFIX,swcdn.apple.com",
+        "DOMAIN-SUFFIX,swdownload.apple.com",
+        "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
+        "DOMAIN-SUFFIX,updates.cdn-apple.com",
+        "DOMAIN,swcdn.g.aaplimg.com",
+        "DOMAIN,updates-http.cdn-apple.com.akadns.net",
+        "DOMAIN,updates-http.g.aaplimg.com"
+      ]
     },
     {
       "id": "apple-music-audio-delivery",
@@ -671,7 +1518,19 @@
         "https://rules.xkww3n.cyou/classical/apple-music.txt",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr"
       ],
-      "policy-hint": "apple-music-delivery"
+      "policy-hint": "apple-music-delivery",
+      "projection": [
+        {
+          "source": "https://rules.xkww3n.cyou/classical/apple-music.txt",
+          "exact": [
+            "aod.itunes.apple.com",
+            "aod-ssl.itunes.apple.com",
+            "audio.itunes.apple.com",
+            "audio-ssl.itunes.apple.com",
+            "streamingaudio.itunes.apple.com"
+          ]
+        }
+      ]
     },
     {
       "id": "apple-tv-video-delivery",
@@ -685,7 +1544,16 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
         "https://support.apple.com/zh-cn/118205"
       ],
-      "policy-hint": "apple-overseas-video"
+      "policy-hint": "apple-overseas-video",
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
+          "exact": [
+            "hls-amt.itunes.apple.com",
+            "hls.itunes.apple.com"
+          ]
+        }
+      ]
     },
     {
       "id": "apple-icloud-mainland",
@@ -698,9 +1566,33 @@
         "https://support.apple.com/zh-cn/111754",
         "https://dns.google/resolve?name=icloud-content.com.cn&type=SOA"
       ],
-      "selector": "apple-cloud-mainland",
       "priority": 58,
-      "section": "apple"
+      "section": "apple",
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "icloud"
+          ],
+          "select": [
+            {
+              "wildcards": true,
+              "exact": [
+                "icloud.com.cn",
+                "apzones.com",
+                "icloud-content.com.cn"
+              ],
+              "role": [
+                "icloud services in china"
+              ]
+            }
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN-SUFFIX,icloud-content.com.cn"
+      ]
     },
     {
       "id": "apple-schoolwork-handouts",
@@ -713,7 +1605,25 @@
         "https://support.apple.com/en-us/101555"
       ],
       "policy-hint": "apple-schoolwork",
-      "selector": "apple-schoolwork-handouts"
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "classschool"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com"
+              ],
+              "role": [
+                "schoolwork handout service"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "ai-overseas-all",
@@ -721,35 +1631,6 @@
       "policy-hint": "global",
       "description": "Claude、ChatGPT、Gemini、Grok 和其他海外 AI 的汇总规则。",
       "boundary": "与细分二选一；Apple Intelligence 保持独立，国产国内版和国际版不变。不合并共享云。",
-      "sources": [
-        "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list",
-        "https://code.claude.com/docs/en/network-config#network-access-requirements",
-        "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
-        "https://rules.xkww3n.cyou/classical/google-deepmind.txt",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cursor.list",
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list",
-        "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/windsurf.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/devin.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/perplexity.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/poe.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openrouter.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/mistral-ai.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/groq.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cohere.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/huggingface.list",
-        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/midjourney.list",
-        "https://muse.ai/",
-        "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
-        "https://elevenlabs.io/docs/eleven-api/resources/mcp-server",
-        "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/",
-        "https://grokipedia.com/",
-        "https://support.microsoft.com/en-us/microsoft-365-copilot/what-is-microsoft-copilot-app",
-        "https://learn.microsoft.com/en-us/copilot/plan/copilot-app-overview",
-        "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/"
-      ],
       "members": [
         "claude-connections",
         "chatgpt-connections",
@@ -771,7 +1652,8 @@
         "elevenlabs-voice-and-api",
         "meta-ai-assistant",
         "grokipedia-encyclopedia",
-        "microsoft-copilot-connections"
+        "microsoft-copilot-connections",
+        "ai-com-agents"
       ],
       "priority": 60,
       "section": "ai"
@@ -796,18 +1678,14 @@
       "flags": [
         "no-resolve"
       ],
-      "literal_ips": [
-        "IP-CIDR,160.79.104.0/23",
-        "IP-CIDR,153.61.224.0/22",
-        "IP-CIDR6,2607:6bc0::/48"
-      ],
       "license": "MIT",
       "notice": "erwanjun--surge-claude-rules.txt",
       "priority": 61,
       "section": "ai",
       "feed-sources": [
         "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list"
-      ]
+      ],
+      "ip-match": "target-ip"
     },
     {
       "id": "chatgpt-connections",
@@ -820,7 +1698,35 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr"
       ],
       "priority": 62,
-      "section": "ai"
+      "section": "ai",
+      "include": [
+        "DOMAIN,openaiassets.blob.core.windows.net"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
+          "roots": [
+            "sora.com",
+            "oaistatsig.com",
+            "chatgpt.com",
+            "chatgpt.livekit.cloud",
+            "oaistatic.com",
+            "oaiusercontent.com",
+            "openai.com",
+            "openaiapi-site.azureedge.net",
+            "openaicom.imgix.net"
+          ],
+          "exact": [
+            "openaiassets.blob.core.windows.net",
+            "cdn.openaimerge.com",
+            "chat.openai.com.cdn.cloudflare.net",
+            "openai-api.arkoselabs.com",
+            "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
+            "openaicomproductionae4b.blob.core.windows.net",
+            "production-openaicom-storage.azureedge.net"
+          ]
+        }
+      ]
     },
     {
       "id": "gemini-connections",
@@ -830,10 +1736,140 @@
       "boundary": "通用 Google 登录、下载、存储与 API 不在此组。",
       "sources": [
         "https://rules.xkww3n.cyou/classical/google-deepmind.txt",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr"
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
+        "https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto"
       ],
       "priority": 63,
-      "section": "ai"
+      "section": "ai",
+      "include": [],
+      "projection": [
+        {
+          "source": "https://rules.xkww3n.cyou/classical/google-deepmind.txt",
+          "roots": [
+            "deepmind.com",
+            "aistudio.google.com",
+            "bard.google.com",
+            "flow.google.com",
+            "gemini.google.com",
+            "jules.google.com",
+            "labs.google.com",
+            "makersuite.google.com",
+            "notebook.google.com",
+            "notebooklm.google.com",
+            "opal.google.com",
+            "aicode.googleapis.com",
+            "aida.googleapis.com",
+            "aisandbox-pa.googleapis.com",
+            "geller-pa.googleapis.com",
+            "generativelanguage.googleapis.com",
+            "labstailwind.pa.googleapis.com",
+            "proactivebackend-pa.googleapis.com",
+            "robinfrontend-pa.googleapis.com",
+            "gemini.gstatic.com",
+            "stitch.withgoogle.com",
+            "antigravity-unleash.goog",
+            "antigravity.google",
+            "deepmind.google",
+            "flow.google",
+            "gemini.google",
+            "generativeai.google",
+            "jules.google",
+            "labs.google",
+            "notebook.google",
+            "notebooklm.google",
+            "opal.google",
+            "ai.studio"
+          ],
+          "exact": [
+            "appsgenaiserver-pa.clients.google.com",
+            "geminiweb-pa.clients.google.com",
+            "alkalicore-pa.clients6.google.com",
+            "alkalimakersuite-pa.clients6.google.com",
+            "appsgenaiserver-pa.clients6.google.com",
+            "geminiweb-pa.clients6.google.com",
+            "webchannel-alkalimakersuite-pa.clients6.google.com",
+            "antigravity.googleapis.com",
+            "antigravity-pa.googleapis.com",
+            "appsgenaiserver-pa.googleapis.com",
+            "cloudaicompanion.googleapis.com",
+            "cloudcode-pa.googleapis.com",
+            "daily-cloudcode-pa.googleapis.com",
+            "notebooklm.googleapis.com",
+            "notebooklm-pa.googleapis.com",
+            "ai.google.dev",
+            "webchannel-robinfrontend-pa.googleapis.com",
+            "geminiweb-pa.googleapis.com"
+          ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
+          "roots": [
+            "deepmind.com",
+            "aistudio.google.com",
+            "bard.google.com",
+            "flow.google.com",
+            "gemini.google.com",
+            "jules.google.com",
+            "labs.google.com",
+            "makersuite.google.com",
+            "notebook.google.com",
+            "notebooklm.google.com",
+            "opal.google.com",
+            "aicode.googleapis.com",
+            "aida.googleapis.com",
+            "aisandbox-pa.googleapis.com",
+            "geller-pa.googleapis.com",
+            "generativelanguage.googleapis.com",
+            "labstailwind.pa.googleapis.com",
+            "proactivebackend-pa.googleapis.com",
+            "robinfrontend-pa.googleapis.com",
+            "gemini.gstatic.com",
+            "stitch.withgoogle.com",
+            "antigravity-unleash.goog",
+            "antigravity.google",
+            "deepmind.google",
+            "flow.google",
+            "gemini.google",
+            "generativeai.google",
+            "jules.google",
+            "labs.google",
+            "notebook.google",
+            "notebooklm.google",
+            "opal.google",
+            "ai.studio"
+          ],
+          "exact": [
+            "appsgenaiserver-pa.clients.google.com",
+            "geminiweb-pa.clients.google.com",
+            "alkalicore-pa.clients6.google.com",
+            "alkalimakersuite-pa.clients6.google.com",
+            "appsgenaiserver-pa.clients6.google.com",
+            "geminiweb-pa.clients6.google.com",
+            "webchannel-alkalimakersuite-pa.clients6.google.com",
+            "antigravity.googleapis.com",
+            "antigravity-pa.googleapis.com",
+            "appsgenaiserver-pa.googleapis.com",
+            "cloudaicompanion.googleapis.com",
+            "cloudcode-pa.googleapis.com",
+            "daily-cloudcode-pa.googleapis.com",
+            "notebooklm.googleapis.com",
+            "notebooklm-pa.googleapis.com",
+            "ai.google.dev",
+            "webchannel-robinfrontend-pa.googleapis.com",
+            "geminiweb-pa.googleapis.com"
+          ]
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto",
+          "format": "service-default-host",
+          "service": "GenerativeService",
+          "roots": [
+            "googleapis.com"
+          ]
+        }
+      ]
     },
     {
       "id": "grok-connections",
@@ -1100,7 +2136,10 @@
         "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
       ],
       "priority": 77,
-      "section": "ai"
+      "section": "ai",
+      "include": [
+        "DOMAIN-SUFFIX,muse.ai"
+      ]
     },
     {
       "id": "elevenlabs-voice-and-api",
@@ -1112,7 +2151,10 @@
         "https://elevenlabs.io/docs/eleven-api/resources/mcp-server"
       ],
       "priority": 78,
-      "section": "ai"
+      "section": "ai",
+      "include": [
+        "DOMAIN-SUFFIX,elevenlabs.io"
+      ]
     },
     {
       "id": "meta-ai-assistant",
@@ -1124,7 +2166,10 @@
       "sources": [
         "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/"
       ],
-      "policy-hint": "ai-overseas"
+      "policy-hint": "ai-overseas",
+      "include": [
+        "DOMAIN-SUFFIX,meta.ai"
+      ]
     },
     {
       "id": "grokipedia-encyclopedia",
@@ -1137,7 +2182,10 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
         "https://grokipedia.com/"
       ],
-      "policy-hint": "ai-overseas"
+      "policy-hint": "ai-overseas",
+      "include": [
+        "DOMAIN-SUFFIX,grokipedia.com"
+      ]
     },
     {
       "id": "microsoft-copilot-connections",
@@ -1151,13 +2199,40 @@
         "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/"
       ],
       "priority": 81,
-      "section": "ai"
+      "section": "ai",
+      "include": [
+        "DOMAIN,copilot.com",
+        "DOMAIN,www.copilot.com",
+        "DOMAIN,copilot.microsoft.com",
+        "DOMAIN,copilot.cloud.microsoft"
+      ]
+    },
+    {
+      "id": "ai-com-agents",
+      "mode": "compiled",
+      "priority": 82,
+      "section": "ai",
+      "policy-hint": "global",
+      "description": "ai.com 的个人 AI 代理",
+      "boundary": "ai.com 是独立服务，不归 ChatGPT 或 Claude。海外 AI 统一出口时选 060 即可。",
+      "sources": [
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
+        "https://ai.com/start"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
+          "roots": [
+            "ai.com"
+          ]
+        }
+      ]
     },
     {
       "id": "ai-cn",
       "mode": "compiled",
       "policy-hint": "ai-cn",
-      "description": "国产 AI 国内入口：DeepSeek、百炼、火山方舟与扣子、Kimi、智谱、MiniMax、千帆、混元、讯飞、硅基流动等",
+      "description": "国产 AI 国内入口：DeepSeek、百炼、火山方舟与扣子、Kimi、智谱、MiniMax、千帆、混元、讯飞、硅基流动与哩布哩布等",
       "boundary": "按官方服务端点区分，DeepSeek 官网和 API 未见独立国际域，保留原国内策略；不含整个厂商云。",
       "sources": [
         "https://api-docs.deepseek.com/",
@@ -1175,11 +2250,84 @@
         "https://yuanbao.tencent.com/",
         "https://xinghuo.xfyun.cn/",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr",
-        "https://www.alibabacloud.com/help/en/model-studio/base-url"
+        "https://www.alibabacloud.com/help/en/model-studio/base-url",
+        "https://www.liblib.art/document/article_member",
+        "https://www.liblib.art/apis/workflow"
       ],
-      "selector": "ai-cn",
       "priority": 84,
-      "section": "ai"
+      "section": "ai",
+      "extract": [
+        {
+          "source": "https://www.alibabacloud.com/help/en/model-studio/base-url",
+          "format": "https-hosts",
+          "exact": [
+            "coding.dashscope.aliyuncs.com",
+            "dashscope.aliyuncs.com"
+          ],
+          "workspace-roots": [
+            "cn-beijing.maas.aliyuncs.com",
+            "cn-chengdu.maas.aliyuncs.com",
+            "cn-guangzhou.maas.aliyuncs.com",
+            "cn-hangzhou.maas.aliyuncs.com",
+            "cn-heyuan.maas.aliyuncs.com",
+            "cn-huhehaote.maas.aliyuncs.com",
+            "cn-nanjing.maas.aliyuncs.com",
+            "cn-qingdao.maas.aliyuncs.com",
+            "cn-shanghai.maas.aliyuncs.com",
+            "cn-shenzhen.maas.aliyuncs.com",
+            "cn-wulanchabu.maas.aliyuncs.com",
+            "cn-zhangjiakou.maas.aliyuncs.com"
+          ]
+        },
+        {
+          "source": "https://cloud.tencent.com/document/api/1823/132282",
+          "format": "named-hosts",
+          "exact": [
+            "tokenhub.ap-beijing.tencentcloudapi.com",
+            "tokenhub.ap-chengdu.tencentcloudapi.com",
+            "tokenhub.ap-chongqing.tencentcloudapi.com",
+            "tokenhub.ap-guangzhou.tencentcloudapi.com",
+            "tokenhub.ap-nanjing.tencentcloudapi.com",
+            "tokenhub.ap-shanghai.tencentcloudapi.com",
+            "tokenhub.ap-shanghai-fsi.tencentcloudapi.com",
+            "tokenhub.ap-shenzhen-fsi.tencentcloudapi.com",
+            "tokenhub.tencentcloudapi.com"
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN-SUFFIX,deepseek.com",
+        "DOMAIN-SUFFIX,deepseeksvc.com",
+        "DOMAIN-SUFFIX,moonshot.cn",
+        "DOMAIN-SUFFIX,kimichat.com",
+        "DOMAIN-SUFFIX,zhipuai.cn",
+        "DOMAIN-SUFFIX,chatglm.cn",
+        "DOMAIN-SUFFIX,bigmodel.cn",
+        "DOMAIN-SUFFIX,doubao.com",
+        "DOMAIN-SUFFIX,coze.cn",
+        "DOMAIN-SUFFIX,minimaxi.com",
+        "DOMAIN-SUFFIX,hailuoai.com",
+        "DOMAIN-SUFFIX,baichuan-ai.com",
+        "DOMAIN-SUFFIX,01.ai",
+        "DOMAIN-SUFFIX,lingyiwanwu.com",
+        "DOMAIN-SUFFIX,stepfun.com",
+        "DOMAIN-SUFFIX,sensenova.cn",
+        "DOMAIN-SUFFIX,sparkchain.cn",
+        "DOMAIN,coding.dashscope.aliyuncs.com",
+        "DOMAIN,ark.cn-beijing.volces.com",
+        "DOMAIN,ark.volcengine.com",
+        "DOMAIN,qianfan.baidubce.com",
+        "DOMAIN,api.hunyuan.cloud.tencent.com",
+        "DOMAIN,spark-api-open.xf-yun.com",
+        "DOMAIN,api.siliconflow.cn",
+        "DOMAIN,cloud.siliconflow.cn",
+        "DOMAIN,platform.kimi.com",
+        "DOMAIN,www.qianwen.com",
+        "DOMAIN,yuanbao.tencent.com",
+        "DOMAIN,xinghuo.xfyun.cn",
+        "DOMAIN-SUFFIX,liblib.art",
+        "DOMAIN,openapi.liblibai.cloud"
+      ]
     },
     {
       "id": "ai-cn-international",
@@ -1198,9 +2346,63 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list",
         "https://www.alibabacloud.com/help/en/model-studio/base-url"
       ],
-      "selector": "ai-cn-international",
       "priority": 85,
-      "section": "ai"
+      "section": "ai",
+      "extract": [
+        {
+          "source": "https://www.alibabacloud.com/help/en/model-studio/base-url",
+          "format": "https-hosts",
+          "exact": [
+            "cn-hongkong.dashscope.aliyuncs.com",
+            "coding-intl.dashscope.aliyuncs.com",
+            "dashscope-intl.aliyuncs.com",
+            "dashscope-us.aliyuncs.com"
+          ],
+          "workspace-roots": [
+            "ap-northeast-1.maas.aliyuncs.com",
+            "ap-southeast-1.maas.aliyuncs.com",
+            "cn-hongkong.maas.aliyuncs.com",
+            "eu-central-1.maas.aliyuncs.com",
+            "us-east-1.maas.aliyuncs.com",
+            "us-west-1.maas.aliyuncs.com"
+          ]
+        },
+        {
+          "source": "https://cloud.tencent.com/document/api/1823/132282",
+          "format": "named-hosts",
+          "exact": [
+            "tokenhub.ap-bangkok.tencentcloudapi.com",
+            "tokenhub.ap-hongkong.tencentcloudapi.com",
+            "tokenhub.ap-jakarta.tencentcloudapi.com",
+            "tokenhub.ap-seoul.tencentcloudapi.com",
+            "tokenhub.ap-singapore.tencentcloudapi.com",
+            "tokenhub.ap-tokyo.tencentcloudapi.com",
+            "tokenhub.eu-frankfurt.tencentcloudapi.com",
+            "tokenhub.na-ashburn.tencentcloudapi.com",
+            "tokenhub.na-siliconvalley.tencentcloudapi.com",
+            "tokenhub.sa-saopaulo.tencentcloudapi.com"
+          ]
+        }
+      ],
+      "include": [
+        "DOMAIN-SUFFIX,hailuoai.video",
+        "DOMAIN-SUFFIX,kimi.ai",
+        "DOMAIN-SUFFIX,minimax.io",
+        "DOMAIN-SUFFIX,moonshot.ai",
+        "DOMAIN-SUFFIX,qwen.ai",
+        "DOMAIN-SUFFIX,z.ai",
+        "DOMAIN,ark.ap-southeast.bytepluses.com",
+        "DOMAIN,chat.qwenlm.ai",
+        "DOMAIN-SUFFIX,coze.com",
+        "DOMAIN-SUFFIX,marscode.com",
+        "DOMAIN-SUFFIX,trae.ai",
+        "DOMAIN-SUFFIX,cici.com",
+        "DOMAIN-SUFFIX,ciciai.com",
+        "DOMAIN-SUFFIX,ciciaicdn.com",
+        "DOMAIN-SUFFIX,dola.com",
+        "DOMAIN,api.siliconflow.com",
+        "DOMAIN,cloud.siliconflow.com"
+      ]
     },
     {
       "id": "telegram-messaging",
@@ -1231,7 +2433,8 @@
       ],
       "cidr-source": "https://core.telegram.org/resources/cidr.txt",
       "priority": 91,
-      "section": "social"
+      "section": "social",
+      "ip-match": "target-ip"
     },
     {
       "id": "discord-messaging-and-voice",
@@ -1371,20 +2574,6 @@
       "policy-hint": "microsoft-services",
       "description": "Microsoft 账户、办公、会议、网盘、Xbox 与更新合集",
       "boundary": "替换本章成员；Microsoft Copilot、GitHub 和 GitHub Copilot 仍独立。不把多租户 Azure 或 Akamai 整段归入。",
-      "sources": [
-        "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
-        "https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com",
-        "https://support.microsoft.com/en-us/outlook/getstarted/what-version-of-outlook-do-i-have",
-        "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints",
-        "https://dns.google/resolve?name=download.windowsupdate.com&type=A",
-        "https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/s2s-auth-calls/service-authentication/live-website-authentication",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/OneDrive.lsr",
-        "https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool",
-        "https://dns.google/resolve?name=officecdn.microsoft.com&type=A",
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Microsoft.list",
-        "https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains",
-        "https://techdocs.akamai.com/edge-hostnames/docs/edge-hn-terminology"
-      ],
       "members": [
         "microsoft-account-authentication",
         "microsoft-outlook-mail",
@@ -1411,7 +2600,45 @@
         "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges"
       ],
       "priority": 103,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN,account.live.com",
+        "DOMAIN,login.live.com",
+        "DOMAIN-SUFFIX,auth.microsoft.com",
+        "DOMAIN-SUFFIX,msauth.net",
+        "DOMAIN-SUFFIX,msftauth.net",
+        "DOMAIN-SUFFIX,msftidentity.com"
+      ],
+      "extract": [
+        {
+          "source": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
+          "format": "endpoint-sets",
+          "sections": [
+            "microsoft-365-common-and-office-online"
+          ],
+          "sets": [
+            56
+          ],
+          "roots": [
+            "auth.microsoft.com",
+            "msftidentity.com"
+          ],
+          "exact": [
+            "device.login.microsoftonline.com",
+            "ccs.login.microsoftonline.com",
+            "login.microsoft.com",
+            "login.windows.net",
+            "login.microsoftonline.com",
+            "login-us.microsoftonline.com",
+            "logincert.microsoftonline.com",
+            "login.microsoftonline-p.com",
+            "loginex.microsoftonline.com",
+            "api.passwordreset.microsoftonline.com",
+            "autologon.microsoftazuread-sso.com",
+            "passwordreset.microsoftonline.com"
+          ]
+        }
+      ]
     },
     {
       "id": "microsoft-outlook-mail",
@@ -1425,7 +2652,39 @@
         "https://support.microsoft.com/en-us/outlook/getstarted/what-version-of-outlook-do-i-have"
       ],
       "priority": 104,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN,outlook.com",
+        "DOMAIN,outlook.live.com",
+        "DOMAIN,smtp-mail.outlook.com",
+        "DOMAIN-SUFFIX,acompli.net",
+        "DOMAIN-SUFFIX,outlookmobile.com"
+      ],
+      "extract": [
+        {
+          "source": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
+          "format": "endpoint-sets",
+          "sections": [
+            "exchange-online"
+          ],
+          "sets": [
+            1,
+            2,
+            9,
+            10
+          ],
+          "roots": [
+            "protection.outlook.com",
+            "mx.microsoft"
+          ],
+          "exact": [
+            "outlook.cloud.microsoft",
+            "outlook.office.com",
+            "outlook.office365.com",
+            "smtp.office365.com"
+          ]
+        }
+      ]
     },
     {
       "id": "microsoft-teams-meetings",
@@ -1438,7 +2697,30 @@
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints"
       ],
       "priority": 105,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN-SUFFIX,teams.microsoft.com",
+        "DOMAIN-SUFFIX,teams.cloud.microsoft",
+        "DOMAIN,teams.live.com",
+        "DOMAIN,statics.teams.cdn.live.net"
+      ],
+      "extract": [
+        {
+          "source": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
+          "format": "endpoint-sets",
+          "sections": [
+            "microsoft-teams"
+          ],
+          "sets": [
+            12
+          ],
+          "roots": [
+            "teams.microsoft.com",
+            "teams.cloud.microsoft"
+          ],
+          "exact": []
+        }
+      ]
     },
     {
       "id": "microsoft-windows-update-services",
@@ -1450,7 +2732,12 @@
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints"
       ],
       "priority": 106,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN-SUFFIX,update.microsoft.com",
+        "DOMAIN-SUFFIX,prod.do.dsp.mp.microsoft.com",
+        "DOMAIN,tsfe.trafficshaping.dsp.mp.microsoft.com"
+      ]
     },
     {
       "id": "microsoft-update-and-store-downloads",
@@ -1463,7 +2750,14 @@
         "https://dns.google/resolve?name=download.windowsupdate.com&type=A"
       ],
       "priority": 107,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com",
+        "DOMAIN,download.windowsupdate.com",
+        "DOMAIN,download.windowsupdate.com.delivery.microsoft.com",
+        "DOMAIN,wu-f-net.trafficmanager.net",
+        "DOMAIN,definitionupdates.microsoft.com"
+      ]
     },
     {
       "id": "microsoft-xbox-services",
@@ -1476,7 +2770,13 @@
         "https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/s2s-auth-calls/service-authentication/live-website-authentication"
       ],
       "priority": 108,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN,user.auth.xboxlive.com",
+        "DOMAIN,xsts.auth.xboxlive.com",
+        "DOMAIN,dlassets-ssl.xboxlive.com",
+        "DOMAIN,da.xboxservices.com"
+      ]
     },
     {
       "id": "microsoft-store-services",
@@ -1488,7 +2788,12 @@
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints"
       ],
       "priority": 109,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN,storeedgefd.dsx.mp.microsoft.com",
+        "DOMAIN,livetileedge.dsx.mp.microsoft.com",
+        "DOMAIN,displaycatalog.mp.microsoft.com"
+      ]
     },
     {
       "id": "microsoft-files-and-sharepoint",
@@ -1537,7 +2842,12 @@
         "https://dns.google/resolve?name=officecdn.microsoft.com&type=A"
       ],
       "priority": 114,
-      "section": "microsoft"
+      "section": "microsoft",
+      "include": [
+        "DOMAIN,officecdn.microsoft.com",
+        "DOMAIN,officecdn.microsoft.com.delivery.microsoft.com",
+        "DOMAIN,office-f-net.trafficmanager.net"
+      ]
     },
     {
       "id": "microsoft-connectivity",
@@ -1582,6 +2892,10 @@
         "DOMAIN-SUFFIX,edgesuite.net",
         "DOMAIN-SUFFIX,trafficmanager.net",
         "DOMAIN-SUFFIX,msftidentity.com"
+      ],
+      "exclude-tenant-roots": [
+        "azurewebsites.net",
+        "cloudapp.net"
       ]
     },
     {
@@ -1632,17 +2946,6 @@
       "policy-hint": "media",
       "description": "海外视频、音乐、短视频和直播专项的合集",
       "boundary": "与 131–139 二选一。国内流媒体和 181 其他海外媒体的兜底不包含在本组。",
-      "sources": [
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list",
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list",
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AmazonPrimeVideo/AmazonPrimeVideo.list",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr",
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Bahamut.list"
-      ],
       "members": [
         "youtube-video-and-cdn",
         "netflix-video-and-delivery",
@@ -1989,9 +3292,14 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Steam 国际商店、社区、联机和下载",
-      "boundary": "国内下载镜像另有 151；不含第三方游戏分销商和与 Steam 共享的整个网段。",
+      "boundary": "国内下载镜像由 151 处理。社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段。",
       "sources": [
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr"
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr",
+        "https://store.steampowered.com/"
+      ],
+      "include": [
+        "DOMAIN,steamcommunity-a.akamaihd.net",
+        "DOMAIN,steambroadcast.akamaized.net"
       ],
       "projection": [
         {
@@ -2046,19 +3354,6 @@
       "policy-hint": "global",
       "description": "Google 账户、邮箱、办公、Meet、Play、下载和通用服务合集",
       "boundary": "替换本章成员，共用一个出口；更早的 Gemini、YouTube 等专项照常生效。需要节省下载配额时选细分。",
-      "sources": [
-        "https://developers.google.com/identity/protocols/oauth2/web-server",
-        "https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings",
-        "https://support.google.com/work/android/answer/10513641",
-        "https://www.google.com/account/about/",
-        "https://developers.google.com/workspace/gmail/api/reference/rest",
-        "https://developers.google.com/workspace/gmail/imap/imap-smtp",
-        "https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google",
-        "https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GoogleDrive.lsr",
-        "https://support.google.com/chrome/a/answer/6334001",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr"
-      ],
       "members": [
         "google-account-authentication",
         "google-gmail-mail",
@@ -2089,7 +3384,14 @@
         "https://www.google.com/account/about/"
       ],
       "priority": 161,
-      "section": "google"
+      "section": "google",
+      "include": [
+        "DOMAIN,accounts.google.com",
+        "DOMAIN,oauth2.googleapis.com",
+        "DOMAIN,accounts.google.com.au",
+        "DOMAIN,accounts.google.co.uk",
+        "DOMAIN,myaccount.google.com"
+      ]
     },
     {
       "id": "google-gmail-mail",
@@ -2103,7 +3405,15 @@
         "https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google"
       ],
       "priority": 162,
-      "section": "google"
+      "section": "google",
+      "include": [
+        "DOMAIN,mail.google.com",
+        "DOMAIN,gmail.googleapis.com",
+        "DOMAIN,imap.gmail.com",
+        "DOMAIN,smtp.gmail.com",
+        "DOMAIN,pop.gmail.com",
+        "DOMAIN,smtp-relay.gmail.com"
+      ]
     },
     {
       "id": "google-meet-meetings",
@@ -2115,7 +3425,11 @@
         "https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams"
       ],
       "priority": 163,
-      "section": "google"
+      "section": "google",
+      "include": [
+        "DOMAIN-SUFFIX,meet.google.com",
+        "DOMAIN,meetings.googleapis.com"
+      ]
     },
     {
       "id": "google-drive-and-documents",
@@ -2158,7 +3472,11 @@
         "https://support.google.com/work/android/answer/10513641"
       ],
       "priority": 165,
-      "section": "google"
+      "section": "google",
+      "include": [
+        "DOMAIN,play.google.com",
+        "DOMAIN,android.apis.google.com"
+      ]
     },
     {
       "id": "google-software-downloads",
@@ -2171,7 +3489,12 @@
         "https://support.google.com/chrome/a/answer/6334001"
       ],
       "priority": 166,
-      "section": "google"
+      "section": "google",
+      "include": [
+        "DOMAIN,dl.google.com",
+        "DOMAIN,dl-ssl.google.com",
+        "DOMAIN,edgedl.me.gvt1.com"
+      ]
     },
     {
       "id": "google-platform-services",
@@ -2534,11 +3857,32 @@
       "section": "platforms"
     },
     {
+      "id": "other-overseas-media",
+      "mode": "compiled",
+      "policy-hint": "media",
+      "priority": 180,
+      "section": "overseas-fallback",
+      "description": "未单列的海外影音 → 海外影音策略",
+      "boundary": "补 Hulu、Max、BBC 等没有单列的域名。Netflix、YouTube、Apple TV 等由前面的专项负责；不按 IP、关键字或客户端名判定。",
+      "sources": [
+        "https://ruleset.skk.moe/List/non_ip/stream.conf",
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list"
+      ],
+      "merge-domains": {
+        "include": [
+          "overseas-media-remainder",
+          "overseas-media-with-client-matches"
+        ],
+        "subtract-prior": true
+      },
+      "fallback": true
+    },
+    {
       "id": "overseas-media-remainder",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "其他海外媒体的域名兜底",
-      "boundary": "只匹配明确域名和后缀。Hulu、Max、Paramount+、Peacock、DAZN、BBC 等未单列的服务在此处理；不使用关键字、UA 或进程规则。",
+      "description": "海外影音域名兼容订阅",
+      "boundary": "保留已审核的上游域名覆盖；包含前面影音专项已有的范围。日常按细分选 180，不与 180 同开。",
       "sources": [
         "https://ruleset.skk.moe/List/non_ip/stream.conf"
       ],
@@ -2552,7 +3896,7 @@
       "flags": [],
       "fallback": true,
       "priority": 181,
-      "section": "fallback",
+      "section": "overseas-fallback",
       "license": "AGPL-3.0",
       "notice": "SukkaW--Surge.txt",
       "publish-kinds": [
@@ -2564,8 +3908,8 @@
       "id": "overseas-media-with-client-matches",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "其他海外媒体：域名和客户端匹配备选",
-      "boundary": "替代 181 的 Loon 原生来源；选一个媒体兜底，不替换 131–139 的服务边界。",
+      "description": "海外媒体的域名及客户端兼容表",
+      "boundary": "域名部分已由影音专项和 180 覆盖。需要额外按客户端匹配时才替换 180；保留各服务专项。",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list"
       ],
@@ -2579,7 +3923,7 @@
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 182,
-      "section": "fallback",
+      "section": "overseas-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN",
@@ -2591,8 +3935,8 @@
       "id": "overseas-media-address-compatibility",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "海外媒体的客户端特征与地址备选表",
-      "boundary": "除域名外还匹配 UA、URL 和 IP。与 181 同用途择一。",
+      "description": "海外媒体的地址及客户端兼容补充",
+      "boundary": "含 IP、UA、关键字和 URL，不替代 180；只在查明客户端确实需要这些匹配时单独验证。",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/GlobalMedia/GlobalMedia.list"
       ],
@@ -2610,15 +3954,16 @@
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
       "priority": 183,
-      "section": "fallback",
-      "fallback": true
+      "section": "overseas-fallback",
+      "fallback": true,
+      "ip-match": "target-ip"
     },
     {
       "id": "overseas-site-fallback",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "非专项海外站点的域名兜底",
-      "boundary": "只用域名后缀，不用 google、discord、leak 等关键字和宽 IP。更宽兼容源只做备选。",
+      "description": "海外站点小表：供 185 筛选的域名后缀",
+      "boundary": "原订阅保留。它没有剔除与国内表冲突的域名，不是 185 的等价精简版；日常选 185。",
       "sources": [
         "https://rules.xkww3n.cyou/classical/proxy.txt"
       ],
@@ -2630,14 +3975,47 @@
       "license": "MIT",
       "notice": "xkww3n--Rules.txt",
       "priority": 184,
-      "section": "fallback"
+      "section": "overseas-fallback"
+    },
+    {
+      "id": "overseas-access-domains",
+      "mode": "compiled",
+      "policy-hint": "global",
+      "description": "未单列的海外站点和 GFW 域名 → 通用代理",
+      "boundary": "只按域名；去掉已被前置专项完整覆盖的部分，跳过与国内表冲突的范围。不把共享 CDN、宽 IP 或客户端特征当地区判据。",
+      "sources": [
+        "https://rules.xkww3n.cyou/classical/proxy.txt",
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list",
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list",
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list",
+        "https://rules.xkww3n.cyou/classical/domestic.txt"
+      ],
+      "merge-domains": {
+        "include": [
+          "overseas-site-fallback",
+          "overseas-site-wide-compatibility",
+          "restricted-sites-and-addresses"
+        ],
+        "protect": [
+          "mainland-domain-families",
+          "mainland-service-domains"
+        ],
+        "subtract-prior": true
+      },
+      "excluded-rules": [
+        "DOMAIN-SUFFIX,gfwlist.start",
+        "DOMAIN-SUFFIX,gfwlist.end"
+      ],
+      "fallback": true,
+      "priority": 185,
+      "section": "overseas-fallback"
     },
     {
       "id": "overseas-site-wide-compatibility",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "海外站点覆盖较宽的兼容来源",
-      "boundary": "只在确有覆盖需要时替换 184；含关键字和 IP 规则，有误匹配风险。",
+      "description": "海外站点的宽版域名与地址兼容表",
+      "boundary": "常规用 185；这份保留 IP 和 USER-AGENT，含非标准网段写法。仅为确有需要的客户端保留，不与 185 叠加。",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list",
         "https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains",
@@ -2657,7 +4035,7 @@
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 186,
-      "section": "fallback",
+      "section": "overseas-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN",
@@ -2675,14 +4053,21 @@
       ],
       "feed-sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list"
+      ],
+      "ip-match": "target-ip",
+      "exclude-tenant-roots": [
+        "edgekey.net",
+        "edgesuite.net",
+        "akamaized.net",
+        "akamaihd.net"
       ]
     },
     {
       "id": "overseas-address-and-client-matching",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "旧国际 IP、关键词和客户端匹配",
-      "boundary": "海外通用代理兜底备选，替换 184，不和其他同用途来源同时开启。",
+      "description": "海外站点的地址及客户端兼容补充",
+      "boundary": "仅包含 IP 和 USER-AGENT，不替代 185 的域名分流。确实依赖这类匹配时再单独验证。",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Global/Global.list"
       ],
@@ -2698,20 +4083,21 @@
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
       "priority": 187,
-      "section": "fallback",
+      "section": "overseas-fallback",
       "fallback": true,
       "publish-kinds": [
         "IP-CIDR",
         "IP-CIDR6",
         "USER-AGENT"
-      ]
+      ],
+      "ip-match": "target-ip"
     },
     {
       "id": "restricted-sites-and-addresses",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "受限站点及地址的备选代理规则",
-      "boundary": "作为更窄的通用代理名单替代 184；选一个来源，不同名叠加。",
+      "description": "GFW 域名与地址兼容表",
+      "boundary": "常规用 185 的已审核域名；这份还含 IP、USER-AGENT 及非标准网段写法，需要这些匹配时单独试用。",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list",
         "https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains",
@@ -2731,7 +4117,7 @@
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 188,
-      "section": "fallback",
+      "section": "overseas-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN",
@@ -2749,6 +4135,13 @@
       ],
       "feed-sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list"
+      ],
+      "ip-match": "target-ip",
+      "exclude-tenant-roots": [
+        "edgekey.net",
+        "edgesuite.net",
+        "akamaized.net",
+        "akamaihd.net"
       ]
     },
     {
@@ -2768,7 +4161,7 @@
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 190,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "fallback": true
     },
     {
@@ -2790,7 +4183,7 @@
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
       "priority": 191,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN",
@@ -2798,11 +4191,26 @@
       ]
     },
     {
+      "id": "mainland-routing",
+      "mode": "view",
+      "policy-hint": "domestic",
+      "priority": 192,
+      "section": "mainland-fallback",
+      "description": "国内分流合一：国内域名 → 网段 → GeoIP",
+      "boundary": "三个阶段都交给同一国内策略时用这份。没有命中域名时仍可解析后按地址识别。与 194、200、204 三份拆分表二选一。",
+      "members": [
+        "mainland-domain-families",
+        "mainland-allocated-networks",
+        "mainland-geoip-fallback"
+      ],
+      "fallback": true
+    },
+    {
       "id": "apple-mainland-service-alternative",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "大陆 Apple 服务的兼容备选（不是纯 CDN）",
-      "boundary": "跨认证、缓存、下载等用途的兼容表；不默认启用，也不能当大陆专用主机清单或直连白名单。",
+      "description": "跨用途的 Apple 服务兼容表",
+      "boundary": "混有设备定位、商店、系统下载等域名；不当作大陆专域或直连白名单。已验证的下载别名归入 055。",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
@@ -2813,7 +4221,7 @@
       "license": "GPL-3.0",
       "notice": "MetaCubeX--meta-rules-dat.txt",
       "priority": 193,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN"
@@ -2823,13 +4231,14 @@
       "id": "mainland-domain-families",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "一般国内域名",
-      "boundary": "国内域名兜底，不含通用关键字、UA、IP 或路由器管理名；国内地址与 GeoIP 单独处理。",
+      "description": "已知国内域名",
+      "boundary": "单看域名来选路。不需要为分流解析域名；不含 IP、GeoIP、客户端特征或路由器管理入口。",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list",
         "https://www.mi.com/global/support/faq/details/KA-226613/",
         "https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf",
-        "https://service.mercurycom.com.cn/article-86.html"
+        "https://service.mercurycom.com.cn/article-86.html",
+        "https://hima.auto/privacy/privacy-policy/"
       ],
       "kinds": [
         "DOMAIN",
@@ -2845,7 +4254,7 @@
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 194,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN",
@@ -2876,19 +4285,25 @@
         "DOMAIN-SUFFIX,tplinkrepeater.net",
         "DOMAIN-SUFFIX,tplinkap.net",
         "DOMAIN-SUFFIX,tplinkplc.net",
-        "DOMAIN-SUFFIX,re.tenda.cn"
+        "DOMAIN-SUFFIX,re.tenda.cn",
+        "DOMAIN-SUFFIX,ipify.org"
       ],
       "include": [
         "DOMAIN,www1.miwifi.com",
-        "DOMAIN,bigota.miwifi.com"
+        "DOMAIN,bigota.miwifi.com",
+        "DOMAIN,hima.auto",
+        "DOMAIN,www.hima.auto"
+      ],
+      "reserve-domains-for": [
+        "ai-cn-international"
       ]
     },
     {
       "id": "mainland-service-domains",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "xkww 国内域名备选",
-      "boundary": "替换 194，不叠加。只保留国内公网服务；路由器管理名由 011 处理。",
+      "description": "国内服务域名的兼容备选",
+      "boundary": "只用于替换 194，不与 192 叠加。国际版 AI 的专域和覆盖它们的父后缀不作国内域名；未核实的新条目不发布。",
       "sources": [
         "https://rules.xkww3n.cyou/classical/domestic.txt",
         "https://www.mi.com/global/support/faq/details/KA-226613/",
@@ -2903,7 +4318,7 @@
       "license": "MIT",
       "notice": "xkww3n--Rules.txt",
       "priority": 196,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "fallback": true,
       "feed-sources": [
         "https://rules.xkww3n.cyou/classical/domestic.txt"
@@ -2935,14 +4350,30 @@
       "include": [
         "DOMAIN,www1.miwifi.com",
         "DOMAIN,bigota.miwifi.com"
+      ],
+      "reserve-domains-for": [
+        "ai-cn-international"
+      ],
+      "confirm-additions-with": [
+        "apple-mainland-delivery-aliases",
+        "apple-icloud-mainland",
+        "ai-cn",
+        "wechat-shared-and-mainland",
+        "bilibili-mainland-video",
+        "douyin-mainland-video",
+        "steam-mainland-downloads",
+        "alipay-mainland-payments",
+        "taobao-and-xianyu-shopping",
+        "jingdong-shopping",
+        "xiaohongshu-community"
       ]
     },
     {
       "id": "mainland-extended-coverage",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "可选的大范围国内域名及地址合集",
-      "boundary": "范围较宽，替换同类国内兜底时才用，不叠加。",
+      "description": "宽版国内地址及客户端兼容表",
+      "boundary": "包含 CIDR、ASN 和 USER-AGENT，不含国内域名。包含 APNIC 登记为非 CN 的地址，不当作常规直连表。",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/ChinaMax/ChinaMax.list",
         "https://service.mercurycom.com.cn/article-86.html"
@@ -2961,7 +4392,7 @@
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
       "priority": 197,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "fallback": true,
       "publish-kinds": [
         "DOMAIN-SUFFIX",
@@ -2990,16 +4421,19 @@
       ],
       "feed-sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/ChinaMax/ChinaMax.list"
-      ]
+      ],
+      "ip-match": "target-ip"
     },
     {
       "id": "mainland-allocated-networks",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "一般国内 IPv4/IPv6 网络",
-      "boundary": "用于未命中名称的地址分类，保留 DNS 解析。",
+      "description": "可按 IPv4 / IPv6 网段判断的国内地址",
+      "boundary": "域名没命中时，按已知或解析出的地址查网段。不替代国内域名表；排在 GeoIP 之前。 新增地址须同时有 APNIC 中国大陆分配和中国运营商路由记录。",
       "sources": [
-        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list"
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list",
+        "https://ftp.apnic.net/stats/apnic/delegated-apnic-latest",
+        "https://gaoyifan.github.io/china-operator-ip/china46.txt"
       ],
       "kinds": [
         "IP-CIDR",
@@ -3009,18 +4443,29 @@
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 200,
-      "section": "fallback",
-      "fallback": true
+      "section": "mainland-fallback",
+      "fallback": true,
+      "ip-match": "allow-dns",
+      "feed-sources": [
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list"
+      ],
+      "calibration": {
+        "method": "allocation-and-routing",
+        "allocation": "https://ftp.apnic.net/stats/apnic/delegated-apnic-latest",
+        "routes": "https://gaoyifan.github.io/china-operator-ip/china46.txt"
+      }
     },
     {
       "id": "mainland-address-registry",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "大陆备选 IPv4 与 IPv6 地址表",
-      "boundary": "同源两族合并；保留 DNS 后再按地址判断的行为。替换 200，并非与它重复叠加。",
+      "description": "国内地址范围的兼容备选",
+      "boundary": "IPv4 和 IPv6 保留 DNS 后按地址判断。范围与 200 不同，其中有非 CN 注册地址，只按需求替换，不叠加。 新增地址须同时有 APNIC 中国大陆分配和中国运营商路由记录。",
       "sources": [
         "https://rules.xkww3n.cyou/classical/domestic_ip.txt",
-        "https://rules.xkww3n.cyou/classical/domestic_ip6.txt"
+        "https://rules.xkww3n.cyou/classical/domestic_ip6.txt",
+        "https://ftp.apnic.net/stats/apnic/delegated-apnic-latest",
+        "https://gaoyifan.github.io/china-operator-ip/china46.txt"
       ],
       "kinds": [
         "IP-CIDR",
@@ -3030,8 +4475,18 @@
       "license": "MIT",
       "notice": "xkww3n--Rules.txt",
       "priority": 201,
-      "section": "fallback",
-      "fallback": true
+      "section": "mainland-fallback",
+      "fallback": true,
+      "ip-match": "allow-dns",
+      "feed-sources": [
+        "https://rules.xkww3n.cyou/classical/domestic_ip.txt",
+        "https://rules.xkww3n.cyou/classical/domestic_ip6.txt"
+      ],
+      "calibration": {
+        "method": "allocation-and-routing",
+        "allocation": "https://ftp.apnic.net/stats/apnic/delegated-apnic-latest",
+        "routes": "https://gaoyifan.github.io/china-operator-ip/china46.txt"
+      }
     },
     {
       "id": "mainland-asn-classification",
@@ -3051,13 +4506,14 @@
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
       "priority": 202,
-      "section": "fallback",
-      "fallback": true
+      "section": "mainland-fallback",
+      "fallback": true,
+      "ip-match": "target-ip"
     },
     {
       "id": "mainland-asn-with-resolution",
       "priority": 203,
-      "section": "fallback",
+      "section": "mainland-fallback",
       "mode": "managed",
       "description": "国内 ASN 备选：域名解析后仍可匹配",
       "boundary": "区别于 202 的裸 IP ASN，不批量改 no-resolve。两张 ASN 表用其一；若用 GeoIP 按设备数据库实际命中。",
@@ -3071,14 +4527,15 @@
       "flags": [],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "fallback": true
+      "fallback": true,
+      "ip-match": "allow-dns"
     },
     {
       "id": "mainland-geoip-fallback",
       "mode": "managed",
       "policy-hint": "domestic",
-      "description": "GeoIP 的中国地区兜底",
-      "boundary": "保留 DNS 匹配，不用 no-resolve 改写。",
+      "description": "设备 GeoIP 数据库中的中国大陆地址兜底",
+      "boundary": "前面的域名和网段未命中时再用。允许为查地址触发解析；地区归属取决于 Loon 设备上的数据库。",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list"
       ],
@@ -3086,14 +4543,12 @@
         "GEOIP"
       ],
       "flags": [],
-      "dns_required": [
-        "GEOIP,CN"
-      ],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
       "priority": 204,
-      "section": "fallback",
-      "fallback": true
+      "section": "mainland-fallback",
+      "fallback": true,
+      "ip-match": "allow-dns"
     }
   ],
   "detailed": [
@@ -3147,6 +4602,7 @@
     "meta-ai-assistant",
     "grokipedia-encyclopedia",
     "microsoft-copilot-connections",
+    "ai-com-agents",
     "ai-cn",
     "ai-cn-international"
   ],
@@ -3154,6 +4610,7 @@
     "local-links-and-addresses",
     "network-sign-in-and-probes",
     "tailscale-control-and-tailnet",
+    "ip-egress-checks",
     "general-ad-and-tracking",
     "telegram-messaging",
     "discord-messaging-and-voice",
@@ -3197,18 +4654,17 @@
     "taobao-and-xianyu-shopping",
     "jingdong-shopping",
     "xiaohongshu-community",
-    "overseas-media-remainder",
-    "overseas-site-fallback",
+    "other-overseas-media",
+    "overseas-access-domains",
     "mainland-domain-families",
     "mainland-allocated-networks",
     "mainland-geoip-fallback"
   ],
   "alternatives": [
-    "extended-ad-and-tracking",
+    "overseas-media-remainder",
     "overseas-media-with-client-matches",
-    "overseas-media-address-compatibility",
+    "overseas-site-fallback",
     "overseas-site-wide-compatibility",
-    "overseas-address-and-client-matching",
     "restricted-sites-and-addresses",
     "direct-domain-exceptions",
     "direct-domain-exceptions-extended",
@@ -3221,14 +4677,18 @@
   ],
   "optional": [
     "apple-and-ai-privacy-exceptions",
-    "privacy-public-stun-endpoints"
+    "privacy-public-stun-endpoints",
+    "extended-ad-and-tracking",
+    "overseas-media-address-compatibility",
+    "overseas-address-and-client-matching"
   ],
   "views": [
     "apple-all",
     "ai-overseas-all",
     "microsoft-all",
     "overseas-media-all",
-    "google-all"
+    "google-all",
+    "mainland-routing"
   ],
   "critical": {
     "1.1.168.192.in-addr.arpa": [
@@ -4459,25 +5919,25 @@
       "xiaohongshu-community"
     ],
     "www.dazn.com": [
-      "overseas-media-remainder"
+      "other-overseas-media"
     ],
     "www.hulu.com": [
-      "overseas-media-remainder"
+      "other-overseas-media"
     ],
     "www.max.com": [
-      "overseas-media-remainder"
+      "other-overseas-media"
     ],
     "www.paramountplus.com": [
-      "overseas-media-remainder"
+      "other-overseas-media"
     ],
     "www.peacocktv.com": [
-      "overseas-media-remainder"
+      "other-overseas-media"
     ],
     "archive.org": [
-      "overseas-site-fallback"
+      "overseas-access-domains"
     ],
     "en.wikipedia.org": [
-      "overseas-site-fallback"
+      "overseas-access-domains"
     ],
     "bigota.miwifi.com": [
       "mainland-domain-families"
@@ -4493,6 +5953,114 @@
     ],
     "www1.miwifi.com": [
       "mainland-domain-families"
+    ],
+    "2026.ip138.com": [
+      "ip-egress-checks"
+    ],
+    "my.ip.cn": [
+      "ip-egress-checks"
+    ],
+    "myip.ipip.net": [
+      "ip-egress-checks"
+    ],
+    "myip.la": [
+      "ip-egress-checks"
+    ],
+    "www.myip.la": [
+      "ip-egress-checks"
+    ],
+    "www.okx.com": [
+      "overseas-access-domains"
+    ],
+    "www.binance.info": [
+      "overseas-access-domains"
+    ],
+    "www.binance.com": [
+      "overseas-access-domains"
+    ],
+    "fpinit.itunes.apple.com": [
+      "apple-store-transactions"
+    ],
+    "swcdn.g.aaplimg.com": [
+      "apple-update-downloads"
+    ],
+    "updates-http.cdn-apple.com.akadns.net": [
+      "apple-update-downloads"
+    ],
+    "updates-http.g.aaplimg.com": [
+      "apple-update-downloads"
+    ],
+    "liblib.art": [
+      "ai-cn"
+    ],
+    "openapi.liblibai.cloud": [
+      "ai-cn"
+    ],
+    "www.liblib.art": [
+      "ai-cn"
+    ],
+    "hima.auto": [
+      "mainland-domain-families"
+    ],
+    "www.hima.auto": [
+      "mainland-domain-families"
+    ],
+    "steamcommunity-a.akamaihd.net": [
+      "steam-global-platform"
+    ],
+    "steambroadcast.akamaized.net": [
+      "steam-global-platform"
+    ],
+    "z.ai": [
+      "ai-cn-international"
+    ],
+    "loginex.microsoftonline.com": [
+      "microsoft-account-authentication"
+    ],
+    "login.microsoftonline-p.com": [
+      "microsoft-account-authentication"
+    ],
+    "tenant-test.mx.microsoft": [
+      "microsoft-outlook-mail"
+    ],
+    "tenant-test.mail.protection.outlook.com": [
+      "microsoft-outlook-mail"
+    ],
+    "ai.com": [
+      "ai-com-agents"
+    ],
+    "hailuoai.video": [
+      "ai-cn-international"
+    ],
+    "api.ipify.org": [
+      "ip-egress-checks"
+    ],
+    "api6.ipify.org": [
+      "ip-egress-checks"
+    ],
+    "api64.ipify.org": [
+      "ip-egress-checks"
+    ],
+    "icanhazip.com": [
+      "ip-egress-checks"
+    ],
+    "ipv4.icanhazip.com": [
+      "ip-egress-checks"
+    ],
+    "ipv6.icanhazip.com": [
+      "ip-egress-checks"
+    ],
+    "v6.ident.me": [
+      "ip-egress-checks"
+    ],
+    "checkip.amazonaws.com": [
+      "ip-egress-checks"
+    ],
+    "checkip.global.api.aws": [
+      "ip-egress-checks"
+    ],
+    "ip6.nnev.de": [
+      "ip-egress-checks"
     ]
   },
   "shared-negatives": [
@@ -4550,7 +6118,8 @@
       "mainland-domain-families",
       "mainland-service-domains",
       "mainland-extended-coverage",
-      "apple-mainland-service-alternative"
+      "apple-mainland-service-alternative",
+      "mainland-routing"
     ],
     "apple-news-and-sports": [
       "direct-domain-exceptions",
@@ -4558,7 +6127,8 @@
       "mainland-domain-families",
       "mainland-service-domains",
       "mainland-extended-coverage",
-      "apple-mainland-service-alternative"
+      "apple-mainland-service-alternative",
+      "mainland-routing"
     ],
     "apple-intelligence-relays": [
       "direct-domain-exceptions",
@@ -4566,7 +6136,8 @@
       "mainland-domain-families",
       "mainland-service-domains",
       "mainland-extended-coverage",
-      "apple-mainland-service-alternative"
+      "apple-mainland-service-alternative",
+      "mainland-routing"
     ],
     "apple-tv-video-delivery": [
       "direct-domain-exceptions",
@@ -4574,11 +6145,26 @@
       "mainland-domain-families",
       "mainland-service-domains",
       "mainland-extended-coverage",
-      "apple-mainland-service-alternative"
+      "apple-mainland-service-alternative",
+      "mainland-routing"
     ],
     "apple-store-transactions": [
       "direct-domain-exceptions",
       "mainland-domain-families"
+    ],
+    "ai-cn-international": [
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "direct-domain-exceptions",
+      "direct-domain-exceptions-extended",
+      "mainland-routing"
+    ],
+    "ai-overseas-all": [
+      "direct-domain-exceptions",
+      "direct-domain-exceptions-extended",
+      "mainland-routing",
+      "mainland-domain-families",
+      "mainland-service-domains"
     ]
   },
   "view-cases": {
@@ -4641,6 +6227,9 @@
     ],
     "netflix.com.edgesuite.net": [
       "overseas-media-all"
+    ],
+    "ai.com": [
+      "ai-overseas-all"
     ]
   },
   "sections": [
@@ -4741,10 +6330,22 @@
       "title": "支付与国内日常"
     },
     {
-      "id": "fallback",
+      "id": "overseas-fallback",
       "from": 180,
+      "through": 189,
+      "title": "海外补充：影音和网站",
+      "compact-index": true
+    },
+    {
+      "id": "mainland-fallback",
+      "from": 190,
       "through": 219,
-      "title": "通用及地区兜底"
+      "title": "国内识别：域名和地址",
+      "compact-index": true,
+      "selectable": [
+        "mainland-asn-classification",
+        "mainland-asn-with-resolution"
+      ]
     }
   ],
   "exclusive-domains": [
@@ -4955,19 +6556,77 @@
       "target": "2001:20::1",
       "literal": false,
       "rule": null
+    },
+    {
+      "target": "169.254.0.2",
+      "literal": true,
+      "rule": "local-links-and-addresses"
+    },
+    {
+      "target": "169.254.0.2",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "1.1.1.1",
+      "literal": true,
+      "rule": null
+    },
+    {
+      "target": "fe80::1",
+      "literal": true,
+      "rule": "local-links-and-addresses"
+    },
+    {
+      "target": "fe80::1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "224.0.0.251",
+      "literal": true,
+      "rule": "local-links-and-addresses"
+    },
+    {
+      "target": "224.0.0.251",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "ff02::fb",
+      "literal": true,
+      "rule": "local-links-and-addresses"
+    },
+    {
+      "target": "ff02::fb",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "127.0.0.1",
+      "literal": false,
+      "rule": "local-links-and-addresses"
+    },
+    {
+      "target": "::1",
+      "literal": false,
+      "rule": "local-links-and-addresses"
     }
   ],
   "scope-negatives": {
     "google-helper.example": [
       "google-platform-services",
-      "overseas-site-fallback"
+      "overseas-site-fallback",
+      "overseas-access-domains"
     ],
     "discord-helpdesk.example": [
       "discord-messaging-and-voice",
-      "overseas-site-fallback"
+      "overseas-site-fallback",
+      "overseas-access-domains"
     ],
     "leak-detection.example": [
-      "overseas-site-fallback"
+      "overseas-site-fallback",
+      "overseas-access-domains"
     ],
     "npmjs.org": [
       "github-code-and-packages",
@@ -5004,7 +6663,8 @@
     ],
     "baidu.com": [
       "overseas-site-fallback",
-      "google-platform-services"
+      "google-platform-services",
+      "overseas-access-domains"
     ],
     "webrtc.org": [
       "privacy-public-stun-endpoints"
@@ -5261,6 +6921,239 @@
       "microsoft-all",
       "overseas-site-wide-compatibility",
       "restricted-sites-and-addresses"
+    ],
+    "challenges.cloudflare.com": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking"
+    ],
+    "cloudflare-dns.com": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking",
+      "ip-egress-checks"
+    ],
+    "one.one.one.one": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking"
+    ],
+    "static.cloudflareinsights.com": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking"
+    ],
+    "www.ip138.com": [
+      "ip-egress-checks",
+      "overseas-access-domains"
+    ],
+    "www.ip.cn": [
+      "ip-egress-checks",
+      "overseas-access-domains"
+    ],
+    "www.ipip.net": [
+      "ip-egress-checks",
+      "overseas-access-domains"
+    ],
+    "featuregates.org": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking"
+    ],
+    "api.statsigcdn.com": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking"
+    ],
+    "assetsconfigcdn.org": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking"
+    ],
+    "beyondwickedmapping.org": [
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "extended-ad-and-tracking"
+    ],
+    "unrelated.akamaized.net": [
+      "steam-global-platform"
+    ],
+    "unrelated.akamaihd.net": [
+      "steam-global-platform"
+    ],
+    "unrelated.g.aaplimg.com": [
+      "apple-update-downloads"
+    ],
+    "unused.liblibai.cloud": [
+      "ai-cn"
+    ],
+    "qwen.ai": [
+      "ai-cn",
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "mainland-routing"
+    ],
+    "z.ai": [
+      "ai-cn",
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "mainland-routing"
+    ],
+    "claude.ai": [
+      "other-overseas-media",
+      "overseas-access-domains"
+    ],
+    "api.anthropic.com": [
+      "other-overseas-media",
+      "overseas-access-domains"
+    ],
+    "chatgpt.com": [
+      "other-overseas-media",
+      "overseas-access-domains"
+    ],
+    "www.netflix.com": [
+      "other-overseas-media",
+      "overseas-access-domains"
+    ],
+    "unrelated-test.microsoft": [
+      "microsoft-outlook-mail"
+    ],
+    "blobstore.apple.com": [
+      "apple-video-and-fitness"
+    ],
+    "developer.apple.com": [
+      "apple-developer-downloads"
+    ],
+    "ai.com": [
+      "claude-connections",
+      "chatgpt-connections"
+    ],
+    "kimi.ai": [
+      "ai-cn"
+    ],
+    "hailuoai.video": [
+      "ai-cn"
+    ],
+    "ipinfo.io": [
+      "ip-egress-checks"
+    ],
+    "geo.ipify.org": [
+      "ip-egress-checks",
+      "mainland-domain-families",
+      "mainland-routing"
+    ],
+    "tools.ipip.net": [
+      "ip-egress-checks"
+    ],
+    "speed.cloudflare.com": [
+      "ip-egress-checks"
+    ],
+    "s3.amazonaws.com": [
+      "ip-egress-checks"
+    ],
+    "update.spdyn.de": [
+      "ip-egress-checks"
+    ],
+    "ip138.com": [
+      "ip-egress-checks"
+    ],
+    "qq.ip138.com": [
+      "ip-egress-checks"
+    ],
+    "chat.qwenlm.ai": [
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "mainland-routing"
+    ],
+    "trae.ai": [
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "mainland-routing"
+    ],
+    "marscode.com": [
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "mainland-routing"
+    ],
+    "api.qwen.ai": [
+      "mainland-domain-families",
+      "mainland-service-domains",
+      "mainland-routing"
     ]
-  }
+  },
+  "recommended-views": [
+    "mainland-routing"
+  ],
+  "source-inventories": [
+    {
+      "id": "overseas-ai",
+      "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
+      "owners": [
+        "claude-connections",
+        "chatgpt-connections",
+        "gemini-connections",
+        "grok-connections",
+        "cursor-editor-and-api",
+        "github-copilot-connections",
+        "windsurf-editor-and-api",
+        "devin-cloud-coding",
+        "perplexity-search-and-api",
+        "poe-chat-and-api",
+        "openrouter-gateway",
+        "mistral-model-services",
+        "groq-inference",
+        "cohere-model-services",
+        "hugging-face-model-hub",
+        "midjourney-image-tools",
+        "muse-agent",
+        "elevenlabs-voice-and-api",
+        "meta-ai-assistant",
+        "grokipedia-encyclopedia",
+        "microsoft-copilot-connections",
+        "ai-com-agents"
+      ]
+    },
+    {
+      "id": "gemini-services",
+      "source": "https://rules.xkww3n.cyou/classical/google-deepmind.txt",
+      "owners": [
+        "gemini-connections"
+      ]
+    },
+    {
+      "id": "mainland-ai",
+      "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr",
+      "owners": [
+        "ai-cn"
+      ],
+      "other-owners": {
+        "DOMAIN-SUFFIX,kimi.ai": "ai-cn-international",
+        "DOMAIN-SUFFIX,hailuoai.video": "ai-cn-international"
+      }
+    },
+    {
+      "id": "apple-media",
+      "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
+      "owners": [
+        "apple-music-and-radio",
+        "apple-video-and-fitness",
+        "apple-news-and-sports",
+        "apple-music-audio-delivery",
+        "apple-tv-video-delivery"
+      ],
+      "other-owners": {
+        "DOMAIN,gspe1-ssl.ls.apple.com": "apple-location-services"
+      }
+    },
+    {
+      "id": "apple-music",
+      "source": "https://rules.xkww3n.cyou/classical/apple-music.txt",
+      "owners": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery"
+      ],
+      "shared": {
+        "DOMAIN,blobstore.apple.com": "也用于签名上传，不是专用播放入口"
+      }
+    }
+  ]
 }

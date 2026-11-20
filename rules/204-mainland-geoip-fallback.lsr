@@ -1,8 +1,8 @@
 # name: mainland-geoip-fallback
 # priority: 204
-# section: fallback
-# description: GeoIP 的中国地区兜底
-# boundary: 保留 DNS 匹配，不用 no-resolve 改写。
+# section: mainland-fallback
+# description: 设备 GeoIP 数据库中的中国大陆地址兜底
+# boundary: 前面的域名和网段未命中时再用。允许为查地址触发解析；地区归属取决于 Loon 设备上的数据库。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 1

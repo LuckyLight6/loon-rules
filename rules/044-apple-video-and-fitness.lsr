@@ -4,14 +4,14 @@
 # description: Apple TV／Fitness+ 的门户、播放控制与共用主机
 # boundary: 中国大陆未提供对应订阅；入口默认选服务可用地区的代理。已识别 HLS 交给独立视频组，同一会话用一致出口。
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T10:51:17Z
-# rule-count: 6
+# updated-at: 2026-11-20T02:22:00Z
+# rule-count: 5
 # source: https://rules.xkww3n.cyou/classical/apple-music.txt
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
 # source: https://support.apple.com/zh-cn/118205
 # source: https://tv.apple.com/
+# source: https://itunespartner.apple.com/music/assets/music-artist-api.pdf
 
-DOMAIN,blobstore.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN,np-edge.itunes.apple.com
 DOMAIN,play-edge.itunes.apple.com

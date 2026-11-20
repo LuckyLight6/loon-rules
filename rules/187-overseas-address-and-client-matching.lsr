@@ -1,8 +1,8 @@
 # name: overseas-address-and-client-matching
 # priority: 187
-# section: fallback
-# description: 旧国际 IP、关键词和客户端匹配
-# boundary: 海外通用代理兜底备选，替换 184，不和其他同用途来源同时开启。
+# section: overseas-fallback
+# description: 海外站点的地址及客户端兼容补充
+# boundary: 仅包含 IP 和 USER-AGENT，不替代 185 的域名分流。确实依赖这类匹配时再单独验证。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 165

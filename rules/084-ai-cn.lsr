@@ -1,11 +1,11 @@
 # name: ai-cn
 # priority: 084
 # section: ai
-# description: 国产 AI 国内入口：DeepSeek、百炼、火山方舟与扣子、Kimi、智谱、MiniMax、千帆、混元、讯飞、硅基流动等
+# description: 国产 AI 国内入口：DeepSeek、百炼、火山方舟与扣子、Kimi、智谱、MiniMax、千帆、混元、讯飞、硅基流动与哩布哩布等
 # boundary: 按官方服务端点区分，DeepSeek 官网和 API 未见独立国际域，保留原国内策略；不含整个厂商云。
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-19T08:10:57Z
-# rule-count: 40
+# updated-at: 2026-11-20T00:58:33Z
+# rule-count: 42
 # source: https://api-docs.deepseek.com/
 # source: https://platform.kimi.com/docs/get-api-key
 # source: https://docs.bigmodel.cn/cn/guide/start/quick-start
@@ -22,6 +22,8 @@
 # source: https://xinghuo.xfyun.cn/
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr
 # source: https://www.alibabacloud.com/help/en/model-studio/base-url
+# source: https://www.liblib.art/document/article_member
+# source: https://www.liblib.art/apis/workflow
 
 DOMAIN-SUFFIX,cn-beijing.maas.aliyuncs.com
 DOMAIN-SUFFIX,deepseek.com
@@ -63,3 +65,5 @@ DOMAIN,tokenhub.ap-shenzhen-fsi.tencentcloudapi.com
 DOMAIN,www.qianwen.com
 DOMAIN,yuanbao.tencent.com
 DOMAIN,xinghuo.xfyun.cn
+DOMAIN-SUFFIX,liblib.art
+DOMAIN,openapi.liblibai.cloud

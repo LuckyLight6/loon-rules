@@ -1,6 +1,10 @@
 import unittest
+import json
+import library
+from rule_inputs import extract_rows
 
-from maintain import Invalid, read_rules, update_feed, app_store_rules, regional_endpoints, first_policy, apple_endpoints, ai_partition, verify_routes
+from maintain import Invalid, read_rules, first_policy, verify_routes
+from maintain import ip_options, verify_ip_options
 
 
 class RuleContracts(unittest.TestCase):
@@ -10,54 +14,59 @@ class RuleContracts(unittest.TestCase):
             with self.subTest(body=body), self.assertRaises(Invalid):
                 read_rules(body, {'DOMAIN', 'DOMAIN-SUFFIX', 'IP-CIDR'})
 
-    def test_verified_scope_updates_and_stale_input_leaves_cached_data(self):
-        before = ['DOMAIN,api.example.test', 'DOMAIN,a.example.test']
-        entry = {'id':'test','kinds':['DOMAIN'],'flags':[]}
-        self.assertEqual(update_feed(entry,before,'DOMAIN,api.example.test\nDOMAIN,a.example.test\nDOMAIN,b.example.test')[-1],
-                         'DOMAIN,b.example.test')
-        with self.assertRaises(Invalid):
-            update_feed(entry,before,'DOMAIN,b.example.test')
-        with self.assertRaises(Invalid):
-            update_feed(entry,before,'DOMAIN,api.example.test\nDOMAIN,a.example.test\nDOMAIN-SUFFIX,googleapis.com')
+    def test_compilation_checks_real_scope_before_replacing_a_subscription(self):
+        before=['DOMAIN,api.example.test','DOMAIN,a.example.test']
+        entry={'id':'product','projection':[{'source':'source','roots':['example.test']}]}
+        for rows,ok in [(before+['DOMAIN,b.example.test'],True),(['DOMAIN,b.example.test'],False)]:
+            now=library.compile_entry(entry,{'source':'\n'.join(rows)})
+            if ok: library.guard_coverage('product',before,now)
+            else:
+                with self.assertRaises(Invalid): library.guard_coverage('product',before,now)
 
-    def test_new_overbroad_entries_cannot_take_over_the_configuration(self):
-        old = ['DOMAIN,api.example.test']
-        entry = {'id':'test', 'kinds':['DOMAIN','DOMAIN-SUFFIX','IP-CIDR','IP-CIDR6'], 'flags':[]}
-        for line in ('DOMAIN-SUFFIX,com', 'DOMAIN-SUFFIX,apple.com',
-                     'IP-CIDR,16.0.0.0/7', 'IP-CIDR6,2600::/12'):
-            with self.subTest(line=line), self.assertRaises(Invalid):
-                update_feed(entry,old,'\n'.join(old + [line]))
+    def test_ordinary_source_cannot_publish_a_new_broad_rule(self):
+        entry={'id':'feed','sources':['source'],'kinds':['DOMAIN','DOMAIN-SUFFIX','IP-CIDR','IP-CIDR6'],'flags':[]}
+        old=['DOMAIN,api.example.test']
+        for line in ('DOMAIN-SUFFIX,com','DOMAIN-SUFFIX,apple.com','IP-CIDR,16.0.0.0/7','IP-CIDR6,2600::/12'):
+            kept,_=library.refresh_reviewed_feed(entry,old,{'source':'\n'.join(old+[line])})
+            self.assertEqual(kept,old,line)
 
-    def test_no_resolve_is_for_reviewed_prefixes_only_and_survives_an_update(self):
-        doc4 = 'IP-CIDR,192.0.2.0/24'
-        doc6 = 'IP-CIDR6,2001:db8::/32'
-        fallback = ['IP-CIDR,192.168.0.0/16', 'IP-CIDR6,64:ff9b::/96']
-        entry = {'id':'reserved', 'kinds':['IP-CIDR','IP-CIDR6'], 'flags':[],
-                 'literal_ips':[doc4,doc6], 'dns_required':fallback}
-        expected = [doc4+',no-resolve',doc6+',no-resolve',*fallback]
-        raw = '\n'.join([doc4,doc6,*fallback])
-        self.assertEqual(update_feed(entry,expected,raw),expected)
-        self.assertEqual(update_feed(entry,expected,raw+'\nIP-CIDR,198.18.0.0/15'),
-                         expected+['IP-CIDR,198.18.0.0/15'])
+    def test_removed_address_or_changed_dns_mode_is_not_silently_accepted(self):
+        bare='IP-CIDR,10.0.0.0/8'
+        only='IP-CIDR,169.254.0.0/16'
+        e={'id':'mixed','ip-match':'per-rule','literal_ips':[only],'dns_required':[bare]}
+        for rows in ([only+',no-resolve'],[only+',no-resolve',bare+',no-resolve']):
+            with self.assertRaisesRegex(Invalid,'IP 匹配'): verify_ip_options(e,ip_options(rows))
 
-    def test_does_not_drop_a_required_ip_or_turn_a_dns_fallback_into_ip_only(self):
-        doc = 'IP-CIDR,192.0.2.0/24'
-        fallback = 'IP-CIDR6,64:ff9b::/96'
-        entry = {'id':'reserved', 'kinds':['DOMAIN','IP-CIDR','IP-CIDR6'], 'flags':['no-resolve'],
-                 'literal_ips':[doc], 'dns_required':[fallback]}
-        other = ['DOMAIN,example.test', 'IP-CIDR,198.51.100.0/24']
-        old = [doc+',no-resolve',fallback,*other]
-        for raw in ([fallback,*other], [doc,fallback+',no-resolve',*other]):
-            with self.subTest(raw=raw), self.assertRaisesRegex(Invalid,'IP 匹配'):
-                update_feed(entry,old,'\n'.join(raw))
+    def test_a_published_ip_scope_cannot_silently_change_dns_intent(self):
+        key='IP-CIDR,192.0.2.0/24'
+        for intent,correct,wrong in (
+            ('target-ip',key+',no-resolve',key),
+            ('allow-dns',key,key+',no-resolve'),
+        ):
+            with self.subTest(intent=intent):
+                entry={'id':'network','ip-match':intent}
+                verify_ip_options(entry,ip_options([correct]))
+                with self.assertRaisesRegex(Invalid,'IP 匹配'):
+                    verify_ip_options(entry,ip_options([wrong]))
 
-    def test_an_upstream_option_change_on_a_known_ip_needs_review(self):
-        entry = {'id':'test', 'kinds':['IP-ASN','DOMAIN'], 'flags':['no-resolve']}
-        unchanged = [f'DOMAIN,h{i}.example.test' for i in range(10)]
-        bare = 'IP-ASN,64496'
-        for old, updated in ((bare, bare+',no-resolve'), (bare+',no-resolve', bare)):
-            with self.subTest(updated=updated), self.assertRaisesRegex(Invalid,'IP 匹配'):
-                update_feed(entry,unchanged+[old],'\n'.join(unchanged+[updated]))
+    def test_a_mixed_scope_must_declare_every_ip_row(self):
+        special='IP-CIDR,192.0.2.0/24'
+        lan='IP-CIDR,192.168.0.0/16'
+        undeclared='IP-CIDR,198.18.0.0/15'
+        entry={'id':'mixed','ip-match':'per-rule','literal_ips':[special],'dns_required':[lan]}
+        rows=[special+',no-resolve',lan]
+        verify_ip_options(entry,ip_options(rows))
+        with self.assertRaisesRegex(Invalid,'198.18.0.0/15'):
+            verify_ip_options(entry,ip_options(rows+[undeclared]))
+
+    def test_published_rules_reject_missing_intent_and_conflicting_view_members(self):
+        address='IP-CIDR,192.0.2.0/24'
+        with self.assertRaisesRegex(Invalid,'须先声明'):
+            verify_ip_options({'id':'network'},ip_options([address]),complete=True)
+        view={'id':'combined','mode':'view'}
+        verify_ip_options(view,ip_options([address]),complete=True)
+        with self.assertRaisesRegex(Invalid,'合集成员不一致'):
+            verify_ip_options(view,ip_options([address,address+',no-resolve']),complete=True)
 
     def test_satisfied_service_samples_do_not_excuse_matching_shared_domains(self):
         positive = {'gemini.google.com':'Gemini'}
@@ -73,9 +82,15 @@ class RuleContracts(unittest.TestCase):
                 'DOMAIN-SUFFIX,livekit.cloud', 'DOMAIN-SUFFIX,claude.ai',
                 'DOMAIN,ai.google.dev', 'DOMAIN,geminiweb-pa.googleapis.com',
                 'DOMAIN,storage.googleapis.com', 'DOMAIN,openai.com.example.test']
-        self.assertEqual(ai_partition(body,'OpenAI'),body[:2])
-        self.assertEqual(ai_partition(body,'Gemini'),body[4:6])
-        self.assertEqual(ai_partition(body,'AI-Foreign'),[body[i] for i in (2,3,6,7)])
+        entries={e['priority']:e for e in json.loads((library.ROOT/'catalog.json').read_text())['entries']}
+        owners=[(str(n),read_rules((library.ROOT/'rules'/library.rule_filename(entries[n])).read_text()))
+                for n in (62,63)]
+        self.assertEqual([first_policy(row.split(',')[1],owners) for row in body],
+                         ['62','62',None,None,'63','63',None,None])
+
+    def extract(self, number, doc):
+        entry=next(e for e in json.loads((library.ROOT/'catalog.json').read_text())['entries'] if e['priority']==number)
+        return extract_rows(entry['extract'][0],doc)
 
     def test_new_apple_api_is_discovered_without_importing_shared_suffixes(self):
         raw = ('DOMAIN,se3.itunes.apple.com,{{ api_rule }}\n'
@@ -83,14 +98,14 @@ class RuleContracts(unittest.TestCase):
                'DOMAIN,iosapps.itunes.apple.com,{{ cdn_rule }}\n'
                'DOMAIN-SUFFIX,itunes.apple.com,{{ api_rule }}\n'
                'DOMAIN,guzzoni.apple.com,{{ api_rule }}\n')
-        self.assertEqual(app_store_rules(raw), {'DOMAIN,se3.itunes.apple.com','DOMAIN,api-v2.apps.apple.com'})
+        self.assertEqual(self.extract(36,raw), {'DOMAIN,se3.itunes.apple.com','DOMAIN,api-v2.apps.apple.com'})
 
     def test_regional_endpoints_do_not_capture_other_tenants_or_mainland(self):
         doc = ('US endpoint: https://dashscope-us.aliyuncs.com/api; '
                'China https://dashscope.aliyuncs.com; '
                'example https://foo.blob.core.windows.net '
                'https://dashscope-us.aliyuncs.com.example.test')
-        self.assertEqual(regional_endpoints(doc), {'DOMAIN,dashscope-us.aliyuncs.com'})
+        self.assertEqual(self.extract(85,doc), {'DOMAIN,dashscope-us.aliyuncs.com'})
 
     def test_official_sources_do_not_mix_private_relay_with_cloud_storage(self):
         def tab(id, rows):
@@ -101,8 +116,8 @@ class RuleContracts(unittest.TestCase):
         source=tab('appleaccount',[('appleid.cdn-apple.com','Apple Account authentication')])
         source+=tab('icloud',[('*.icloud-content.com','iCloud services'),
                    ('mask.icloud.com','iCloud Private Relay'),('apple-native-relay.apple.com','RCS')])
-        self.assertEqual(apple_endpoints(source,'apple-auth'),{'DOMAIN,appleid.cdn-apple.com'})
-        self.assertEqual(apple_endpoints(source,'icloud'),{'DOMAIN-SUFFIX,icloud-content.com'})
+        self.assertEqual(self.extract(31,source),{'DOMAIN,appleid.cdn-apple.com'})
+        self.assertEqual(self.extract(53,source),{'DOMAIN-SUFFIX,icloud-content.com'})
 
     def test_unicode_domain_can_be_kept_in_its_native_form(self):
         self.assertEqual(read_rules('DOMAIN-SUFFIX,mi.中国'), ['DOMAIN-SUFFIX,mi.中国'])

@@ -1,8 +1,8 @@
 # name: mainland-extended-coverage
 # priority: 197
-# section: fallback
-# description: 可选的大范围国内域名及地址合集
-# boundary: 范围较宽，替换同类国内兜底时才用，不叠加。
+# section: mainland-fallback
+# description: 宽版国内地址及客户端兼容表
+# boundary: 包含 CIDR、ASN 和 USER-AGENT，不含国内域名。包含 APNIC 登记为非 CN 的地址，不当作常规直连表。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 12622

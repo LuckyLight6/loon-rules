@@ -1,8 +1,8 @@
 # name: overseas-media-with-client-matches
 # priority: 182
-# section: fallback
-# description: 其他海外媒体：域名和客户端匹配备选
-# boundary: 替代 181 的 Loon 原生来源；选一个媒体兜底，不替换 131–139 的服务边界。
+# section: overseas-fallback
+# description: 海外媒体的域名及客户端兼容表
+# boundary: 域名部分已由影音专项和 180 覆盖。需要额外按客户端匹配时才替换 180；保留各服务专项。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 307

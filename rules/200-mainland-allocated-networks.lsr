@@ -1,12 +1,14 @@
 # name: mainland-allocated-networks
 # priority: 200
-# section: fallback
-# description: 一般国内 IPv4/IPv6 网络
-# boundary: 用于未命中名称的地址分类，保留 DNS 解析。
+# section: mainland-fallback
+# description: 可按 IPv4 / IPv6 网段判断的国内地址
+# boundary: 域名没命中时，按已知或解析出的地址查网段。不替代国内域名表；排在 GeoIP 之前。 新增地址须同时有 APNIC 中国大陆分配和中国运营商路由记录。
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-20T03:10:12Z
 # rule-count: 7342
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list
+# source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
+# source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 
 IP-CIDR,1.1.8.0/24
 IP-CIDR,1.116.0.0/15
@@ -2262,7 +2264,6 @@ IP-CIDR,192.140.208.0/21
 IP-CIDR,192.144.128.0/17
 IP-CIDR,192.163.11.0/24
 IP-CIDR,192.232.97.0/24
-IP-CIDR,192.51.173.0/24
 IP-CIDR,193.112.0.0/16
 IP-CIDR,193.9.44.0/24
 IP-CIDR,193.9.46.0/24
@@ -3702,7 +3703,7 @@ IP-CIDR,52.82.132.0/24
 IP-CIDR,52.82.134.0/23
 IP-CIDR,52.82.136.0/24
 IP-CIDR,52.82.144.0/23
-IP-CIDR,52.82.148.0/22
+IP-CIDR,52.82.148.0/23
 IP-CIDR,52.82.160.0/21
 IP-CIDR,52.82.170.0/23
 IP-CIDR,52.82.172.0/22
@@ -6345,7 +6346,9 @@ IP-CIDR6,2406:840:e0ce::/48
 IP-CIDR6,2406:840:e0d0::/44
 IP-CIDR6,2406:840:e0e4::/48
 IP-CIDR6,2406:840:e0e6::/47
-IP-CIDR6,2406:840:e0e8::/45
+IP-CIDR6,2406:840:e0e9::/48
+IP-CIDR6,2406:840:e0ea::/47
+IP-CIDR6,2406:840:e0ec::/46
 IP-CIDR6,2406:840:e0f0::/44
 IP-CIDR6,2406:840:e100::/45
 IP-CIDR6,2406:840:e108::/46
@@ -6674,7 +6677,6 @@ IP-CIDR6,2406:840:fee0::/45
 IP-CIDR6,2406:840:fee8::/46
 IP-CIDR6,2406:840:feec::/48
 IP-CIDR6,2406:840:feee::/47
-IP-CIDR6,2406:840:feff::/48
 IP-CIDR6,2406:840:ff20::/43
 IP-CIDR6,2406:840:ff40::/42
 IP-CIDR6,2406:840:ff80::/41

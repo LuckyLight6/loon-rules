@@ -1,15 +1,16 @@
 # name: mainland-domain-families
 # priority: 194
-# section: fallback
-# description: 一般国内域名
-# boundary: 国内域名兜底，不含通用关键字、UA、IP 或路由器管理名；国内地址与 GeoIP 单独处理。
+# section: mainland-fallback
+# description: 已知国内域名
+# boundary: 单看域名来选路。不需要为分流解析域名；不含 IP、GeoIP、客户端特征或路由器管理入口。
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-19T12:26:59Z
-# rule-count: 12790
+# updated-at: 2026-11-20T02:52:18Z
+# rule-count: 12789
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
 # source: https://service.mercurycom.com.cn/article-86.html
+# source: https://hima.auto/privacy/privacy-policy/
 
 DOMAIN,fhnfile.oss-cn-shenzhen.aliyuncs.com
 DOMAIN,hellofontpreview.oss-cn-beijing.aliyuncs.com
@@ -5609,7 +5610,6 @@ DOMAIN-SUFFIX,ipanda.com
 DOMAIN-SUFFIX,ipanda.com.cn
 DOMAIN-SUFFIX,ipanda.net
 DOMAIN-SUFFIX,ipbaohe.com
-DOMAIN-SUFFIX,ipify.org
 DOMAIN-SUFFIX,ipinyou.com
 DOMAIN-SUFFIX,ipip.net
 DOMAIN-SUFFIX,ipqcrhf.com
@@ -6832,7 +6832,6 @@ DOMAIN-SUFFIX,marioall.com
 DOMAIN-SUFFIX,marioin.com
 DOMAIN-SUFFIX,mariowap.com
 DOMAIN-SUFFIX,marscode.cn
-DOMAIN-SUFFIX,marscode.com
 DOMAIN-SUFFIX,marshotspot.com
 DOMAIN-SUFFIX,marvelunlimitedresources.com
 DOMAIN-SUFFIX,mashort.cn
@@ -10456,7 +10455,6 @@ DOMAIN-SUFFIX,tqiangg.net
 DOMAIN-SUFFIX,tquic.net
 DOMAIN-SUFFIX,tracup.com
 DOMAIN-SUFFIX,tradaquan.com
-DOMAIN-SUFFIX,trae.ai
 DOMAIN-SUFFIX,trae.cn
 DOMAIN-SUFFIX,trae.com.cn
 DOMAIN-SUFFIX,transmonkey.cn
@@ -12801,3 +12799,5 @@ DOMAIN-SUFFIX,飞飞.net
 DOMAIN-SUFFIX,飞飞.中国
 DOMAIN,www1.miwifi.com
 DOMAIN,bigota.miwifi.com
+DOMAIN,hima.auto
+DOMAIN,www.hima.auto

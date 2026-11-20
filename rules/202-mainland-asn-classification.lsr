@@ -1,6 +1,6 @@
 # name: mainland-asn-classification
 # priority: 202
-# section: fallback
+# section: mainland-fallback
 # description: 已知目的 IP 的中国 ASN 检查
 # boundary: 按已知裸 IP 匹配中国 ASN；不能替代域名或 GeoIP 兜底。
 # created-at: 2026-11-19T10:51:17Z

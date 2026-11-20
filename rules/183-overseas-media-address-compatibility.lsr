@@ -1,8 +1,8 @@
 # name: overseas-media-address-compatibility
 # priority: 183
-# section: fallback
-# description: 海外媒体的客户端特征与地址备选表
-# boundary: 除域名外还匹配 UA、URL 和 IP。与 181 同用途择一。
+# section: overseas-fallback
+# description: 海外媒体的地址及客户端兼容补充
+# boundary: 含 IP、UA、关键字和 URL，不替代 180；只在查明客户端确实需要这些匹配时单独验证。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 1020

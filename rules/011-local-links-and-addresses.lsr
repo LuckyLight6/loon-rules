@@ -2,9 +2,9 @@
 # priority: 011
 # section: network
 # description: 局域网名称、路由器、反查与保留地址
-# boundary: 管理入口用精确域名；保留私网的 DNS 匹配，不把公网翻译地址或协议任播整段当局域网。文档示例等只匹配裸 IP。
+# boundary: 路由器和局域网名称优先；私网、VPN 和回环保留用名称访问。链路本地、组播、保留及文档用地址只匹配已知目标 IP。
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T12:26:59Z
+# updated-at: 2026-11-20T01:22:56Z
 # rule-count: 139
 # source: https://www.iana.org/assignments/iana-ipv4-special-registry/
 # source: https://www.iana.org/assignments/iana-ipv6-special-registry/
@@ -18,28 +18,32 @@
 # source: https://service.mercurycom.com.cn/article-86.html
 # source: https://www.tp-link.com/us/support/faq/2394/
 # source: https://static.tenda.com.cn/tdeweb/download/A23/Wi-Fi%20Range%20Extender%28Repeater%29%20Installation%20Guide%28multi-language%29.pdf
+# source: https://www.rfc-editor.org/rfc/rfc3927.html
+# source: https://www.rfc-editor.org/rfc/rfc4472.html
+# source: https://www.rfc-editor.org/rfc/rfc6762.html
+# source: https://www.rfc-editor.org/rfc/rfc6761.html
 
 DOMAIN-SUFFIX,home
 DOMAIN-SUFFIX,lan
 DOMAIN-SUFFIX,local
-IP-CIDR,0.0.0.0/8
+IP-CIDR,0.0.0.0/8,no-resolve
 IP-CIDR,10.0.0.0/8
 IP-CIDR,100.64.0.0/10
 IP-CIDR,127.0.0.0/8
-IP-CIDR,169.254.0.0/16
+IP-CIDR,169.254.0.0/16,no-resolve
 IP-CIDR,172.16.0.0/12
 IP-CIDR,192.168.0.0/16
 IP-CIDR6,fc00::/7
-IP-CIDR6,fe80::/10
+IP-CIDR6,fe80::/10,no-resolve
 IP-CIDR,192.0.2.0/24,no-resolve
 IP-CIDR,198.51.100.0/24,no-resolve
 IP-CIDR,203.0.113.0/24,no-resolve
-IP-CIDR,224.0.0.0/3
+IP-CIDR,224.0.0.0/3,no-resolve
 IP-CIDR6,::/127
-IP-CIDR6,100::/64
-IP-CIDR6,2001:10::/28
+IP-CIDR6,100::/64,no-resolve
+IP-CIDR6,2001:10::/28,no-resolve
 IP-CIDR6,2001:db8::/32,no-resolve
-IP-CIDR6,ff00::/8
+IP-CIDR6,ff00::/8,no-resolve
 DOMAIN,asusrouter.com
 DOMAIN,router.asus.com
 DOMAIN,www.asusrouter.com

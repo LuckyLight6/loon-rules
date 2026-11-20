@@ -1,6 +1,6 @@
 # name: direct-domain-exceptions-extended
 # priority: 191
-# section: fallback
+# section: mainland-fallback
 # description: 更宽的直连域名备选
 # boundary: 不默认打开。这份表是跨业务直连备选；使用前确认不会抢先匹配 Apple、AI 等专项。
 # created-at: 2026-11-19T10:51:17Z

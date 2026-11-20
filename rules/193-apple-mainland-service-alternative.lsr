@@ -1,8 +1,8 @@
 # name: apple-mainland-service-alternative
 # priority: 193
-# section: fallback
-# description: 大陆 Apple 服务的兼容备选（不是纯 CDN）
-# boundary: 跨认证、缓存、下载等用途的兼容表；不默认启用，也不能当大陆专用主机清单或直连白名单。
+# section: mainland-fallback
+# description: 跨用途的 Apple 服务兼容表
+# boundary: 混有设备定位、商店、系统下载等域名；不当作大陆专域或直连白名单。已验证的下载别名归入 055。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 165

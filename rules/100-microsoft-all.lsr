@@ -4,8 +4,8 @@
 # description: Microsoft 账户、办公、会议、网盘、Xbox 与更新合集
 # boundary: 替换本章成员；Microsoft Copilot、GitHub 和 GitHub Copilot 仍独立。不把多租户 Azure 或 Akamai 整段归入。
 # created-at: 2026-11-19T12:26:59Z
-# updated-at: 2026-11-19T13:33:48Z
-# rule-count: 646
+# updated-at: 2026-11-20T02:14:16Z
+# rule-count: 647
 # source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
 # source: https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com
 # source: https://support.microsoft.com/en-us/outlook/getstarted/what-version-of-outlook-do-i-have
@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,msftidentity.com
 DOMAIN-SUFFIX,acompli.net
 DOMAIN-SUFFIX,outlookmobile.com
+DOMAIN-WILDCARD,*.mx.microsoft
 DOMAIN,wu-f-net.trafficmanager.net
 DOMAIN-SUFFIX,1drv.ms
 DOMAIN-SUFFIX,1drv.com

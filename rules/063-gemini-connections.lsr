@@ -8,6 +8,7 @@
 # rule-count: 51
 # source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
+# source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto
 
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,aistudio.google.com

@@ -206,7 +206,18 @@
     },
     "guard-sections": [
       "apple"
-    ]
+    ],
+    "discover": {
+      "apple-account-authentication": "extract",
+      "apple-intelligence-relays": "extract",
+      "apple-schoolwork-handouts": "extract",
+      "apple-certificate-validation": "extract",
+      "apple-update-control": "extract",
+      "apple-update-downloads": "extract",
+      "apple-association-services": "extract",
+      "apple-app-and-device-verification": "extract",
+      "apple-wallet-payments": "extract"
+    }
   },
   {
     "id": "claude-code",
@@ -242,7 +253,17 @@
     },
     "guard-sections": [
       "ai"
-    ]
+    ],
+    "discover": {
+      "claude-connections": {
+        "roots": [
+          "claude.ai",
+          "anthropic.com",
+          "claude.com",
+          "claudeusercontent.com"
+        ]
+      }
+    }
   },
   {
     "id": "claude-web-and-desktop",

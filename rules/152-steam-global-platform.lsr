@@ -2,12 +2,15 @@
 # priority: 152
 # section: games
 # description: Steam 国际商店、社区、联机和下载
-# boundary: 国内下载镜像另有 151；不含第三方游戏分销商和与 Steam 共享的整个网段。
+# boundary: 国内下载镜像由 151 处理。社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段。
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
-# rule-count: 10
+# updated-at: 2026-11-20T01:01:42Z
+# rule-count: 12
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# source: https://store.steampowered.com/
 
+DOMAIN,steamcommunity-a.akamaihd.net
+DOMAIN,steambroadcast.akamaized.net
 DOMAIN-SUFFIX,dota2.com
 DOMAIN-SUFFIX,playartifact.com
 DOMAIN-SUFFIX,s.team

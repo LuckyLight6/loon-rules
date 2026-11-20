@@ -1,8 +1,8 @@
 # name: overseas-site-fallback
 # priority: 184
-# section: fallback
-# description: 非专项海外站点的域名兜底
-# boundary: 只用域名后缀，不用 google、discord、leak 等关键字和宽 IP。更宽兼容源只做备选。
+# section: overseas-fallback
+# description: 海外站点小表：供 185 筛选的域名后缀
+# boundary: 原订阅保留。它没有剔除与国内表冲突的域名，不是 185 的等价精简版；日常选 185。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 3148

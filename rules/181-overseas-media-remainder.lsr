@@ -1,8 +1,8 @@
 # name: overseas-media-remainder
 # priority: 181
-# section: fallback
-# description: 其他海外媒体的域名兜底
-# boundary: 只匹配明确域名和后缀。Hulu、Max、Paramount+、Peacock、DAZN、BBC 等未单列的服务在此处理；不使用关键字、UA 或进程规则。
+# section: overseas-fallback
+# description: 海外影音域名兼容订阅
+# boundary: 保留已审核的上游域名覆盖；包含前面影音专项已有的范围。日常按细分选 180，不与 180 同开。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 259

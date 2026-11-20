@@ -4,10 +4,12 @@
 # description: Xcode、Swift Playgrounds 和开发者组件的实际下载
 # boundary: 开发下载与 App Store、OTA 和共享的 App 公证端点分开。
 # created-at: 2026-11-19T08:37:30Z
-# updated-at: 2026-11-19T09:33:57Z
-# rule-count: 7
+# updated-at: 2026-11-20T02:22:00Z
+# rule-count: 6
 # source: https://support.apple.com/en-us/101555
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://developer.apple.com/account/
+# source: https://developer.apple.com/download/
 
 DOMAIN,adcdownload.apple.com
 DOMAIN,adcdownload.apple.com.akadns.net
@@ -15,4 +17,3 @@ DOMAIN,devimages-cdn.apple.com
 DOMAIN,download.developer.apple.com
 DOMAIN,playground-assets-cdn.apple.com
 DOMAIN,playground-cdn.apple.com
-DOMAIN,developer.apple.com

@@ -29,9 +29,24 @@ jobs:
         run: |
           python3 -B maintain.py --refresh
           python3 -B maintain.py --verify-files
+      - name: Summarize source changes
+        run: |
+          python3 - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+          result=json.loads(Path('status.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as report:
+              print(f"读取 {result['inputs-read']} / {result['inputs-requested']} 个来源；更新 {len(result['changed'])} 份订阅。",file=report)
+              for source, state in result['source-inventories'].items():
+                  if state['state']!='current':
+                      print(f"- {source}：{state['state']}，未归属范围 {state.get('outside-scope','—')}",file=report)
+              for group, state in result['reviewed-inputs'].items():
+                  if state['state']!='current':
+                      print(f"- {group}：{state['state']}（新范围 {state.get('new-matches','—')}，缺少 {state.get('missing-rules','—')}）",file=report)
+          PYTHON
       - name: Commit validated outputs
         run: |
-          git add -- ':(glob)rules/*.lsr' status.json
+          git add -- ':(glob)rules/*.lsr' status.json REVIEW.md
           if git diff --cached --quiet; then
             exit 0
           fi

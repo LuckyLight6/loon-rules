@@ -1,6 +1,6 @@
 # name: mainland-asn-with-resolution
 # priority: 203
-# section: fallback
+# section: mainland-fallback
 # description: 国内 ASN 备选：域名解析后仍可匹配
 # boundary: 区别于 202 的裸 IP ASN，不批量改 no-resolve。两张 ASN 表用其一；若用 GeoIP 按设备数据库实际命中。
 # created-at: 2026-11-19T10:51:17Z

@@ -2,13 +2,14 @@
 # priority: 055
 # section: apple
 # description: 系统更新包与恢复内容下载
-# boundary: 系统恢复、更新包和运营商设置包的下载主机及其已核对的别名。目录、激活和证书走各自的组。
+# boundary: 收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断。
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-19T13:33:48Z
-# rule-count: 10
+# updated-at: 2026-11-20T00:58:33Z
+# rule-count: 13
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
 # source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
 
 DOMAIN,appldnld.apple.com.mwcname.com
 DOMAIN-SUFFIX,appldnld.apple.com
@@ -20,3 +21,6 @@ DOMAIN-SUFFIX,swdownload.apple.com
 DOMAIN-SUFFIX,updates-http.cdn-apple.com
 DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN,appldnld.apple.com.edgesuite.net
+DOMAIN,swcdn.g.aaplimg.com
+DOMAIN,updates-http.cdn-apple.com.akadns.net
+DOMAIN,updates-http.g.aaplimg.com

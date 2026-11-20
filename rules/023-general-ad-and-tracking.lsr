@@ -4,8 +4,8 @@
 # description: Repcz 广告与追踪拦截
 # boundary: 窄于大合集；与其他广告表作为同类选择。
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-19T10:51:17Z
-# rule-count: 6184
+# updated-at: 2026-11-20T02:14:16Z
+# rule-count: 6183
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Reject.list
 
 DOMAIN,a.wkanx.com
@@ -265,7 +265,6 @@ DOMAIN,t-ads.xiaohongshu.com
 DOMAIN,t7z.cupid.iqiyi.com
 DOMAIN,t7z.cupid.ptqy.gitv.tv
 DOMAIN,tmead.y.qq.com
-DOMAIN,token.safebrowsing.apple
 DOMAIN,toots-a.akamaihd.net
 DOMAIN,track.58.com
 DOMAIN,track.tenjin.com

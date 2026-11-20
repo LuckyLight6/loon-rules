@@ -27,13 +27,13 @@ CDN 说明内容从哪里交付，不说明谁能获取。公开图片可以匿�
 | 041 · 大陆分发别名 | 命中则直连 | 只列已经核对的 `cn-lb` 别名。请求若仍显示原始主机名，就由其业务规则决定；别名不保证落到大陆节点。 |
 | 042 · iCloud 同步与共享服务 | 和 053 用同一已验证出口；直连确实能同步才直连 | CloudKit、照片、备份和邮件会共用主机。先用小文件验证上传、下载和第二设备同步。 |
 | 043 · Music / 广播入口 | 与 056 先一起试直连 | 包括 Music 页面、API 和部分共用内容。登录与播放都成功再保留直连；目录正常不代表能播放。 |
-| 044 · TV / Fitness+ 入口 | **默认代理，跟 057 同一路** | 大陆服务清单不含对应订阅。门户能开不等于播放可用，两组一起测。 |
+| 044 · TV / Fitness+ 入口 | **默认代理，跟 057 同一路** | 大陆服务清单不含对应订阅。门户能开不等于播放可用，两组一起测。`blobstore.apple.com` 也用于[音乐人图片的签名上传](https://itunespartner.apple.com/music/assets/music-artist-api.pdf)，不按 TV 识别。 |
 | 045 · News / Sports | **默认代理** | 新闻门户、正文相关主机和体育服务，先按对应账号支持的地区选出口。 |
 | 046 · Apple Intelligence / PCC | **默认独立代理** | 已核对的 PCC 和系统 ChatGPT 扩展。Apple 与 AI 两章是同一个规则入口，不跟独立 ChatGPT App 共用。 |
 | 047 · Siri / 听写 / 搜索 | 保留普通 Siri 能用的出口 | Siri AI 已有独立资格条件，共用 Siri 主机暂不按版本硬拆；实际日志显示请求属于这组且失败，再对照切换。 |
 | 048 · 系统更新检查 | 直连优先 | 软件目录、恢复检查和 `beta.apple.com` 系统测试版登记不等于下载，也不是 TestFlight。 |
 | 049 · 证书状态 | 直连 | OCSP 等可能被其他厂商共用；独立于美区账号及 Apple 合集，避免不必要的系统验证延迟。 |
-| 050 · 开发者下载 | 直连优先 | Xcode 和工具包体积大；跳转到 Apple 账户认证的请求仍走 031。 |
+| 050 · 开发者下载 | 直连优先 | 只分实际文件主机，如 `devimages-cdn.apple.com`。[开发者门户](https://developer.apple.com/download/)同时提供文档和账户入口，不整站当作下载；跳转到认证主机后走 031。 |
 | 051 · 激活与系统联网 | 平常直连，受管设备遵从现有网络要求 | 包括设备激活、MDM、诊断、校时与个别 DNS 或 RCS 主机。不是全匿名，也不替换 Loon 的 DNS 设置。 |
 | 052 · 商店与媒体共用素材 | 直连优先 | 封面、截图和网页素材常由共用 CDN 提供。保留 033 等更具体规则的优先级，不当成全站下载。 |
 | 053 · iCloud 通用内容域 | 上传和下载都测通再走直连 | 大文件直连能省流量；但这一组不覆盖全部备份，也不代表内容匿名或位于大陆。 |
@@ -64,6 +64,7 @@ CDN 说明内容从哪里交付，不说明谁能获取。公开图片可以匿�
 另有一份[厂商端点清单](endpoint-contracts.json)，以官方资料为准，不从已有规则反推。联网更新会重读选定的 Apple 官方表和 Claude Code 网络端点表。有主机新增或消失，或有入口被前面的规则抢走，就保留上一个版本。Google、Microsoft 及 Claude 网页和桌面只核对清单点名的入口。共享域名注明不归某个产品的原因；文档没列出来的实际请求，还得看设备日志。
 
 - **局域网 vs. 公网。** 011 收 [小米](https://www.mi.com/global/support/faq/details/KA-226613/)、[水星](https://service.mercurycom.com.cn/article-86.html)、[TP-Link](https://www.tp-link.com/us/support/faq/2394/) 等有出处的管理名；小米公网帮助、下载仍走国内公网。默认与国内域名备选都检查局域网管理名的精确重复与后缀覆盖。
+- **哪些 IP 规则可以触发 DNS。** 011 的 IPv4／IPv6 链路本地、组播、文档及保留地址只按已知目标 IP 匹配；`.local` 等局域网名字照样按域名分流，私网、内网 VPN 和回环保留按名称访问所需的解析。200、204 是域名未命中后的地址识别，也保留解析。[Loon 的 IP 参数](https://nsloon.app/docs/Rule/ip_rule/#no-resolve) · [IPv6 链路本地地址的 DNS 边界](https://www.rfc-editor.org/rfc/rfc4472.html#section-2.1)
 - **办公 vs. 公共云。** `netflix.com.edgesuite.net` 按 Netflix 而非 Microsoft 选路。`edgesuite.net` 等 [Akamai CDN 后缀](https://techdocs.akamai.com/edge-hostnames/docs/edge-hn-terminology)及 `azurewebsites.net` 等 [Azure 多租户域](https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains)不能靠整段后缀判定产品。通用与备选表都不导入这些整段。
 - **海外 Apple vs. 直连。** TV／Fitness+、News／Sports、PCC 和 TV 视频四组参与与国内、直连、Apple 兼容候选的交叉检查。识别不了的请求继续按现有顺序走兜底；未发现域名不意味着国内可访问。
 
@@ -73,7 +74,55 @@ DNS 和 WebRTC 各有自己的出口。规则命中没有问题后，再按[网�
 
 - **Claude 061。** [Anthropic 文档](https://code.claude.com/docs/en/network-config#network-access-requirements)列出的自营入口中，登录与续签（`claude.ai`、`platform.claude.com`、`sso.claude.com`）、API、Claude Code 更新、`bridge.claudeusercontent.com`、Artifact 和 MCP 小组件专域走同一专项。通用 GitHub、npm 和 Google Storage、第三方 MCP、云厂商网关保持原有业务分类。iPhone 的规则不配置 Mac 的 Claude Code 或 Desktop；SSE、长推理与上传还得用实际出口和设备验证。
 - **Apple Intelligence 046。** AI 章与 Apple 章引用同一份表。它从 [Apple 官方网络表](https://support.apple.com/en-us/101555)筛选 PCC 及扩展入口，和普通 Siri、系统更新、独立 ChatGPT 分开。 [Apple Intelligence](https://support.apple.com/en-us/121115)和 [Siri AI](https://support.apple.com/en-hk/127893)的资格以设备、语言和账户支持为准；不要把共享 Siri 或模型下载域当作专用推理入口。
+- **082 ai.com** 是[独立的 AI 助手服务](https://ai.com/start)，不属于 ChatGPT。单独选择 082，或随 060 共用海外 AI 出口。
 - **各产品独立。** Grok 和 xAI API 用 064；X 社交在 093，Grokipedia 在 080。Muse 的 `muse.ai` 用 077，Meta AI 的 `meta.ai` 用 079；两者不匹配 Facebook 等共享平台。国产国内版和国际版按公开入口区分，同一主机不会因为账号或客户端语言不同被强拆。
 - **也测不该命中的请求。** `storage.googleapis.com` 不能落到 Gemini、Drive 或 Claude 专用规则；仅包含 google、discord 等字样的无关主机不能被海外兜底接管。单独替换每个合集和同时替换所有合集都检查首条命中。
 
 [status.json](status.json)记录已发布规则的命中检查和上游核对情况。设备的 DNS、WebRTC、CDN 调度和长连接要实测。ChatGPT 的 WebSocket 和文件入口按 [OpenAI 网络文档](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)核对；语音的 UDP/3478 不靠扩大域名范围或代理整个共享网段解决。
+
+## 备选规则怎么选
+
+### 日常选三份
+
+| 规则 | 管什么 | 怎么判断 |
+|---|---|---|
+| [180 其他海外影音](rules/180-other-overseas-media.lsr) | Hulu、Max、BBC 等未单列的影音 | 只按域名。Netflix、Apple TV 等已有专项的服务先用专项。 |
+| [185 海外站点和 GFW](rules/185-overseas-access-domains.lsr) | 不归其他专项的海外站点 | 只按域名。和 180 一样，生成时扣除已被前面规则完整覆盖的范围。 |
+| [192 国内分流合一](rules/192-mainland-routing.lsr) | 同一个国内策略接收域名、网段和 GeoIP 命中 | 先看域名，没命中再按地址判断，网段优先于 GeoIP。 |
+
+想分别控制，就用 `194`、`200`、`204` 替换 `192`：194 只收国内域名，200 查明确网段，204 再查 Loon 的地区数据库。只想按已知域名选路、不启用这两条国内地址兜底时，只选 194。未命中的连接由 `FINAL` 决定。
+
+### 已放进常规规则的入口
+
+- **036 商店交易**：Apple 的 [iTunes 配置](https://init.itunes.apple.com/bag.xml?ix=6) 把 `fpinit.itunes.apple.com` 用于签名初始化，跟商店交易走同一策略，不归下载。
+- **055 更新下载**：[Apple 列出的下载主机](https://support.apple.com/en-us/101555) `swcdn.apple.com` 和 `updates-http.cdn-apple.com` 各有 DNS 别名。核对后只加三个确切主机；`mesu` 的更新目录仍归 048。
+- **084 国内 AI**：加入[哩布哩布国内站](https://www.liblib.art/document/article_member)和[专用 API](https://www.liblib.art/apis/workflow)。`qwen.ai`、`z.ai` 仍走 085 国际入口，不按厂商所在地改成国内。
+- **152 Steam 国际服务**：[Steam 商店](https://store.steampowered.com/) 的页面安全策略列出了社区素材和直播用的两个专用 CDN 主机。只加入这两条，151 的国内下载镜像不变。
+- **194 国内域名**：加入[鸿蒙智行](https://hima.auto/privacy/privacy-policy/)官网及跳转到官网的 `www` 入口，不扩到其他域名。
+
+### 哪些整表不该默认打开
+
+影音只补域名用 180，海外站点和 GFW 用 185，国内三种判断用 192。185 和代理兜底选同一出口时，185 的作用是标出已知站点，并抢在国内地址兜底前匹配；没收录的站点仍按后续规则走。以下文件保留原订阅地址，不代表应该全部启用。
+
+
+| 编号 | 怎么处理 | 原因 |
+|---|---|---|
+| [181](rules/181-overseas-media-remainder.lsr) | 保留现有的影音订阅；日常选 180 | 保留上游域名的完整覆盖；180 只补各影音专项没有覆盖的域名。 |
+| [182](rules/182-overseas-media-with-client-matches.lsr) | 保留客户端兼容用途 | 域名部分已由 180 和各影音专项承接；选择它是为了另用客户端标识。 |
+| [183](rules/183-overseas-media-address-compatibility.lsr) | 单独可选，不替代 180 | 不含精确域名或后缀；按地址、关键字、URL 或客户端匹配，容易接管不属于本组的请求。 |
+| [184](rules/184-overseas-site-fallback.lsr) | 作为 185 的域名来源，不建议单独用 | 小表仍与国内来源相交，并不是 185 的纯子集。185 先剔除有争议的范围；条数见[来源检查](REVIEW.md)。 |
+| [186](rules/186-overseas-site-wide-compatibility.lsr) | 保留宽版兼容；日常用 185 | 除域名外还有 IP 和客户端规则，部分网段写法对不齐掩码。常规只合并域名。 |
+| [187](rules/187-overseas-address-and-client-matching.lsr) | 改为单独可选，不替代 185 | 公开文件只有 IP 与客户端规则；关掉 185 使用它会丢掉域名覆盖。 |
+| [188](rules/188-restricted-sites-and-addresses.lsr) | 保留地址兼容用途；日常用 185 | 核准的 GFW 域名已合进 185，确认为 Steam 专用的主机用 152；不顺带开启整个地址表。 |
+| [190](rules/190-direct-domain-exceptions.lsr) | 不作通用直连 | 和 Google 及广告拦截范围有交叉。目的明确的域名交给原专项。 |
+| [191](rules/191-direct-domain-exceptions-extended.lsr) | 不作通用直连 | 混有自建 NAS 的 DDNS、站点素材和 Apple 端点；域名后缀不能说明服务器在用户的本地网络。 |
+| [193](rules/193-apple-mainland-service-alternative.lsr) | 不作 Apple 大陆直连 | 混有定位、系统、商店和下载。确认是包体下载的别名才放进 055。 |
+| [196](rules/196-mainland-service-domains.lsr) | 只在拆开订阅时替换 194，不与 192 叠加 | 与 194 来源不同，有独有域名。两表都会剔除 085 的国际版 AI 范围，包括会吞掉 `chat.qwenlm.ai` 的父后缀；不能只靠订阅顺序避开错分。 |
+| [197](rules/197-mainland-extended-coverage.lsr) | 不纳入默认地址表 | 没有专用域名，混有 ASN、客户端和宽 IP；相比 200 新增的地址包含 APNIC 登记为非 CN 的段。 |
+| [201](rules/201-mainland-address-registry.lsr) | 不与 200 合并启用 | 历史范围并非全部登记在 CN。新增范围同时核对分配与路由，仍不能把整表当作实际地理位置。 |
+| [202](rules/202-mainland-asn-classification.lsr) | 明确需要按已知 IP 查 ASN 时才选 | 带 `no-resolve`，不为按 ASN 分类触发 DNS 查询。 |
+| [203](rules/203-mainland-asn-with-resolution.lsr) | 明确需要域名解析后查 ASN 时才选 | 来源、ASN 名单与 202 都不同。这份允许为归属查询解析域名；不是单纯去掉一个参数。 |
+
+[APNIC 的分配记录](https://www.apnic.net/manage-ip/manage-resources/address-status/by-rir/)标的是资源分配地，不能证明服务器在哪，也不能证明某条线路能直连。国内地址和 ASN 不是给全体业务选出口的第一依据。
+
+`021` 只拦已核实的广告入口；`025` 默认关闭，`026` 需要接受语音和会议可能受影响时才启用。合集给同一出口换一种订阅方式，与成员二选一。

@@ -1,14 +1,164 @@
 {
-  "checked-at": "2026-11-19T13:43:40Z",
-  "inputs-read": 74,
-  "critical": 421,
-  "inputs-requested": 74,
+  "checked-at": "2026-11-20T03:16:48Z",
+  "inputs-read": 89,
+  "critical": 457,
+  "inputs-requested": 89,
+  "maintenance": {
+    "已核清单": [
+      11,
+      13,
+      21,
+      26,
+      37,
+      39,
+      50,
+      51,
+      52,
+      54,
+      77,
+      78,
+      79,
+      80,
+      81,
+      106,
+      107,
+      108,
+      109,
+      114,
+      161,
+      162,
+      163,
+      165,
+      166
+    ],
+    "按来源筛选": [
+      12,
+      14,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      38,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      48,
+      49,
+      53,
+      55,
+      56,
+      57,
+      58,
+      59,
+      62,
+      63,
+      66,
+      82,
+      84,
+      85,
+      91,
+      92,
+      93,
+      94,
+      95,
+      103,
+      104,
+      105,
+      113,
+      121,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      143,
+      144,
+      151,
+      152,
+      153,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174
+    ],
+    "随来源缩小拦截": [
+      23
+    ],
+    "整域拦截交叉核对": [
+      25
+    ],
+    "组合生成": [
+      30,
+      60,
+      100,
+      130,
+      160,
+      180,
+      185,
+      192
+    ],
+    "比较上游，保留已审范围": [
+      40,
+      47,
+      61,
+      64,
+      65,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      115,
+      139,
+      164,
+      181,
+      182,
+      183,
+      184,
+      186,
+      187,
+      188,
+      190,
+      191,
+      193,
+      194,
+      197,
+      202,
+      203,
+      204
+    ],
+    "新增域名与国内业务表交叉核对": [
+      196
+    ],
+    "分配与路由交叉核对": [
+      200,
+      201
+    ]
+  },
   "reviewed-inputs": {
     "general-ad-and-tracking": {
       "state": "current"
     },
     "extended-ad-and-tracking": {
-      "state": "current"
+      "state": "current",
+      "not-whole-host-consensus": 18236,
+      "admitted-rules": 0,
+      "retired-rules": 0
     },
     "apple-private-relay-connections": {
       "state": "current"
@@ -56,9 +206,8 @@
       "state": "current"
     },
     "microsoft-connectivity": {
-      "state": "review",
-      "new-matches": 5,
-      "missing-rules": 0
+      "state": "current",
+      "outside-purpose": 5
     },
     "bahamut-video-and-community": {
       "state": "current"
@@ -79,17 +228,15 @@
       "state": "current"
     },
     "overseas-site-wide-compatibility": {
-      "state": "review",
-      "new-matches": 7,
-      "missing-rules": 0
+      "state": "current",
+      "outside-purpose": 7
     },
     "overseas-address-and-client-matching": {
       "state": "current"
     },
     "restricted-sites-and-addresses": {
-      "state": "review",
-      "new-matches": 7,
-      "missing-rules": 0
+      "state": "current",
+      "outside-purpose": 7
     },
     "direct-domain-exceptions": {
       "state": "current"
@@ -101,21 +248,28 @@
       "state": "current"
     },
     "mainland-domain-families": {
-      "state": "current"
+      "state": "current",
+      "reserved-scopes": 2
     },
     "mainland-service-domains": {
-      "state": "review",
-      "new-matches": 4,
-      "missing-rules": 0
+      "state": "current",
+      "reserved-scopes": 3,
+      "unconfirmed-domains": 4
     },
     "mainland-extended-coverage": {
       "state": "current"
     },
     "mainland-allocated-networks": {
-      "state": "current"
+      "state": "current",
+      "accepted-prefixes": 0,
+      "unconfirmed-prefixes": 2,
+      "retired-prefixes": 0
     },
     "mainland-address-registry": {
-      "state": "current"
+      "state": "current",
+      "accepted-prefixes": 0,
+      "unconfirmed-prefixes": 0,
+      "retired-prefixes": 0
     },
     "mainland-asn-classification": {
       "state": "current"
@@ -179,25 +333,65 @@
       "shared": 0
     }
   },
+  "source-inventories": {
+    "overseas-ai": {
+      "state": "current",
+      "domain-scopes": 45,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "gemini-services": {
+      "state": "current",
+      "domain-scopes": 49,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "mainland-ai": {
+      "state": "current",
+      "domain-scopes": 19,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "apple-media": {
+      "state": "current",
+      "domain-scopes": 16,
+      "outside-scope": 0,
+      "other-rules": 2
+    },
+    "apple-music": {
+      "state": "current",
+      "domain-scopes": 9,
+      "outside-scope": 0,
+      "other-rules": 0
+    }
+  },
+  "fallback-conflicts": {
+    "overseas-access-domains": {
+      "overseas-site-fallback": 6,
+      "overseas-site-wide-compatibility": 22,
+      "restricted-sites-and-addresses": 26
+    }
+  },
   "shared-negatives": 20,
   "changed": [],
-  "scope-negatives": 61,
-  "ip-cases": 26,
+  "scope-negatives": 100,
+  "ip-cases": 37,
   "rules": {
     "local-links-and-addresses": 139,
     "network-sign-in-and-probes": 18,
     "tailscale-control-and-tailnet": 3,
+    "ip-egress-checks": 22,
     "apple-and-ai-privacy-exceptions": 3,
-    "general-ad-and-tracking": 6184,
-    "extended-ad-and-tracking": 61862,
+    "general-ad-and-tracking": 6183,
+    "extended-ad-and-tracking": 43989,
     "privacy-public-stun-endpoints": 2,
-    "apple-all": 254,
+    "apple-all": 256,
     "apple-account-authentication": 8,
     "apple-association-services": 2,
     "apple-app-and-device-verification": 8,
     "apple-wallet-payments": 4,
     "apple-beta-distribution": 2,
-    "apple-store-transactions": 17,
+    "apple-store-transactions": 18,
     "apple-app-package-downloads": 2,
     "apple-push-connection": 11,
     "apple-location-services": 11,
@@ -205,23 +399,23 @@
     "apple-mainland-delivery-aliases": 1,
     "apple-cloud-sync": 9,
     "apple-music-and-radio": 4,
-    "apple-video-and-fitness": 6,
+    "apple-video-and-fitness": 5,
     "apple-news-and-sports": 9,
     "apple-intelligence-relays": 4,
     "apple-siri-and-search": 5,
     "apple-update-control": 75,
     "apple-certificate-validation": 12,
-    "apple-developer-downloads": 7,
+    "apple-developer-downloads": 6,
     "apple-system-connectivity": 47,
     "apple-shared-store-assets": 2,
     "apple-icloud-content-domains": 1,
     "apple-messaging-identity": 2,
-    "apple-update-downloads": 10,
+    "apple-update-downloads": 13,
     "apple-music-audio-delivery": 5,
     "apple-tv-video-delivery": 2,
     "apple-icloud-mainland": 3,
     "apple-schoolwork-handouts": 3,
-    "ai-overseas-all": 131,
+    "ai-overseas-all": 132,
     "claude-connections": 16,
     "chatgpt-connections": 16,
     "gemini-connections": 51,
@@ -243,16 +437,17 @@
     "meta-ai-assistant": 1,
     "grokipedia-encyclopedia": 1,
     "microsoft-copilot-connections": 4,
-    "ai-cn": 40,
+    "ai-com-agents": 1,
+    "ai-cn": 42,
     "ai-cn-international": 36,
     "telegram-messaging": 24,
     "discord-messaging-and-voice": 15,
     "x-social-and-media": 8,
     "wechat-global-portal": 4,
     "wechat-shared-and-mainland": 19,
-    "microsoft-all": 646,
-    "microsoft-account-authentication": 16,
-    "microsoft-outlook-mail": 9,
+    "microsoft-all": 647,
+    "microsoft-account-authentication": 18,
+    "microsoft-outlook-mail": 11,
     "microsoft-teams-meetings": 4,
     "microsoft-windows-update-services": 3,
     "microsoft-update-and-store-downloads": 5,
@@ -275,7 +470,7 @@
     "bilibili-mainland-video": 10,
     "douyin-mainland-video": 8,
     "steam-mainland-downloads": 8,
-    "steam-global-platform": 10,
+    "steam-global-platform": 12,
     "epic-games-services": 5,
     "google-all": 224,
     "google-account-authentication": 5,
@@ -290,21 +485,24 @@
     "taobao-and-xianyu-shopping": 5,
     "jingdong-shopping": 4,
     "xiaohongshu-community": 3,
+    "other-overseas-media": 193,
     "overseas-media-remainder": 259,
     "overseas-media-with-client-matches": 307,
     "overseas-media-address-compatibility": 1020,
     "overseas-site-fallback": 3148,
+    "overseas-access-domains": 18783,
     "overseas-site-wide-compatibility": 16967,
     "overseas-address-and-client-matching": 165,
     "restricted-sites-and-addresses": 7449,
     "direct-domain-exceptions": 34,
     "direct-domain-exceptions-extended": 195,
+    "mainland-routing": 20132,
     "apple-mainland-service-alternative": 165,
-    "mainland-domain-families": 12790,
-    "mainland-service-domains": 6383,
+    "mainland-domain-families": 12789,
+    "mainland-service-domains": 6380,
     "mainland-extended-coverage": 12622,
     "mainland-allocated-networks": 7342,
-    "mainland-address-registry": 9665,
+    "mainland-address-registry": 9673,
     "mainland-asn-classification": 1009,
     "mainland-asn-with-resolution": 5076,
     "mainland-geoip-fallback": 1

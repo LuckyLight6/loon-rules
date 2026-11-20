@@ -1,5 +1,7 @@
 """Verify independently reviewed public endpoint ownership before publishing."""
+from copy import deepcopy
 from html import unescape
+from rule_inputs import extract_rows, within
 import re
 
 import maintain as rules
@@ -45,6 +47,47 @@ def declared_hosts(contract):
 
 def _mentioned(text, host):
     return re.search(r'(?<![\w.*-])'+re.escape(host)+r'(?![\w.-]*[\w-])',text) is not None
+
+
+def resolve_additions(contracts, entries, downloaded):
+    """Assign new official table entries only when product evidence identifies exactly one owner."""
+    resolved = deepcopy(contracts)
+    for spec in resolved:
+        if not (discover := spec.get('discover')):
+            continue
+        text = downloaded[spec['source']]
+        if spec['format']=='apple-host-table':
+            actual=apple_table_hosts(text,spec['sections'])
+        elif spec['format']=='claude-code-table':
+            actual=claude_table_hosts(text)
+        else:
+            raise rules.Invalid('只有完整端点表可以自动识别新增主机：'+spec['id'])
+        known, shared = declared_hosts(spec)
+        extra=actual-known-shared
+        assigned={host:owner for owner,hosts in spec['routes'].items() for host in hosts}
+        matches={host:set() for host in extra}
+        for owner, policy in discover.items():
+            if policy=='extract':
+                # Only this official document may support the assignment.
+                rows=set().union(*(extract_rows(r,text) for r in entries[owner].get('extract',())
+                                   if r['source']==spec['source']))
+                for row in rows:
+                    kind,host=row.split(',',1)
+                    if kind!='DOMAIN': continue
+                    if host in shared or (host in assigned and assigned[host]!=owner):
+                        raise rules.Invalid(f'{host} 官方用途变化：原归属 {assigned.get(host,"共享")}，现符合 {owner}')
+                for host in extra:
+                    if 'DOMAIN,'+host in rows:
+                        matches[host].add(owner)
+            else:
+                for host in extra:
+                    if '*' not in host and within(host,policy['roots']):
+                        matches[host].add(owner)
+        for host,owners in sorted(matches.items()):
+            if len(owners)!=1:
+                raise rules.Invalid(spec['id']+' 新端点待归属：'+host)
+            spec['routes'][owners.pop()].append(host)
+    return resolved
 
 
 def verify_sources(contracts, downloaded):

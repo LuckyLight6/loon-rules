@@ -1,6 +1,6 @@
 # name: direct-domain-exceptions
 # priority: 190
-# section: fallback
+# section: mainland-fallback
 # description: 通用直连的明确域名例外
 # boundary: 不默认启用。含跨业务的直连白名单，选用前检查是否抢占专项或与自己的出口冲突。
 # created-at: 2026-11-19T10:51:17Z
