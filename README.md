@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/100-ai-overs
 |---|---|
 | 海外 AI 用同一稳定出口 | 100；需要分别选路时，改选 Claude、OpenAI、Gemini、xAI 等成员 |
 | 国产 AI 区分国内与国际入口 | 国内版 500，国际版 125；两者也各有产品细分。Apple Intelligence 独立使用 123 |
-| Apple 登录和下载用不同出口 | 用 Apple 细分表。账户 201、交易 205 可选同一稳定节点；安装包 206、系统下载 223、iCloud 内容 213 分别选路。TV、News、PCC 使用可用地区的代理 |
+| Apple 登录和下载用不同出口 | 用 Apple 细分表。账户 201、交易 205 可选同一稳定节点；安装包 206、系统下载 224、iCloud 内容 214 分别选路。TV、News、PCC 使用可用地区的代理 |
 | Google 或 Microsoft 统一选路 | 分别选 450、470；需要区分账户、会议、文件或更新下载时，改选成员 |
 | 补充专项没有识别的网站 | 670 交给海外影音策略，675 交给通用代理。国内补充选 702；需要分别控制时，用 704、707、711 替代 |
 

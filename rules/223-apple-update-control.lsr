@@ -1,5 +1,5 @@
 # name: apple-update-control
-# priority: 222
+# priority: 223
 # section: apple
 # description: 系统更新目录、检查、授权与登记
 # boundary: 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 232，二进制包体在 223，不把整组当成匿名静态下载

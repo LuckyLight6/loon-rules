@@ -4,17 +4,10 @@
 # description: Apple 生态合集
 # boundary: 替换所列账户、系统、海外媒体、智能与 iCloud 成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T16:53:27Z
 # rule-count: 259
 # source: https://support.apple.com/en-us/101555
-# source: https://rules.xkww3n.cyou/classical/apple-intelligence.txt
 # source: https://support.apple.com/en-us/121115
-# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
-# source: https://support.apple.com/en-us/104978
-# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
-# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
-# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
-# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
 # source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
@@ -32,6 +25,12 @@
 # source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-APNS.list
 # source: https://support.apple.com/guide/deployment/configure-devices-to-work-with-apns-dep2de55389a/web
 # source: https://support.apple.com/en-us/102266
+# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
+# source: https://support.apple.com/en-us/104978
+# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
 # source: https://gdmf.apple.com/v2/pmv
 # source: https://configuration.ls.apple.com/config/defaults
 # source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
@@ -65,10 +64,6 @@ DOMAIN,apple-relay.apple.com
 DOMAIN,apple-relay.cloudflare.com
 DOMAIN,cp4.cloudflare.com
 DOMAIN,apple-relay.fastly-edge.com
-DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
-DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
-DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com
-DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com
 DOMAIN,iforgot.apple.com
 DOMAIN,auth.itunes.apple.com
 DOMAIN,account.apple.com
@@ -119,6 +114,10 @@ IP-CIDR6,2403:300:a51::/48,no-resolve
 IP-CIDR6,2620:149:a44::/48,no-resolve
 IP-CIDR6,2a01:b740:a42::/48,no-resolve
 DOMAIN-SUFFIX,push-apple.com.akadns.net
+DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com
 DOMAIN,gsp9-ssl.apple.com
 DOMAIN,gsp10-ssl.apple.com
 DOMAIN-SUFFIX,ls.apple.com

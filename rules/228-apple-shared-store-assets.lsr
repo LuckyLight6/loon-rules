@@ -1,5 +1,5 @@
 # name: apple-shared-store-assets
-# priority: 227
+# priority: 228
 # section: apple
 # description: Apple 商店与媒体共用的静态内容
 # boundary: mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包。s.mzstatic.com 应先命中 202；静态图片别名不保证专供大陆

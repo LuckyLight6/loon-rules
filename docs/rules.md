@@ -58,7 +58,7 @@
 | 120 | [openrouter-gateway](../rules/120-openrouter-gateway.lsr) | OpenRouter 的模型网关入口 | 同一个网关不根据模型名称切流 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/120-openrouter-gateway.lsr) |
 | 121 | [windsurf-editor-and-api](../rules/121-windsurf-editor-and-api.lsr) | Windsurf 和 Codeium 专用接口 | 不把公共托管平台当开发助手 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/121-windsurf-editor-and-api.lsr) |
 | 122 | [ai-com-agents](../rules/122-ai-com-agents.lsr) | ai.com 的个人 AI 代理 | ai.com 是独立服务，不归 ChatGPT 或 Claude。海外 AI 统一出口时选 100 即可 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/122-ai-com-agents.lsr) |
-| 123 | [apple-intelligence-relays](../rules/123-apple-intelligence-relays.lsr) | Apple Intelligence：PCC 和系统 ChatGPT 扩展 | 中国大陆网络建议用独立代理。能否使用还要看设备、账户、语言和功能资格。普通 Siri、ChatGPT App 和模型下载不归本组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/123-apple-intelligence-relays.lsr) |
+| 123 | [apple-intelligence-relays](../rules/123-apple-intelligence-relays.lsr) | Apple Intelligence 的 PCC 与系统 AI 扩展中继 | 按 Apple 官方明确用途提取精确主机；iCloud Private Relay、普通 Siri、独立 AI App 和模型下载分别处理。功能资格仍取决于设备、账户和地区 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/123-apple-intelligence-relays.lsr) |
 | 124 | [jetbrains-ai](../rules/124-jetbrains-ai.lsr) | JetBrains AI | AI 专用域和官方明确列出的海外后端；中国区 API 另列 516，IDE、账号和插件市场仍归 309，不认领共用配置服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/124-jetbrains-ai.lsr) |
 
 ### 3.3 国产 AI · 国际版合集
@@ -169,19 +169,13 @@
 
 账户与商店交易可固定代理，安装包和更新包另选直连。合集用于统一出口，和成员二选一
 
-### 4.1 设备与朋友查找
+### 4.1 Apple 生态合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 199 | [apple-find-my](../rules/199-apple-find-my.lsr) | Find My 设备与朋友查找的已识别入口 | 查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 209，共用 iCloud 网页、推送与静态素材不并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/199-apple-find-my.lsr) |
+| 200 | [apple-all](../rules/200-apple-all.lsr) | Apple 生态合集 | **合集：替代 123、201–228、230–233。** 替换所列账户、系统、海外媒体、智能与 iCloud 成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/200-apple-all.lsr) |
 
-### 4.2 Apple 生态合集
-
-| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
-|---:|---|---|---|---|
-| 200 | [apple-all](../rules/200-apple-all.lsr) | Apple 生态合集 | **合集：替代 123、199、201–227、229–232。** 替换所列账户、系统、海外媒体、智能与 iCloud 成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/200-apple-all.lsr) |
-
-### 4.3 账户、验证与支付
+### 4.2 账户、验证与支付
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
@@ -189,7 +183,7 @@
 | 202 | [apple-app-and-device-verification](../rules/202-apple-app-and-device-verification.lsr) | 应用验证、App Attest、macOS 公证与设备身份验证 | 保留系统服务直连；共享 apple-cloudkit.com 不从此组抢走 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/202-apple-app-and-device-verification.lsr) |
 | 203 | [apple-wallet-payments](../rules/203-apple-wallet-payments.lsr) | Wallet 与 Apple Pay 已知支付入口 | 只收可追溯的精确主机。支付仍依赖账户、设备校验及商户；不吞 ca、Apple 全域或其他支付公司 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/203-apple-wallet-payments.lsr) |
 
-### 4.4 商店交易、安装与通用链接
+### 4.3 商店交易、安装与通用链接
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
@@ -198,60 +192,66 @@
 | 206 | [apple-app-package-downloads](../rules/206-apple-app-package-downloads.lsr) | App Store 安装包下载 | 只匹配已知安装包入口和别名，不把 mzstatic 整段算作安装包。TestFlight、购买、设备验证和系统更新各有专表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/206-apple-app-package-downloads.lsr) |
 | 207 | [apple-association-services](../rules/207-apple-association-services.lsr) | Apple 通用链接的域名验证 | 只匹配 Associated Domains 端点，不放开整个 Apple CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/207-apple-association-services.lsr) |
 
-### 4.5 推送、查找、消息与通话
+### 4.4 推送、查找、消息与通话
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
 | 208 | [apple-push-connection](../rules/208-apple-push-connection.lsr) | APNs 系统推送的域名与公开客户端网段 | 独立选择长连接出口。默认保留实测可用路径；直连丢通知时可只切此组对照。不能按 App 国别拆系统推送 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/208-apple-push-connection.lsr) |
-| 209 | [apple-location-services](../rules/209-apple-location-services.lsr) | 定位查询、地图配置与信号定位数据 | 定位服务与信号定位共用主机；Find My 由独立专表先匹配，账户、推送与 iCloud 文件各自处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/209-apple-location-services.lsr) |
-| 210 | [apple-messaging-identity](../rules/210-apple-messaging-identity.lsr) | Apple IDS 共用身份、注册与查询服务 | 从 Apple 公开配置读取认证、注册、查询与资料入口；保留既有 IDS 父域补充，与定位和推送分开，不代替全部消息媒体或 FaceTime 中继 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/210-apple-messaging-identity.lsr) |
+
+### 4.5 设备与朋友查找
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
+|---:|---|---|---|---|
+| 209 | [apple-find-my](../rules/209-apple-find-my.lsr) | Find My 设备与朋友查找的已识别入口 | 查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 209，共用 iCloud 网页、推送与静态素材不并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/209-apple-find-my.lsr) |
+| 210 | [apple-location-services](../rules/210-apple-location-services.lsr) | 定位查询、地图配置与信号定位数据 | 定位服务与信号定位共用主机；Find My 由独立专表先匹配，账户、推送与 iCloud 文件各自处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/210-apple-location-services.lsr) |
+| 211 | [apple-messaging-identity](../rules/211-apple-messaging-identity.lsr) | Apple IDS 共用身份、注册与查询服务 | 从 Apple 公开配置读取认证、注册、查询与资料入口；保留既有 IDS 父域补充，与定位和推送分开，不代替全部消息媒体或 FaceTime 中继 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/211-apple-messaging-identity.lsr) |
 
 ### 4.6 专用代理与 iCloud 文件
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 211 | [apple-private-relay-connections](../rules/211-apple-private-relay-connections.lsr) | Private Relay 的 mask 域和 Apple DNS 中继别名 | 放在 iCloud 同步前；不包含整个 iCloud 或 Apple DNS 后缀 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/211-apple-private-relay-connections.lsr) |
-| 212 | [apple-icloud-mainland](../rules/212-apple-icloud-mainland.lsr) | 中国大陆 iCloud 服务和内容专用域 | 只收官方标注的大陆服务域及 Apple DNS 委派的大陆内容域；不认为 Apple 账户、CloudKit 或共用域都在大陆 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/212-apple-icloud-mainland.lsr) |
-| 213 | [apple-icloud-content-domains](../rules/213-apple-icloud-content-domains.lsr) | iCloud 通用内容域 | 仅匹配 icloud-content.com 内容域，能直连再直连。大陆专域另管；部分上传、备份仍使用共用服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/213-apple-icloud-content-domains.lsr) |
-| 214 | [apple-cloud-sync](../rules/214-apple-cloud-sync.lsr) | iCloud 通用服务、CloudKit、同步、邮件及 iWork | 认证、查找、Private Relay、确定的内容域及大陆服务分别匹配；通用域不能用来判断账户或存储国家 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/214-apple-cloud-sync.lsr) |
-| 215 | [apple-podcasts](../rules/215-apple-podcasts.lsr) | Apple 播客 | 识别播客目录，不把创作者自己托管的音频也归给 Apple | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/215-apple-podcasts.lsr) |
+| 212 | [apple-private-relay-connections](../rules/212-apple-private-relay-connections.lsr) | iCloud Private Relay（隐私中继）与 Apple DNS 别名 | 在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 123 处理，不包含整个 iCloud 或 Apple DNS 后缀 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/212-apple-private-relay-connections.lsr) |
+| 213 | [apple-icloud-mainland](../rules/213-apple-icloud-mainland.lsr) | 中国大陆 iCloud 服务和内容专用域 | 只收官方标注的大陆服务域及 Apple DNS 委派的大陆内容域；不认为 Apple 账户、CloudKit 或共用域都在大陆 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/213-apple-icloud-mainland.lsr) |
+| 214 | [apple-icloud-content-domains](../rules/214-apple-icloud-content-domains.lsr) | iCloud 通用内容域 | 仅匹配 icloud-content.com 内容域，能直连再直连。大陆专域另管；部分上传、备份仍使用共用服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/214-apple-icloud-content-domains.lsr) |
+| 215 | [apple-cloud-sync](../rules/215-apple-cloud-sync.lsr) | iCloud 通用服务、CloudKit、同步、邮件及 iWork | 认证、查找、Private Relay、确定的内容域及大陆服务分别匹配；通用域不能用来判断账户或存储国家 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/215-apple-cloud-sync.lsr) |
+| 216 | [apple-podcasts](../rules/216-apple-podcasts.lsr) | Apple 播客 | 识别播客目录，不把创作者自己托管的音频也归给 Apple | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/216-apple-podcasts.lsr) |
 
 ### 4.7 音乐、视频、新闻与普通 Siri
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 216 | [apple-music-and-radio](../rules/216-apple-music-and-radio.lsr) | Apple Music、广播及共用 API 与应用门户 | 保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量。明确音频传输在 217 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/216-apple-music-and-radio.lsr) |
-| 217 | [apple-music-audio-delivery](../rules/217-apple-music-audio-delivery.lsr) | Apple Music 已识别音频交付主机 | 社区资料中的明确音频传输主机，不包含 Music API、账户和整个 itunes.apple.com。缓存是否在大陆不能由域名推定 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/217-apple-music-audio-delivery.lsr) |
-| 218 | [apple-video-and-fitness](../rules/218-apple-video-and-fitness.lsr) | Apple TV／Fitness+ 的门户、播放控制与共用主机 | 中国大陆未提供对应订阅；入口默认选服务可用地区的代理。已识别 HLS 交给独立视频组，同一会话用一致出口 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/218-apple-video-and-fitness.lsr) |
-| 219 | [apple-tv-video-delivery](../rules/219-apple-tv-video-delivery.lsr) | Apple TV 已识别的 HLS 视频交付 | 匹配已识别 HLS 主机。大陆网络默认与 TV 播放控制同一代理；可单独统计流量，不把其他 Apple CDN 一并代理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/219-apple-tv-video-delivery.lsr) |
-| 220 | [apple-news-and-sports](../rules/220-apple-news-and-sports.lsr) | Apple News／News+、内容入口与 Apple Sports | 中国大陆未提供；默认选对应服务可用地区的代理，不纳入国内直连例外 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/220-apple-news-and-sports.lsr) |
-| 221 | [apple-siri-and-search](../rules/221-apple-siri-and-search.lsr) | Siri 与 Spotlight 的专用域名 | Siri、听写和系统搜索可共用主机；未能按主机区分普通 Siri 与 Siri AI 时，保留独立策略供真机对照，不把所有 Siri 当 PCC | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/221-apple-siri-and-search.lsr) |
+| 217 | [apple-music-and-radio](../rules/217-apple-music-and-radio.lsr) | Apple Music、广播及共用 API 与应用门户 | 保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量。明确音频传输在 217 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/217-apple-music-and-radio.lsr) |
+| 218 | [apple-music-audio-delivery](../rules/218-apple-music-audio-delivery.lsr) | Apple Music 已识别音频交付主机 | 社区资料中的明确音频传输主机，不包含 Music API、账户和整个 itunes.apple.com。缓存是否在大陆不能由域名推定 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/218-apple-music-audio-delivery.lsr) |
+| 219 | [apple-video-and-fitness](../rules/219-apple-video-and-fitness.lsr) | Apple TV／Fitness+ 的门户、播放控制与共用主机 | 中国大陆未提供对应订阅；入口默认选服务可用地区的代理。已识别 HLS 交给独立视频组，同一会话用一致出口 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/219-apple-video-and-fitness.lsr) |
+| 220 | [apple-tv-video-delivery](../rules/220-apple-tv-video-delivery.lsr) | Apple TV 已识别的 HLS 视频交付 | 匹配已识别 HLS 主机。大陆网络默认与 TV 播放控制同一代理；可单独统计流量，不把其他 Apple CDN 一并代理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/220-apple-tv-video-delivery.lsr) |
+| 221 | [apple-news-and-sports](../rules/221-apple-news-and-sports.lsr) | Apple News／News+、内容入口与 Apple Sports | 中国大陆未提供；默认选对应服务可用地区的代理，不纳入国内直连例外 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/221-apple-news-and-sports.lsr) |
+| 222 | [apple-siri-and-search](../rules/222-apple-siri-and-search.lsr) | Siri 与 Spotlight 的专用域名 | Siri、听写和系统搜索可共用主机；未能按主机区分普通 Siri 与 Siri AI 时，保留独立策略供真机对照，不把所有 Siri 当 PCC | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/222-apple-siri-and-search.lsr) |
 
 ### 4.8 软件更新与下载
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 222 | [apple-update-control](../rules/222-apple-update-control.lsr) | 系统更新目录、检查、授权与登记 | 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 232，二进制包体在 223，不把整组当成匿名静态下载 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/222-apple-update-control.lsr) |
-| 223 | [apple-update-downloads](../rules/223-apple-update-downloads.lsr) | 系统更新包与恢复内容下载 | 收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/223-apple-update-downloads.lsr) |
-| 224 | [apple-developer-portal](../rules/224-apple-developer-portal.lsr) | Apple Developer 门户 | 只认开发者门户；账户认证、App 公证和独立下载主机沿用各自规则 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/224-apple-developer-portal.lsr) |
-| 225 | [apple-developer-downloads](../rules/225-apple-developer-downloads.lsr) | Xcode、Swift Playgrounds 和开发者组件的实际下载 | 开发下载与 App Store、OTA 和共享的 App 公证端点分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/225-apple-developer-downloads.lsr) |
-| 226 | [apple-mainland-delivery-aliases](../rules/226-apple-mainland-delivery-aliases.lsr) | 已核对的 Apple 大陆就近分发别名 | 只收明确标注 cn-lb 的精确别名。是否从本地边缘节点命中仍以 DNS 和请求日志为准；不能把备案域或公共 CNAME 当大陆独占 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/226-apple-mainland-delivery-aliases.lsr) |
-| 227 | [apple-shared-store-assets](../rules/227-apple-shared-store-assets.lsr) | Apple 商店与媒体共用的静态内容 | mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包。s.mzstatic.com 应先命中 202；静态图片别名不保证专供大陆 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/227-apple-shared-store-assets.lsr) |
+| 223 | [apple-update-control](../rules/223-apple-update-control.lsr) | 系统更新目录、检查、授权与登记 | 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 232，二进制包体在 223，不把整组当成匿名静态下载 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/223-apple-update-control.lsr) |
+| 224 | [apple-update-downloads](../rules/224-apple-update-downloads.lsr) | 系统更新包与恢复内容下载 | 收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/224-apple-update-downloads.lsr) |
+| 225 | [apple-developer-portal](../rules/225-apple-developer-portal.lsr) | Apple Developer 门户 | 只认开发者门户；账户认证、App 公证和独立下载主机沿用各自规则 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/225-apple-developer-portal.lsr) |
+| 226 | [apple-developer-downloads](../rules/226-apple-developer-downloads.lsr) | Xcode、Swift Playgrounds 和开发者组件的实际下载 | 开发下载与 App Store、OTA 和共享的 App 公证端点分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/226-apple-developer-downloads.lsr) |
+| 227 | [apple-mainland-delivery-aliases](../rules/227-apple-mainland-delivery-aliases.lsr) | 已核对的 Apple 大陆就近分发别名 | 只收明确标注 cn-lb 的精确别名。是否从本地边缘节点命中仍以 DNS 和请求日志为准；不能把备案域或公共 CNAME 当大陆独占 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/227-apple-mainland-delivery-aliases.lsr) |
+| 228 | [apple-shared-store-assets](../rules/228-apple-shared-store-assets.lsr) | Apple 商店与媒体共用的静态内容 | mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包。s.mzstatic.com 应先命中 202；静态图片别名不保证专供大陆 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/228-apple-shared-store-assets.lsr) |
 
 ### 4.9 证书、设备管理和学校服务
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 228 | [apple-certificate-validation](../rules/228-apple-certificate-validation.lsr) | Apple 设备的证书状态和撤销检查 | 只用官方给出的证书端点及已知 Apple 主机别名，不扩到整个 DigiCert | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/228-apple-certificate-validation.lsr) |
-| 229 | [apple-system-connectivity](../rules/229-apple-system-connectivity.lsr) | 设备引导、MDM、校时、系统 DNS 与公共素材 | 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 231，反馈诊断在 232，不把本组称为匿名 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/229-apple-system-connectivity.lsr) |
-| 230 | [apple-schoolwork-handouts](../rules/230-apple-schoolwork-handouts.lsr) | Apple Schoolwork 讲义与资料交付 | 官方明确归属 Schoolwork Handout 的主机；班级名册和设备验证另走共享服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/230-apple-schoolwork-handouts.lsr) |
+| 229 | [apple-certificate-validation](../rules/229-apple-certificate-validation.lsr) | Apple 设备的证书状态和撤销检查 | 只用官方给出的证书端点及已知 Apple 主机别名，不扩到整个 DigiCert | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/229-apple-certificate-validation.lsr) |
+| 230 | [apple-system-connectivity](../rules/230-apple-system-connectivity.lsr) | 设备引导、MDM、校时、系统 DNS 与公共素材 | 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 231，反馈诊断在 232，不把本组称为匿名 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/230-apple-system-connectivity.lsr) |
+| 231 | [apple-schoolwork-handouts](../rules/231-apple-schoolwork-handouts.lsr) | Apple Schoolwork 讲义与资料交付 | 官方明确归属 Schoolwork Handout 的主机；班级名册和设备验证另走共享服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/231-apple-schoolwork-handouts.lsr) |
 
 ### 4.10 设备登记与诊断
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 231 | [apple-device-registration](../rules/231-apple-device-registration.lsr) | 设备激活与 APNs 证书登记门户 | 按 Apple 官方用途读取设备激活与证书请求；eSIM、校时、机构 MDM 和设备素材保留在系统联网组，不按主机名猜测身份用途 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/231-apple-device-registration.lsr) |
-| 232 | [apple-feedback-and-diagnostics](../rules/232-apple-feedback-and-diagnostics.lsr) | Feedback Assistant、错误报告与自愿诊断上传 | 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/232-apple-feedback-and-diagnostics.lsr) |
+| 232 | [apple-device-registration](../rules/232-apple-device-registration.lsr) | 设备激活与 APNs 证书登记门户 | 按 Apple 官方用途读取设备激活与证书请求；eSIM、校时、机构 MDM 和设备素材保留在系统联网组，不按主机名猜测身份用途 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/232-apple-device-registration.lsr) |
+| 233 | [apple-feedback-and-diagnostics](../rules/233-apple-feedback-and-diagnostics.lsr) | Feedback Assistant、错误报告与自愿诊断上传 | 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/233-apple-feedback-and-diagnostics.lsr) |
 
 ## 5 开发（海外）
 

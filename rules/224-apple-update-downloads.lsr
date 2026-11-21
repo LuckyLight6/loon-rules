@@ -1,5 +1,5 @@
 # name: apple-update-downloads
-# priority: 223
+# priority: 224
 # section: apple
 # description: 系统更新包与恢复内容下载
 # boundary: 收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断

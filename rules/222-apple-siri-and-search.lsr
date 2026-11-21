@@ -1,5 +1,5 @@
 # name: apple-siri-and-search
-# priority: 221
+# priority: 222
 # section: apple
 # description: Siri 与 Spotlight 的专用域名
 # boundary: Siri、听写和系统搜索可共用主机；未能按主机区分普通 Siri 与 Siri AI 时，保留独立策略供真机对照，不把所有 Siri 当 PCC

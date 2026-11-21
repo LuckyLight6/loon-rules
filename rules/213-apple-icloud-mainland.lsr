@@ -1,5 +1,5 @@
 # name: apple-icloud-mainland
-# priority: 212
+# priority: 213
 # section: apple
 # description: 中国大陆 iCloud 服务和内容专用域
 # boundary: 只收官方标注的大陆服务域及 Apple DNS 委派的大陆内容域；不认为 Apple 账户、CloudKit 或共用域都在大陆

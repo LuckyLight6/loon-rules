@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-21T12:57:08Z",
+  "checked-at": "2026-11-21T16:55:35Z",
   "inputs-read": 485,
   "critical": 692,
   "inputs-requested": 485,
@@ -372,13 +372,13 @@
       "kimi-international": 1,
       "minimax-international": 1,
       "bytedance-international": 1,
-      "apple-find-my": 7,
       "apple-account-authentication": 4,
       "apple-app-and-device-verification": 3,
       "apple-wallet-payments": 2,
       "apple-store-transactions": 11,
       "apple-app-package-downloads": 1,
       "apple-push-connection": 2,
+      "apple-find-my": 7,
       "apple-location-services": 4,
       "apple-messaging-identity": 1,
       "apple-icloud-mainland": 1,
@@ -528,7 +528,6 @@
       "lovart-international",
       "dia-browser-services",
       "openclaw-product-services",
-      "apple-find-my",
       "apple-account-authentication",
       "apple-app-and-device-verification",
       "apple-wallet-payments",
@@ -536,6 +535,7 @@
       "apple-store-transactions",
       "apple-association-services",
       "apple-push-connection",
+      "apple-find-my",
       "apple-location-services",
       "apple-messaging-identity",
       "apple-icloud-mainland",
@@ -705,7 +705,6 @@
       "chatgpt-connections": 7,
       "gemini-connections": 36,
       "github-copilot-connections": 3,
-      "apple-intelligence-relays": 3,
       "apple-testflight": 1,
       "apple-icloud-mainland": 2,
       "apple-icloud-content-domains": 1,
@@ -2368,36 +2367,6 @@
       "outside-selection": 0,
       "other-lines": 0
     },
-    "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr": {
-      "state": "current",
-      "products": [
-        "apple-find-my"
-      ],
-      "filters": {
-        "apple-find-my": [
-          {
-            "roots": [
-              "fmipmobile.icloud.com",
-              "fmfmobile.icloud.com"
-            ]
-          }
-        ]
-      },
-      "other-products": {
-        "apple-cloud-sync": 1
-      },
-      "domain-scopes": 3,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0
-    },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/TestFlight.lsr": {
       "state": "current",
       "products": [
@@ -2427,6 +2396,36 @@
       "declared-exclusions": 0,
       "outside-selection": 0,
       "other-lines": 1
+    },
+    "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr": {
+      "state": "current",
+      "products": [
+        "apple-find-my"
+      ],
+      "filters": {
+        "apple-find-my": [
+          {
+            "roots": [
+              "fmipmobile.icloud.com",
+              "fmfmobile.icloud.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {
+        "apple-cloud-sync": 1
+      },
+      "domain-scopes": 3,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
     },
     "https://rules.xkww3n.cyou/classical/apple-music.txt": {
       "state": "current",
@@ -4886,8 +4885,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
     ],
     "apple-developer-downloads": [
@@ -5673,8 +5672,11 @@
     "http-requests": 36,
     "unavailable-hosts": 0,
     "unavailable-lookups": 0,
-    "partial-lookups": 0,
-    "incomplete-hosts": []
+    "partial-lookups": 3,
+    "incomplete-hosts": [
+      "appldnld.apple.com",
+      "swcdn.apple.com"
+    ]
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
@@ -9773,7 +9775,6 @@
       191,
       192,
       193,
-      199,
       201,
       202,
       203,
@@ -9781,23 +9782,24 @@
       206,
       207,
       208,
-      212,
+      209,
       213,
       214,
       215,
-      217,
-      219,
+      216,
+      218,
       220,
-      222,
+      221,
       223,
       224,
       225,
       226,
-      228,
+      227,
       229,
       230,
       231,
       232,
+      233,
       301,
       302,
       304,
@@ -9903,7 +9905,7 @@
     "已核清单": [
       21,
       23,
-      227
+      228
     ],
     "随来源缩小拦截": [
       22
@@ -9942,8 +9944,8 @@
       150,
       151,
       205,
-      216,
-      218,
+      217,
+      219,
       300,
       307,
       309,
@@ -9959,12 +9961,12 @@
       519
     ],
     "从官方目录发现产品与版本，再读取服务端点": [
-      209,
-      210
+      210,
+      211
     ],
     "官方业务端点自动补入": [
-      211,
-      221,
+      212,
+      222,
       455,
       482
     ],
@@ -10475,6 +10477,9 @@
     "appldnld.apple.com.akadns.net",
     "appldnld.apple.com.mwcname.com",
     "appldnld.g.aaplimg.com",
+    "apple-relay.apple.com",
+    "apple-relay.cloudflare.com",
+    "apple-relay.fastly-edge.com",
     "atl-paas.net",
     "atlassian-3p-us-gov-mod.com",
     "atlassian-3p.com",
@@ -10517,6 +10522,7 @@
     "copilot.ai",
     "copilot.com",
     "copilot.microsoft.com",
+    "cp4.cloudflare.com",
     "crates.io",
     "crl-lb.apple.com.akadns.net",
     "crl.apple.com",
@@ -10949,7 +10955,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -10990,7 +10996,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "ollama-cloud": {
@@ -11021,7 +11027,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "stackit-model-services": {
@@ -11052,7 +11058,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "stepfun-international": {
@@ -11094,7 +11100,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "xiaomi-international": {
@@ -11137,7 +11143,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -11172,7 +11178,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -11213,7 +11219,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -11248,7 +11254,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -11480,7 +11486,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "npm-registry": {
@@ -11513,7 +11519,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11557,7 +11563,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11590,7 +11596,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -11643,7 +11649,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "braintree-payments": {
@@ -11670,7 +11676,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "notion-workspace": {
@@ -11696,7 +11702,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "google-account-authentication": {
@@ -11904,7 +11910,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -11930,7 +11936,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "google-play-services": {
@@ -11966,7 +11972,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "google-play-games": {
@@ -11994,7 +12000,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "kimi-mainland": {
@@ -12025,7 +12031,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -12064,7 +12070,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -12095,7 +12101,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -12138,7 +12144,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265797,
+      "last-read": 1795280123,
       "state": "current"
     }
   },
@@ -12318,7 +12324,6 @@
     "lovart-international": 1,
     "dia-browser-services": 2,
     "openclaw-product-services": 1,
-    "apple-find-my": 7,
     "apple-all": 259,
     "apple-account-authentication": 8,
     "apple-app-and-device-verification": 8,
@@ -12328,6 +12333,7 @@
     "apple-app-package-downloads": 2,
     "apple-association-services": 2,
     "apple-push-connection": 11,
+    "apple-find-my": 7,
     "apple-location-services": 7,
     "apple-messaging-identity": 1,
     "apple-private-relay-connections": 6,

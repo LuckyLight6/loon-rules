@@ -79,10 +79,32 @@ class LibraryChecks(unittest.TestCase):
                 ('apple-relay.apple.com','Apple Intelligence Extensions'),
                 ('cp4.cloudflare.com','Private Cloud Compute'),
                 ('guzzoni.apple.com','Siri and dictation requests'),
-                ('unlisted.shared.example','Private Cloud Compute'),
+                ('unlisted.shared.example','Shared image delivery'),
             ])+'</table>'
         self.assertEqual(library.extract_rows(recipe('apple-intelligence-relays'),body),{
             'DOMAIN,apple-relay.apple.com','DOMAIN,cp4.cloudflare.com'})
+
+    def test_apple_intelligence_follows_new_official_relay_hosts_by_purpose(self):
+        body='<h2 id="aisirisearch">AI</h2><table>'+''.join(
+            f'<tr><td>{host}</td><td>443</td><td>TCP, UDP</td><td>iOS</td><td>{purpose}</td></tr>'
+            for host,purpose in [
+                ('pcc.new-relay.example','Private Cloud Compute'),
+                ('extension.new-relay.example','Apple Intelligence Extensions'),
+                ('mask.icloud.com','iCloud Private Relay'),
+                ('guzzoni.apple.com','Siri and dictation requests'),
+                ('images.new-relay.example','Shared image delivery'),
+            ])+'</table>'
+        self.assertEqual(library.extract_rows(recipe('apple-intelligence-relays'),body),{
+            'DOMAIN,pcc.new-relay.example','DOMAIN,extension.new-relay.example'})
+
+    def test_find_my_uses_the_apple_number_band_before_shared_icloud(self):
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
+        entries=library.validate_declarations(config)
+        band=next(band for band in config['routing-bands'] if band['title']=='Apple 生态')
+        self.assertEqual(band['start'],200)
+        self.assertIn('apple-find-my',band['ids'])
+        order=library.route_order(config,entries)
+        self.assertLess(order.index('apple-find-my'),order.index('apple-cloud-sync'))
 
     def test_timestamps_track_rule_body_and_not_build_time(self):
         e={'id':'store-api','description':'购物','boundary':'不含安装包','sources':['https://example.test/api']}

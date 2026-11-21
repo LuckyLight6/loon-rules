@@ -1,8 +1,8 @@
 # name: apple-private-relay-connections
-# priority: 211
+# priority: 212
 # section: apple
-# description: Private Relay 的 mask 域和 Apple DNS 中继别名
-# boundary: 放在 iCloud 同步前；不包含整个 iCloud 或 Apple DNS 后缀
+# description: iCloud Private Relay（隐私中继）与 Apple DNS 别名
+# boundary: 在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 123 处理，不包含整个 iCloud 或 Apple DNS 后缀
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 6

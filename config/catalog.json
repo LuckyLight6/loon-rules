@@ -133,10 +133,9 @@
       }
     },
     {
-      "start": 199,
+      "start": 200,
       "title": "Apple 生态",
       "ids": [
-        "apple-find-my",
         "apple-all",
         "apple-account-authentication",
         "apple-app-and-device-verification",
@@ -146,6 +145,7 @@
         "apple-app-package-downloads",
         "apple-association-services",
         "apple-push-connection",
+        "apple-find-my",
         "apple-location-services",
         "apple-messaging-identity",
         "apple-private-relay-connections",
@@ -1948,11 +1948,10 @@
       "id": "apple-intelligence-relays",
       "mode": "compiled",
       "policy-hint": "apple-intelligence",
-      "description": "Apple Intelligence：PCC 和系统 ChatGPT 扩展",
-      "boundary": "中国大陆网络建议用独立代理。能否使用还要看设备、账户、语言和功能资格。普通 Siri、ChatGPT App 和模型下载不归本组",
+      "description": "Apple Intelligence 的 PCC 与系统 AI 扩展中继",
+      "boundary": "按 Apple 官方明确用途提取精确主机；iCloud Private Relay、普通 Siri、独立 AI App 和模型下载分别处理。功能资格仍取决于设备、账户和地区",
       "sources": [
         "https://support.apple.com/en-us/101555",
-        "https://rules.xkww3n.cyou/classical/apple-intelligence.txt",
         "https://support.apple.com/en-us/121115"
       ],
       "priority": 123,
@@ -1970,16 +1969,10 @@
                 "private cloud compute",
                 "apple intelligence extensions"
               ],
-              "roots": [
-                "apple.com"
-              ],
-              "exact": [
-                "apple-relay.cloudflare.com",
-                "apple-relay.fastly-edge.com",
-                "cp4.cloudflare.com"
-              ]
+              "all-exact": true
             }
-          ]
+          ],
+          "protect-from-reject": true
         }
       ],
       "selection": "detailed"
@@ -4650,53 +4643,6 @@
       ]
     },
     {
-      "id": "apple-find-my",
-      "priority": 199,
-      "section": "apple",
-      "mode": "compiled",
-      "selection": "detailed",
-      "policy-hint": "apple-account",
-      "description": "Find My 设备与朋友查找的已识别入口",
-      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 209，共用 iCloud 网页、推送与静态素材不并入",
-      "sources": [
-        "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
-        "https://support.apple.com/en-us/104978",
-        "https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A",
-        "https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A",
-        "https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A",
-        "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A"
-      ],
-      "include": [
-        "DOMAIN,fmipmobile.icloud.com",
-        "DOMAIN,fmfmobile.icloud.com",
-        "DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com",
-        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com",
-        "DOMAIN,fmfmobile.fe2.apple-dns.net",
-        "DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com",
-        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com"
-      ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
-          "roots": [
-            "fmipmobile.icloud.com",
-            "fmfmobile.icloud.com"
-          ]
-        }
-      ],
-      "separates": [
-        "apple-location-services"
-      ],
-      "product-probes": [
-        "fmipmobile.icloud.com",
-        "p131-fmipmobile.icloud.com"
-      ],
-      "product-negatives": [
-        "gsp9-ssl.apple.com",
-        "statici.icloud.com"
-      ]
-    },
-    {
       "id": "apple-all",
       "mode": "view",
       "policy-hint": "apple-services",
@@ -5055,6 +5001,53 @@
       "selection": "detailed"
     },
     {
+      "id": "apple-find-my",
+      "priority": 209,
+      "section": "apple",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "apple-account",
+      "description": "Find My 设备与朋友查找的已识别入口",
+      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 209，共用 iCloud 网页、推送与静态素材不并入",
+      "sources": [
+        "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
+        "https://support.apple.com/en-us/104978",
+        "https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A",
+        "https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A",
+        "https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A",
+        "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A"
+      ],
+      "include": [
+        "DOMAIN,fmipmobile.icloud.com",
+        "DOMAIN,fmfmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com",
+        "DOMAIN,fmfmobile.fe2.apple-dns.net",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
+          "roots": [
+            "fmipmobile.icloud.com",
+            "fmfmobile.icloud.com"
+          ]
+        }
+      ],
+      "separates": [
+        "apple-location-services"
+      ],
+      "product-probes": [
+        "fmipmobile.icloud.com",
+        "p131-fmipmobile.icloud.com"
+      ],
+      "product-negatives": [
+        "gsp9-ssl.apple.com",
+        "statici.icloud.com"
+      ]
+    },
+    {
       "id": "apple-location-services",
       "mode": "compiled",
       "policy-hint": "apple-location",
@@ -5071,7 +5064,7 @@
         "https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A",
         "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A"
       ],
-      "priority": 209,
+      "priority": 210,
       "section": "apple",
       "include": [
         "DOMAIN,gsp9-ssl.apple.com",
@@ -5125,7 +5118,7 @@
     },
     {
       "id": "apple-messaging-identity",
-      "priority": 210,
+      "priority": 211,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple IDS 共用身份、注册与查询服务",
@@ -5180,8 +5173,8 @@
       "id": "apple-private-relay-connections",
       "mode": "managed",
       "policy-hint": "global",
-      "description": "Private Relay 的 mask 域和 Apple DNS 中继别名",
-      "boundary": "放在 iCloud 同步前；不包含整个 iCloud 或 Apple DNS 后缀",
+      "description": "iCloud Private Relay（隐私中继）与 Apple DNS 别名",
+      "boundary": "在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 123 处理，不包含整个 iCloud 或 Apple DNS 后缀",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list"
       ],
@@ -5192,7 +5185,7 @@
       "flags": [],
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
-      "priority": 211,
+      "priority": 212,
       "section": "apple",
       "official-hosts": true,
       "selection": "detailed"
@@ -5208,7 +5201,7 @@
         "https://support.apple.com/zh-cn/111754",
         "https://dns.google/resolve?name=icloud-content.com.cn&type=SOA"
       ],
-      "priority": 212,
+      "priority": 213,
       "section": "apple",
       "extract": [
         {
@@ -5238,7 +5231,7 @@
     },
     {
       "id": "apple-icloud-content-domains",
-      "priority": 213,
+      "priority": 214,
       "section": "apple",
       "mode": "compiled",
       "description": "iCloud 通用内容域",
@@ -5280,7 +5273,7 @@
         "https://support.apple.com/en-us/118230",
         "https://support.apple.com/zh-cn/111754"
       ],
-      "priority": 214,
+      "priority": 215,
       "section": "apple",
       "extract": [
         {
@@ -5326,7 +5319,7 @@
     },
     {
       "id": "apple-podcasts",
-      "priority": 215,
+      "priority": 216,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple 播客",
@@ -5363,7 +5356,7 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
         "https://init.itunes.apple.com/bag.xml"
       ],
-      "priority": 216,
+      "priority": 217,
       "section": "apple",
       "include": [
         "DOMAIN,amp-api.media.apple.com"
@@ -5416,7 +5409,7 @@
     },
     {
       "id": "apple-music-audio-delivery",
-      "priority": 217,
+      "priority": 218,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple Music 已识别音频交付主机",
@@ -5454,7 +5447,7 @@
         "https://itunespartner.apple.com/music/assets/music-artist-api.pdf",
         "https://init.itunes.apple.com/bag.xml"
       ],
-      "priority": 218,
+      "priority": 219,
       "section": "apple",
       "projection": [
         {
@@ -5501,7 +5494,7 @@
     },
     {
       "id": "apple-tv-video-delivery",
-      "priority": 219,
+      "priority": 220,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple TV 已识别的 HLS 视频交付",
@@ -5537,7 +5530,7 @@
         "https://news.apple.com/",
         "https://dns.google/resolve?name=news.apple.com&type=A"
       ],
-      "priority": 220,
+      "priority": 221,
       "section": "apple",
       "include": [
         "DOMAIN,news-events.apple.com",
@@ -5583,7 +5576,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "Kianuni--AppleFlow.txt",
-      "priority": 221,
+      "priority": 222,
       "section": "apple",
       "feed-sources": [
         "https://raw.githubusercontent.com/Kianuni/AppleFlow/main/rules/surge/Siri-Direct.list"
@@ -5605,7 +5598,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list"
       ],
-      "priority": 222,
+      "priority": 223,
       "section": "apple",
       "extract": [
         {
@@ -5688,7 +5681,7 @@
     },
     {
       "id": "apple-update-downloads",
-      "priority": 223,
+      "priority": 224,
       "section": "apple",
       "mode": "compiled",
       "description": "系统更新包与恢复内容下载",
@@ -5751,7 +5744,7 @@
     },
     {
       "id": "apple-developer-portal",
-      "priority": 224,
+      "priority": 225,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple Developer 门户",
@@ -5792,7 +5785,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
       ],
-      "priority": 225,
+      "priority": 226,
       "section": "apple",
       "include": [
         "DOMAIN,adcdownload.apple.com"
@@ -5845,7 +5838,7 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
-      "priority": 226,
+      "priority": 227,
       "section": "apple",
       "extract": [
         {
@@ -5860,7 +5853,7 @@
     },
     {
       "id": "apple-shared-store-assets",
-      "priority": 227,
+      "priority": 228,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple 商店与媒体共用的静态内容",
@@ -5890,7 +5883,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
       ],
-      "priority": 228,
+      "priority": 229,
       "section": "apple",
       "extract": [
         {
@@ -5938,7 +5931,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
       ],
-      "priority": 229,
+      "priority": 230,
       "section": "apple",
       "include": [
         "DOMAIN,apple-native-relay.apple.com",
@@ -6016,7 +6009,7 @@
     },
     {
       "id": "apple-schoolwork-handouts",
-      "priority": 230,
+      "priority": 231,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple Schoolwork 讲义与资料交付",
@@ -6048,7 +6041,7 @@
     },
     {
       "id": "apple-device-registration",
-      "priority": 231,
+      "priority": 232,
       "section": "apple",
       "mode": "compiled",
       "selection": "detailed",
@@ -6094,7 +6087,7 @@
     },
     {
       "id": "apple-feedback-and-diagnostics",
-      "priority": 232,
+      "priority": 233,
       "section": "apple",
       "mode": "compiled",
       "selection": "detailed",
@@ -10874,7 +10867,6 @@
     "lovart-international",
     "dia-browser-services",
     "openclaw-product-services",
-    "apple-find-my",
     "apple-account-authentication",
     "apple-app-and-device-verification",
     "apple-wallet-payments",
@@ -10883,6 +10875,7 @@
     "apple-app-package-downloads",
     "apple-association-services",
     "apple-push-connection",
+    "apple-find-my",
     "apple-location-services",
     "apple-messaging-identity",
     "apple-private-relay-connections",
@@ -13318,7 +13311,6 @@
       "title": "Apple 生态",
       "numbers": [
         123,
-        199,
         200,
         201,
         202,
@@ -13351,7 +13343,8 @@
         229,
         230,
         231,
-        232
+        232,
+        233
       ]
     },
     {

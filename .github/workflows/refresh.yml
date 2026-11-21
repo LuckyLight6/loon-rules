@@ -4,23 +4,25 @@ on:
   schedule:
     - cron: '37 3 * * *'
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
 
 concurrency:
-  group: refresh-loon-rules-${{ github.ref }}
+  group: refresh-loon-rules-main
   cancel-in-progress: false
 
 jobs:
   refresh:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
       - name: Install the maintenance package
         run: |
           python3 -m venv .venv

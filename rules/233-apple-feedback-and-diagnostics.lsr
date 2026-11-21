@@ -1,5 +1,5 @@
 # name: apple-feedback-and-diagnostics
-# priority: 232
+# priority: 233
 # section: apple
 # description: Feedback Assistant、错误报告与自愿诊断上传
 # boundary: 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开

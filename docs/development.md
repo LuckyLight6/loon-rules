@@ -2,6 +2,8 @@
 
 修错分时，先确认错误来自哪里：来源缺少入口、分类条件不对，还是更早的规则抢先命中。修改声明或生成逻辑，再生成订阅；直接改 `rules/` 中的成品，下次更新会被覆盖。
 
+代码和规则在 `main` 分支维护。`readme` 是 GitHub 首页的默认展示分支，只保留空 README 和定时更新入口。
+
 ## 在本地检查和生成
 
 需要 Python 3.10 或更新版本，联网更新还需要 `curl`。生成器没有第三方运行依赖；开发时在虚拟环境安装本仓包，源码布局使用 [`src/`](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)：

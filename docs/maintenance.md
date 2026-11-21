@@ -1,6 +1,8 @@
 # 规则怎样自动更新
 
-更新任务计划每天北京时间 **11:37** 运行，也可以在 [GitHub Actions](../.github/workflows/refresh.yml) 手动触发。它下载公开资料，生成候选，检查归属与首条命中，通过后提交规则、插件和维护状态。读取失败或关键检查失败时，已发布版本继续可用。
+更新任务计划每天北京时间 **11:37** 运行，也可以在 [Scheduled rule maintenance](https://github.com/LuckyLight6/loon-rules/actions/workflows/schedule.yml) 选择 `readme` 分支手动触发。它下载公开资料，生成候选，检查归属与首条命中，通过后提交规则、插件和维护状态。读取失败或关键检查失败时，已发布版本继续可用。
+
+仓库首页使用 `readme` 分支，代码和规则在 `main`。默认分支保留定时入口，调用 `main` 的维护工作流；工作流始终检出并更新 `main`，订阅地址中的分支不变。定时与手动更新共用同一并发组，避免同时向规则分支提交。
 
 GitHub API 请求使用 Actions 自带的临时令牌，减少匿名请求限额的影响。令牌只发给 `api.github.com` 的标准 HTTPS 端口，带令牌的请求不跟随重定向；其他公开来源不使用它。
 

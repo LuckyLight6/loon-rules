@@ -1,5 +1,5 @@
 # name: apple-system-connectivity
-# priority: 229
+# priority: 230
 # section: apple
 # description: 设备引导、MDM、校时、系统 DNS 与公共素材
 # boundary: 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 231，反馈诊断在 232，不把本组称为匿名 CDN

@@ -1,5 +1,5 @@
 # name: apple-developer-downloads
-# priority: 225
+# priority: 226
 # section: apple
 # description: Xcode、Swift Playgrounds 和开发者组件的实际下载
 # boundary: 开发下载与 App Store、OTA 和共享的 App 公证端点分开
