@@ -14,6 +14,13 @@ runs:
         openssl x509 -inform DER -in "$loon_trust_dir/apple-root.cer" \
           -out "$loon_trust_dir/apple-root.pem"
         openssl verify -CAfile "$loon_trust_dir/apple-root.pem" "$loon_trust_dir/apple-root.pem"
-        cat /etc/ssl/certs/ca-certificates.crt "$loon_trust_dir/apple-root.pem" \
+        curl -q -fsSL --proto '=https' --proto-redir '=https' --max-redirs 3 \
+          --connect-timeout 8 --max-time 25 --retry 2 --retry-all-errors \
+          https://www.apple.com/certificateauthority/AppleRootCA-G3.cer \
+          -o "$loon_trust_dir/apple-root-g3.cer"
+        openssl x509 -inform DER -in "$loon_trust_dir/apple-root-g3.cer" \
+          -out "$loon_trust_dir/apple-root-g3.pem"
+        openssl verify -CAfile "$loon_trust_dir/apple-root-g3.pem" "$loon_trust_dir/apple-root-g3.pem"
+        cat /etc/ssl/certs/ca-certificates.crt "$loon_trust_dir/apple-root.pem" "$loon_trust_dir/apple-root-g3.pem" \
           > "$loon_trust_dir/sources.pem"
         echo "CURL_CA_BUNDLE=$loon_trust_dir/sources.pem" >> "$GITHUB_ENV"

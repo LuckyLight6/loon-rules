@@ -26,3 +26,13 @@ jobs:
       - run: python3 -B maintain.py --check
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Explain Apple source TLS failures
+        if: failure()
+        run: |
+          for loon_source_host in gdmf.apple.com init.ess.apple.com init.itunes.apple.com configuration.ls.apple.com; do
+            echo "TLS chain: $loon_source_host"
+            timeout 10 openssl s_client -showcerts -verify_return_error \
+              -connect "$loon_source_host:443" -servername "$loon_source_host" \
+              -CAfile "$CURL_CA_BUNDLE" </dev/null 2>&1 \
+              | sed -n '/^depth=/p; /^verify error/p; /^[[:space:]][0-9]*[[:space:]]s:/p; /^[[:space:]]*i:/p; /^Verification error:/p' || true
+          done

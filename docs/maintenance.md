@@ -4,7 +4,7 @@
 
 GitHub API 请求使用 Actions 自带的临时令牌，减少匿名请求限额的影响。令牌只发给 `api.github.com` 的标准 HTTPS 端口，带令牌的请求不跟随重定向；其他公开来源不使用它。
 
-Apple 软件版本清单的证书链使用 Apple Root CA。Linux 工作流从 [Apple 官方 PKI](https://www.apple.com/certificateauthority/)下载根证书，与系统 CA 合并成临时证书包，供来源下载使用；HTTPS 的证书与主机名校验保持开启。
+Apple 软件版本和服务配置使用 Apple 的证书链。Linux 工作流从 [Apple 官方 PKI](https://www.apple.com/certificateauthority/)下载 Apple Root CA 与 G3 根证书，与系统 CA 合并成临时证书包，供来源下载使用；HTTPS 的证书与主机名校验保持开启。
 
 运行摘要留在 Actions，本地生成的摘要在 `build/verification.md`，不进入版本管理。下一轮仍要使用的采用依据、撤回观察与来源基线保存在 [data/maintenance-state.json](../data/maintenance-state.json)；这是更新数据，不是工作日志。
 
