@@ -2,6 +2,8 @@
 
 更新任务计划每天北京时间 **11:37** 运行，也可以在 [GitHub Actions](../.github/workflows/refresh.yml) 手动触发。它下载公开资料，生成候选，检查归属与首条命中，通过后提交规则、插件和维护状态。读取失败或关键检查失败时，已发布版本继续可用。
 
+GitHub API 请求使用 Actions 自带的临时令牌，减少匿名请求限额的影响。令牌只发给 `api.github.com` 的标准 HTTPS 端口，带令牌的请求不跟随重定向；其他公开来源不使用它。
+
 运行摘要留在 Actions，本地生成的摘要在 `build/verification.md`，不进入版本管理。下一轮仍要使用的采用依据、撤回观察与来源基线保存在 [data/maintenance-state.json](../data/maintenance-state.json)；这是更新数据，不是工作日志。
 
 ## 新端点按什么条件补入

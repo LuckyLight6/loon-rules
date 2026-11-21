@@ -23,3 +23,5 @@ jobs:
       - run: python3 -B maintain.py --verify-files
       - run: python3 -B scoped_dns.py --check
       - run: python3 -B maintain.py --check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

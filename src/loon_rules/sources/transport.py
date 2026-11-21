@@ -1,6 +1,6 @@
 """Try declared public mirrors without changing a source's evidence identity."""
 from datetime import datetime, timezone
-import re,subprocess
+import os,re,subprocess
 from urllib.parse import parse_qsl,urlsplit
 
 from loon_rules.rules import Invalid
@@ -77,12 +77,19 @@ def source_url(url,*,public_profile=False,public_bag=False):
 
 def download(url,*,public_profile=False,public_bag=False):
     url=source_url(url,public_profile=public_profile,public_bag=public_bag)
+    destination=urlsplit(url)
+    token=(os.environ.get('GITHUB_TOKEN') if destination.hostname=='api.github.com'
+           and destination.port in (None,443) else None)
+    if token and not re.fullmatch(r'[A-Za-z0-9_.-]+',token):
+        raise Invalid('GitHub Actions 临时凭据格式无效')
+    authorization=(f'header = "Authorization: Bearer {token}"\n'.encode() if token else None)
     result=subprocess.run(
-        ('curl','-q','-fsSL','--compressed','--proto','=https','--proto-redir','=https','--max-redirs','3',
+        ('curl','-q',*(('--config','-') if token else ()),'-fsSL','--compressed',
+         '--proto','=https','--proto-redir','=https','--max-redirs','0' if token else '3',
          '--connect-timeout','8','--max-time','25','--retry','2','--retry-all-errors',
          '--retry-max-time','40','--max-filesize','18000000',
          '-A','Loon/991 CFNetwork/3896.100.1.1.1 Darwin/27.0.0',url),
-        capture_output=True,
+        capture_output=True,input=authorization,
     )
     if result.returncode:
         lines=result.stderr.decode('utf-8',errors='replace').strip().splitlines()

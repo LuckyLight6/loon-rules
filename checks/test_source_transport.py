@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import os
 import unittest
 from subprocess import CompletedProcess
 from unittest.mock import patch
@@ -53,3 +54,18 @@ class OfficialMirrorTransport(unittest.TestCase):
         with patch.object(transport.subprocess,'run',return_value=result),\
                 self.assertRaisesRegex(Invalid,'curl 22.*error: 403'):
             transport.download('https://source.example/list')
+
+    def test_actions_credential_is_only_used_for_the_exact_github_api(self):
+        from loon_rules.sources import transport
+        token='TEST_GITHUB_ACTIONS_TOKEN'
+        for url,expected in [('https://api.github.com/meta',True),
+                             ('https://raw.githubusercontent.com/org/repo/main/list',False),
+                             ('https://api.github.com.other.example/list',False)]:
+            result=CompletedProcess([],0,b'public data',b'')
+            with self.subTest(url=url),patch.dict(os.environ,{'GITHUB_TOKEN':token}),\
+                    patch.object(transport.subprocess,'run',return_value=result) as request:
+                self.assertEqual(transport.download(url),'public data')
+                args=request.call_args.args[0];options=request.call_args.kwargs
+                self.assertNotIn(token,' '.join(args))
+                self.assertEqual(token.encode() in (options.get('input') or b''),expected)
+                if expected:self.assertEqual(args[args.index('--max-redirs')+1],'0')
