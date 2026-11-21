@@ -7,6 +7,64 @@ from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid, valid_host
 from .common import within, PurposeFragments
 
+
+def go_host_switch(recipe,text):
+    """Read literal host cases that return one named service's trust policy."""
+    function=recipe.get('function','');callee=recipe.get('return-call','')
+    if not all(re.fullmatch(r'[A-Za-z_]\w*',name) for name in (function,callee)):
+        raise Invalid('Go 服务主机缺少明确的函数与用途分支')
+    tokens=re.findall(r'(?s)/\*.*?\*/|//[^\n]*|"(?:\\.|[^"\\])*"|`[^`]*`|[A-Za-z_]\w*|[^\s]',text)
+    tokens=[token for token in tokens if not token.startswith(('//','/*'))]
+    starts=[i for i in range(len(tokens)-2) if tokens[i:i+3]==['func',function,'(']]
+    if len(starts)!=1:raise Invalid('Go 服务主机函数缺失或重复')
+
+    def closing(start):
+        depth=0
+        for index in range(start,len(tokens)):
+            if tokens[index]=='{':depth+=1
+            elif tokens[index]=='}':
+                depth-=1
+                if depth==0:return index
+        raise Invalid('Go 服务主机函数的代码块不完整')
+
+    try:start=tokens.index('{',starts[0]+3)
+    except ValueError as error:raise Invalid('Go 服务主机缺少函数体') from error
+    end=closing(start);body=tokens[start+1:end]
+    if not body or body[0]!='switch':raise Invalid('Go 服务主机不再是直接用途分支')
+    try:switch=tokens.index('{',start+1)
+    except ValueError as error:raise Invalid('Go 服务主机缺少 switch 分支') from error
+    if closing(switch)!=end-1:raise Invalid('Go 服务主机包含分支之外的逻辑')
+    arms=tokens[switch+1:end-1]
+    if any(token in ('{','}') for token in arms):raise Invalid('Go 服务主机包含嵌套条件，不能推断完整范围')
+    result=set();position=0
+    while position<len(arms):
+        kind=arms[position];position+=1;hosts=[]
+        if kind=='case':
+            while position<len(arms):
+                literal=arms[position]
+                if not re.fullmatch(r'"[^"\\\r\n]+"',literal):
+                    raise Invalid('Go 服务主机分支不是字面主机名')
+                hosts.append(literal[1:-1]);position+=1
+                if position<len(arms) and arms[position]==',':position+=1
+                else:break
+        elif kind!='default':raise Invalid('Go 服务主机分支格式变化')
+        if position>=len(arms) or arms[position]!=':':raise Invalid('Go 服务主机分支缺少冒号')
+        position+=1;begin=position
+        while position<len(arms) and arms[position] not in ('case','default'):position+=1
+        action=arms[begin:position]
+        if action and action[-1]==';':action=action[:-1]
+        if not action or action[0]!='return':raise Invalid('Go 服务主机分支不是直接返回')
+        if callee not in action:continue
+        if not hosts or action!=['return',callee,'(',')']:
+            raise Invalid('Go 服务主机的用途返回方式变化')
+        hosts=[domain_scope.public_host(host) for host in hosts]
+        if recipe.get('roots') and any(not within(host,recipe['roots']) for host in hosts):
+            raise Invalid('Go 服务主机超出声明的厂商范围')
+        result.update('DOMAIN,'+host for host in hosts)
+    if not result:raise Invalid('Go 客户端没有该用途的字面主机分支')
+    return result
+
+
 def azure_cloud_metadata(recipe, text):
     try:
         tree = ast.parse(text)

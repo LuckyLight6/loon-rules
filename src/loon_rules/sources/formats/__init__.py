@@ -15,6 +15,7 @@ READERS = {
     'derp-map': structured.derp_map,
     'endpoint-network-sets': networks.parse_endpoint_network_sets,
     'endpoint-sets': tables.parse_endpoint_sets,
+    'go-host-switch': api.go_host_switch,
     'exclusive-purpose-table': tables.exclusive_purpose_table,
     'help-center-domains': documents.parse_help_center_domains,
     'host-table': tables.parse_host_table,
@@ -63,7 +64,7 @@ def extract_rows(recipe, text, *, shared_hosts=()):
     if form not in READERS:
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
-    if (form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists')
+    if (form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists','go-host-switch')
             or form=='endpoint-sets' and recipe.get('all-hosts')
             or form=='product-domain-statements' and recipe.get('code-only')):
         result=set(domain_scope.exclude_shared_scopes(result,shared_hosts))

@@ -446,6 +446,7 @@ grokipedia.com = server:https://1.1.1.1/dns-query
 groq.com = server:https://1.1.1.1/dns-query
 gs.apple.com = server:https://1.1.1.1/dns-query
 gsa.apple.com = server:https://1.1.1.1/dns-query
+gsas.apple.com = server:https://1.1.1.1/dns-query
 gsra.apple.com = server:https://1.1.1.1/dns-query
 h2o.ai = server:https://1.1.1.1/dns-query
 hailuoai.com = server:https://223.5.5.5/dns-query

@@ -4667,11 +4667,12 @@
       "id": "apple-account-authentication",
       "mode": "compiled",
       "policy-hint": "apple-account",
-      "description": "登录、OAuth 相关服务、iCloud 初始化与账户恢复",
-      "boundary": "优先于商店、iCloud 与共享 Apple CDN",
+      "description": "登录、GrandSlam、OAuth、iCloud 初始化与账户恢复",
+      "boundary": "包括 GrandSlam 的账户关联设备登记；按专用用途读取精确主机，优先于商店、iCloud 与共享 Apple CDN",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list",
-        "https://support.apple.com/en-us/101555"
+        "https://support.apple.com/en-us/101555",
+        "https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go"
       ],
       "priority": 2010,
       "section": "apple",
@@ -4693,6 +4694,16 @@
               ]
             }
           ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go",
+          "format": "go-host-switch",
+          "function": "rootsForHost",
+          "return-call": "grandSlamRoots",
+          "roots": [
+            "apple.com"
+          ],
+          "protect-from-reject": true
         }
       ],
       "include": [
@@ -13126,6 +13137,9 @@
     ],
     "openclaw.ai": [
       "openclaw-product-services"
+    ],
+    "gsas.apple.com": [
+      "apple-account-authentication"
     ]
   },
   "shared-negatives": [

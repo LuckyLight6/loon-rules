@@ -8,6 +8,7 @@
 |---|---|---|
 | 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3000、Cargo 3070、PyPI 3050、npm 3030 |
 | SDK 静态配置 | 按模块、类和字段解析默认端点；不运行下载的源码 | Claude 1010、xAI 1040 等 |
+| Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2010 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
 | 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3320、Slack 3360 |
 | 请求示例和代码字段 | `purpose-url-table`、`labelled-url-pairs` 等只取指定用途的 HTTPS 或 WSS 主机，忽略普通链接和载荷 | API、支付与通讯入口 |

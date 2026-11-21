@@ -173,6 +173,12 @@ class PublishedRepairRoutes(unittest.TestCase):
         cls.data=repository_rows(lib.ROOT,cls.config)
         cls.order=lib.route_order(cls.config,cls.entries)
 
+    def test_both_grandslam_hosts_use_the_account_route_in_detail_and_aggregate(self):
+        for host in ('gsa.apple.com','gsas.apple.com'):
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,self.order,self.data),'apple-account-authentication')
+                self.assertEqual(lib.ordered_route(host,['apple-all'],self.data),'apple-all')
+
     def test_device_registration_is_separate_from_esim_time_and_management(self):
         expected={'albert.apple.com':'apple-device-registration',
                   'identity.apple.com':'apple-device-registration',
