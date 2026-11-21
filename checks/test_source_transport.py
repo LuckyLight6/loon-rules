@@ -1,5 +1,7 @@
 from datetime import datetime, timezone
 import unittest
+from subprocess import CompletedProcess
+from unittest.mock import patch
 
 from loon_rules.rules import Invalid
 
@@ -38,3 +40,16 @@ class OfficialMirrorTransport(unittest.TestCase):
         def read(url):called.append(url);return text
         self.assertEqual(source_transport.fetch('primary',mirrors,read),(text,'primary'))
         self.assertEqual(called,['primary'])
+
+    def test_failed_sources_preserve_the_download_cause(self):
+        from loon_rules.sources import transport
+        def fail(url):raise Invalid('上游下载失败（curl 22）：HTTP 403')
+        with self.assertRaisesRegex(Invalid,'curl 22.*HTTP 403'):
+            transport.fetch('https://source.example/list',{},fail)
+
+    def test_download_error_explains_the_actual_http_failure(self):
+        from loon_rules.sources import transport
+        result=CompletedProcess([],22,b'',b'curl: (22) The requested URL returned error: 403\n')
+        with patch.object(transport.subprocess,'run',return_value=result),\
+                self.assertRaisesRegex(Invalid,'curl 22.*error: 403'):
+            transport.download('https://source.example/list')

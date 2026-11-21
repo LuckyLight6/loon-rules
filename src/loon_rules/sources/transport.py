@@ -40,15 +40,17 @@ def delegated(text, spec):
 
 def fetch(primary, mirrors, download, *, public_bag=False):
     spec = mirrors.get(primary, {})
+    failures=[]
     for url in [primary, *spec.get('urls', ())]:
         try:
             text = download(url,public_bag=True) if public_bag else download(url)
             if spec:
                 delegated(text, spec)
             return text, url
-        except (Invalid, OSError):
+        except (Invalid, OSError) as error:
+            failures.append(str(error))
             continue
-    raise Invalid('公开来源及已声明备用地址均未读到有效资料：' + primary)
+    raise Invalid('公开来源及已声明备用地址均未读到有效资料：' + primary+'；'+'；'.join(failures))
 
 
 def source_url(url,*,public_profile=False,public_bag=False):
@@ -83,7 +85,10 @@ def download(url,*,public_profile=False,public_bag=False):
         capture_output=True,
     )
     if result.returncode:
-        raise Invalid(f'上游下载失败（curl {result.returncode}）')
+        lines=result.stderr.decode('utf-8',errors='replace').strip().splitlines()
+        errors=[line for line in lines if line.startswith('curl:')]
+        detail=(errors[-1] if errors else '\n'.join(lines))[:500]
+        raise Invalid(f'上游下载失败（curl {result.returncode}）'+('：'+detail if detail else ''))
     try:
         return result.stdout.decode('utf-8-sig')
     except UnicodeError as exc:
