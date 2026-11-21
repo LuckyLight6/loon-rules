@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-21T12:47:10Z",
+  "checked-at": "2026-11-21T12:57:08Z",
   "inputs-read": 485,
   "critical": 692,
   "inputs-requested": 485,
@@ -4974,7 +4974,7 @@
         "canonical-hosts": [
           "updates-http.cdn-apple.com"
         ],
-        "state": "retained"
+        "state": "historical"
       }
     },
     "microsoft-office-downloads": {
@@ -5673,13 +5673,8 @@
     "http-requests": 36,
     "unavailable-hosts": 0,
     "unavailable-lookups": 0,
-    "partial-lookups": 4,
-    "incomplete-hosts": [
-      "officecdn.microsoft.com",
-      "swcdn.apple.com",
-      "swdownload.apple.com",
-      "updates-http.cdn-apple.com"
-    ]
+    "partial-lookups": 0,
+    "incomplete-hosts": []
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
@@ -10954,7 +10949,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -10995,7 +10990,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "ollama-cloud": {
@@ -11026,7 +11021,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "stackit-model-services": {
@@ -11057,7 +11052,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "stepfun-international": {
@@ -11099,7 +11094,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "xiaomi-international": {
@@ -11142,7 +11137,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -11177,7 +11172,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -11218,7 +11213,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -11253,7 +11248,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -11485,7 +11480,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "npm-registry": {
@@ -11518,7 +11513,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11562,7 +11557,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11595,7 +11590,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -11648,7 +11643,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "braintree-payments": {
@@ -11675,7 +11670,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "notion-workspace": {
@@ -11701,7 +11696,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "google-account-authentication": {
@@ -11909,7 +11904,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -11935,7 +11930,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "google-play-services": {
@@ -11971,7 +11966,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "google-play-games": {
@@ -11999,7 +11994,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "kimi-mainland": {
@@ -12030,7 +12025,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -12069,7 +12064,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -12100,7 +12095,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -12143,7 +12138,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795265217,
+      "last-read": 1795265797,
       "state": "current"
     }
   },
