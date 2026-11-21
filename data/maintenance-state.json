@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-21T09:34:52Z",
+  "checked-at": "2026-11-21T11:42:59Z",
   "inputs-read": 436,
   "critical": 612,
   "inputs-requested": 436,
@@ -8676,8 +8676,8 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 18251,
-      "admitted-rules": 0,
+      "not-whole-host-consensus": 18250,
+      "admitted-rules": 1,
       "retired-rules": 0
     }
   },
@@ -9485,7 +9485,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -9526,7 +9526,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -9561,7 +9561,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -9602,7 +9602,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -9637,7 +9637,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -9869,7 +9869,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "npm-registry": {
@@ -9902,7 +9902,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -9946,7 +9946,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -9979,7 +9979,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -10032,7 +10032,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "braintree-payments": {
@@ -10059,7 +10059,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "notion-workspace": {
@@ -10085,7 +10085,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "google-account-authentication": {
@@ -10293,7 +10293,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -10319,7 +10319,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "google-play-services": {
@@ -10355,7 +10355,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "google-play-games": {
@@ -10383,7 +10383,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -10422,7 +10422,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795253675,
+      "last-read": 1795261352,
       "state": "current"
     }
   },
@@ -10439,7 +10439,9 @@
     }
   },
   "shared-negatives": 20,
-  "changed": [],
+  "changed": [
+    "extended-ad-and-tracking"
+  ],
   "scope-negatives": 130,
   "ip-cases": 37,
   "ip-matching": {
@@ -10693,7 +10695,7 @@
     "zhihu-community": 2,
     "railway-tickets": 1,
     "sina-shared-image-assets": 2,
-    "extended-ad-and-tracking": 44154,
+    "extended-ad-and-tracking": 44155,
     "overseas-media-extra": 183,
     "overseas-sites-extra": 18724,
     "mainland-routing-all": 19664,
