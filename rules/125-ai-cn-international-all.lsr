@@ -4,8 +4,8 @@
 # description: 国产 AI 国际版合集
 # boundary: 由各产品专表合并生成；统一选出口时用此表，按厂商选出口则用成员，不同时订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-20T06:24:52Z
-# rule-count: 36
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 44
 # source: https://www.alibabacloud.com/help/en/model-studio/base-url
 # source: https://www.qianwen.com/
 # source: https://platform.kimi.com/docs/get-api-key
@@ -22,6 +22,16 @@
 # source: https://docs.siliconflow.com/en/userguide/quickstart
 # source: https://cloud.tencent.com/document/api/1823/132282
 # source: https://cloud.tencent.com/document/product/1729/111007
+# source: https://models.dev/api.json
+# source: https://platform.stepfun.ai/docs/en/overview/concept
+# source: https://platform.stepfun.ai/docs/en/step-plan/integrations/reasoning-api
+# source: https://platform.xiaomimimo.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list
+# source: https://youmind.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list
+# source: https://qoder.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list
+# source: https://lovart.ai/
 
 DOMAIN-SUFFIX,qwen.ai
 DOMAIN,chat.qwenlm.ai
@@ -59,3 +69,11 @@ DOMAIN,tokenhub.na-ashburn.tencentcloudapi.com
 DOMAIN,tokenhub.na-siliconvalley.tencentcloudapi.com
 DOMAIN,tokenhub.sa-saopaulo.tencentcloudapi.com
 DOMAIN,tokenhub.eu-frankfurt.tencentcloudapi.com
+DOMAIN,api.stepfun.ai
+DOMAIN,token-plan-ams.xiaomimimo.com
+DOMAIN,token-plan-sgp.xiaomimimo.com
+DOMAIN-SUFFIX,youmind.ai
+DOMAIN-SUFFIX,youmind.com
+DOMAIN-SUFFIX,youmind.site
+DOMAIN-SUFFIX,qoder.com
+DOMAIN-SUFFIX,lovart.ai

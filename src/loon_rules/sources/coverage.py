@@ -118,7 +118,7 @@ def concrete(entry):
 
 
 def reassignments(entries,previous,data,*,selected,order):
-    """Prove ownership moves from the selected publisher scopes, without a migration allowlist."""
+    """Prove complete owner changes from source projections or declared service splits."""
     order=list(order);index=RuleIndex(data,order);proofs=defaultdict(dict)
     sources=groups(entries,order)
     indexes={source:RuleIndex({key:selected.get(key,{}).get(source,()) for key in products},products)
@@ -137,10 +137,18 @@ def reassignments(entries,previous,data,*,selected,order):
                     if (owner!=key and concrete(entries[owner]) and covered&index.bits[owner]
                             and selected_bits&projected.bits[owner]):
                         owners[owner].append(source)
+            for owner in order:
+                target=entries[owner]
+                if (key not in target.get('separates',()) or not concrete(target)
+                        or target.get('section')!=entries[key].get('section')
+                        or not covered&index.bits[owner]):
+                    continue
+                shared=set(entries[key].get('sources',()))&set(target.get('sources',()))
+                if shared:owners[owner].extend(shared)
             if len(owners)>1:raise Invalid('撤出的范围对应多个产品，不能自动迁移：'+key+' '+row)
             if owners:
                 owner=next(iter(owners))
-                proofs[key][row]={'owner':owner,'sources':sorted(owners[owner])}
+                proofs[key][row]={'owner':owner,'sources':sorted(set(owners[owner]))}
     result=dict(proofs)
     verify_reassignments(entries,data,result,order=order)
     return result
@@ -157,9 +165,13 @@ def verify_reassignments(entries,data,report,*,order):
                     or row.partition(',')[0] not in DOMAIN_TYPES or row.count(',')!=1 or read_rules(row)!=[row]):
                 raise Invalid('来源范围迁移缺少有效的范围或依据')
             owner=proof['owner'];sources=proof['sources']
+            allowed=declared[key]&declared.get(owner,set())
+            target=entries.get(owner,{})
+            if key in target.get('separates',()) and target.get('section')==entries[key].get('section'):
+                allowed|=set(entries[key].get('sources',()))&set(target.get('sources',()))
             if (owner not in index.bits or owner==key or not concrete(entries[owner])
                     or not isinstance(sources,list) or not sources or any(not isinstance(s,str) for s in sources)
-                    or sources!=sorted(set(sources)) or not set(sources)<=declared[key]&declared[owner]):
+                    or sources!=sorted(set(sources)) or not set(sources)<=allowed):
                 raise Invalid('来源范围迁移必须对应同一来源的独立产品')
             covered=index.scope_bits(row)
             if covered&index.bits[key] or not covered&index.bits[owner]:

@@ -1,11 +1,11 @@
 # name: apple-update-control
 # priority: 222
 # section: apple
-# description: 系统更新目录、检查、登记和控制端点
-# boundary: 含 OTA/Rosetta 检查、系统恢复服务和 Beta 登记；已确认的二进制内容下载另在 223，不按整个 cdn-apple.com 或整段 Apple IP 分类
+# description: 系统更新目录、检查、授权与登记
+# boundary: 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 232，二进制包体在 223，不把整组当成匿名静态下载
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-20T17:51:12Z
-# rule-count: 68
+# updated-at: 2026-11-21T11:39:00Z
+# rule-count: 59
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
 # source: https://support.apple.com/en-us/101555
@@ -30,13 +30,6 @@ DOMAIN,mesu-lb.apple.com.akadns.net
 DOMAIN,mesu.apple.com.akadns.net
 DOMAIN,mesu.apple.com.mwcname.com
 DOMAIN,ns.itunes.apple.com
-DOMAIN,radarsubmissions-cdn.apple.com.akadns.net
-DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net
-DOMAIN,radarsubmissions-lb.apple.com.akadns.net
-DOMAIN,radarsubmissions.apple.com
-DOMAIN,radarsubmissions.apple.com.akadns.net
-DOMAIN,radarsubmissions.apple.com.mwcname.com
-DOMAIN,radarsubmissions.g.aaplimg.com
 DOMAIN,swpost.apple.com
 DOMAIN,swscan-cdn.apple.com.akadns.net
 DOMAIN,swscan-cdn.origin-apple.com.akadns.net
@@ -70,8 +63,6 @@ DOMAIN-SUFFIX,swscan.apple.com
 DOMAIN-SUFFIX,wkms-public.apple.com
 DOMAIN-SUFFIX,xp.apple.com
 DOMAIN,bpapi.apple.com
-DOMAIN,cssubmissions.apple.com
-DOMAIN,fba.apple.com
 DOMAIN,itunes.com
 DOMAIN,lcdn-locator.apple.com
 DOMAIN,lcdn-registration.apple.com

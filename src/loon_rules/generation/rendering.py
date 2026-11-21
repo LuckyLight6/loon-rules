@@ -55,6 +55,8 @@ def render_review(status,entries):
         lines+=['',f"去重后核对 {total} 个业务主机。来源用例包含已被后缀规则合并的明确主机，不只检查单独列出的 DOMAIN 行。"]
     if status.get('profiles-checked'):
         lines+=['',f"已核对 {status['profiles-checked']} 种细分与合集组合的域名、已列 CIDR 用例及首条命中。"]
+    if (suffixes:=status.get('public-suffix-state',{})).get('state')=='retained-newer':
+        lines+=['',f"公共后缀来源返回 {suffixes['source-version']}，早于已采用的 {suffixes['active-version']}；本轮保留较新版，未降低共享托管范围的识别。"]
     if count:=status.get('expanded-domain-cases'):
         lines+=['',f"发现资料中的 {count} 个明确主机也核对用途与首条命中，已计入业务去重总数，与服务清单的用例有交集。"]
     lines+=['','## 哪些变化还要核实？','',
@@ -292,8 +294,8 @@ def render_review(status,entries):
             reason='、'.join(f'{v} 条{label}' for field,label in [('outside-purpose','共享托管范围'),('reserved-scopes','与国际版 AI 重叠')] if (v:=states[k].get(field)))
             lines.append(f"- {entries[k]['priority']:03d}：{reason}")
     if conflicts:=status.get('fallback-conflicts'):
-        lines+=['','## 哪些域名没有归入海外兜底？','',
-                '国内和海外清单都列出的范围，不直接归入海外兜底，仍可按具体业务或国内规则匹配。同一范围可能出现在好几份清单里，不要把下面的条数相加当作网站数。','']
+        lines+=['','## 海外与国内来源有哪些重合？','',
+                '具体产品先匹配；已声明优先的海外与受限站点来源保留在海外补充，不被宽泛国内表扣除。未声明优先权的输入仍按保护范围处理。下面记录来源相交条数，不表示全部被删除，也不能相加当作网站数。','']
         for dest,counts in conflicts.items():
             lines.append(f"- {entries[dest]['priority']:03d}："+'；'.join(
                 f"{entries[k]['description']} 有 {v} 条相交" for k,v in counts.items()))

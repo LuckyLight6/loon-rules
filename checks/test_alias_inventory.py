@@ -12,6 +12,24 @@ from loon_rules.rules import Invalid
 
 
 class CnameAliasInventory(PublicSourceExamples):
+    def test_vendor_encoded_alias_survives_regional_cname_rotation_as_history(self):
+        from loon_rules.sources import aliases as source_aliases
+        host,_,entries,policies,_,data,_=self.evidence_fixture()
+        alias='download.vendor.example.delivery.example';row='DOMAIN,'+alias
+        previous={'download':{row:{'canonical-hosts':[host],'state':'current'}}}
+        published={'download':['DOMAIN,'+host,row]};current={}
+        retained=source_aliases.reconcile(entries,data,current,previous,published,policies,
+            queried={host},records={host:[]},order=['download'])
+        self.assertEqual(retained,{'download':[row]})
+        self.assertEqual(current['download'][row],{'canonical-hosts':[host],'state':'historical'})
+        source_aliases.verify_evidence(entries,data,current,policies,order=['download'])
+
+    def test_independent_tenant_alias_cannot_claim_vendor_encoded_history(self):
+        from loon_rules.sources import aliases as source_aliases
+        _,alias,entries,policies,proof,_,published=self.evidence_fixture()
+        proof['download']['DOMAIN,'+alias]['state']='historical'
+        with self.assertRaises(Invalid):source_aliases.verify_evidence(entries,published,proof,policies,order=['download'])
+
     def evidence_fixture(self):
         host='download.vendor.example';alias='product-download.github.io'
         entries={'download':{'priority':30,'mode':'compiled','aliases':{

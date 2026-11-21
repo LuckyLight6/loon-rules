@@ -1,6 +1,7 @@
 """Use the Public Suffix List to distinguish a product root from a registry or cloud suffix."""
 from pathlib import Path
 from ipaddress import ip_address
+from datetime import datetime
 import re
 from loon_rules.rules import Invalid, valid_host, match_domain
 from loon_rules.project import ROOT
@@ -108,11 +109,31 @@ def current():
         _current = Suffixes(DATA.read_text())
     return _current
 
-def use(text):
-    global _current
+def complete_list(text):
     if not all((marker in text for marker in ('// ===BEGIN ICANN DOMAINS===', '// ===END ICANN DOMAINS===', '// ===BEGIN PRIVATE DOMAINS===', '// ===END PRIVATE DOMAINS==='))):
         raise ValueError('公共后缀表缺少完整的注册与私有托管章节')
     candidate = Suffixes(text)
     if not all((name in candidate.exact for name in ('com', 'co.uk', 'github.io'))):
         raise ValueError('公共后缀表缺少已知的基础后缀')
-    _current = candidate
+    return candidate
+
+def select_list(incoming, previous):
+    """Keep a newer published PSL when an edge cache returns an older dated copy."""
+    complete_list(incoming)
+    def version(text):
+        found=re.findall(r'^// VERSION: (\S+)\s*$',text,re.M)
+        if len(found)!=1:raise ValueError('公共后缀表缺少唯一版本时间')
+        try:datetime.strptime(found[0],'%Y-%m-%d_%H-%M-%S_UTC')
+        except ValueError as error:raise ValueError('公共后缀表的版本时间无效') from error
+        return found[0]
+    fresh=version(incoming)
+    if previous:
+        complete_list(previous)
+        active=version(previous)
+        if fresh<active:
+            return previous,{'state':'retained-newer','source-version':fresh,'active-version':active}
+    return incoming,{'state':'current','source-version':fresh,'active-version':fresh}
+
+def use(text):
+    global _current
+    _current = complete_list(text)

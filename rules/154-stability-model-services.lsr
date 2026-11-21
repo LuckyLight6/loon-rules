@@ -1,0 +1,12 @@
+# name: stability-model-services
+# priority: 154
+# section: ai
+# description: Stability AI 模型服务
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list
+# source: https://stability.ai/
+
+DOMAIN-SUFFIX,stability.ai

@@ -4,8 +4,8 @@
 # description: 海外影音合集
 # boundary: 汇总所列海外视频、音乐、短视频和直播专项；与成员二选一。国内影音和其他海外影音补充不包含在本组
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-20T06:40:36Z
-# rule-count: 80
+# updated-at: 2026-11-21T11:39:00Z
+# rule-count: 84
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
@@ -17,6 +17,8 @@
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Bahamut.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 
 DOMAIN-SUFFIX,hbo.com
 DOMAIN-SUFFIX,hbomax.com
@@ -98,3 +100,7 @@ DOMAIN-SUFFIX,gamer.com.tw
 DOMAIN-SUFFIX,bbc.com
 DOMAIN-SUFFIX,bbci.co.uk
 DOMAIN-SUFFIX,bbc.co.uk
+DOMAIN-SUFFIX,iq.com
+DOMAIN-SUFFIX,intl-rcd.iqiyi.com
+DOMAIN-SUFFIX,intl-subscription.iqiyi.com
+DOMAIN-SUFFIX,intl.iqiyi.com

@@ -1,11 +1,11 @@
 # name: apple-location-services
 # priority: 209
 # section: apple
-# description: 定位、地图配置与 Find My 已识别入口
-# boundary: 定位查询与信号定位数据按 Apple 公开客户端配置补入；保留既有定位和 Find My 范围，账户、推送和 iCloud 网页仍分别处理
+# description: 定位查询、地图配置与信号定位数据
+# boundary: 定位服务与信号定位共用主机；Find My 由独立专表先匹配，账户、推送与 iCloud 文件各自处理
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-21T04:04:25Z
-# rule-count: 14
+# updated-at: 2026-11-21T11:39:00Z
+# rule-count: 7
 # source: https://gdmf.apple.com/v2/pmv
 # source: https://configuration.ls.apple.com/config/defaults
 # source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
@@ -20,13 +20,6 @@ DOMAIN,gsp9-ssl.apple.com
 DOMAIN,gsp10-ssl.apple.com
 DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,gs-loc.apple.com
-DOMAIN,fmipmobile.icloud.com
-DOMAIN,fmfmobile.icloud.com
-DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
-DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
-DOMAIN,fmfmobile.fe2.apple-dns.net
-DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com
-DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com
 DOMAIN,cl2-cn.apple.com
 DOMAIN,cl4-cn.apple.com
 DOMAIN,gs-loc-cn.apple.com

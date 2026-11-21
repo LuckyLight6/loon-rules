@@ -28,10 +28,15 @@ def permits(host,alias,policy):
     return cname_tenant(host,alias,policy) or any(pattern.fullmatch(alias) for pattern in alias_patterns(host,policy))
 
 
+def vendor_encoded(host,alias,policy):
+    return (any(pattern.fullmatch(alias) for pattern in alias_patterns(host,policy))
+            or alias.startswith(host+'.') and permits(host,alias,policy))
+
+
 def witness(row,proof):
     if (not isinstance(row,str) or not row.startswith('DOMAIN,') or row.count(',')!=1
             or read_rules(row)!=[row] or not isinstance(proof,dict)
-            or set(proof)!={'canonical-hosts','state'} or proof['state'] not in ('current','retained')):
+            or set(proof)!={'canonical-hosts','state'} or proof['state'] not in ('current','retained','historical')):
         raise Invalid('CNAME 别名依据的范围或字段无效')
     names=proof['canonical-hosts']
     if (not isinstance(names,list) or not names or any(not isinstance(name,str) for name in names)
@@ -51,7 +56,8 @@ def verify_evidence(entries,data,evidence,policies,*,order,aliases=None):
         for row,proof in rows.items():
             alias,names=witness(row,proof)
             if (index.route(alias,order)!=key or any(index.route(host,order)!=key
-                    or not permits(host,alias,policy) for host in names)):
+                    or not permits(host,alias,policy)
+                    or proof['state']=='historical' and not vendor_encoded(host,alias,policy) for host in names)):
                 raise Invalid('CNAME 别名依据与当前服务或别名范围不一致：'+key)
     for key,rows in (aliases or {}).items():
         spec=entries.get(key,{}).get('aliases',{})
@@ -68,7 +74,7 @@ def verify_evidence(entries,data,evidence,policies,*,order,aliases=None):
 
 
 def reconcile(entries,data,current,previous,published,policies,*,queried,records,order,incomplete=()):
-    """Preserve published exact aliases only while their own live query is unavailable."""
+    """Keep unavailable aliases and vendor-encoded history without retaining unrelated tenant names."""
     index=RuleIndex(data,order);retained={}
     for key,rows in previous.items():
         spec=entries.get(key,{}).get('aliases',{})
@@ -81,8 +87,11 @@ def reconcile(entries,data,current,previous,published,policies,*,queried,records
                 raise Invalid('CNAME 历史依据没有对应的已发布范围：'+key)
             failed=[host for host in names if host in queried and (host not in records or host in incomplete)
                     and index.route(host,order)==key and permits(host,alias,policy)]
-            if not failed:continue
-            current.setdefault(key,{})[row]={'canonical-hosts':failed,'state':'retained'}
+            historical=[host for host in names if host in queried and host in records and host not in incomplete
+                        and index.route(host,order)==key and vendor_encoded(host,alias,policy)]
+            if not failed and not historical:continue
+            current.setdefault(key,{})[row]={'canonical-hosts':failed or historical,
+                                           'state':'retained' if failed else 'historical'}
             if not index.scope_bits(row)&index.bits[key]:retained.setdefault(key,[]).append(row)
     for key,rows in retained.items():data[key]=list(dict.fromkeys(data[key]+rows))
     verify_evidence(entries,data,current,policies,order=order)

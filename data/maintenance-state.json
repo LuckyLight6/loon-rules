@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-21T11:42:59Z",
-  "inputs-read": 436,
-  "critical": 612,
-  "inputs-requested": 436,
+  "checked-at": "2026-11-21T12:47:10Z",
+  "inputs-read": 485,
+  "critical": 692,
+  "inputs-requested": 485,
   "profiles-checked": 512,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -28,6 +28,24 @@
       "DOMAIN-SUFFIX,vscode.dev": "microsoft-vscode"
     },
     "mainland-domains": {
+      "DOMAIN-SUFFIX,bookbl.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,cnki.net": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,cqvip.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,dcocsp.cn": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,kuke.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,qq.cn.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,apache.org": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,bet365.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,d4z1onkegyrs5.cloudfront.net": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,fallenark.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,infoq.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,ip138.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,itiger.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,kwai.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,lightnovel.cn": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,nssurge.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,weather.com": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,wikidot.com": "overseas-sites-extra",
       "DOMAIN,p16-tiktokcdn-com.akamaized.net": "tiktok-international-video",
       "DOMAIN-SUFFIX,12306.cn": "railway-tickets",
       "DOMAIN-SUFFIX,360buy.com": "jingdong-shopping",
@@ -157,6 +175,7 @@
       "DOMAIN-SUFFIX,zhiziyun.com": "general-ad-and-tracking"
     },
     "extended-ad-and-tracking": {
+      "DOMAIN-SUFFIX,t.jasper.ai": "jasper-marketing-ai",
       "DOMAIN-SUFFIX,client-analytics.braintreegateway.com": "braintree-payments",
       "DOMAIN-SUFFIX,powerad.ai": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,mikka.app": "general-ad-and-tracking",
@@ -330,7 +349,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 188,
+    "routine-tables": 255,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -353,22 +372,24 @@
       "kimi-international": 1,
       "minimax-international": 1,
       "bytedance-international": 1,
+      "apple-find-my": 7,
       "apple-account-authentication": 4,
       "apple-app-and-device-verification": 3,
       "apple-wallet-payments": 2,
       "apple-store-transactions": 11,
       "apple-app-package-downloads": 1,
       "apple-push-connection": 2,
-      "apple-location-services": 11,
+      "apple-location-services": 4,
       "apple-messaging-identity": 1,
       "apple-icloud-mainland": 1,
       "apple-cloud-sync": 3,
       "apple-music-and-radio": 1,
       "apple-news-and-sports": 4,
-      "apple-update-control": 7,
+      "apple-update-control": 6,
       "apple-developer-downloads": 1,
       "apple-shared-store-assets": 2,
-      "apple-system-connectivity": 12,
+      "apple-system-connectivity": 11,
+      "apple-feedback-and-diagnostics": 2,
       "pypi-packages": 1,
       "signal-messenger": 1,
       "steam-international-platform": 2,
@@ -446,6 +467,68 @@
       "bytedance-international",
       "siliconflow-international",
       "tencent-international",
+      "amp-connections",
+      "anythingllm-connections",
+      "fireworks-model-services",
+      "opencode-connections",
+      "kilo-connections",
+      "cline-connections",
+      "ollama-cloud",
+      "chutes-model-services",
+      "bothub-model-services",
+      "commandcode-connections",
+      "stackit-model-services",
+      "novita-model-services",
+      "nebius-model-services",
+      "baseten-model-services",
+      "deepinfra-model-services",
+      "together-model-services",
+      "cerebras-model-services",
+      "stepfun-international",
+      "xiaomi-international",
+      "replicate-model-services",
+      "runway-creative-tools",
+      "stability-model-services",
+      "black-forest-model-services",
+      "replit-cloud-development",
+      "augment-code-assistant",
+      "sourcegraph-code-and-cody",
+      "continue-code-assistant",
+      "coderabbit-code-review",
+      "tabnine-code-assistant",
+      "factory-coding-agents",
+      "zed-editor-and-ai",
+      "kiro-code-assistant",
+      "bolt-app-builder",
+      "lovable-app-builder",
+      "v0-app-builder",
+      "genspark-connections",
+      "jasper-marketing-ai",
+      "gamma-presentations",
+      "phind-search",
+      "inflection-and-pi",
+      "h2o-model-services",
+      "otter-meeting-assistant",
+      "descript-media-tools",
+      "synthesia-video-tools",
+      "luma-creative-tools",
+      "leonardo-image-tools",
+      "pika-video-tools",
+      "recraft-design-tools",
+      "udio-music-tools",
+      "duck-ai-chat",
+      "langchain-agent-platform",
+      "comfy-cloud-and-registry",
+      "lmstudio-product-services",
+      "crewai-agent-platform",
+      "eigent-agent-services",
+      "manus-agent-services",
+      "youmind-international",
+      "qoder-international",
+      "lovart-international",
+      "dia-browser-services",
+      "openclaw-product-services",
+      "apple-find-my",
       "apple-account-authentication",
       "apple-app-and-device-verification",
       "apple-wallet-payments",
@@ -472,6 +555,8 @@
       "apple-certificate-validation",
       "apple-system-connectivity",
       "apple-schoolwork-handouts",
+      "apple-device-registration",
+      "apple-feedback-and-diagnostics",
       "github-code-and-packages",
       "gitlab-hosting",
       "bitbucket-hosting",
@@ -512,6 +597,7 @@
       "tiktok-international-video",
       "bilibili-international-video",
       "bbc-news-and-video",
+      "iqiyi-international",
       "steam-international-platform",
       "epic-games-services",
       "playstation-network",
@@ -558,6 +644,8 @@
       "stepfun-mainland",
       "sensetime-mainland",
       "jetbrains-ai-mainland",
+      "modelscope-mainland",
+      "xiaomi-mainland-and-shared",
       "gitee-hosting",
       "coding-platform",
       "gitcode-hosting",
@@ -595,10 +683,11 @@
       "apple-push-connection": 1,
       "apple-icloud-mainland": 2,
       "apple-cloud-sync": 13,
-      "apple-update-control": 24,
+      "apple-update-control": 22,
       "apple-developer-downloads": 4,
       "apple-shared-store-assets": 1,
-      "apple-system-connectivity": 34,
+      "apple-system-connectivity": 31,
+      "apple-feedback-and-diagnostics": 3,
       "google-gmail-mail": 1,
       "google-meet-meetings": 3,
       "google-drive-and-documents": 7,
@@ -627,7 +716,7 @@
       "apple-video-and-fitness": 3,
       "apple-tv-video-delivery": 2,
       "apple-news-and-sports": 4,
-      "apple-update-control": 17,
+      "apple-update-control": 15,
       "apple-update-downloads": 5,
       "apple-developer-portal": 1,
       "apple-mainland-delivery-aliases": 1,
@@ -1126,6 +1215,1182 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 7,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list": {
+      "state": "current",
+      "products": [
+        "replicate-model-services"
+      ],
+      "filters": {
+        "replicate-model-services": [
+          {
+            "roots": [
+              "replicate.com",
+              "replicate.delivery"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list": {
+      "state": "current",
+      "products": [
+        "runway-creative-tools"
+      ],
+      "filters": {
+        "runway-creative-tools": [
+          {
+            "roots": [
+              "runway.com",
+              "runwayml.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list": {
+      "state": "current",
+      "products": [
+        "stability-model-services"
+      ],
+      "filters": {
+        "stability-model-services": [
+          {
+            "roots": [
+              "stability.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list": {
+      "state": "current",
+      "products": [
+        "black-forest-model-services"
+      ],
+      "filters": {
+        "black-forest-model-services": [
+          {
+            "roots": [
+              "bfl.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list": {
+      "state": "current",
+      "products": [
+        "replit-cloud-development"
+      ],
+      "filters": {
+        "replit-cloud-development": [
+          {
+            "roots": [
+              "repl.it",
+              "replit.com",
+              "replit.dev"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 5,
+      "selected-scopes": 3,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 3,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 2,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/augment-code.list": {
+      "state": "current",
+      "products": [
+        "augment-code-assistant"
+      ],
+      "filters": {
+        "augment-code-assistant": [
+          {
+            "roots": [
+              "augmentcode.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 3
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list": {
+      "state": "current",
+      "products": [
+        "sourcegraph-code-and-cody"
+      ],
+      "filters": {
+        "sourcegraph-code-and-cody": [
+          {
+            "roots": [
+              "cody.dev",
+              "sourcegraph.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 4,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 2,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list": {
+      "state": "current",
+      "products": [
+        "continue-code-assistant"
+      ],
+      "filters": {
+        "continue-code-assistant": [
+          {
+            "roots": [
+              "continue.dev"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list": {
+      "state": "current",
+      "products": [
+        "coderabbit-code-review"
+      ],
+      "filters": {
+        "coderabbit-code-review": [
+          {
+            "roots": [
+              "coderabbit.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list": {
+      "state": "current",
+      "products": [
+        "tabnine-code-assistant"
+      ],
+      "filters": {
+        "tabnine-code-assistant": [
+          {
+            "roots": [
+              "tabnine.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list": {
+      "state": "current",
+      "products": [
+        "factory-coding-agents"
+      ],
+      "filters": {
+        "factory-coding-agents": [
+          {
+            "roots": [
+              "factory.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list": {
+      "state": "current",
+      "products": [
+        "zed-editor-and-ai"
+      ],
+      "filters": {
+        "zed-editor-and-ai": [
+          {
+            "roots": [
+              "zed.dev"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list": {
+      "state": "current",
+      "products": [
+        "kiro-code-assistant"
+      ],
+      "filters": {
+        "kiro-code-assistant": [
+          {
+            "roots": [
+              "kiro.dev"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 3,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 1,
+      "declared-exclusions": 0,
+      "outside-selection": 1,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list": {
+      "state": "current",
+      "products": [
+        "bolt-app-builder"
+      ],
+      "filters": {
+        "bolt-app-builder": [
+          {
+            "roots": [
+              "bolt.new"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list": {
+      "state": "current",
+      "products": [
+        "lovable-app-builder"
+      ],
+      "filters": {
+        "lovable-app-builder": [
+          {
+            "roots": [
+              "lovable.dev"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list": {
+      "state": "current",
+      "products": [
+        "v0-app-builder"
+      ],
+      "filters": {
+        "v0-app-builder": [
+          {
+            "roots": [
+              "v0.app",
+              "v0.dev"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list": {
+      "state": "current",
+      "products": [
+        "genspark-connections"
+      ],
+      "filters": {
+        "genspark-connections": [
+          {
+            "roots": [
+              "genspark.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list": {
+      "state": "current",
+      "products": [
+        "jasper-marketing-ai"
+      ],
+      "filters": {
+        "jasper-marketing-ai": [
+          {
+            "roots": [
+              "jasper.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list": {
+      "state": "current",
+      "products": [
+        "gamma-presentations"
+      ],
+      "filters": {
+        "gamma-presentations": [
+          {
+            "roots": [
+              "gamma.app"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list": {
+      "state": "current",
+      "products": [
+        "phind-search"
+      ],
+      "filters": {
+        "phind-search": [
+          {
+            "roots": [
+              "phind.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list": {
+      "state": "current",
+      "products": [
+        "inflection-and-pi"
+      ],
+      "filters": {
+        "inflection-and-pi": [
+          {
+            "roots": [
+              "inflection.ai",
+              "pi.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list": {
+      "state": "current",
+      "products": [
+        "h2o-model-services"
+      ],
+      "filters": {
+        "h2o-model-services": [
+          {
+            "roots": [
+              "h2o.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list": {
+      "state": "current",
+      "products": [
+        "otter-meeting-assistant"
+      ],
+      "filters": {
+        "otter-meeting-assistant": [
+          {
+            "roots": [
+              "otter.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list": {
+      "state": "current",
+      "products": [
+        "descript-media-tools"
+      ],
+      "filters": {
+        "descript-media-tools": [
+          {
+            "roots": [
+              "descript.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list": {
+      "state": "current",
+      "products": [
+        "synthesia-video-tools"
+      ],
+      "filters": {
+        "synthesia-video-tools": [
+          {
+            "roots": [
+              "synthesia.io"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list": {
+      "state": "current",
+      "products": [
+        "luma-creative-tools"
+      ],
+      "filters": {
+        "luma-creative-tools": [
+          {
+            "roots": [
+              "lumalabs.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list": {
+      "state": "current",
+      "products": [
+        "leonardo-image-tools"
+      ],
+      "filters": {
+        "leonardo-image-tools": [
+          {
+            "roots": [
+              "leonardo.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list": {
+      "state": "current",
+      "products": [
+        "pika-video-tools"
+      ],
+      "filters": {
+        "pika-video-tools": [
+          {
+            "roots": [
+              "pika.art"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list": {
+      "state": "current",
+      "products": [
+        "recraft-design-tools"
+      ],
+      "filters": {
+        "recraft-design-tools": [
+          {
+            "roots": [
+              "recraft.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list": {
+      "state": "current",
+      "products": [
+        "udio-music-tools"
+      ],
+      "filters": {
+        "udio-music-tools": [
+          {
+            "roots": [
+              "udio.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list": {
+      "state": "current",
+      "products": [
+        "duck-ai-chat"
+      ],
+      "filters": {
+        "duck-ai-chat": [
+          {
+            "roots": [
+              "duck.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list": {
+      "state": "current",
+      "products": [
+        "langchain-agent-platform"
+      ],
+      "filters": {
+        "langchain-agent-platform": [
+          {
+            "roots": [
+              "langchain.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list": {
+      "state": "current",
+      "products": [
+        "comfy-cloud-and-registry"
+      ],
+      "filters": {
+        "comfy-cloud-and-registry": [
+          {
+            "roots": [
+              "comfy.org",
+              "comfyregistry.org"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list": {
+      "state": "current",
+      "products": [
+        "lmstudio-product-services"
+      ],
+      "filters": {
+        "lmstudio-product-services": [
+          {
+            "roots": [
+              "lmstudio.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list": {
+      "state": "current",
+      "products": [
+        "crewai-agent-platform"
+      ],
+      "filters": {
+        "crewai-agent-platform": [
+          {
+            "roots": [
+              "crewai.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list": {
+      "state": "current",
+      "products": [
+        "eigent-agent-services"
+      ],
+      "filters": {
+        "eigent-agent-services": [
+          {
+            "roots": [
+              "eigent.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list": {
+      "state": "current",
+      "products": [
+        "manus-agent-services"
+      ],
+      "filters": {
+        "manus-agent-services": [
+          {
+            "roots": [
+              "manus.im",
+              "manuscdn.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list": {
+      "state": "current",
+      "products": [
+        "youmind-international"
+      ],
+      "filters": {
+        "youmind-international": [
+          {
+            "roots": [
+              "youmind.ai",
+              "youmind.com",
+              "youmind.site"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 3,
+      "selected-scopes": 3,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 3,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list": {
+      "state": "current",
+      "products": [
+        "qoder-international"
+      ],
+      "filters": {
+        "qoder-international": [
+          {
+            "roots": [
+              "qoder.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list": {
+      "state": "current",
+      "products": [
+        "lovart-international"
+      ],
+      "filters": {
+        "lovart-international": [
+          {
+            "roots": [
+              "lovart.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list": {
+      "state": "current",
+      "products": [
+        "dia-browser-services"
+      ],
+      "filters": {
+        "dia-browser-services": [
+          {
+            "roots": [
+              "diabrowser.com",
+              "diabrowser.engineering"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list": {
+      "state": "current",
+      "products": [
+        "openclaw-product-services"
+      ],
+      "filters": {
+        "openclaw-product-services": [
+          {
+            "roots": [
+              "openclaw.ai"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr": {
+      "state": "current",
+      "products": [
+        "apple-find-my"
+      ],
+      "filters": {
+        "apple-find-my": [
+          {
+            "roots": [
+              "fmipmobile.icloud.com",
+              "fmfmobile.icloud.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {
+        "apple-cloud-sync": 1
+      },
+      "domain-scopes": 3,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
       "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 0,
@@ -2365,6 +3630,7 @@
         "coding-platform": 1,
         "gitcode-hosting": 1,
         "gitee-hosting": 1,
+        "iqiyi-international": 1,
         "iqiyi-mainland": 4,
         "kugou-music": 1,
         "npmmirror-registry": 1,
@@ -2383,7 +3649,7 @@
       "privacy-scopes": 16,
       "shared-scopes": 7,
       "declared-exclusions": 0,
-      "outside-selection": 625,
+      "outside-selection": 624,
       "other-lines": 69
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list": {
@@ -2415,6 +3681,80 @@
       "declared-exclusions": 0,
       "outside-selection": 22,
       "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list": {
+      "state": "current",
+      "products": [
+        "iqiyi-international"
+      ],
+      "filters": {
+        "iqiyi-international": [
+          {
+            "roots": [
+              "iq.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list": {
+      "state": "current",
+      "products": [
+        "iqiyi-international"
+      ],
+      "filters": {
+        "iqiyi-international": [
+          {
+            "roots": [
+              "iq.com",
+              "intl.iqiyi.com",
+              "intl-subscription.iqiyi.com",
+              "intl-rcd.iqiyi.com"
+            ]
+          }
+        ]
+      },
+      "other-products": {
+        "bilibili-mainland-video": 1,
+        "iqiyi-mainland": 1,
+        "prime-video-streaming": 10,
+        "bahamut-video-and-community": 5,
+        "apple-tv-video-delivery": 2,
+        "apple-video-and-fitness": 4,
+        "youtube-video-and-cdn": 7,
+        "apple-music-and-radio": 1,
+        "bbc-news-and-video": 2,
+        "bilibili-international-video": 2,
+        "disney-plus-streaming": 3,
+        "twitch-live-video": 6,
+        "hbo-streaming": 4,
+        "tiktok-international-video": 6,
+        "netflix-video-and-delivery": 9,
+        "spotify-audio": 6
+      },
+      "domain-scopes": 258,
+      "selected-scopes": 4,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 4,
+      "fallback-scopes": 178,
+      "privacy-scopes": 1,
+      "shared-scopes": 6,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 63
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr": {
       "state": "current",
@@ -3080,11 +4420,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 12761,
+      "fallback-scopes": 12760,
       "privacy-scopes": 25,
       "shared-scopes": 26,
       "declared-exclusions": 0,
-      "outside-selection": 2,
+      "outside-selection": 3,
       "other-lines": 340
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list": {
@@ -3270,13 +4610,15 @@
           }
         ]
       },
-      "other-products": {},
+      "other-products": {
+        "iqiyi-international": 1
+      },
       "domain-scopes": 20,
       "selected-scopes": 14,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 14,
-      "fallback-scopes": 6,
+      "fallback-scopes": 5,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
@@ -3495,12 +4837,6 @@
       "DOMAIN,mesu-lb.apple.com.akadns.net",
       "DOMAIN,mesu.apple.com.akadns.net",
       "DOMAIN,mesu.apple.com.mwcname.com",
-      "DOMAIN,radarsubmissions-cdn.apple.com.akadns.net",
-      "DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net",
-      "DOMAIN,radarsubmissions-lb.apple.com.akadns.net",
-      "DOMAIN,radarsubmissions.apple.com.akadns.net",
-      "DOMAIN,radarsubmissions.apple.com.mwcname.com",
-      "DOMAIN,radarsubmissions.g.aaplimg.com",
       "DOMAIN,swscan-cdn.apple.com.akadns.net",
       "DOMAIN,swscan-cdn.origin-apple.com.akadns.net",
       "DOMAIN,swscan-lb.apple.com.akadns.net",
@@ -3550,8 +4886,9 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
-      "DOMAIN,updates.g.aaplimg.com"
+      "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
     ],
     "apple-developer-downloads": [
       "DOMAIN,adcdownload.apple.com.akadns.net"
@@ -3568,13 +4905,19 @@
       "DOMAIN,certs-lb.apple.com.akadns.net",
       "DOMAIN,crl-lb.apple.com.akadns.net"
     ],
-    "apple-system-connectivity": [
+    "apple-feedback-and-diagnostics": [
       "DOMAIN,iphonesubmissions-cdn.apple.com.akadns.net",
       "DOMAIN,iphonesubmissions-cdn.origin-apple.com.akadns.net",
       "DOMAIN,iphonesubmissions-lb.apple.com.akadns.net",
       "DOMAIN,iphonesubmissions.apple.com.akadns.net",
       "DOMAIN,iphonesubmissions.apple.com.mwcname.com",
-      "DOMAIN,iphonesubmissions.g.aaplimg.com"
+      "DOMAIN,iphonesubmissions.g.aaplimg.com",
+      "DOMAIN,radarsubmissions-cdn.apple.com.akadns.net",
+      "DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net",
+      "DOMAIN,radarsubmissions-lb.apple.com.akadns.net",
+      "DOMAIN,radarsubmissions.apple.com.akadns.net",
+      "DOMAIN,radarsubmissions.apple.com.mwcname.com",
+      "DOMAIN,radarsubmissions.g.aaplimg.com"
     ],
     "microsoft-office-downloads": [
       "DOMAIN,office-f-net.trafficmanager.net",
@@ -3626,6 +4969,12 @@
           "updates.cdn-apple.com"
         ],
         "state": "current"
+      },
+      "DOMAIN,updates-http.cdn-apple.com.edgesuite.net": {
+        "canonical-hosts": [
+          "updates-http.cdn-apple.com"
+        ],
+        "state": "retained"
       }
     },
     "microsoft-office-downloads": {
@@ -4324,10 +5673,20 @@
     "http-requests": 36,
     "unavailable-hosts": 0,
     "unavailable-lookups": 0,
-    "partial-lookups": 0,
-    "incomplete-hosts": []
+    "partial-lookups": 4,
+    "incomplete-hosts": [
+      "officecdn.microsoft.com",
+      "swcdn.apple.com",
+      "swdownload.apple.com",
+      "updates-http.cdn-apple.com"
+    ]
   },
   "source-mirrors-used": {},
+  "public-suffix-state": {
+    "state": "retained-newer",
+    "source-version": "2026-11-20_10-39-09_UTC",
+    "active-version": "2026-11-21_04-33-45_UTC"
+  },
   "shared-service-transfers": {
     "google-play-services": {
       "DOMAIN,android.apis.google.com": "google-platform-services",
@@ -8362,6 +9721,64 @@
       130,
       131,
       132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      140,
+      141,
+      142,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      199,
       201,
       202,
       203,
@@ -8384,6 +9801,8 @@
       228,
       229,
       230,
+      231,
+      232,
       301,
       302,
       304,
@@ -8418,6 +9837,7 @@
       388,
       389,
       391,
+      392,
       410,
       411,
       412,
@@ -8445,7 +9865,6 @@
       480,
       481,
       501,
-      502,
       503,
       504,
       505,
@@ -8523,6 +9942,10 @@
     "随完整服务清单补入，间隔确认后撤回": [
       104,
       124,
+      139,
+      143,
+      150,
+      151,
       205,
       216,
       218,
@@ -8535,7 +9958,10 @@
       453,
       456,
       457,
-      516
+      502,
+      516,
+      518,
+      519
     ],
     "从官方目录发现产品与版本，再读取服务端点": [
       209,
@@ -8635,7 +10061,7 @@
     "mainland-domains": {
       "state": "current",
       "excluded-client-matches": 10,
-      "reserved-scopes": 2
+      "reserved-scopes": 3
     },
     "mainland-networks": {
       "state": "current",
@@ -8668,7 +10094,7 @@
     },
     "source-xkww3n-mainland": {
       "state": "current",
-      "reserved-scopes": 3,
+      "reserved-scopes": 4,
       "unconfirmed-domains": 8
     },
     "general-ad-and-tracking": {
@@ -8677,7 +10103,7 @@
     "extended-ad-and-tracking": {
       "state": "current",
       "not-whole-host-consensus": 18250,
-      "admitted-rules": 1,
+      "admitted-rules": 0,
       "retired-rules": 0
     }
   },
@@ -8987,43 +10413,57 @@
     "agentn.api5.cursor.sh",
     "agentn.global.api5.cursor.sh",
     "agentn.us.api5.cursor.sh",
+    "albert.apple.com",
     "amp-api-edge.music.apple.com",
     "amp-api-preview.music.apple.com",
     "amp-api.apps.apple.com",
     "amp-api.music.apple.com",
     "amp-api.videos.apple.com",
+    "ampcode.com",
     "androidenterprise.googleapis.com",
     "androidenterprise.mtls.googleapis.com",
     "androidpublisher.googleapis.com",
     "androidpublisher.mtls.googleapis.com",
     "anysphere-binaries.s3.us-east-1.amazonaws.com",
+    "anythingllm.com",
     "api-gcp.binance.com",
+    "api-inference.modelscope.cn",
     "api.ai.jetbrains.com.cn",
     "api.anthropic.com",
     "api.app.prod.grazie.aws.intellij.net",
     "api.binance.com",
     "api.braintreegateway.com",
+    "api.cline.bot",
     "api.cohere.com",
+    "api.commandcode.ai",
     "api.devin.ai",
     "api.elevenlabs.io",
     "api.endpoints.huggingface.cloud",
     "api.eu.mistral.ai",
     "api.eu.residency.elevenlabs.io",
+    "api.fireworks.ai",
     "api.groq.com",
     "api.in.residency.elevenlabs.io",
     "api.jetbrains.ai",
     "api.jetbrains.cloud",
+    "api.kilo.ai",
+    "api.kimi.com",
     "api.mistral.ai",
     "api.notion.com",
+    "api.novita.ai",
+    "api.openai-compat.model-serving.eu01.onstackit.cloud",
     "api.perplexity.ai",
     "api.poe.com",
     "api.sandbox.braintreegateway.com",
     "api.sg.residency.elevenlabs.io",
     "api.siliconflow.cn",
     "api.siliconflow.com",
+    "api.stepfun.ai",
+    "api.tokenfactory.nebius.com",
     "api.us.elevenlabs.io",
     "api.us.mistral.ai",
     "api.x.ai",
+    "api.xiaomimimo.com",
     "api1.binance.com",
     "api2.binance.com",
     "api2.cursor.sh",
@@ -9049,6 +10489,7 @@
     "atlassian.com",
     "atlassian.net",
     "audioprocessor.app.notion.com",
+    "auth.ampcode.com",
     "auth.docker.com",
     "auth.docker.io",
     "auth.grok.com",
@@ -9058,17 +10499,23 @@
     "authentication.cursor.sh",
     "authenticator.cursor.sh",
     "azcliprod.blob.core.windows.net",
+    "baseten.co",
     "bitbucket.org",
+    "bothub.ru",
     "cdn.atlassian-us-gov-mod.com",
     "cdn.prod.atlassian-dev-us-gov-mod.net",
+    "cerebras.ai",
     "certs-lb.apple.com.akadns.net",
     "certs.apple.com",
+    "chutes.ai",
     "cl2-cn.apple.com",
     "cl4-cn.apple.com",
+    "cline.bot",
     "cloud.siliconflow.cn",
     "cloud.siliconflow.com",
     "cloudconfig.jetbrains.com",
     "code.visualstudio.com",
+    "commandcode.ai",
     "containers.pkg.github.com",
     "copilot-proxy.githubusercontent.com",
     "copilot-reports.github.com",
@@ -9080,11 +10527,13 @@
     "crl.apple.com",
     "crl3.digicert.com",
     "crl4.digicert.com",
+    "cssubmissions.apple.com",
     "cursor-cdn.com",
     "cursor.blob.core.windows.net",
     "data-api.binance.vision",
     "data-stream.binance.vision",
     "datasets-server.huggingface.co",
+    "deepinfra.com",
     "docker-proxy.pkg.github.com",
     "docker.pkg.github.com",
     "download-cdn.jetbrains.com",
@@ -9095,7 +10544,10 @@
     "downloads.marketplace.jetbrains.com",
     "elevenlabs.io",
     "elevenlabsusercontent.com",
+    "factory.com",
+    "fba.apple.com",
     "files.pythonhosted.org",
+    "fireworks.ai",
     "frameworks.jetbrains.com",
     "gallery.azure.com",
     "gallery.chinacloudapi.cn",
@@ -9125,13 +10577,18 @@
     "gstatic.sandbox.braintreegateway.com",
     "hub.docker.com",
     "huggingface.co",
+    "identity.apple.com",
     "identity.ess.apple.com",
     "imap.gmail.com",
     "img.notionusercontent.com",
+    "inference.baseten.co",
     "iosapps.itunes.g.aaplimg.com",
+    "iphonesubmissions.apple.com",
     "jira.com",
+    "kilo.ai",
     "liblibai-web-static.liblib.cloud",
     "link.com",
+    "llm.chutes.ai",
     "login.docker.com",
     "management-api.x.ai",
     "management.azure.com",
@@ -9156,6 +10613,7 @@
     "notion-custom.com",
     "notion.com",
     "notionusercontent.com",
+    "novita.ai",
     "npm-beta-proxy.pkg.github.com",
     "npm-beta.pkg.github.com",
     "npm-proxy.pkg.github.com",
@@ -9179,7 +10637,10 @@
     "ocsp2.apple.com",
     "office-f-net.trafficmanager.net",
     "officecdn.microsoft.com.delivery.microsoft.com",
+    "ollama.com",
+    "openai.bothub.ru",
     "openapi.liblibai.cloud",
+    "opencode.ai",
     "openidconnect.googleapis.com",
     "openrouter.ai",
     "origin-tracker.githubusercontent.com",
@@ -9408,6 +10869,7 @@
     "signal.tube",
     "smtp.gmail.com",
     "ss-inf.net",
+    "static.ampcode.com",
     "static.crates.io",
     "static.ess.apple.com",
     "stream.binance.com",
@@ -9417,10 +10879,17 @@
     "teamwork-graph.atlassian.com",
     "teamworkgraph.ai",
     "teamworkgraph.com",
+    "together.ai",
+    "token-plan-ams.xiaomimimo.com",
+    "token-plan-cn.xiaomimimo.com",
+    "token-plan-sgp.xiaomimimo.com",
+    "tokenfactory.nebius.com",
     "tokenghub.actions.githubusercontent.com",
+    "tunnel.ampcode.com",
     "update.code.visualstudio.com",
     "updates-http.cdn-apple.com",
     "updates-http.cdn-apple.com.akadns.net",
+    "updates-http.cdn-apple.com.edgesuite.net",
     "updates-http.g.aaplimg.com",
     "updates.cdn-apple.com",
     "updates.g.aaplimg.com",
@@ -9485,7 +10954,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -9526,7 +10995,154 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "ollama-cloud": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "ollama-cloud",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "ollama-cloud",
+                "id"
+              ],
+              "equals": "ollama-cloud"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,ollama.com"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "stackit-model-services": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "stackit",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "stackit",
+                "id"
+              ],
+              "equals": "stackit"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,api.openai-compat.model-serving.eu01.onstackit.cloud"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "stepfun-international": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "stepfun-ai",
+              "api"
+            ],
+            [
+              "stepfun-ai-step-plan",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "stepfun-ai",
+                "id"
+              ],
+              "equals": "stepfun-ai"
+            },
+            {
+              "path": [
+                "stepfun-ai-step-plan",
+                "id"
+              ],
+              "equals": "stepfun-ai-step-plan"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,api.stepfun.ai"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "xiaomi-international": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "xiaomi-token-plan-sgp",
+              "api"
+            ],
+            [
+              "xiaomi-token-plan-ams",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "xiaomi-token-plan-sgp",
+                "id"
+              ],
+              "equals": "xiaomi-token-plan-sgp"
+            },
+            {
+              "path": [
+                "xiaomi-token-plan-ams",
+                "id"
+              ],
+              "equals": "xiaomi-token-plan-ams"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,token-plan-ams.xiaomimimo.com",
+        "DOMAIN,token-plan-sgp.xiaomimimo.com"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -9561,7 +11177,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -9602,7 +11218,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -9637,7 +11253,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -9869,7 +11485,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "npm-registry": {
@@ -9902,7 +11518,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -9946,7 +11562,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -9979,7 +11595,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -10032,7 +11648,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "braintree-payments": {
@@ -10059,7 +11675,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "notion-workspace": {
@@ -10085,7 +11701,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "google-account-authentication": {
@@ -10293,7 +11909,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -10319,7 +11935,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "google-play-services": {
@@ -10355,7 +11971,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
       "state": "current"
     },
     "google-play-games": {
@@ -10383,7 +11999,38 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "kimi-mainland": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "kimi-code-plan-cn",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "kimi-code-plan-cn",
+                "id"
+              ],
+              "equals": "kimi-code-plan-cn"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,api.kimi.com"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -10422,27 +12069,99 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795261352,
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "modelscope-mainland": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "modelscope",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "modelscope",
+                "id"
+              ],
+              "equals": "modelscope"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,api-inference.modelscope.cn"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
+      "state": "current"
+    },
+    "xiaomi-mainland-and-shared": {
+      "inputs": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "paths": [
+            [
+              "xiaomi",
+              "api"
+            ],
+            [
+              "xiaomi-token-plan-cn",
+              "api"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "xiaomi",
+                "id"
+              ],
+              "equals": "xiaomi"
+            },
+            {
+              "path": [
+                "xiaomi-token-plan-cn",
+                "id"
+              ],
+              "equals": "xiaomi-token-plan-cn"
+            }
+          ]
+        }
+      ],
+      "observed": [
+        "DOMAIN,api.xiaomimimo.com",
+        "DOMAIN,token-plan-cn.xiaomimimo.com"
+      ],
+      "retained": [],
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795265217,
       "state": "current"
     }
   },
-  "inventory-domain-cases": 456,
+  "inventory-domain-cases": 465,
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1057,
+  "business-domain-cases": 1146,
   "fallback-conflicts": {
     "overseas-sites-extra": {
-      "source-xkww3n-overseas": 4,
-      "source-repcz-overseas": 22,
-      "source-repcz-gfw": 17
+      "source-xkww3n-overseas": 1,
+      "source-repcz-overseas": 12,
+      "source-repcz-gfw": 6
     }
   },
   "shared-negatives": 20,
-  "changed": [
-    "extended-ad-and-tracking"
-  ],
-  "scope-negatives": 130,
+  "changed": [],
+  "scope-negatives": 141,
   "ip-cases": 37,
   "ip-matching": {
     "local-links-and-addresses": {
@@ -10510,7 +12229,7 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 6183,
     "privacy-public-stun-endpoints": 2,
-    "ai-overseas-all": 561,
+    "ai-overseas-all": 632,
     "claude-connections": 16,
     "chatgpt-connections": 427,
     "gemini-connections": 51,
@@ -10535,7 +12254,7 @@
     "ai-com-agents": 1,
     "apple-intelligence-relays": 4,
     "jetbrains-ai": 3,
-    "ai-cn-international-all": 36,
+    "ai-cn-international-all": 44,
     "qwen-international": 11,
     "kimi-international": 2,
     "zhipu-international": 1,
@@ -10543,7 +12262,69 @@
     "bytedance-international": 8,
     "siliconflow-international": 2,
     "tencent-international": 10,
-    "apple-all": 258,
+    "amp-connections": 5,
+    "anythingllm-connections": 1,
+    "fireworks-model-services": 1,
+    "opencode-connections": 1,
+    "kilo-connections": 1,
+    "cline-connections": 1,
+    "ollama-cloud": 1,
+    "chutes-model-services": 1,
+    "bothub-model-services": 1,
+    "commandcode-connections": 1,
+    "stackit-model-services": 1,
+    "novita-model-services": 1,
+    "nebius-model-services": 1,
+    "baseten-model-services": 1,
+    "deepinfra-model-services": 1,
+    "together-model-services": 1,
+    "cerebras-model-services": 1,
+    "stepfun-international": 1,
+    "xiaomi-international": 2,
+    "replicate-model-services": 2,
+    "runway-creative-tools": 2,
+    "stability-model-services": 1,
+    "black-forest-model-services": 1,
+    "replit-cloud-development": 3,
+    "augment-code-assistant": 1,
+    "sourcegraph-code-and-cody": 2,
+    "continue-code-assistant": 1,
+    "coderabbit-code-review": 1,
+    "tabnine-code-assistant": 1,
+    "factory-coding-agents": 2,
+    "zed-editor-and-ai": 1,
+    "kiro-code-assistant": 1,
+    "bolt-app-builder": 1,
+    "lovable-app-builder": 1,
+    "v0-app-builder": 2,
+    "genspark-connections": 1,
+    "jasper-marketing-ai": 1,
+    "gamma-presentations": 1,
+    "phind-search": 1,
+    "inflection-and-pi": 2,
+    "h2o-model-services": 1,
+    "otter-meeting-assistant": 1,
+    "descript-media-tools": 1,
+    "synthesia-video-tools": 1,
+    "luma-creative-tools": 1,
+    "leonardo-image-tools": 1,
+    "pika-video-tools": 1,
+    "recraft-design-tools": 1,
+    "udio-music-tools": 1,
+    "duck-ai-chat": 1,
+    "langchain-agent-platform": 1,
+    "comfy-cloud-and-registry": 2,
+    "lmstudio-product-services": 1,
+    "crewai-agent-platform": 1,
+    "eigent-agent-services": 1,
+    "manus-agent-services": 2,
+    "youmind-international": 3,
+    "qoder-international": 1,
+    "lovart-international": 1,
+    "dia-browser-services": 2,
+    "openclaw-product-services": 1,
+    "apple-find-my": 7,
+    "apple-all": 259,
     "apple-account-authentication": 8,
     "apple-app-and-device-verification": 8,
     "apple-wallet-payments": 4,
@@ -10552,7 +12333,7 @@
     "apple-app-package-downloads": 2,
     "apple-association-services": 2,
     "apple-push-connection": 11,
-    "apple-location-services": 14,
+    "apple-location-services": 7,
     "apple-messaging-identity": 1,
     "apple-private-relay-connections": 6,
     "apple-icloud-mainland": 3,
@@ -10565,15 +12346,17 @@
     "apple-tv-video-delivery": 2,
     "apple-news-and-sports": 9,
     "apple-siri-and-search": 5,
-    "apple-update-control": 68,
-    "apple-update-downloads": 18,
+    "apple-update-control": 59,
+    "apple-update-downloads": 19,
     "apple-developer-portal": 1,
     "apple-developer-downloads": 6,
     "apple-mainland-delivery-aliases": 1,
     "apple-shared-store-assets": 2,
     "apple-certificate-validation": 18,
-    "apple-system-connectivity": 48,
+    "apple-system-connectivity": 39,
     "apple-schoolwork-handouts": 3,
+    "apple-device-registration": 2,
+    "apple-feedback-and-diagnostics": 16,
     "github-code-and-packages": 157,
     "gitlab-hosting": 4,
     "bitbucket-hosting": 1,
@@ -10604,7 +12387,7 @@
     "okx-platform": 6,
     "gemini-exchange": 1,
     "trust-wallet": 1,
-    "overseas-media-all": 80,
+    "overseas-media-all": 84,
     "hbo-streaming": 7,
     "youtube-video-and-cdn": 12,
     "netflix-video-and-delivery": 11,
@@ -10616,6 +12399,7 @@
     "bilibili-international-video": 3,
     "bahamut-video-and-community": 5,
     "bbc-news-and-video": 3,
+    "iqiyi-international": 4,
     "steam-international-platform": 12,
     "epic-games-services": 5,
     "playstation-network": 3,
@@ -10651,9 +12435,9 @@
     "microsoft-office-downloads": 3,
     "microsoft-xbox-services": 4,
     "microsoft-platform-services": 630,
-    "ai-cn-all": 45,
+    "ai-cn-all": 49,
     "qwen-mainland": 4,
-    "kimi-mainland": 3,
+    "kimi-mainland": 4,
     "zhipu-mainland": 3,
     "minimax-mainland": 2,
     "bytedance-mainland": 4,
@@ -10668,6 +12452,8 @@
     "stepfun-mainland": 1,
     "sensetime-mainland": 1,
     "jetbrains-ai-mainland": 1,
+    "modelscope-mainland": 1,
+    "xiaomi-mainland-and-shared": 2,
     "gitee-hosting": 1,
     "coding-platform": 1,
     "gitcode-hosting": 1,
@@ -10695,11 +12481,11 @@
     "zhihu-community": 2,
     "railway-tickets": 1,
     "sina-shared-image-assets": 2,
-    "extended-ad-and-tracking": 44155,
-    "overseas-media-extra": 183,
-    "overseas-sites-extra": 18724,
-    "mainland-routing-all": 19664,
-    "mainland-domains": 12662,
+    "extended-ad-and-tracking": 44154,
+    "overseas-media-extra": 182,
+    "overseas-sites-extra": 18748,
+    "mainland-routing-all": 19645,
+    "mainland-domains": 12643,
     "mainland-networks": 7001,
     "mainland-geoip": 1
   },
@@ -40599,7 +42385,6 @@
       "DOMAIN-SUFFIX,xiaomidns.com",
       "DOMAIN-SUFFIX,xiaomiev.com",
       "DOMAIN-SUFFIX,xiaomiinc.com",
-      "DOMAIN-SUFFIX,xiaomimimo.com",
       "DOMAIN-SUFFIX,xiaomimobile.com",
       "DOMAIN-SUFFIX,xiaomingtaiji.com",
       "DOMAIN-SUFFIX,xiaominr.com",
@@ -45237,7 +47022,7 @@
     },
     "source-xkww3n-mainland": {
       "created-at": "2026-11-19T10:51:17Z",
-      "updated-at": "2026-11-20T02:52:18Z"
+      "updated-at": "2026-11-21T12:05:08Z"
     },
     "source-xkww3n-overseas": {
       "created-at": "2026-11-19T10:51:17Z",

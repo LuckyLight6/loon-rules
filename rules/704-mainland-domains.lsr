@@ -4,8 +4,8 @@
 # description: 未由专项认领的国内域名补充
 # boundary: 只补前面专项没有完整覆盖的域名；保留必要父域，不把内网管理名或已识别的国际入口归为国内
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-20T08:16:28Z
-# rule-count: 12662
+# updated-at: 2026-11-21T12:05:08Z
+# rule-count: 12643
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -1486,7 +1486,6 @@ DOMAIN-SUFFIX,ap4r.com
 DOMAIN-SUFFIX,apaas-zone-test.com
 DOMAIN-SUFFIX,apac.cn
 DOMAIN-SUFFIX,apac.org.cn
-DOMAIN-SUFFIX,apache.org
 DOMAIN-SUFFIX,apass.com
 DOMAIN-SUFFIX,apcdns.com
 DOMAIN-SUFFIX,apcdns.net
@@ -1821,7 +1820,6 @@ DOMAIN-SUFFIX,bestvcdn.cn
 DOMAIN-SUFFIX,bestvcdn.com
 DOMAIN-SUFFIX,bestvcdn.com.cn
 DOMAIN-SUFFIX,bestvcdn.net
-DOMAIN-SUFFIX,bet365.com
 DOMAIN-SUFFIX,betastar.cn
 DOMAIN-SUFFIX,bfchayuan.com
 DOMAIN-SUFFIX,bfdcdn.com
@@ -2047,7 +2045,6 @@ DOMAIN-SUFFIX,boodo.com
 DOMAIN-SUFFIX,book88.org
 DOMAIN-SUFFIX,bookan.com.cn
 DOMAIN-SUFFIX,bookbao8.com
-DOMAIN-SUFFIX,bookbl.com
 DOMAIN-SUFFIX,bookcheng.com
 DOMAIN-SUFFIX,bookcu.com
 DOMAIN-SUFFIX,bookdown.net
@@ -2769,7 +2766,6 @@ DOMAIN-SUFFIX,cngslb.com
 DOMAIN-SUFFIX,cngslb.net
 DOMAIN-SUFFIX,cnidp.cn
 DOMAIN-SUFFIX,cnjsun.com
-DOMAIN-SUFFIX,cnki.net
 DOMAIN-SUFFIX,cnkidoi.cn
 DOMAIN-SUFFIX,cnkidoi.com
 DOMAIN-SUFFIX,cnkidoi.net
@@ -2869,7 +2865,6 @@ DOMAIN-SUFFIX,cq-tencentclb.net
 DOMAIN-SUFFIX,cq-tencentclb.work
 DOMAIN-SUFFIX,cqgewerv.com
 DOMAIN-SUFFIX,cqhimalayanky.com
-DOMAIN-SUFFIX,cqvip.com
 DOMAIN-SUFFIX,cr173.com
 DOMAIN-SUFFIX,crasheye.cn
 DOMAIN-SUFFIX,crazyrtc.com
@@ -3047,7 +3042,6 @@ DOMAIN-SUFFIX,d11a.com
 DOMAIN-SUFFIX,d22a.com
 DOMAIN-SUFFIX,d37hw752kt.com
 DOMAIN-SUFFIX,d3zww.com
-DOMAIN-SUFFIX,d4z1onkegyrs5.cloudfront.net
 DOMAIN-SUFFIX,d5wx.com
 DOMAIN-SUFFIX,d6uab.cn
 DOMAIN-SUFFIX,d768h.cn
@@ -3154,7 +3148,6 @@ DOMAIN-SUFFIX,dcloudstc.com
 DOMAIN-SUFFIX,dcloudstc.net
 DOMAIN-SUFFIX,dcloudvod.com
 DOMAIN-SUFFIX,dcloudvod.net
-DOMAIN-SUFFIX,dcocsp.cn
 DOMAIN-SUFFIX,dct-cloud.com
 DOMAIN-SUFFIX,dd373.com
 DOMAIN-SUFFIX,ddchong.com
@@ -3818,7 +3811,6 @@ DOMAIN-SUFFIX,faceu.com.cn
 DOMAIN-SUFFIX,faceu.mobi
 DOMAIN-SUFFIX,faceu.net
 DOMAIN-SUFFIX,falconalliance.cn
-DOMAIN-SUFFIX,fallenark.com
 DOMAIN-SUFFIX,faloo.com
 DOMAIN-SUFFIX,familyincloud.com
 DOMAIN-SUFFIX,famulei.com
@@ -5525,7 +5517,6 @@ DOMAIN-SUFFIX,inetradio.cn
 DOMAIN-SUFFIX,infiniteborders3kingdoms.com
 DOMAIN-SUFFIX,infinitynewtab.com
 DOMAIN-SUFFIX,info-insur.com
-DOMAIN-SUFFIX,infoq.com
 DOMAIN-SUFFIX,infoqstatic.com
 DOMAIN-SUFFIX,infotech.ac.cn
 DOMAIN-SUFFIX,infzm.com
@@ -5551,7 +5542,6 @@ DOMAIN-SUFFIX,iotmrvr.com
 DOMAIN-SUFFIX,ip-cdn.com
 DOMAIN-SUFFIX,ip.cn
 DOMAIN-SUFFIX,ip.la
-DOMAIN-SUFFIX,ip138.com
 DOMAIN-SUFFIX,ipanda.cn
 DOMAIN-SUFFIX,ipanda.com
 DOMAIN-SUFFIX,ipanda.com.cn
@@ -5633,7 +5623,6 @@ DOMAIN-SUFFIX,iteye.com
 DOMAIN-SUFFIX,itgsa.com
 DOMAIN-SUFFIX,ithome.com
 DOMAIN-SUFFIX,ithome.net
-DOMAIN-SUFFIX,itiger.com
 DOMAIN-SUFFIX,itigergrowtha.com
 DOMAIN-SUFFIX,itigerup.com
 DOMAIN-SUFFIX,itingwa.com
@@ -6273,7 +6262,6 @@ DOMAIN-SUFFIX,kuhimalayandp.com
 DOMAIN-SUFFIX,kuhu168.com
 DOMAIN-SUFFIX,kuiniuca.com
 DOMAIN-SUFFIX,kujiang.com
-DOMAIN-SUFFIX,kuke.com
 DOMAIN-SUFFIX,kukey.com.cn
 DOMAIN-SUFFIX,kuku123.com
 DOMAIN-SUFFIX,kuledushu.com
@@ -6318,7 +6306,6 @@ DOMAIN-SUFFIX,kvamerfx.com
 DOMAIN-SUFFIX,kvrmicit.com
 DOMAIN-SUFFIX,kwai-group.com
 DOMAIN-SUFFIX,kwai-pro.com
-DOMAIN-SUFFIX,kwai.com
 DOMAIN-SUFFIX,kwai.net
 DOMAIN-SUFFIX,kwai.xyz
 DOMAIN-SUFFIX,kwai666.com
@@ -6536,7 +6523,6 @@ DOMAIN-SUFFIX,light-cos.com
 DOMAIN-SUFFIX,lightalk.com
 DOMAIN-SUFFIX,lightalk.me
 DOMAIN-SUFFIX,lightbox.games
-DOMAIN-SUFFIX,lightnovel.cn
 DOMAIN-SUFFIX,lightonus.com
 DOMAIN-SUFFIX,lightspeed-dc.com
 DOMAIN-SUFFIX,lightspeed-lic.com
@@ -7442,7 +7428,6 @@ DOMAIN-SUFFIX,nruan.com
 DOMAIN-SUFFIX,nrzb0.com
 DOMAIN-SUFFIX,ns6mitkxo.cn
 DOMAIN-SUFFIX,nsl.ac.cn
-DOMAIN-SUFFIX,nssurge.com
 DOMAIN-SUFFIX,nt7fck19y3.com
 DOMAIN-SUFFIX,ntalker.com
 DOMAIN-SUFFIX,ntes53.com
@@ -8179,7 +8164,6 @@ DOMAIN-SUFFIX,qpimg.cn
 DOMAIN-SUFFIX,qplus.com
 DOMAIN-SUFFIX,qplusstatic.com
 DOMAIN-SUFFIX,qpmwg68cre9pci.com
-DOMAIN-SUFFIX,qq.cn.com
 DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,qq.com.cn
 DOMAIN-SUFFIX,qq.design
@@ -11002,7 +10986,6 @@ DOMAIN-SUFFIX,we-park.cn
 DOMAIN-SUFFIX,we-pass.com
 DOMAIN-SUFFIX,we4399.com
 DOMAIN-SUFFIX,weand.com
-DOMAIN-SUFFIX,weather.com
 DOMAIN-SUFFIX,webacc.net
 DOMAIN-SUFFIX,webgame163.com
 DOMAIN-SUFFIX,webgamehome.com
@@ -11132,7 +11115,6 @@ DOMAIN-SUFFIX,wifinews.com
 DOMAIN-SUFFIX,wifiniu.com
 DOMAIN-SUFFIX,wifisdk.net
 DOMAIN-SUFFIX,wifivpn.net
-DOMAIN-SUFFIX,wikidot.com
 DOMAIN-SUFFIX,win007.com
 DOMAIN-SUFFIX,win7china.com
 DOMAIN-SUFFIX,win8.net
@@ -11511,7 +11493,6 @@ DOMAIN-SUFFIX,xiaomiinc.cn
 DOMAIN-SUFFIX,xiaomiinc.com
 DOMAIN-SUFFIX,xiaomiinc.com.cn
 DOMAIN-SUFFIX,xiaomiinc.net
-DOMAIN-SUFFIX,xiaomimimo.com
 DOMAIN-SUFFIX,xiaomimobile.com
 DOMAIN-SUFFIX,xiaomingtaiji.cc
 DOMAIN-SUFFIX,xiaomingtaiji.cn

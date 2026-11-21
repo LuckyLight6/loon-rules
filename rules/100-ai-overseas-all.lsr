@@ -4,8 +4,8 @@
 # description: 海外 AI 合集
 # boundary: 汇总所列海外 AI 和共用登录，与成员二选一；Apple Intelligence、国产国内版和国际版各自独立，不合并共享云整域
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-21T06:13:59Z
-# rule-count: 561
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 632
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
@@ -57,6 +57,105 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains-ai.list
 # source: https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json
 # source: https://support.jetbrains.com/hc/en-us/articles/40250675463570-Firewall-or-proxy-allowlist-for-IntelliJ-based-IDEs-required-hosts-and-ports
+# source: https://ampcode.com/security
+# source: https://anythingllm.com/
+# source: https://docs.anythingllm.com/introduction
+# source: https://docs.fireworks.ai/tools-sdks/openai-compatibility.md
+# source: https://docs.fireworks.ai/getting-started/quickstart.md
+# source: https://models.dev/api.json
+# source: https://opencode.ai/v2/docs/console/models/
+# source: https://opencode.ai/v2/docs/console/go/
+# source: https://kilo.ai
+# source: https://docs.cline.bot/getting-started/clinepass
+# source: https://docs.ollama.com/cloud
+# source: https://llm.chutes.ai/v1/models
+# source: https://bothub.ru/models
+# source: https://commandcode.ai/docs/provider
+# source: https://docs.stackit.cloud/products/data-and-ai/ai-model-serving/basics/available-shared-models
+# source: https://novita.ai/docs/guides/introduction
+# source: https://docs.tokenfactory.nebius.com/
+# source: https://docs.baseten.co/inference/model-apis/overview
+# source: https://deepinfra.com/models
+# source: https://docs.together.ai/docs/serverless-models
+# source: https://inference-docs.cerebras.ai/models/overview
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list
+# source: https://replicate.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list
+# source: https://runwayml.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list
+# source: https://stability.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list
+# source: https://bfl.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list
+# source: https://replit.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/augment-code.list
+# source: https://augmentcode.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list
+# source: https://sourcegraph.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list
+# source: https://continue.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list
+# source: https://coderabbit.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list
+# source: https://tabnine.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list
+# source: https://factory.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list
+# source: https://zed.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://kiro.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list
+# source: https://bolt.new/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list
+# source: https://lovable.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list
+# source: https://v0.app/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list
+# source: https://genspark.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list
+# source: https://jasper.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list
+# source: https://gamma.app/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list
+# source: https://phind.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list
+# source: https://inflection.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list
+# source: https://h2o.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list
+# source: https://otter.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list
+# source: https://descript.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list
+# source: https://synthesia.io/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list
+# source: https://lumalabs.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list
+# source: https://leonardo.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list
+# source: https://pika.art/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list
+# source: https://recraft.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list
+# source: https://udio.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list
+# source: https://duck.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list
+# source: https://langchain.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list
+# source: https://comfy.org/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list
+# source: https://lmstudio.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list
+# source: https://crewai.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list
+# source: https://eigent.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list
+# source: https://manus.im/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list
+# source: https://diabrowser.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list
+# source: https://openclaw.ai/
 
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
@@ -619,3 +718,74 @@ DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,jetbrains.ai
 DOMAIN,api.app.prod.grazie.aws.intellij.net
 DOMAIN,api.jetbrains.cloud
+DOMAIN,ampcode.com
+DOMAIN,auth.ampcode.com
+DOMAIN,static.ampcode.com
+DOMAIN,tunnel.ampcode.com
+DOMAIN-WILDCARD,*.onamp.dev
+DOMAIN-SUFFIX,anythingllm.com
+DOMAIN-SUFFIX,fireworks.ai
+DOMAIN-SUFFIX,opencode.ai
+DOMAIN-SUFFIX,kilo.ai
+DOMAIN-SUFFIX,cline.bot
+DOMAIN,ollama.com
+DOMAIN-SUFFIX,chutes.ai
+DOMAIN-SUFFIX,bothub.ru
+DOMAIN-SUFFIX,commandcode.ai
+DOMAIN,api.openai-compat.model-serving.eu01.onstackit.cloud
+DOMAIN-SUFFIX,novita.ai
+DOMAIN-SUFFIX,tokenfactory.nebius.com
+DOMAIN-SUFFIX,baseten.co
+DOMAIN-SUFFIX,deepinfra.com
+DOMAIN-SUFFIX,together.ai
+DOMAIN-SUFFIX,cerebras.ai
+DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,replicate.delivery
+DOMAIN-SUFFIX,runway.com
+DOMAIN-SUFFIX,runwayml.com
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,bfl.ai
+DOMAIN-SUFFIX,repl.it
+DOMAIN-SUFFIX,replit.com
+DOMAIN-SUFFIX,replit.dev
+DOMAIN-SUFFIX,augmentcode.com
+DOMAIN-SUFFIX,cody.dev
+DOMAIN-SUFFIX,sourcegraph.com
+DOMAIN-SUFFIX,continue.dev
+DOMAIN-SUFFIX,coderabbit.ai
+DOMAIN-SUFFIX,tabnine.com
+DOMAIN-SUFFIX,factory.ai
+DOMAIN-SUFFIX,factory.com
+DOMAIN-SUFFIX,zed.dev
+DOMAIN-SUFFIX,kiro.dev
+DOMAIN-SUFFIX,bolt.new
+DOMAIN-SUFFIX,lovable.dev
+DOMAIN-SUFFIX,v0.app
+DOMAIN-SUFFIX,v0.dev
+DOMAIN-SUFFIX,genspark.ai
+DOMAIN-SUFFIX,jasper.ai
+DOMAIN-SUFFIX,gamma.app
+DOMAIN-SUFFIX,phind.com
+DOMAIN-SUFFIX,inflection.ai
+DOMAIN-SUFFIX,pi.ai
+DOMAIN-SUFFIX,h2o.ai
+DOMAIN-SUFFIX,otter.ai
+DOMAIN-SUFFIX,descript.com
+DOMAIN-SUFFIX,synthesia.io
+DOMAIN-SUFFIX,lumalabs.ai
+DOMAIN-SUFFIX,leonardo.ai
+DOMAIN-SUFFIX,pika.art
+DOMAIN-SUFFIX,recraft.ai
+DOMAIN-SUFFIX,udio.com
+DOMAIN-SUFFIX,duck.ai
+DOMAIN-SUFFIX,langchain.com
+DOMAIN-SUFFIX,comfy.org
+DOMAIN-SUFFIX,comfyregistry.org
+DOMAIN-SUFFIX,lmstudio.ai
+DOMAIN-SUFFIX,crewai.com
+DOMAIN-SUFFIX,eigent.ai
+DOMAIN-SUFFIX,manus.im
+DOMAIN-SUFFIX,manuscdn.com
+DOMAIN-SUFFIX,diabrowser.com
+DOMAIN-SUFFIX,diabrowser.engineering
+DOMAIN-SUFFIX,openclaw.ai

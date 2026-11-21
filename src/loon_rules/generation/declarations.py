@@ -124,6 +124,11 @@ def validate_declarations(config):
                 or any(key not in entries or entries[key]['mode']!='managed'
                        for key in merge['include']+merge.get('protect',[]))):
                 raise rules.Invalid('域名兜底必须使用已审核的输入和例外：'+e['id'])
+            preferred=merge.get('prefer',[])
+            if (not isinstance(preferred,list) or len(preferred)!=len(set(preferred))
+                    or not set(preferred)<=set(merge['include'])
+                    or set(preferred)&set(merge.get('protect',()))):
+                raise rules.Invalid('域名兜底的优先来源必须来自合并输入且不能同时作为保护来源：'+e['id'])
         if e['mode']=='view':
             if (e['id'] not in config['views'] or not e['members']
                 or not set(e['members'])<=set(names)
@@ -131,6 +136,14 @@ def validate_declarations(config):
                        for k in e['members'])):
                 raise rules.Invalid('合并视图包含未归类成员：'+e['id'])
     for key,e in entries.items():
+        if parents:=e.get('separates'):
+            if (not isinstance(parents,list) or len(parents)!=len(set(parents))
+                    or e['mode']!='compiled' or e.get('fallback') or e.get('domain-remainder')
+                    or any(parent not in entries or parent==key
+                           or entries[parent]['section']!=e['section']
+                           or entries[parent]['mode']=='view'
+                           or not set(e['sources'])&set(entries[parent]['sources']) for parent in parents)):
+                raise rules.Invalid('业务细分必须声明同一分区、同一来源的原范围：'+key)
         if part:=e.get('refine'):
             parent=entries.get(part['from'],{})
             if parent.get('mode') not in ('compiled','managed') or parent.get('refine') or parent.get('merge-domains') or not (part.get('roots') or part.get('literal-ip-copy')):

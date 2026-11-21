@@ -151,8 +151,11 @@ def run(check=False, offline=False, adopt_ads=False):
         fetched={u:t for u,t in zip(requested,pool.map(fetch,requested)) if t is not None}
     downloaded={u:value[0] for u,value in fetched.items()}
     used_mirrors={u:value[1] for u,value in fetched.items() if value[1]!=u}
+    active_suffixes=None;suffix_state={}
     if source:=config.get('public-suffix-source'):
-        try:domain_scope.use(downloaded[source])
+        try:
+            active_suffixes,suffix_state=domain_scope.select_list(downloaded[source],domain_scope.DATA.read_text() if domain_scope.DATA.exists() else '')
+            domain_scope.use(active_suffixes)
         except ValueError as exc:raise rules.Invalid(str(exc)) from exc
     expanded_rows,expansion_status,child_inputs=source_expansion.collect(entries,downloaded,transport.download,
         shared_hosts=shared_hosts)
@@ -252,7 +255,8 @@ def run(check=False, offline=False, adopt_ads=False):
                       for row in state['retained']+list(state.get('artifact-hosts',{})))
     for k in sorted(reviewed,key=lambda key:reviewed[key].get('policy-hint')=='reject'):
         e=reviewed[k]
-        reserved=[row for owner in e.get('reserve-domains-for',()) for row in data[owner]]
+        reserved=[row for owner in e.get('reserve-domains-for',()) for row in data[owner]
+                  if row.split(',')[0] in ('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD')]
         tenant_rows={r for recipe in e.get('tenant-scope-inputs',()) for r in extract_rows(recipe,downloaded[recipe['source']],shared_hosts=shared_hosts)}
         official_rows={r for recipe in e.get('official-inputs',()) for r in extract_rows(recipe,downloaded[recipe['source']],shared_hosts=shared_hosts)}
         if any(not r.startswith('DOMAIN-SUFFIX,') for r in tenant_rows) or any(not r.startswith('DOMAIN,') for r in official_rows):
@@ -321,7 +325,7 @@ def run(check=False, offline=False, adopt_ads=False):
             tmp.replace(paths[key])
     if not check:
         if source:=config.get('public-suffix-source'):
-            domain_scope.DATA.write_text(downloaded[source])
+            domain_scope.DATA.write_text(active_suffixes)
         report={
             'checked-at':now,'inputs-read':len(downloaded),'critical':len(config['critical']),
             'inputs-requested':len(requested),'profiles-checked':profiles,'assigned-rules':assignments,
@@ -334,6 +338,7 @@ def run(check=False, offline=False, adopt_ads=False):
             'discovery':discovery_status,
             'cname-discovery':cname_status,
             'source-mirrors-used':used_mirrors,
+            'public-suffix-state':suffix_state,
             'shared-service-transfers':shared_transfers,
             'expanded-inputs':expansion_status,
             'maintenance':methods,'reviewed-inputs':source_status,
@@ -357,6 +362,8 @@ def run(check=False, offline=False, adopt_ads=False):
         (ROOT/'build').mkdir(exist_ok=True)
         (ROOT/'build/verification.md').write_text(render_review(report,entries))
     negatives=len(config['shared-negatives'])+len(config.get('scope-negatives',{}))
+    if suffix_state.get('state')=='retained-newer':
+        print(f'公共后缀来源版本 {suffix_state["source-version"]} 较旧，保留已发布版本 {suffix_state["active-version"]}。')
     print(f'{len(runtime["critical"])} 个业务域名、{negatives} 个反例、{len(config.get("ip-cases",()))} 个 IP 用例、'
           f'{len(config["views"])} 种合并视图通过；{len(changed)} 份正文或元数据变化。')
     print(f'产品筛选来源 {len(projection_coverage)} 份；已选范围缺少承接 '

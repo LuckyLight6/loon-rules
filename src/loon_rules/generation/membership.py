@@ -115,18 +115,21 @@ def outside_domain_scopes(rows,reserved):
     def lineage(host):
         labels=host.split('.')
         return ('.'.join(labels[i:]) for i in range(len(labels)))
-    exact=set(); suffix=set(); ancestors=set()
+    exact=set(); suffix=set(); ancestors=set(); wild=set()
     for row in reserved:
         kind,host,*flags=row.casefold().split(',')
+        if not flags and kind=='domain-wildcard' and host.startswith('*.') and not re.search(r'[*?\[\]]',host[2:]):
+            wild.add(host[2:]);ancestors.update(lineage(host[2:]));continue
         if flags or kind not in ('domain','domain-suffix'):
-            raise rules.Invalid('预留范围只能使用域名或域名后缀')
+            raise rules.Invalid('预留范围只能使用域名、域名后缀或简单子域通配符')
         exact.add(host); ancestors.update(lineage(host))
         if kind=='domain-suffix': suffix.add(host)
     def keep(row):
         kind,host,*flags=row.casefold().split(',')
         if flags or kind not in ('domain','domain-suffix'):
             raise rules.Invalid('域名隔离不能用于混合匹配规则')
-        return host not in exact and not any(p in suffix for p in lineage(host)) and not (
+        return host not in exact and not any(p in suffix for p in lineage(host)) and not any(
+            p in wild for p in list(lineage(host))[1:]) and not (
             kind=='domain-suffix' and host in ancestors)
     return [r for r in rows if keep(r)]
 
@@ -159,11 +162,14 @@ def domain_rows(data,keys):
 
 
 def merge_domain_sources(entry, data):
-    """Combine reviewed domain rows without claiming a protected scope."""
+    """Combine reviewed inputs, applying declared source precedence before compaction."""
     scope=entry['merge-domains']
     protected=domain_rows(data,scope.get('protect',()))
-    combined=domain_rows(data,scope['include'])-set(entry.get('excluded-rules',()))
-    return compact(outside_domain_scopes(sorted(combined),protected))
+    excluded=set(entry.get('excluded-rules',()))
+    preferred=domain_rows(data,scope.get('prefer',()))-excluded
+    ordinary=domain_rows(data,scope['include'])-preferred-excluded
+    kept=set(outside_domain_scopes(sorted(ordinary),protected))|preferred
+    return compact(sorted(kept))
 
 
 def merge_conflicts(entries,data):

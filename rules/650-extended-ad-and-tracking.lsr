@@ -4,8 +4,8 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-21T11:42:59Z
-# rule-count: 44155
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 44154
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
@@ -30,7 +30,6 @@ DOMAIN-SUFFIX,realtime-profiling.datarize.ai
 DOMAIN-SUFFIX,core.dimatter.ai
 DOMAIN-SUFFIX,idsequoia.ai
 DOMAIN-SUFFIX,nlog.instajob.ai
-DOMAIN-SUFFIX,t.jasper.ai
 DOMAIN-SUFFIX,metrics.kapa.ai
 DOMAIN-SUFFIX,app.koah.ai
 DOMAIN-SUFFIX,pixel.lilystyle.ai

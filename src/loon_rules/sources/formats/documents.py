@@ -56,6 +56,8 @@ def parse_purpose_domain_lists(recipe, text):
             raise Invalid('用途清单的 '+field+' 必须是非空文字数组')
     if 'allow-identical-duplicates' in recipe and type(recipe['allow-identical-duplicates']) is not bool:
         raise Invalid('用途清单的重复项开关必须为布尔值')
+    if 'item-separator-required' in recipe and type(recipe['item-separator-required']) is not bool:
+        raise Invalid('用途清单的字段分隔要求必须为布尔值')
     style=recipe.get('item-purpose-style','colon')
     if style not in ('colon','parentheses'):raise Invalid('用途清单的条目格式无效')
     parser = LabelledLists(recipe['labels'], contains=True, allow_identical=recipe.get('allow-identical-duplicates', False),
@@ -67,6 +69,7 @@ def parse_purpose_domain_lists(recipe, text):
             raise Invalid('官方网络资料缺少用途清单：' + label)
         for item in parser.rows[label]:
             field,separator,purpose=item.partition('(' if style=='parentheses' else ':')
+            if recipe.get('item-separator-required') and not separator:continue
             if required:=recipe.get('item-purpose-prefixes'):
                 if not any(purpose.strip().casefold().startswith(prefix.casefold()) for prefix in required):continue
             if required:=recipe.get('item-purpose-contains'):

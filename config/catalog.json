@@ -57,19 +57,86 @@
         "minimax-international",
         "bytedance-international",
         "siliconflow-international",
-        "tencent-international"
+        "tencent-international",
+        "amp-connections",
+        "anythingllm-connections",
+        "fireworks-model-services",
+        "opencode-connections",
+        "kilo-connections",
+        "cline-connections",
+        "ollama-cloud",
+        "chutes-model-services",
+        "bothub-model-services",
+        "commandcode-connections",
+        "stackit-model-services",
+        "novita-model-services",
+        "nebius-model-services",
+        "baseten-model-services",
+        "deepinfra-model-services",
+        "together-model-services",
+        "cerebras-model-services",
+        "stepfun-international",
+        "xiaomi-international",
+        "replicate-model-services",
+        "runway-creative-tools",
+        "stability-model-services",
+        "black-forest-model-services",
+        "replit-cloud-development",
+        "augment-code-assistant",
+        "sourcegraph-code-and-cody",
+        "continue-code-assistant",
+        "coderabbit-code-review",
+        "tabnine-code-assistant",
+        "factory-coding-agents",
+        "zed-editor-and-ai",
+        "kiro-code-assistant",
+        "bolt-app-builder",
+        "lovable-app-builder",
+        "v0-app-builder",
+        "genspark-connections",
+        "jasper-marketing-ai",
+        "gamma-presentations",
+        "phind-search",
+        "inflection-and-pi",
+        "h2o-model-services",
+        "otter-meeting-assistant",
+        "descript-media-tools",
+        "synthesia-video-tools",
+        "luma-creative-tools",
+        "leonardo-image-tools",
+        "pika-video-tools",
+        "recraft-design-tools",
+        "udio-music-tools",
+        "duck-ai-chat",
+        "langchain-agent-platform",
+        "comfy-cloud-and-registry",
+        "lmstudio-product-services",
+        "crewai-agent-platform",
+        "eigent-agent-services",
+        "manus-agent-services",
+        "youmind-international",
+        "qoder-international",
+        "lovart-international",
+        "dia-browser-services",
+        "openclaw-product-services"
       ],
       "subheadings": {
         "ai-overseas-all": "海外 AI 合集",
         "ai-cn-international-all": "国产 AI · 国际版合集",
         "claude-connections": "海外 AI · 产品细分",
-        "qwen-international": "国产 AI · 国际版产品细分"
+        "qwen-international": "国产 AI · 国际版产品细分",
+        "amp-connections": "海外 AI · 更多产品",
+        "stepfun-international": "国产 AI · 更多国际入口",
+        "replicate-model-services": "海外 AI · 其他产品",
+        "youmind-international": "国产 AI · 其他国际产品",
+        "dia-browser-services": "海外 AI · 浏览器与开放代理"
       }
     },
     {
-      "start": 200,
+      "start": 199,
       "title": "Apple 生态",
       "ids": [
+        "apple-find-my",
         "apple-all",
         "apple-account-authentication",
         "apple-app-and-device-verification",
@@ -100,7 +167,9 @@
         "apple-shared-store-assets",
         "apple-certificate-validation",
         "apple-system-connectivity",
-        "apple-schoolwork-handouts"
+        "apple-schoolwork-handouts",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics"
       ],
       "subheadings": {
         "apple-account-authentication": "账户、验证与支付",
@@ -110,7 +179,9 @@
         "apple-music-and-radio": "音乐、视频、新闻与普通 Siri",
         "apple-update-control": "软件更新与下载",
         "apple-certificate-validation": "证书、设备管理和学校服务",
-        "apple-all": "Apple 生态合集"
+        "apple-all": "Apple 生态合集",
+        "apple-find-my": "设备与朋友查找",
+        "apple-device-registration": "设备登记与诊断"
       },
       "note": "账户与商店交易可固定代理，安装包和更新包另选直连。合集用于统一出口，和成员二选一"
     },
@@ -197,7 +268,8 @@
         "tiktok-international-video",
         "bilibili-international-video",
         "bahamut-video-and-community",
-        "bbc-news-and-video"
+        "bbc-news-and-video",
+        "iqiyi-international"
       ],
       "subheadings": {
         "overseas-media-all": "海外影音合集",
@@ -297,13 +369,16 @@
         "lingyi-mainland",
         "stepfun-mainland",
         "sensetime-mainland",
-        "jetbrains-ai-mainland"
+        "jetbrains-ai-mainland",
+        "modelscope-mainland",
+        "xiaomi-mainland-and-shared"
       ],
       "note": "国产产品可用国内版合集或成员；海外产品的中国区 API 单列，国际入口仍在前面的 AI 章节，不按厂商或顶级域名混用出口",
       "subheadings": {
         "ai-cn-all": "国产 AI · 国内版合集",
         "qwen-mainland": "国产 AI · 国内版产品细分",
-        "jetbrains-ai-mainland": "海外产品的中国区入口"
+        "jetbrains-ai-mainland": "海外产品的中国区入口",
+        "modelscope-mainland": "国内模型服务与共用 API"
       }
     },
     {
@@ -426,6 +501,14 @@
           "chatgpt-connections",
           "gemini-connections",
           "xai-connections",
+          "apple-find-my",
+          "apple-app-and-device-verification",
+          "apple-testflight",
+          "apple-messaging-identity",
+          "apple-update-control",
+          "apple-device-registration",
+          "apple-feedback-and-diagnostics",
+          "ai-overseas-all",
           "ai-cn-international-all"
         ]
       },
@@ -2248,6 +2331,2372 @@
       "selection": "detailed"
     },
     {
+      "id": "amp-connections",
+      "priority": 133,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Amp 登录、线程 WebSocket、CLI 与官方运行环境",
+      "boundary": "从当前官方网络允许列表读取，不复活已未列出的旧域名；代理须支持 WebSocket，第三方模型和用户访问的网站各自选路",
+      "sources": [
+        "https://ampcode.com/security"
+      ],
+      "extract": [
+        {
+          "source": "https://ampcode.com/security",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "If your organization restricts outbound network traffic"
+          ],
+          "protect-from-reject": true,
+          "item-separator-required": true
+        }
+      ],
+      "product-probes": [
+        "ampcode.com",
+        "auth.ampcode.com",
+        "static.ampcode.com"
+      ],
+      "product-negatives": [
+        "github.com",
+        "api.anthropic.com"
+      ]
+    },
+    {
+      "id": "anythingllm-connections",
+      "priority": 134,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "AnythingLLM 官网与自营下载、云端入口",
+      "boundary": "仅识别 AnythingLLM 自营产品域；本地推理、自建实例及连接的模型服务按各自地址处理，不代理整个共享存储平台",
+      "sources": [
+        "https://anythingllm.com/",
+        "https://docs.anythingllm.com/introduction"
+      ],
+      "extract": [
+        {
+          "source": "https://anythingllm.com/",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "anythingllm.com"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "anythingllm.com"
+      ],
+      "product-negatives": [
+        "localhost",
+        "api.openai.com"
+      ]
+    },
+    {
+      "id": "fireworks-model-services",
+      "priority": 135,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Fireworks 模型 API、产品门户与自营资源",
+      "boundary": "依据当前官方 API 示例识别 Fireworks 自营域，不把 OpenAI SDK 或第三方存储改归 Fireworks",
+      "sources": [
+        "https://docs.fireworks.ai/tools-sdks/openai-compatibility.md",
+        "https://docs.fireworks.ai/getting-started/quickstart.md"
+      ],
+      "extract": [
+        {
+          "source": "https://docs.fireworks.ai/tools-sdks/openai-compatibility.md",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "fireworks.ai"
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://docs.fireworks.ai/tools-sdks/openai-compatibility.md",
+          "format": "code-api-endpoints",
+          "api-fields": [
+            "base_url",
+            "baseURL"
+          ],
+          "markup": "markdown",
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.fireworks.ai"
+      ],
+      "product-negatives": [
+        "api.openai.com",
+        "fireworks.com"
+      ]
+    },
+    {
+      "id": "opencode-connections",
+      "priority": 136,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "OpenCode 与 Go 网关",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://opencode.ai/v2/docs/console/models/",
+        "https://opencode.ai/v2/docs/console/go/"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "opencode",
+                "id"
+              ],
+              "equals": "opencode"
+            },
+            {
+              "path": [
+                "opencode-go",
+                "id"
+              ],
+              "equals": "opencode-go"
+            }
+          ],
+          "paths": [
+            [
+              "opencode",
+              "api"
+            ],
+            [
+              "opencode-go",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "opencode",
+                "id"
+              ],
+              "equals": "opencode"
+            }
+          ],
+          "body-path": [
+            "opencode",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "opencode.ai"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "opencode.ai"
+      ]
+    },
+    {
+      "id": "kilo-connections",
+      "priority": 137,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Kilo 编程助手与模型网关",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://kilo.ai"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "kilo",
+                "id"
+              ],
+              "equals": "kilo"
+            }
+          ],
+          "paths": [
+            [
+              "kilo",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "kilo",
+                "id"
+              ],
+              "equals": "kilo"
+            }
+          ],
+          "body-path": [
+            "kilo",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "kilo.ai"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.kilo.ai"
+      ]
+    },
+    {
+      "id": "cline-connections",
+      "priority": 138,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Cline 自营接入与账户",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://docs.cline.bot/getting-started/clinepass"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "cline-pass",
+                "id"
+              ],
+              "equals": "cline-pass"
+            }
+          ],
+          "paths": [
+            [
+              "cline-pass",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "cline-pass",
+                "id"
+              ],
+              "equals": "cline-pass"
+            }
+          ],
+          "body-path": [
+            "cline-pass",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "cline.bot"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.cline.bot"
+      ]
+    },
+    {
+      "id": "ollama-cloud",
+      "priority": 139,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Ollama Cloud 远程接口",
+      "boundary": "只识别远程 Cloud 主机，本地 localhost 与内网 Ollama 不归入；同主机下载也可能跟随该出口，独立模型仓库和 CDN 不整段加入",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://docs.ollama.com/cloud"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "ollama-cloud",
+                "id"
+              ],
+              "equals": "ollama-cloud"
+            }
+          ],
+          "paths": [
+            [
+              "ollama-cloud",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
+    },
+    {
+      "id": "chutes-model-services",
+      "priority": 140,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Chutes 模型服务",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://llm.chutes.ai/v1/models"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "chutes",
+                "id"
+              ],
+              "equals": "chutes"
+            }
+          ],
+          "paths": [
+            [
+              "chutes",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "chutes",
+                "id"
+              ],
+              "equals": "chutes"
+            }
+          ],
+          "body-path": [
+            "chutes",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "chutes.ai"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "llm.chutes.ai"
+      ]
+    },
+    {
+      "id": "bothub-model-services",
+      "priority": 141,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Bothub 模型网关",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://bothub.ru/models"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "bothub",
+                "id"
+              ],
+              "equals": "bothub"
+            }
+          ],
+          "paths": [
+            [
+              "bothub",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "bothub",
+                "id"
+              ],
+              "equals": "bothub"
+            }
+          ],
+          "body-path": [
+            "bothub",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "bothub.ru"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "openai.bothub.ru"
+      ]
+    },
+    {
+      "id": "commandcode-connections",
+      "priority": 142,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "CommandCode 编程与模型接口",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://commandcode.ai/docs/provider"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "commandcode",
+                "id"
+              ],
+              "equals": "commandcode"
+            }
+          ],
+          "paths": [
+            [
+              "commandcode",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "commandcode",
+                "id"
+              ],
+              "equals": "commandcode"
+            }
+          ],
+          "body-path": [
+            "commandcode",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "commandcode.ai"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.commandcode.ai"
+      ]
+    },
+    {
+      "id": "stackit-model-services",
+      "priority": 143,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "STACKIT AI Model Serving",
+      "boundary": "只读 AI Model Serving 的精确 API 主机，不认领整个 STACKIT 云或 onstackit.cloud",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://docs.stackit.cloud/products/data-and-ai/ai-model-serving/basics/available-shared-models"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "stackit",
+                "id"
+              ],
+              "equals": "stackit"
+            }
+          ],
+          "paths": [
+            [
+              "stackit",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
+    },
+    {
+      "id": "novita-model-services",
+      "priority": 144,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Novita 模型服务",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://novita.ai/docs/guides/introduction"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "novita-ai",
+                "id"
+              ],
+              "equals": "novita-ai"
+            }
+          ],
+          "paths": [
+            [
+              "novita-ai",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "novita-ai",
+                "id"
+              ],
+              "equals": "novita-ai"
+            }
+          ],
+          "body-path": [
+            "novita-ai",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "novita.ai"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.novita.ai"
+      ]
+    },
+    {
+      "id": "nebius-model-services",
+      "priority": 145,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Nebius Token Factory",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://docs.tokenfactory.nebius.com/"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "nebius",
+                "id"
+              ],
+              "equals": "nebius"
+            }
+          ],
+          "paths": [
+            [
+              "nebius",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "nebius",
+                "id"
+              ],
+              "equals": "nebius"
+            }
+          ],
+          "body-path": [
+            "nebius",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "tokenfactory.nebius.com"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.tokenfactory.nebius.com"
+      ]
+    },
+    {
+      "id": "baseten-model-services",
+      "priority": 146,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Baseten 模型服务",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://docs.baseten.co/inference/model-apis/overview"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "baseten",
+                "id"
+              ],
+              "equals": "baseten"
+            }
+          ],
+          "paths": [
+            [
+              "baseten",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "baseten",
+                "id"
+              ],
+              "equals": "baseten"
+            }
+          ],
+          "body-path": [
+            "baseten",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "baseten.co"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "inference.baseten.co"
+      ]
+    },
+    {
+      "id": "deepinfra-model-services",
+      "priority": 147,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "DeepInfra 模型服务",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://deepinfra.com/models"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "deepinfra",
+                "id"
+              ],
+              "equals": "deepinfra"
+            }
+          ],
+          "body-path": [
+            "deepinfra",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "deepinfra.com"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "deepinfra.com"
+      ]
+    },
+    {
+      "id": "together-model-services",
+      "priority": 148,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Together AI 模型服务",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://docs.together.ai/docs/serverless-models"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "togetherai",
+                "id"
+              ],
+              "equals": "togetherai"
+            }
+          ],
+          "body-path": [
+            "togetherai",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "together.ai",
+              "together.xyz"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "together.ai"
+      ]
+    },
+    {
+      "id": "cerebras-model-services",
+      "priority": 149,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Cerebras 推理服务",
+      "boundary": "只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://inference-docs.cerebras.ai/models/overview"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-document",
+          "identity": [
+            {
+              "path": [
+                "cerebras",
+                "id"
+              ],
+              "equals": "cerebras"
+            }
+          ],
+          "body-path": [
+            "cerebras",
+            "doc"
+          ],
+          "document": {
+            "format": "https-hosts",
+            "workspace-roots": [
+              "cerebras.ai"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "cerebras.ai"
+      ]
+    },
+    {
+      "id": "stepfun-international",
+      "priority": 150,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn-international",
+      "description": "阶跃星辰 StepFun · 国际入口",
+      "boundary": "国际模型 API 与国际 Step Plan；国内 stepfun.com 继续独立，不按厂商合并两版",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://platform.stepfun.ai/docs/en/overview/concept",
+        "https://platform.stepfun.ai/docs/en/step-plan/integrations/reasoning-api"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "stepfun-ai",
+                "id"
+              ],
+              "equals": "stepfun-ai"
+            },
+            {
+              "path": [
+                "stepfun-ai-step-plan",
+                "id"
+              ],
+              "equals": "stepfun-ai-step-plan"
+            }
+          ],
+          "paths": [
+            [
+              "stepfun-ai",
+              "api"
+            ],
+            [
+              "stepfun-ai-step-plan",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
+    },
+    {
+      "id": "xiaomi-international",
+      "priority": 151,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn-international",
+      "description": "小米 MiMo · 新加坡与欧洲计划",
+      "boundary": "只读明确标注新加坡、欧洲计划的专用服务字段，不把整个 xiaomimimo.com 从国内或共用 API 接走",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://platform.xiaomimimo.com/"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "xiaomi-token-plan-sgp",
+                "id"
+              ],
+              "equals": "xiaomi-token-plan-sgp"
+            },
+            {
+              "path": [
+                "xiaomi-token-plan-ams",
+                "id"
+              ],
+              "equals": "xiaomi-token-plan-ams"
+            }
+          ],
+          "paths": [
+            [
+              "xiaomi-token-plan-sgp",
+              "api"
+            ],
+            [
+              "xiaomi-token-plan-ams",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
+    },
+    {
+      "id": "replicate-model-services",
+      "priority": 152,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Replicate 模型 API 与结果文件",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list",
+        "https://replicate.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list",
+          "roots": [
+            "replicate.com",
+            "replicate.delivery"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "replicate.com",
+        "replicate.delivery"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "runway-creative-tools",
+      "priority": 153,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Runway 视频与创作服务",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list",
+        "https://runwayml.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list",
+          "roots": [
+            "runway.com",
+            "runwayml.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "runway.com",
+        "runwayml.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "stability-model-services",
+      "priority": 154,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Stability AI 模型服务",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list",
+        "https://stability.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list",
+          "roots": [
+            "stability.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "stability.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "black-forest-model-services",
+      "priority": 155,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Black Forest Labs 与 FLUX",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list",
+        "https://bfl.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list",
+          "roots": [
+            "bfl.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "bfl.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "replit-cloud-development",
+      "priority": 156,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Replit 云端开发",
+      "boundary": "自营账户、编辑与 API；共享托管后缀不整段收入，用户应用按实际目标另行识别",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list",
+        "https://replit.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list",
+          "roots": [
+            "repl.it",
+            "replit.com",
+            "replit.dev"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "repl.it",
+        "replit.com",
+        "replit.dev"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "augment-code-assistant",
+      "priority": 157,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Augment Code 编程助手",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/augment-code.list",
+        "https://augmentcode.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/augment-code.list",
+          "roots": [
+            "augmentcode.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "augmentcode.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "sourcegraph-code-and-cody",
+      "priority": 158,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Sourcegraph 与 Cody",
+      "boundary": "Sourcegraph 与 Cody 自营范围；Amp 已独立，旧上游混入的 Amp 和无当前依据的 ampworkers.com 不收录",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list",
+        "https://sourcegraph.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list",
+          "roots": [
+            "cody.dev",
+            "sourcegraph.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "cody.dev",
+        "sourcegraph.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "continue-code-assistant",
+      "priority": 159,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Continue 编程助手",
+      "boundary": "只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list",
+        "https://continue.dev/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list",
+          "roots": [
+            "continue.dev"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "continue.dev"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "coderabbit-code-review",
+      "priority": 160,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "CodeRabbit 代码审查",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list",
+        "https://coderabbit.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list",
+          "roots": [
+            "coderabbit.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "coderabbit.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "tabnine-code-assistant",
+      "priority": 161,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Tabnine 编程助手",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list",
+        "https://tabnine.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list",
+          "roots": [
+            "tabnine.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "tabnine.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "factory-coding-agents",
+      "priority": 162,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Factory 编程代理",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list",
+        "https://factory.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list",
+          "roots": [
+            "factory.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "factory.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ],
+      "extract": [
+        {
+          "source": "https://factory.ai/",
+          "format": "site-identity",
+          "brand": "Factory",
+          "protect-from-reject": true
+        }
+      ]
+    },
+    {
+      "id": "zed-editor-and-ai",
+      "priority": 163,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Zed 编辑器与自营 AI",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list",
+        "https://zed.dev/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list",
+          "roots": [
+            "zed.dev"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "zed.dev"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "kiro-code-assistant",
+      "priority": 164,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Kiro 编程助手",
+      "boundary": "Kiro 自营域；共享 AWS 登录、Q 与云服务不能仅凭同一来源列表整段归入",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list",
+        "https://kiro.dev/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list",
+          "roots": [
+            "kiro.dev"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "kiro.dev"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "bolt-app-builder",
+      "priority": 165,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Bolt 应用构建",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list",
+        "https://bolt.new/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list",
+          "roots": [
+            "bolt.new"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "bolt.new"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "lovable-app-builder",
+      "priority": 166,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Lovable 应用构建",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list",
+        "https://lovable.dev/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list",
+          "roots": [
+            "lovable.dev"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "lovable.dev"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "v0-app-builder",
+      "priority": 167,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Vercel v0 应用构建",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list",
+        "https://v0.app/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list",
+          "roots": [
+            "v0.app",
+            "v0.dev"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "v0.app",
+        "v0.dev"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "genspark-connections",
+      "priority": 168,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Genspark 搜索与代理",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list",
+        "https://genspark.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list",
+          "roots": [
+            "genspark.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "genspark.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "jasper-marketing-ai",
+      "priority": 169,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Jasper 营销 AI",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list",
+        "https://jasper.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list",
+          "roots": [
+            "jasper.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "jasper.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "gamma-presentations",
+      "priority": 170,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Gamma 演示与文档",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list",
+        "https://gamma.app/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list",
+          "roots": [
+            "gamma.app"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "gamma.app"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "phind-search",
+      "priority": 171,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Phind 搜索与问答",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list",
+        "https://phind.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list",
+          "roots": [
+            "phind.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "phind.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "inflection-and-pi",
+      "priority": 172,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Inflection 与 Pi",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list",
+        "https://inflection.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list",
+          "roots": [
+            "inflection.ai",
+            "pi.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "inflection.ai",
+        "pi.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "h2o-model-services",
+      "priority": 173,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "H2O AI 平台",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list",
+        "https://h2o.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list",
+          "roots": [
+            "h2o.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "h2o.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "otter-meeting-assistant",
+      "priority": 174,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Otter 会议助手",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list",
+        "https://otter.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list",
+          "roots": [
+            "otter.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "otter.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "descript-media-tools",
+      "priority": 175,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Descript 音视频编辑",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list",
+        "https://descript.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list",
+          "roots": [
+            "descript.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "descript.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "synthesia-video-tools",
+      "priority": 176,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Synthesia 视频生成",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list",
+        "https://synthesia.io/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list",
+          "roots": [
+            "synthesia.io"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "synthesia.io"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "luma-creative-tools",
+      "priority": 177,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Luma 创作服务",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list",
+        "https://lumalabs.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list",
+          "roots": [
+            "lumalabs.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "lumalabs.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "leonardo-image-tools",
+      "priority": 178,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Leonardo 图像生成",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list",
+        "https://leonardo.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list",
+          "roots": [
+            "leonardo.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "leonardo.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "pika-video-tools",
+      "priority": 179,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Pika 视频生成",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list",
+        "https://pika.art/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list",
+          "roots": [
+            "pika.art"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "pika.art"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "recraft-design-tools",
+      "priority": 180,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Recraft 设计与图像",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list",
+        "https://recraft.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list",
+          "roots": [
+            "recraft.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "recraft.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "udio-music-tools",
+      "priority": 181,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Udio 音乐生成",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list",
+        "https://udio.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list",
+          "roots": [
+            "udio.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "udio.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "duck-ai-chat",
+      "priority": 182,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Duck.ai 对话",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list",
+        "https://duck.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list",
+          "roots": [
+            "duck.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "duck.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "langchain-agent-platform",
+      "priority": 183,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "LangChain 与代理平台",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list",
+        "https://langchain.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list",
+          "roots": [
+            "langchain.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "langchain.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "comfy-cloud-and-registry",
+      "priority": 184,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Comfy 云端与组件目录",
+      "boundary": "只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list",
+        "https://comfy.org/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list",
+          "roots": [
+            "comfy.org",
+            "comfyregistry.org"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "comfy.org",
+        "comfyregistry.org"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "lmstudio-product-services",
+      "priority": 185,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "LM Studio 产品与下载",
+      "boundary": "只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list",
+        "https://lmstudio.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list",
+          "roots": [
+            "lmstudio.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "lmstudio.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "crewai-agent-platform",
+      "priority": 186,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "CrewAI 代理平台",
+      "boundary": "只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list",
+        "https://crewai.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list",
+          "roots": [
+            "crewai.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "crewai.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "eigent-agent-services",
+      "priority": 187,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Eigent 代理与协作",
+      "boundary": "只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list",
+        "https://eigent.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list",
+          "roots": [
+            "eigent.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "eigent.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "manus-agent-services",
+      "priority": 188,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Manus 代理与文件",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list",
+        "https://manus.im/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list",
+          "roots": [
+            "manus.im",
+            "manuscdn.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "manus.im",
+        "manuscdn.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "youmind-international",
+      "priority": 189,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn-international",
+      "description": "YouMind · 国际产品入口",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list",
+        "https://youmind.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list",
+          "roots": [
+            "youmind.ai",
+            "youmind.com",
+            "youmind.site"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "youmind.ai",
+        "youmind.com",
+        "youmind.site"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "qoder-international",
+      "priority": 190,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn-international",
+      "description": "Qoder · 国际产品入口",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
+        "https://qoder.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
+          "roots": [
+            "qoder.com"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "qoder.com"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "lovart-international",
+      "priority": 191,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn-international",
+      "description": "Lovart · 国际产品入口",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list",
+        "https://lovart.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list",
+          "roots": [
+            "lovart.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "lovart.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "dia-browser-services",
+      "priority": 192,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "Dia 浏览器自营服务",
+      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list",
+        "https://diabrowser.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list",
+          "roots": [
+            "diabrowser.com",
+            "diabrowser.engineering"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "diabrowser.com",
+        "diabrowser.engineering"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "openclaw-product-services",
+      "priority": 193,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-overseas",
+      "description": "OpenClaw 产品与发布服务",
+      "boundary": "只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理",
+      "sources": [
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list",
+        "https://openclaw.ai/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list",
+          "roots": [
+            "openclaw.ai"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "VPSDance--ai-proxy-rules.txt",
+      "product-probes": [
+        "openclaw.ai"
+      ],
+      "product-negatives": [
+        "api.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "apple-find-my",
+      "priority": 199,
+      "section": "apple",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "apple-account",
+      "description": "Find My 设备与朋友查找的已识别入口",
+      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 209，共用 iCloud 网页、推送与静态素材不并入",
+      "sources": [
+        "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
+        "https://support.apple.com/en-us/104978",
+        "https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A",
+        "https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A",
+        "https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A",
+        "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A"
+      ],
+      "include": [
+        "DOMAIN,fmipmobile.icloud.com",
+        "DOMAIN,fmfmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com",
+        "DOMAIN,fmfmobile.fe2.apple-dns.net",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
+          "roots": [
+            "fmipmobile.icloud.com",
+            "fmfmobile.icloud.com"
+          ]
+        }
+      ],
+      "separates": [
+        "apple-location-services"
+      ],
+      "product-probes": [
+        "fmipmobile.icloud.com",
+        "p131-fmipmobile.icloud.com"
+      ],
+      "product-negatives": [
+        "gsp9-ssl.apple.com",
+        "statici.icloud.com"
+      ]
+    },
+    {
       "id": "apple-all",
       "mode": "view",
       "policy-hint": "apple-services",
@@ -2609,8 +5058,8 @@
       "id": "apple-location-services",
       "mode": "compiled",
       "policy-hint": "apple-location",
-      "description": "定位、地图配置与 Find My 已识别入口",
-      "boundary": "定位查询与信号定位数据按 Apple 公开客户端配置补入；保留既有定位和 Find My 范围，账户、推送和 iCloud 网页仍分别处理",
+      "description": "定位查询、地图配置与信号定位数据",
+      "boundary": "定位服务与信号定位共用主机；Find My 由独立专表先匹配，账户、推送与 iCloud 文件各自处理",
       "sources": [
         "https://gdmf.apple.com/v2/pmv",
         "https://configuration.ls.apple.com/config/defaults",
@@ -2628,14 +5077,7 @@
         "DOMAIN,gsp9-ssl.apple.com",
         "DOMAIN,gsp10-ssl.apple.com",
         "DOMAIN-SUFFIX,ls.apple.com",
-        "DOMAIN-SUFFIX,gs-loc.apple.com",
-        "DOMAIN,fmipmobile.icloud.com",
-        "DOMAIN,fmfmobile.icloud.com",
-        "DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com",
-        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com",
-        "DOMAIN,fmfmobile.fe2.apple-dns.net",
-        "DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com",
-        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com"
+        "DOMAIN-SUFFIX,gs-loc.apple.com"
       ],
       "selection": "detailed",
       "expand": {
@@ -3152,9 +5594,9 @@
     {
       "id": "apple-update-control",
       "mode": "compiled",
-      "policy-hint": "direct",
-      "description": "系统更新目录、检查、登记和控制端点",
-      "boundary": "含 OTA/Rosetta 检查、系统恢复服务和 Beta 登记；已确认的二进制内容下载另在 223，不按整个 cdn-apple.com 或整段 Apple IP 分类",
+      "policy-hint": "apple-account",
+      "description": "系统更新目录、检查、授权与登记",
+      "boundary": "更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 232，二进制包体在 223，不把整组当成匿名静态下载",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list",
@@ -3179,8 +5621,6 @@
             {
               "exact": [
                 "configuration.apple.com",
-                "cssubmissions.apple.com",
-                "fba.apple.com",
                 "gg.apple.com",
                 "gs.apple.com",
                 "gsra.apple.com",
@@ -3231,7 +5671,6 @@
         "DOMAIN,gnf-mdn.apple.com",
         "DOMAIN,gnf-mr.apple.com",
         "DOMAIN,ns.itunes.apple.com",
-        "DOMAIN,radarsubmissions.apple.com",
         "DOMAIN,swpost.apple.com",
         "DOMAIN-SUFFIX,fcs-keys-pub-prod.cdn-apple.com",
         "DOMAIN,beta.apple.com"
@@ -3488,8 +5927,8 @@
       "id": "apple-system-connectivity",
       "mode": "compiled",
       "policy-hint": "direct",
-      "description": "Apple 激活、设备管理、诊断与设备素材",
-      "boundary": "激活、设备管理、诊断、校时和设备素材走本组。不收整个 Apple 网段或共用 CDN，也不替代账号、推送与钱包组",
+      "description": "设备引导、MDM、校时、系统 DNS 与公共素材",
+      "boundary": "保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 231，反馈诊断在 232，不把本组称为匿名 CDN",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list",
         "https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list",
@@ -3512,8 +5951,7 @@
         "DOMAIN-SUFFIX,cn.apple.com",
         "DOMAIN,playgrounds-assets-cdn.apple.com",
         "DOMAIN,playgrounds-cdn.apple.com",
-        "DOMAIN,fpservices-prod1.apple.com",
-        "DOMAIN,iphonesubmissions.apple.com"
+        "DOMAIN,fpservices-prod1.apple.com"
       ],
       "extract": [
         {
@@ -3607,6 +6045,122 @@
         }
       ],
       "selection": "detailed"
+    },
+    {
+      "id": "apple-device-registration",
+      "priority": 231,
+      "section": "apple",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "apple-account",
+      "description": "设备激活与 APNs 证书登记门户",
+      "boundary": "按 Apple 官方用途读取设备激活与证书请求；eSIM、校时、机构 MDM 和设备素材保留在系统联网组，不按主机名猜测身份用途",
+      "sources": [
+        "https://support.apple.com/en-us/101555"
+      ],
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "devicesetup",
+            "devicemanagement"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com"
+              ],
+              "role": [
+                "Device activation",
+                "APNs certificate request portal"
+              ]
+            }
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "separates": [
+        "apple-system-connectivity"
+      ],
+      "product-probes": [
+        "albert.apple.com",
+        "identity.apple.com"
+      ],
+      "product-negatives": [
+        "sq-device.apple.com",
+        "time-ios.apple.com"
+      ]
+    },
+    {
+      "id": "apple-feedback-and-diagnostics",
+      "priority": 232,
+      "section": "apple",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Feedback Assistant、错误报告与自愿诊断上传",
+      "boundary": "只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开",
+      "sources": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list",
+        "https://support.apple.com/en-us/101555",
+        "https://beta.apple.com/",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list",
+        "https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list"
+      ],
+      "include": [
+        "DOMAIN,radarsubmissions.apple.com",
+        "DOMAIN,iphonesubmissions.apple.com"
+      ],
+      "extract": [
+        {
+          "source": "https://support.apple.com/en-us/101555",
+          "format": "host-table",
+          "sections": [
+            "beta",
+            "taptopay",
+            "diagnostics"
+          ],
+          "select": [
+            {
+              "roots": [
+                "apple.com"
+              ],
+              "purpose-contains": [
+                "Feedback Assistant",
+                "Optional analytics sharing",
+                "upload"
+              ]
+            }
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "aliases": {
+        "policy": "apple-services",
+        "sources": [
+          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
+          "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
+          "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
+          "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
+        ]
+      },
+      "separates": [
+        "apple-update-control",
+        "apple-system-connectivity"
+      ],
+      "product-probes": [
+        "cssubmissions.apple.com",
+        "fba.apple.com",
+        "iphonesubmissions.apple.com"
+      ],
+      "product-negatives": [
+        "diagassets.apple.com",
+        "gs.apple.com"
+      ]
     },
     {
       "id": "github-code-and-packages",
@@ -5055,6 +7609,45 @@
         "www.bbc.com"
       ],
       "selection": "detailed"
+    },
+    {
+      "id": "iqiyi-international",
+      "priority": 392,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "media",
+      "description": "爱奇艺国际版 iQIYI 与专用国际 API",
+      "boundary": "国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 仍由 592 处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
+          "roots": [
+            "iq.com"
+          ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list",
+          "roots": [
+            "iq.com",
+            "intl.iqiyi.com",
+            "intl-subscription.iqiyi.com",
+            "intl-rcd.iqiyi.com"
+          ]
+        }
+      ],
+      "product-probes": [
+        "www.iq.com",
+        "intl.iqiyi.com",
+        "intl-subscription.iqiyi.com"
+      ],
+      "product-negatives": [
+        "www.iqiyi.com"
+      ]
     },
     {
       "id": "steam-international-platform",
@@ -6534,7 +9127,8 @@
       "sources": [
         "https://platform.kimi.com/docs/get-api-key",
         "https://platform.kimi.ai/docs/get-your-api-key",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr"
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr",
+        "https://models.dev/api.json"
       ],
       "policy-hint": "ai-cn",
       "product-probes": [
@@ -6556,7 +9150,30 @@
           ]
         }
       ],
-      "selection": "detailed"
+      "selection": "detailed",
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "kimi-code-plan-cn",
+                "id"
+              ],
+              "equals": "kimi-code-plan-cn"
+            }
+          ],
+          "paths": [
+            [
+              "kimi-code-plan-cn",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
     },
     {
       "id": "zhipu-mainland",
@@ -7018,6 +9635,91 @@
       ]
     },
     {
+      "id": "modelscope-mainland",
+      "priority": 518,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn",
+      "description": "魔搭 ModelScope · 模型 API",
+      "boundary": "ModelScope 模型 API；模型文件与共享下载地址不因这个 API 一并代理",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://modelscope.cn/docs/model-service/API-Inference/intro"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "modelscope",
+                "id"
+              ],
+              "equals": "modelscope"
+            }
+          ],
+          "paths": [
+            [
+              "modelscope",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
+    },
+    {
+      "id": "xiaomi-mainland-and-shared",
+      "priority": 519,
+      "section": "ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "ai-cn",
+      "description": "小米 MiMo · 国内计划与共用 API",
+      "boundary": "MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在 151",
+      "sources": [
+        "https://models.dev/api.json",
+        "https://platform.xiaomimimo.com/"
+      ],
+      "extract": [
+        {
+          "source": "https://models.dev/api.json",
+          "format": "json-service-urls",
+          "identity": [
+            {
+              "path": [
+                "xiaomi",
+                "id"
+              ],
+              "equals": "xiaomi"
+            },
+            {
+              "path": [
+                "xiaomi-token-plan-cn",
+                "id"
+              ],
+              "equals": "xiaomi-token-plan-cn"
+            }
+          ],
+          "paths": [
+            [
+              "xiaomi",
+              "api"
+            ],
+            [
+              "xiaomi-token-plan-cn",
+              "api"
+            ]
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "inventory-refresh": true
+    },
+    {
       "id": "gitee-hosting",
       "priority": 530,
       "section": "development",
@@ -7389,7 +10091,7 @@
       "section": "media",
       "mode": "compiled",
       "description": "爱奇艺国内版",
-      "boundary": "国内版与专用素材；国际版 iq.com 不在内",
+      "boundary": "国内版与专用素材；与 392 配套时国际专用子域先匹配。单用本表不能从 iqiyi.com 父域排除国际业务",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi.list"
       ],
@@ -7833,7 +10535,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "其他海外网站与受限站点",
-      "boundary": "合并已核对的海外与 GFW 域名，扣除已有专项，并排除国内来源冲突和共享基础设施",
+      "boundary": "专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除",
       "sources": [
         "https://rules.xkww3n.cyou/classical/proxy.txt",
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list",
@@ -7851,7 +10553,12 @@
           "mainland-domains",
           "source-xkww3n-mainland"
         ],
-        "subtract-prior": true
+        "subtract-prior": true,
+        "prefer": [
+          "source-xkww3n-overseas",
+          "source-repcz-overseas",
+          "source-repcz-gfw"
+        ]
       },
       "excluded-rules": [
         "DOMAIN-SUFFIX,gfwlist.start",
@@ -7950,7 +10657,74 @@
         "minimax-international",
         "bytedance-international",
         "siliconflow-international",
-        "tencent-international"
+        "tencent-international",
+        "stepfun-international",
+        "xiaomi-international",
+        "grokipedia-encyclopedia",
+        "github-copilot-connections",
+        "meta-ai-assistant",
+        "muse-agent",
+        "elevenlabs-voice-and-api",
+        "jetbrains-ai",
+        "amp-connections",
+        "anythingllm-connections",
+        "fireworks-model-services",
+        "opencode-connections",
+        "kilo-connections",
+        "cline-connections",
+        "ollama-cloud",
+        "chutes-model-services",
+        "bothub-model-services",
+        "commandcode-connections",
+        "stackit-model-services",
+        "novita-model-services",
+        "nebius-model-services",
+        "baseten-model-services",
+        "deepinfra-model-services",
+        "together-model-services",
+        "cerebras-model-services",
+        "replicate-model-services",
+        "runway-creative-tools",
+        "stability-model-services",
+        "black-forest-model-services",
+        "replit-cloud-development",
+        "augment-code-assistant",
+        "sourcegraph-code-and-cody",
+        "continue-code-assistant",
+        "coderabbit-code-review",
+        "tabnine-code-assistant",
+        "factory-coding-agents",
+        "zed-editor-and-ai",
+        "kiro-code-assistant",
+        "bolt-app-builder",
+        "lovable-app-builder",
+        "v0-app-builder",
+        "genspark-connections",
+        "jasper-marketing-ai",
+        "gamma-presentations",
+        "phind-search",
+        "inflection-and-pi",
+        "h2o-model-services",
+        "otter-meeting-assistant",
+        "descript-media-tools",
+        "synthesia-video-tools",
+        "luma-creative-tools",
+        "leonardo-image-tools",
+        "pika-video-tools",
+        "recraft-design-tools",
+        "udio-music-tools",
+        "duck-ai-chat",
+        "langchain-agent-platform",
+        "comfy-cloud-and-registry",
+        "lmstudio-product-services",
+        "crewai-agent-platform",
+        "eigent-agent-services",
+        "manus-agent-services",
+        "youmind-international",
+        "qoder-international",
+        "lovart-international",
+        "dia-browser-services",
+        "openclaw-product-services"
       ],
       "reconcile": "confirmed-withdrawals",
       "domain-remainder": true
@@ -8039,6 +10813,68 @@
     "bytedance-international",
     "siliconflow-international",
     "tencent-international",
+    "amp-connections",
+    "anythingllm-connections",
+    "fireworks-model-services",
+    "opencode-connections",
+    "kilo-connections",
+    "cline-connections",
+    "ollama-cloud",
+    "chutes-model-services",
+    "bothub-model-services",
+    "commandcode-connections",
+    "stackit-model-services",
+    "novita-model-services",
+    "nebius-model-services",
+    "baseten-model-services",
+    "deepinfra-model-services",
+    "together-model-services",
+    "cerebras-model-services",
+    "stepfun-international",
+    "xiaomi-international",
+    "replicate-model-services",
+    "runway-creative-tools",
+    "stability-model-services",
+    "black-forest-model-services",
+    "replit-cloud-development",
+    "augment-code-assistant",
+    "sourcegraph-code-and-cody",
+    "continue-code-assistant",
+    "coderabbit-code-review",
+    "tabnine-code-assistant",
+    "factory-coding-agents",
+    "zed-editor-and-ai",
+    "kiro-code-assistant",
+    "bolt-app-builder",
+    "lovable-app-builder",
+    "v0-app-builder",
+    "genspark-connections",
+    "jasper-marketing-ai",
+    "gamma-presentations",
+    "phind-search",
+    "inflection-and-pi",
+    "h2o-model-services",
+    "otter-meeting-assistant",
+    "descript-media-tools",
+    "synthesia-video-tools",
+    "luma-creative-tools",
+    "leonardo-image-tools",
+    "pika-video-tools",
+    "recraft-design-tools",
+    "udio-music-tools",
+    "duck-ai-chat",
+    "langchain-agent-platform",
+    "comfy-cloud-and-registry",
+    "lmstudio-product-services",
+    "crewai-agent-platform",
+    "eigent-agent-services",
+    "manus-agent-services",
+    "youmind-international",
+    "qoder-international",
+    "lovart-international",
+    "dia-browser-services",
+    "openclaw-product-services",
+    "apple-find-my",
     "apple-account-authentication",
     "apple-app-and-device-verification",
     "apple-wallet-payments",
@@ -8069,6 +10905,8 @@
     "apple-certificate-validation",
     "apple-system-connectivity",
     "apple-schoolwork-handouts",
+    "apple-device-registration",
+    "apple-feedback-and-diagnostics",
     "gitlab-hosting",
     "bitbucket-hosting",
     "npm-registry",
@@ -8095,6 +10933,7 @@
     "trust-wallet",
     "hbo-streaming",
     "bbc-news-and-video",
+    "iqiyi-international",
     "playstation-network",
     "nintendo-platform",
     "hoyoverse-international",
@@ -8124,6 +10963,8 @@
     "stepfun-mainland",
     "sensetime-mainland",
     "jetbrains-ai-mainland",
+    "modelscope-mainland",
+    "xiaomi-mainland-and-shared",
     "gitee-hosting",
     "coding-platform",
     "gitcode-hosting",
@@ -8380,28 +11221,28 @@
       "apple-push-connection"
     ],
     "fmfmobile.fe2.apple-dns.net": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "fmfmobile.icloud.com": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "fmipmobile.icloud.com": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "gspe1-ssl.ls.apple.com": [
       "apple-location-services"
     ],
     "p01-fmfmobile.icloud.com": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "p01-fmipmobile.icloud.com": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "p131-fmfmobile.icloud.com": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "p131-fmipmobile.icloud.com": [
-      "apple-location-services"
+      "apple-find-my"
     ],
     "mask-api.icloud.com": [
       "apple-private-relay-connections"
@@ -8497,7 +11338,7 @@
       "apple-update-control"
     ],
     "cssubmissions.apple.com": [
-      "apple-update-control"
+      "apple-feedback-and-diagnostics"
     ],
     "gdmf-ados.apple.com": [
       "apple-update-control"
@@ -8524,7 +11365,7 @@
       "apple-developer-downloads"
     ],
     "iphonesubmissions.apple.com": [
-      "apple-system-connectivity"
+      "apple-feedback-and-diagnostics"
     ],
     "sylvan.apple.com": [
       "apple-system-connectivity"
@@ -8545,7 +11386,7 @@
       "apple-messaging-identity"
     ],
     "identity.apple.com": [
-      "apple-system-connectivity"
+      "apple-device-registration"
     ],
     "appldnld.apple.com": [
       "apple-update-downloads"
@@ -10052,6 +12893,246 @@
     ],
     "tvax1.sinaimg.cn": [
       "sina-shared-image-assets"
+    ],
+    "ampcode.com": [
+      "amp-connections"
+    ],
+    "anythingllm.com": [
+      "anythingllm-connections"
+    ],
+    "api.fireworks.ai": [
+      "fireworks-model-services"
+    ],
+    "intl.iqiyi.com": [
+      "iqiyi-international"
+    ],
+    "intl-subscription.iqiyi.com": [
+      "iqiyi-international"
+    ],
+    "intl-rcd.iqiyi.com": [
+      "iqiyi-international"
+    ],
+    "apache.org": [
+      "overseas-sites-extra"
+    ],
+    "nssurge.com": [
+      "overseas-sites-extra"
+    ],
+    "weather.com": [
+      "overseas-sites-extra"
+    ],
+    "auth.ampcode.com": [
+      "amp-connections"
+    ],
+    "static.ampcode.com": [
+      "amp-connections"
+    ],
+    "albert.apple.com": [
+      "apple-device-registration"
+    ],
+    "fba.apple.com": [
+      "apple-feedback-and-diagnostics"
+    ],
+    "www.iq.com": [
+      "iqiyi-international"
+    ],
+    "opencode.ai": [
+      "opencode-connections"
+    ],
+    "api.kilo.ai": [
+      "kilo-connections"
+    ],
+    "api.cline.bot": [
+      "cline-connections"
+    ],
+    "llm.chutes.ai": [
+      "chutes-model-services"
+    ],
+    "openai.bothub.ru": [
+      "bothub-model-services"
+    ],
+    "api.commandcode.ai": [
+      "commandcode-connections"
+    ],
+    "api.novita.ai": [
+      "novita-model-services"
+    ],
+    "api.tokenfactory.nebius.com": [
+      "nebius-model-services"
+    ],
+    "inference.baseten.co": [
+      "baseten-model-services"
+    ],
+    "deepinfra.com": [
+      "deepinfra-model-services"
+    ],
+    "together.ai": [
+      "together-model-services"
+    ],
+    "cerebras.ai": [
+      "cerebras-model-services"
+    ],
+    "replicate.com": [
+      "replicate-model-services"
+    ],
+    "replicate.delivery": [
+      "replicate-model-services"
+    ],
+    "runway.com": [
+      "runway-creative-tools"
+    ],
+    "runwayml.com": [
+      "runway-creative-tools"
+    ],
+    "stability.ai": [
+      "stability-model-services"
+    ],
+    "bfl.ai": [
+      "black-forest-model-services"
+    ],
+    "repl.it": [
+      "replit-cloud-development"
+    ],
+    "replit.com": [
+      "replit-cloud-development"
+    ],
+    "replit.dev": [
+      "replit-cloud-development"
+    ],
+    "augmentcode.com": [
+      "augment-code-assistant"
+    ],
+    "cody.dev": [
+      "sourcegraph-code-and-cody"
+    ],
+    "sourcegraph.com": [
+      "sourcegraph-code-and-cody"
+    ],
+    "continue.dev": [
+      "continue-code-assistant"
+    ],
+    "coderabbit.ai": [
+      "coderabbit-code-review"
+    ],
+    "tabnine.com": [
+      "tabnine-code-assistant"
+    ],
+    "factory.ai": [
+      "factory-coding-agents"
+    ],
+    "zed.dev": [
+      "zed-editor-and-ai"
+    ],
+    "kiro.dev": [
+      "kiro-code-assistant"
+    ],
+    "bolt.new": [
+      "bolt-app-builder"
+    ],
+    "lovable.dev": [
+      "lovable-app-builder"
+    ],
+    "v0.app": [
+      "v0-app-builder"
+    ],
+    "v0.dev": [
+      "v0-app-builder"
+    ],
+    "genspark.ai": [
+      "genspark-connections"
+    ],
+    "jasper.ai": [
+      "jasper-marketing-ai"
+    ],
+    "gamma.app": [
+      "gamma-presentations"
+    ],
+    "phind.com": [
+      "phind-search"
+    ],
+    "inflection.ai": [
+      "inflection-and-pi"
+    ],
+    "pi.ai": [
+      "inflection-and-pi"
+    ],
+    "h2o.ai": [
+      "h2o-model-services"
+    ],
+    "otter.ai": [
+      "otter-meeting-assistant"
+    ],
+    "descript.com": [
+      "descript-media-tools"
+    ],
+    "synthesia.io": [
+      "synthesia-video-tools"
+    ],
+    "lumalabs.ai": [
+      "luma-creative-tools"
+    ],
+    "leonardo.ai": [
+      "leonardo-image-tools"
+    ],
+    "pika.art": [
+      "pika-video-tools"
+    ],
+    "recraft.ai": [
+      "recraft-design-tools"
+    ],
+    "udio.com": [
+      "udio-music-tools"
+    ],
+    "duck.ai": [
+      "duck-ai-chat"
+    ],
+    "langchain.com": [
+      "langchain-agent-platform"
+    ],
+    "comfy.org": [
+      "comfy-cloud-and-registry"
+    ],
+    "comfyregistry.org": [
+      "comfy-cloud-and-registry"
+    ],
+    "lmstudio.ai": [
+      "lmstudio-product-services"
+    ],
+    "crewai.com": [
+      "crewai-agent-platform"
+    ],
+    "eigent.ai": [
+      "eigent-agent-services"
+    ],
+    "manus.im": [
+      "manus-agent-services"
+    ],
+    "manuscdn.com": [
+      "manus-agent-services"
+    ],
+    "youmind.ai": [
+      "youmind-international"
+    ],
+    "youmind.com": [
+      "youmind-international"
+    ],
+    "youmind.site": [
+      "youmind-international"
+    ],
+    "qoder.com": [
+      "qoder-international"
+    ],
+    "lovart.ai": [
+      "lovart-international"
+    ],
+    "diabrowser.com": [
+      "dia-browser-services"
+    ],
+    "diabrowser.engineering": [
+      "dia-browser-services"
+    ],
+    "openclaw.ai": [
+      "openclaw-product-services"
     ]
   },
   "shared-negatives": [
@@ -10237,6 +13318,7 @@
       "title": "Apple 生态",
       "numbers": [
         123,
+        199,
         200,
         201,
         202,
@@ -10267,7 +13349,9 @@
         227,
         228,
         229,
-        230
+        230,
+        231,
+        232
       ]
     },
     {
@@ -10312,6 +13396,67 @@
         130,
         131,
         132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
         500,
         501,
         502,
@@ -10328,7 +13473,9 @@
         513,
         514,
         515,
-        516
+        516,
+        518,
+        519
       ]
     },
     {
@@ -10421,6 +13568,7 @@
         389,
         390,
         391,
+        392,
         590,
         591,
         592,
@@ -11045,7 +14193,8 @@
       "apple-location-services"
     ],
     "statici.icloud.com": [
-      "apple-location-services"
+      "apple-location-services",
+      "apple-find-my"
     ],
     "fmipmobile.icloud.com.example": [
       "apple-location-services"
@@ -11154,16 +14303,13 @@
       "general-ad-and-tracking"
     ],
     "www.ip138.com": [
-      "ip-egress-checks",
-      "overseas-sites-extra"
+      "ip-egress-checks"
     ],
     "www.ip.cn": [
-      "ip-egress-checks",
-      "overseas-sites-extra"
+      "ip-egress-checks"
     ],
     "www.ipip.net": [
-      "ip-egress-checks",
-      "overseas-sites-extra"
+      "ip-egress-checks"
     ],
     "featuregates.org": [
       "apple-and-ai-privacy-exceptions",
@@ -11215,7 +14361,8 @@
     ],
     "api.anthropic.com": [
       "overseas-media-extra",
-      "overseas-sites-extra"
+      "overseas-sites-extra",
+      "amp-connections"
     ],
     "chatgpt.com": [
       "overseas-media-extra",
@@ -11389,6 +14536,57 @@
     ],
     "tvax1.sinaimg.cn": [
       "weibo-social"
+    ],
+    "github.com": [
+      "amp-connections"
+    ],
+    "localhost": [
+      "anythingllm-connections"
+    ],
+    "api.openai.com": [
+      "anythingllm-connections",
+      "fireworks-model-services"
+    ],
+    "fireworks.com": [
+      "fireworks-model-services"
+    ],
+    "gsp9-ssl.apple.com": [
+      "apple-find-my"
+    ],
+    "sq-device.apple.com": [
+      "apple-device-registration"
+    ],
+    "time-ios.apple.com": [
+      "apple-device-registration"
+    ],
+    "diagassets.apple.com": [
+      "apple-feedback-and-diagnostics"
+    ],
+    "gs.apple.com": [
+      "apple-feedback-and-diagnostics"
+    ],
+    "www.iqiyi.com": [
+      "iqiyi-international"
+    ],
+    "api.cloudflare.com": [
+      "opencode-connections",
+      "kilo-connections",
+      "cline-connections",
+      "ollama-cloud",
+      "chutes-model-services",
+      "bothub-model-services",
+      "commandcode-connections",
+      "stackit-model-services",
+      "novita-model-services",
+      "nebius-model-services",
+      "baseten-model-services",
+      "deepinfra-model-services",
+      "together-model-services",
+      "cerebras-model-services",
+      "stepfun-international",
+      "xiaomi-international",
+      "modelscope-mainland",
+      "xiaomi-mainland-and-shared"
     ]
   },
   "recommended-views": [
@@ -11773,7 +14971,74 @@
         "minimax-international",
         "bytedance-international",
         "siliconflow-international",
-        "tencent-international"
+        "tencent-international",
+        "stepfun-international",
+        "xiaomi-international",
+        "grokipedia-encyclopedia",
+        "github-copilot-connections",
+        "meta-ai-assistant",
+        "muse-agent",
+        "elevenlabs-voice-and-api",
+        "jetbrains-ai",
+        "amp-connections",
+        "anythingllm-connections",
+        "fireworks-model-services",
+        "opencode-connections",
+        "kilo-connections",
+        "cline-connections",
+        "ollama-cloud",
+        "chutes-model-services",
+        "bothub-model-services",
+        "commandcode-connections",
+        "stackit-model-services",
+        "novita-model-services",
+        "nebius-model-services",
+        "baseten-model-services",
+        "deepinfra-model-services",
+        "together-model-services",
+        "cerebras-model-services",
+        "replicate-model-services",
+        "runway-creative-tools",
+        "stability-model-services",
+        "black-forest-model-services",
+        "replit-cloud-development",
+        "augment-code-assistant",
+        "sourcegraph-code-and-cody",
+        "continue-code-assistant",
+        "coderabbit-code-review",
+        "tabnine-code-assistant",
+        "factory-coding-agents",
+        "zed-editor-and-ai",
+        "kiro-code-assistant",
+        "bolt-app-builder",
+        "lovable-app-builder",
+        "v0-app-builder",
+        "genspark-connections",
+        "jasper-marketing-ai",
+        "gamma-presentations",
+        "phind-search",
+        "inflection-and-pi",
+        "h2o-model-services",
+        "otter-meeting-assistant",
+        "descript-media-tools",
+        "synthesia-video-tools",
+        "luma-creative-tools",
+        "leonardo-image-tools",
+        "pika-video-tools",
+        "recraft-design-tools",
+        "udio-music-tools",
+        "duck-ai-chat",
+        "langchain-agent-platform",
+        "comfy-cloud-and-registry",
+        "lmstudio-product-services",
+        "crewai-agent-platform",
+        "eigent-agent-services",
+        "manus-agent-services",
+        "youmind-international",
+        "qoder-international",
+        "lovart-international",
+        "dia-browser-services",
+        "openclaw-product-services"
       ],
       "confirm-additions-with": [
         "apple-mainland-delivery-aliases",

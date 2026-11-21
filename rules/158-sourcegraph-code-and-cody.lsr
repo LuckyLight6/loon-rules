@@ -1,0 +1,13 @@
+# name: sourcegraph-code-and-cody
+# priority: 158
+# section: ai
+# description: Sourcegraph 与 Cody
+# boundary: Sourcegraph 与 Cody 自营范围；Amp 已独立，旧上游混入的 Amp 和无当前依据的 ampworkers.com 不收录
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list
+# source: https://sourcegraph.com/
+
+DOMAIN-SUFFIX,cody.dev
+DOMAIN-SUFFIX,sourcegraph.com

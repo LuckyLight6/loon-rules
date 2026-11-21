@@ -16,6 +16,7 @@
 | [xkww3n / Rules](https://github.com/xkww3n/Rules) | 联网、保留地址、Apple 媒体与智能服务、广告及国内外范围比对 | [MIT](licenses/xkww3n--Rules.txt) |
 | [VPSDance / ai-proxy-rules](https://github.com/VPSDance/ai-proxy-rules) | 海外 AI 产品；合集由本仓细分生成 | [MIT](licenses/VPSDance--ai-proxy-rules.txt) |
 | [erwanjun / surge-claude-rules](https://github.com/erwanjun/surge-claude-rules) | Claude 产品范围核对 | [MIT](licenses/erwanjun--surge-claude-rules.txt) |
+| [anomalyco / models.dev](https://github.com/anomalyco/models.dev) | 按提供商身份读取 API 字段和产品文档地址；区分已明确列出的地区计划，不采用整家共享云 | [MIT](licenses/anomalyco--models.dev.txt) |
 | [Kianuni / AppleFlow](https://github.com/Kianuni/AppleFlow) | 参考 Siri 规则，不加载插件 | [MIT](licenses/Kianuni--AppleFlow.txt) |
 
 ## 官方资料与公开产品数据
@@ -31,6 +32,7 @@
 | [Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges)、[Azure CLI 定义](https://github.com/Azure/azure-cli/blob/dev/src/azure-cli-core/azure/cli/core/cloud.py)、[Azure 域名](https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains) | 办公、通信和控制端点，区分平台与托管租户；只解析静态定义，不运行源码 |
 | [OpenAI 语音地址](https://openai.com/chatgpt-voice.json)、[GitHub Copilot](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)、[Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse) | 语音公网地址、专用 API、实时连接与产品入口；共用认证分别处理 |
 | [Cursor 登录](https://cursor.com/help/troubleshooting/sign-in-domains)、[网络清单](https://cursor.com/docs/enterprise/network-configuration)、[xAI 登录](https://docs.x.ai/x-subscription/sign-in) | 共用账号、产品接口、Grok 内容与更新用途；相关 SDK 只读取静态默认端点 |
+| [Amp 网络清单](https://ampcode.com/security)、[AnythingLLM 产品站](https://anythingllm.com/)、[Fireworks API 文档](https://docs.fireworks.ai/tools-sdks/openai-compatibility) | 专用产品域名、WebSocket、API 及隧道入口；自建实例和用户指定的模型服务不随官网归类 |
 | [硅基流动国内](https://docs.siliconflow.cn/docs/userguide/quickstart)、[国际指南](https://docs.siliconflow.com/en/userguide/quickstart)、[Liblib API](https://www.liblib.art/apis/workflow) | 对应地区的 API 与控制台；产品页面只跟随指定资源和用途示例，不执行脚本 |
 | [GitHub Meta API](https://api.github.com/meta)、[Docker](https://docs.docker.com/desktop/enterprise/allow-list/)、[VS Code](https://code.visualstudio.com/docs/setup/network) | 网站、包源、构建、登录、分发、更新与同步用途；不采用整家共享云或 GitHub 大段 IP |
 | [Cargo 配置](https://index.crates.io/config.json)、[PyPI](https://pypi.org/pypi/pip/json)、[npm](https://registry.npmjs.org/npm/latest) | 服务与文件下载字段、公开版本依据；不复制包内容、作者资料、摘要或签名 |

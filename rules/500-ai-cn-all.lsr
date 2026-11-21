@@ -4,13 +4,14 @@
 # description: 国产 AI 国内版合集
 # boundary: 由各产品专表合并生成；统一选出口时用此表，按厂商选出口则用成员，不同时订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-20T19:34:55Z
-# rule-count: 45
+# updated-at: 2026-11-21T12:05:08Z
+# rule-count: 49
 # source: https://www.alibabacloud.com/help/en/model-studio/base-url
 # source: https://www.qianwen.com/
 # source: https://platform.kimi.com/docs/get-api-key
 # source: https://platform.kimi.ai/docs/get-your-api-key
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr
+# source: https://models.dev/api.json
 # source: https://docs.bigmodel.cn/cn/guide/start/quick-start
 # source: https://docs.z.ai/guides/overview/quick-start
 # source: https://platform.minimax.io/docs/guides/quickstart-preparation
@@ -29,6 +30,8 @@
 # source: https://ai.baidu.com/
 # source: https://www.xfyun.cn/doc/spark/HTTP%E8%B0%83%E7%94%A8%E6%96%87%E6%A1%A3.html
 # source: https://www.liblib.art/apis/workflow
+# source: https://modelscope.cn/docs/model-service/API-Inference/intro
+# source: https://platform.xiaomimimo.com/
 
 DOMAIN-SUFFIX,cn-beijing.maas.aliyuncs.com
 DOMAIN,dashscope.aliyuncs.com
@@ -37,6 +40,7 @@ DOMAIN,www.qianwen.com
 DOMAIN-SUFFIX,moonshot.cn
 DOMAIN-SUFFIX,kimichat.com
 DOMAIN,platform.kimi.com
+DOMAIN,api.kimi.com
 DOMAIN-SUFFIX,zhipuai.cn
 DOMAIN-SUFFIX,chatglm.cn
 DOMAIN-SUFFIX,bigmodel.cn
@@ -75,3 +79,6 @@ DOMAIN-SUFFIX,01.ai
 DOMAIN-SUFFIX,lingyiwanwu.com
 DOMAIN-SUFFIX,stepfun.com
 DOMAIN-SUFFIX,sensenova.cn
+DOMAIN,api-inference.modelscope.cn
+DOMAIN,api.xiaomimimo.com
+DOMAIN,token-plan-cn.xiaomimimo.com
