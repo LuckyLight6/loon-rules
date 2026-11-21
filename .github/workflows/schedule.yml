@@ -1,0 +1,13 @@
+name: Scheduled rule maintenance
+
+on:
+  schedule:
+    - cron: '37 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    uses: LuckyLight6/loon-rules/.github/workflows/refresh.yml@main
