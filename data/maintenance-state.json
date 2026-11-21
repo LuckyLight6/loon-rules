@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-21T16:55:35Z",
+  "checked-at": "2026-11-21T17:37:07Z",
   "inputs-read": 485,
   "critical": 692,
   "inputs-requested": 485,
@@ -5672,11 +5672,8 @@
     "http-requests": 36,
     "unavailable-hosts": 0,
     "unavailable-lookups": 0,
-    "partial-lookups": 3,
-    "incomplete-hosts": [
-      "appldnld.apple.com",
-      "swcdn.apple.com"
-    ]
+    "partial-lookups": 0,
+    "incomplete-hosts": []
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
@@ -10062,7 +10059,7 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 0,
+      "accepted-prefixes": 1,
       "unconfirmed-prefixes": 520,
       "retired-prefixes": 0
     },
@@ -10955,7 +10952,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -10996,7 +10993,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "ollama-cloud": {
@@ -11027,7 +11024,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "stackit-model-services": {
@@ -11058,7 +11055,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "stepfun-international": {
@@ -11100,7 +11097,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "xiaomi-international": {
@@ -11143,7 +11140,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -11178,7 +11175,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -11219,7 +11216,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -11254,7 +11251,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -11486,7 +11483,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "npm-registry": {
@@ -11519,7 +11516,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11563,7 +11560,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11596,7 +11593,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -11649,7 +11646,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "braintree-payments": {
@@ -11676,7 +11673,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "notion-workspace": {
@@ -11702,7 +11699,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "google-account-authentication": {
@@ -11910,7 +11907,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -11936,7 +11933,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "google-play-services": {
@@ -11972,7 +11969,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "google-play-games": {
@@ -12000,7 +11997,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "kimi-mainland": {
@@ -12031,7 +12028,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -12070,7 +12067,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -12101,7 +12098,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -12144,7 +12141,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795280123,
+      "last-read": 1795282607,
       "state": "current"
     }
   },
@@ -12161,7 +12158,10 @@
     }
   },
   "shared-negatives": 20,
-  "changed": [],
+  "changed": [
+    "mainland-routing-all",
+    "mainland-networks"
+  ],
   "scope-negatives": 141,
   "ip-cases": 37,
   "ip-matching": {
@@ -12213,7 +12213,7 @@
     "mainland-networks": {
       "intent": "allow-dns",
       "no-resolve": 0,
-      "resolve-for-match": 7001
+      "resolve-for-match": 7002
     },
     "mainland-geoip": {
       "intent": "allow-dns",
@@ -12485,9 +12485,9 @@
     "extended-ad-and-tracking": 44154,
     "overseas-media-extra": 182,
     "overseas-sites-extra": 18748,
-    "mainland-routing-all": 19645,
+    "mainland-routing-all": 19646,
     "mainland-domains": 12643,
-    "mainland-networks": 7001,
+    "mainland-networks": 7002,
     "mainland-geoip": 1
   },
   "component-rules": {

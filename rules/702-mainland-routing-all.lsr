@@ -4,8 +4,8 @@
 # description: 国内兜底合集
 # boundary: 将国内域名、网段和 GeoIP 交给同一策略时选本合集；需要分别控制时，用 704、707、711 替代。未命中域名仍可解析后按地址判断
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-21T12:05:08Z
-# rule-count: 19645
+# updated-at: 2026-11-21T17:37:07Z
+# rule-count: 19646
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -13196,6 +13196,7 @@ IP-CIDR,103.36.172.0/22
 IP-CIDR,103.36.192.0/20
 IP-CIDR,103.36.208.0/22
 IP-CIDR,103.36.220.0/22
+IP-CIDR,103.36.28.0/22
 IP-CIDR,103.36.36.0/22
 IP-CIDR,103.36.63.0/24
 IP-CIDR,103.36.96.0/22
