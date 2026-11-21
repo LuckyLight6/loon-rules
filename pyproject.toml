@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loon-rules-maintainer"
+version = "0.1.0"
+description = "Generate and verify the Loon subscriptions in this repository"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.scripts]
+loon-rules = "loon_rules.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["loon_rules*"]
+namespaces = false

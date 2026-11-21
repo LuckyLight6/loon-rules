@@ -1,7 +1,7 @@
 import unittest
-from rule_inputs import extract_rows
-import endpoint_contracts as ec
-import library as lib
+from loon_rules.sources.inputs import extract_rows
+from loon_rules.generation import contracts as ec
+from loon_rules.generation import pipeline as lib
 
 class RoleUpdates(unittest.TestCase):
     def test_windows_table_is_scoped_by_product_role_and_column(self):
@@ -55,7 +55,7 @@ class RoleUpdates(unittest.TestCase):
         self.assertEqual(extract_rows(spec,doc),{'DOMAIN,imap.gmail.example'})
 
     def test_small_documented_withdrawal_needs_two_daily_observations(self):
-        import calibration
+        from loon_rules.generation import calibration
         last=[f'DOMAIN,h{i}.example.org' for i in range(24)]
         feed=last[1:]+['DOMAIN,unproven.other']
         out,obs=calibration.withdrawals(last,feed,{},'v1',0)
@@ -72,7 +72,7 @@ class RoleUpdates(unittest.TestCase):
         self.assertEqual(calibration.withdrawals(parent,children,state,'v1',86400)[0],parent)
 
     def test_asn_addition_needs_two_feeds_and_cn_allocation_and_preserves_dns_intent(self):
-        import calibration
+        from loon_rules.generation import calibration
         old=['IP-ASN,100,no-resolve']
         src=old+['IP-ASN,101,no-resolve','IP-ASN,105,no-resolve','IP-ASN,110,no-resolve']
         witness='IP-ASN,101\nIP-ASN,105'

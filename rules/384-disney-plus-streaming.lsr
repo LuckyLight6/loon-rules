@@ -1,0 +1,13 @@
+# name: disney-plus-streaming
+# priority: 384
+# section: media
+# description: Disney+ 播放及其专用交付
+# boundary: 不将迪士尼乐园、体育、Hulu 或整个共享 bamgrid 网关当 Disney+。可归属的主机按精确匹配
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 3
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list
+
+DOMAIN-SUFFIX,disney-plus.net
+DOMAIN-SUFFIX,disneyplus.com
+DOMAIN-SUFFIX,dssott.com

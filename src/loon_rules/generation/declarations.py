@@ -1,0 +1,161 @@
+"""Validate product declarations and derived catalogue fields."""
+from loon_rules import rules
+from loon_rules.sources import policy as source_policy
+from loon_rules.sources import transport as source_transport
+from loon_rules.sources import expansion as source_expansion
+from loon_rules import catalog as catalog_schema
+from loon_rules.generation import inventories as service_inventory
+from loon_rules.policy import SHARED_PARENT,SLUG
+from loon_rules.generation.feeds import calibration_urls
+from loon_rules.generation.ordering import subscription_order
+
+
+
+def section_for(config, rank):
+    matches=[item['id'] for item in config['sections']
+             if item.get('from',1000)<=rank<=item.get('through',0) or rank in item.get('numbers',())]
+    if len(matches)!=1:
+        raise rules.Invalid(f'优先级 {rank:03d} 没有唯一分区')
+    return matches[0]
+
+
+def validate_declarations(config):
+    catalog_schema.materialize(config)
+    entries={}
+    priorities=set()
+    components={e['id'] for e in config.get('source-components',())}
+    for e in [*config['entries'],*config.get('source-components',())]:
+        name=e['id']
+        if not SLUG.fullmatch(name) or name in entries:
+            raise rules.Invalid('重复或不合规的名称：'+name)
+        if e['mode'] not in ('compiled','managed','view') or not e['description'] or not e['boundary'] or (e['mode']!='view' and not e.get('sources')):
+            raise rules.Invalid('元数据未达成：'+name)
+        if name.endswith('-all')!=(e['mode']=='view'):
+            raise rules.Invalid('合集名称须以 -all 结尾，细分表不能使用此后缀：'+name)
+        if name in components:
+            if e['mode']!='managed' or any(field in e for field in ('priority','section','selection')):
+                raise rules.Invalid('来源比对输入不能声明订阅编号或业务分区：'+name)
+        else:
+            rank=e['priority']
+            if not isinstance(rank,int) or not 1<=rank<=999 or rank in priorities or e['section']!=section_for(config,rank):
+                raise rules.Invalid('重复或不合规的编号：'+name)
+            priorities.add(rank)
+        entries[name]=e
+    subscription_order(config,entries)
+    names=[*config['detailed'],*config['general']]
+    if len(set(names))!=len(names) or any(entries[k]['mode']=='view' for k in names):
+        raise rules.Invalid('细分或通用视图误启用合并表')
+    modes=names+config['views']+config['alternatives']+config['optional']
+    if len(modes)!=len(entries)-len(components) or set(modes)!=set(entries)-components:
+        raise rules.Invalid('分区必须包含每个条目且只出现一次')
+    if any(not k.endswith(('-alt','-compat')) for k in config['alternatives']):
+        raise rules.Invalid('替代或兼容订阅须以 -alt 或 -compat 结尾')
+    if not set(config.get('recommended-views',()))<=set(config['views']):
+        raise rules.Invalid('推荐合集不在合并视图清单中')
+    for key,entry in list(entries.items()):
+        if spec:=entry.get('member-selection'):
+            if entry['mode']!='view' or spec['section']!=entry['section']:
+                raise rules.Invalid('合集筛选须属于同一业务分区：'+key)
+            selected=[k for k in subscription_order(config,entries) if k in names
+                      and entries[k]['section']==spec['section']
+                      and k not in spec.get('exclude',())
+                      and (not spec.get('policies') or entries[k].get('policy-hint') in spec['policies'])
+                      and entries[k].get('policy-hint') not in spec.get('exclude-policies',())]
+            entries[key]=dict(entry,members=selected)
+    for e in entries.values():
+        if 'protect-site-scopes' in e and (type(e['protect-site-scopes']) is not bool
+                or e['id'] not in config['optional'] or e['mode']!='managed'
+                or e.get('policy-hint')!='reject' or not e.get('domain-remainder')):
+            raise rules.Invalid('网站范围保护只用于可选的扩展拦截：'+e['id'])
+        if e['mode']=='managed' and (not e.get('kinds') or not e.get('license') or
+                                    not set(e.get('feed-sources',()))<=set(e['sources'])):
+            raise rules.Invalid('自管来源缺少语法或许可：'+e['id'])
+        if 'reserve-domains-for' in e and (e['mode']!='managed' or
+                set(e.get('publish-kinds',e.get('kinds',())))-{'DOMAIN','DOMAIN-SUFFIX'} or
+                any(k not in entries or entries[k]['mode']!='compiled' or entries[k].get('merge-domains')
+                    for k in e['reserve-domains-for'])):
+            raise rules.Invalid('域名让位关系必须指向独立生成的专项：'+e['id'])
+        if 'exclude-tenant-roots' in e and (e['mode']!='managed' or
+                not set(e['exclude-tenant-roots'])<=SHARED_PARENT):
+            raise rules.Invalid('租户排除只能用于已知的共享基础设施：'+e['id'])
+        for field in ('tenant-scope-inputs','official-inputs'):
+            if inputs:=e.get(field):
+                if e['mode']!='managed' or any(r['source'] not in e['sources'] for r in inputs):
+                    raise rules.Invalid('托管范围和官方端点必须声明来源：'+e['id'])
+                if field=='official-inputs' and not e.get('official-hosts'):
+                    raise rules.Invalid('官方端点输入须声明独立补全：'+e['id'])
+        if owners:=e.get('confirm-additions-with'):
+            if (e['mode']!='managed' or set(e['kinds'])!={'DOMAIN','DOMAIN-SUFFIX'}
+                or any(k not in entries or entries[k]['mode']!='compiled' or entries[k].get('merge-domains')
+                       or entries[k]['policy-hint'] not in ('ai-cn','domestic') for k in owners)):
+                raise rules.Invalid('新增国内域名须有独立国内业务依据：'+e['id'])
+        if spec:=e.get('calibration'):
+            if (e['mode']!='managed' or not set(calibration_urls(spec))<=set(e['sources'])
+                    or not e.get('feed-sources') or ('reconcile' in e)
+                    or (spec['method']=='domain-ad-consensus' and (e.get('policy-hint')!='reject' or set(e['kinds'])!={'DOMAIN','DOMAIN-SUFFIX'}))
+                    or (spec['method']=='asn-allocation-consensus' and set(e['kinds'])!={'IP-ASN'})
+                    or (spec['method']=='allocation-and-routing' and (e.get('ip-match')!='allow-dns' or set(e['kinds'])!={'IP-CIDR','IP-CIDR6'}))):
+                raise rules.Invalid('交叉核对与订阅用途不符：'+e['id'])
+        if 'reconcile' in e and (e['mode']!='managed' or
+                e['reconcile'] not in ('ad-withdrawals','confirmed-withdrawals') or
+                (e['reconcile']=='ad-withdrawals' and e.get('policy-hint')!='reject')):
+            raise rules.Invalid('自动撤回不适用于该订阅：'+e['id'])
+        if set(e.get('flags',()))-{'no-resolve'}:
+            raise rules.Invalid('来源含未确认的 Loon 参数：'+e['id'])
+        if 'reverse-dns' in e:
+            rules.reverse_dns_rules(e)
+        if e['mode']=='compiled' and not any(e.get(field) for field in
+                ('include','extract','projection','cidr-source','merge-domains','refine','literal_ips','dns_required','expand')):
+            raise rules.Invalid('缺少生成来源：'+e['id'])
+        for recipe in e.get('extract',()):
+            if recipe['source'] not in e['sources']:
+                raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('check-sharing') and (e['mode']!='compiled'
+                    or recipe.get('format')!='exclusive-purpose-table' or recipe.get('part')=='shared'):
+                raise rules.Invalid('共享用途必须由产品的同一官方用途表核对：'+e['id'])
+        for part in e.get('projection',()):
+            if part['source'] not in e['sources'] or not (part.get('roots') or part.get('exact')):
+                raise rules.Invalid('筛选缺少来源或服务边界：'+e['id'])
+            if part.get('parent-domains-source') and (part['parent-domains-source'] not in e['sources']
+                    or not part.get('brand-label') or not part.get('prefix-label')):
+                raise rules.Invalid('地区产品缺少官方域名清单或产品标签：'+e['id'])
+        if merge:=e.get('merge-domains'):
+            if (e['mode']!='compiled' or e['id'] not in names or not merge.get('include')
+                or any(key not in entries or entries[key]['mode']!='managed'
+                       for key in merge['include']+merge.get('protect',[]))):
+                raise rules.Invalid('域名兜底必须使用已审核的输入和例外：'+e['id'])
+        if e['mode']=='view':
+            if (e['id'] not in config['views'] or not e['members']
+                or not set(e['members'])<=set(names)
+                or any(e['section']!=entries[k]['section']
+                       for k in e['members'])):
+                raise rules.Invalid('合并视图包含未归类成员：'+e['id'])
+    for key,e in entries.items():
+        if part:=e.get('refine'):
+            parent=entries.get(part['from'],{})
+            if parent.get('mode') not in ('compiled','managed') or parent.get('refine') or parent.get('merge-domains') or not (part.get('roots') or part.get('literal-ip-copy')):
+                raise rules.Invalid('产品没有可核对的上级来源：'+key)
+    for key in config['views']:
+        view=entries[key]
+        entries[key]=dict(view,sources=list(dict.fromkeys(
+            url for member in view['members'] for url in entries[member]['sources'])))
+    for section in config['sections']:
+        for ref in section.get('related',()):
+            if ref['id'] not in entries or entries[ref['id']]['section']==section['id'] or not ref['note']:
+                raise rules.Invalid('跨区引用无效：'+ref['id'])
+    members=[k for view in config['views'] for k in entries[view]['members']]
+    if len(members)!=len(set(members)):
+        raise rules.Invalid('合集之间含相同成员')
+    for spec in config.get('source-inventories',[]):
+        owners=set(spec['owners'])|set(spec.get('other-owners',{}).values())
+        if not spec['owners'] or not owners<=set(entries) or not any(
+                spec['source'] in e['sources'] for e in entries.values()):
+            raise rules.Invalid('来源核对缺少归属或出处：'+spec['id'])
+        if any(not reason.strip() or not row.startswith(('DOMAIN,','DOMAIN-SUFFIX,'))
+               for row,reason in spec.get('reviewed-outside',{}).items()):
+            raise rules.Invalid('来源范围排除须说明公开用途：'+spec['id'])
+    source_policy.validate(config,entries)
+    source_transport.validate(config)
+    source_expansion.validate(config,entries)
+    service_inventory.validate(entries)
+    return entries

@@ -1,0 +1,16 @@
+# name: tailscale-control-and-tailnet
+# priority: 014
+# section: network
+# description: Tailscale 控制面、公开中继与 Tailnet 域名
+# boundary: 保留专用控制域与 MagicDNS 后缀，并从官方公开 DERP 表读取中继主机。只取主机名，不采用节点 IP；CGNAT 和 ULA 仍由 011 按用途处理
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 3
+# source: https://raw.githubusercontent.com/oo226/egern-config/refs/heads/surge/Rules/Tailscale-Direct.list
+# source: https://tailscale.com/docs/reference/faq/firewall-ports
+# source: https://tailscale.com/docs/integrations/firewalls
+# source: https://controlplane.tailscale.com/derpmap/default
+
+DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,tailscale.net
+DOMAIN-SUFFIX,ts.net

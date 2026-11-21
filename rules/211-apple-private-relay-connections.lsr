@@ -1,0 +1,16 @@
+# name: apple-private-relay-connections
+# priority: 211
+# section: apple
+# description: Private Relay 的 mask 域和 Apple DNS 中继别名
+# boundary: 放在 iCloud 同步前；不包含整个 iCloud 或 Apple DNS 后缀
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 6
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list
+
+DOMAIN,mask-api.fe.apple-dns.net
+DOMAIN,mask-api.icloud.com
+DOMAIN,mask-t.apple-dns.net
+DOMAIN,mask.apple-dns.net
+DOMAIN-SUFFIX,mask-h2.icloud.com
+DOMAIN-SUFFIX,mask.icloud.com

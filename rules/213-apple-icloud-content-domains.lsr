@@ -1,0 +1,11 @@
+# name: apple-icloud-content-domains
+# priority: 213
+# section: apple
+# description: iCloud 通用内容域
+# boundary: 仅匹配 icloud-content.com 内容域，能直连再直连。大陆专域另管；部分上传、备份仍使用共用服务
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T12:26:59Z
+# rule-count: 1
+# source: https://support.apple.com/en-us/101555
+
+DOMAIN-SUFFIX,icloud-content.com

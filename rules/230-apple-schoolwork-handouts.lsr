@@ -1,0 +1,13 @@
+# name: apple-schoolwork-handouts
+# priority: 230
+# section: apple
+# description: Apple Schoolwork 讲义与资料交付
+# boundary: 官方明确归属 Schoolwork Handout 的主机；班级名册和设备验证另走共享服务
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 3
+# source: https://support.apple.com/en-us/101555
+
+DOMAIN,pg-bootstrap.itunes.apple.com
+DOMAIN,cls-iosclient.itunes.apple.com
+DOMAIN,cls-ingest.itunes.apple.com

@@ -1,22 +1,22 @@
 import json
 import unittest
+from checks.source_fixtures import repository_rows
 
-from maintain import Invalid, read_rules
-import library
-from library import compact, ordered_route, decorate, merge_view
+from loon_rules.rules import Invalid, read_rules
+from loon_rules.generation import pipeline as library
+from loon_rules.generation.pipeline import compact, ordered_route, decorate, merge_view
 
-def recipe(number, index=0):
-    entry=next(e for e in json.loads((library.ROOT/'catalog.json').read_text())['entries']
-               if e['priority']==number)
+def recipe(name, index=0):
+    entry=next(e for e in json.loads((library.ROOT/'config/catalog.json').read_text())['entries']
+               if e['id']==name)
     return entry['extract'][index]
 
 
 class LibraryChecks(unittest.TestCase):
     def test_current_product_and_region_anchors(self):
-        c=json.loads((library.ROOT/'catalog.json').read_text())
+        c=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(c)
-        data={k:read_rules((library.ROOT/'rules'/library.rule_filename(e)).read_text())
-              for k,e in entries.items()}
+        data=repository_rows(library.ROOT,c)
         order=library.route_order(c,entries)
         for host,wanted in {
             'news.apple.com':'apple-news-and-sports',
@@ -39,7 +39,7 @@ class LibraryChecks(unittest.TestCase):
                 self.assertEqual(ordered_route(host,order,data),wanted)
 
     def test_ecosystem_bundles_keep_other_views_in_charge_of_ai_and_video(self):
-        c=json.loads((library.ROOT/'catalog.json').read_text())
+        c=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(c)
         self.assertIn('google-all',c['views'])
         self.assertIn('microsoft-all',c['views'])
@@ -81,7 +81,7 @@ class LibraryChecks(unittest.TestCase):
                 ('guzzoni.apple.com','Siri and dictation requests'),
                 ('unlisted.shared.example','Private Cloud Compute'),
             ])+'</table>'
-        self.assertEqual(library.extract_rows(recipe(46),body),{
+        self.assertEqual(library.extract_rows(recipe('apple-intelligence-relays'),body),{
             'DOMAIN,apple-relay.apple.com','DOMAIN,cp4.cloudflare.com'})
 
     def test_timestamps_track_rule_body_and_not_build_time(self):
@@ -95,12 +95,14 @@ class LibraryChecks(unittest.TestCase):
         self.assertIn('# updated-at: '+then,g)
 
     def test_maas_roles_are_specific_to_published_regions(self):
-        body=('https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/v1 '
-              'https://trial.eu-central-1.maas.aliyuncs.com/compat '
-              'https://dashscope-intl.aliyuncs.com '
-              'https://other.maas.aliyuncs.com https://x.cn-beijing.maas.aliyuncs.com.test')
-        self.assertEqual(library.extract_rows(recipe(84),body),{'DOMAIN-SUFFIX,cn-beijing.maas.aliyuncs.com'})
-        self.assertEqual(library.extract_rows(recipe(85),body),
+        body=('<h2 id="api"></h2><table><tr><td>Region</td><td>OpenAI-compatible</td>'
+              '<td>Anthropic-compatible</td></tr>'
+              '<tr><td>China (Beijing)</td><td>https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/v1</td>'
+              '<td>https://trial.cn-beijing.maas.aliyuncs.com/v1</td></tr>'
+              '<tr><td>Germany (Frankfurt)</td><td>https://trial.eu-central-1.maas.aliyuncs.com/compat</td>'
+              '<td>https://dashscope-intl.aliyuncs.com/v1</td></tr></table>')
+        self.assertEqual(library.extract_rows(recipe('qwen-mainland'),body),{'DOMAIN-SUFFIX,cn-beijing.maas.aliyuncs.com'})
+        self.assertEqual(library.extract_rows(recipe('qwen-international'),body),
             {'DOMAIN,dashscope-intl.aliyuncs.com','DOMAIN-SUFFIX,eu-central-1.maas.aliyuncs.com'})
 
     def test_combined_view_only_uses_published_members(self):
@@ -135,28 +137,28 @@ class LibraryChecks(unittest.TestCase):
         self.assertEqual(library.ordered_ip_route('169.254.0.2',[lan],data,literal=True),lan)
 
     def test_overseas_coverage_and_ip_check_hosts_use_their_own_rules(self):
-        config=json.loads((library.ROOT/'catalog.json').read_text())
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         order=library.route_order(config,entries)
         data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
               for k in order}
         for host,expected in {
-            'www.okx.com':'overseas-access-domains',
-            'www.binance.info':'overseas-access-domains',
-            'en.wikipedia.org':'overseas-access-domains',
+            'www.okx.com':'okx-platform',
+            'www.binance.info':'binance-platform',
+            'en.wikipedia.org':'overseas-sites-extra',
             '2026.ip138.com':'ip-egress-checks',
             'my.ip.cn':'ip-egress-checks',
             'myip.ipip.net':'ip-egress-checks',
-            'www.ip138.com':'mainland-domain-families',
-            'www.ipip.net':'mainland-domain-families',
-            'www.baidu.com':'mainland-domain-families',
+            'www.ip138.com':'mainland-domains',
+            'www.ipip.net':'mainland-domains',
+            'www.baidu.com':'mainland-domains',
             'chatgpt.com':'chatgpt-connections',
         }.items():
             with self.subTest(host=host):
                 self.assertEqual(library.ordered_route(host,order,data),expected)
 
     def test_ad_rules_do_not_block_app_configuration_or_turnstile(self):
-        config=json.loads((library.ROOT/'catalog.json').read_text())
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         lists=('apple-and-ai-privacy-exceptions','general-ad-and-tracking','extended-ad-and-tracking')
         data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
@@ -167,7 +169,7 @@ class LibraryChecks(unittest.TestCase):
                 self.assertIsNone(library.ordered_route(host,lists,data))
 
     def test_verified_hosts_route_by_service_without_enabling_compatibility_lists(self):
-        config=json.loads((library.ROOT/'catalog.json').read_text())
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         order=library.route_order(config,entries)
         data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
@@ -178,21 +180,21 @@ class LibraryChecks(unittest.TestCase):
             'updates-http.cdn-apple.com.akadns.net':'apple-update-downloads',
             'updates-http.g.aaplimg.com':'apple-update-downloads',
             'mesu.g.aaplimg.com':'apple-update-control',
-            'www.liblib.art':'ai-cn',
-            'openapi.liblibai.cloud':'ai-cn',
-            'qwen.ai':'ai-cn-international',
-            'z.ai':'ai-cn-international',
-            'hima.auto':'mainland-domain-families',
-            'www.hima.auto':'mainland-domain-families',
-            'steamcommunity-a.akamaihd.net':'steam-global-platform',
-            'steambroadcast.akamaized.net':'steam-global-platform',
+            'www.liblib.art':'liblib-mainland',
+            'openapi.liblibai.cloud':'liblib-mainland',
+            'qwen.ai':'qwen-international',
+            'z.ai':'zhipu-international',
+            'hima.auto':'mainland-domains',
+            'www.hima.auto':'mainland-domains',
+            'steamcommunity-a.akamaihd.net':'steam-international-platform',
+            'steambroadcast.akamaized.net':'steam-international-platform',
             'dl.steam.clngaa.com':'steam-mainland-downloads',
         }.items():
             with self.subTest(host=host):
                 self.assertEqual(library.ordered_route(host,order,data),expected)
         for host,owner in [
-            ('unrelated.akamaized.net','steam-global-platform'),
-            ('unused.liblibai.cloud','ai-cn'),
+            ('unrelated.akamaized.net','steam-international-platform'),
+            ('unused.liblibai.cloud','ai-cn-all'),
             ('unrelated.g.aaplimg.com','apple-update-downloads'),
         ]:
             with self.subTest(host=host):
@@ -209,21 +211,21 @@ class LibraryChecks(unittest.TestCase):
         self.assertEqual(library.merge_domain_sources(entry,data),['DOMAIN-SUFFIX,restricted.example'])
 
     def test_routine_fallbacks_leave_specialty_domains_with_their_owners(self):
-        config=json.loads((library.ROOT/'catalog.json').read_text())
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         order=library.route_order(config,entries,config.get('recommended-views',()))
-        routine=[k for k in order if entries[k]['priority']>=180]
-        self.assertEqual(routine,['other-overseas-media','overseas-access-domains','mainland-routing'])
+        routine=[k for k in order if entries[k]['section'] in ('overseas-fallback','mainland-fallback')]
+        self.assertEqual(routine,['overseas-media-extra','overseas-sites-extra','mainland-routing-all'])
         data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
               for k in routine}
         media,web,mainland=routine
         self.assertEqual(ordered_route('hulu.com',routine,data),media)
-        self.assertEqual(ordered_route('www.okx.com',routine,data),web)
+        self.assertIsNone(ordered_route('www.okx.com',routine,data))
         self.assertEqual(ordered_route('www.hima.auto',routine,data),mainland)
         for host in ('claude.ai','anthropic.com','chatgpt.com','www.netflix.com'):
             self.assertIsNone(ordered_route(host,[media,web],data),host)
         self.assertIsNone(ordered_route('hulu.com',[web],data))
-        member_names=('mainland-domain-families','mainland-allocated-networks','mainland-geoip-fallback')
+        member_names=('mainland-domains','mainland-networks','mainland-geoip')
         expected=[row for k in member_names for row in
                   read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())]
         self.assertEqual(data[mainland],expected)
@@ -242,13 +244,12 @@ class LibraryChecks(unittest.TestCase):
         self.assertEqual(library.derive_domain_merges(config,entries,data),
                          {'fallback':['DOMAIN-SUFFIX,product.example']})
 
-    def test_router_management_hosts_have_one_owner_with_either_mainland_feed(self):
-        config=json.loads((library.ROOT/'catalog.json').read_text())
+    def test_router_management_hosts_are_excluded_from_mainland_outputs_and_comparison_inputs(self):
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         lan='local-links-and-addresses'
-        for fallback in ('mainland-domain-families','mainland-service-domains'):
-            data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
-                  for k in (lan,fallback)}
+        data=repository_rows(library.ROOT,config)
+        for fallback in ('mainland-domains','source-xkww3n-mainland'):
             for host in ('miwifi.com','www.miwifi.com','router.miwifi.com'):
                 self.assertEqual(ordered_route(host,[lan],data),lan,host)
                 self.assertIsNone(ordered_route(host,[fallback],data),host)
@@ -299,13 +300,15 @@ class LibraryChecks(unittest.TestCase):
         self.assertEqual(library.refresh_reviewed_feed(entry,last,{}),(last,{'state':'unavailable'}))
 
     def test_ota_payload_hosts_do_not_include_catalog_or_generic_cdn(self):
-        data=recipe(55)
-        def hits(host):
+        data=recipe('apple-update-downloads')
+        def hits(host,purpose='Software update downloads'):
             doc=''.join(f'<h2 id="{sec}"></h2><table><tr><td>{host}</td><td>443</td>'
-                '<td>TCP</td><td>OS</td><td>macOS updates</td></tr></table>' for sec in data['sections'])
+                f'<td>TCP</td><td>OS</td><td>{purpose}</td></tr></table>' for sec in data['sections'])
             return bool(library.extract_rows(data,doc))
-        for host in ('swcdn.apple.com','appldnld.apple.com.akadns.net','updates.cdn-apple.com'):
+        for host in ('swcdn.apple.com','appldnld.apple.com','updates.cdn-apple.com','new-payload.apple.com'):
             self.assertTrue(hits(host),host)
-        for host in ('mesu.apple.com','swscan.apple.com','not-swcdn.apple.com','cdn-apple.com',
+        for host in ('cdn-apple.com','apple.com',
                      'swcdn.apple.com.unrelated.invalid'):
             self.assertFalse(hits(host),host)
+        for host in ('mesu.apple.com','swscan.apple.com','not-swcdn.apple.com'):
+            self.assertFalse(hits(host,'Software update catalog'),host)

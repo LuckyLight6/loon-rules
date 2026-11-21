@@ -1,0 +1,23 @@
+# name: steam-international-platform
+# priority: 410
+# section: games
+# description: Steam 国际商店、社区、联机和下载
+# boundary: 国内下载镜像由 610 处理。社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-20T01:01:42Z
+# rule-count: 12
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# source: https://store.steampowered.com/
+
+DOMAIN,steamcommunity-a.akamaihd.net
+DOMAIN,steambroadcast.akamaized.net
+DOMAIN-SUFFIX,dota2.com
+DOMAIN-SUFFIX,playartifact.com
+DOMAIN-SUFFIX,s.team
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steam.tv
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamdeck.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,valvesoftware.com

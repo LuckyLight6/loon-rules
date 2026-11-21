@@ -1,0 +1,11 @@
+# name: npmmirror-registry
+# priority: 533
+# section: development
+# description: npmmirror 国内镜像
+# boundary: npm 镜像与二进制镜像；不会替 npm 客户端修改源
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list
+
+DOMAIN-SUFFIX,npmmirror.com

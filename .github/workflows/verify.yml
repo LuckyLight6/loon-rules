@@ -1,5 +1,9 @@
 name: Check subscription changes
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -10,6 +14,11 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+      - name: Install the maintenance package
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --editable .
+          echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
       - run: python3 -B -m unittest discover -s checks
       - run: python3 -B maintain.py --verify-files
       - run: python3 -B scoped_dns.py --check

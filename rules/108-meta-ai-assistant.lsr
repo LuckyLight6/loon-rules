@@ -1,0 +1,11 @@
+# name: meta-ai-assistant
+# priority: 108
+# section: ai
+# description: Meta AI 助手的独立网站
+# boundary: 只匹配 meta.ai；不扩大至 Muse、Facebook、Instagram、WhatsApp 或其共享基础设施
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 1
+# source: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/
+
+DOMAIN-SUFFIX,meta.ai

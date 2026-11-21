@@ -1,21 +1,50 @@
-# 规则来源与许可
+# 来源与许可
 
-想知道一条规则从哪里来，先看文件开头的 `source`。各组用到的资料也列在 [catalog.json](catalog.json)。有些来源用来生成规则，有些只用来确认域名或网段的用途。订阅地址指向本仓的规则，不会在客户端运行上游的插件或脚本。
+生成器代码、测试和本仓原创文档使用 [MIT License](LICENSE)。上游规则、第三方数据及其衍生成品保留各自许可；维护代码的许可不会替换规则来源的许可。合集也需保留其成员的来源声明。
 
-| 来源 | 许可文本 | 用途 |
+每份 `.lsr` 的 `source` 列出使用的公开资料；[分类声明](config/catalog.json)记录具体读取和筛选条件。动态发现文档、公开版本和采用依据在 [维护状态](data/maintenance-state.json)中。部分资料只用于核对用途，并未导入整份规则。订阅本仓规则不会运行上游插件或脚本。
+
+## 社区规则
+
+| 项目 | 用途 | 许可原文 |
 |---|---|---|
-| [o-ocn / loon-rules](https://github.com/o-ocn/loon-rules) | [GPL-2.0](licenses/o-ocn--loon-rules.txt) | 从 Loon 规则中筛选通讯、游戏、国内平台、Google、OneDrive 和 TestFlight 等服务；也用于整理 Drive 规则。 |
-| [Repcz / Tool](https://github.com/Repcz/Tool) | [MIT](licenses/Repcz--Tool.txt) | 从专项表核对流媒体、网络和 Apple 条目。海外与 GFW 名单筛成域名供 `185` 合并；广告、Microsoft 和国内网段保留本仓审核、去重后的版本。 |
-| [blackmatrix7 / ios_rule_script](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon) | [GPL-2.0](licenses/blackmatrix7--ios_rule_script.txt) | 核对局域网、音乐、直播和微信专用域，也用于 Private Relay 专项。 |
-| [SukkaW / Surge](https://github.com/SukkaW/Surge) | [AGPL-3.0](licenses/SukkaW--Surge.txt) | 海外媒体兜底只取明确域名和后缀，不导入宽泛的关键字、UA 或进程规则。 |
-| [MetaCubeX / meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) | [GPL-3.0](licenses/MetaCubeX--meta-rules-dat.txt) | 核对 Apple 大陆下载别名、证书、更新、Copilot 和部分 AI 服务。 |
-| [xkww3n / Rules](https://github.com/xkww3n/Rules) | [MIT](licenses/xkww3n--Rules.txt) | 用于联网探测、保留地址、Apple 媒体和智能服务。通用站点、广告及国内 IP 备选保留审核后的版本。 |
-| [VPSDance / ai-proxy-rules](https://github.com/VPSDance/ai-proxy-rules) | [MIT](licenses/VPSDance--ai-proxy-rules.txt) | 海外 AI 专项；合集直接合并这些专项，不再维护另一份相同数据。 |
-| [erwanjun / surge-claude-rules](https://github.com/erwanjun/surge-claude-rules) | [MIT](licenses/erwanjun--surge-claude-rules.txt) | 核对 Claude 的匹配范围；海外 AI 合集使用同一份 Claude 规则。 |
-| [Kianuni / AppleFlow](https://github.com/Kianuni/AppleFlow) | [MIT](licenses/Kianuni--AppleFlow.txt) | 只用 Siri 规则；不加载插件，也不改 ChatGPT 的分流。 |
+| [o-ocn / loon-rules](https://github.com/o-ocn/loon-rules) | 筛选通讯、游戏、国内平台、Google、OneDrive、TestFlight 与 Drive 范围 | [GPL-2.0](licenses/o-ocn--loon-rules.txt) |
+| [Repcz / Tool](https://github.com/Repcz/Tool) | Apple、联网、媒体、广告、Microsoft、国内域名与网段；海外和 GFW 输入只取核对后的域名 | [MIT](licenses/Repcz--Tool.txt) |
+| [blackmatrix7 / ios_rule_script](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon) | 局域网、音乐、直播、微信与 iCloud Private Relay 等用途核对 | [GPL-2.0](licenses/blackmatrix7--ios_rule_script.txt) |
+| [SukkaW / Surge](https://github.com/SukkaW/Surge) | 海外影音的精确域名和后缀，不照搬关键字、User-Agent 或进程匹配 | [AGPL-3.0](licenses/SukkaW--Surge.txt) |
+| [MetaCubeX / meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) | Apple 别名、证书、更新，以及 AI、开发、通讯、游戏、媒体等产品范围 | [GPL-3.0](licenses/MetaCubeX--meta-rules-dat.txt) |
+| [xkww3n / Rules](https://github.com/xkww3n/Rules) | 联网、保留地址、Apple 媒体与智能服务、广告及国内外范围比对 | [MIT](licenses/xkww3n--Rules.txt) |
+| [VPSDance / ai-proxy-rules](https://github.com/VPSDance/ai-proxy-rules) | 海外 AI 产品；合集由本仓细分生成 | [MIT](licenses/VPSDance--ai-proxy-rules.txt) |
+| [erwanjun / surge-claude-rules](https://github.com/erwanjun/surge-claude-rules) | Claude 产品范围核对 | [MIT](licenses/erwanjun--surge-claude-rules.txt) |
+| [Kianuni / AppleFlow](https://github.com/Kianuni/AppleFlow) | 参考 Siri 规则，不加载插件 | [MIT](licenses/Kianuni--AppleFlow.txt) |
 
-014 读取 [DDNS Updater 的 HTTP 出口查询服务清单](https://github.com/qdm12/ddns-updater/blob/master/README.md)、[AWS CLI 的公网地址示例](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-sg.html)和 [IPIP 的查询说明](https://www.ipip.net/myip.html)，只提取服务地址，不复制说明文字。
+## 官方资料与公开产品数据
 
-Apple、OpenAI、GitHub、Telegram、百炼和 TokenHub 等官方资料用来核对端点，不转载原文。没有明确转载许可的来源只作为核对依据，不复制整份规则。各上游内容仍按各自许可使用。
+以下资料用于读取端点、字段和用途，保存必要的公开主机及采用依据，不转载整篇说明、客户端实现或抓取原文。文件头与分类声明包含逐份实际来源。
 
-扩展广告表用 [EasyList、EasyPrivacy](https://easylist.to/) 和 [AdGuard DNS](https://github.com/AdguardTeam/AdGuardSDNSFilter) 核对上游拦截范围，不转载浏览器过滤规则；[EasyList 许可](https://easylist.to/pages/licence.html) · [AdGuard DNS 许可](https://github.com/AdguardTeam/AdGuardSDNSFilter/blob/master/LICENSE)。国内网段的新增范围核对 [APNIC 分配统计](https://ftp.apnic.net/stats/apnic/)和[中国运营商 BGP 数据](https://github.com/gaoyifan/china-operator-ip)。两者分别表示分配地和路由归属，不用于判断个人位置。
+| 资料 | 读取范围 |
+|---|---|
+| [Apple 企业网络表](https://support.apple.com/en-us/101555)、[iTunes 公开配置](https://init.itunes.apple.com/bag.xml) | 服务用途，以及商店、音乐和视频 API 字段；不把统计或历史链接一起当作接口 |
+| [Apple 软件目录](https://gdmf.apple.com/v2/pmv)、[定位配置](https://configuration.ls.apple.com/config/defaults?os=ios&os_version=16.7.11&hardware=iPhone10%2C1) | 从公开版本与机型组合读取定位、瓦片及地区资源主机。参数格式参考[公开研究](https://arxiv.org/html/2610.21597)，数据来自 Apple；不读取个人设备或位置 |
+| [Apple IDS 公开配置](https://init.ess.apple.com/WebObjects/VCInit.woa/wa/getBag?ix=3)、[OpenBubbles 常量](https://github.com/OpenBubbles/rustpush/blob/master/src/util.rs) | 数字索引请求格式及认证、注册、查询字段；不保存证书、签名、开关，也不进行身份或消息操作 |
+| [Google 地区域名](https://www.google.com/supported_domains)、[Android 网络用途](https://support.google.com/work/android/answer/10513641)、[API 目录](https://www.googleapis.com/discovery/v1/apis)、[官方客户端文档](https://github.com/googleapis/google-api-python-client/tree/main/googleapiclient/discovery_cache/documents) | 地区登录模板与产品 API；[OAuth 文档](https://developers.google.com/identity/protocols/oauth2/web-server)只取账户用途链接 |
+| [Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges)、[Azure CLI 定义](https://github.com/Azure/azure-cli/blob/dev/src/azure-cli-core/azure/cli/core/cloud.py)、[Azure 域名](https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains) | 办公、通信和控制端点，区分平台与托管租户；只解析静态定义，不运行源码 |
+| [OpenAI 语音地址](https://openai.com/chatgpt-voice.json)、[GitHub Copilot](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)、[Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse) | 语音公网地址、专用 API、实时连接与产品入口；共用认证分别处理 |
+| [Cursor 登录](https://cursor.com/help/troubleshooting/sign-in-domains)、[网络清单](https://cursor.com/docs/enterprise/network-configuration)、[xAI 登录](https://docs.x.ai/x-subscription/sign-in) | 共用账号、产品接口、Grok 内容与更新用途；相关 SDK 只读取静态默认端点 |
+| [硅基流动国内](https://docs.siliconflow.cn/docs/userguide/quickstart)、[国际指南](https://docs.siliconflow.com/en/userguide/quickstart)、[Liblib API](https://www.liblib.art/apis/workflow) | 对应地区的 API 与控制台；产品页面只跟随指定资源和用途示例，不执行脚本 |
+| [GitHub Meta API](https://api.github.com/meta)、[Docker](https://docs.docker.com/desktop/enterprise/allow-list/)、[VS Code](https://code.visualstudio.com/docs/setup/network) | 网站、包源、构建、登录、分发、更新与同步用途；不采用整家共享云或 GitHub 大段 IP |
+| [Cargo 配置](https://index.crates.io/config.json)、[PyPI](https://pypi.org/pypi/pip/json)、[npm](https://registry.npmjs.org/npm/latest) | 服务与文件下载字段、公开版本依据；不复制包内容、作者资料、摘要或签名 |
+| [JetBrains 网络表](https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json)、[Node.js](https://nodejs.org/en)、[ACP](https://agentclientprotocol.com/) | AI 地区注释、IDE 用途及独立产品身份，不复制安装程序或代理实现 |
+| [Signal](https://support.signal.org/hc/en-us/articles/360007320291-Firewall-and-Internet-settings)、[Slack](https://slack.com/help/articles/360001603387-Manage-Slack-connection-issues)、[Tailscale DERP](https://controlplane.tailscale.com/derpmap/default) | 公开客户端与实时主机、中继名称；不读取用户工作区或 Tailnet 配置 |
+| [Atlassian](https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/)、[Notion](https://www.notion.com/help/allowlist-ip)、[Ubisoft](https://www.ubisoft.com/legal/documents/termsofuse/en-US) | 自营、产品与共用范围；合作方、出站 IP、公共租户与自定义域不直接归入 |
+| [Link](https://www.link.com/)、[Venmo](https://venmo.com/)、[Xoom](https://www.xoom.com/)、[Braintree](https://developer.paypal.com/braintree/docs/reference/general/braintree-ip-addresses) | 产品身份与生产、沙箱域名，不发起账户或交易请求 |
+| [Binance REST](https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)、[WebSocket](https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md)、[Gemini Exchange](https://developer.gemini.com/rest) | 基础端点与服务器字段，不转载交易示例 |
+| [DDNS Updater](https://github.com/qdm12/ddns-updater/blob/master/README.md)、[AWS CLI 示例](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-sg.html)、[IPIP](https://www.ipip.net/myip.html) | 公网出口查询服务地址，不采集使用者的回显 IP |
+| [新浪新闻](https://news.sina.com.cn/)及产品官方身份资料 | 核对跨产品图片或独立站点用途；普通导航和第三方文章不作为端点清单 |
+
+## 过滤、网段与域名边界数据
+
+- [EasyList、EasyPrivacy](https://easylist.to/)与 [AdGuard DNS](https://github.com/AdguardTeam/AdGuardSDNSFilter)用于核对整域拦截及例外，不转载浏览器过滤规则。[EasyList 许可](https://easylist.to/pages/licence.html) · [AdGuard DNS 许可](https://github.com/AdguardTeam/AdGuardSDNSFilter/blob/master/LICENSE)
+- [APNIC 分配统计](https://ftp.apnic.net/stats/apnic/)、[官方备用入口](https://rsync.apnic.net/stats/apnic/)与[中国运营商 BGP 数据](https://github.com/gaoyifan/china-operator-ip)用于地址范围核对；登记地与路由归属不能证明服务器所在地
+- [Public Suffix List](https://publicsuffix.org/list/)用于识别注册域与共享托管边界。原始数据保存在 [data/public-suffix-list.dat](data/public-suffix-list.dat)，保留源声明，按 [MPL-2.0](licenses/Public-Suffix-List--MPL-2.0.txt)使用
+- CNAME 资料来自 [Google Public DNS](https://developers.google.com/speed/public-dns/docs/doh/json)和 [Cloudflare DNS](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/)。生成器只查询已公开服务名称，保存采用关系，不发布解析 IP 或响应原文；这些查询不设置使用者设备的 DNS

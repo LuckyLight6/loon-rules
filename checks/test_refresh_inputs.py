@@ -1,8 +1,26 @@
+from checks.source_fixtures import prepare_workspace
 import unittest
-import library as lib
-from maintain import Invalid
+from loon_rules.generation import pipeline as lib
+from loon_rules.rules import Invalid
+from loon_rules.sources.inputs import extract_rows
+from checks.source_fixtures import PublicSourceExamples
 
 class RefreshInputs(unittest.TestCase):
+    def test_compaction_removes_only_hosts_covered_by_the_same_simple_wildcard(self):
+        rows=['DOMAIN-WILDCARD,*.vendor.example','DOMAIN,vendor.example',
+              'DOMAIN,auth.vendor.example','DOMAIN-SUFFIX,assets.vendor.example']
+        self.assertEqual(lib.compact(rows),['DOMAIN-WILDCARD,*.vendor.example','DOMAIN,vendor.example'])
+
+    def test_active_official_endpoints_do_not_start_a_community_withdrawal_timer(self):
+        entry={'id':'company','mode':'managed','sources':['feed'],'kinds':['DOMAIN-SUFFIX','DOMAIN'],
+               'flags':[],'official-hosts':True,'reconcile':'confirmed-withdrawals'}
+        rows=['DOMAIN,service'+str(i)+'.vendor.example' for i in range(24)]
+        auth='DOMAIN,accounts.vendor.example'
+        result,state=lib.refresh_reviewed_feed(entry,rows+[auth],{'feed':'\n'.join(rows)},
+            official=['accounts.vendor.example'],revision='published snapshot',epoch=100)
+        self.assertIn(auth,result)
+        self.assertNotIn('withdrawal-observation',state)
+
     def test_database_is_not_seeded_from_yesterdays_subscription(self):
         entry={'id':'files','include':['DOMAIN,keep.example']}
         self.assertEqual(lib.compile_entry(entry,{}),['DOMAIN,keep.example'])
@@ -12,6 +30,16 @@ class RefreshInputs(unittest.TestCase):
         with self.assertRaisesRegex(Invalid,'files.example'):
             lib.guard_coverage('files',before,['DOMAIN,one.files.example','DOMAIN,b.example'])
         lib.guard_coverage('files',['DOMAIN,one.files.example'],before)
+
+    def test_published_apex_and_subdomain_wildcard_together_preserve_a_suffix_scope(self):
+        before=['DOMAIN-SUFFIX,meetings.vendor.example']
+        published=['DOMAIN,meetings.vendor.example','DOMAIN-WILDCARD,*.meetings.vendor.example']
+        self.assertEqual(lib.uncovered_count(before,published),0)
+        lib.guard_coverage('meetings',before,published)
+        for partial in ([published[0]],[published[1]],
+                        ['DOMAIN,meetings.vendor.example','DOMAIN-WILDCARD,*.other.vendor.example']):
+            with self.subTest(partial=partial),self.assertRaises(Invalid):
+                lib.guard_coverage('meetings',before,partial)
 
     def test_new_official_exact_host_needs_both_purpose_and_product(self):
         recipe={'source':'vendor','format':'host-table','sections':['service'],
@@ -30,7 +58,7 @@ class RefreshInputs(unittest.TestCase):
             'IP-CIDR,10.0.0.0/8','IP-CIDR,169.254.0.0/16,no-resolve'])
 
     def test_new_official_endpoint_cannot_assign_itself_by_just_appearing_in_a_table(self):
-        from endpoint_contracts import resolve_additions
+        from loon_rules.generation.contracts import resolve_additions
         recipe={'format':'host-table','source':'doc','sections':['service'],
                 'select':[{'role':['Authentication'],'roots':['vendor.example']}]}
         entry={'id':'account','extract':[recipe]}
@@ -48,7 +76,7 @@ class RefreshInputs(unittest.TestCase):
                 resolve_additions([contract],{'account':entry},doc(host,role))
 
     def test_push_addresses_only_come_from_both_labelled_lists(self):
-        from rule_inputs import extract_rows
+        from loon_rules.sources.inputs import extract_rows
         recipe={'format':'labelled-networks','lists':{
             'IPv4':{'family':4,'parents':['17.0.0.0/8'],'min-prefix':16},
             'IPv6':{'family':6,'parents':['2620:149::/32'],'min-prefix':48}}}
@@ -58,7 +86,7 @@ class RefreshInputs(unittest.TestCase):
             with self.assertRaises(Invalid): extract_rows(recipe,broken)
 
     def test_service_endpoint_table_respects_section_id_row_and_address_column(self):
-        from rule_inputs import extract_rows
+        from loon_rules.sources.inputs import extract_rows
         src={'format':'endpoint-sets','sections':['mail'],'sets':[10],'roots':['mx.example']}
         doc='<h2 id="mail">Mail</h2><table>'+''.join(
             f'<tr><td>{n}</td><td>Required</td><td>Yes</td><td>{addr}</td><td>443</td></tr>'
@@ -80,6 +108,28 @@ class RefreshInputs(unittest.TestCase):
         for broken in ([old[0],old[1],old[2]], [old[0],old[1],old[3]], new[1:]):
             with self.assertRaises(Invalid): lib.guard_coverage('push',old,broken,official_networks=True)
 
+    def test_official_voice_json_accepts_only_public_addresses_of_the_declared_family(self):
+        import json
+        from loon_rules.sources.inputs import extract_rows
+        recipe={'format':'ip-prefix-json','fields':{'ipv4Prefix':4,'ipv6Prefix':6}}
+        def doc(rows):return json.dumps({'creationTime':'2026-11-16T00:00:00Z','prefixes':rows})
+        valid=[{'ipv4Prefix':'102.37.57.54/32'},{'ipv6Prefix':'2606:4700::1/128'}]
+        self.assertEqual(extract_rows(recipe,doc(valid)),{
+            'IP-CIDR,102.37.57.54/32,no-resolve','IP-CIDR6,2606:4700::1/128,no-resolve'})
+        for records in ([],[{'ipv4Prefix':'10.0.0.1/32'}],
+                        [{'ipv4Prefix':'102.37.57.0/24'}],
+                        [{'ipv4Prefix':'2606:4700::1/128'}],
+                        [{'otherPrefix':'102.37.57.54/32'}]):
+            with self.subTest(records=records),self.assertRaises(Invalid):
+                extract_rows(recipe,doc(records))
+
+    def test_a_new_official_address_family_can_be_added_without_losing_domain_coverage(self):
+        old=['DOMAIN,api.example'];new=old+['IP-CIDR,102.37.57.54/32,no-resolve']
+        lib.guard_coverage('voice',old,new,official_networks=True)
+        lib.guard_coverage('voice',new,new+['IP-CIDR6,2606:4700::1/128,no-resolve'],official_networks=True)
+        with self.assertRaises(Invalid):lib.guard_coverage('voice',new,old,official_networks=True)
+        with self.assertRaises(Invalid):lib.guard_coverage('voice',old,new[1:],official_networks=True)
+
     def test_both_blocklists_protect_functional_hosts_even_when_used_alone(self):
         entry={'id':'ads','kinds':['DOMAIN','DOMAIN-SUFFIX'],'flags':[],'sources':['feed']}
         trusted={'login.vendor.example'}
@@ -88,7 +138,127 @@ class RefreshInputs(unittest.TestCase):
             kept,_=lib.refresh_reviewed_feed(entry,old,downloaded,protected=trusted)
             self.assertEqual(kept,['DOMAIN,ads.other.example'])
 
-class ScheduledRefresh(unittest.TestCase):
+class ScheduledRefresh(PublicSourceExamples):
+    def test_new_sdk_endpoint_is_protected_from_ads_without_a_fixed_allowlist(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from contextlib import redirect_stdout
+        from io import StringIO
+        import json
+        feed='https://public.example/product';sdk='https://public.example/sdk';ad='https://public.example/ads'
+        recipe={'format':'python-sdk-endpoints','classes':['Client'],'fields':['base_url']}
+        product={'id':'product','mode':'managed','priority':30,'section':'service','description':'产品',
+                 'boundary':'API','sources':[feed,sdk],'feed-sources':[feed],'kinds':['DOMAIN-SUFFIX'],
+                 'flags':[],'license':'MIT','discovery':{'inputs':[{'source':sdk,'family':'vendor','authority':True,'recipe':recipe}]}}
+        ads={'id':'ads','mode':'managed','priority':20,'section':'privacy','description':'广告','boundary':'广告',
+             'sources':[ad],'kinds':['DOMAIN'],'flags':[],'license':'MIT','policy-hint':'reject'}
+        cfg={'entries':[ads,product],'detailed':['product'],'general':['ads'],'alternatives':[],
+             'optional':[],'views':[],'critical':{'old.vendor.example':['product']},'shared-negatives':[],
+             'sections':[{'id':'privacy','title':'隐私','from':20,'through':20},{'id':'service','title':'服务','from':30,'through':30}]}
+        ad_rows=['DOMAIN,new-api.vendor.example','DOMAIN,ad.other.example']
+        downloads={ad:'\n'.join(ad_rows),feed:'DOMAIN-SUFFIX,old.vendor.example',
+                   sdk:'class Client:\n    def __init__(self):\n        base_url = "https://new-api.vendor.example/v1"\n'}
+        with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
+            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            (root/'config/endpoint-contracts.json').write_text('[]')
+            (root/'docs/rules.md').write_text(lib.render_index(cfg,{e['id']:e for e in cfg['entries']}))
+            for e,rows in [(product,['DOMAIN-SUFFIX,old.vendor.example']),(ads,ad_rows)]:
+                (root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2020-01-01T00:00:00Z'))
+            with patch.object(lib.transport,'download',side_effect=downloads.__getitem__):
+                lib.run()
+                lib.run()
+            self.assertEqual(lib.rules.read_rules((root/'rules'/lib.rule_filename(ads)).read_text()),['DOMAIN,ad.other.example'])
+            product_rows=lib.rules.read_rules((root/'rules'/lib.rule_filename(product)).read_text())
+            self.assertIn('DOMAIN,new-api.vendor.example',product_rows)
+            self.assertEqual(lib.run(offline=True),0)
+
+    def test_new_root_from_source_evidence_reaches_subscription_without_an_include_or_fixed_case(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from contextlib import redirect_stdout
+        from io import StringIO
+        import json
+        a='https://public.example/a';b='https://public.example/b'
+        entry={'id':'product','mode':'managed','priority':30,'section':'service','description':'产品',
+               'boundary':'业务入口','sources':[a,b],'feed-sources':[a],'kinds':['DOMAIN','DOMAIN-SUFFIX'],
+               'flags':[],'license':'MIT','discovery':{'inputs':[{'source':a,'family':'one'},{'source':b,'family':'two'}]}}
+        cfg={'entries':[entry],'detailed':['product'],'general':[],'alternatives':[],
+             'optional':[],'views':[],'critical':{'old.vendor.example':['product']},'shared-negatives':[],
+             'sections':[{'id':'service','title':'服务','from':30,'through':30}]}
+        feed='DOMAIN,old.vendor.example\nDOMAIN-SUFFIX,new-product.example'
+        with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
+            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            (root/'config/endpoint-contracts.json').write_text('[]')
+            (root/'docs/rules.md').write_text(lib.render_index(cfg,{'product':entry}))
+            output=root/'rules'/lib.rule_filename(entry)
+            output.write_text(lib.decorate(entry,['DOMAIN,old.vendor.example'],None,'2020-01-01T00:00:00Z'))
+            with patch.object(lib.transport,'download',side_effect={a:feed,b:feed}.__getitem__):lib.run()
+            self.assertIn('DOMAIN-SUFFIX,new-product.example',lib.rules.read_rules(output.read_text()))
+            self.assertEqual(lib.run(offline=True),0)
+
+    def test_new_required_official_host_is_protected_before_it_becomes_a_fixed_case(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from contextlib import redirect_stdout
+        from io import StringIO
+        import json
+        doc='https://public.example/required';feed='https://public.example/ads'
+        service={'id':'service','mode':'compiled','priority':30,'section':'service','description':'产品',
+                 'boundary':'必需入口','sources':[doc],'include':['DOMAIN,known.vendor.example'],
+                 'extract':[{'source':doc,'format':'purpose-host-table','section':'required',
+                             'headers':['Domains','Description'],'purposes':['Authentication'],
+                             'roots':['vendor.example'],'protect-from-reject':True}]}
+        ads={'id':'ads','mode':'managed','priority':20,'section':'privacy','description':'广告',
+             'boundary':'只拦广告','sources':[feed],'kinds':['DOMAIN'],'flags':[],
+             'license':'MIT','policy-hint':'reject'}
+        cfg={'entries':[ads,service],'detailed':['service'],'general':['ads'],'alternatives':[],
+             'optional':[],'views':[],'critical':{'known.vendor.example':['service']},'shared-negatives':[],
+             'sections':[{'id':'privacy','title':'隐私','from':20,'through':20},
+                         {'id':'service','title':'服务','from':30,'through':30}]}
+        html='<h2 id="required"></h2><table><tr><th>Domains</th><th>Description</th></tr><tr><td>https://new-login.vendor.example</td><td>Authentication</td></tr></table>'
+        downloaded={doc:html,feed:'DOMAIN,new-login.vendor.example\nDOMAIN,ads.other.example'}
+        with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
+            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            (root/'config/endpoint-contracts.json').write_text('[]')
+            (root/'docs/rules.md').write_text(lib.render_index(cfg,{e['id']:e for e in cfg['entries']}))
+            for entry,rows in [(ads,downloaded[feed].splitlines()),(service,service['include'])]:
+                (root/'rules'/lib.rule_filename(entry)).write_text(lib.decorate(entry,rows,None,'2020-01-01T00:00:00Z'))
+            with patch.object(lib.transport,'download',side_effect=downloaded.__getitem__):self.assertEqual(lib.run(),0)
+            output=lib.rules.read_rules((root/'rules'/lib.rule_filename(ads)).read_text())
+            self.assertEqual(output,['DOMAIN,ads.other.example'])
+            report=json.loads((root/'data/maintenance-state.json').read_text())
+            self.assertIn('new-login.vendor.example',report['functional-hosts'])
+            self.assertEqual(lib.run(offline=True),0)
+
+    def test_tightened_scope_repairs_a_previous_output_before_validating_publication(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from contextlib import redirect_stdout
+        from io import StringIO
+        import json
+        entry={'id':'platform','mode':'managed','priority':1,'section':'service',
+               'description':'平台','boundary':'不接管共享托管','sources':['https://public.example/feed'],
+               'kinds':['DOMAIN','DOMAIN-SUFFIX'],'flags':[],'license':'MIT'}
+        cfg={'entries':[entry],'detailed':['platform'],'general':[],'alternatives':[],
+             'optional':[],'views':[],'critical':{'api.example':['platform']},
+             'shared-negatives':[],'sections':[{'id':'service','title':'服务','from':1,'through':1}]}
+        old=['DOMAIN,api.example','DOMAIN-SUFFIX,azurewebsites.net']
+        with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
+            root=prepare_workspace(tmp);(root/'rules').mkdir()
+            (root/'config/catalog.json').write_text(json.dumps(cfg))
+            (root/'config/endpoint-contracts.json').write_text('[]')
+            (root/'docs/rules.md').write_text(lib.render_index(cfg,{'platform':entry}))
+            path=root/'rules'/lib.rule_filename(entry)
+            path.write_text(lib.decorate(entry,old,None,'2020-01-01T00:00:00Z'))
+            with patch.object(lib.transport,'download',return_value='\n'.join(old)):
+                self.assertEqual(lib.run(),0)
+            self.assertEqual(lib.rules.read_rules(path.read_text()),['DOMAIN,api.example'])
+            self.assertEqual(lib.run(offline=True),0)
+
     def test_new_official_auth_host_is_published_once_and_unknown_third_party_cannot_replace_it(self):
         from pathlib import Path
         from tempfile import TemporaryDirectory
@@ -109,28 +279,103 @@ class ScheduledRefresh(unittest.TestCase):
             return '<h2 id="account"></h2><table>'+''.join(
                 f'<tr><td>{h}</td><td>443</td><td>TCP</td><td>OS</td><td>Login</td></tr>'
                 for h in ('login.vendor.example',host))+'</table>'
-        with TemporaryDirectory() as tmp, patch.object(lib,'ROOT',Path(tmp)), redirect_stdout(StringIO()):
-            root=Path(tmp); (root/'rules').mkdir()
-            (root/'catalog.json').write_text(json.dumps(cfg))
-            (root/'endpoint-contracts.json').write_text(json.dumps([contract]))
-            (root/'INDEX.md').write_text(lib.render_index(cfg,{'login':entry}))
+        with TemporaryDirectory() as tmp, patch.object(lib,'ROOT',prepare_workspace(tmp)), redirect_stdout(StringIO()):
+            root=prepare_workspace(tmp); (root/'rules').mkdir()
+            (root/'config/catalog.json').write_text(json.dumps(cfg))
+            (root/'config/endpoint-contracts.json').write_text(json.dumps([contract]))
+            (root/'docs/rules.md').write_text(lib.render_index(cfg,{'login':entry}))
             path=root/'rules'/lib.rule_filename(entry)
             path.write_text(lib.decorate(entry,['DOMAIN,login.vendor.example'],None,'2020-01-01T00:00:00Z'))
-            with patch.object(lib.rules,'download',return_value=doc('new.vendor.example')):
+            with patch.object(lib.transport,'download',return_value=doc('new.vendor.example')):
                 self.assertEqual(lib.run(),0)
                 updated=path.read_text()
                 self.assertIn('DOMAIN,new.vendor.example\n',updated)
                 lib.run()
                 self.assertEqual(updated,path.read_text())
-            status=(root/'status.json').read_text()
-            with patch.object(lib.rules,'download',return_value=doc('new.shared.example')), self.assertRaises(Invalid):
+            status=(root/'data/maintenance-state.json').read_text()
+            with patch.object(lib.transport,'download',return_value=doc('new.shared.example')), self.assertRaises(Invalid):
                 lib.run()
             self.assertEqual(updated,path.read_text())
-            self.assertEqual((root/'status.json').read_text(),status)
+            self.assertEqual((root/'data/maintenance-state.json').read_text(),status)
 
 class SourceContracts(unittest.TestCase):
+    def test_sdk_guide_discovers_new_api_and_console_hosts_by_purpose(self):
+        recipe={'format':'sdk-client-endpoints','roots':['vendor.example'],
+                'api-fields':['base_url','baseURL'],'console-labels':['API Keys']}
+        text='''<pre><code>client = Client(<span>base_url</span>=<span>&quot;https://api.vendor.example/v1&quot;</span>)
+new_client = Client(baseURL: "https://api-next.vendor.example/v2")
+other_client = Client(base_url="https://api.other.example/v1")</code></pre>
+<p>Example URL: https://unrelated.vendor.example/</p>
+<a href="https://console-new.vendor.example/account/keys"><b>API</b> Keys</a>
+<a href="https://billing.vendor.example">Pricing</a>
+<a href="https://console.other.example">API Keys</a>'''
+        self.assertEqual(extract_rows(recipe,text),{'DOMAIN,api.vendor.example',
+            'DOMAIN,api-next.vendor.example','DOMAIN,console-new.vendor.example'})
+
+    def test_sdk_guide_requires_both_documented_api_and_console_roles(self):
+        recipe={'format':'sdk-client-endpoints','roots':['vendor.example'],
+                'api-fields':['base_url'],'console-labels':['API Keys']}
+        code='<pre>client = Client(base_url="https://api.vendor.example/v1")</pre>'
+        link='<a href="https://console.vendor.example/account/keys">API Keys</a>'
+        self.assertEqual(len(extract_rows(recipe,code+link)),2)
+        for bad in (code,link,code.replace('https://api.','https://api.vendor.example@')+link,
+                    code+link.replace('API Keys','Unrelated'),
+                    '<script>'+code+'</script>'+link):
+            with self.subTest(text=bad),self.assertRaises(Invalid):extract_rows(recipe,bad)
+
+    def test_official_product_entry_list_can_discover_a_new_root_without_copying_other_links(self):
+        recipe={'format':'product-entrypoints','item-prefix':'The Product app we offer at',
+                'brand-label':'product','owned-parents':['vendor.example']}
+        doc='''<ul><li>The Product app we offer at product.vendor.example, product.com, and product.ai</li>
+<li>Other services: billing.vendor.example</li></ul>
+<script><li>The Product app we offer at product.invalid</li></script>'''
+        self.assertEqual(extract_rows(recipe,doc),{'DOMAIN,product.vendor.example',
+            'DOMAIN,product.com','DOMAIN,product.ai'})
+        for bad in (doc.replace('app we offer at','other apps'),
+                    doc.replace('product.ai','tenant.shared.example'),
+                    doc.replace('product.ai','product.evil.example')):
+            with self.subTest(text=bad),self.assertRaises(Invalid):extract_rows(recipe,bad)
+
+    def test_authentication_table_only_imports_named_product_hosts(self):
+        recipe={'format':'purpose-host-table','section':'required','headers':['Domains','Description'],
+                'purposes':['Authentication','Docker Pull/Push'],'roots':['docker.com','docker.io']}
+        def row(host,role):return f'<tr><td>{host}</td><td>{role}</td></tr>'
+        text='<h2 id="required"></h2><table><tr><th>Domains</th><th>Description</th></tr>'+''.join([
+            row('https://login.docker.com','Authentication'),row('https://new-auth.docker.com','Authentication'),
+            row('https://cdn.auth0.com','Authentication'),row('https://production.cloudfront.docker.com','Docker Pull/Push'),
+            row('https://metrics.docker.com','Error reports')])+'</table>'
+        self.assertEqual(extract_rows(recipe,text),{'DOMAIN,login.docker.com',
+            'DOMAIN,new-auth.docker.com','DOMAIN,production.cloudfront.docker.com'})
+        with self.assertRaises(Invalid):extract_rows(recipe,text.replace('Docker Pull/Push','Other'))
+
+    def test_brand_domain_list_can_add_a_new_official_root_without_reading_other_lists(self):
+        import json
+        recipe={'format':'article-domain-list','body-path':['article','body'],
+                'label-contains':'Signal utilizes other domains','brand-label':'signal'}
+        body='<p>Signal utilizes other domains for sharing:</p><ul><li>signal.art</li><li>signal.tube</li></ul><p>Other links</p><ul><li>not-signal.example</li></ul>'
+        doc=json.dumps({'article':{'body':body}})
+        self.assertEqual(extract_rows(recipe,doc),{'DOMAIN-SUFFIX,signal.art','DOMAIN-SUFFIX,signal.tube'})
+        with self.assertRaises(Invalid):extract_rows(recipe,json.dumps({'article':{'body':body.replace('signal.tube','shared.example')}}))
+
+    def test_meeting_network_section_keeps_both_families_and_exact_sni(self):
+        recipe={'format':'section-media-networks','section':'media','sni-roots':['turns.goog'],
+                'min-prefix':{'4':16,'6':32}}
+        text='<h4 id="other">Other</h4><li>IPv4: 8.0.0.0/8</li><h4 id="media">Media</h4><ul><li>IPv4: 74.125.250.0/24</li><li>IPv6: 2001:4860:4864:5::/64</li><li>SNI: workspace.turns.goog</li></ul><h4 id="next">Next</h4><li>IPv4: 1.1.1.0/24</li>'
+        self.assertEqual(extract_rows(recipe,text),{'IP-CIDR,74.125.250.0/24,no-resolve',
+            'IP-CIDR6,2001:4860:4864:5::/64,no-resolve','DOMAIN,workspace.turns.goog'})
+        for broken in (text.replace('IPv6:','Version 6:'),text.replace('74.125.250.0/24','0.0.0.0/0')):
+            with self.assertRaises(Invalid):extract_rows(recipe,broken)
+
+    def test_communications_ip_table_reads_only_the_required_media_row(self):
+        recipe={'format':'endpoint-network-sets','sections':['teams'],'sets':[11],
+                'category':'Optimize Required','udp-port':3478,'min-prefix':{'4':14,'6':32}}
+        def row(n,category,addresses,ports):return '<tr>'+''.join(f'<td>{v}</td>' for v in [n,category,'Yes',addresses,ports])+'</tr>'
+        text='<h2 id="teams"></h2><table>'+row(11,'Optimize Required','52.112.0.0/14, 2603:1063::/38','UDP: 3478, 3479')+row(12,'Allow Required','40.0.0.0/8','TCP: 443')+'</table>'
+        self.assertEqual(extract_rows(recipe,text),{'IP-CIDR,52.112.0.0/14,no-resolve','IP-CIDR6,2603:1063::/38,no-resolve'})
+        with self.assertRaises(Invalid):extract_rows(recipe,text.replace('UDP: 3478','TCP: 3478'))
+
     def test_service_definition_only_reads_default_host_from_the_named_service(self):
-        from rule_inputs import extract_rows
+        from loon_rules.sources.inputs import extract_rows
         spec={'format':'service-default-host','service':'Models','roots':['vendor.example']}
         text=('service Other {\n  option (google.api.default_host) = "other.vendor.example";\n}\n'
               'service Models {\n  // option (google.api.default_host) = "wrong.vendor.example";\n'
@@ -188,7 +433,7 @@ class SourceContracts(unittest.TestCase):
         lib.lint_content('specific',['DOMAIN,api.vendor.example','IP-CIDR,17.249.0.0/16,no-resolve'])
 
     def test_existing_official_host_changing_role_is_not_an_unchanged_inventory(self):
-        from endpoint_contracts import resolve_additions
+        from loon_rules.generation.contracts import resolve_additions
         def entry(role):
             return {'extract':[{'source':'doc','format':'host-table','sections':['service'],
                                 'select':[{'role':[role],'roots':['vendor.example']}]}]}

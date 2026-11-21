@@ -2,10 +2,10 @@
 # priority: 011
 # section: network
 # description: 局域网名称、路由器、反查与保留地址
-# boundary: 路由器和局域网名称优先；私网、VPN 和回环保留用名称访问。链路本地、组播、保留及文档用地址只匹配已知目标 IP。
+# boundary: 路由器和局域网名称优先，反查名称随地址范围生成；私网、VPN 和回环保留名称访问。链路本地、组播、保留及文档用地址只匹配已知目标 IP
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-20T01:22:56Z
-# rule-count: 139
+# updated-at: 2026-11-20T21:30:22Z
+# rule-count: 178
 # source: https://www.iana.org/assignments/iana-ipv4-special-registry/
 # source: https://www.iana.org/assignments/iana-ipv6-special-registry/
 # source: https://rules.xkww3n.cyou/classical/reserved_cidr.txt
@@ -93,7 +93,6 @@ DOMAIN-SUFFIX,23.172.in-addr.arpa
 DOMAIN-SUFFIX,24.172.in-addr.arpa
 DOMAIN-SUFFIX,25.172.in-addr.arpa
 DOMAIN-SUFFIX,254.169.in-addr.arpa
-DOMAIN-SUFFIX,255.255.255.255.in-addr.arpa
 DOMAIN-SUFFIX,26.172.in-addr.arpa
 DOMAIN-SUFFIX,27.172.in-addr.arpa
 DOMAIN-SUFFIX,28.172.in-addr.arpa
@@ -162,3 +161,43 @@ DOMAIN,tplinkrepeater.net
 DOMAIN,tplinkap.net
 DOMAIN,tplinkplc.net
 DOMAIN,re.tenda.cn
+DOMAIN-SUFFIX,0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
+DOMAIN-SUFFIX,0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.ip6.arpa
+DOMAIN-SUFFIX,0.in-addr.arpa
+DOMAIN-SUFFIX,1.0.0.1.0.0.2.ip6.arpa
+DOMAIN-SUFFIX,18.198.in-addr.arpa
+DOMAIN-SUFFIX,19.198.in-addr.arpa
+DOMAIN-SUFFIX,224.in-addr.arpa
+DOMAIN-SUFFIX,225.in-addr.arpa
+DOMAIN-SUFFIX,226.in-addr.arpa
+DOMAIN-SUFFIX,227.in-addr.arpa
+DOMAIN-SUFFIX,228.in-addr.arpa
+DOMAIN-SUFFIX,229.in-addr.arpa
+DOMAIN-SUFFIX,230.in-addr.arpa
+DOMAIN-SUFFIX,231.in-addr.arpa
+DOMAIN-SUFFIX,232.in-addr.arpa
+DOMAIN-SUFFIX,233.in-addr.arpa
+DOMAIN-SUFFIX,234.in-addr.arpa
+DOMAIN-SUFFIX,235.in-addr.arpa
+DOMAIN-SUFFIX,236.in-addr.arpa
+DOMAIN-SUFFIX,237.in-addr.arpa
+DOMAIN-SUFFIX,238.in-addr.arpa
+DOMAIN-SUFFIX,239.in-addr.arpa
+DOMAIN-SUFFIX,240.in-addr.arpa
+DOMAIN-SUFFIX,241.in-addr.arpa
+DOMAIN-SUFFIX,242.in-addr.arpa
+DOMAIN-SUFFIX,243.in-addr.arpa
+DOMAIN-SUFFIX,244.in-addr.arpa
+DOMAIN-SUFFIX,245.in-addr.arpa
+DOMAIN-SUFFIX,246.in-addr.arpa
+DOMAIN-SUFFIX,247.in-addr.arpa
+DOMAIN-SUFFIX,248.in-addr.arpa
+DOMAIN-SUFFIX,249.in-addr.arpa
+DOMAIN-SUFFIX,250.in-addr.arpa
+DOMAIN-SUFFIX,251.in-addr.arpa
+DOMAIN-SUFFIX,252.in-addr.arpa
+DOMAIN-SUFFIX,253.in-addr.arpa
+DOMAIN-SUFFIX,254.in-addr.arpa
+DOMAIN-SUFFIX,255.in-addr.arpa
+DOMAIN-SUFFIX,c.f.ip6.arpa
+DOMAIN-SUFFIX,f.f.ip6.arpa

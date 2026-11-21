@@ -1,0 +1,18 @@
+# name: binance-platform
+# priority: 360
+# section: crypto
+# description: Binance 币安
+# boundary: 交易平台、现货 REST API 与实时行情；从官方基础端点说明补入专用主机，不把 binance.vision 整域、BNB 公链或第三方追踪归为交易平台
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T21:37:50Z
+# rule-count: 6
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/binance.list
+# source: https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/rest-api.md
+# source: https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/web-socket-streams.md
+
+DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,binance.info
+DOMAIN-SUFFIX,binance.net
+DOMAIN-SUFFIX,binance.us
+DOMAIN,data-api.binance.vision
+DOMAIN,data-stream.binance.vision

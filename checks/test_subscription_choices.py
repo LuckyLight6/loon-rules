@@ -1,10 +1,22 @@
 import json
 import unittest
-import library as lib
-from maintain import Invalid
-from rule_inputs import extract_rows
+from loon_rules.generation import pipeline as lib
+from loon_rules.rules import Invalid
+from loon_rules.sources.inputs import extract_rows
 
 class SubscriptionChoices(unittest.TestCase):
+    def test_explained_source_exclusions_do_not_hide_a_new_unassigned_service(self):
+        spec={'source':'feed','owners':['service'],
+              'reviewed-outside':{'DOMAIN-SUFFIX,logs.example':'日志留给可选隐私规则'}}
+        data={'service':['DOMAIN-SUFFIX,product.example']}
+        src={'feed':'DOMAIN-SUFFIX,product.example\nDOMAIN-SUFFIX,logs.example'}
+        state=lib.audit_inventory(spec,src,data)
+        self.assertEqual(state['state'],'current')
+        self.assertEqual(state['reviewed-outside'],1)
+        state=lib.audit_inventory(spec,{'feed':src['feed']+'\nDOMAIN-SUFFIX,new.example'},data)
+        self.assertEqual(state['state'],'review')
+        self.assertEqual(state['outside-scope'],1)
+
     def test_only_provider_rows_of_all_selected_families_count(self):
         recipe={'format':'http-provider-lists','sections':['WEB','WEB6'],
                 'providers':{'echo':{'roots':['echo.example'],'paths':['/']}}}
@@ -33,19 +45,63 @@ class SubscriptionChoices(unittest.TestCase):
         self.assertEqual(state['new-matches'],2)
         self.assertEqual(state['outside-purpose'],1)
 
-    def test_subscription_index_separates_choices_from_inputs(self):
-        cfg=json.loads((lib.ROOT/'catalog.json').read_text())
+    def test_published_parent_and_tenant_rules_are_removed_without_losing_official_controls(self):
+        entry={'id':'platform','mode':'managed','sources':['feed'],
+               'kinds':['DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD'],'flags':[],
+               'exclude-tenant-roots':['core.windows.net'],'official-hosts':True}
+        old=['DOMAIN-SUFFIX,windows.net','DOMAIN,tenant.blob.core.windows.net',
+             'DOMAIN-WILDCARD,*.images.tenant.blob.core.windows.net',
+             'DOMAIN,management.core.windows.net','DOMAIN,portal.example']
+        expected=['DOMAIN,management.core.windows.net','DOMAIN,portal.example']
+        for downloaded in ({},{'feed':'\n'.join(old)}):
+            out,state=lib.refresh_reviewed_feed(entry,old,downloaded,
+                                               official=['management.core.windows.net'])
+            self.assertEqual(out,expected)
+
+    def test_azure_cloud_metadata_is_read_as_data_without_executing_python(self):
+        text="""raise RuntimeError('must not run')
+AZURE_PUBLIC_CLOUD = Cloud('AzureCloud',
+    endpoints=CloudEndpoints(portal='https://portal.azure.com/',
+                             resource_manager='https://management.azure.com/'),
+    suffixes=CloudSuffixes(storage_endpoint='core.windows.net',
+                           acr_login_server_endpoint='.azurecr.io'))
+"""
+        recipe={'format':'azure-cloud-metadata','clouds':['AZURE_PUBLIC_CLOUD'],'part':'suffixes'}
+        self.assertEqual(extract_rows(recipe,text),{
+            'DOMAIN-SUFFIX,core.windows.net','DOMAIN-SUFFIX,azurecr.io'})
+        controls={**recipe,'part':'endpoints','fields':['portal']}
+        self.assertEqual(extract_rows(controls,text),{'DOMAIN,portal.azure.com'})
+        with self.assertRaises(Invalid):extract_rows(recipe,text.replace("'core.windows.net'",'untrusted_call()'))
+        with self.assertRaises(Invalid):extract_rows(recipe,text.replace('AZURE_PUBLIC_CLOUD =','OTHER_CLOUD ='))
+
+    def test_hosted_service_table_does_not_claim_login_or_unlisted_services(self):
+        recipe={'format':'service-domain-table','services':['Azure App Service']}
+        text='<table><tr><th>Service</th><th>Subdomain</th></tr>'+''.join(
+            f'<tr><td>{name}</td><td>{domain}</td></tr>' for name,domain in [
+                ('Azure App Service','*.azurewebsites.net'),('Microsoft Entra ID','*.graph.windows.net')])+'</table>'
+        self.assertEqual(extract_rows(recipe,text),{'DOMAIN-SUFFIX,azurewebsites.net'})
+        with self.assertRaises(Invalid):extract_rows(recipe,text.replace('Azure App Service','Unknown Service'))
+
+    def test_subscription_index_links_every_file_and_marks_optional_choices(self):
+        cfg=json.loads((lib.ROOT/'config/catalog.json').read_text())
         es=lib.validate_declarations(cfg); index=lib.render_index(cfg,es)
-        for n in (181,182,183,184,186,187,188,190,191,193,196,197,201):
-            self.assertNotIn(f'](rules/{n}-',index)
-        for n in (180,185,192,194,200,202,203,204):
-            self.assertIn(f'](rules/{n}-',index)
+        optional=set(cfg['optional']+cfg['alternatives'])
+        for entry in cfg['entries']:
+            key=entry['id']
+            row=next(line for line in index.splitlines()
+                     if line.startswith(f'| {entry["priority"]:03d} |'))
+            filename=lib.rule_filename(entry)
+            self.assertTrue(f'[{key}](../rules/{filename})' in row,key+' 缺少正文链接')
+            self.assertTrue('[订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/'+filename+')' in row,
+                            key+' 缺少订阅链接')
+            if key in optional:self.assertIn('**可选。**',row)
         self.assertNotIn('上游变更待核',index)
-        self.assertIn('COVERAGE.md#',index)
-        # Loss of an alternate media source must not remove the other's unique domains.
-        e=next(e for e in es.values() if e['priority']==180)
-        members=[es[k]['priority'] for k in e['merge-domains']['include']]
-        self.assertEqual(set(members),{181,182})
+        self.assertIn('(routing.md)',index)
+        components={e['id'] for e in cfg['source-components']}
+        self.assertTrue(all(key not in index for key in components))
+        e=next(e for e in es.values() if e['id']=='overseas-media-extra')
+        self.assertEqual(len(e['merge-domains']['include']),2)
+        self.assertTrue(set(e['merge-domains']['include'])<=components)
 
     def test_review_report_names_only_actionable_groups_and_no_candidate_payloads(self):
         es={'routing':{'priority':200,'id':'routing','description':'国内网段'},
@@ -82,11 +138,11 @@ class SubscriptionChoices(unittest.TestCase):
         self.assertEqual(lib.merge_domain_sources(es['foreign'],rows),['DOMAIN,news.example'])
 
     def test_release_gate_checks_entire_service_against_each_domestic_choice(self):
-        cfg=json.loads((lib.ROOT/'catalog.json').read_text())
-        ids={e['priority']:e['id'] for e in cfg['entries']}
-        for source in (44,45,46,57,60,85):
-            self.assertTrue({ids[n] for n in (190,191,192,194,196)} <=
-                            set(cfg['no-overlap'].get(ids[source],[])),source)
+        cfg=json.loads((lib.ROOT/'config/catalog.json').read_text())
+        domestic={'mainland-routing-all','mainland-domains','source-xkww3n-mainland'}
+        for source in ('apple-video-and-fitness','apple-news-and-sports','apple-intelligence-relays',
+                       'apple-tv-video-delivery','ai-overseas-all','ai-cn-international-all'):
+            self.assertTrue(domestic<=set(cfg['no-overlap'].get(source,[])),source)
         # An unseen child vs a parent suffix must fail even when the positive sample
         # would still hit the correct service first in the full routing profile.
         cfg={'detailed':['service','domestic'],'general':[], 'critical':{}, 'shared-negatives':[],

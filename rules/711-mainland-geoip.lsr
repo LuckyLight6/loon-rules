@@ -1,0 +1,11 @@
+# name: mainland-geoip
+# priority: 711
+# section: mainland-fallback
+# description: 设备 GeoIP 数据库中的中国大陆地址兜底
+# boundary: 前面的域名和网段未命中时再用。允许为查地址触发解析；地区归属取决于 Loon 设备上的数据库
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
+
+GEOIP,CN

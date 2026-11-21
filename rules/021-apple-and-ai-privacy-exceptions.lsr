@@ -2,7 +2,7 @@
 # priority: 021
 # section: privacy
 # description: Apple 广告与 OpenAI 广告像素的已核实拒绝项
-# boundary: 单独可选，不属于 Apple 或 AI 合集。只拦明确广告入口，不能以大后缀替代。
+# boundary: 单独可选，不属于 Apple 或 AI 合集。只拦明确广告入口，不能以大后缀替代
 # created-at: 2026-11-19T08:04:26Z
 # updated-at: 2026-11-19T08:04:26Z
 # rule-count: 3

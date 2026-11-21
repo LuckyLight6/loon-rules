@@ -1,7 +1,7 @@
 import unittest
 
-from maintain import Invalid
-import endpoint_contracts as gate
+from loon_rules.rules import Invalid
+from loon_rules.generation import contracts as gate
 
 
 class PublicEndpointChecks(unittest.TestCase):

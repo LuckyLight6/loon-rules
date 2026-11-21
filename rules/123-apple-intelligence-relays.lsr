@@ -1,0 +1,16 @@
+# name: apple-intelligence-relays
+# priority: 123
+# section: apple
+# description: Apple Intelligence：PCC 和系统 ChatGPT 扩展
+# boundary: 中国大陆网络建议用独立代理。能否使用还要看设备、账户、语言和功能资格。普通 Siri、ChatGPT App 和模型下载不归本组
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T08:04:26Z
+# rule-count: 4
+# source: https://support.apple.com/en-us/101555
+# source: https://rules.xkww3n.cyou/classical/apple-intelligence.txt
+# source: https://support.apple.com/en-us/121115
+
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,cp4.cloudflare.com
+DOMAIN,apple-relay.fastly-edge.com

@@ -1,0 +1,13 @@
+# name: cohere-model-services
+# priority: 115
+# section: ai
+# description: Cohere 的推理及平台域名
+# boundary: 不因同一模型由其他云托管就把云整段纳入
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cohere.list
+# source: https://raw.githubusercontent.com/cohere-ai/cohere-python/main/src/cohere/environment.py
+
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com

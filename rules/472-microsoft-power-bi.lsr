@@ -1,0 +1,11 @@
+# name: microsoft-power-bi
+# priority: 472
+# section: microsoft
+# description: Microsoft Power BI
+# boundary: 报表服务的专用域；Microsoft 登录仍由账户规则处理
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list
+
+DOMAIN-SUFFIX,powerbi.com

@@ -1,0 +1,12 @@
+# name: pypi-packages
+# priority: 305
+# section: development
+# description: PyPI 软件包
+# boundary: 官方 Python 包索引、文档、上传与文件下载；不包揽 pythonhosted.org 上的项目网站
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:49:01Z
+# rule-count: 2
+# source: https://pypi.org/pypi/pip/json
+
+DOMAIN,files.pythonhosted.org
+DOMAIN-SUFFIX,pypi.org

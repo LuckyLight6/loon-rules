@@ -1,9 +1,29 @@
 import json
 import unittest
-import scoped_dns
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
+from loon_rules.plugins import scoped_dns
 
 
 class ScopedDNS(unittest.TestCase):
+    def test_different_public_services_can_use_distinct_encrypted_resolvers(self):
+        cfg={'entries':[{'id':'overseas','priority':101},{'id':'mainland','priority':501}],
+             'shared-negatives':[],
+             'scoped-dns':{'routes':[
+                 {'label':'海外业务','provider':'Cloudflare','resolver':'https://1.1.1.1/dns-query','groups':['overseas']},
+                 {'label':'国内业务','provider':'国内解析器','resolver':'https://doh.pub/dns-query','groups':['mainland']}]}}
+        with TemporaryDirectory() as tmp,patch.object(scoped_dns,'ROOT',Path(tmp)):
+            folder=Path(tmp)/'rules';folder.mkdir()
+            (folder/'101-overseas.lsr').write_text('DOMAIN-SUFFIX,foreign.example.com\n')
+            (folder/'501-mainland.lsr').write_text('DOMAIN,domestic.example.com\n')
+            result=scoped_dns.build(cfg)
+            self.assertIn('*.foreign.example.com = server:https://1.1.1.1/dns-query',result)
+            self.assertIn('domestic.example.com = server:https://doh.pub/dns-query',result)
+            self.assertEqual([line for line in result.splitlines() if line.startswith('[')],['[Host]'])
+            (folder/'501-mainland.lsr').write_text('DOMAIN,login.foreign.example.com\n')
+            with self.assertRaisesRegex(ValueError,'conflicting resolvers'):scoped_dns.build(cfg)
+
     def test_exact_suffix_and_non_dns_selectors_keep_their_scope(self):
         rows = ['DOMAIN,login.example.com','DOMAIN-SUFFIX,service.example.com',
                 'DOMAIN-WILDCARD,*buy.example.com','IP-CIDR,192.0.2.0/24,no-resolve']
@@ -23,10 +43,19 @@ class ScopedDNS(unittest.TestCase):
         for change in [{'resolver':'http://resolver.example/dns-query'},{'groups':[]},
                        {'provider':'name\n[General]'}, {'resolver':'https://user@resolver.example/dns-query'},
                        {'resolver':'https://@resolver.example/dns-query'}]:
-            cfg=json.loads((scoped_dns.ROOT/'catalog.json').read_text())
+            cfg=json.loads((scoped_dns.ROOT/'config/catalog.json').read_text())
+            spec=cfg['scoped-dns']
+            cfg['scoped-dns']=dict(spec['routes'][0] if 'routes' in spec else spec)
             cfg['scoped-dns'].update(change)
             with self.subTest(change=change), self.assertRaises(ValueError):
                 scoped_dns.build(cfg)
+
+    def test_original_single_resolver_settings_still_work(self):
+        cfg=json.loads((scoped_dns.ROOT/'config/catalog.json').read_text())
+        spec=cfg['scoped-dns']
+        cfg['scoped-dns']=dict(spec['routes'][0] if 'routes' in spec else spec)
+        result=scoped_dns.build(cfg)
+        self.assertIn('*.claude.ai = server:'+cfg['scoped-dns']['resolver'],result)
 
     def test_installed_artifact_and_required_boundaries(self):
         text=scoped_dns.build()

@@ -1,0 +1,17 @@
+# name: baidu-mainland
+# priority: 509
+# section: ai
+# description: 百度文心与千帆
+# boundary: 文心门户、文心一言入口与千帆 API 按产品来源提取，不收整个百度、百度云或共用账号域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T17:51:12Z
+# rule-count: 3
+# source: https://cloud.baidu.com/doc/qianfan/s/8mh4sv3sb
+# source: https://cloud.baidu.com/doc/qianfan-docs/s/Fm9l6ocai
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/baidu-ai.list
+# source: https://ernie.baidu.com/zh
+# source: https://ai.baidu.com/
+
+DOMAIN,qianfan.baidubce.com
+DOMAIN,ernie.baidu.com
+DOMAIN,yiyan.baidu.com

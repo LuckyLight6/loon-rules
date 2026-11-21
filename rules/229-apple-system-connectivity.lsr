@@ -1,0 +1,64 @@
+# name: apple-system-connectivity
+# priority: 229
+# section: apple
+# description: Apple 激活、设备管理、诊断与设备素材
+# boundary: 激活、设备管理、诊断、校时和设备素材走本组。不收整个 Apple 网段或共用 CDN，也不替代账号、推送与钱包组
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-20T04:32:59Z
+# rule-count: 48
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+
+DOMAIN,doh.dns.apple.com
+DOMAIN,apple-native-relay.apple.com
+DOMAIN,konut-cdn.apple.com
+DOMAIN-SUFFIX,gnip.apple.com
+DOMAIN-SUFFIX,time.apple.com
+DOMAIN,wps.apple.com
+DOMAIN-SUFFIX,sandbox.apple.com
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,business.apple.com
+DOMAIN-SUFFIX,school.apple.com
+DOMAIN,www.apple.com.cn
+DOMAIN-SUFFIX,cn.apple.com
+DOMAIN,albert.apple.com
+DOMAIN,static.ips.apple.com
+DOMAIN,sq-device.apple.com
+DOMAIN,tbsc.apple.com
+DOMAIN,time-ios.apple.com
+DOMAIN,time-macos.apple.com
+DOMAIN,deviceenrollment.apple.com
+DOMAIN,deviceservices-external.apple.com
+DOMAIN,iprofiles.apple.com
+DOMAIN,mdmenrollment.apple.com
+DOMAIN,axm-servicediscovery.apple.com
+DOMAIN,api.ent.apple.com
+DOMAIN,api.edu.apple.com
+DOMAIN,upload.appleschoolcontent.com
+DOMAIN,api-business.apple.com
+DOMAIN,api-school.apple.com
+DOMAIN,axm-adm-enroll.apple.com
+DOMAIN,axm-adm-mdm.apple.com
+DOMAIN,axm-adm-scep.apple.com
+DOMAIN,axm-app.apple.com
+DOMAIN,icons.axm-usercontent-apple.com
+DOMAIN,audiocontentdownload.apple.com
+DOMAIN,playgrounds-assets-cdn.apple.com
+DOMAIN,playgrounds-cdn.apple.com
+DOMAIN,diagassets.apple.com
+DOMAIN,fpservices-prod1.apple.com
+DOMAIN,vpp.itunes.apple.com
+DOMAIN,sylvan.apple.com
+DOMAIN,iphonesubmissions-cdn.apple.com.akadns.net
+DOMAIN,iphonesubmissions-cdn.origin-apple.com.akadns.net
+DOMAIN,iphonesubmissions-lb.apple.com.akadns.net
+DOMAIN,iphonesubmissions.apple.com
+DOMAIN,iphonesubmissions.apple.com.akadns.net
+DOMAIN,iphonesubmissions.apple.com.mwcname.com
+DOMAIN,iphonesubmissions.g.aaplimg.com
+DOMAIN,identity.apple.com

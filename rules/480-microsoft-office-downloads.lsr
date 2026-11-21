@@ -1,0 +1,14 @@
+# name: microsoft-office-downloads
+# priority: 480
+# section: microsoft
+# description: Microsoft Office 安装与更新下载
+# boundary: Office 下载主机及其已核对的精确别名；账号、激活与办公 Web 应用不算下载
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T12:33:32Z
+# rule-count: 3
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+# source: https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool
+
+DOMAIN,officecdn.microsoft.com
+DOMAIN,officecdn.microsoft.com.delivery.microsoft.com
+DOMAIN,office-f-net.trafficmanager.net
