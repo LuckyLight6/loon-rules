@@ -1,0 +1,24 @@
+# name: apple-news-and-sports
+# priority: 2210
+# section: apple
+# description: Apple News／News+、内容入口与 Apple Sports
+# boundary: 中国大陆未提供；默认选对应服务可用地区的代理，不纳入国内直连例外
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T12:33:32Z
+# rule-count: 9
+# source: https://rules.xkww3n.cyou/classical/apple-music.txt
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
+# source: https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list
+# source: https://support.apple.com/zh-cn/118205
+# source: https://news.apple.com/
+# source: https://dns.google/resolve?name=news.apple.com&type=A
+
+DOMAIN-SUFFIX,news-assets.apple.com
+DOMAIN-SUFFIX,news-client.apple.com
+DOMAIN-SUFFIX,news-edge.apple.com
+DOMAIN-SUFFIX,apple.news
+DOMAIN,news-client-search.apple.com
+DOMAIN,news-events.apple.com
+DOMAIN-SUFFIX,sports.apple.com
+DOMAIN,news.apple.com
+DOMAIN,prod-domep-news-apple.v.aaplimg.com

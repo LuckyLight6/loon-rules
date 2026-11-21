@@ -2,6 +2,7 @@ import re
 import json
 import unittest
 from loon_rules.generation import pipeline as lib
+from loon_rules.catalog import priority_label
 
 class BusinessOrder(unittest.TestCase):
     def test_shadow_check_covers_wildcards_without_rejecting_partial_overlap(self):
@@ -55,8 +56,8 @@ class BusinessOrder(unittest.TestCase):
     def test_reader_order_is_the_routing_order_for_every_selection(self):
         cfg=json.loads((lib.ROOT/'config/catalog.json').read_text())
         entries=lib.validate_declarations(cfg)
-        rows=re.findall(r'^\| (\d{3}) \| ',lib.render_index(cfg,entries),re.M)
-        by_number={f"{e['priority']:03d}":e['id'] for e in cfg['entries']}
+        rows=re.findall(r'^\| (\d+) \| ',lib.render_index(cfg,entries),re.M)
+        by_number={priority_label(e):key for key,e in entries.items() if 'priority' in e}
         published=[by_number[n] for n in rows]
         self.assertEqual(published,lib.subscription_order(cfg,entries))
         for selection in ((),*((v,) for v in cfg['views']),cfg['views']):
@@ -76,9 +77,9 @@ class BusinessOrder(unittest.TestCase):
         self.assertIn('## 1 网络接入与局域网',index)
         self.assertIn('### 3.1 ',index)
         self.assertIn('| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |',index)
-        for row in re.findall(r'^\| \d{3} \| .+$',index,re.M):
+        for row in re.findall(r'^\| \d+ \| .+$',index,re.M):
             self.assertEqual(len(row.split('|')[1:-1]),5)
-        self.assertIn('| 101 | [claude-connections]',index)
+        self.assertIn('| '+priority_label(entries['claude-connections'])+' | [claude-connections]',index)
 
     def test_each_aggregate_has_its_own_subheading_and_table(self):
         cfg=json.loads((lib.ROOT/'config/catalog.json').read_text())
@@ -86,8 +87,8 @@ class BusinessOrder(unittest.TestCase):
         index=lib.render_index(cfg,entries)
         sections=re.split(r'(?m)^#{2,3} ',index)
         for key in cfg['views']:
-            number=f"{entries[key]['priority']:03d}"
+            number=priority_label(entries[key])
             with self.subTest(aggregate=key):
                 section=next(s for s in sections if re.search(r'^\| '+number+r' \| ',s,re.M))
                 self.assertIn('合集',section.splitlines()[0])
-                self.assertEqual(re.findall(r'^\| (\d{3}) \| ',section,re.M),[number])
+                self.assertEqual(re.findall(r'^\| (\d+) \| ',section,re.M),[number])

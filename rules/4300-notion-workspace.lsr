@@ -1,0 +1,17 @@
+# name: notion-workspace
+# priority: 4300
+# section: productivity
+# description: Notion
+# boundary: 工作区、API、专用素材和官方状态入口；自营主机随官方清单更新。不收出站 IP、整个 Cloudflare，或 notion.site 的公共托管租户与用户自定义域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T23:43:58Z
+# rule-count: 6
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list
+# source: https://www.notion.com/help/allowlist-ip
+
+DOMAIN-SUFFIX,notion-static.com
+DOMAIN-SUFFIX,notion.com
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,notionusercontent.com
+DOMAIN,notion-custom.com
+DOMAIN,www.notion-status.com

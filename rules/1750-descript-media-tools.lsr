@@ -1,0 +1,12 @@
+# name: descript-media-tools
+# priority: 1750
+# section: ai
+# description: Descript 音视频编辑
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list
+# source: https://descript.com/
+
+DOMAIN-SUFFIX,descript.com

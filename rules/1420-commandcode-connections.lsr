@@ -1,0 +1,12 @@
+# name: commandcode-connections
+# priority: 1420
+# section: ai
+# description: CommandCode 编程与模型接口
+# boundary: 只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# rule-count: 1
+# source: https://models.dev/api.json
+# source: https://commandcode.ai/docs/provider
+
+DOMAIN-SUFFIX,commandcode.ai

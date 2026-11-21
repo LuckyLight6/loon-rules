@@ -8,7 +8,15 @@ SELECTIONS={'general':'general','detailed':'detailed','optional':'optional','alt
 GENERATED=(*SELECTIONS.values(),'views')
 
 
+def priority_width(config):
+    width=config.get('priority-width',3)
+    if type(width) is not int or width not in (3,4):
+        raise Invalid('编号位数须为 3 或 4')
+    return width
+
+
 def materialize(config):
+    width=priority_width(config)
     version=config.get('schema-version',1)
     if version==1:return
     if version!=2:raise Invalid('不支持的规则清单格式版本')
@@ -36,13 +44,13 @@ def materialize(config):
     bands=config.get('routing-bands',())
     if any('start' in band for band in bands):
         starts=[band.get('start') for band in bands]
-        if (any(type(start) is not int or not 1<=start<=999 for start in starts)
+        if (any(type(start) is not int or not 1<=start<10**width for start in starts)
                 or starts!=sorted(set(starts))):
             raise Invalid('执行分区须按唯一递增的起始编号声明')
         if ordered and ordered[0]['priority']<starts[0]:
             raise Invalid('产品编号在所有执行分区之前')
         for i,band in enumerate(bands):
-            end=starts[i+1] if i+1<len(starts) else 1000
+            end=starts[i+1] if i+1<len(starts) else 10**width
             band['ids']=[e['id'] for e in ordered if starts[i]<=e['priority']<end]
 
 
@@ -56,5 +64,10 @@ def verify(config):
         raise Invalid('清单的生成字段未同步（maintain.py --render-index）')
 
 
-def rule_filename(entry):
-    return f'{entry["priority"]:03d}-{entry["id"]}.lsr'
+def priority_label(entry, *, width=None):
+    width=priority_width(entry) if width is None else width
+    return f'{entry["priority"]:0{width}d}'
+
+
+def rule_filename(entry, *, width=None):
+    return f'{priority_label(entry,width=width)}-{entry["id"]}.lsr'

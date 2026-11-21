@@ -94,3 +94,36 @@ class CatalogLayout(unittest.TestCase):
         cfg['routing-bands']=[{'title':'既有调用','ids':ids.copy()}]
         lib.validate_declarations(cfg)
         self.assertEqual(cfg['routing-bands'][0]['ids'],ids)
+
+    def test_four_digit_width_reaches_filenames_headers_and_subscription_links(self):
+        from loon_rules.catalog import rule_filename
+        cfg=self.fixture();cfg['priority-width']=4
+        entries=lib.validate_declarations(cfg)
+        entry=entries['regular']
+        self.assertEqual(rule_filename(entry),'0020-regular.lsr')
+        text=lib.decorate(entry,['DOMAIN,regular.example'],None,'2026-11-22T00:00:00Z')
+        self.assertIn('# priority: 0020\n',text)
+        index=lib.render_index(cfg,entries)
+        self.assertIn('| 0020 | [regular]',index)
+        self.assertIn('/main/rules/0020-regular.lsr',index)
+        self.assertEqual(rule_filename({'priority':61,'id':'legacy'}),'061-legacy.lsr')
+
+    def test_four_digit_bands_allow_insertions_between_initial_tens(self):
+        cfg=self.fixture();cfg['priority-width']=4
+        for entry in cfg['entries']:entry['priority']=2000+entry['priority']
+        cfg['entries'].extend([
+            dict(cfg['entries'][0],id='inserted',priority=2015),
+            dict(cfg['entries'][0],id='last',priority=9999)])
+        cfg['routing-bands']=[{'start':2000,'title':'产品'}, {'start':9000,'title':'末尾'}]
+        try:entries=lib.validate_declarations(cfg)
+        except Invalid as error:self.fail('合法四位编号被拒绝：'+str(error))
+        self.assertEqual(lib.subscription_order(cfg,entries),
+                         ['specialty','inserted','regular','extra','variant-alt','last'])
+        self.assertEqual(cfg['routing-bands'][-1]['ids'],['last'])
+        cfg['entries'][-1]['priority']=10000
+        with self.assertRaises(Invalid):lib.validate_declarations(cfg)
+
+    def test_number_width_must_be_a_supported_integer(self):
+        for width in (True,2,5,'4'):
+            cfg=self.fixture();cfg['priority-width']=width
+            with self.subTest(width=width),self.assertRaises(Invalid):lib.validate_declarations(cfg)

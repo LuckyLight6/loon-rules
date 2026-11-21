@@ -1,0 +1,16 @@
+# name: apple-music-and-radio
+# priority: 2170
+# section: apple
+# description: Apple Music、广播及共用 API 与应用门户
+# boundary: 保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量。明确音频传输在 2180
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T10:51:17Z
+# rule-count: 4
+# source: https://rules.xkww3n.cyou/classical/apple-music.txt
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
+# source: https://init.itunes.apple.com/bag.xml
+
+DOMAIN,amp-api.media.apple.com
+DOMAIN,mvod.itunes.apple.com
+DOMAIN-SUFFIX,music.apple.com
+DOMAIN-SUFFIX,applemusic.com

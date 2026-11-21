@@ -88,8 +88,9 @@ AZURE_PUBLIC_CLOUD = Cloud('AzureCloud',
         optional=set(cfg['optional']+cfg['alternatives'])
         for entry in cfg['entries']:
             key=entry['id']
+            entry=es[key]
             row=next(line for line in index.splitlines()
-                     if line.startswith(f'| {entry["priority"]:03d} |'))
+                     if line.startswith('| '+lib.rule_filename(entry).split('-',1)[0]+' |'))
             filename=lib.rule_filename(entry)
             self.assertTrue(f'[{key}](../rules/{filename})' in row,key+' 缺少正文链接')
             self.assertTrue('[订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/'+filename+')' in row,

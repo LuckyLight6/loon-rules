@@ -6,24 +6,26 @@
 
 ## 开始使用
 
-以海外 AI 为例，在 Loon 新增规则订阅，复制 [100 海外 AI 合集](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/100-ai-overseas-all.lsr)的地址，绑定已有的代理策略。直接编辑配置时，写在 `[Remote Rule]` 段，把 `PROXY` 换成实际策略名：
+以海外 AI 为例，在 Loon 新增规则订阅，复制 [1000 海外 AI 合集](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-overseas-all.lsr)的地址，绑定已有的代理策略。直接编辑配置时，写在 `[Remote Rule]` 段，把 `PROXY` 换成实际策略名：
 
 ```ini
 [Remote Rule]
-https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/100-ai-overseas-all.lsr, policy=PROXY, tag=100-ai-overseas-all, enabled=true
+https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-overseas-all.lsr, policy=PROXY, tag=1000-ai-overseas-all, enabled=true
 ```
 
 在原配置的副本里试用，保留最初的备份。按[清单顺序](docs/rules.md)排列所选订阅，再切到分流模式。订阅刷新只更新规则正文，不会替设备调整顺序或选择节点。部分规则使用 `DOMAIN-WILDCARD`，需要 Loon **build 1008 或更新版本**。[Loon 规则订阅文档](https://nsloon.app/docs/Rule/sub_rule/)
+
+规则采用四位序号，初始每 10 递增，为新增规则预留空号。文件、清单和配置顺序使用同一套编号。
 
 ## 先决定哪些服务需要分开选路
 
 | 使用方式 | 选择 |
 |---|---|
-| 海外 AI 用同一稳定出口 | 100；需要分别选路时，改选 Claude、OpenAI、Gemini、xAI 等成员 |
-| 国产 AI 区分国内与国际入口 | 国内版 500，国际版 125；两者也各有产品细分。Apple Intelligence 独立使用 123 |
-| Apple 登录和下载用不同出口 | 用 Apple 细分表。账户 201、交易 205 可选同一稳定节点；安装包 206、系统下载 224、iCloud 内容 214 分别选路。TV、News、PCC 使用可用地区的代理 |
-| Google 或 Microsoft 统一选路 | 分别选 450、470；需要区分账户、会议、文件或更新下载时，改选成员 |
-| 补充专项没有识别的网站 | 670 交给海外影音策略，675 交给通用代理。国内补充选 702；需要分别控制时，用 704、707、711 替代 |
+| 海外 AI 用同一稳定出口 | 1000；需要分别选路时，改选 Claude、OpenAI、Gemini、xAI 等成员 |
+| 国产 AI 区分国内与国际入口 | 国内版 5000，国际版 1250；两者也各有产品细分。Apple Intelligence 独立使用 1230 |
+| Apple 登录和下载用不同出口 | 用 Apple 细分表。账户 2010、交易 2050 可选同一稳定节点；安装包 2060、系统下载 2240、iCloud 内容 2140 分别选路。TV、News、PCC 使用可用地区的代理 |
+| Google 或 Microsoft 统一选路 | 分别选 4500、4700；需要区分账户、会议、文件或更新下载时，改选成员 |
+| 补充专项没有识别的网站 | 6700 交给海外影音策略，6750 交给通用代理。国内补充选 7020；需要分别控制时，用 7040、7070、7110 替代 |
 
 `-all` 是合集，**与它的成员二选一**。`-extra` 只补专项以外的范围，不能代替专项。规则按用途细分，不要求每份都新建一个策略组。
 
@@ -31,7 +33,7 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/100-ai-overs
 
 清单和生成检查使用同一套顺序：网络接入与局域网、常规广告与隐私、海外及国际版 AI、Apple、海外具体产品、Google、Microsoft、国内 AI 与国内产品、可选扩展广告、海外补充、国内补充。具体产品先认领专用主机，共享平台和地区补充随后处理。
 
-常规广告用 022。021 是明确的 Apple 广告与 OpenAI 广告像素；650 是默认关闭的扩展拦截。023 只拦已列出的公共 STUN 端点，可能影响会议和语音，不能凭它宣称 WebRTC 已防泄漏。[实际命中与防泄漏测试](docs/network-testing.md)
+常规广告用 0220。0210 是明确的 Apple 广告与 OpenAI 广告像素；6500 是默认关闭的扩展拦截。0230 只拦已列出的公共 STUN 端点，可能影响会议和语音，不能凭它宣称 WebRTC 已防泄漏。[实际命中与防泄漏测试](docs/network-testing.md)
 
 ## DNS 插件单独选择
 

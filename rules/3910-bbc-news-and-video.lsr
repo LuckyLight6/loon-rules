@@ -1,0 +1,13 @@
+# name: bbc-news-and-video
+# priority: 3910
+# section: media
+# description: BBC 新闻与影音
+# boundary: BBC 自有产品域；不包揽共享 CDN 或据此保证地区版权可用
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# rule-count: 3
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
+
+DOMAIN-SUFFIX,bbc.com
+DOMAIN-SUFFIX,bbci.co.uk
+DOMAIN-SUFFIX,bbc.co.uk

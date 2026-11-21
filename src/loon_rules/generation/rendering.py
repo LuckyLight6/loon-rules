@@ -2,7 +2,7 @@
 from datetime import datetime
 import re
 from loon_rules import rules
-from loon_rules.catalog import rule_filename
+from loon_rules.catalog import rule_filename, priority_label
 
 
 
@@ -22,7 +22,7 @@ def decorate(entry, rows, old, now):
         '# rule-count: '+str(len(rows)),
     ]
     if 'priority' in entry:
-        lines[1:1]=[f'# priority: {entry["priority"]:03d}', '# section: '+entry['section']]
+        lines[1:1]=[f'# priority: {priority_label(entry)}', '# section: '+entry['section']]
     lines.extend('# source: '+u for u in dict.fromkeys(entry['sources']))
     return '\n'.join(lines+['']+rows)+'\n'
 
@@ -70,10 +70,10 @@ def render_review(status,entries):
         for key in sorted(assigned_rules,key=lambda k:entries[k]['priority']):
             assigned=assigned_rules[key]
             e=entries[key]
-            summary.append(f"- [{e['priority']:03d} {e['description']}](../rules/{rule_filename(e)})：{len(assigned)} 条交给常规表处理。")
+            summary.append(f"- [{priority_label(e)} {e['description']}](../rules/{rule_filename(e)})：{len(assigned)} 条交给常规表处理。")
         for key,counts in audit['optional-overlaps'].items():
-            summary+=['',f"可选表 {entries[key]['priority']:03d} 与常规表有 {sum(counts.values())} 条相同规则（"+
-                      '、'.join(f"{entries[k]['priority']:03d}：{n} 条" for k,n in counts.items())+
+            summary+=['',f"可选表 {priority_label(entries[key])} 与常规表有 {sum(counts.values())} 条相同规则（"+
+                      '、'.join(f"{priority_label(entries[k])}：{n} 条" for k,n in counts.items())+
                       '）。'+entries[key]['boundary']]
             if entries[key].get('domain-remainder') and entries[key].get('policy-hint')=='reject':
                 summary.append('这些条目开启时拒绝，关闭后仍能按后面的补充表选路；不因可选开关而删除常规表的覆盖。')
@@ -87,7 +87,7 @@ def render_review(status,entries):
         e=entries[k]; state=states[k]; filename=rule_filename(e)
         counts=(f"：新增 {state['new-matches']}，撤回 {state['missing-rules']}"
                 if state['state']=='review' else '')
-        lines.append(f"- [{e['priority']:03d} {e['description']}](../rules/{filename})："
+        lines.append(f"- [{priority_label(e)} {e['description']}](../rules/{filename})："
                      +labels[state['state']]+counts)
     internal_pending={key:state for key,state in status['reviewed-inputs'].items()
                       if key in entries and 'priority' not in entries[key] and state['state']!='current'}
@@ -103,7 +103,7 @@ def render_review(status,entries):
     discoveries=status.get('discovery',{})
     discovery_attention={k:v for k,v in discoveries.items() if v['state']!='current'}
     for key,state in discovery_attention.items():
-        lines.append(f"- {entries[key]['priority']:03d} 自动补全："+
+        lines.append(f"- {priority_label(entries[key])} 自动补全："+
                      {'invalid':'用途资料格式变化','unavailable':'部分来源未读到',
                       'review':'部分候选缺少独立依据或存在产品归属冲突'}[state['state']])
     if not (pending or internal_pending or inventories or held or discovery_attention): lines.append('本轮生成检查通过。下面分别列出自动补全、筛选外范围和未采用条目。')
@@ -115,14 +115,14 @@ def render_review(status,entries):
                 '|---|---:|---:|---:|---:|---:|---|']
         labels={'current':'已核对','review':'需核实','unavailable':'来源未读到','invalid':'格式变化'}
         for key,state in sorted(discoveries.items(),key=lambda x:entries[x[0]]['priority']):
-            lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | "+
+            lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | "+
                          f"{state.get('admitted',0)} | {len(state.get('proofs',{}))} | {state.get('pending',0)} | "+
                          f"{state.get('scope-conflicts',0)} | {state.get('policy-excluded',0)} | {labels[state['state']]} |")
         for key,state in sorted(discoveries.items(),key=lambda x:entries[x[0]]['priority']):
             if owners:=state.get('reserved-owners'):
-                assigned='、'.join(f"{entries[owner]['priority']:03d} {entries[owner]['description']}（{count} 个）"
+                assigned='、'.join(f"{priority_label(entries[owner])} {entries[owner]['description']}（{count} 个）"
                                   for owner,count in owners.items())
-                lines+=['',f"{entries[key]['priority']:03d} 来源中有明确主机已由 {assigned} 处理，因此不重复收录。"]
+                lines+=['',f"{priority_label(entries[key])} 来源中有明确主机已由 {assigned} 处理，因此不重复收录。"]
     if projected:=status.get('projection-coverage'):
         total=lambda field:sum(state[field] for state in projected.values())
         lines+=['','## 产品来源有没有漏查？','',
@@ -135,7 +135,7 @@ def render_review(status,entries):
                 '域名后缀按完整范围核对，不能用根域命中代替所有子域都已覆盖。按精确名称收窄的项只核对该主机；逐项计数、筛选条件和其他产品归属见 data/maintenance-state.json 的 projection-coverage。筛选外名称不写进公共报告。','',
                 '| 来源 | 当前产品 | 符合筛选 / 来源范围 | 其他产品 | 筛选外未覆盖 |','|---|---|---:|---:|---:|']
         for source,state in projected.items():
-            products='、'.join(f"[{entries[key]['priority']:03d}](../rules/{rule_filename(entries[key])})" for key in state['products'])
+            products='、'.join(f"[{priority_label(entries[key])}](../rules/{rule_filename(entries[key])})" for key in state['products'])
             label=source.rstrip('/').rsplit('/',1)[-1]
             counts=f"{state['selected-scopes']} / {state['domain-scopes']}" if state['state']=='current' else {'unavailable':'未读到','invalid':'格式变化'}[state['state']]
             lines.append(f"| [{label}]({source}) | {products} | {counts} | "+
@@ -147,8 +147,8 @@ def render_review(status,entries):
         for key,rows in transfers.items():
             for row,proof in rows.items():
                 owner=proof['owner'];links='、'.join(f'[来源]({source})' for source in proof['sources'])
-                lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | `{row}` | "+
-                             f"{entries[owner]['priority']:03d} {entries[owner]['description']} | {links} |")
+                lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | `{row}` | "+
+                             f"{priority_label(entries[owner])} {entries[owner]['description']} | {links} |")
     expanded=status.get('expanded-inputs',{})
     if bags:={k:r for k,r in expanded.items() if r.get('method')=='public-plist-bag'}:
         lines+=['','## 消息身份入口怎样自动跟进？','',
@@ -157,7 +157,7 @@ def render_review(status,entries):
                 '| 规则 | 明确主机 | 来源 |','|---|---:|---|']
         for key,record in sorted(bags.items(),key=lambda item:entries[item[0]]['priority']):
             hosts={row for doc in record['documents'] for row in doc['rows']}
-            lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | {len(hosts)} | [公开配置]({record['directory']}) |")
+            lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | {len(hosts)} | [公开配置]({record['directory']}) |")
     if clients:={k:r for k,r in expanded.items() if r.get('method')=='ios-client-config'}:
         lines+=['','## 客户端版本和机型怎样自动跟进？','',
                 '从 Apple 公开软件目录读取当前在供的 iPhone、iPad、iPod 版本与支持机型，生成每个组合的配置请求。版本号、型号来自公开目录，不读取使用者的设备信息。',
@@ -167,7 +167,7 @@ def render_review(status,entries):
         for key,record in sorted(clients.items(),key=lambda item:entries[item[0]]['priority']):
             docs=record['documents'];versions={doc['version'] for doc in docs};models={doc['device'] for doc in docs}
             hosts={row for doc in docs for row in doc['rows']}
-            lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | "+
+            lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | "+
                 f"{len(docs)} 组（{len(versions)} 个版本、{len(models)} 个机型） | {len(hosts)} | "+
                 f"[软件目录]({record['directory']}) · [本轮请求示例]({docs[0]['source']}) |")
     if templates:={k:r for k,r in expanded.items() if r.get('method')=='host-templates'}:
@@ -176,7 +176,7 @@ def render_review(status,entries):
                 '| 规则 | 发布的模板 | 地区注册域 | 本轮专用主机 | 来源 |','|---|---|---:|---:|---|']
         for key,record in sorted(templates.items(),key=lambda item:entries[item[0]]['priority']):
             doc=record['documents'][0]
-            lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | "+
+            lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | "+
                 '、'.join('`'+value+'`' for value in record['templates'])+
                 f" | {len(record['registry-domains'])} | {len(doc['rows'])} | [用途表]({record['directory']}) · [地区清单]({doc['source']}) |")
     if apis:={k:r for k,r in expanded.items() if r.get('method','api-directory')=='api-directory'}:
@@ -187,7 +187,7 @@ def render_review(status,entries):
                 '|---|---|---|---:|---|']
         for key,record in sorted(apis.items(),key=lambda item:entries[item[0]]['priority']):
             for doc in record['documents']:
-                lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | {doc['name']} | "+
+                lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | {doc['name']} | "+
                              f"{doc['version']} | {len(doc['rows'])} | [来源]({doc['source']}) |")
     if pages:={k:r for k,r in expanded.items() if r.get('method')=='next-page'}:
         lines+=['','## 哪些入口从产品页面提取？','',
@@ -195,7 +195,7 @@ def render_review(status,entries):
                 '| 规则 | 请求用途 | 专用端点 | 资料 |','|---|---|---:|---|']
         for key,record in sorted(pages.items(),key=lambda item:entries[item[0]]['priority']):
             for doc in record['documents']:
-                lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | "+
+                lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | "+
                     '、'.join(doc['roles'])+f"；页面资源 | {len(doc['rows'])} | [产品页面]({record['directory']}) · [本轮路由文件]({doc['source']}) |")
     if shared:=status.get('shared-service-transfers'):
         lines+=['','## 哪些主机属于共用服务？','',
@@ -203,8 +203,8 @@ def render_review(status,entries):
                 '| 原专项 | 共用范围 | 现在由谁处理 |','|---|---|---|']
         for key,rows in shared.items():
             for row,owner in rows.items():
-                label=(f"{entries[owner]['priority']:03d} {entries[owner]['description']}" if owner else '未确定专门归属，继续后续匹配')
-                lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | `{row}` | {label} |")
+                label=(f"{priority_label(entries[owner])} {entries[owner]['description']}" if owner else '未确定专门归属，继续后续匹配')
+                lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | `{row}` | {label} |")
     if cname:=status.get('cname-discovery'):
         lines+=['','## 服务别名怎样归类？','',
                 f"CNAME 来源记录涉及 {cname['hosts-requested']} 个已公开服务主机，其中 {cname['hosts-read']} 个有读取结果；来源采集共 {cname['http-requests']} 次 HTTP 查询尝试，未读到的查询 {cname['unavailable-lookups']} 次。",
@@ -217,7 +217,7 @@ def render_review(status,entries):
                     '下表的「本轮读到」包含再次确认的已有别名，不代表全部是新增。依据见 data/maintenance-state.json 的 cname-alias-evidence。','',
                     '| 规则 | 本轮读到 | 查询不完整时保留 |','|---|---:|---:|']
             for key,rows in sorted(evidence.items(),key=lambda item:entries[item[0]]['priority']):
-                lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | "+
+                lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | "+
                     f"{sum(proof['state']=='current' for proof in rows.values())} | "+
                     f"{sum(proof['state']=='retained' for proof in rows.values())} |")
     if inventories:=status.get('service-inventories'):
@@ -227,12 +227,12 @@ def render_review(status,entries):
                 '| 规则 | 本轮来源范围 | 保留观察 | 已确认撤回 | 发布文件主机 | 状态 |','|---|---:|---:|---:|---:|---|']
         for key,state in sorted(inventories.items(),key=lambda item:entries[item[0]]['priority']):
             label='等下一轮确认' if state['state']=='observing' else '已核对'
-            lines.append(f"| {entries[key]['priority']:03d} {entries[key]['description']} | "+
+            lines.append(f"| {priority_label(entries[key])} {entries[key]['description']} | "+
                 f"{len(state['observed'])} | {len(state['retained'])} | {len(state['retired'])} | {len(state.get('artifact-hosts',{}))} | {label} |")
     if history:={key:state for key,state in status.get('config-endpoint-history',{}).items() if state['retained']}:
         lines+=['','## 局部配置缺项后保留了什么','',
                 '只沿用已经发布且仍符合当前用途的精确主机。下面是历史依据保留，不表示本轮配置再次列出；来源与最初采用时间见维护状态的 config-endpoint-history。','']
-        lines.extend(f"- {entries[key]['priority']:03d} {entries[key]['description']}：{len(state['retained'])} 个主机。"
+        lines.extend(f"- {priority_label(entries[key])} {entries[key]['description']}：{len(state['retained'])} 个主机。"
                      for key,state in history.items())
     if mirrors:=status.get('source-mirrors-used'):
         lines+=['','## 本轮用了哪些备用来源？','',
@@ -248,7 +248,7 @@ def render_review(status,entries):
                 '| 序号 | 英文名称 | 中文名称 | 固定声明 | 官方存在核对 |','|---|---|---|---:|---:|']
         for k in pure:
             e=entries[k]
-            lines.append(f"| {e['priority']:03d} | [{k}](../rules/{rule_filename(e)}) | {e['description']} | {fixed.get(k,0)} | {maintenance['official-checks'].get(k,0)} |")
+            lines.append(f"| {priority_label(e)} | [{k}](../rules/{rule_filename(e)}) | {e['description']} | {fixed.get(k,0)} | {maintenance['official-checks'].get(k,0)} |")
         lines+=['',f"另有 {len(maintenance['baseline-managed'])} 份表以上一版已审内容为基线，按各自条件接纳或撤回变化；"
                 '其中有官方用途提取、交叉核对和连续确认，不是每份都能自动接纳所有上游新增项。','',
                 f"{len(maintenance['source-scoped'])} 份表按来源筛选，但产品根域、地区和用途边界仍由人工设定。"
@@ -273,7 +273,7 @@ def render_review(status,entries):
         lines+=['','## 哪些候选没有加入？','']
         unchanged=[]
         for k in checked:
-            v=states[k]; tag=f"{entries[k]['priority']:03d}"
+            v=states[k]; tag=f"{priority_label(entries[k])}"
             figures=(('unaligned-prefixes','{} 条 IP 与掩码未对齐，未收录'),
                      ('excluded-client-matches','{} 条客户端或 URL 匹配不用于这份域名表'),
                      ('admitted-asns','新增 {} 个 ASN'),('unconfirmed-asns','{} 个 ASN 缺少清单或分配记录佐证，未加入'),
@@ -292,20 +292,20 @@ def render_review(status,entries):
                 '云平台替多家产品托管内容，不能根据云平台的名字判断产品或地区。国内表也会排除国际版 AI 的域名，以及会把它们一起匹配进去的父域。','']
         for k in outside:
             reason='、'.join(f'{v} 条{label}' for field,label in [('outside-purpose','共享托管范围'),('reserved-scopes','与国际版 AI 重叠')] if (v:=states[k].get(field)))
-            lines.append(f"- {entries[k]['priority']:03d}：{reason}")
+            lines.append(f"- {priority_label(entries[k])}：{reason}")
     if conflicts:=status.get('fallback-conflicts'):
         lines+=['','## 海外与国内来源有哪些重合？','',
                 '具体产品先匹配；已声明优先的海外与受限站点来源保留在海外补充，不被宽泛国内表扣除。未声明优先权的输入仍按保护范围处理。下面记录来源相交条数，不表示全部被删除，也不能相加当作网站数。','']
         for dest,counts in conflicts.items():
-            lines.append(f"- {entries[dest]['priority']:03d}："+'；'.join(
+            lines.append(f"- {priority_label(entries[dest])}："+'；'.join(
                 f"{entries[k]['description']} 有 {v} 条相交" for k,v in counts.items()))
     if ip:=status.get('ip-matching'):
         lines+=['','## 哪些 IP 规则会为了匹配而解析域名？','',
                 '这份表逐一检查所有含 IP 的独立订阅，合集不重复计数。域名规则未命中后，允许解析的 IP 规则才可能参与；解析器由 Loon 的 DNS 设置决定。',
                 '', '| 规则 | 只匹配已有 IP | 允许解析后匹配 |','|---|---:|---:|']
         for k in sorted(ip,key=lambda k:entries[k]['priority']):
-            n=entries[k]['priority'];v=ip[k]
-            lines.append(f'| {n:03d} · {entries[k]["description"]} | {v["no-resolve"]} | {v["resolve-for-match"]} |')
+            v=ip[k]
+            lines.append(f'| {priority_label(entries[k])} · {entries[k]["description"]} | {v["no-resolve"]} | {v["resolve-for-match"]} |')
         lines+=['','[IP 规则的解析用途](../docs/network-testing.md#ip-规则为什么有的保留解析)']
     return '\n'.join(lines)+'\n'
 
@@ -327,13 +327,15 @@ def render_index(config, entries):
     bands=config.get('routing-bands') or [
         {'title':s['title'],'ids':[k for k,e in entries.items() if e['section']==s['id']]}
         for s in sections.values()]
+    positions={key:i for i,key in enumerate(sorted(entries,key=lambda key:entries[key]['priority']))}
     def members_text(member_ids):
-        ns=sorted(entries[k]['priority'] for k in member_ids)
+        members=sorted(member_ids,key=lambda key:entries[key]['priority'])
         groups=[]
-        for n in ns:
-            if groups and n==groups[-1][-1]+1:groups[-1].append(n)
-            else:groups.append([n])
-        return '、'.join(f'{g[0]:03d}' if len(g)==1 else f'{g[0]:03d}–{g[-1]:03d}' for g in groups)
+        for key in members:
+            if groups and positions[key]==positions[groups[-1][-1]]+1:groups[-1].append(key)
+            else:groups.append([key])
+        return '、'.join(priority_label(entries[g[0]]) if len(g)==1 else
+                        priority_label(entries[g[0]])+'–'+priority_label(entries[g[-1]]) for g in groups)
     for band_number,band in enumerate(bands,1):
         sub_number=0
         lines+=[f'## {band_number} '+band['title'],'']
@@ -354,7 +356,7 @@ def render_index(config, entries):
                 lines+=([''] if i else [])+[f'### {band_number}.{sub_number} '+subtitles[k],'']
             if i==0 or k in subtitles:
                 lines+=['| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |','|---:|---|---|---|---|']
-            e=entries[k]; number=f'{e["priority"]:03d}';name=rule_filename(e)
+            e=entries[k]; number=f'{priority_label(e)}';name=rule_filename(e)
             selection=(f'**合集：替代 {members_text(e["members"])}。** ' if k in views else
                        '**可选。** ' if k in optional or k in alternatives else '')
             desc=e.get('index-title',e['description']).rstrip('。')

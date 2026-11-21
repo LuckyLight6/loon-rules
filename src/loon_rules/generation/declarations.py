@@ -15,12 +15,14 @@ def section_for(config, rank):
     matches=[item['id'] for item in config['sections']
              if item.get('from',1000)<=rank<=item.get('through',0) or rank in item.get('numbers',())]
     if len(matches)!=1:
-        raise rules.Invalid(f'优先级 {rank:03d} 没有唯一分区')
+        label=catalog_schema.priority_label({'priority':rank},width=catalog_schema.priority_width(config))
+        raise rules.Invalid(f'优先级 {label} 没有唯一分区')
     return matches[0]
 
 
 def validate_declarations(config):
     catalog_schema.materialize(config)
+    width=catalog_schema.priority_width(config)
     entries={}
     priorities=set()
     components={e['id'] for e in config.get('source-components',())}
@@ -37,9 +39,10 @@ def validate_declarations(config):
                 raise rules.Invalid('来源比对输入不能声明订阅编号或业务分区：'+name)
         else:
             rank=e['priority']
-            if not isinstance(rank,int) or not 1<=rank<=999 or rank in priorities or e['section']!=section_for(config,rank):
+            if type(rank) is not int or not 1<=rank<10**width or rank in priorities or e['section']!=section_for(config,rank):
                 raise rules.Invalid('重复或不合规的编号：'+name)
             priorities.add(rank)
+            if width!=3:e=dict(e,**{'priority-width':width})
         entries[name]=e
     subscription_order(config,entries)
     names=[*config['detailed'],*config['general']]

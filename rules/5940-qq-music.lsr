@@ -1,0 +1,13 @@
+# name: qq-music
+# priority: 5940
+# section: media
+# description: QQ 音乐
+# boundary: 只收音乐专用主机；不接管 QQ、微信或整个腾讯平台
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# rule-count: 3
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list
+
+DOMAIN-SUFFIX,qqmusic.com
+DOMAIN-SUFFIX,y.qq.com
+DOMAIN-SUFFIX,music.qq.com

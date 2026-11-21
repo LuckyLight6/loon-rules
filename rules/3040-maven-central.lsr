@@ -1,0 +1,11 @@
+# name: maven-central
+# priority: 3040
+# section: development
+# description: Maven Central
+# boundary: 只认默认依赖仓库，不把 apache.org 整域算作包下载
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 1
+# source: https://maven.apache.org/guides/introduction/introduction-to-repositories.html
+
+DOMAIN,repo.maven.apache.org

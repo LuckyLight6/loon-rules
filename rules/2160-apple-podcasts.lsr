@@ -1,0 +1,11 @@
+# name: apple-podcasts
+# priority: 2160
+# section: apple
+# description: Apple 播客
+# boundary: 识别播客目录，不把创作者自己托管的音频也归给 Apple
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 1
+# source: https://podcasts.apple.com/us/browse
+
+DOMAIN,podcasts.apple.com

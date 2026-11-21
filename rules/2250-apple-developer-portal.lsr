@@ -1,0 +1,11 @@
+# name: apple-developer-portal
+# priority: 2250
+# section: apple
+# description: Apple Developer 门户
+# boundary: 只认开发者门户；账户认证、App 公证和独立下载主机沿用各自规则
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 1
+# source: https://developer.apple.com/download/
+
+DOMAIN,developer.apple.com

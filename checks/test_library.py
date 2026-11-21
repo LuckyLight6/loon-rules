@@ -101,7 +101,7 @@ class LibraryChecks(unittest.TestCase):
         config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         band=next(band for band in config['routing-bands'] if band['title']=='Apple 生态')
-        self.assertEqual(band['start'],200)
+        self.assertEqual(band['start'],2000)
         self.assertIn('apple-find-my',band['ids'])
         order=library.route_order(config,entries)
         self.assertLess(order.index('apple-find-my'),order.index('apple-cloud-sync'))
@@ -154,7 +154,9 @@ class LibraryChecks(unittest.TestCase):
 
     def test_a_dns_answer_in_ipv4_link_local_space_does_not_trigger_lan_bypass(self):
         lan='local-links-and-addresses'
-        data={lan:read_rules((library.ROOT/'rules'/'011-local-links-and-addresses.lsr').read_text())}
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
+        entries=library.validate_declarations(config)
+        data={lan:read_rules((library.ROOT/'rules'/library.rule_filename(entries[lan])).read_text())}
         self.assertIsNone(library.ordered_ip_route('169.254.0.2',[lan],data,literal=False))
         self.assertEqual(library.ordered_ip_route('169.254.0.2',[lan],data,literal=True),lan)
 
@@ -281,7 +283,9 @@ class LibraryChecks(unittest.TestCase):
 
     def test_public_translation_and_protocol_addresses_are_not_lan(self):
         lan='local-links-and-addresses'
-        data={lan:read_rules((library.ROOT/'rules'/'011-local-links-and-addresses.lsr').read_text())}
+        config=json.loads((library.ROOT/'config/catalog.json').read_text())
+        entries=library.validate_declarations(config)
+        data={lan:read_rules((library.ROOT/'rules'/library.rule_filename(entries[lan])).read_text())}
         for address in ('64:ff9b::808:808','2002:808:808::1','2001::1','::ffff:8.8.8.8',
                         '192.0.0.9','192.0.0.10','2001:20::1'):
             for literal in (True, False):

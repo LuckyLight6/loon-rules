@@ -1,0 +1,12 @@
+# name: blizzard-battlenet
+# priority: 4170
+# section: games
+# description: Blizzard / Battle.net 国际服务
+# boundary: 国际平台入口；国内运营商入口不因品牌相同而并入
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/blizzard.list
+
+DOMAIN-SUFFIX,blizzard.com
+DOMAIN-SUFFIX,battle.net

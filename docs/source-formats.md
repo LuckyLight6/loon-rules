@@ -6,12 +6,12 @@
 
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
-| 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 300、Cargo 307、PyPI 305、npm 303 |
-| SDK 静态配置 | 按模块、类和字段解析默认端点；不运行下载的源码 | Claude 101、xAI 104 等 |
+| 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3000、Cargo 3070、PyPI 3050、npm 3030 |
+| SDK 静态配置 | 按模块、类和字段解析默认端点；不运行下载的源码 | Claude 1010、xAI 1040 等 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
-| 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 110、Signal 332、Slack 336 |
+| 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3320、Slack 3360 |
 | 请求示例和代码字段 | `purpose-url-table`、`labelled-url-pairs` 等只取指定用途的 HTTPS 或 WSS 主机，忽略普通链接和载荷 | API、支付与通讯入口 |
-| Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 474、Teams 475、Office 下载 480 |
+| Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 4740、Teams 4750、Office 下载 4800 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
@@ -28,7 +28,7 @@
 
 `protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。所有读取器使用相同的共享主机边界。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
 
-官方表已明确用途、且列出的是单个主机时，`host-table.select` 可结合 `role` 与 `all-exact: true` 跟随这些精确端点。123 只选择 PCC 和 Apple Intelligence 扩展两种用途；官方增加第三方中继主机时可以自动补入，不必先把新名字写进白名单。相邻的 Siri、下载与 iCloud Private Relay 行不参加该选择，域名也不会扩大为整个 CDN 后缀。
+官方表已明确用途、且列出的是单个主机时，`host-table.select` 可结合 `role` 与 `all-exact: true` 跟随这些精确端点。1230 只选择 PCC 和 Apple Intelligence 扩展两种用途；官方增加第三方中继主机时可以自动补入，不必先把新名字写进白名单。相邻的 Siri、下载与 iCloud Private Relay 行不参加该选择，域名也不会扩大为整个 CDN 后缀。
 
 ## plist 和客户端配置
 
@@ -39,7 +39,7 @@
 - 根对象就是记录时，路径写 `[[]]`。同前缀混有开关或计时，使用 `typed-url-patterns`；必需字段变成开关或无效 URL 时仍拒绝更新
 - 外层包装有内层二进制数据时，`data-path` 只解开指定的一份，再核对内层身份与字段
 
-商店 205、音乐 217 和视频 219 读取同一公开配置的不同 API 字段。消息身份 211 使用 `expand.method: public-plist-bag`，只允许数字 `ix` 参数。定位 210 使用 `ios-client-config`，从公开软件目录计算版本、机型组合，再读取各组合的业务字段；`max-documents` 限制数量。
+商店 2050、音乐 2170 和视频 2190 读取同一公开配置的不同 API 字段。消息身份 2110 使用 `expand.method: public-plist-bag`，只允许数字 `ix` 参数。定位 2100 使用 `ios-client-config`，从公开软件目录计算版本、机型组合，再读取各组合的业务字段；`max-documents` 限制数量。
 
 普通下载器只接受无凭据、无查询参数的 HTTPS 来源。上述配置模式单独限制允许的公开参数，不接受令牌、设备标识或额外参数。读取器不发起登录、身份注册或消息操作。任一必需文档损坏或读取不完整，都不能用部分结果替代成品。
 
@@ -50,9 +50,9 @@
 | 场景 | 声明方法 | 必须检查 |
 |---|---|---|
 | 官方 API 目录 | `expand` 按产品标题及文档路径模板取文档；`versions: published` 读取仍公开的全部版本，默认 `preferred` 保留既有用法 | 产品身份、版本和服务器字段对应；一份文档不能归两个产品；缺文档时不发布部分结果 |
-| 地区主机模板 | `host-templates` 结合用途表、占位字段、端口与同一品牌的地区注册域清单 | 模板、品牌标签和注册域一致；共享租户不能当地区根域。Google 登录 452 是实例 |
-| JSON 中的文章正文 | `json-document` 用 `body-path` 选正文、`identity` 核对文章，再嵌套现成读取器 | 外层来源身份保持一致。JetBrains 124、309、516 按地区注释与用途分开 |
-| 前端页面的专用资源 | `next-page` 跟随页面数据明确声明的专用路由文件，再按用途读取字段和请求示例 | 页面身份、资源厂商范围与用途标签都匹配；不执行脚本，不扫描全部资源。Liblib 511 是实例 |
+| 地区主机模板 | `host-templates` 结合用途表、占位字段、端口与同一品牌的地区注册域清单 | 模板、品牌标签和注册域一致；共享租户不能当地区根域。Google 登录 4520 是实例 |
+| JSON 中的文章正文 | `json-document` 用 `body-path` 选正文、`identity` 核对文章，再嵌套现成读取器 | 外层来源身份保持一致。JetBrains 1240、3090、5160 按地区注释与用途分开 |
+| 前端页面的专用资源 | `next-page` 跟随页面数据明确声明的专用路由文件，再按用途读取字段和请求示例 | 页面身份、资源厂商范围与用途标签都匹配；不执行脚本，不扫描全部资源。Liblib 5110 是实例 |
 | 服务 CNAME 的独立租户 | `cname-tenants` 声明服务父域与 Public Suffix List 私有后缀 | 只有原服务链实际指向的完整租户名可生成精确规则；其他租户、子域和共享父域不能顺带采用 |
 
 API 目录中仍公开的旧版本也参加完整清单的并集。页面中的一个请求示例不代表全部服务，不能套用完整清单的撤回语义。

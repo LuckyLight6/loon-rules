@@ -39,8 +39,8 @@ def prepare_workspace(path):
 def repository_rows(root, config):
     import json
     from loon_rules.rules import read_rules
-    from loon_rules.catalog import rule_filename
-    rows={entry['id']:read_rules((root/'rules'/rule_filename(entry)).read_text())
+    from loon_rules.catalog import rule_filename, priority_width
+    rows={entry['id']:read_rules((root/'rules'/rule_filename(entry,width=priority_width(config))).read_text())
           for entry in config['entries']}
     rows.update(json.loads((root/'data/maintenance-state.json').read_text()).get('component-rules',{}))
     return rows

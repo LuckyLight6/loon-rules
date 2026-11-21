@@ -1,0 +1,22 @@
+# name: apple-find-my
+# priority: 2090
+# section: apple
+# description: Find My 设备与朋友查找的已识别入口
+# boundary: 查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 2100，共用 iCloud 网页、推送与静态素材不并入
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# rule-count: 7
+# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
+# source: https://support.apple.com/en-us/104978
+# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
+
+DOMAIN,fmipmobile.icloud.com
+DOMAIN,fmfmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
+DOMAIN,fmfmobile.fe2.apple-dns.net
+DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com

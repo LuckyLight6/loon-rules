@@ -1,0 +1,15 @@
+# name: hugging-face-model-hub
+# priority: 1160
+# section: ai
+# description: Hugging Face 模型库与专用 CDN
+# boundary: 共享存储不整段代理
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-20T17:51:12Z
+# rule-count: 4
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/huggingface.list
+# source: https://raw.githubusercontent.com/huggingface/huggingface_hub/main/src/huggingface_hub/constants.py
+
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,hf.space
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN,api.endpoints.huggingface.cloud

@@ -2,7 +2,7 @@
   "version": 5,
   "routing-bands": [
     {
-      "start": 11,
+      "start": 110,
       "title": "网络接入与局域网",
       "ids": [
         "local-links-and-addresses",
@@ -13,7 +13,7 @@
       ]
     },
     {
-      "start": 21,
+      "start": 210,
       "title": "广告与隐私",
       "ids": [
         "apple-and-ai-privacy-exceptions",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "start": 100,
+      "start": 1000,
       "title": "AI 服务（海外与国际版）",
       "ids": [
         "ai-overseas-all",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "start": 200,
+      "start": 2000,
       "title": "Apple 生态",
       "ids": [
         "apple-all",
@@ -186,7 +186,7 @@
       "note": "账户与商店交易可固定代理，安装包和更新包另选直连。合集用于统一出口，和成员二选一"
     },
     {
-      "start": 300,
+      "start": 3000,
       "title": "开发（海外）",
       "ids": [
         "github-code-and-packages",
@@ -210,7 +210,7 @@
       }
     },
     {
-      "start": 330,
+      "start": 3300,
       "title": "通讯与社交（海外）",
       "ids": [
         "telegram-messaging",
@@ -228,7 +228,7 @@
       }
     },
     {
-      "start": 350,
+      "start": 3500,
       "title": "支付（海外）",
       "ids": [
         "paypal-payments",
@@ -240,7 +240,7 @@
       ]
     },
     {
-      "start": 360,
+      "start": 3600,
       "title": "加密资产（海外）",
       "ids": [
         "binance-platform",
@@ -254,7 +254,7 @@
       }
     },
     {
-      "start": 380,
+      "start": 3800,
       "title": "媒体（海外）",
       "ids": [
         "overseas-media-all",
@@ -279,7 +279,7 @@
       }
     },
     {
-      "start": 410,
+      "start": 4100,
       "title": "游戏（海外）",
       "ids": [
         "steam-international-platform",
@@ -293,7 +293,7 @@
       ]
     },
     {
-      "start": 430,
+      "start": 4300,
       "title": "办公与其他海外产品",
       "ids": [
         "notion-workspace",
@@ -303,7 +303,7 @@
       ]
     },
     {
-      "start": 450,
+      "start": 4500,
       "title": "Google 生态",
       "ids": [
         "google-all",
@@ -325,7 +325,7 @@
       "note": "在海外具体产品之后、国内具体产品之前；先认 Discord 等产品专用主机，再处理 Google 的账户、产品和共享平台"
     },
     {
-      "start": 470,
+      "start": 4700,
       "title": "Microsoft 生态",
       "ids": [
         "microsoft-all",
@@ -350,7 +350,7 @@
       "note": "在海外具体产品之后、国内具体产品之前；Microsoft Copilot、GitHub Copilot 和 GitHub 仍各自独立"
     },
     {
-      "start": 500,
+      "start": 5000,
       "title": "AI 服务（国内版）",
       "ids": [
         "ai-cn-all",
@@ -382,7 +382,7 @@
       }
     },
     {
-      "start": 530,
+      "start": 5300,
       "title": "开发（国内）",
       "ids": [
         "gitee-hosting",
@@ -397,7 +397,7 @@
       }
     },
     {
-      "start": 550,
+      "start": 5500,
       "title": "通讯与社交（国内及两版共用）",
       "ids": [
         "wechat-shared-and-mainland",
@@ -407,7 +407,7 @@
       ]
     },
     {
-      "start": 570,
+      "start": 5700,
       "title": "支付（国内）",
       "ids": [
         "alipay-mainland-payments",
@@ -415,7 +415,7 @@
       ]
     },
     {
-      "start": 590,
+      "start": 5900,
       "title": "媒体（国内）",
       "ids": [
         "bilibili-mainland-video",
@@ -432,7 +432,7 @@
       }
     },
     {
-      "start": 610,
+      "start": 6100,
       "title": "游戏（国内）",
       "ids": [
         "steam-mainland-downloads",
@@ -441,7 +441,7 @@
       ]
     },
     {
-      "start": 630,
+      "start": 6300,
       "title": "购物与社区（国内）",
       "ids": [
         "taobao-and-xianyu-shopping",
@@ -453,14 +453,14 @@
       ]
     },
     {
-      "start": 650,
+      "start": 6500,
       "title": "扩展广告与统计拦截",
       "ids": [
         "extended-ad-and-tracking"
       ]
     },
     {
-      "start": 670,
+      "start": 6700,
       "title": "海外补充",
       "ids": [
         "overseas-media-extra",
@@ -469,7 +469,7 @@
       "note": "具体产品先匹配，再补其他海外影音和受限站点；这两份分别选择影音策略和通用代理"
     },
     {
-      "start": 700,
+      "start": 7000,
       "title": "国内补充",
       "ids": [
         "mainland-routing-all",
@@ -481,7 +481,7 @@
         "mainland-routing-all": "国内补充合集",
         "mainland-domains": "国内补充细分"
       },
-      "note": "国内补充只保留一套：统一选路用 702，分开选路用 704、707、711；其余请求由 FINAL 处理"
+      "note": "国内补充只保留一套：统一选路用 7020，分开选路用 7040、7070、7110；其余请求由 FINAL 处理"
     }
   ],
   "scoped-dns": {
@@ -576,7 +576,7 @@
         "IP-CIDR6,2001:db8::/32",
         "IP-CIDR6,ff00::/8"
       ],
-      "priority": 11,
+      "priority": 110,
       "section": "network",
       "ip-match": "per-rule",
       "include": [
@@ -610,11 +610,11 @@
     },
     {
       "id": "local-no-resolve-alt",
-      "priority": 12,
+      "priority": 120,
       "section": "network",
       "mode": "compiled",
       "description": "局域网管理名与已知 IP：不为匹配触发 DNS",
-      "boundary": "替代 011，不同时订阅。保留全部管理名和网段；未知内网名称不能再靠这份表解析到私网后直连",
+      "boundary": "替代 0110，不同时订阅。保留全部管理名和网段；未知内网名称不能再靠这份表解析到私网后直连",
       "sources": [
         "https://www.iana.org/assignments/iana-ipv4-special-registry/",
         "https://www.iana.org/assignments/iana-ipv6-special-registry/",
@@ -685,7 +685,7 @@
         "DOMAIN,open.e.189.cn",
         "DOMAIN,token.safebrowsing.apple"
       ],
-      "priority": 13,
+      "priority": 130,
       "section": "network"
     },
     {
@@ -693,14 +693,14 @@
       "mode": "compiled",
       "policy-hint": "direct",
       "description": "Tailscale 控制面、公开中继与 Tailnet 域名",
-      "boundary": "保留专用控制域与 MagicDNS 后缀，并从官方公开 DERP 表读取中继主机。只取主机名，不采用节点 IP；CGNAT 和 ULA 仍由 011 按用途处理",
+      "boundary": "保留专用控制域与 MagicDNS 后缀，并从官方公开 DERP 表读取中继主机。只取主机名，不采用节点 IP；CGNAT 和 ULA 仍由 0110 按用途处理",
       "sources": [
         "https://raw.githubusercontent.com/oo226/egern-config/refs/heads/surge/Rules/Tailscale-Direct.list",
         "https://tailscale.com/docs/reference/faq/firewall-ports",
         "https://tailscale.com/docs/integrations/firewalls",
         "https://controlplane.tailscale.com/derpmap/default"
       ],
-      "priority": 14,
+      "priority": 140,
       "section": "network",
       "include": [
         "DOMAIN-SUFFIX,tailscale.com",
@@ -729,7 +729,7 @@
         "https://www.ipify.org/",
         "https://www.ip138.com/"
       ],
-      "priority": 15,
+      "priority": 150,
       "section": "network",
       "include": [
         "DOMAIN,2026.ip138.com",
@@ -838,7 +838,7 @@
         "https://developers.openai.com/ads/measurement-pixel",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list"
       ],
-      "priority": 21,
+      "priority": 210,
       "section": "privacy",
       "include": [
         "DOMAIN,tr.iadsdk.apple.com",
@@ -867,7 +867,7 @@
       ],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "priority": 22,
+      "priority": 220,
       "section": "privacy",
       "fallback": true,
       "publish-kinds": [
@@ -888,7 +888,7 @@
         "https://webrtc.org/getting-started/peer-connections",
         "https://developers.cloudflare.com/realtime/turn/generate-credentials/"
       ],
-      "priority": 23,
+      "priority": 230,
       "section": "privacy",
       "include": [
         "DOMAIN,stun.l.google.com",
@@ -902,7 +902,7 @@
       "policy-hint": "global",
       "description": "海外 AI 合集",
       "boundary": "汇总所列海外 AI 和共用登录，与成员二选一；Apple Intelligence、国产国内版和国际版各自独立，不合并共享云整域",
-      "priority": 100,
+      "priority": 1000,
       "section": "ai",
       "member-selection": {
         "section": "ai",
@@ -936,7 +936,7 @@
       ],
       "license": "MIT",
       "notice": "erwanjun--surge-claude-rules.txt",
-      "priority": 101,
+      "priority": 1010,
       "section": "ai",
       "feed-sources": [
         "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list"
@@ -980,7 +980,7 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
         "https://openai.com/chatgpt-voice.json"
       ],
-      "priority": 102,
+      "priority": 1020,
       "section": "ai",
       "include": [
         "DOMAIN,openaiassets.blob.core.windows.net"
@@ -1034,7 +1034,7 @@
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
         "https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto"
       ],
-      "priority": 103,
+      "priority": 1030,
       "section": "ai",
       "include": [],
       "projection": [
@@ -1188,7 +1188,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 104,
+      "priority": 1040,
       "section": "ai",
       "excluded-rules": [
         "DOMAIN-SUFFIX,grokbot.com",
@@ -1267,11 +1267,11 @@
     },
     {
       "id": "grokipedia-encyclopedia",
-      "priority": 105,
+      "priority": 1050,
       "section": "ai",
       "mode": "compiled",
       "description": "Grokipedia AI 百科站点",
-      "boundary": "百科页面与内容；共用账号登录由 104 xAI 处理",
+      "boundary": "百科页面与内容；共用账号登录由 1040 xAI 处理",
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
         "https://grokipedia.com/"
@@ -1292,7 +1292,7 @@
       "mode": "compiled",
       "policy-hint": "ai-overseas",
       "description": "Copilot API、补全、对话及已证实的附件服务",
-      "boundary": "Copilot 专用接口、实时连接、附件、报告与遥测；必需接口另按用途核对，共用认证归 300。实验、通用模型目录与跨租户云通配符不纳入",
+      "boundary": "Copilot 专用接口、实时连接、附件、报告与遥测；必需接口另按用途核对，共用认证归 3000。实验、通用模型目录与跨租户云通配符不纳入",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list",
         "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference"
@@ -1311,7 +1311,7 @@
           ]
         }
       ],
-      "priority": 106,
+      "priority": 1060,
       "section": "ai",
       "index-title": "GitHub Copilot：补全、对话、API 与专用附件",
       "selection": "detailed",
@@ -1350,7 +1350,7 @@
         "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/",
         "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse"
       ],
-      "priority": 107,
+      "priority": 1070,
       "section": "ai",
       "include": [
         "DOMAIN,www.copilot.com",
@@ -1373,7 +1373,7 @@
     },
     {
       "id": "meta-ai-assistant",
-      "priority": 108,
+      "priority": 1080,
       "section": "ai",
       "mode": "compiled",
       "description": "Meta AI 助手的独立网站",
@@ -1399,12 +1399,12 @@
       "mode": "compiled",
       "policy-hint": "ai-overseas",
       "description": "Muse 独立个人助手与其专用入口",
-      "boundary": "只匹配 muse.ai。Meta AI 本站是 108；不把 Meta 社交 App 或 Muse 连接到的第三方网站归进来",
+      "boundary": "只匹配 muse.ai。Meta AI 本站是 1080；不把 Meta 社交 App 或 Muse 连接到的第三方网站归进来",
       "sources": [
         "https://muse.ai/",
         "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
       ],
-      "priority": 109,
+      "priority": 1090,
       "section": "ai",
       "extract": [
         {
@@ -1436,7 +1436,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 110,
+      "priority": 1100,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "publish-kinds": [
@@ -1487,7 +1487,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 111,
+      "priority": 1110,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1531,7 +1531,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 112,
+      "priority": 1120,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1575,7 +1575,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 113,
+      "priority": 1130,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1617,7 +1617,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 114,
+      "priority": 1140,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1661,7 +1661,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 115,
+      "priority": 1150,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1704,7 +1704,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 116,
+      "priority": 1160,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1747,7 +1747,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 117,
+      "priority": 1170,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1778,7 +1778,7 @@
         "https://elevenlabs.io/docs/eleven-api/resources/mcp-server",
         "https://raw.githubusercontent.com/elevenlabs/elevenlabs-python/main/src/elevenlabs/environment.py"
       ],
-      "priority": 118,
+      "priority": 1180,
       "section": "ai",
       "extract": [
         {
@@ -1819,7 +1819,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 119,
+      "priority": 1190,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1857,7 +1857,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 120,
+      "priority": 1200,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1898,7 +1898,7 @@
       "flags": [],
       "license": "GPL-3.0",
       "notice": "MetaCubeX--meta-rules-dat.txt",
-      "priority": 121,
+      "priority": 1210,
       "section": "ai",
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1925,11 +1925,11 @@
     {
       "id": "ai-com-agents",
       "mode": "compiled",
-      "priority": 122,
+      "priority": 1220,
       "section": "ai",
       "policy-hint": "global",
       "description": "ai.com 的个人 AI 代理",
-      "boundary": "ai.com 是独立服务，不归 ChatGPT 或 Claude。海外 AI 统一出口时选 100 即可",
+      "boundary": "ai.com 是独立服务，不归 ChatGPT 或 Claude。海外 AI 统一出口时选 1000 即可",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
         "https://ai.com/start"
@@ -1954,7 +1954,7 @@
         "https://support.apple.com/en-us/101555",
         "https://support.apple.com/en-us/121115"
       ],
-      "priority": 123,
+      "priority": 1230,
       "section": "apple",
       "extract": [
         {
@@ -1979,11 +1979,11 @@
     },
     {
       "id": "jetbrains-ai",
-      "priority": 124,
+      "priority": 1240,
       "section": "ai",
       "mode": "compiled",
       "description": "JetBrains AI",
-      "boundary": "AI 专用域和官方明确列出的海外后端；中国区 API 另列 516，IDE、账号和插件市场仍归 309，不认领共用配置服务",
+      "boundary": "AI 专用域和官方明确列出的海外后端；中国区 API 另列 5160，IDE、账号和插件市场仍归 3090，不认领共用配置服务",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains-ai.list",
         "https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json",
@@ -2043,7 +2043,7 @@
       "policy-hint": "ai-cn-international",
       "description": "国产 AI 国际版合集",
       "boundary": "由各产品专表合并生成；统一选出口时用此表，按厂商选出口则用成员，不同时订阅",
-      "priority": 125,
+      "priority": 1250,
       "section": "ai",
       "member-selection": {
         "section": "ai",
@@ -2054,7 +2054,7 @@
     },
     {
       "id": "qwen-international",
-      "priority": 126,
+      "priority": 1260,
       "section": "ai",
       "mode": "compiled",
       "description": "阿里千问与百炼 · 国际入口",
@@ -2107,7 +2107,7 @@
     },
     {
       "id": "kimi-international",
-      "priority": 127,
+      "priority": 1270,
       "section": "ai",
       "mode": "compiled",
       "description": "月之暗面 Kimi · 国际入口",
@@ -2140,7 +2140,7 @@
     },
     {
       "id": "zhipu-international",
-      "priority": 128,
+      "priority": 1280,
       "section": "ai",
       "mode": "compiled",
       "description": "智谱 · 国际入口",
@@ -2170,7 +2170,7 @@
     },
     {
       "id": "minimax-international",
-      "priority": 129,
+      "priority": 1290,
       "section": "ai",
       "mode": "compiled",
       "description": "MiniMax 与海螺 · 国际入口",
@@ -2202,7 +2202,7 @@
     },
     {
       "id": "bytedance-international",
-      "priority": 130,
+      "priority": 1300,
       "section": "ai",
       "mode": "compiled",
       "description": "字节豆包、扣子与模型平台 · 国际入口",
@@ -2242,7 +2242,7 @@
     },
     {
       "id": "siliconflow-international",
-      "priority": 131,
+      "priority": 1310,
       "section": "ai",
       "mode": "compiled",
       "description": "硅基流动 · 国际入口",
@@ -2279,7 +2279,7 @@
     },
     {
       "id": "tencent-international",
-      "priority": 132,
+      "priority": 1320,
       "section": "ai",
       "mode": "compiled",
       "description": "腾讯混元、元宝与 TokenHub · 国际入口",
@@ -2325,7 +2325,7 @@
     },
     {
       "id": "amp-connections",
-      "priority": 133,
+      "priority": 1330,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2358,7 +2358,7 @@
     },
     {
       "id": "anythingllm-connections",
-      "priority": 134,
+      "priority": 1340,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2389,7 +2389,7 @@
     },
     {
       "id": "fireworks-model-services",
-      "priority": 135,
+      "priority": 1350,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2430,7 +2430,7 @@
     },
     {
       "id": "opencode-connections",
-      "priority": 136,
+      "priority": 1360,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2505,7 +2505,7 @@
     },
     {
       "id": "kilo-connections",
-      "priority": 137,
+      "priority": 1370,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2568,7 +2568,7 @@
     },
     {
       "id": "cline-connections",
-      "priority": 138,
+      "priority": 1380,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2631,7 +2631,7 @@
     },
     {
       "id": "ollama-cloud",
-      "priority": 139,
+      "priority": 1390,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2668,7 +2668,7 @@
     },
     {
       "id": "chutes-model-services",
-      "priority": 140,
+      "priority": 1400,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2731,7 +2731,7 @@
     },
     {
       "id": "bothub-model-services",
-      "priority": 141,
+      "priority": 1410,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2794,7 +2794,7 @@
     },
     {
       "id": "commandcode-connections",
-      "priority": 142,
+      "priority": 1420,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2857,7 +2857,7 @@
     },
     {
       "id": "stackit-model-services",
-      "priority": 143,
+      "priority": 1430,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2894,7 +2894,7 @@
     },
     {
       "id": "novita-model-services",
-      "priority": 144,
+      "priority": 1440,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -2957,7 +2957,7 @@
     },
     {
       "id": "nebius-model-services",
-      "priority": 145,
+      "priority": 1450,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3020,7 +3020,7 @@
     },
     {
       "id": "baseten-model-services",
-      "priority": 146,
+      "priority": 1460,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3083,7 +3083,7 @@
     },
     {
       "id": "deepinfra-model-services",
-      "priority": 147,
+      "priority": 1470,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3126,7 +3126,7 @@
     },
     {
       "id": "together-model-services",
-      "priority": 148,
+      "priority": 1480,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3170,7 +3170,7 @@
     },
     {
       "id": "cerebras-model-services",
-      "priority": 149,
+      "priority": 1490,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3213,7 +3213,7 @@
     },
     {
       "id": "stepfun-international",
-      "priority": 150,
+      "priority": 1500,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3262,7 +3262,7 @@
     },
     {
       "id": "xiaomi-international",
-      "priority": 151,
+      "priority": 1510,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3310,7 +3310,7 @@
     },
     {
       "id": "replicate-model-services",
-      "priority": 152,
+      "priority": 1520,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3343,7 +3343,7 @@
     },
     {
       "id": "runway-creative-tools",
-      "priority": 153,
+      "priority": 1530,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3376,7 +3376,7 @@
     },
     {
       "id": "stability-model-services",
-      "priority": 154,
+      "priority": 1540,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3407,7 +3407,7 @@
     },
     {
       "id": "black-forest-model-services",
-      "priority": 155,
+      "priority": 1550,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3438,7 +3438,7 @@
     },
     {
       "id": "replit-cloud-development",
-      "priority": 156,
+      "priority": 1560,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3473,7 +3473,7 @@
     },
     {
       "id": "augment-code-assistant",
-      "priority": 157,
+      "priority": 1570,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3504,7 +3504,7 @@
     },
     {
       "id": "sourcegraph-code-and-cody",
-      "priority": 158,
+      "priority": 1580,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3537,7 +3537,7 @@
     },
     {
       "id": "continue-code-assistant",
-      "priority": 159,
+      "priority": 1590,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3568,7 +3568,7 @@
     },
     {
       "id": "coderabbit-code-review",
-      "priority": 160,
+      "priority": 1600,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3599,7 +3599,7 @@
     },
     {
       "id": "tabnine-code-assistant",
-      "priority": 161,
+      "priority": 1610,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3630,7 +3630,7 @@
     },
     {
       "id": "factory-coding-agents",
-      "priority": 162,
+      "priority": 1620,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3669,7 +3669,7 @@
     },
     {
       "id": "zed-editor-and-ai",
-      "priority": 163,
+      "priority": 1630,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3700,7 +3700,7 @@
     },
     {
       "id": "kiro-code-assistant",
-      "priority": 164,
+      "priority": 1640,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3731,7 +3731,7 @@
     },
     {
       "id": "bolt-app-builder",
-      "priority": 165,
+      "priority": 1650,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3762,7 +3762,7 @@
     },
     {
       "id": "lovable-app-builder",
-      "priority": 166,
+      "priority": 1660,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3793,7 +3793,7 @@
     },
     {
       "id": "v0-app-builder",
-      "priority": 167,
+      "priority": 1670,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3826,7 +3826,7 @@
     },
     {
       "id": "genspark-connections",
-      "priority": 168,
+      "priority": 1680,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3857,7 +3857,7 @@
     },
     {
       "id": "jasper-marketing-ai",
-      "priority": 169,
+      "priority": 1690,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3888,7 +3888,7 @@
     },
     {
       "id": "gamma-presentations",
-      "priority": 170,
+      "priority": 1700,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3919,7 +3919,7 @@
     },
     {
       "id": "phind-search",
-      "priority": 171,
+      "priority": 1710,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3950,7 +3950,7 @@
     },
     {
       "id": "inflection-and-pi",
-      "priority": 172,
+      "priority": 1720,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -3983,7 +3983,7 @@
     },
     {
       "id": "h2o-model-services",
-      "priority": 173,
+      "priority": 1730,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4014,7 +4014,7 @@
     },
     {
       "id": "otter-meeting-assistant",
-      "priority": 174,
+      "priority": 1740,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4045,7 +4045,7 @@
     },
     {
       "id": "descript-media-tools",
-      "priority": 175,
+      "priority": 1750,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4076,7 +4076,7 @@
     },
     {
       "id": "synthesia-video-tools",
-      "priority": 176,
+      "priority": 1760,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4107,7 +4107,7 @@
     },
     {
       "id": "luma-creative-tools",
-      "priority": 177,
+      "priority": 1770,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4138,7 +4138,7 @@
     },
     {
       "id": "leonardo-image-tools",
-      "priority": 178,
+      "priority": 1780,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4169,7 +4169,7 @@
     },
     {
       "id": "pika-video-tools",
-      "priority": 179,
+      "priority": 1790,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4200,7 +4200,7 @@
     },
     {
       "id": "recraft-design-tools",
-      "priority": 180,
+      "priority": 1800,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4231,7 +4231,7 @@
     },
     {
       "id": "udio-music-tools",
-      "priority": 181,
+      "priority": 1810,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4262,7 +4262,7 @@
     },
     {
       "id": "duck-ai-chat",
-      "priority": 182,
+      "priority": 1820,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4293,7 +4293,7 @@
     },
     {
       "id": "langchain-agent-platform",
-      "priority": 183,
+      "priority": 1830,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4324,7 +4324,7 @@
     },
     {
       "id": "comfy-cloud-and-registry",
-      "priority": 184,
+      "priority": 1840,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4357,7 +4357,7 @@
     },
     {
       "id": "lmstudio-product-services",
-      "priority": 185,
+      "priority": 1850,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4388,7 +4388,7 @@
     },
     {
       "id": "crewai-agent-platform",
-      "priority": 186,
+      "priority": 1860,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4419,7 +4419,7 @@
     },
     {
       "id": "eigent-agent-services",
-      "priority": 187,
+      "priority": 1870,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4450,7 +4450,7 @@
     },
     {
       "id": "manus-agent-services",
-      "priority": 188,
+      "priority": 1880,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4483,7 +4483,7 @@
     },
     {
       "id": "youmind-international",
-      "priority": 189,
+      "priority": 1890,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4518,7 +4518,7 @@
     },
     {
       "id": "qoder-international",
-      "priority": 190,
+      "priority": 1900,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4549,7 +4549,7 @@
     },
     {
       "id": "lovart-international",
-      "priority": 191,
+      "priority": 1910,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4580,7 +4580,7 @@
     },
     {
       "id": "dia-browser-services",
-      "priority": 192,
+      "priority": 1920,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4613,7 +4613,7 @@
     },
     {
       "id": "openclaw-product-services",
-      "priority": 193,
+      "priority": 1930,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -4654,7 +4654,7 @@
         "DOMAIN,ocsp.digicert.cn",
         "DOMAIN,ocsp.digicert.com"
       ],
-      "priority": 200,
+      "priority": 2000,
       "section": "apple",
       "member-selection": {
         "section": "apple",
@@ -4673,7 +4673,7 @@
         "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list",
         "https://support.apple.com/en-us/101555"
       ],
-      "priority": 201,
+      "priority": 2010,
       "section": "apple",
       "extract": [
         {
@@ -4712,7 +4712,7 @@
       "sources": [
         "https://support.apple.com/en-us/101555"
       ],
-      "priority": 202,
+      "priority": 2020,
       "section": "apple",
       "include": [
         "DOMAIN,s.mzstatic.com",
@@ -4775,7 +4775,7 @@
         "https://developer.apple.com/documentation/applepaywebmerchantregistrationapi",
         "https://support.apple.com/en-us/101555"
       ],
-      "priority": 203,
+      "priority": 2030,
       "section": "apple",
       "include": [
         "DOMAIN,smp-paymentservices.apple.com",
@@ -4824,7 +4824,7 @@
           ]
         }
       ],
-      "priority": 204,
+      "priority": 2040,
       "section": "apple",
       "selection": "detailed"
     },
@@ -4843,7 +4843,7 @@
         "https://support.apple.com/en-us/101555",
         "https://init.itunes.apple.com/bag.xml"
       ],
-      "priority": 205,
+      "priority": 2050,
       "section": "apple",
       "extract": [
         {
@@ -4904,7 +4904,7 @@
         "https://royli.dev/blog/2019/better-proxy-rules-for-apple-services",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
-      "priority": 206,
+      "priority": 2060,
       "section": "apple",
       "include": [
         "DOMAIN,iosapps.itunes.apple.com"
@@ -4928,7 +4928,7 @@
       "sources": [
         "https://support.apple.com/en-us/101555"
       ],
-      "priority": 207,
+      "priority": 2070,
       "section": "apple",
       "include": [],
       "extract": [
@@ -4967,7 +4967,7 @@
       ],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "priority": 208,
+      "priority": 2080,
       "section": "apple",
       "ip-match": "target-ip",
       "include": [
@@ -5002,13 +5002,13 @@
     },
     {
       "id": "apple-find-my",
-      "priority": 209,
+      "priority": 2090,
       "section": "apple",
       "mode": "compiled",
       "selection": "detailed",
       "policy-hint": "apple-account",
       "description": "Find My 设备与朋友查找的已识别入口",
-      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 209，共用 iCloud 网页、推送与静态素材不并入",
+      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 2100，共用 iCloud 网页、推送与静态素材不并入",
       "sources": [
         "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
         "https://support.apple.com/en-us/104978",
@@ -5064,7 +5064,7 @@
         "https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A",
         "https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A"
       ],
-      "priority": 210,
+      "priority": 2100,
       "section": "apple",
       "include": [
         "DOMAIN,gsp9-ssl.apple.com",
@@ -5118,7 +5118,7 @@
     },
     {
       "id": "apple-messaging-identity",
-      "priority": 211,
+      "priority": 2110,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple IDS 共用身份、注册与查询服务",
@@ -5174,7 +5174,7 @@
       "mode": "managed",
       "policy-hint": "global",
       "description": "iCloud Private Relay（隐私中继）与 Apple DNS 别名",
-      "boundary": "在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 123 处理，不包含整个 iCloud 或 Apple DNS 后缀",
+      "boundary": "在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 1230 处理，不包含整个 iCloud 或 Apple DNS 后缀",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list"
       ],
@@ -5185,7 +5185,7 @@
       "flags": [],
       "license": "GPL-2.0",
       "notice": "blackmatrix7--ios_rule_script.txt",
-      "priority": 212,
+      "priority": 2120,
       "section": "apple",
       "official-hosts": true,
       "selection": "detailed"
@@ -5201,7 +5201,7 @@
         "https://support.apple.com/zh-cn/111754",
         "https://dns.google/resolve?name=icloud-content.com.cn&type=SOA"
       ],
-      "priority": 213,
+      "priority": 2130,
       "section": "apple",
       "extract": [
         {
@@ -5231,7 +5231,7 @@
     },
     {
       "id": "apple-icloud-content-domains",
-      "priority": 214,
+      "priority": 2140,
       "section": "apple",
       "mode": "compiled",
       "description": "iCloud 通用内容域",
@@ -5273,7 +5273,7 @@
         "https://support.apple.com/en-us/118230",
         "https://support.apple.com/zh-cn/111754"
       ],
-      "priority": 215,
+      "priority": 2150,
       "section": "apple",
       "extract": [
         {
@@ -5319,7 +5319,7 @@
     },
     {
       "id": "apple-podcasts",
-      "priority": 216,
+      "priority": 2160,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple 播客",
@@ -5350,13 +5350,13 @@
       "mode": "compiled",
       "policy-hint": "apple-media",
       "description": "Apple Music、广播及共用 API 与应用门户",
-      "boundary": "保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量。明确音频传输在 217",
+      "boundary": "保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量。明确音频传输在 2180",
       "sources": [
         "https://rules.xkww3n.cyou/classical/apple-music.txt",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
         "https://init.itunes.apple.com/bag.xml"
       ],
-      "priority": 217,
+      "priority": 2170,
       "section": "apple",
       "include": [
         "DOMAIN,amp-api.media.apple.com"
@@ -5409,7 +5409,7 @@
     },
     {
       "id": "apple-music-audio-delivery",
-      "priority": 218,
+      "priority": 2180,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple Music 已识别音频交付主机",
@@ -5447,7 +5447,7 @@
         "https://itunespartner.apple.com/music/assets/music-artist-api.pdf",
         "https://init.itunes.apple.com/bag.xml"
       ],
-      "priority": 219,
+      "priority": 2190,
       "section": "apple",
       "projection": [
         {
@@ -5494,7 +5494,7 @@
     },
     {
       "id": "apple-tv-video-delivery",
-      "priority": 220,
+      "priority": 2200,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple TV 已识别的 HLS 视频交付",
@@ -5530,7 +5530,7 @@
         "https://news.apple.com/",
         "https://dns.google/resolve?name=news.apple.com&type=A"
       ],
-      "priority": 221,
+      "priority": 2210,
       "section": "apple",
       "include": [
         "DOMAIN,news-events.apple.com",
@@ -5576,7 +5576,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "Kianuni--AppleFlow.txt",
-      "priority": 222,
+      "priority": 2220,
       "section": "apple",
       "feed-sources": [
         "https://raw.githubusercontent.com/Kianuni/AppleFlow/main/rules/surge/Siri-Direct.list"
@@ -5589,7 +5589,7 @@
       "mode": "compiled",
       "policy-hint": "apple-account",
       "description": "系统更新目录、检查、授权与登记",
-      "boundary": "更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 232，二进制包体在 223，不把整组当成匿名静态下载",
+      "boundary": "更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 2330，二进制包体在 2240，不把整组当成匿名静态下载",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list",
@@ -5598,7 +5598,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list"
       ],
-      "priority": 223,
+      "priority": 2230,
       "section": "apple",
       "extract": [
         {
@@ -5681,7 +5681,7 @@
     },
     {
       "id": "apple-update-downloads",
-      "priority": 224,
+      "priority": 2240,
       "section": "apple",
       "mode": "compiled",
       "description": "系统更新包与恢复内容下载",
@@ -5744,7 +5744,7 @@
     },
     {
       "id": "apple-developer-portal",
-      "priority": 225,
+      "priority": 2250,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple Developer 门户",
@@ -5785,7 +5785,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
       ],
-      "priority": 226,
+      "priority": 2260,
       "section": "apple",
       "include": [
         "DOMAIN,adcdownload.apple.com"
@@ -5838,7 +5838,7 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list"
       ],
-      "priority": 227,
+      "priority": 2270,
       "section": "apple",
       "extract": [
         {
@@ -5853,11 +5853,11 @@
     },
     {
       "id": "apple-shared-store-assets",
-      "priority": 228,
+      "priority": 2280,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple 商店与媒体共用的静态内容",
-      "boundary": "mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包。s.mzstatic.com 应先命中 202；静态图片别名不保证专供大陆",
+      "boundary": "mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包。s.mzstatic.com 应先命中 2020；静态图片别名不保证专供大陆",
       "sources": [
         "https://support.apple.com/en-us/101555",
         "https://royli.dev/blog/2019/better-proxy-rules-for-apple-services",
@@ -5883,7 +5883,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
       ],
-      "priority": 229,
+      "priority": 2290,
       "section": "apple",
       "extract": [
         {
@@ -5921,7 +5921,7 @@
       "mode": "compiled",
       "policy-hint": "direct",
       "description": "设备引导、MDM、校时、系统 DNS 与公共素材",
-      "boundary": "保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 231，反馈诊断在 232，不把本组称为匿名 CDN",
+      "boundary": "保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 2320，反馈诊断在 2330，不把本组称为匿名 CDN",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list",
         "https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list",
@@ -5931,7 +5931,7 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list"
       ],
-      "priority": 230,
+      "priority": 2300,
       "section": "apple",
       "include": [
         "DOMAIN,apple-native-relay.apple.com",
@@ -6009,7 +6009,7 @@
     },
     {
       "id": "apple-schoolwork-handouts",
-      "priority": 231,
+      "priority": 2310,
       "section": "apple",
       "mode": "compiled",
       "description": "Apple Schoolwork 讲义与资料交付",
@@ -6041,7 +6041,7 @@
     },
     {
       "id": "apple-device-registration",
-      "priority": 232,
+      "priority": 2320,
       "section": "apple",
       "mode": "compiled",
       "selection": "detailed",
@@ -6087,7 +6087,7 @@
     },
     {
       "id": "apple-feedback-and-diagnostics",
-      "priority": 233,
+      "priority": 2330,
       "section": "apple",
       "mode": "compiled",
       "selection": "detailed",
@@ -6160,7 +6160,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "GitHub 代码托管、API、Actions 与容器镜像",
-      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符。Copilot 接口先由 106 匹配，npm 公共仓库仍归 303",
+      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符。Copilot 接口先由 1060 匹配，npm 公共仓库仍归 3030",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr",
         "https://api.github.com/meta"
@@ -6195,7 +6195,7 @@
       "allowed-shared": [
         "githubusercontent.com"
       ],
-      "priority": 300,
+      "priority": 3000,
       "section": "development",
       "extract": [
         {
@@ -6216,7 +6216,7 @@
     },
     {
       "id": "gitlab-hosting",
-      "priority": 301,
+      "priority": 3010,
       "section": "development",
       "mode": "compiled",
       "description": "GitLab.com",
@@ -6249,7 +6249,7 @@
     },
     {
       "id": "bitbucket-hosting",
-      "priority": 302,
+      "priority": 3020,
       "section": "development",
       "mode": "compiled",
       "description": "Atlassian Bitbucket",
@@ -6297,7 +6297,7 @@
     },
     {
       "id": "npm-registry",
-      "priority": 303,
+      "priority": 3030,
       "section": "development",
       "mode": "compiled",
       "description": "npm 软件包",
@@ -6353,7 +6353,7 @@
     },
     {
       "id": "maven-central",
-      "priority": 304,
+      "priority": 3040,
       "section": "development",
       "mode": "compiled",
       "description": "Maven Central",
@@ -6381,7 +6381,7 @@
     },
     {
       "id": "pypi-packages",
-      "priority": 305,
+      "priority": 3050,
       "section": "development",
       "mode": "compiled",
       "description": "PyPI 软件包",
@@ -6433,7 +6433,7 @@
     },
     {
       "id": "docker-hub",
-      "priority": 306,
+      "priority": 3060,
       "section": "development",
       "mode": "compiled",
       "description": "Docker Hub",
@@ -6492,7 +6492,7 @@
     },
     {
       "id": "rust-cargo",
-      "priority": 307,
+      "priority": 3070,
       "section": "development",
       "mode": "compiled",
       "description": "Rust、Cargo 与 crates.io",
@@ -6537,7 +6537,7 @@
     },
     {
       "id": "go-modules",
-      "priority": 308,
+      "priority": 3080,
       "section": "development",
       "mode": "compiled",
       "description": "Go 模块与工具链",
@@ -6566,7 +6566,7 @@
     },
     {
       "id": "jetbrains-ides",
-      "priority": 309,
+      "priority": 3090,
       "section": "development",
       "mode": "compiled",
       "description": "JetBrains IDE、授权与插件",
@@ -6631,7 +6631,7 @@
     },
     {
       "id": "nodejs-runtime",
-      "priority": 310,
+      "priority": 3100,
       "section": "development",
       "mode": "compiled",
       "selection": "detailed",
@@ -6662,7 +6662,7 @@
     },
     {
       "id": "agent-client-protocol",
-      "priority": 311,
+      "priority": 3110,
       "section": "development",
       "mode": "compiled",
       "selection": "detailed",
@@ -6722,7 +6722,7 @@
         }
       ],
       "cidr-source": "https://core.telegram.org/resources/cidr.txt",
-      "priority": 330,
+      "priority": 3300,
       "section": "social",
       "ip-match": "target-ip"
     },
@@ -6759,12 +6759,12 @@
           ]
         }
       ],
-      "priority": 331,
+      "priority": 3310,
       "section": "social"
     },
     {
       "id": "signal-messenger",
-      "priority": 332,
+      "priority": 3320,
       "section": "social",
       "mode": "compiled",
       "description": "Signal 消息、通话、贴纸、群组与用户名链接",
@@ -6798,7 +6798,7 @@
     },
     {
       "id": "line-messenger",
-      "priority": 333,
+      "priority": 3330,
       "section": "social",
       "mode": "compiled",
       "description": "LINE",
@@ -6828,7 +6828,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "X / Twitter 社交与图像视频",
-      "boundary": "Grok 专用的 grok.x.com 由 104 在前截取。只接产品和短链，不使用 twitter 关键词或广泛网段",
+      "boundary": "Grok 专用的 grok.x.com 由 1040 在前截取。只接产品和短链，不使用 twitter 关键词或广泛网段",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr"
       ],
@@ -6853,7 +6853,7 @@
       "allowed-shared": [
         "x.com"
       ],
-      "priority": 334,
+      "priority": 3340,
       "section": "social"
     },
     {
@@ -6861,7 +6861,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "WeChat 国际门户与支付",
-      "boundary": "只分明确的国际入口；微信和 WeChat 共同使用的 qq.com 下精确子域由 550 负责",
+      "boundary": "只分明确的国际入口；微信和 WeChat 共同使用的 qq.com 下精确子域由 5500 负责",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list"
       ],
@@ -6876,12 +6876,12 @@
           ]
         }
       ],
-      "priority": 335,
+      "priority": 3350,
       "section": "social"
     },
     {
       "id": "slack-workspaces",
-      "priority": 336,
+      "priority": 3360,
       "section": "social",
       "mode": "compiled",
       "description": "Slack",
@@ -6923,7 +6923,7 @@
     },
     {
       "id": "reddit-community",
-      "priority": 337,
+      "priority": 3370,
       "section": "social",
       "mode": "compiled",
       "description": "Reddit",
@@ -6970,12 +6970,12 @@
           ]
         }
       ],
-      "priority": 350,
+      "priority": 3500,
       "section": "platforms"
     },
     {
       "id": "stripe-payments",
-      "priority": 351,
+      "priority": 3510,
       "section": "platforms",
       "mode": "compiled",
       "description": "Stripe",
@@ -7005,7 +7005,7 @@
     },
     {
       "id": "link-payments",
-      "priority": 352,
+      "priority": 3520,
       "section": "platforms",
       "mode": "compiled",
       "selection": "detailed",
@@ -7034,7 +7034,7 @@
     },
     {
       "id": "braintree-payments",
-      "priority": 353,
+      "priority": 3530,
       "section": "platforms",
       "mode": "compiled",
       "selection": "detailed",
@@ -7070,7 +7070,7 @@
     },
     {
       "id": "venmo-payments",
-      "priority": 354,
+      "priority": 3540,
       "section": "platforms",
       "mode": "compiled",
       "selection": "detailed",
@@ -7097,7 +7097,7 @@
     },
     {
       "id": "xoom-transfers",
-      "priority": 355,
+      "priority": 3550,
       "section": "platforms",
       "mode": "compiled",
       "selection": "detailed",
@@ -7125,7 +7125,7 @@
     },
     {
       "id": "binance-platform",
-      "priority": 360,
+      "priority": 3600,
       "section": "crypto",
       "mode": "compiled",
       "description": "Binance 币安",
@@ -7185,7 +7185,7 @@
     },
     {
       "id": "okx-platform",
-      "priority": 361,
+      "priority": 3610,
       "section": "crypto",
       "mode": "compiled",
       "description": "OKX 欧易",
@@ -7220,7 +7220,7 @@
     },
     {
       "id": "gemini-exchange",
-      "priority": 362,
+      "priority": 3620,
       "section": "crypto",
       "mode": "compiled",
       "selection": "detailed",
@@ -7258,7 +7258,7 @@
     },
     {
       "id": "trust-wallet",
-      "priority": 370,
+      "priority": 3700,
       "section": "crypto",
       "mode": "compiled",
       "description": "Trust Wallet",
@@ -7287,7 +7287,7 @@
       "policy-hint": "media",
       "description": "海外影音合集",
       "boundary": "汇总所列海外视频、音乐、短视频和直播专项；与成员二选一。国内影音和其他海外影音补充不包含在本组",
-      "priority": 380,
+      "priority": 3800,
       "section": "media",
       "member-selection": {
         "section": "media",
@@ -7299,7 +7299,7 @@
     },
     {
       "id": "hbo-streaming",
-      "priority": 381,
+      "priority": 3810,
       "section": "media",
       "mode": "compiled",
       "description": "HBO Max",
@@ -7361,7 +7361,7 @@
           ]
         }
       ],
-      "priority": 382,
+      "priority": 3820,
       "section": "media"
     },
     {
@@ -7391,7 +7391,7 @@
           ]
         }
       ],
-      "priority": 383,
+      "priority": 3830,
       "section": "media"
     },
     {
@@ -7414,7 +7414,7 @@
           ]
         }
       ],
-      "priority": 384,
+      "priority": 3840,
       "section": "media"
     },
     {
@@ -7446,7 +7446,7 @@
           ]
         }
       ],
-      "priority": 385,
+      "priority": 3850,
       "section": "media"
     },
     {
@@ -7472,7 +7472,7 @@
           ]
         }
       ],
-      "priority": 386,
+      "priority": 3860,
       "section": "media"
     },
     {
@@ -7498,7 +7498,7 @@
           ]
         }
       ],
-      "priority": 387,
+      "priority": 3870,
       "section": "media"
     },
     {
@@ -7531,7 +7531,7 @@
           ]
         }
       ],
-      "priority": 388,
+      "priority": 3880,
       "section": "media"
     },
     {
@@ -7553,7 +7553,7 @@
           ]
         }
       ],
-      "priority": 389,
+      "priority": 3890,
       "section": "media"
     },
     {
@@ -7570,7 +7570,7 @@
         "DOMAIN-SUFFIX"
       ],
       "flags": [],
-      "priority": 390,
+      "priority": 3900,
       "section": "media",
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
@@ -7578,7 +7578,7 @@
     },
     {
       "id": "bbc-news-and-video",
-      "priority": 391,
+      "priority": 3910,
       "section": "media",
       "mode": "compiled",
       "description": "BBC 新闻与影音",
@@ -7605,13 +7605,13 @@
     },
     {
       "id": "iqiyi-international",
-      "priority": 392,
+      "priority": 3920,
       "section": "media",
       "mode": "compiled",
       "selection": "detailed",
       "policy-hint": "media",
       "description": "爱奇艺国际版 iQIYI 与专用国际 API",
-      "boundary": "国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 仍由 592 处理",
+      "boundary": "国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 仍由 5920 处理",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list"
@@ -7647,7 +7647,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Steam 国际商店、社区、联机和下载",
-      "boundary": "国内下载镜像由 610 处理。社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段",
+      "boundary": "国内下载镜像由 6100 处理。社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr",
         "https://store.steampowered.com/"
@@ -7676,7 +7676,7 @@
           ]
         }
       ],
-      "priority": 410,
+      "priority": 4100,
       "section": "games"
     },
     {
@@ -7700,12 +7700,12 @@
           ]
         }
       ],
-      "priority": 411,
+      "priority": 4110,
       "section": "games"
     },
     {
       "id": "playstation-network",
-      "priority": 412,
+      "priority": 4120,
       "section": "games",
       "mode": "compiled",
       "description": "Sony PlayStation",
@@ -7732,7 +7732,7 @@
     },
     {
       "id": "nintendo-platform",
-      "priority": 413,
+      "priority": 4130,
       "section": "games",
       "mode": "compiled",
       "description": "Nintendo 任天堂",
@@ -7777,7 +7777,7 @@
     },
     {
       "id": "hoyoverse-international",
-      "priority": 414,
+      "priority": 4140,
       "section": "games",
       "mode": "compiled",
       "description": "HoYoverse 国际版",
@@ -7808,7 +7808,7 @@
     },
     {
       "id": "ea-games",
-      "priority": 415,
+      "priority": 4150,
       "section": "games",
       "mode": "compiled",
       "description": "EA 游戏平台",
@@ -7838,7 +7838,7 @@
     },
     {
       "id": "ubisoft-connect",
-      "priority": 416,
+      "priority": 4160,
       "section": "games",
       "mode": "compiled",
       "description": "Ubisoft Connect",
@@ -7880,7 +7880,7 @@
     },
     {
       "id": "blizzard-battlenet",
-      "priority": 417,
+      "priority": 4170,
       "section": "games",
       "mode": "compiled",
       "description": "Blizzard / Battle.net 国际服务",
@@ -7906,7 +7906,7 @@
     },
     {
       "id": "notion-workspace",
-      "priority": 430,
+      "priority": 4300,
       "section": "productivity",
       "mode": "compiled",
       "description": "Notion",
@@ -7954,7 +7954,7 @@
     },
     {
       "id": "figma-design",
-      "priority": 431,
+      "priority": 4310,
       "section": "productivity",
       "mode": "compiled",
       "description": "Figma",
@@ -7979,7 +7979,7 @@
     },
     {
       "id": "trello-boards",
-      "priority": 432,
+      "priority": 4320,
       "section": "productivity",
       "mode": "compiled",
       "description": "Trello",
@@ -8005,7 +8005,7 @@
     },
     {
       "id": "atlassian-cloud-services",
-      "priority": 433,
+      "priority": 4330,
       "section": "productivity",
       "mode": "compiled",
       "description": "Atlassian Cloud：共享平台、Jira 与 Confluence",
@@ -8054,7 +8054,7 @@
       "description": "Google 生态合集",
       "boundary": "替换本章学术、账户、邮箱、办公、Meet、Play、下载和通用服务成员，共用一个出口；更早的 Gemini、YouTube 等专项照常生效。需要节省下载配额时选细分",
       "fallback": true,
-      "priority": 450,
+      "priority": 4500,
       "section": "google",
       "allowed-shared": [
         "google.com",
@@ -8066,7 +8066,7 @@
     },
     {
       "id": "google-scholar",
-      "priority": 451,
+      "priority": 4510,
       "section": "google",
       "mode": "compiled",
       "description": "Google 学术搜索",
@@ -8118,7 +8118,7 @@
         "https://accounts.google.com/.well-known/openid-configuration",
         "https://www.google.com/supported_domains"
       ],
-      "priority": 452,
+      "priority": 4520,
       "section": "google",
       "extract": [
         {
@@ -8182,7 +8182,7 @@
         "https://www.googleapis.com/discovery/v1/apis",
         "https://github.com/googleapis/google-api-python-client/tree/main/googleapiclient/discovery_cache/documents"
       ],
-      "priority": 453,
+      "priority": 4530,
       "section": "google",
       "include": [
         "DOMAIN,mail.google.com",
@@ -8224,7 +8224,7 @@
         "https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams",
         "https://raw.githubusercontent.com/googleapis/googleapis/master/google/apps/meet/v2/service.proto"
       ],
-      "priority": 454,
+      "priority": 4540,
       "section": "google",
       "include": [
         "DOMAIN-SUFFIX,meet.google.com",
@@ -8272,7 +8272,7 @@
         "USER-AGENT"
       ],
       "flags": [],
-      "priority": 455,
+      "priority": 4550,
       "section": "google",
       "license": "GPL-2.0",
       "notice": "o-ocn--loon-rules.txt",
@@ -8303,7 +8303,7 @@
         "https://www.googleapis.com/discovery/v1/apis",
         "https://github.com/googleapis/google-api-python-client/tree/main/googleapiclient/discovery_cache/documents"
       ],
-      "priority": 456,
+      "priority": 4560,
       "section": "google",
       "extract": [
         {
@@ -8341,7 +8341,7 @@
     },
     {
       "id": "google-play-games",
-      "priority": 457,
+      "priority": 4570,
       "section": "google",
       "mode": "compiled",
       "policy-hint": "google-games",
@@ -8375,7 +8375,7 @@
         "https://support.google.com/work/android/answer/10513641",
         "https://support.google.com/chrome/a/answer/6334001"
       ],
-      "priority": 458,
+      "priority": 4580,
       "section": "google",
       "include": [
         "DOMAIN,dl.google.com",
@@ -8447,7 +8447,7 @@
         "google.com",
         "googleapis.com"
       ],
-      "priority": 459,
+      "priority": 4590,
       "section": "google",
       "domain-remainder": true,
       "extract": [
@@ -8465,7 +8465,7 @@
       "description": "Microsoft 生态合集",
       "boundary": "汇总所列账户、办公、会议、网盘、工具、商店、Xbox、更新与通用服务；与成员二选一。Microsoft Copilot、GitHub 和 GitHub Copilot 仍独立，不把多租户 Azure 或 Akamai 整段归入",
       "fallback": true,
-      "priority": 470,
+      "priority": 4700,
       "section": "microsoft",
       "member-selection": {
         "section": "microsoft"
@@ -8473,11 +8473,11 @@
     },
     {
       "id": "microsoft-vscode",
-      "priority": 471,
+      "priority": 4710,
       "section": "microsoft",
       "mode": "compiled",
       "description": "Microsoft Visual Studio Code",
-      "boundary": "编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 依赖下载归 482，GitHub 文件归 300，Copilot 归 106。实验和崩溃统计不按核心入口收录",
+      "boundary": "编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 依赖下载归 4820，GitHub 文件归 3000，Copilot 归 1060。实验和崩溃统计不按核心入口收录",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list",
         "https://code.visualstudio.com/docs/setup/network"
@@ -8529,7 +8529,7 @@
     },
     {
       "id": "microsoft-power-bi",
-      "priority": 472,
+      "priority": 4720,
       "section": "microsoft",
       "mode": "compiled",
       "description": "Microsoft Power BI",
@@ -8565,7 +8565,7 @@
         "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
         "https://raw.githubusercontent.com/Azure/azure-cli/dev/src/azure-cli-core/azure/cli/core/cloud.py"
       ],
-      "priority": 473,
+      "priority": 4730,
       "section": "microsoft",
       "include": [
         "DOMAIN,account.live.com",
@@ -8630,7 +8630,7 @@
         "https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com",
         "https://support.microsoft.com/en-us/outlook/getstarted/what-version-of-outlook-do-i-have"
       ],
-      "priority": 474,
+      "priority": 4740,
       "section": "microsoft",
       "include": [
         "DOMAIN,outlook.com",
@@ -8682,7 +8682,7 @@
         "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints"
       ],
-      "priority": 475,
+      "priority": 4750,
       "section": "microsoft",
       "include": [
         "DOMAIN,teams.live.com",
@@ -8751,7 +8751,7 @@
           ]
         }
       ],
-      "priority": 476,
+      "priority": 4760,
       "section": "microsoft"
     },
     {
@@ -8763,7 +8763,7 @@
       "sources": [
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints"
       ],
-      "priority": 477,
+      "priority": 4770,
       "section": "microsoft",
       "include": [],
       "extract": [
@@ -8798,7 +8798,7 @@
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints",
         "https://dns.google/resolve?name=download.windowsupdate.com&type=A"
       ],
-      "priority": 478,
+      "priority": 4780,
       "section": "microsoft",
       "include": [
         "DOMAIN,download.windowsupdate.com",
@@ -8834,7 +8834,7 @@
       "sources": [
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints"
       ],
-      "priority": 479,
+      "priority": 4790,
       "section": "microsoft",
       "include": [
         "DOMAIN,displaycatalog.mp.microsoft.com"
@@ -8866,7 +8866,7 @@
         "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
         "https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool"
       ],
-      "priority": 480,
+      "priority": 4800,
       "section": "microsoft",
       "include": [
         "DOMAIN,officecdn.microsoft.com"
@@ -8888,7 +8888,7 @@
         "https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints",
         "https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/s2s-auth-calls/service-authentication/live-website-authentication"
       ],
-      "priority": 481,
+      "priority": 4810,
       "section": "microsoft",
       "include": [
         "DOMAIN,user.auth.xboxlive.com",
@@ -8933,7 +8933,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "priority": 482,
+      "priority": 4820,
       "section": "microsoft",
       "fallback": true,
       "publish-kinds": [
@@ -9048,7 +9048,7 @@
       "policy-hint": "ai-cn",
       "description": "国产 AI 国内版合集",
       "boundary": "由各产品专表合并生成；统一选出口时用此表，按厂商选出口则用成员，不同时订阅",
-      "priority": 500,
+      "priority": 5000,
       "section": "ai",
       "member-selection": {
         "section": "ai",
@@ -9059,7 +9059,7 @@
     },
     {
       "id": "qwen-mainland",
-      "priority": 501,
+      "priority": 5010,
       "section": "ai",
       "mode": "compiled",
       "description": "阿里千问与百炼 · 国内入口",
@@ -9112,7 +9112,7 @@
     },
     {
       "id": "kimi-mainland",
-      "priority": 502,
+      "priority": 5020,
       "section": "ai",
       "mode": "compiled",
       "description": "月之暗面 Kimi · 国内入口",
@@ -9170,7 +9170,7 @@
     },
     {
       "id": "zhipu-mainland",
-      "priority": 503,
+      "priority": 5030,
       "section": "ai",
       "mode": "compiled",
       "description": "智谱 · 国内入口",
@@ -9201,7 +9201,7 @@
     },
     {
       "id": "minimax-mainland",
-      "priority": 504,
+      "priority": 5040,
       "section": "ai",
       "mode": "compiled",
       "description": "MiniMax 与海螺 · 国内入口",
@@ -9230,7 +9230,7 @@
     },
     {
       "id": "bytedance-mainland",
-      "priority": 505,
+      "priority": 5050,
       "section": "ai",
       "mode": "compiled",
       "description": "字节豆包、扣子与模型平台 · 国内入口",
@@ -9267,7 +9267,7 @@
     },
     {
       "id": "siliconflow-mainland",
-      "priority": 506,
+      "priority": 5060,
       "section": "ai",
       "mode": "compiled",
       "description": "硅基流动 · 国内入口",
@@ -9304,7 +9304,7 @@
     },
     {
       "id": "tencent-mainland",
-      "priority": 507,
+      "priority": 5070,
       "section": "ai",
       "mode": "compiled",
       "description": "腾讯混元、元宝与 TokenHub · 国内入口",
@@ -9354,7 +9354,7 @@
     },
     {
       "id": "deepseek-mainland",
-      "priority": 508,
+      "priority": 5080,
       "section": "ai",
       "mode": "compiled",
       "description": "DeepSeek · 国内入口",
@@ -9380,7 +9380,7 @@
     },
     {
       "id": "baidu-mainland",
-      "priority": 509,
+      "priority": 5090,
       "section": "ai",
       "mode": "compiled",
       "description": "百度文心与千帆",
@@ -9419,7 +9419,7 @@
     },
     {
       "id": "iflytek-mainland",
-      "priority": 510,
+      "priority": 5100,
       "section": "ai",
       "mode": "compiled",
       "description": "讯飞星火 · 国内入口",
@@ -9450,7 +9450,7 @@
     },
     {
       "id": "liblib-mainland",
-      "priority": 511,
+      "priority": 5110,
       "section": "ai",
       "mode": "compiled",
       "description": "哩布哩布 · 国内入口",
@@ -9483,7 +9483,7 @@
     },
     {
       "id": "baichuan-mainland",
-      "priority": 512,
+      "priority": 5120,
       "section": "ai",
       "mode": "compiled",
       "description": "百川智能 · 国内入口",
@@ -9507,7 +9507,7 @@
     },
     {
       "id": "lingyi-mainland",
-      "priority": 513,
+      "priority": 5130,
       "section": "ai",
       "mode": "compiled",
       "description": "零一万物 · 国内入口",
@@ -9532,7 +9532,7 @@
     },
     {
       "id": "stepfun-mainland",
-      "priority": 514,
+      "priority": 5140,
       "section": "ai",
       "mode": "compiled",
       "description": "阶跃星辰 · 国内入口",
@@ -9556,7 +9556,7 @@
     },
     {
       "id": "sensetime-mainland",
-      "priority": 515,
+      "priority": 5150,
       "section": "ai",
       "mode": "compiled",
       "description": "商汤日日新 · 国内入口",
@@ -9580,7 +9580,7 @@
     },
     {
       "id": "jetbrains-ai-mainland",
-      "priority": 516,
+      "priority": 5160,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -9629,7 +9629,7 @@
     },
     {
       "id": "modelscope-mainland",
-      "priority": 518,
+      "priority": 5180,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
@@ -9666,13 +9666,13 @@
     },
     {
       "id": "xiaomi-mainland-and-shared",
-      "priority": 519,
+      "priority": 5190,
       "section": "ai",
       "mode": "compiled",
       "selection": "detailed",
       "policy-hint": "ai-cn",
       "description": "小米 MiMo · 国内计划与共用 API",
-      "boundary": "MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在 151",
+      "boundary": "MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在 1510",
       "sources": [
         "https://models.dev/api.json",
         "https://platform.xiaomimimo.com/"
@@ -9714,7 +9714,7 @@
     },
     {
       "id": "gitee-hosting",
-      "priority": 530,
+      "priority": 5300,
       "section": "development",
       "mode": "compiled",
       "description": "Gitee 码云",
@@ -9742,7 +9742,7 @@
     },
     {
       "id": "coding-platform",
-      "priority": 531,
+      "priority": 5310,
       "section": "development",
       "mode": "compiled",
       "description": "腾讯 CODING",
@@ -9767,7 +9767,7 @@
     },
     {
       "id": "gitcode-hosting",
-      "priority": 532,
+      "priority": 5320,
       "section": "development",
       "mode": "compiled",
       "description": "GitCode",
@@ -9792,7 +9792,7 @@
     },
     {
       "id": "npmmirror-registry",
-      "priority": 533,
+      "priority": 5330,
       "section": "development",
       "mode": "compiled",
       "description": "npmmirror 国内镜像",
@@ -9820,7 +9820,7 @@
     },
     {
       "id": "tuna-mirrors",
-      "priority": 534,
+      "priority": 5340,
       "section": "development",
       "mode": "compiled",
       "description": "清华 TUNA 开源镜像",
@@ -9884,12 +9884,12 @@
           ]
         }
       ],
-      "priority": 550,
+      "priority": 5500,
       "section": "social"
     },
     {
       "id": "dingtalk-public",
-      "priority": 551,
+      "priority": 5510,
       "section": "social",
       "mode": "compiled",
       "description": "钉钉公共服务",
@@ -9916,7 +9916,7 @@
     },
     {
       "id": "douban-community",
-      "priority": 552,
+      "priority": 5520,
       "section": "social",
       "mode": "compiled",
       "description": "豆瓣",
@@ -9942,7 +9942,7 @@
     },
     {
       "id": "weibo-social",
-      "priority": 553,
+      "priority": 5530,
       "section": "social",
       "mode": "compiled",
       "description": "微博",
@@ -9990,12 +9990,12 @@
           ]
         }
       ],
-      "priority": 570,
+      "priority": 5700,
       "section": "platforms"
     },
     {
       "id": "unionpay-mainland",
-      "priority": 571,
+      "priority": 5710,
       "section": "platforms",
       "mode": "compiled",
       "description": "银联、云闪付国内服务",
@@ -10048,7 +10048,7 @@
           ]
         }
       ],
-      "priority": 590,
+      "priority": 5900,
       "section": "media"
     },
     {
@@ -10075,16 +10075,16 @@
           ]
         }
       ],
-      "priority": 591,
+      "priority": 5910,
       "section": "media"
     },
     {
       "id": "iqiyi-mainland",
-      "priority": 592,
+      "priority": 5920,
       "section": "media",
       "mode": "compiled",
       "description": "爱奇艺国内版",
-      "boundary": "国内版与专用素材；与 392 配套时国际专用子域先匹配。单用本表不能从 iqiyi.com 父域排除国际业务",
+      "boundary": "国内版与专用素材；与 3920 配套时国际专用子域先匹配。单用本表不能从 iqiyi.com 父域排除国际业务",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi.list"
       ],
@@ -10111,7 +10111,7 @@
     },
     {
       "id": "youku-video",
-      "priority": 593,
+      "priority": 5930,
       "section": "media",
       "mode": "compiled",
       "description": "优酷国内站",
@@ -10144,7 +10144,7 @@
     },
     {
       "id": "qq-music",
-      "priority": 594,
+      "priority": 5940,
       "section": "media",
       "mode": "compiled",
       "description": "QQ 音乐",
@@ -10171,7 +10171,7 @@
     },
     {
       "id": "kugou-music",
-      "priority": 595,
+      "priority": 5950,
       "section": "media",
       "mode": "compiled",
       "description": "酷狗音乐",
@@ -10197,7 +10197,7 @@
     },
     {
       "id": "kuaishou-video",
-      "priority": 596,
+      "priority": 5960,
       "section": "media",
       "mode": "compiled",
       "description": "快手",
@@ -10228,7 +10228,7 @@
       "mode": "compiled",
       "policy-hint": "domestic",
       "description": "Steam 中国下载镜像与蒸汽平台内容",
-      "boundary": "只收已确认的国内下载镜像；游戏账户、商店和社区归 410。不按第三方 CDN 整域判断",
+      "boundary": "只收已确认的国内下载镜像；游戏账户、商店和社区归 4100。不按第三方 CDN 整域判断",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr"
       ],
@@ -10247,12 +10247,12 @@
           ]
         }
       ],
-      "priority": 610,
+      "priority": 6100,
       "section": "games"
     },
     {
       "id": "mihoyo-mainland",
-      "priority": 611,
+      "priority": 6110,
       "section": "games",
       "mode": "compiled",
       "description": "米哈游国服与米游社",
@@ -10283,7 +10283,7 @@
     },
     {
       "id": "wegame-mainland",
-      "priority": 612,
+      "priority": 6120,
       "section": "games",
       "mode": "compiled",
       "description": "腾讯 WeGame 国内平台",
@@ -10328,7 +10328,7 @@
           ]
         }
       ],
-      "priority": 630,
+      "priority": 6300,
       "section": "platforms"
     },
     {
@@ -10351,7 +10351,7 @@
           ]
         }
       ],
-      "priority": 631,
+      "priority": 6310,
       "section": "platforms"
     },
     {
@@ -10373,12 +10373,12 @@
           ]
         }
       ],
-      "priority": 632,
+      "priority": 6320,
       "section": "platforms"
     },
     {
       "id": "zhihu-community",
-      "priority": 633,
+      "priority": 6330,
       "section": "platforms",
       "mode": "compiled",
       "description": "知乎",
@@ -10404,7 +10404,7 @@
     },
     {
       "id": "railway-tickets",
-      "priority": 634,
+      "priority": 6340,
       "section": "platforms",
       "mode": "compiled",
       "description": "铁路 12306",
@@ -10429,7 +10429,7 @@
     },
     {
       "id": "sina-shared-image-assets",
-      "priority": 635,
+      "priority": 6350,
       "section": "platforms",
       "mode": "compiled",
       "description": "新浪与微博共用图片",
@@ -10474,7 +10474,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "xkww3n--Rules.txt",
-      "priority": 650,
+      "priority": 6500,
       "section": "privacy",
       "fallback": true,
       "feed-sources": [
@@ -10506,7 +10506,7 @@
       "id": "overseas-media-extra",
       "mode": "compiled",
       "policy-hint": "media",
-      "priority": 670,
+      "priority": 6700,
       "section": "overseas-fallback",
       "description": "其他海外影音",
       "boundary": "只补专项未覆盖的影音域名，交给海外影音策略；不按共享 IP、关键字或客户端名识别",
@@ -10558,17 +10558,17 @@
         "DOMAIN-SUFFIX,gfwlist.end"
       ],
       "fallback": true,
-      "priority": 675,
+      "priority": 6750,
       "section": "overseas-fallback"
     },
     {
       "id": "mainland-routing-all",
       "mode": "view",
       "policy-hint": "domestic",
-      "priority": 702,
+      "priority": 7020,
       "section": "mainland-fallback",
       "description": "国内兜底合集",
-      "boundary": "将国内域名、网段和 GeoIP 交给同一策略时选本合集；需要分别控制时，用 704、707、711 替代。未命中域名仍可解析后按地址判断",
+      "boundary": "将国内域名、网段和 GeoIP 交给同一策略时选本合集；需要分别控制时，用 7040、7070、7110 替代。未命中域名仍可解析后按地址判断",
       "members": [
         "mainland-domains",
         "mainland-networks",
@@ -10602,7 +10602,7 @@
       ],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "priority": 704,
+      "priority": 7040,
       "section": "mainland-fallback",
       "fallback": true,
       "publish-kinds": [
@@ -10740,7 +10740,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "priority": 707,
+      "priority": 7070,
       "section": "mainland-fallback",
       "fallback": true,
       "ip-match": "allow-dns",
@@ -10768,7 +10768,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "Repcz--Tool.txt",
-      "priority": 711,
+      "priority": 7110,
       "section": "mainland-fallback",
       "fallback": true,
       "ip-match": "allow-dns"
@@ -13289,62 +13289,62 @@
       "id": "network",
       "title": "网络接入与局域网",
       "numbers": [
-        11,
-        12,
-        13,
-        14,
-        15
+        110,
+        120,
+        130,
+        140,
+        150
       ]
     },
     {
       "id": "privacy",
       "title": "广告与隐私",
       "numbers": [
-        21,
-        22,
-        23,
-        650
+        210,
+        220,
+        230,
+        6500
       ]
     },
     {
       "id": "apple",
       "title": "Apple 生态",
       "numbers": [
-        123,
-        200,
-        201,
-        202,
-        203,
-        204,
-        205,
-        206,
-        207,
-        208,
-        209,
-        210,
-        211,
-        212,
-        213,
-        214,
-        215,
-        216,
-        217,
-        218,
-        219,
-        220,
-        221,
-        222,
-        223,
-        224,
-        225,
-        226,
-        227,
-        228,
-        229,
-        230,
-        231,
-        232,
-        233
+        1230,
+        2000,
+        2010,
+        2020,
+        2030,
+        2040,
+        2050,
+        2060,
+        2070,
+        2080,
+        2090,
+        2100,
+        2110,
+        2120,
+        2130,
+        2140,
+        2150,
+        2160,
+        2170,
+        2180,
+        2190,
+        2200,
+        2210,
+        2220,
+        2230,
+        2240,
+        2250,
+        2260,
+        2270,
+        2280,
+        2290,
+        2300,
+        2310,
+        2320,
+        2330
       ]
     },
     {
@@ -13357,136 +13357,136 @@
         }
       ],
       "numbers": [
-        100,
-        101,
-        102,
-        103,
-        104,
-        105,
-        106,
-        107,
-        108,
-        109,
-        110,
-        111,
-        112,
-        113,
-        114,
-        115,
-        116,
-        117,
-        118,
-        119,
-        120,
-        121,
-        122,
-        124,
-        125,
-        126,
-        127,
-        128,
-        129,
-        130,
-        131,
-        132,
-        133,
-        134,
-        135,
-        136,
-        137,
-        138,
-        139,
-        140,
-        141,
-        142,
-        143,
-        144,
-        145,
-        146,
-        147,
-        148,
-        149,
-        150,
-        151,
-        152,
-        153,
-        154,
-        155,
-        156,
-        157,
-        158,
-        159,
-        160,
-        161,
-        162,
-        163,
-        164,
-        165,
-        166,
-        167,
-        168,
-        169,
-        170,
-        171,
-        172,
-        173,
-        174,
-        175,
-        176,
-        177,
-        178,
-        179,
-        180,
-        181,
-        182,
-        183,
-        184,
-        185,
-        186,
-        187,
-        188,
-        189,
-        190,
-        191,
-        192,
-        193,
-        500,
-        501,
-        502,
-        503,
-        504,
-        505,
-        506,
-        507,
-        508,
-        509,
-        510,
-        511,
-        512,
-        513,
-        514,
-        515,
-        516,
-        518,
-        519
+        1000,
+        1010,
+        1020,
+        1030,
+        1040,
+        1050,
+        1060,
+        1070,
+        1080,
+        1090,
+        1100,
+        1110,
+        1120,
+        1130,
+        1140,
+        1150,
+        1160,
+        1170,
+        1180,
+        1190,
+        1200,
+        1210,
+        1220,
+        1240,
+        1250,
+        1260,
+        1270,
+        1280,
+        1290,
+        1300,
+        1310,
+        1320,
+        1330,
+        1340,
+        1350,
+        1360,
+        1370,
+        1380,
+        1390,
+        1400,
+        1410,
+        1420,
+        1430,
+        1440,
+        1450,
+        1460,
+        1470,
+        1480,
+        1490,
+        1500,
+        1510,
+        1520,
+        1530,
+        1540,
+        1550,
+        1560,
+        1570,
+        1580,
+        1590,
+        1600,
+        1610,
+        1620,
+        1630,
+        1640,
+        1650,
+        1660,
+        1670,
+        1680,
+        1690,
+        1700,
+        1710,
+        1720,
+        1730,
+        1740,
+        1750,
+        1760,
+        1770,
+        1780,
+        1790,
+        1800,
+        1810,
+        1820,
+        1830,
+        1840,
+        1850,
+        1860,
+        1870,
+        1880,
+        1890,
+        1900,
+        1910,
+        1920,
+        1930,
+        5000,
+        5010,
+        5020,
+        5030,
+        5040,
+        5050,
+        5060,
+        5070,
+        5080,
+        5090,
+        5100,
+        5110,
+        5120,
+        5130,
+        5140,
+        5150,
+        5160,
+        5180,
+        5190
       ]
     },
     {
       "id": "social",
       "title": "通讯与社交",
       "numbers": [
-        330,
-        331,
-        332,
-        333,
-        334,
-        335,
-        336,
-        337,
-        550,
-        551,
-        552,
-        553
+        3300,
+        3310,
+        3320,
+        3330,
+        3340,
+        3350,
+        3360,
+        3370,
+        5500,
+        5510,
+        5520,
+        5530
       ]
     },
     {
@@ -13507,85 +13507,85 @@
         }
       ],
       "numbers": [
-        470,
-        471,
-        472,
-        473,
-        474,
-        475,
-        476,
-        477,
-        478,
-        479,
-        480,
-        481,
-        482
+        4700,
+        4710,
+        4720,
+        4730,
+        4740,
+        4750,
+        4760,
+        4770,
+        4780,
+        4790,
+        4800,
+        4810,
+        4820
       ]
     },
     {
       "id": "development",
       "title": "开发与代码托管",
       "numbers": [
-        300,
-        301,
-        302,
-        303,
-        304,
-        305,
-        306,
-        307,
-        308,
-        309,
-        310,
-        311,
-        530,
-        531,
-        532,
-        533,
-        534
+        3000,
+        3010,
+        3020,
+        3030,
+        3040,
+        3050,
+        3060,
+        3070,
+        3080,
+        3090,
+        3100,
+        3110,
+        5300,
+        5310,
+        5320,
+        5330,
+        5340
       ]
     },
     {
       "id": "media",
       "title": "音乐、视频与直播",
       "numbers": [
-        380,
-        381,
-        382,
-        383,
-        384,
-        385,
-        386,
-        387,
-        388,
-        389,
-        390,
-        391,
-        392,
-        590,
-        591,
-        592,
-        593,
-        594,
-        595,
-        596
+        3800,
+        3810,
+        3820,
+        3830,
+        3840,
+        3850,
+        3860,
+        3870,
+        3880,
+        3890,
+        3900,
+        3910,
+        3920,
+        5900,
+        5910,
+        5920,
+        5930,
+        5940,
+        5950,
+        5960
       ]
     },
     {
       "id": "games",
       "title": "游戏与下载",
       "numbers": [
-        410,
-        411,
-        412,
-        413,
-        414,
-        415,
-        416,
-        417,
-        610,
-        611,
-        612
+        4100,
+        4110,
+        4120,
+        4130,
+        4140,
+        4150,
+        4160,
+        4170,
+        6100,
+        6110,
+        6120
       ]
     },
     {
@@ -13602,74 +13602,74 @@
         }
       ],
       "numbers": [
-        450,
-        451,
-        452,
-        453,
-        454,
-        455,
-        456,
-        457,
-        458,
-        459
+        4500,
+        4510,
+        4520,
+        4530,
+        4540,
+        4550,
+        4560,
+        4570,
+        4580,
+        4590
       ]
     },
     {
       "id": "platforms",
       "title": "支付与国内日常",
       "numbers": [
-        350,
-        351,
-        352,
-        353,
-        354,
-        355,
-        570,
-        571,
-        630,
-        631,
-        632,
-        633,
-        634,
-        635
+        3500,
+        3510,
+        3520,
+        3530,
+        3540,
+        3550,
+        5700,
+        5710,
+        6300,
+        6310,
+        6320,
+        6330,
+        6340,
+        6350
       ]
     },
     {
       "id": "overseas-fallback",
       "title": "海外补充：影音和网站",
       "numbers": [
-        670,
-        675
+        6700,
+        6750
       ]
     },
     {
       "id": "mainland-fallback",
       "title": "国内识别：域名和地址",
       "numbers": [
-        702,
-        704,
-        707,
-        711
+        7020,
+        7040,
+        7070,
+        7110
       ]
     },
     {
       "id": "crypto",
       "title": "加密资产服务",
       "numbers": [
-        360,
-        361,
-        362,
-        370
+        3600,
+        3610,
+        3620,
+        3700
       ]
     },
     {
       "id": "productivity",
       "title": "协作与设计",
       "numbers": [
-        430,
-        431,
-        432,
-        433
+        4300,
+        4310,
+        4320,
+        4330
       ]
     }
   ],
@@ -15061,5 +15061,6 @@
         "xiaohongshu-community"
       ]
     }
-  ]
+  ],
+  "priority-width": 4
 }

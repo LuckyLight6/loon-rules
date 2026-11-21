@@ -1,0 +1,19 @@
+# name: apple-account-authentication
+# priority: 2010
+# section: apple
+# description: 登录、OAuth 相关服务、iCloud 初始化与账户恢复
+# boundary: 优先于商店、iCloud 与共享 Apple CDN
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T08:04:26Z
+# rule-count: 8
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list
+# source: https://support.apple.com/en-us/101555
+
+DOMAIN,iforgot.apple.com
+DOMAIN,setup.icloud.com
+DOMAIN,auth.itunes.apple.com
+DOMAIN,account.apple.com
+DOMAIN,appleid.cdn-apple.com
+DOMAIN,gsa.apple.com
+DOMAIN,idmsa.apple.com
+DOMAIN,appleid.apple.com

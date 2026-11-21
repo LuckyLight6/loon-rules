@@ -1,0 +1,79 @@
+# name: ai-cn-international-all
+# priority: 1250
+# section: ai
+# description: 国产 AI 国际版合集
+# boundary: 由各产品专表合并生成；统一选出口时用此表，按厂商选出口则用成员，不同时订阅
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-21T12:39:08Z
+# rule-count: 44
+# source: https://www.alibabacloud.com/help/en/model-studio/base-url
+# source: https://www.qianwen.com/
+# source: https://platform.kimi.com/docs/get-api-key
+# source: https://platform.kimi.ai/docs/get-your-api-key
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr
+# source: https://docs.bigmodel.cn/cn/guide/start/quick-start
+# source: https://docs.z.ai/guides/overview/quick-start
+# source: https://platform.minimax.io/docs/guides/quickstart-preparation
+# source: https://docs.volcengine.com/docs/ark/responses-api-text-generation?lang=en
+# source: https://docs.coze.cn/guides_FAQ
+# source: https://docs.byteplus.com/en/docs/modelark/coding-plan-personal-ai-codex
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list
+# source: https://docs.siliconflow.cn/docs/userguide/quickstart
+# source: https://docs.siliconflow.com/en/userguide/quickstart
+# source: https://cloud.tencent.com/document/api/1823/132282
+# source: https://cloud.tencent.com/document/product/1729/111007
+# source: https://models.dev/api.json
+# source: https://platform.stepfun.ai/docs/en/overview/concept
+# source: https://platform.stepfun.ai/docs/en/step-plan/integrations/reasoning-api
+# source: https://platform.xiaomimimo.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list
+# source: https://youmind.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list
+# source: https://qoder.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list
+# source: https://lovart.ai/
+
+DOMAIN-SUFFIX,qwen.ai
+DOMAIN,chat.qwenlm.ai
+DOMAIN,cn-hongkong.dashscope.aliyuncs.com
+DOMAIN,coding-intl.dashscope.aliyuncs.com
+DOMAIN,dashscope-intl.aliyuncs.com
+DOMAIN,dashscope-us.aliyuncs.com
+DOMAIN-SUFFIX,ap-northeast-1.maas.aliyuncs.com
+DOMAIN-SUFFIX,ap-southeast-1.maas.aliyuncs.com
+DOMAIN-SUFFIX,cn-hongkong.maas.aliyuncs.com
+DOMAIN-SUFFIX,eu-central-1.maas.aliyuncs.com
+DOMAIN-SUFFIX,us-east-1.maas.aliyuncs.com
+DOMAIN-SUFFIX,kimi.ai
+DOMAIN-SUFFIX,moonshot.ai
+DOMAIN-SUFFIX,z.ai
+DOMAIN-SUFFIX,hailuoai.video
+DOMAIN-SUFFIX,minimax.io
+DOMAIN,ark.ap-southeast.bytepluses.com
+DOMAIN-SUFFIX,coze.com
+DOMAIN-SUFFIX,marscode.com
+DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,cici.com
+DOMAIN-SUFFIX,ciciai.com
+DOMAIN-SUFFIX,ciciaicdn.com
+DOMAIN-SUFFIX,dola.com
+DOMAIN,api.siliconflow.com
+DOMAIN,cloud.siliconflow.com
+DOMAIN,tokenhub.ap-hongkong.tencentcloudapi.com
+DOMAIN,tokenhub.ap-singapore.tencentcloudapi.com
+DOMAIN,tokenhub.ap-jakarta.tencentcloudapi.com
+DOMAIN,tokenhub.ap-bangkok.tencentcloudapi.com
+DOMAIN,tokenhub.ap-seoul.tencentcloudapi.com
+DOMAIN,tokenhub.ap-tokyo.tencentcloudapi.com
+DOMAIN,tokenhub.na-ashburn.tencentcloudapi.com
+DOMAIN,tokenhub.na-siliconvalley.tencentcloudapi.com
+DOMAIN,tokenhub.sa-saopaulo.tencentcloudapi.com
+DOMAIN,tokenhub.eu-frankfurt.tencentcloudapi.com
+DOMAIN,api.stepfun.ai
+DOMAIN,token-plan-ams.xiaomimimo.com
+DOMAIN,token-plan-sgp.xiaomimimo.com
+DOMAIN-SUFFIX,youmind.ai
+DOMAIN-SUFFIX,youmind.com
+DOMAIN-SUFFIX,youmind.site
+DOMAIN-SUFFIX,qoder.com
+DOMAIN-SUFFIX,lovart.ai

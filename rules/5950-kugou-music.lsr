@@ -1,0 +1,12 @@
+# name: kugou-music
+# priority: 5950
+# section: media
+# description: 酷狗音乐
+# boundary: 酷狗产品和专用素材，与 QQ 音乐和通用腾讯服务分开
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list
+
+DOMAIN-SUFFIX,kugou.com
+DOMAIN-SUFFIX,kugou.net

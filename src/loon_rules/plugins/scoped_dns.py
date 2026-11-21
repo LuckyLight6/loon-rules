@@ -6,6 +6,7 @@ from ipaddress import ip_address
 from pathlib import Path
 from urllib.parse import urlsplit
 from loon_rules.domains import covers
+from loon_rules.catalog import priority_label, priority_width, rule_filename
 
 from loon_rules.project import ROOT
 OUTPUT = ROOT/'plugins'/'public-services-doh.plugin'
@@ -64,7 +65,8 @@ def build(catalog=None):
         if not isinstance(routes,list) or not routes:raise ValueError('Expected DNS routes')
     else:
         routes=[spec]
-    priorities={e['id']:e['priority'] for e in catalog['entries']}
+    width=priority_width(catalog)
+    entries={e['id']:e for e in catalog['entries']}
     hosts={};selected=set();notes=[]
     def domain_row(host):return ('DOMAIN-WILDCARD,' if host.startswith('*.') else 'DOMAIN,')+host
     for route in routes:
@@ -75,10 +77,10 @@ def build(catalog=None):
         if not groups or len(set(groups))!=len(groups) or selected.intersection(groups):
             raise ValueError('Expected distinct service groups')
         selected.update(groups)
-        notes.append('# '+label+'：'+provider+'；来源规则组 '+', '.join(f'{priorities[name]:03d}' for name in groups))
+        notes.append('# '+label+'：'+provider+'；来源规则组 '+', '.join(priority_label(entries[name],width=width) for name in groups))
         scope=set()
         for name in groups:
-            f=ROOT/'rules'/f'{priorities[name]:03d}-{name}.lsr'
+            f=ROOT/'rules'/rule_filename(entries[name],width=width)
             group_scope=names(f.read_text().splitlines(),catalog['shared-negatives'])
             if not group_scope:raise ValueError('Selected group has no public DNS hosts: '+f.name)
             scope.update(group_scope)

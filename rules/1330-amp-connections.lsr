@@ -1,0 +1,15 @@
+# name: amp-connections
+# priority: 1330
+# section: ai
+# description: Amp 登录、线程 WebSocket、CLI 与官方运行环境
+# boundary: 从当前官方网络允许列表读取，不复活已未列出的旧域名；代理须支持 WebSocket，第三方模型和用户访问的网站各自选路
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# rule-count: 5
+# source: https://ampcode.com/security
+
+DOMAIN,ampcode.com
+DOMAIN,auth.ampcode.com
+DOMAIN,static.ampcode.com
+DOMAIN,tunnel.ampcode.com
+DOMAIN-WILDCARD,*.onamp.dev

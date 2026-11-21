@@ -1,0 +1,18 @@
+# name: x-social-and-media
+# priority: 3340
+# section: social
+# description: X / Twitter 社交与图像视频
+# boundary: Grok 专用的 grok.x.com 由 1040 在前截取。只接产品和短链，不使用 twitter 关键词或广泛网段
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# rule-count: 8
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr
+
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,twimg.co
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twttr.com
+DOMAIN-SUFFIX,twvid.com
+DOMAIN-SUFFIX,x.com

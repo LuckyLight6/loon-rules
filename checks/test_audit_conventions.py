@@ -6,6 +6,16 @@ from loon_rules.rules import Invalid
 
 
 class AuditConventions(unittest.TestCase):
+    def test_published_maintenance_labels_refer_to_the_current_catalog_numbers(self):
+        config=json.loads((lib.ROOT/'config/catalog.json').read_text())
+        entries=lib.validate_declarations(config)
+        by_number={entry['priority']:entry for entry in entries.values() if 'priority' in entry}
+        methods=json.loads((lib.ROOT/'data/maintenance-state.json').read_text())['maintenance']
+        self.assertCountEqual([number for numbers in methods.values() for number in numbers],by_number)
+        for method,numbers in methods.items():
+            for number in numbers:
+                self.assertEqual(lib.maintenance_method(by_number[number]),method)
+
     def test_conservative_ads_protect_named_sites_without_whitelisting_ad_subdomains(self):
         cfg={'routing-bands':[{'ids':['ads-extra','sites-extra']}],
              'detailed':[],'general':['sites-extra'],'optional':['ads-extra']}

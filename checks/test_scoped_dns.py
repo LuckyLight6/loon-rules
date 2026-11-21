@@ -7,6 +7,18 @@ from loon_rules.plugins import scoped_dns
 
 
 class ScopedDNS(unittest.TestCase):
+    def test_four_digit_catalog_reads_padded_rule_files_without_full_schema(self):
+        cfg={'priority-width':4,'entries':[{'id':'service','priority':110}],
+             'shared-negatives':[],
+             'scoped-dns':{'provider':'Cloudflare','resolver':'https://1.1.1.1/dns-query',
+                           'groups':['service']}}
+        with TemporaryDirectory() as tmp,patch.object(scoped_dns,'ROOT',Path(tmp)):
+            folder=Path(tmp)/'rules';folder.mkdir()
+            (folder/'0110-service.lsr').write_text('DOMAIN,api.vendor.example\n')
+            result=scoped_dns.build(cfg)
+            self.assertIn('来源规则组 0110\n',result)
+            self.assertIn('api.vendor.example = server:https://1.1.1.1/dns-query',result)
+
     def test_different_public_services_can_use_distinct_encrypted_resolvers(self):
         cfg={'entries':[{'id':'overseas','priority':101},{'id':'mainland','priority':501}],
              'shared-negatives':[],

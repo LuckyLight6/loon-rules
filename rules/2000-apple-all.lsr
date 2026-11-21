@@ -1,0 +1,321 @@
+# name: apple-all
+# priority: 2000
+# section: apple
+# description: Apple 生态合集
+# boundary: 替换所列账户、系统、海外媒体、智能与 iCloud 成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-21T16:53:27Z
+# rule-count: 259
+# source: https://support.apple.com/en-us/101555
+# source: https://support.apple.com/en-us/121115
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+# source: https://developer.apple.com/documentation/applepaywebmerchantregistrationapi
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/TestFlight.lsr
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/TestFlight.list
+# source: https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl
+# source: https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list
+# source: https://books.apple.com/us/charts
+# source: https://init.itunes.apple.com/bag.xml
+# source: https://royli.dev/blog/2019/better-proxy-rules-for-apple-services
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/APNs.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-APNS.list
+# source: https://support.apple.com/guide/deployment/configure-devices-to-work-with-apns-dep2de55389a/web
+# source: https://support.apple.com/en-us/102266
+# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
+# source: https://support.apple.com/en-us/104978
+# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
+# source: https://gdmf.apple.com/v2/pmv
+# source: https://configuration.ls.apple.com/config/defaults
+# source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
+# source: https://init.ess.apple.com/WebObjects/VCInit.woa/wa/getBag?ix=3
+# source: https://support.apple.com/guide/security/sec70e68c949/web
+# source: https://github.com/OpenBubbles/rustpush/blob/master/src/util.rs
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list
+# source: https://support.apple.com/zh-cn/111754
+# source: https://dns.google/resolve?name=icloud-content.com.cn&type=SOA
+# source: https://support.apple.com/en-us/118230
+# source: https://podcasts.apple.com/us/browse
+# source: https://rules.xkww3n.cyou/classical/apple-music.txt
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
+# source: https://support.apple.com/zh-cn/118205
+# source: https://tv.apple.com/
+# source: https://itunespartner.apple.com/music/assets/music-artist-api.pdf
+# source: https://news.apple.com/
+# source: https://dns.google/resolve?name=news.apple.com&type=A
+# source: https://raw.githubusercontent.com/Kianuni/AppleFlow/main/rules/surge/Siri-Direct.list
+# source: https://support.apple.com/en-hk/127893
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# source: https://beta.apple.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://developers.google.com/speed/public-dns/docs/doh/json
+# source: https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/
+# source: https://developer.apple.com/download/
+# source: https://developer.apple.com/account/
+
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,cp4.cloudflare.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,iforgot.apple.com
+DOMAIN,auth.itunes.apple.com
+DOMAIN,account.apple.com
+DOMAIN,appleid.cdn-apple.com
+DOMAIN,gsa.apple.com
+DOMAIN,idmsa.apple.com
+DOMAIN,appleid.apple.com
+DOMAIN,ppq.apple.com
+DOMAIN,play.itunes.apple.com
+DOMAIN,idv-prod1.apple.com
+DOMAIN,smp-device-content.apple.com
+DOMAIN-SUFFIX,appattest.apple.com
+DOMAIN,idv.cdn-apple.com
+DOMAIN,pos-device.apple.com
+DOMAIN,smp-paymentservices.apple.com
+DOMAIN,cn-smp-paymentservices.apple.com
+DOMAIN,humb.apple.com
+DOMAIN-SUFFIX,testflight.apple.com
+DOMAIN,beta.itunes.apple.com
+DOMAIN-WILDCARD,*.apps.apple.com
+DOMAIN-WILDCARD,*buy.itunes.apple.com
+DOMAIN,sandbox.itunes.apple.com
+DOMAIN-SUFFIX,appstore.com
+DOMAIN,bag.itunes.apple.com
+DOMAIN,se.itunes.apple.com
+DOMAIN,se-edge.itunes.apple.com
+DOMAIN,su.itunes.apple.com
+DOMAIN,upp.itunes.apple.com
+DOMAIN,apps.apple.com
+DOMAIN,itunes.apple.com
+DOMAIN,lookup-api.apple.com
+DOMAIN-SUFFIX,appsto.re
+DOMAIN,books.apple.com
+DOMAIN-SUFFIX,apps-marketplace.apple.com
+DOMAIN,fpinit.itunes.apple.com
+DOMAIN,iosapps.itunes.apple.com
+DOMAIN,iosapps.itunes.g.aaplimg.com
+DOMAIN,app-site-association.cdn-apple.com
+DOMAIN,app-site-association.networking.apple
+DOMAIN-SUFFIX,push.apple.com
+IP-CIDR,17.188.128.0/18,no-resolve
+IP-CIDR,17.188.20.0/23,no-resolve
+IP-CIDR,17.249.0.0/16,no-resolve
+IP-CIDR,17.252.0.0/16,no-resolve
+IP-CIDR,17.57.144.0/22,no-resolve
+IP-CIDR6,2403:300:a42::/48,no-resolve
+IP-CIDR6,2403:300:a51::/48,no-resolve
+IP-CIDR6,2620:149:a44::/48,no-resolve
+IP-CIDR6,2a01:b740:a42::/48,no-resolve
+DOMAIN-SUFFIX,push-apple.com.akadns.net
+DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9]-fmfmobile.icloud.com
+DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmfmobile.icloud.com
+DOMAIN,gsp9-ssl.apple.com
+DOMAIN,gsp10-ssl.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,gs-loc.apple.com
+DOMAIN,cl2-cn.apple.com
+DOMAIN,cl4-cn.apple.com
+DOMAIN,gs-loc-cn.apple.com
+DOMAIN-SUFFIX,ess.apple.com
+DOMAIN-SUFFIX,apzones.com
+DOMAIN-SUFFIX,icloud-content.com.cn
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN,www-cdn.icloud.com.akadns.net
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-livephotoskit.com
+DOMAIN-SUFFIX,gc.apple.com
+DOMAIN-SUFFIX,icloud.apple.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,iwork.apple.com
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,apple-dns.net
+DOMAIN,podcasts.apple.com
+DOMAIN,amp-api.media.apple.com
+DOMAIN,mvod.itunes.apple.com
+DOMAIN-SUFFIX,music.apple.com
+DOMAIN-SUFFIX,applemusic.com
+DOMAIN,aod.itunes.apple.com
+DOMAIN,aod-ssl.itunes.apple.com
+DOMAIN,audio.itunes.apple.com
+DOMAIN,audio-ssl.itunes.apple.com
+DOMAIN,streamingaudio.itunes.apple.com
+DOMAIN-SUFFIX,fitness.apple.com
+DOMAIN,np-edge.itunes.apple.com
+DOMAIN,play-edge.itunes.apple.com
+DOMAIN,uts-api.itunes.apple.com
+DOMAIN-SUFFIX,tv.apple.com
+DOMAIN,amp-api.videos.apple.com
+DOMAIN,hls-amt.itunes.apple.com
+DOMAIN,hls.itunes.apple.com
+DOMAIN-SUFFIX,news-assets.apple.com
+DOMAIN-SUFFIX,news-client.apple.com
+DOMAIN-SUFFIX,news-edge.apple.com
+DOMAIN-SUFFIX,apple.news
+DOMAIN,news-client-search.apple.com
+DOMAIN,news-events.apple.com
+DOMAIN-SUFFIX,sports.apple.com
+DOMAIN,news.apple.com
+DOMAIN,prod-domep-news-apple.v.aaplimg.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN,dejavu.apple.com
+DOMAIN,sequoia.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN,gdmf-cdn.apple.com.akadns.net
+DOMAIN,gdmf-cdn.origin-apple.com.akadns.net
+DOMAIN,gdmf-lb.apple.com.akadns.net
+DOMAIN,gdmf.apple.com.mwcname.com
+DOMAIN,gdmf.g.aaplimg.com
+DOMAIN,gg-cdn.apple.com.akadns.net
+DOMAIN,gg-cdn.origin-apple.com.akadns.net
+DOMAIN,gg-lb.apple.com.akadns.net
+DOMAIN,gg.apple.com.akadns.net
+DOMAIN,gg.apple.com.mwcname.com
+DOMAIN,gg.g.aaplimg.com
+DOMAIN,gnf-mdn.apple.com
+DOMAIN,gnf-mr.apple.com
+DOMAIN,mesu-lb.apple.com.akadns.net
+DOMAIN,mesu.apple.com.akadns.net
+DOMAIN,mesu.apple.com.mwcname.com
+DOMAIN,ns.itunes.apple.com
+DOMAIN,swpost.apple.com
+DOMAIN,swscan-cdn.apple.com.akadns.net
+DOMAIN,swscan-cdn.origin-apple.com.akadns.net
+DOMAIN,swscan-lb.apple.com.akadns.net
+DOMAIN,swscan.apple.com.akadns.net
+DOMAIN,swscan.apple.com.mwcname.com
+DOMAIN,swscan.g.aaplimg.com
+DOMAIN,xp-cdn.apple.com.akadns.net
+DOMAIN,xp-cdn.origin-apple.com.akadns.net
+DOMAIN,xp-lb.apple.com.akadns.net
+DOMAIN,xp.apple.com.akadns.net
+DOMAIN,xp.apple.com.mwcname.com
+DOMAIN,xp.g.aaplimg.com
+DOMAIN-SUFFIX,gdmf.apple.com
+DOMAIN-SUFFIX,gdmf.apple.com.akadns.net
+DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net
+DOMAIN-SUFFIX,mesu-cdn.origin-apple.com.akadns.net
+DOMAIN-SUFFIX,mesu.apple.com
+DOMAIN-SUFFIX,mesu.g.aaplimg.com
+DOMAIN-SUFFIX,configuration.apple.com
+DOMAIN-SUFFIX,fcs-keys-pub-prod.cdn-apple.com
+DOMAIN-SUFFIX,gdmf-ados.apple.com
+DOMAIN-SUFFIX,gg.apple.com
+DOMAIN-SUFFIX,gs.apple.com
+DOMAIN-SUFFIX,gsra.apple.com
+DOMAIN-SUFFIX,ig.apple.com
+DOMAIN-SUFFIX,osrecovery.apple.com
+DOMAIN-SUFFIX,skl.apple.com
+DOMAIN-SUFFIX,swdist.apple.com
+DOMAIN-SUFFIX,swscan.apple.com
+DOMAIN-SUFFIX,wkms-public.apple.com
+DOMAIN-SUFFIX,xp.apple.com
+DOMAIN,bpapi.apple.com
+DOMAIN,itunes.com
+DOMAIN,lcdn-locator.apple.com
+DOMAIN,lcdn-registration.apple.com
+DOMAIN,serverstatus.apple.com
+DOMAIN,suconfig.apple.com
+DOMAIN,xp-cdn.apple.com
+DOMAIN,beta.apple.com
+DOMAIN,configuration.apple.com.akadns.net
+DOMAIN,swdist.apple.com.akadns.net
+DOMAIN,appldnld.apple.com.mwcname.com
+DOMAIN-SUFFIX,appldnld.apple.com
+DOMAIN-SUFFIX,appldnld.apple.com.akadns.net
+DOMAIN-SUFFIX,appldnld.g.aaplimg.com
+DOMAIN-SUFFIX,oscdn.apple.com
+DOMAIN-SUFFIX,swcdn.apple.com
+DOMAIN-SUFFIX,swdownload.apple.com
+DOMAIN-SUFFIX,updates-http.cdn-apple.com
+DOMAIN-SUFFIX,updates.cdn-apple.com
+DOMAIN,appldnld.apple.com.edgesuite.net
+DOMAIN,swcdn.g.aaplimg.com
+DOMAIN,updates-http.cdn-apple.com.akadns.net
+DOMAIN,updates-http.g.aaplimg.com
+DOMAIN,appldnld-cdn.apple.com.akadns.net
+DOMAIN,appldnld-cdn.origin-apple.com.akadns.net
+DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net
+DOMAIN,oscdn.origin-apple.com.akadns.net
+DOMAIN,updates.g.aaplimg.com
+DOMAIN,updates-http.cdn-apple.com.edgesuite.net
+DOMAIN,developer.apple.com
+DOMAIN,adcdownload.apple.com
+DOMAIN,adcdownload.apple.com.akadns.net
+DOMAIN,devimages-cdn.apple.com
+DOMAIN,download.developer.apple.com
+DOMAIN,playground-assets-cdn.apple.com
+DOMAIN,playground-cdn.apple.com
+DOMAIN,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN,store.storeimages.cdn-apple.com
+DOMAIN,doh.dns.apple.com
+DOMAIN,apple-native-relay.apple.com
+DOMAIN,konut-cdn.apple.com
+DOMAIN-SUFFIX,gnip.apple.com
+DOMAIN-SUFFIX,time.apple.com
+DOMAIN,wps.apple.com
+DOMAIN-SUFFIX,sandbox.apple.com
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,business.apple.com
+DOMAIN-SUFFIX,school.apple.com
+DOMAIN,www.apple.com.cn
+DOMAIN-SUFFIX,cn.apple.com
+DOMAIN,static.ips.apple.com
+DOMAIN,sq-device.apple.com
+DOMAIN,tbsc.apple.com
+DOMAIN,time-ios.apple.com
+DOMAIN,time-macos.apple.com
+DOMAIN,deviceenrollment.apple.com
+DOMAIN,deviceservices-external.apple.com
+DOMAIN,iprofiles.apple.com
+DOMAIN,mdmenrollment.apple.com
+DOMAIN,axm-servicediscovery.apple.com
+DOMAIN,api.ent.apple.com
+DOMAIN,api.edu.apple.com
+DOMAIN,upload.appleschoolcontent.com
+DOMAIN,api-business.apple.com
+DOMAIN,api-school.apple.com
+DOMAIN,axm-adm-enroll.apple.com
+DOMAIN,axm-adm-mdm.apple.com
+DOMAIN,axm-adm-scep.apple.com
+DOMAIN,axm-app.apple.com
+DOMAIN,icons.axm-usercontent-apple.com
+DOMAIN,audiocontentdownload.apple.com
+DOMAIN,playgrounds-assets-cdn.apple.com
+DOMAIN,playgrounds-cdn.apple.com
+DOMAIN,diagassets.apple.com
+DOMAIN,fpservices-prod1.apple.com
+DOMAIN,vpp.itunes.apple.com
+DOMAIN,sylvan.apple.com
+DOMAIN,pg-bootstrap.itunes.apple.com
+DOMAIN,cls-iosclient.itunes.apple.com
+DOMAIN,cls-ingest.itunes.apple.com
+DOMAIN,albert.apple.com
+DOMAIN,identity.apple.com
+DOMAIN,radarsubmissions.apple.com
+DOMAIN,iphonesubmissions.apple.com
+DOMAIN,cssubmissions.apple.com
+DOMAIN,fba.apple.com
+DOMAIN,iphonesubmissions-cdn.apple.com.akadns.net
+DOMAIN,iphonesubmissions-cdn.origin-apple.com.akadns.net
+DOMAIN,iphonesubmissions-lb.apple.com.akadns.net
+DOMAIN,iphonesubmissions.apple.com.akadns.net
+DOMAIN,iphonesubmissions.apple.com.mwcname.com
+DOMAIN,iphonesubmissions.g.aaplimg.com
+DOMAIN,radarsubmissions-cdn.apple.com.akadns.net
+DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net
+DOMAIN,radarsubmissions-lb.apple.com.akadns.net
+DOMAIN,radarsubmissions.apple.com.akadns.net
+DOMAIN,radarsubmissions.apple.com.mwcname.com
+DOMAIN,radarsubmissions.g.aaplimg.com
