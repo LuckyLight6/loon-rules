@@ -30,6 +30,7 @@ jobs:
         run: |
           python3 -B -m unittest discover -s checks
           python3 -B maintain.py --verify-files
+      - uses: ./.github/actions/source-trust
       - name: Check sources and refresh rules
         env:
           GITHUB_TOKEN: ${{ github.token }}

@@ -1,0 +1,19 @@
+name: Prepare source certificate trust
+description: Add Apple's official root to the temporary source-download CA bundle
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        loon_trust_dir="$RUNNER_TEMP/loon-source-trust"
+        mkdir -p "$loon_trust_dir"
+        curl -q -fsSL --proto '=https' --proto-redir '=https' --max-redirs 3 \
+          --connect-timeout 8 --max-time 25 --retry 2 --retry-all-errors \
+          https://www.apple.com/appleca/AppleIncRootCertificate.cer \
+          -o "$loon_trust_dir/apple-root.cer"
+        openssl x509 -inform DER -in "$loon_trust_dir/apple-root.cer" \
+          -out "$loon_trust_dir/apple-root.pem"
+        openssl verify -CAfile "$loon_trust_dir/apple-root.pem" "$loon_trust_dir/apple-root.pem"
+        cat /etc/ssl/certs/ca-certificates.crt "$loon_trust_dir/apple-root.pem" \
+          > "$loon_trust_dir/sources.pem"
+        echo "CURL_CA_BUNDLE=$loon_trust_dir/sources.pem" >> "$GITHUB_ENV"
