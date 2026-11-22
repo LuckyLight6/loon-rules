@@ -3,7 +3,6 @@ name: Scheduled rule maintenance
 on:
   schedule:
     - cron: '37 3,15 * * *'
-    - cron: '*/5 9-10 22 11 *' # Temporary verification; remove after its scheduled run
   workflow_dispatch:
 
 permissions:
