@@ -1,0 +1,44 @@
+name: Maintain public Loon rules
+description: Verify, refresh and publish the public rule outputs from the checked-out main branch
+inputs:
+  github-token:
+    description: Temporary GitHub Actions token for public API access
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install the maintenance package
+      shell: bash
+      run: |
+        python3 -m venv .venv
+        .venv/bin/python -m pip install --editable .
+        echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
+    - name: Verify current rules
+      shell: bash
+      run: |
+        python3 -B -m unittest discover -s checks
+        python3 -B maintain.py --verify-files
+    - uses: ./.github/actions/source-trust
+    - name: Check sources and refresh rules
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+      shell: bash
+      run: |
+        python3 -B maintain.py --refresh
+        python3 -B scoped_dns.py
+        python3 -B scoped_dns.py --check
+        python3 -B maintain.py --verify-files
+    - name: Summarize source changes
+      shell: bash
+      run: cat build/verification.md >> "$GITHUB_STEP_SUMMARY"
+    - name: Commit validated outputs
+      shell: bash
+      run: |
+        git add -- ':(glob)rules/*.lsr' plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json
+        if git diff --cached --quiet; then
+          exit 0
+        fi
+        git config user.name 'github-actions[bot]'
+        git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git commit -m 'Refresh validated Loon rule files'
+        git push origin HEAD:refs/heads/main

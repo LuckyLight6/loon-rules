@@ -4,7 +4,7 @@
 
 两次计划给漏触发留一次补充机会；[GitHub 的定时任务](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)可能延迟或被丢弃，并不保证准点。它在 GitHub 上更新文件，不在 Loon 客户端运行脚本或测速；客户端何时刷新订阅由自己的设置决定。
 
-仓库首页使用 `readme` 分支，代码和规则在 `main`。默认分支保留定时入口，调用 `main` 的维护工作流；工作流始终检出并更新 `main`，订阅地址中的分支不变。定时与手动更新共用同一并发组，避免同时向规则分支提交。
+仓库首页使用 `readme` 分支，代码和规则在 `main`。默认分支保留一个可直接运行的定时任务：先检出 `main`，再调用其中的共用维护组件。手动维护入口也调用同一组件，业务代码只维护一份；任务只更新 `main`，订阅地址中的分支不变。定时与手动更新共用同一并发组，避免同时向规则分支提交。
 
 GitHub API 请求使用 Actions 自带的临时令牌，减少匿名请求限额的影响。令牌只发给 `api.github.com` 的标准 HTTPS 端口，带令牌的请求不跟随重定向；其他公开来源不使用它。
 
