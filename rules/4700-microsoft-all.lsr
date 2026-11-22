@@ -1,13 +1,11 @@
 # name: microsoft-all
 # priority: 4700
 # section: microsoft
-# description: Microsoft 生态合集
-# boundary: 汇总所列账户、办公、会议、网盘、工具、商店、Xbox、更新与通用服务；与成员二选一。Microsoft Copilot、GitHub 和 GitHub Copilot 仍独立，不把多租户 Azure 或 Akamai 整段归入
+# description: Microsoft 日常服务合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T12:26:59Z
-# updated-at: 2026-11-20T20:04:44Z
-# rule-count: 659
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list
-# source: https://code.visualstudio.com/docs/setup/network
+# updated-at: 2026-11-22T18:37:28Z
+# rule-count: 653
 # source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
 # source: https://raw.githubusercontent.com/Azure/azure-cli/dev/src/azure-cli-core/azure/cli/core/cloud.py
 # source: https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com
@@ -16,6 +14,8 @@
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/OneDrive.lsr
 # source: https://dns.google/resolve?name=download.windowsupdate.com&type=A
 # source: https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list
+# source: https://code.visualstudio.com/docs/setup/network
 # source: https://learn.microsoft.com/en-us/gaming/gdk/docs/services/fundamentals/s2s-auth-calls/service-authentication/live-website-authentication
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Microsoft.list
 # source: https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains
@@ -23,19 +23,10 @@
 # source: https://docs.azure.cn/en-us/api-management/import-container-app-with-oas
 # source: https://learn.microsoft.com/en-us/graph/deployments
 
-DOMAIN,vscode.blob.core.windows.net
-DOMAIN-SUFFIX,vscode-cdn.net
-DOMAIN-SUFFIX,vscode-unpkg.net
-DOMAIN-SUFFIX,vscode-webview.net
-DOMAIN-SUFFIX,vscode.dev
-DOMAIN,vscode-sync-insiders.trafficmanager.net
-DOMAIN,vscode-sync.trafficmanager.net
-DOMAIN-SUFFIX,powerbi.com
 DOMAIN,login.windows.net
 DOMAIN-SUFFIX,msauth.net
 DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,msftidentity.com
-DOMAIN,login.chinacloudapi.cn
 DOMAIN,login.microsoftonline.us
 DOMAIN-SUFFIX,acompli.net
 DOMAIN-SUFFIX,outlookmobile.com
@@ -52,6 +43,14 @@ DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,sharepointonline.com
 DOMAIN,wu-f-net.trafficmanager.net
 DOMAIN,office-f-net.trafficmanager.net
+DOMAIN,vscode.blob.core.windows.net
+DOMAIN-SUFFIX,vscode-cdn.net
+DOMAIN-SUFFIX,vscode-unpkg.net
+DOMAIN-SUFFIX,vscode-webview.net
+DOMAIN-SUFFIX,vscode.dev
+DOMAIN,vscode-sync-insiders.trafficmanager.net
+DOMAIN,vscode-sync.trafficmanager.net
+DOMAIN-SUFFIX,powerbi.com
 DOMAIN-SUFFIX,21vbc.com
 DOMAIN-SUFFIX,21vbluecloud.com
 DOMAIN-SUFFIX,21vbluecloud.net
@@ -668,17 +667,12 @@ DOMAIN-SUFFIX,static.microsoft
 DOMAIN-SUFFIX,usercontent.microsoft
 DOMAIN,azcliprod.blob.core.windows.net
 DOMAIN,gallery.azure.com
-DOMAIN,gallery.chinacloudapi.cn
 DOMAIN,gallery.usgovcloudapi.net
 DOMAIN,graph.microsoft.us
 DOMAIN,management.azure.com
-DOMAIN,management.chinacloudapi.cn
-DOMAIN,management.core.chinacloudapi.cn
 DOMAIN,management.core.usgovcloudapi.net
 DOMAIN,management.core.windows.net
 DOMAIN,management.usgovcloudapi.net
-DOMAIN,microsoftgraph.chinacloudapi.cn
-DOMAIN,portal.azure.cn
 DOMAIN,portal.azure.com
 DOMAIN,portal.azure.us
 DOMAIN,vsmarketplacebadges.dev

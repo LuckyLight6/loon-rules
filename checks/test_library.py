@@ -62,6 +62,11 @@ class LibraryChecks(unittest.TestCase):
               'IP-CIDR,192.0.2.0/24','IP-CIDR,192.0.2.0/24,no-resolve']
         self.assertEqual(compact(rows+rows),rows[1:])
 
+    def test_compact_removes_multilabel_wildcards_only_under_a_complete_suffix(self):
+        rows=['DOMAIN-WILDCARD,*.*.vm.example','DOMAIN-WILDCARD,api*.other.example',
+              'DOMAIN-SUFFIX,vm.example','DOMAIN-SUFFIX,api.other.example']
+        self.assertEqual(compact(rows),rows[1:])
+
     def test_specialty_hits_before_parent_domain(self):
         rows={'relay':['DOMAIN,mask.icloud.com'],'sync':['DOMAIN-SUFFIX,icloud.com']}
         self.assertEqual(ordered_route('mask.icloud.com',['relay','sync'],rows),'relay')

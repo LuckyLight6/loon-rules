@@ -69,3 +69,14 @@ class PublicEndpointChecks(unittest.TestCase):
         for impostor in ('bad-login.vendor.example','login.vendor.example.bad.test'):
             with self.assertRaisesRegex(Invalid,'已不列出'):
                 gate.verify_sources([self.contract],{source:impostor})
+
+    def test_shared_guard_can_be_empty_after_a_company_bundle_replaces_all_specialties(self):
+        self.entries['source-only']={'mode':'managed'}
+        self.data['all']=self.data['account']+self.data['files']
+        self.entries['all']['fallback']=True
+        replace={'account':'all','files':'all'}
+        gate.verify_routes([self.contract],self.entries,['all','common'],self.data,replace)
+        for scope in ([],['misspelled-section']):
+            self.contract['guard-sections']=scope
+            with self.subTest(scope=scope),self.assertRaisesRegex(Invalid,'限制范围'):
+                gate.verify_routes([self.contract],self.entries,['all','common'],self.data,replace)

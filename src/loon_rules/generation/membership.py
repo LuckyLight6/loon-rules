@@ -40,6 +40,10 @@ def compact(rows):
     kept=[]
     for r in rows:
         k,p,*f=r.split(',')
+        if k=='DOMAIN-WILDCARD' and not f:
+            tail=domain_scope.fixed_tail(p)
+            if any('.'.join(tail.split('.')[i:]) in suffixes for i in range(len(tail.split('.')))):
+                continue
         if k=='DOMAIN-WILDCARD' and not f and p.startswith('*.') and p[2:] in wild:
             labs=p[2:].split('.')
             chain=['.'.join(labs[i:]) for i in range(len(labs))]

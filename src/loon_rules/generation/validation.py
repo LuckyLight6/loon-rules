@@ -7,6 +7,8 @@ from loon_rules.generation.membership import compact,overlapping_rules,without_p
 from loon_rules.generation.ordering import ordered_route,route_order,subscription_order,verify_domain_order,verify_ip_order,view_replacements,view_selections
 from loon_rules.policy import overbroad
 from loon_rules.generation.protection import protected_hosts
+from loon_rules.generation.choices import ChoiceModel
+from ipaddress import ip_network
 
 
 
@@ -64,30 +66,50 @@ def verify_combinations(config,entries,data,*,index=None):
     repeated={}
     for row,owners in row_owners.items():
         if owners.bit_count()>1:repeated.setdefault(owners,row)
-    profile_count=0
-    for views in view_selections(config,entries):
-        replacements=view_replacements(config,entries,views)
-        base=active-set(replacements)
-        base.update(replacements.values())
-        for optional in range(1<<len(extras)):
-            selected=base|{key for i,key in enumerate(extras) if optional&(1<<i)}
-            mask=sum(bits[k] for k in selected)
-            for owners,row in repeated.items():
-                together=owners&mask
-                if together&(together-1):
-                    first=names[together&-together]
-                    other=[k for k in selected if k!=first and bits[k]&together]
-                    ad_override=(first in extras and entries[first].get('policy-hint')=='reject'
-                                 and all(entries[k].get('fallback') and entries[k].get('policy-hint')!='reject' for k in other))
-                    if not ad_override:
-                        raise rules.Invalid(f'订阅组合 {profile_count} 含重复规则：{row[0]},{row[1]}')
-            for (matching,expected),target in cases.items():
-                matching&=mask
-                first=matching&-matching
-                if (first and not first&expected) or (not first and expected):
-                    raise rules.Invalid(f'订阅组合 {profile_count}：{target} 命中 {names.get(first)!r}，与业务用例不符')
-            profile_count+=1
-    return profile_count
+    model=ChoiceModel(config,entries,bits)
+    for owners,row in repeated.items():
+        for selected in model.selections(owners):
+            together=owners&selected
+            if not together&(together-1):continue
+            first=names[together&-together]
+            other=[key for key,bit in bits.items() if key!=first and bit&together]
+            ad_override=(first in extras and entries[first].get('policy-hint')=='reject'
+                         and all(entries[key].get('fallback') and entries[key].get('policy-hint')!='reject' for key in other))
+            if not ad_override:raise rules.Invalid(f'存在合法订阅组合含重复规则：{row[0]},{row[1]}')
+    for (matching,expected),target in cases.items():
+        for selected in model.selections(matching):
+            candidates=matching&selected;first=candidates&-candidates
+            if (first and not first&expected) or (not first and expected):
+                raise rules.Invalid(f'存在合法订阅组合使 {target} 命中 {names.get(first)!r}，与业务用例不符')
+    return model.count()
+
+
+def verify_selection_order(config, entries, data, index):
+    """Check complete domain scopes and overlapping addresses in every legal selection."""
+    model=ChoiceModel(config,entries,index.bits)
+    names={bit:key for key,bit in index.bits.items()}
+    networks={}
+    for key in index.order:
+        for row in data[key]:
+            if row.startswith(('IP-CIDR,','IP-CIDR6,')):
+                network=ip_network(row.split(',')[1])
+                networks[network]=networks.get(network,0)|index.bits[key]
+    for key in index.order:
+        if entries[key].get('fallback'):continue
+        bit=index.bits[key];earlier=bit-1
+        for row in data[key]:
+            if row.startswith(('DOMAIN,','DOMAIN-SUFFIX,','DOMAIN-WILDCARD,')):
+                covers=index.scope_bits(row)&earlier
+            elif row.startswith(('IP-CIDR,','IP-CIDR6,')):
+                network=ip_network(row.split(',')[1]);covers=0
+                for candidate,owners in networks.items():
+                    if owners&earlier and network.version==candidate.version and network.overlaps(candidate):
+                        covers|=owners&earlier
+            else:continue
+            while covers:
+                prior=covers&-covers;covers^=prior
+                if model.together(bit|prior):
+                    raise rules.Invalid(f'存在合法订阅组合使 {key} 的范围被 {names[prior]} 提前覆盖：{row}')
 
 
 def verify_cases(config, entries, data, online, contracts=(), functional=()):
@@ -115,7 +137,8 @@ def verify_cases(config, entries, data, online, contracts=(), functional=()):
         if got!=set(wanted):
             raise rules.Invalid('合并命中不同：'+host+': '+','.join(sorted(got)))
     for host in config['shared-negatives']:
-        if any(rules.match_domain(host,r) for k in config['views'] if not entries[k].get('fallback')
+        if any(rules.match_domain(host,r) for k in config['views']
+               if entries[k]['section'] in protected and not entries[k].get('fallback')
                for r in data.get(k,[])):
             raise rules.Invalid('合并视图劫持共享端点：'+host)
     for k,blocks in config.get('no-overlap',{}).items():
@@ -134,6 +157,7 @@ def verify_cases(config, entries, data, online, contracts=(), functional=()):
                 raise rules.Invalid(f'{key} 单独订阅会拦截业务端点')
         verify_domain_order(order,entries,data)
         verify_ip_order(order,entries,data)
+        verify_selection_order(config,entries,data,index)
         endpoint_contracts.verify_routes(contracts,entries,order,data)
         scenarios=list(dict.fromkeys([(view,) for view in config['views']]+
                                      list(view_selections(config,entries,maximal=True))))

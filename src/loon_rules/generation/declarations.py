@@ -61,8 +61,13 @@ def validate_declarations(config):
         if spec:=entry.get('member-selection'):
             if entry['mode']!='view' or spec['section']!=entry['section']:
                 raise rules.Invalid('合集筛选须属于同一业务分区：'+key)
+            if 'groups' in spec and (not isinstance(spec['groups'],list) or not spec['groups']
+                    or not set(spec['groups'])<={group['id'] for band in config.get('routing-bands',())
+                                                 for group in band.get('groups',())}):
+                raise rules.Invalid('合集引用了不存在的业务子类：'+key)
             selected=[k for k in subscription_order(config,entries) if k in names
                       and entries[k]['section']==spec['section']
+                      and (not spec.get('groups') or entries[k].get('routing-group') in spec['groups'])
                       and k not in spec.get('exclude',())
                       and (not spec.get('policies') or entries[k].get('policy-hint') in spec['policies'])
                       and entries[k].get('policy-hint') not in spec.get('exclude-policies',())]
@@ -165,7 +170,9 @@ def validate_declarations(config):
     for key in config['views']:
         view=entries[key]
         entries[key]=dict(view,sources=list(dict.fromkeys(
-            url for member in view['members'] for url in entries[member]['sources'])))
+            url for member in view['members'] for url in entries[member]['sources'])),
+            **{'allowed-shared':sorted(set(view.get('allowed-shared',()))|{
+                host for member in view['members'] for host in entries[member].get('allowed-shared',())})})
     for section in config['sections']:
         for ref in section.get('related',()):
             if ref['id'] not in entries or entries[ref['id']]['section']==section['id'] or not ref['note']:

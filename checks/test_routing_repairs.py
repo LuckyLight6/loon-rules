@@ -230,10 +230,10 @@ class PublishedRepairRoutes(unittest.TestCase):
         self.assertEqual(lib.ordered_route('safebrowsing.urlsec.qq.com',self.order,self.data),
                          'tencent-shared-services')
 
-    def test_apple_aggregate_keeps_independent_certificate_and_general_fallback_routes(self):
+    def test_complete_apple_aggregate_includes_certificate_and_general_services(self):
         order=lib.route_order(self.config,self.entries,['apple-all'])
-        expected={'www.apple.com':'apple-other-services',
-                  'ocsp.apple.com':'apple-certificate-validation',
+        expected={'www.apple.com':'apple-all',
+                  'ocsp.apple.com':'apple-all',
                   'account.apple.com':'apple-all'}
         for host,owner in expected.items():
             with self.subTest(host=host):

@@ -1,0 +1,12 @@
+# name: douban-community
+# priority: 6550
+# section: social
+# description: 豆瓣
+# boundary: 社区与图片；不按域名推断用户所在地区
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douban.list
+
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,doubanio.com

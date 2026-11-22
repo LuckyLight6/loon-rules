@@ -6,14 +6,14 @@
 
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
-| 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3000、Cargo 3070、PyPI 3050、npm 3030 |
+| 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3010、Cargo 3080、PyPI 3060、npm 3040 |
 | SDK 静态配置 | 按模块、类和字段解析默认端点；不运行下载的源码 | Claude 1010、xAI 1040 等 |
-| Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2010 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
+| Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2090 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
-| 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3320、Slack 3360 |
+| 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3330、Slack 3370 |
 | 请求示例和代码字段 | `purpose-url-table`、`labelled-url-pairs` 等只取指定用途的 HTTPS 或 WSS 主机，忽略普通链接和载荷 | API、支付与通讯入口 |
-| Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 4740、Teams 4750、Office 下载 4800 |
-| 官方服务地址表 | `service-address-table` 选择章节与 IPv4／IPv6 列，只接收单个公网地址，生成 `/32`、`/128` 与 `no-resolve`；宽网段、缺列或地址族错误时停止更新 | Cloudflare 公共 DNS 6590，只取标准解析器，和 Families 分开 |
+| Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 4720、Teams 4730、Office 下载 4780 |
+| 官方服务地址表 | `service-address-table` 选择章节与 IPv4／IPv6 列，只接收单个公网地址，生成 `/32`、`/128` 与 `no-resolve`；宽网段、缺列或地址族错误时停止更新 | Cloudflare 公共 DNS 0160，只取标准解析器，和 Families 分开 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
@@ -32,7 +32,7 @@
 
 `purpose-domain-lists.select` 可用 `roots`、`exact` 从同一官方清单选出产品自有范围。完整清单仍由端点合同独立核对，筛选不能把未处理的新增项藏起来。OpenAI 1020 用这种方式区分自有服务与第三方共享依赖。
 
-官方表已明确用途、且列出的是单个主机时，`host-table.select` 可结合 `role` 与 `all-exact: true` 跟随这些精确端点。1230 只选择 PCC 和 Apple Intelligence 扩展两种用途；官方增加第三方中继主机时可以自动补入，不必先把新名字写进白名单。相邻的 Siri、下载与 iCloud Private Relay 行不参加该选择，域名也不会扩大为整个 CDN 后缀。
+官方表已明确用途、且列出的是单个主机时，`host-table.select` 可结合 `role` 与 `all-exact: true` 跟随这些精确端点。2020 只选择 PCC 和 Apple Intelligence 扩展两种用途；官方增加第三方中继主机时可以自动补入，不必先把新名字写进白名单。相邻的 Siri、下载与 iCloud Private Relay 行不参加该选择，域名也不会扩大为整个 CDN 后缀。
 
 ## plist 和客户端配置
 
@@ -43,7 +43,7 @@
 - 根对象就是记录时，路径写 `[[]]`。同前缀混有开关或计时，使用 `typed-url-patterns`；必需字段变成开关或无效 URL 时仍拒绝更新
 - 外层包装有内层二进制数据时，`data-path` 只解开指定的一份，再核对内层身份与字段
 
-商店 2050、音乐 2170 和视频 2190 读取同一公开配置的不同 API 字段。2050 的 `records.allow-query` 允许搜索字段带公开查询参数，提取结果只含主机名。消息身份 2110 使用 `expand.method: public-plist-bag`，只允许数字 `ix` 参数。定位 2100 使用 `ios-client-config`，从公开软件目录计算版本、机型组合，再读取各组合的业务字段，最多读取 `max-documents` 份。
+商店 2130、音乐 2230 和视频 2040 读取同一公开配置的不同 API 字段。2130 的 `records.allow-query` 允许搜索字段带公开查询参数，提取结果只含主机名。消息身份 2180 使用 `expand.method: public-plist-bag`，只允许数字 `ix` 参数。定位 2170 使用 `ios-client-config`，从公开软件目录计算版本、机型组合，再读取各组合的业务字段，最多读取 `max-documents` 份。
 
 普通下载器只接受无凭据、无查询参数的 HTTPS 来源。上述配置模式单独限制允许的公开参数，不接受令牌、设备标识或额外参数。读取器不发起登录、身份注册或消息操作。任一必需文档损坏或读取不完整，都不能用部分结果替代成品。
 
@@ -54,9 +54,9 @@
 | 场景 | 声明方法 | 必须检查 |
 |---|---|---|
 | 官方 API 目录 | `expand` 按产品标题及文档路径模板取文档；`versions: published` 读取仍公开的全部版本，默认 `preferred` 保留既有用法 | 产品身份、版本和服务器字段对应；一份文档不能归两个产品；缺文档时不发布部分结果 |
-| 地区主机模板 | `host-templates` 结合用途表、占位字段、端口与同一品牌的地区注册域清单 | 模板、品牌标签和注册域一致；共享租户不能当地区根域。Google 登录 4520 是实例 |
-| JSON 中的文章正文 | `json-document` 用 `body-path` 选正文、`identity` 核对文章，再嵌套现成读取器 | 外层来源身份保持一致。JetBrains 1240、3090、5160 按地区注释与用途分开 |
-| 前端页面的专用资源 | `next-page` 跟随页面数据明确声明的专用路由文件，再按用途读取字段和请求示例 | 页面身份、资源厂商范围与用途标签都匹配；不执行脚本，不扫描全部资源。Liblib 5110 是实例 |
+| 地区主机模板 | `host-templates` 结合用途表、占位字段、端口与同一品牌的地区注册域清单 | 模板、品牌标签和注册域一致；共享租户不能当地区根域。Google 登录 4510 是实例 |
+| JSON 中的文章正文 | `json-document` 用 `body-path` 选正文、`identity` 核对文章，再嵌套现成读取器 | 外层来源身份保持一致。JetBrains 1230、3100、6260 按地区注释与用途分开 |
+| 前端页面的专用资源 | `next-page` 跟随页面数据明确声明的专用路由文件，再按用途读取字段和请求示例 | 页面身份、资源厂商范围与用途标签都匹配；不执行脚本，不扫描全部资源。Liblib 6110 是实例 |
 | 服务 CNAME 的独立租户 | `cname-tenants` 声明服务父域与 Public Suffix List 私有后缀 | 只有原服务链实际指向的完整租户名可生成精确规则；其他租户、子域和共享父域不能顺带采用 |
 
 API 目录中仍公开的旧版本也参加完整清单的并集。页面中的一个请求示例不代表全部服务，不能套用完整清单的撤回语义。
@@ -69,7 +69,7 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 
 同一用途表同时列出跨产品主机时，`check-sharing` 从该份提取声明计算共用关系，并核对后续承接。拆分归属时使用本轮完整范围证据，不添加域名迁移豁免。
 
-用途明确的独立产品、地区来源或后置厂商共用表，可以用 `projection.all-domains: true` 跟随已核对来源的全部域名，不能同时填写 `roots`、`exact`，并且必须在 `source-inventories` 声明同一来源的完整归属检查。Apple 2340 使用此方式，细分仍先匹配。整份品牌顶级域、用途未核实的第三方主机等排除须写明原因，不能把“来源里有”当作业务归属的充分依据。
+用途明确的独立产品、地区来源或后置厂商共用表，可以用 `projection.all-domains: true` 跟随已核对来源的全部域名，不能同时填写 `roots`、`exact`，并且必须在 `source-inventories` 声明同一来源的完整归属检查。Apple 2370 使用此方式，细分仍先匹配。整份品牌顶级域、用途未核实的第三方主机等排除须写明原因，不能把“来源里有”当作业务归属的充分依据。
 
 读取含其他客户端语法的资料时，`projection.domain-lines-only` 和 `source-inventories.domain-lines-only` 只处理 Loon 支持的三种域名规则，其余行单独计数，不转换正则、进程或 IP。格式损坏的域名行仍会停止更新，不能把无法读取伪装成零条。
 

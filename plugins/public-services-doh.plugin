@@ -1,7 +1,7 @@
 #!name = 公网服务分域 DoH
 #!desc = 按公开服务范围指定加密解析器，其余名称沿用原设置。DoH 连接出口与查询回落仍由 Loon 设置决定
-# 海外代理服务：Cloudflare DNS；来源规则组 0150, 2190, 2210, 1230, 1010, 1020, 1030, 1040, 1000, 1250, 2120
-# 国内直连与普通 Apple 服务：阿里公共 DNS；来源规则组 5000, 2130, 2010, 2050, 2090, 2020, 2040, 2110, 2230, 2320, 2330, 2140
+# 海外代理服务：Cloudflare DNS；来源规则组 0150, 2040, 2060, 2020, 1010, 1020, 1030, 1040, 1000, 1800, 2030
+# 国内直连与普通 Apple 服务：阿里公共 DNS；来源规则组 6000, 2190, 2090, 2130, 2160, 2100, 2120, 2180, 2260, 2350, 2360, 2200
 
 [Host]
 *.01.ai = server:https://223.5.5.5/dns-query
@@ -139,6 +139,7 @@
 *.leonardo.ai = server:https://1.1.1.1/dns-query
 *.liblib.art = server:https://223.5.5.5/dns-query
 *.lingyiwanwu.com = server:https://223.5.5.5/dns-query
+*.llama.com = server:https://1.1.1.1/dns-query
 *.lmstudio.ai = server:https://1.1.1.1/dns-query
 *.lovable.dev = server:https://1.1.1.1/dns-query
 *.lovart.ai = server:https://1.1.1.1/dns-query
@@ -154,6 +155,8 @@
 *.mesu.apple.com = server:https://223.5.5.5/dns-query
 *.mesu.g.aaplimg.com = server:https://223.5.5.5/dns-query
 *.meta.ai = server:https://1.1.1.1/dns-query
+*.metaaiusercontent.com = server:https://1.1.1.1/dns-query
+*.metaaivm.com = server:https://1.1.1.1/dns-query
 *.midjourney.com = server:https://1.1.1.1/dns-query
 *.minimax.io = server:https://1.1.1.1/dns-query
 *.minimaxi.com = server:https://223.5.5.5/dns-query
@@ -279,6 +282,7 @@ api.openai-compat.model-serving.eu01.onstackit.cloud = server:https://1.1.1.1/dn
 api.siliconflow.cn = server:https://223.5.5.5/dns-query
 api.siliconflow.com = server:https://1.1.1.1/dns-query
 api.stepfun.ai = server:https://1.1.1.1/dns-query
+api.together.xyz = server:https://1.1.1.1/dns-query
 api.xiaomimimo.com = server:https://223.5.5.5/dns-query
 api6.ipify.org = server:https://1.1.1.1/dns-query
 api64.ipify.org = server:https://1.1.1.1/dns-query
@@ -503,6 +507,7 @@ leonardo.ai = server:https://1.1.1.1/dns-query
 liblib.art = server:https://223.5.5.5/dns-query
 liblibai-web-static.liblib.cloud = server:https://223.5.5.5/dns-query
 lingyiwanwu.com = server:https://223.5.5.5/dns-query
+llama.com = server:https://1.1.1.1/dns-query
 lmstudio.ai = server:https://1.1.1.1/dns-query
 lookup-api.apple.com = server:https://223.5.5.5/dns-query
 lovable.dev = server:https://1.1.1.1/dns-query
@@ -526,6 +531,8 @@ mesu.apple.com.akadns.net = server:https://223.5.5.5/dns-query
 mesu.apple.com.mwcname.com = server:https://223.5.5.5/dns-query
 mesu.g.aaplimg.com = server:https://223.5.5.5/dns-query
 meta.ai = server:https://1.1.1.1/dns-query
+metaaiusercontent.com = server:https://1.1.1.1/dns-query
+metaaivm.com = server:https://1.1.1.1/dns-query
 midjourney.com = server:https://1.1.1.1/dns-query
 minimax.io = server:https://1.1.1.1/dns-query
 minimaxi.com = server:https://223.5.5.5/dns-query

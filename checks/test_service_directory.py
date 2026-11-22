@@ -67,6 +67,8 @@ class ServiceDirectory(unittest.TestCase):
         config = json.loads((pipeline.ROOT / 'config/catalog.json').read_text())
         target = next(entry for entry in config['entries'] if entry['id'] == 'apple-find-my')
         target['section'] = 'media'
+        target['routing-group'] = 'overseas-media-content'
+        target['priority'] = 3990
         entries = pipeline.validate_declarations(config)
         self.assertEqual(entries[target['id']]['vendor'], 'apple')
         apple = next(v for v in config['service-directory']['vendors'] if v['id']=='apple')

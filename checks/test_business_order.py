@@ -61,7 +61,11 @@ class BusinessOrder(unittest.TestCase):
         by_number={priority_label(e):key for key,e in entries.items() if 'priority' in e}
         published=[by_number[n] for n in rows]
         self.assertEqual(published,lib.subscription_order(cfg,entries))
-        for selection in view_selections(cfg,entries):
+        # route_order is the same published list filtered by the selected members.
+        # Routing, duplicates and complete-scope conflicts for all choices are checked
+        # by the choice projection; these exercise each replacement and full profiles.
+        selections=[(),*((key,) for key in cfg['views']),*view_selections(cfg,entries,maximal=True)]
+        for selection in selections:
             active=lib.route_order(cfg,entries,selection)
             self.assertEqual([k for k in published if k in active],active)
 

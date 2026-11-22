@@ -52,6 +52,33 @@ def materialize(config):
         for i,band in enumerate(bands):
             end=starts[i+1] if i+1<len(starts) else 10**width
             band['ids']=[e['id'] for e in ordered if starts[i]<=e['priority']<end]
+    by_id={entry['id']:entry for entry in ordered}
+    seen_groups=set()
+    for i,band in enumerate(bands):
+        if not (groups:=band.get('groups')):continue
+        starts=[group.get('start') for group in groups]
+        end=bands[i+1]['start'] if i+1<len(bands) else 10**width
+        if (any(type(start) is not int for start in starts) or starts!=sorted(set(starts))
+                or starts[0]!=band['start'] or starts[-1]>=end):
+            raise Invalid('业务子类须按实际执行编号连续划分')
+        subtitles={}
+        for position,group in enumerate(groups):
+            key=group.get('id')
+            if not key or key in seen_groups or not group.get('title') or group.get('section') not in sections:
+                raise Invalid('业务子类缺少唯一标识、标题或分区')
+            seen_groups.add(key)
+            stop=starts[position+1] if position+1<len(starts) else end
+            members=[by_id[key] for key in band['ids'] if group['start']<=by_id[key]['priority']<stop]
+            if not members:raise Invalid('业务子类没有实际规则：'+key)
+            for entry in members:
+                if (entry.get('routing-group')!=key or entry['section']!=group['section']
+                        or group.get('policies') and entry.get('policy-hint') not in group['policies']):
+                    raise Invalid('规则的分类与优先级位置不一致：'+entry['id'])
+            products=[entry for entry in members if entry['mode']!='view']
+            combined=any(entry['mode']=='view' for entry in members)
+            if products and (combined or len(groups)>1):
+                subtitles[products[0]['id']]=group.get('detail-title',group['title']+(' · 产品细分' if combined else ''))
+        band['subheadings']=subtitles
 
 
 def verify(config):

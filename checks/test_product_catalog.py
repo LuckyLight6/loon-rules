@@ -24,7 +24,7 @@ class ProductCatalog(unittest.TestCase):
 
     def test_named_products_are_in_their_business_sections(self):
         expected={'gitlab-hosting':'development','docker-hub':'development',
-                  'gitee-hosting':'development','stripe-payments':'platforms',
+                  'gitee-hosting':'development','stripe-payments':'payments',
                   'binance-platform':'crypto','okx-platform':'crypto',
                   'signal-messenger':'social','iqiyi-mainland':'media',
                   'playstation-network':'games','microsoft-vscode':'microsoft',
@@ -78,6 +78,28 @@ class ProductCatalog(unittest.TestCase):
                 self.assertIsNone(lib.ordered_ip_route(address,['local-no-resolve-alt'],self.data,literal=False))
         self.assertEqual(lib.ordered_ip_route('10.1.2.3',['local-links-and-addresses'],self.data,literal=False),
                          'local-links-and-addresses')
+
+    def test_sovereign_cloud_controls_keep_their_region_in_fine_and_bundle_modes(self):
+        china='microsoft-china-cloud-controls'
+        for host in ('login.chinacloudapi.cn','management.chinacloudapi.cn',
+                     'management.core.chinacloudapi.cn','portal.azure.cn',
+                     'microsoftgraph.chinacloudapi.cn','gallery.chinacloudapi.cn'):
+            with self.subTest(host=host):
+                for views in ([],['microsoft-all'],['microsoft-all','multinational-mainland-all']):
+                    order=lib.route_order(self.config,self.entries,views)
+                    expected='multinational-mainland-all' if len(views)==2 else china
+                    self.assertEqual(lib.ordered_route(host,order,self.data),expected)
+        for host in ('login.microsoftonline.com','tenant.blob.core.chinacloudapi.cn'):
+            self.assertIsNone(lib.ordered_route(host,[china],self.data))
+
+    def test_social_rules_cover_real_services_without_claiming_brand_lookalikes(self):
+        order=lib.route_order(self.config,self.entries)
+        for host,owner in {'instagr.am':'instagram-social','graph.instagram.com':'instagram-social',
+                           'www.messenger.com':'meta-shared-services','fbcdn.net':'meta-shared-services',
+                           'metaaiusercontent.com':'meta-ai-assistant'}.items():
+            self.assertEqual(lib.ordered_route(host,order,self.data),owner)
+        for host in ('achat-followers-instagram.com','theinstagramhack.com','buyingfacebooklikes.com'):
+            self.assertIsNone(lib.ordered_route(host,['instagram-social','meta-shared-services'],self.data))
 
     def test_ecosystem_aggregates_include_new_named_products(self):
         expected={'apple-all':['apple-podcasts','apple-developer-portal'],

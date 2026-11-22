@@ -1,0 +1,46 @@
+# name: overseas-productivity-all
+# priority: 4300
+# section: productivity
+# description: 海外办公、邮件与协作合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-22T17:48:09Z
+# rule-count: 31
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list
+# source: https://www.notion.com/help/allowlist-ip
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
+# source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list
+
+DOMAIN-SUFFIX,notion-static.com
+DOMAIN-SUFFIX,notion.com
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,notionusercontent.com
+DOMAIN,notion-custom.com
+DOMAIN,www.notion-status.com
+DOMAIN-SUFFIX,figma.com
+DOMAIN-SUFFIX,trello.com
+DOMAIN-SUFFIX,trellocdn.com
+DOMAIN-SUFFIX,atlassian.net
+DOMAIN-SUFFIX,jira.com
+DOMAIN-SUFFIX,atl-paas.net
+DOMAIN-SUFFIX,atlassian-3p-us-gov-mod.com
+DOMAIN-SUFFIX,atlassian-3p.com
+DOMAIN-SUFFIX,atlassian-dev.net
+DOMAIN-SUFFIX,atlassian-us-gov-mod.com
+DOMAIN-SUFFIX,atlassian-us-gov-mod.net
+DOMAIN-SUFFIX,atlassian.com
+DOMAIN-SUFFIX,cdn.prod.atlassian-dev-us-gov-mod.net
+DOMAIN-SUFFIX,ss-inf.net
+DOMAIN-SUFFIX,teamworkgraph.ai
+DOMAIN-SUFFIX,teamworkgraph.com
+DOMAIN-SUFFIX,pm.me
+DOMAIN-SUFFIX,proton.me
+DOMAIN-SUFFIX,protonmail.ch
+DOMAIN-SUFFIX,protonmail.com
+DOMAIN-SUFFIX,protonstatus.com
+DOMAIN-SUFFIX,protontech.ch
+DOMAIN-SUFFIX,protonvpn.ch
+DOMAIN-SUFFIX,protonvpn.com
+DOMAIN-SUFFIX,protonweb.com

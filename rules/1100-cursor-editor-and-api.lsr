@@ -4,8 +4,8 @@
 # description: Cursor 客户端及专用接口
 # boundary: 不把通用 GitHub 和云服务纳入
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-20T17:58:32Z
-# rule-count: 10
+# updated-at: 2026-11-22T18:51:30Z
+# rule-count: 9
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cursor.list
 # source: https://cursor.com/docs/enterprise/network-configuration
 
@@ -18,4 +18,3 @@ DOMAIN,agent-stores.s3.amazonaws.com
 DOMAIN,agent-stores.s3.us-east-1.amazonaws.com
 DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
 DOMAIN,cursor.blob.core.windows.net
-DOMAIN-WILDCARD,*.*.cursorvm.com

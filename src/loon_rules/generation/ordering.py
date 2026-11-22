@@ -2,6 +2,7 @@
 from ipaddress import ip_address, ip_network
 import re
 from loon_rules import rules
+from loon_rules.generation.choices import view_selections
 
 
 
@@ -35,17 +36,6 @@ def view_replacements(config, entries, views):
                 raise rules.Invalid('合集不能同时订阅：'+replacements[member]+' / '+key+'；共同成员 '+member)
             replacements[member]=key
     return replacements
-
-
-def view_selections(config, entries, *, maximal=False):
-    members={key:set(entries[key]['members']) for key in config['views']}
-    choices=[((),set())]
-    for key,owned in members.items():
-        choices.extend([(selected+(key,),used|owned) for selected,used in choices
-                        if not used&owned])
-    for selected,used in choices:
-        if not maximal or all(key in selected or used&owned for key,owned in members.items()):
-            yield selected
 
 
 def route_order(config, entries, views=()):

@@ -1,0 +1,17 @@
+# name: cloudflare-public-dns
+# priority: 0160
+# section: network
+# description: Cloudflare 公共 DNS 与标准解析器地址
+# boundary: 从官方标准解析器表读取单个公网地址，全部 no-resolve；不使用 Cloudflare 大段 IP，也不导入 Families 产品地址
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# rule-count: 6
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list
+# source: https://developers.cloudflare.com/1.1.1.1/ip-addresses/
+
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,one.one.one
+IP-CIDR,1.0.0.1/32,no-resolve
+IP-CIDR,1.1.1.1/32,no-resolve
+IP-CIDR6,2606:4700:4700::1001/128,no-resolve
+IP-CIDR6,2606:4700:4700::1111/128,no-resolve

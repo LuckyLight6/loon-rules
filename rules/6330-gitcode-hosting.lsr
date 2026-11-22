@@ -1,0 +1,11 @@
+# name: gitcode-hosting
+# priority: 6330
+# section: development
+# description: GitCode
+# boundary: GitCode 公共站；不把国内其他开发平台并入
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
+
+DOMAIN-SUFFIX,gitcode.com

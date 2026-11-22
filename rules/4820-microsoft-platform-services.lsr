@@ -4,8 +4,8 @@
 # description: Microsoft 通用客户端和共享服务兜底
 # boundary: 保留 Microsoft 通用服务和官方列出的 Azure 控制端点；按官方云定义排除租户后缀及会覆盖租户的父域。Graph 留在这里，不把多租户托管平台或共享 Akamai 整段接管
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-20T20:04:44Z
-# rule-count: 630
+# updated-at: 2026-11-22T18:37:28Z
+# rule-count: 625
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Microsoft.list
 # source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
 # source: https://learn.microsoft.com/en-gb/azure/security/fundamentals/azure-domains
@@ -631,17 +631,12 @@ DOMAIN-SUFFIX,static.microsoft
 DOMAIN-SUFFIX,usercontent.microsoft
 DOMAIN,azcliprod.blob.core.windows.net
 DOMAIN,gallery.azure.com
-DOMAIN,gallery.chinacloudapi.cn
 DOMAIN,gallery.usgovcloudapi.net
 DOMAIN,graph.microsoft.us
 DOMAIN,management.azure.com
-DOMAIN,management.chinacloudapi.cn
-DOMAIN,management.core.chinacloudapi.cn
 DOMAIN,management.core.usgovcloudapi.net
 DOMAIN,management.core.windows.net
 DOMAIN,management.usgovcloudapi.net
-DOMAIN,microsoftgraph.chinacloudapi.cn
-DOMAIN,portal.azure.cn
 DOMAIN,portal.azure.com
 DOMAIN,portal.azure.us
 DOMAIN,vsmarketplacebadges.dev

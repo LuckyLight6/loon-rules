@@ -2,10 +2,10 @@
 # priority: 1000
 # section: ai
 # description: 海外 AI 合集
-# boundary: 汇总所列海外 AI 和共用登录，与成员二选一；Apple Intelligence、国产国内版和国际版各自独立，不合并共享云整域
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-21T12:39:08Z
-# rule-count: 632
+# updated-at: 2026-11-22T18:51:30Z
+# rule-count: 635
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
@@ -28,6 +28,7 @@
 # source: https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/
 # source: https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse
 # source: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meta.list
 # source: https://muse.ai/
 # source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cursor.list
@@ -77,6 +78,7 @@
 # source: https://docs.baseten.co/inference/model-apis/overview
 # source: https://deepinfra.com/models
 # source: https://docs.together.ai/docs/serverless-models
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://inference-docs.cerebras.ai/models/overview
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list
 # source: https://replicate.com/
@@ -679,6 +681,9 @@ DOMAIN,copilot.microsoft.com
 DOMAIN,copilot.cloud.microsoft
 DOMAIN,copilot.ai
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,llama.com
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,muse.ai
 DOMAIN-SUFFIX,cursor-cdn.com
 DOMAIN-SUFFIX,cursor.com
@@ -689,7 +694,6 @@ DOMAIN,agent-stores.s3.amazonaws.com
 DOMAIN,agent-stores.s3.us-east-1.amazonaws.com
 DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
 DOMAIN,cursor.blob.core.windows.net
-DOMAIN-WILDCARD,*.*.cursorvm.com
 DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
 DOMAIN,pplx-res.cloudinary.com
 DOMAIN-SUFFIX,perplexity.ai
@@ -738,6 +742,7 @@ DOMAIN-SUFFIX,tokenfactory.nebius.com
 DOMAIN-SUFFIX,baseten.co
 DOMAIN-SUFFIX,deepinfra.com
 DOMAIN-SUFFIX,together.ai
+DOMAIN,api.together.xyz
 DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,replicate.com
 DOMAIN-SUFFIX,replicate.delivery
