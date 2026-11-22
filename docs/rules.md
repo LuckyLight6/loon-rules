@@ -258,7 +258,7 @@
 |---:|---|---|---|---|
 | 2320 | [apple-device-registration](../rules/2320-apple-device-registration.lsr) | 设备激活与 APNs 证书登记门户 | 按 Apple 官方用途读取设备激活与证书请求；eSIM、校时、机构 MDM 和设备素材保留在系统联网组，不按主机名猜测身份用途 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2320-apple-device-registration.lsr) |
 | 2330 | [apple-feedback-and-diagnostics](../rules/2330-apple-feedback-and-diagnostics.lsr) | Feedback Assistant、错误报告与自愿诊断上传 | 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2330-apple-feedback-and-diagnostics.lsr) |
-| 2340 | [apple-other-services](../rules/2340-apple-other-services.lsr) | Apple 官网与尚未细分的通用服务 | 放在 Apple 细分或合集、独立证书规则之后，接住尚未命中的 Apple 自有服务域；账户、系统联网、CDN 和文件传输先匹配。不使用整个 17.0.0.0/8 或进程规则 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2340-apple-other-services.lsr) |
+| 2340 | [apple-other-services](../rules/2340-apple-other-services.lsr) | Apple 官网与尚未细分的通用服务 | 放在 Apple 细分之后，接住来源列出的 Apple 自有服务域；随完整域名来源补入，不另列一份根域白名单。细分先匹配；忽略上游进程和 IP 规则，不使用整个 17.0.0.0/8 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2340-apple-other-services.lsr) |
 
 ### 4.12 Apple 日常直连合集
 

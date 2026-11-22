@@ -29,6 +29,8 @@
 
 `protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。所有读取器使用相同的共享主机边界。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
 
+`purpose-domain-lists.select` 可用 `roots`、`exact` 从同一官方清单选出产品自有范围。完整清单仍由端点合同独立核对，筛选不能把未处理的新增项藏起来。OpenAI 1020 用这种方式区分自有服务与第三方共享依赖。
+
 官方表已明确用途、且列出的是单个主机时，`host-table.select` 可结合 `role` 与 `all-exact: true` 跟随这些精确端点。1230 只选择 PCC 和 Apple Intelligence 扩展两种用途；官方增加第三方中继主机时可以自动补入，不必先把新名字写进白名单。相邻的 Siri、下载与 iCloud Private Relay 行不参加该选择，域名也不会扩大为整个 CDN 后缀。
 
 ## plist 和客户端配置
@@ -65,6 +67,10 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 包的发布文件使用 `inventory-retention: published-artifacts`，并用 `revision-path` 选择版本字段；要求单份版本元数据。它保存旧版本文件主机，不把“最新版没再出现”理解为停用。
 
 同一用途表同时列出跨产品主机时，`check-sharing` 从该份提取声明计算共用关系，并核对后续承接。拆分归属时使用本轮完整范围证据，不添加域名迁移豁免。
+
+公司通用补充可以用 `projection.all-domains: true` 读取已核对来源的全部域名，不能同时填写 `roots`、`exact`。这只适用于后置通用表，并要求在 `source-inventories` 声明同一来源的完整归属检查；不是放开整个云平台。Apple 2340 使用此方式，细分仍先匹配。
+
+`source-inventories.recipe` 可以复用读取器核对结构化的完整来源。Google 地区域名使用 `brand-domain-list`，按官方注册域清单逐项检查首条命中。完整性检查失败会阻止发布，读取失败也不能按零条处理。
 
 ## 如何证明读取器真的能更新
 

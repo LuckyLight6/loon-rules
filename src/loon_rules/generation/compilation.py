@@ -27,7 +27,7 @@ def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extr
         source=downloaded[part['source']]
         if part.get('domain-lines-only'):
             lines=(line.strip().lstrip('\ufeff').strip() for line in source.splitlines())
-            source='\n'.join(line for line in lines if line.partition(',')[0].strip() in ('DOMAIN','DOMAIN-SUFFIX'))
+            source='\n'.join(line for line in lines if line.partition(',')[0].strip() in ('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD'))
         scope=dict(part)
         if parent_source:=part.get('parent-domains-source'):
             parents={h.strip().removeprefix('.') for h in downloaded[parent_source].splitlines() if h.strip()}

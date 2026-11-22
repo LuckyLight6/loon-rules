@@ -8,18 +8,23 @@ from loon_rules.domains import covers
 
 def project_domains(rows, scope):
     """Use documented product roots and exact aliases, not shared vendors."""
+    if 'all-domains' in scope and type(scope['all-domains']) is not bool:
+        raise rules.Invalid('完整域名来源开关必须为布尔值')
+    if scope.get('all-domains') and any(scope.get(field) for field in ('roots', 'exact')):
+        raise rules.Invalid('完整域名来源不能同时填写部分域名筛选')
     def within(host, roots):
         return any(host==root or host.endswith('.'+root) for root in roots)
 
     kept=[]
     for row in rows:
         kind,host,*flags=row.split(',')
-        if kind not in ('DOMAIN','DOMAIN-SUFFIX') or flags:
+        if flags or kind not in ('DOMAIN','DOMAIN-SUFFIX') and not (
+                scope.get('all-domains') and kind=='DOMAIN-WILDCARD'):
             continue
         host=host.casefold()
         if within(host,scope.get('exclude',())):
             continue
-        if within(host,scope.get('roots',())):
+        if scope.get('all-domains') or within(host,scope.get('roots',())):
             kept.append(kind+','+host)
         elif host in scope.get('exact',()):
             # Shared services may be selected by exact hostname only.

@@ -294,6 +294,57 @@
     }
   },
   {
+    "id": "openai-network",
+    "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+    "format": "purpose-domain-lists",
+    "labels": [
+      "OpenAI uses the following domains"
+    ],
+    "routes": {
+      "chatgpt-connections": [
+        "*.auth.openai.com",
+        "*.chatgpt.com",
+        "*.oaistatic.com",
+        "*.oaistatsig.com",
+        "*.oaiusercontent.com",
+        "*.openai.com",
+        "android.chat.openai.com",
+        "auth0.openai.com",
+        "cdn.openaimerge.com",
+        "cdn.platform.openai.com",
+        "chat.openai.com",
+        "desktop.chat.openai.com",
+        "ios.chat.openai.com",
+        "setup.auth.openai.com",
+        "tcr9i.chat.openai.com"
+      ]
+    },
+    "shared": {
+      "cdn.workos.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "challenges.cloudflare.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "forwarder.workos.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "frontend-apps-multi-region.workos.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "humb.apple.com": "Apple 的共用服务，不归 OpenAI 专表",
+      "images.workoscdn.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "js.intercomcdn.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "js.stripe.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "o207216.ingest.sentry.io": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "o33249.ingest.sentry.io": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "rum.browser-intake-datadoghq.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "setup.workos.com": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "workos.imgix.net": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "*.ct.sendgrid.net": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "*.intercom.io": "第三方共享域名，不能由 OpenAI 专表整段接管",
+      "*.intercomcdn.com": "第三方共享域名，不能由 OpenAI 专表整段接管"
+    },
+    "guard-sections": [
+      "ai"
+    ],
+    "discover": {
+      "chatgpt-connections": "extract"
+    }
+  },
+  {
     "id": "google-drive",
     "source": "https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings",
     "format": "named-endpoints",

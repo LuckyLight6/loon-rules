@@ -10,7 +10,7 @@ DOMAIN_TYPES=('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD')
 COUNTS=('domain-scopes','selected-scopes','narrowed-scopes','selected-uncovered',
         'product-scopes','fallback-scopes','privacy-scopes','shared-scopes',
         'declared-exclusions','outside-selection','other-lines')
-PROJECTION_FIELDS=('roots','exact','exclude','domain-lines-only','parent-domains-source','brand-label','prefix-label')
+PROJECTION_FIELDS=('roots','exact','exclude','all-domains','domain-lines-only','parent-domains-source','brand-label','prefix-label')
 FIELDS={'state','products','filters','other-products',*COUNTS}
 
 
@@ -78,6 +78,10 @@ def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hos
             if shared_scope(row,shared_suffixes,shared_hosts):state['shared-scopes']+=1;continue
             bits=index.scope_bits(lookup)
             owner=next((key for key in order if bits&index.bits[key]),None)
+            if (chosen and owner is not None and owner not in products
+                    and entries[owner].get('policy-hint')!='reject'
+                    and not all(entries[key].get('fallback') for key in products)):
+                raise Invalid('已选产品来源的归属被其他服务抢先匹配：'+source)
             if chosen and (not bits&(qualified|product_bits)
                     or owner not in products and owner is not None and entries[owner].get('fallback')
                     and entries[owner].get('policy-hint')!='reject'):

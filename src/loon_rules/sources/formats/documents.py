@@ -79,6 +79,13 @@ def parse_purpose_domain_lists(recipe, text):
             for host in re.split('[,\\s]+', field.strip()):
                 if row:=public_domain_pattern(host):
                     result.add(row)
+    if select:=recipe.get('select'):
+        if (not isinstance(select,dict) or set(select)-{'roots','exact'}
+                or not any(select.get(field) for field in ('roots','exact'))):
+            raise Invalid('用途清单的产品范围筛选无效')
+        result={row for row in result
+                if within(domain_scope.fixed_tail(row.split(',')[1]),select.get('roots',()))
+                or row.startswith('DOMAIN,') and row.split(',')[1] in select.get('exact',())}
     if not result:
         raise Invalid('网络用途清单没有可独立归属的公开主机')
     return result

@@ -1025,6 +1025,26 @@
             "ipv4Prefix": 4,
             "ipv6Prefix": 6
           }
+        },
+        {
+          "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "OpenAI uses the following domains"
+          ],
+          "select": {
+            "roots": [
+              "openai.com",
+              "chatgpt.com",
+              "oaistatic.com",
+              "oaiusercontent.com",
+              "oaistatsig.com"
+            ],
+            "exact": [
+              "cdn.openaimerge.com"
+            ]
+          },
+          "protect-from-reject": true
         }
       ],
       "ip-match": "target-ip",
@@ -6207,7 +6227,7 @@
       "selection": "general",
       "policy-hint": "apple-account",
       "description": "Apple 官网与尚未细分的通用服务",
-      "boundary": "放在 Apple 细分或合集、独立证书规则之后，接住尚未命中的 Apple 自有服务域；账户、系统联网、CDN 和文件传输先匹配。不使用整个 17.0.0.0/8 或进程规则",
+      "boundary": "放在 Apple 细分之后，接住来源列出的 Apple 自有服务域；随完整域名来源补入，不另列一份根域白名单。细分先匹配；忽略上游进程和 IP 规则，不使用整个 17.0.0.0/8",
       "sources": [
         "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf"
       ],
@@ -6215,11 +6235,7 @@
         {
           "source": "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf",
           "domain-lines-only": true,
-          "roots": [
-            "apple.com",
-            "cdn-apple.com",
-            "itunes.com"
-          ]
+          "all-domains": true
         }
       ],
       "product-probes": [
@@ -6236,7 +6252,8 @@
       "allowed-shared": [
         "apple.com",
         "cdn-apple.com"
-      ]
+      ],
+      "domain-remainder": true
     },
     {
       "id": "github-code-and-packages",
@@ -14867,6 +14884,65 @@
         "DOMAIN-SUFFIX,slackcertified.com": "培训认证范围，不是当前消息客户端必需入口",
         "DOMAIN-SUFFIX,slackdemo.com": "演示范围，不是当前消息客户端必需入口",
         "DOMAIN-SUFFIX,slackhq.com": "内容和历史品牌范围，不是当前消息客户端必需入口"
+      }
+    },
+    {
+      "id": "claude-service-domains",
+      "source": "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list",
+      "owners": [
+        "claude-connections"
+      ]
+    },
+    {
+      "id": "apple-company-services",
+      "source": "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf",
+      "owners": [
+        "apple-intelligence-relays",
+        "apple-account-authentication",
+        "apple-app-and-device-verification",
+        "apple-wallet-payments",
+        "apple-testflight",
+        "apple-store-transactions",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-push-connection",
+        "apple-find-my",
+        "apple-location-services",
+        "apple-messaging-identity",
+        "apple-private-relay-connections",
+        "apple-icloud-mainland",
+        "apple-icloud-content-domains",
+        "apple-cloud-sync",
+        "apple-podcasts",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-video-and-fitness",
+        "apple-tv-video-delivery",
+        "apple-news-and-sports",
+        "apple-siri-and-search",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-developer-portal",
+        "apple-developer-downloads",
+        "apple-mainland-delivery-aliases",
+        "apple-shared-store-assets",
+        "apple-certificate-validation",
+        "apple-system-connectivity",
+        "apple-schoolwork-handouts",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-other-services"
+      ]
+    },
+    {
+      "id": "google-regional-domains",
+      "source": "https://www.google.com/supported_domains",
+      "owners": [
+        "google-platform-services"
+      ],
+      "recipe": {
+        "format": "brand-domain-list",
+        "brand-label": "google"
       }
     }
   ],

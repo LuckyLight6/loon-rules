@@ -1,36 +1,49 @@
 """Build audit statistics from validated data."""
 from loon_rules import rules
 from loon_rules.domains import covers
+from loon_rules.matching import RuleIndex
+from loon_rules.sources.inputs import extract_rows
 from loon_rules.generation.ordering import route_order,shadowed_domains
 
 
 
-def audit_inventory(spec, downloaded, data):
+def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
     """Look outside the publishing filters for unassigned domain scopes. Never export candidates."""
     if spec['source'] not in downloaded: return {'state':'unavailable'}
     try:
-        rows=rules.read_rules(downloaded[spec['source']])
+        text=downloaded[spec['source']]
+        rows=sorted(extract_rows(spec['recipe'],text)) if spec.get('recipe') else rules.read_rules(text)
     except rules.Invalid:
         return {'state':'invalid'}
-    domains=[r for r in rows if r.startswith(('DOMAIN,','DOMAIN-SUFFIX,')) and r.count(',')==1]
-    owned=[r for owner in spec['owners'] for r in data[owner]]
+    domains=[r for r in rows if r.startswith(('DOMAIN,','DOMAIN-SUFFIX,','DOMAIN-WILDCARD,')) and r.count(',')==1]
+    order=list(data if order is None else order)
+    index=RuleIndex(data,order)
     reviewed=set(spec.get('shared',{}))|set(spec.get('reviewed-outside',{}))
     other=0
     for row in domains:
         if row in reviewed: continue
-        if other_owner:=spec.get('other-owners',{}).get(row):
-            if not any(covers(r,row) for r in data[other_owner]): other+=1
-            continue
-        kind,host=row.split(',')
-        if kind=='DOMAIN':
-            known=any(rules.match_domain(host.casefold(),target) for target in owned)
-        else: known=any(covers(target,row) for target in owned)
-        if not known: other+=1
+        wanted={spec['other-owners'][row]} if row in spec.get('other-owners',{}) else set(spec['owners'])
+        if entries is not None:
+            wanted.update(member for key in tuple(wanted) for member in entries[key].get('members',()))
+        matching=index.scope_bits(row)
+        owner=next((key for key in order if matching&index.bits[key]),None)
+        if owner not in wanted: other+=1
     report={'state':'review' if other else 'current','domain-scopes':len(domains),
             'outside-scope':other,'other-rules':len(rows)-len(domains)}
     if spec.get('reviewed-outside'):
         report['reviewed-outside']=len(set(domains)&set(spec['reviewed-outside']))
     return report
+
+
+def verify_inventories(specs, report):
+    expected={spec['id'] for spec in specs}
+    if set(report)!=expected:
+        raise rules.Invalid('服务来源清单的检查结果缺失或多出')
+    for name,state in report.items():
+        if (state.get('state')!='current' or state.get('outside-scope')!=0
+                or type(state.get('domain-scopes')) is not int or state['domain-scopes']<=0
+                or type(state.get('other-rules')) is not int or state['other-rules']<0):
+            raise rules.Invalid('服务来源清单未完整归属，停止发布：'+name)
 
 
 def maintenance_method(entry):

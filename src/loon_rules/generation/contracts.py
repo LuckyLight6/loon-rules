@@ -46,6 +46,18 @@ def claude_table_hosts(text):
     return set(claude_table_records(text))
 
 
+def table_hosts(contract, text):
+    form=contract['format']
+    if form=='apple-host-table':
+        return apple_table_hosts(text,contract['sections'])
+    if form=='claude-code-table':
+        return claude_table_hosts(text)
+    if form=='purpose-domain-lists':
+        rows=extract_rows({'format':form,'labels':contract['labels']},text)
+        return {_host(row.split(',')[1]) for row in rows}
+    raise rules.Invalid('没有可核对的完整端点表：'+contract['id'])
+
+
 def declared_hosts(contract):
     required={_host(h) for hosts in contract['routes'].values() for h in hosts}
     shared={_host(h) for h in contract.get('shared',())}
@@ -65,12 +77,7 @@ def resolve_additions(contracts, entries, downloaded, *, shared_hosts=()):
         if not (discover := spec.get('discover')):
             continue
         text = downloaded[spec['source']]
-        if spec['format']=='apple-host-table':
-            actual=apple_table_hosts(text,spec['sections'])
-        elif spec['format']=='claude-code-table':
-            actual=claude_table_hosts(text)
-        else:
-            raise rules.Invalid('只有完整端点表可以自动识别新增主机：'+spec['id'])
+        actual=table_hosts(spec,text)
         known, shared = declared_hosts(spec)
         extra=actual-known-shared
         assigned={host:owner for owner,hosts in spec['routes'].items() for host in hosts}
@@ -82,12 +89,12 @@ def resolve_additions(contracts, entries, downloaded, *, shared_hosts=()):
                                    if r['source']==spec['source']))
                 for row in rows:
                     kind,host=row.split(',',1)
-                    if kind!='DOMAIN': continue
+                    if kind not in ('DOMAIN','DOMAIN-WILDCARD'): continue
                     if host in shared or (host in assigned and assigned[host]!=owner):
                         if entries[owner].get('domain-remainder'):continue
                         raise rules.Invalid(f'{host} 官方用途变化：原归属 {assigned.get(host,"共享")}，现符合 {owner}')
                 for host in extra:
-                    if 'DOMAIN,'+host in rows:
+                    if ('DOMAIN-WILDCARD,' if '*' in host else 'DOMAIN,')+host in rows:
                         matches[host].add(owner)
             else:
                 terms=policy.get('feed-and-purpose',())
@@ -127,15 +134,11 @@ def verify_sources(contracts, downloaded):
         expected=required|shared
         text=downloaded[contract['source']]
         form=contract['format']
-        if form=='apple-host-table':
-            actual=apple_table_hosts(text,contract['sections'])
-        elif form=='claude-code-table':
-            actual=claude_table_hosts(text)
-        elif form=='named-endpoints':
+        if form=='named-endpoints':
             body=unescape(text).casefold()
             actual={host for host in expected if _mentioned(body,host)}
         else:
-            raise rules.Invalid('未知的端点核对方式：'+form)
+            actual=table_hosts(contract,text)
         extra=actual-expected-set(contract.get('_unassigned',()))
         missing=expected-actual
         if extra or missing:

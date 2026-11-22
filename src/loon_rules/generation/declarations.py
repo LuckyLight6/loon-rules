@@ -117,7 +117,12 @@ def validate_declarations(config):
                     or recipe.get('format')!='exclusive-purpose-table' or recipe.get('part')=='shared'):
                 raise rules.Invalid('共享用途必须由产品的同一官方用途表核对：'+e['id'])
         for part in e.get('projection',()):
-            if part['source'] not in e['sources'] or not (part.get('roots') or part.get('exact')):
+            if 'all-domains' in part and (type(part['all-domains']) is not bool or part['all-domains'] and (
+                    not e.get('fallback') or part.get('roots') or part.get('exact')
+                    or not any(spec['source']==part['source'] and e['id'] in spec['owners']
+                               for spec in config.get('source-inventories',())))):
+                raise rules.Invalid('完整公司域名来源需要后置通用表和独立完整性检查：'+e['id'])
+            if part['source'] not in e['sources'] or not (part.get('roots') or part.get('exact') or part.get('all-domains')):
                 raise rules.Invalid('筛选缺少来源或服务边界：'+e['id'])
             if part.get('parent-domains-source') and (part['parent-domains-source'] not in e['sources']
                     or not part.get('brand-label') or not part.get('prefix-label')):

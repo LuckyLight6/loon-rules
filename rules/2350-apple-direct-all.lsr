@@ -4,8 +4,8 @@
 # description: Apple 日常直连合集
 # boundary: 账户、商店、iCloud、音乐、普通 Siri、下载与系统服务，包含证书和 Apple 通用补充。日常在海外功能与 APNs 后使用；与 2000 及所列成员二选一
 # created-at: 2026-11-22T11:56:41Z
-# updated-at: 2026-11-22T11:56:41Z
-# rule-count: 106
+# updated-at: 2026-11-22T12:45:19Z
+# rule-count: 96
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list
 # source: https://support.apple.com/en-us/101555
 # source: https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go
@@ -65,7 +65,6 @@ DOMAIN-WILDCARD,p[0-9][0-9][0-9]-quota.icloud.com
 DOMAIN-WILDCARD,*buy.itunes.apple.com
 DOMAIN-SUFFIX,appstore.com
 DOMAIN-SUFFIX,appsto.re
-DOMAIN,iosapps.itunes.g.aaplimg.com
 DOMAIN,app-site-association.networking.apple
 DOMAIN-WILDCARD,p[0-9][0-9]-fmipmobile.icloud.com
 DOMAIN-WILDCARD,p[0-9][0-9][0-9]-fmipmobile.icloud.com
@@ -86,13 +85,11 @@ DOMAIN,gdmf-cdn.apple.com.akadns.net
 DOMAIN,gdmf-cdn.origin-apple.com.akadns.net
 DOMAIN,gdmf-lb.apple.com.akadns.net
 DOMAIN,gdmf.apple.com.mwcname.com
-DOMAIN,gdmf.g.aaplimg.com
 DOMAIN,gg-cdn.apple.com.akadns.net
 DOMAIN,gg-cdn.origin-apple.com.akadns.net
 DOMAIN,gg-lb.apple.com.akadns.net
 DOMAIN,gg.apple.com.akadns.net
 DOMAIN,gg.apple.com.mwcname.com
-DOMAIN,gg.g.aaplimg.com
 DOMAIN,mesu-lb.apple.com.akadns.net
 DOMAIN,mesu.apple.com.akadns.net
 DOMAIN,mesu.apple.com.mwcname.com
@@ -101,31 +98,24 @@ DOMAIN,swscan-cdn.origin-apple.com.akadns.net
 DOMAIN,swscan-lb.apple.com.akadns.net
 DOMAIN,swscan.apple.com.akadns.net
 DOMAIN,swscan.apple.com.mwcname.com
-DOMAIN,swscan.g.aaplimg.com
 DOMAIN,xp-cdn.apple.com.akadns.net
 DOMAIN,xp-cdn.origin-apple.com.akadns.net
 DOMAIN,xp-lb.apple.com.akadns.net
 DOMAIN,xp.apple.com.akadns.net
 DOMAIN,xp.apple.com.mwcname.com
-DOMAIN,xp.g.aaplimg.com
 DOMAIN-SUFFIX,gdmf.apple.com.akadns.net
 DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net
 DOMAIN-SUFFIX,mesu-cdn.origin-apple.com.akadns.net
-DOMAIN-SUFFIX,mesu.g.aaplimg.com
 DOMAIN,configuration.apple.com.akadns.net
 DOMAIN,swdist.apple.com.akadns.net
 DOMAIN,appldnld.apple.com.mwcname.com
 DOMAIN-SUFFIX,appldnld.apple.com.akadns.net
-DOMAIN-SUFFIX,appldnld.g.aaplimg.com
 DOMAIN,appldnld.apple.com.edgesuite.net
-DOMAIN,swcdn.g.aaplimg.com
 DOMAIN,updates-http.cdn-apple.com.akadns.net
-DOMAIN,updates-http.g.aaplimg.com
 DOMAIN,appldnld-cdn.apple.com.akadns.net
 DOMAIN,appldnld-cdn.origin-apple.com.akadns.net
 DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net
 DOMAIN,oscdn.origin-apple.com.akadns.net
-DOMAIN,updates.g.aaplimg.com
 DOMAIN,updates-http.cdn-apple.com.edgesuite.net
 DOMAIN,adcdownload.apple.com.akadns.net
 DOMAIN,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
@@ -142,7 +132,6 @@ DOMAIN,ocsp-cdn.origin-apple.com.akadns.net
 DOMAIN,ocsp.apple.com.akadns.net
 DOMAIN,ocsp.apple.com.mwcname.com
 DOMAIN-SUFFIX,ocsp-lb.apple.com.akadns.net
-DOMAIN-SUFFIX,ocsp.g.aaplimg.com
 DOMAIN-SUFFIX,apple-mapkit.com
 DOMAIN,www.apple.com.cn
 DOMAIN,upload.appleschoolcontent.com
@@ -152,13 +141,14 @@ DOMAIN,iphonesubmissions-cdn.origin-apple.com.akadns.net
 DOMAIN,iphonesubmissions-lb.apple.com.akadns.net
 DOMAIN,iphonesubmissions.apple.com.akadns.net
 DOMAIN,iphonesubmissions.apple.com.mwcname.com
-DOMAIN,iphonesubmissions.g.aaplimg.com
 DOMAIN,radarsubmissions-cdn.apple.com.akadns.net
 DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net
 DOMAIN,radarsubmissions-lb.apple.com.akadns.net
 DOMAIN,radarsubmissions.apple.com.akadns.net
 DOMAIN,radarsubmissions.apple.com.mwcname.com
-DOMAIN,radarsubmissions.g.aaplimg.com
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,apple.co
+DOMAIN-SUFFIX,organicfruitapps.com

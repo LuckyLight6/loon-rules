@@ -18,7 +18,7 @@ from loon_rules.generation.ordering import route_order, ordered_route, subscript
 from loon_rules.generation.ownership import apply_domain_ownership, derive_domain_merges, restore_assigned_rules
 from loon_rules.generation.protection import extract_rows, functional_hostnames, protected_hosts, retained_functional_hostnames, shared_hostnames
 from loon_rules.generation.rendering import decorate, metadata, render_index, render_review, verify_file
-from loon_rules.generation.reporting import audit_inventory, ip_summary, maintenance_audit, maintenance_method, subscription_audit
+from loon_rules.generation.reporting import audit_inventory, verify_inventories, ip_summary, maintenance_audit, maintenance_method, subscription_audit
 from loon_rules.generation.validation import lint_content, verify_cases, verify_products, verify_combinations
 
 
@@ -71,6 +71,7 @@ def run(check=False, offline=False, adopt_ads=False):
         if report.get('maintenance-audit')!=maintenance_audit(file_entries,contracts):
             raise rules.Invalid('固定声明与维护方式报告不一致')
         source_coverage.verify_report(entries,report.get('projection-coverage',{}),order=route_order(config,entries))
+        verify_inventories(config.get('source-inventories',()),report.get('source-inventories',{}))
         source_coverage.verify_reassignments(entries,data,report.get('projection-reassignments',{}),order=route_order(config,entries))
         source_aliases.verify_evidence(entries,data,report.get('cname-alias-evidence',{}),
             config.get('source-alias-policies',{}),order=route_order(config,entries),
@@ -171,8 +172,10 @@ def run(check=False, offline=False, adopt_ads=False):
             continue
         compiled[k]=data[k]
         projected={}
-        shared_scopes=([host for contract in contracts for host in contract.get('shared',())]
-                       if e.get('domain-remainder') else ())
+        shared_scopes=([host for contract in contracts
+                        if e['section'] in contract.get('guard-sections',())
+                        for host in contract.get('shared',())]
+                       if e.get('domain-remainder') and not e.get('fallback') else ())
         reserved_rows=[('DOMAIN-WILDCARD,' if '*' in host else 'DOMAIN,')+host
                        for contract in contracts for owner,hosts in contract.get('routes',{}).items()
                        if owner!=k for host in hosts] if e.get('domain-remainder') else ()
@@ -309,7 +312,9 @@ def run(check=False, offline=False, adopt_ads=False):
     source_aliases.verify_evidence(entries,data,alias_evidence,config.get('source-alias-policies',{}),
         order=route_order(config,entries),aliases=aliases)
     now=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    inventories={spec['id']:audit_inventory(spec,downloaded,data) for spec in config.get('source-inventories',())}
+    inventories={spec['id']:audit_inventory(spec,downloaded,data,order=route_order(config,entries),entries=entries)
+                 for spec in config.get('source-inventories',())}
+    verify_inventories(config.get('source-inventories',()),inventories)
     changed=[]
     methods={}
     for k,e in file_entries.items():
