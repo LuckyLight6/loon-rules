@@ -1,13 +1,14 @@
 # name: google-platform-services
 # priority: 4590
 # section: google
-# description: Google 搜索和共享平台兜底
-# boundary: 置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。保留共享域，去掉通用关键词及共享 IP
+# description: Google 搜索、安全浏览 API 和共享平台兜底
+# boundary: 置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。安全浏览 API 读取官方服务字段；保留共享域，去掉通用关键词及共享 IP
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
-# rule-count: 219
+# updated-at: 2026-11-22T09:59:09Z
+# rule-count: 220
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
 # source: https://www.google.com/supported_domains
+# source: https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest
 
 DOMAIN,voice.telephony.goog
 DOMAIN-SUFFIX,1e100.net
@@ -228,3 +229,4 @@ DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com
 DOMAIN-SUFFIX,redirector.snap.gvt1.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,googleapis-cn.com

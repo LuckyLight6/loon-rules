@@ -4,8 +4,8 @@
 # description: Google 生态合集
 # boundary: 替换本章学术、账户、邮箱、办公、Meet、Play、下载和通用服务成员，共用一个出口；更早的 Gemini、YouTube 等专项照常生效。需要节省下载配额时选细分
 # created-at: 2026-11-19T12:26:59Z
-# updated-at: 2026-11-20T10:24:10Z
-# rule-count: 232
+# updated-at: 2026-11-22T09:59:09Z
+# rule-count: 233
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list
 # source: https://www.google.com/supported_domains
 # source: https://developers.google.com/identity/protocols/oauth2/web-server
@@ -24,6 +24,7 @@
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GoogleDrive.lsr
 # source: https://support.google.com/chrome/a/answer/6334001
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
+# source: https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest
 
 DOMAIN,meet.turns.goog
 DOMAIN,workspace.turns.goog
@@ -257,3 +258,4 @@ DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com
 DOMAIN-SUFFIX,redirector.snap.gvt1.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,googleapis-cn.com

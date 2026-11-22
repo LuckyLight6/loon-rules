@@ -1,0 +1,13 @@
+# name: apple-other-services
+# priority: 2340
+# section: apple
+# description: Apple 官网与尚未细分的通用服务
+# boundary: 放在 Apple 细分或合集、独立证书规则之后，接住尚未命中的 Apple 自有服务域；账户、系统联网、CDN 和文件传输先匹配。不使用整个 17.0.0.0/8 或进程规则
+# created-at: 2026-11-22T09:45:58Z
+# updated-at: 2026-11-22T09:45:58Z
+# rule-count: 3
+# source: https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf
+
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,itunes.com

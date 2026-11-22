@@ -4,8 +4,8 @@
 # description: Repcz 广告与追踪拦截
 # boundary: 窄于大合集；与其他广告表作为同类选择
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-20T02:14:16Z
-# rule-count: 6183
+# updated-at: 2026-11-22T09:59:09Z
+# rule-count: 6180
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Reject.list
 
 DOMAIN,a.wkanx.com
@@ -251,9 +251,6 @@ DOMAIN,richmanrules.ksedt.com
 DOMAIN,rp.hpplay.cn
 DOMAIN,rpt.hpplay.cn
 DOMAIN,saad.ms.zhangyue.net
-DOMAIN,safebrowsing.googleapis-cn.com
-DOMAIN,safebrowsing.googleapis.com
-DOMAIN,safebrowsing.urlsec.qq.com
 DOMAIN,sax.sina.com.cn
 DOMAIN,saxn.sina.com.cn
 DOMAIN,saxs.sina.com.cn

@@ -11,7 +11,7 @@
 | [o-ocn / loon-rules](https://github.com/o-ocn/loon-rules) | 筛选通讯、游戏、国内平台、Google、OneDrive、TestFlight 与 Drive 范围 | [GPL-2.0](licenses/o-ocn--loon-rules.txt) |
 | [Repcz / Tool](https://github.com/Repcz/Tool) | Apple、联网、媒体、广告、Microsoft、国内域名与网段；海外和 GFW 输入只取核对后的域名 | [MIT](licenses/Repcz--Tool.txt) |
 | [blackmatrix7 / ios_rule_script](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon) | 局域网、音乐、直播、微信与 iCloud Private Relay 等用途核对 | [GPL-2.0](licenses/blackmatrix7--ios_rule_script.txt) |
-| [SukkaW / Surge](https://github.com/SukkaW/Surge) | 海外影音的精确域名和后缀，不照搬关键字、User-Agent 或进程匹配 | [AGPL-3.0](licenses/SukkaW--Surge.txt) |
+| [SukkaW / Surge](https://github.com/SukkaW/Surge) | 海外影音与 Apple 通用服务的已选域名，不照搬关键字、User-Agent、进程匹配或整个 Apple IP 段 | [AGPL-3.0](licenses/SukkaW--Surge.txt) |
 | [MetaCubeX / meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) | Apple 别名、证书、更新，以及 AI、开发、通讯、游戏、媒体等产品范围 | [GPL-3.0](licenses/MetaCubeX--meta-rules-dat.txt) |
 | [xkww3n / Rules](https://github.com/xkww3n/Rules) | 联网、保留地址、Apple 媒体与智能服务、广告及国内外范围比对 | [MIT](licenses/xkww3n--Rules.txt) |
 | [VPSDance / ai-proxy-rules](https://github.com/VPSDance/ai-proxy-rules) | 海外 AI 产品；合集由本仓细分生成 | [MIT](licenses/VPSDance--ai-proxy-rules.txt) |

@@ -169,7 +169,8 @@
         "apple-system-connectivity",
         "apple-schoolwork-handouts",
         "apple-device-registration",
-        "apple-feedback-and-diagnostics"
+        "apple-feedback-and-diagnostics",
+        "apple-other-services"
       ],
       "subheadings": {
         "apple-account-authentication": "账户、验证与支付",
@@ -4647,7 +4648,7 @@
       "mode": "view",
       "policy-hint": "apple-services",
       "description": "Apple 生态合集",
-      "boundary": "替换所列账户、系统、海外媒体、智能与 iCloud 成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立",
+      "boundary": "替换所列账户、系统、海外媒体、智能与 iCloud 细分。涵盖海外服务，不能整表设直连；混合出口用细分。证书 2290 与通用补充 2340 在合集之后独立使用",
       "exclude": [
         "DOMAIN,crl3.digicert.com",
         "DOMAIN,crl4.digicert.com",
@@ -4659,7 +4660,8 @@
       "member-selection": {
         "section": "apple",
         "exclude": [
-          "apple-certificate-validation"
+          "apple-certificate-validation",
+          "apple-other-services"
         ]
       }
     },
@@ -6189,6 +6191,45 @@
       "product-negatives": [
         "diagassets.apple.com",
         "gs.apple.com"
+      ]
+    },
+    {
+      "id": "apple-other-services",
+      "priority": 2340,
+      "section": "apple",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "apple-account",
+      "description": "Apple 官网与尚未细分的通用服务",
+      "boundary": "放在 Apple 细分或合集、独立证书规则之后，接住尚未命中的 Apple 自有服务域；账户、系统联网、CDN 和文件传输先匹配。不使用整个 17.0.0.0/8 或进程规则",
+      "sources": [
+        "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf",
+          "domain-lines-only": true,
+          "roots": [
+            "apple.com",
+            "cdn-apple.com",
+            "itunes.com"
+          ]
+        }
+      ],
+      "product-probes": [
+        "www.apple.com",
+        "support.apple.com",
+        "privacy.apple.com"
+      ],
+      "product-negatives": [
+        "www.apple.com.cn",
+        "www.icloud.com",
+        "is1-ssl.mzstatic.com"
+      ],
+      "fallback": true,
+      "allowed-shared": [
+        "apple.com",
+        "cdn-apple.com"
       ]
     },
     {
@@ -8434,11 +8475,12 @@
       "id": "google-platform-services",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "Google 搜索和共享平台兜底",
-      "boundary": "置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。保留共享域，去掉通用关键词及共享 IP",
+      "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+      "boundary": "置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。安全浏览 API 读取官方服务字段；保留共享域，去掉通用关键词及共享 IP",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr",
-        "https://www.google.com/supported_domains"
+        "https://www.google.com/supported_domains",
+        "https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest"
       ],
       "projection": [
         {
@@ -8471,7 +8513,8 @@
             "chrome.com",
             "android.com",
             "recaptcha.net",
-            "app-measurement.com"
+            "app-measurement.com",
+            "googleapis-cn.com"
           ],
           "exact": [
             "voice.telephony.goog"
@@ -8491,6 +8534,13 @@
           "source": "https://www.google.com/supported_domains",
           "format": "brand-domain-list",
           "brand-label": "google"
+        },
+        {
+          "source": "https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest",
+          "format": "api-discovery",
+          "name": "safebrowsing",
+          "version": "v4",
+          "protect-from-reject": true
         }
       ]
     },
@@ -11020,6 +11070,7 @@
     "tailscale-control-and-tailnet",
     "ip-egress-checks",
     "general-ad-and-tracking",
+    "apple-other-services",
     "github-code-and-packages",
     "telegram-messaging",
     "discord-messaging-and-voice",
@@ -13177,6 +13228,24 @@
     ],
     "search.itunes.apple.com": [
       "apple-store-transactions"
+    ],
+    "www.apple.com": [
+      "apple-other-services"
+    ],
+    "support.apple.com": [
+      "apple-other-services"
+    ],
+    "privacy.apple.com": [
+      "apple-other-services"
+    ],
+    "safebrowsing.googleapis.com": [
+      "google-platform-services"
+    ],
+    "safebrowsing.googleapis-cn.com": [
+      "google-platform-services"
+    ],
+    "safebrowsing.urlsec.qq.com": [
+      "mainland-domains"
     ]
   },
   "shared-negatives": [
@@ -13198,8 +13267,7 @@
     "example.bytepluses.com",
     "tencentcloudapi.com",
     "login.microsoftonline.com",
-    "x.com",
-    "www.apple.com"
+    "x.com"
   ],
   "no-overlap": {
     "muse-agent": [
@@ -13395,7 +13463,8 @@
         2300,
         2310,
         2320,
-        2330
+        2330,
+        2340
       ]
     },
     {

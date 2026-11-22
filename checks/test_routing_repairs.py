@@ -11,6 +11,27 @@ from checks.source_fixtures import PublicSourceExamples, prepare_workspace, repo
 from loon_rules.generation import pipeline as lib
 
 
+class SharedEndpointOwners(unittest.TestCase):
+    def test_later_general_vendor_fallback_preserves_product_and_shared_boundaries(self):
+        from loon_rules.generation import contracts
+        contract={'id':'vendor','routes':{'product':['api.vendor.example']},
+                  'shared':{'*.vendor.example':'Several services share this vendor namespace'},
+                  'guard-sections':['ecosystem']}
+        entries={'product':{'section':'ecosystem'},
+                 'general':{'section':'ecosystem','fallback':True}}
+        data={'product':['DOMAIN,api.vendor.example'],
+              'general':['DOMAIN-SUFFIX,vendor.example']}
+        try:
+            contracts.verify_routes([contract],entries,['product','general'],data)
+        except lib.rules.Invalid as error:
+            self.fail('后置通用层不应被当成具体产品：'+str(error))
+        with self.assertRaises(lib.rules.Invalid):
+            contracts.verify_routes([contract],entries,['general','product'],data)
+        data['product']=['DOMAIN-SUFFIX,vendor.example']
+        with self.assertRaises(lib.rules.Invalid):
+            contracts.verify_routes([contract],entries,['product','general'],data)
+
+
 class OfficialInputEvolution(PublicSourceExamples):
     def test_registered_provider_api_changes_follow_typed_fields_not_notes(self):
         cfg=json.loads((lib.ROOT/'config/catalog.json').read_text())
@@ -184,6 +205,39 @@ class PublishedRepairRoutes(unittest.TestCase):
                          'apple-store-transactions')
         self.assertEqual(lib.ordered_route('is1-ssl.mzstatic.com',self.order,self.data),
                          'apple-shared-store-assets')
+
+    def test_apple_web_and_unclassified_services_do_not_fall_through_to_domestic_ips(self):
+        for host in ('www.apple.com','support.apple.com','privacy.apple.com'):
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,self.order,self.data),'apple-other-services')
+        expected={'gsa.apple.com':'apple-account-authentication',
+                  'account.apple.com':'apple-account-authentication',
+                  'search.itunes.apple.com':'apple-store-transactions',
+                  'is1-ssl.mzstatic.com':'apple-shared-store-assets',
+                  'time.apple.com':'apple-system-connectivity',
+                  'content.icloud-content.com':'apple-icloud-content-domains',
+                  'www.icloud.com':'apple-cloud-sync'}
+        for host,owner in expected.items():
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,self.order,self.data),owner)
+
+    def test_safe_browsing_is_a_google_security_api_instead_of_an_advertising_target(self):
+        for host in ('safebrowsing.googleapis.com','safebrowsing.googleapis-cn.com'):
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,self.order,self.data),'google-platform-services')
+                self.assertEqual(lib.ordered_route(host,
+                                 lib.route_order(self.config,self.entries,['google-all']),self.data),'google-all')
+        self.assertEqual(lib.ordered_route('safebrowsing.urlsec.qq.com',self.order,self.data),
+                         'mainland-domains')
+
+    def test_apple_aggregate_keeps_independent_certificate_and_general_fallback_routes(self):
+        order=lib.route_order(self.config,self.entries,['apple-all'])
+        expected={'www.apple.com':'apple-other-services',
+                  'ocsp.apple.com':'apple-certificate-validation',
+                  'account.apple.com':'apple-all'}
+        for host,owner in expected.items():
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,order,self.data),owner)
 
     def test_icloud_account_controls_follow_numeric_shards(self):
         for host in ('p181-acsegateway.icloud.com', 'p181-mcc.icloud.com', 'p181-quota.icloud.com',

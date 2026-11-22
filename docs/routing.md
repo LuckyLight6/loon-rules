@@ -42,6 +42,13 @@
 | 2310 | Schoolwork 作业资料 | 优先直连，或按学校网络要求；不接管全部账户、名册和设备管理 |
 | 2320 | 设备激活与 APNs 证书登记 | 官方用途明确的身份登记入口可交给账户代理；不把 eSIM 激活和 UDP 校时一起切走 |
 | 2330 | 反馈与诊断上传 | 按需使用稳定代理，反馈文件也会产生流量；规则只决定已有连接的出口，不打开诊断分享 |
+| 2340 | Apple 官网与通用服务 | 放在上述细分之后，使用稳定代理接住未被专项识别的 Apple 自有服务域，避免官网因国内 CDN 地址而进入国内 IP 补充 |
+
+2340 从 Sukka 的 Apple 服务来源中只选择 `apple.com`、`cdn-apple.com` 和 `itunes.com` 范围。它先让账户、系统连接、下载和已识别 CDN 匹配，不把整个 Apple IP 段交给代理。尚未拆出的共享内容仍可能使用代理。
+
+**使用 2000 合集时，仍按清单顺序保留 2290、2340。** 2000 只替换列出的业务细分；2290 证书验证独立使用，2340 通用补充放在 Apple 章末，这样通用父域不会抢走证书规则。
+
+网页显示中文、地区选择为中国大陆，与请求出口是不同的检查项。先在请求记录中核对 `www.apple.com`、`account.apple.com` 和认证主机的最终节点，再核对页面地区、已有站点数据和浏览器语言。网页地区文字不能单独证明出口位置；改变出口也不会自动清除已有的页面选择。
 
 1230 识别 PCC 与系统 AI 扩展中继：Apple 官方把 `apple-relay.cloudflare.com`、`apple-relay.fastly-edge.com`、`cp4.cloudflare.com` 列为 PCC，把 `apple-relay.apple.com` 列为 Apple Intelligence 扩展。2120 的 `mask.icloud.com`、`mask-h2.icloud.com`、`mask-api.icloud.com` 则属于 iCloud Private Relay。两者都使用隐私中继，按官方用途分别维护，不根据名称中的 relay 合并。[Apple 网络端点表](https://support.apple.com/en-us/101555)
 

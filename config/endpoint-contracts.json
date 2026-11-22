@@ -177,6 +177,9 @@
         "cssubmissions.apple.com",
         "fba.apple.com",
         "iphonesubmissions.apple.com"
+      ],
+      "apple-other-services": [
+        "www.apple.com"
       ]
     },
     "sections": [
@@ -201,10 +204,9 @@
       "idverifier"
     ],
     "shared": {
-      "*.itunes.apple.com": "商店、媒体、下载、验证与运营商探测共用；只挑已确认的子域和具体主机。",
-      "*.cdn-apple.com": "iCloud、账户、验证及系统更新共用；不整段指定一个出口。",
       "*.vertexsmb.com": "机构税务校验用的第三方域，留给独立业务或兜底。",
-      "www.apple.com": "Apple 官网有许多不同用途，不能只当语言字体的下载主机。"
+      "*.itunes.apple.com": "商店、媒体、下载、验证与运营商探测共用；产品专项只挑已确认的子域和主机，后置 Apple 通用层处理其余请求",
+      "*.cdn-apple.com": "iCloud、账户、验证及系统更新共用；产品专项先识别，后置 Apple 通用层处理其余请求"
     },
     "guard-sections": [
       "apple"

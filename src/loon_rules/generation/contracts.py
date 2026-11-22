@@ -181,7 +181,8 @@ def verify_routes(contracts, entries, order, data, replacements=None):
                 actual=_whole_pattern_owner(_host(h),order,data)
                 if actual!=want:
                     raise rules.Invalid(f'{name} {h} 应由 {want} 处理，实际：{actual or "未匹配"}')
-        guarded=[key for key in order if entries[key]['section'] in contract.get('guard-sections',())]
+        guarded=[key for key in order if entries[key]['section'] in contract.get('guard-sections',())
+                 and not entries[key].get('fallback')]
         for h,reason in contract.get('shared',{}).items():
             if not reason or not guarded:
                 raise rules.Invalid(f'{name} 的共享例外缺少理由或限制范围：{h}')

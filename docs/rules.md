@@ -173,7 +173,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 2000 | [apple-all](../rules/2000-apple-all.lsr) | Apple 生态合集 | **合集：替代 1230、2010–2280、2300–2330。** 替换所列账户、系统、海外媒体、智能与 iCloud 成员。涵盖海外服务，不能整表设直连；混合出口用细分。证书验证仍保持独立 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2000-apple-all.lsr) |
+| 2000 | [apple-all](../rules/2000-apple-all.lsr) | Apple 生态合集 | **合集：替代 1230、2010–2280、2300–2330。** 替换所列账户、系统、海外媒体、智能与 iCloud 细分。涵盖海外服务，不能整表设直连；混合出口用细分。证书 2290 与通用补充 2340 在合集之后独立使用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2000-apple-all.lsr) |
 
 ### 4.2 账户、验证与支付
 
@@ -252,6 +252,7 @@
 |---:|---|---|---|---|
 | 2320 | [apple-device-registration](../rules/2320-apple-device-registration.lsr) | 设备激活与 APNs 证书登记门户 | 按 Apple 官方用途读取设备激活与证书请求；eSIM、校时、机构 MDM 和设备素材保留在系统联网组，不按主机名猜测身份用途 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2320-apple-device-registration.lsr) |
 | 2330 | [apple-feedback-and-diagnostics](../rules/2330-apple-feedback-and-diagnostics.lsr) | Feedback Assistant、错误报告与自愿诊断上传 | 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2330-apple-feedback-and-diagnostics.lsr) |
+| 2340 | [apple-other-services](../rules/2340-apple-other-services.lsr) | Apple 官网与尚未细分的通用服务 | 放在 Apple 细分或合集、独立证书规则之后，接住尚未命中的 Apple 自有服务域；账户、系统联网、CDN 和文件传输先匹配。不使用整个 17.0.0.0/8 或进程规则 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2340-apple-other-services.lsr) |
 
 ## 5 开发（海外）
 
@@ -418,7 +419,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 4590 | [google-platform-services](../rules/4590-google-platform-services.lsr) | Google 搜索和共享平台兜底 | 置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。保留共享域，去掉通用关键词及共享 IP | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/4590-google-platform-services.lsr) |
+| 4590 | [google-platform-services](../rules/4590-google-platform-services.lsr) | Google 搜索、安全浏览 API 和共享平台兜底 | 置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。安全浏览 API 读取官方服务字段；保留共享域，去掉通用关键词及共享 IP | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/4590-google-platform-services.lsr) |
 
 ## 13 Microsoft 生态
 
