@@ -1,6 +1,8 @@
 # 规则怎样自动更新
 
-更新任务计划每天北京时间 **11:37** 运行，也可以在 [Scheduled rule maintenance](https://github.com/LuckyLight6/loon-rules/actions/workflows/schedule.yml) 选择 `readme` 分支手动触发。它下载公开资料，生成候选，检查归属与首条命中，通过后提交规则、插件和维护状态。读取失败或关键检查失败时，已发布版本继续可用。
+更新任务计划每天北京时间 **11:37 和 23:37** 运行，也可以在 [Scheduled rule maintenance](https://github.com/LuckyLight6/loon-rules/actions/workflows/schedule.yml) 选择 `readme` 分支手动触发。它下载公开资料，生成候选，检查归属与首条命中，通过后提交规则、插件和维护状态。读取失败或关键检查失败时，已发布版本继续可用。
+
+两次计划给漏触发留一次补充机会；[GitHub 的定时任务](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)可能延迟或被丢弃，并不保证准点。它在 GitHub 上更新文件，不在 Loon 客户端运行脚本或测速；客户端何时刷新订阅由自己的设置决定。
 
 仓库首页使用 `readme` 分支，代码和规则在 `main`。默认分支保留定时入口，调用 `main` 的维护工作流；工作流始终检出并更新 `main`，订阅地址中的分支不变。定时与手动更新共用同一并发组，避免同时向规则分支提交。
 
