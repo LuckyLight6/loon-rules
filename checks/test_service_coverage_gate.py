@@ -31,6 +31,20 @@ class ServiceCoverageGate(unittest.TestCase):
                            order=['wrong', 'product'],
                            selected={'product': {source: {'DOMAIN-SUFFIX,vendor.example'}}})
 
+    def test_a_declared_split_can_take_its_parent_source_scope_but_needs_the_same_source(self):
+        source = 'https://publisher.example/company.list'
+        entries = {'child': {'priority': 10, 'mode': 'compiled', 'sources': [source], 'separates': ['parent']},
+                   'parent': {'priority': 20, 'mode': 'compiled',
+                              'projection': [{'source': source, 'roots': ['vendor.example']}]}}
+        data = {'child': ['DOMAIN-SUFFIX,vendor.example'], 'parent': []}
+        selected = {'parent': {source: {'DOMAIN-SUFFIX,vendor.example'}}}
+        coverage.audit(entries, data, {source: 'DOMAIN-SUFFIX,vendor.example'},
+                       order=['child', 'parent'], selected=selected)
+        entries['child']['sources'] = ['https://unrelated.example/rules']
+        with self.assertRaises(Invalid):
+            coverage.audit(entries, data, {source: 'DOMAIN-SUFFIX,vendor.example'},
+                           order=['child', 'parent'], selected=selected)
+
     def test_unclassified_source_rows_prevent_a_publish_instead_of_only_showing_review(self):
         specs = [{'id': 'vendor', 'source': 'feed', 'owners': ['product']}]
         pools = {'product': ['DOMAIN-SUFFIX,vendor.example']}
@@ -41,6 +55,24 @@ class ServiceCoverageGate(unittest.TestCase):
         for failed in ({'state': 'unavailable'}, {'state': 'invalid'}):
             with self.subTest(failed=failed), self.assertRaises(Invalid):
                 reporting.verify_inventories(specs, {'vendor': failed})
+
+    def test_one_company_source_can_feed_a_product_and_a_late_shared_table(self):
+        source='https://publisher.example/company.list'
+        entries={'other':{'priority':10,'mode':'compiled'},
+                 'product':{'priority':20,'mode':'compiled',
+                            'projection':[{'source':source,'roots':['service.vendor.example']}]},
+                 'common':{'priority':30,'mode':'compiled','fallback':True,
+                           'projection':[{'source':source,'roots':['vendor.example']}]}}
+        selected={'product':{source:{'DOMAIN-SUFFIX,service.vendor.example'}},
+                  'common':{source:{'DOMAIN-SUFFIX,service.vendor.example','DOMAIN,other.vendor.example'}}}
+        body='DOMAIN-SUFFIX,service.vendor.example\nDOMAIN,other.vendor.example'
+        data={'other':['DOMAIN,other.vendor.example'],
+              'product':['DOMAIN-SUFFIX,service.vendor.example'],'common':[]}
+        coverage.audit(entries,data,{source:body},order=['other','product','common'],selected=selected)
+        data['product']=[]
+        data['common']=['DOMAIN-SUFFIX,service.vendor.example']
+        with self.assertRaisesRegex(Invalid,'归属|兜底'):
+            coverage.audit(entries,data,{source:body},order=['other','product','common'],selected=selected)
 
     def test_an_inventory_checks_first_owner_and_the_whole_wildcard(self):
         spec = {'id': 'vendor', 'source': 'feed', 'owners': ['product']}
@@ -66,6 +98,25 @@ class ServiceCoverageGate(unittest.TestCase):
         for flag in ('roots', 'exact'):
             with self.subTest(flag=flag), self.assertRaises(Invalid):
                 project_domains(source, {'all-domains': True, flag: ['vendor.example']})
+
+    def test_a_complete_independent_product_source_still_needs_its_coverage_inventory(self):
+        config = json.loads((pipeline.ROOT / 'config/catalog.json').read_text())
+        entry = next(item for item in config['entries'] if item['id'] == 'apple-other-services')
+        entry['fallback'] = False
+        pipeline.validate_declarations(config)
+        config['source-inventories'] = [spec for spec in config['source-inventories']
+                                        if spec['id'] != 'apple-company-services']
+        with self.assertRaises(Invalid):
+            pipeline.validate_declarations(config)
+
+    def test_domain_only_inventory_counts_unconverted_source_rules_instead_of_importing_them(self):
+        spec = {'id': 'product', 'source': 'feed', 'owners': ['product'], 'domain-lines-only': True}
+        source = {'feed': 'DOMAIN-SUFFIX,service.example\nDOMAIN-REGEX,unsupported-pattern\nPROCESS-NAME,helper'}
+        data = {'product': ['DOMAIN-SUFFIX,service.example']}
+        status = reporting.audit_inventory(spec, source, data)
+        self.assertEqual(status, {'state': 'current', 'domain-scopes': 1, 'outside-scope': 0, 'other-rules': 2})
+        source['feed'] += '\nDOMAIN-WILDCARD,'
+        self.assertEqual(reporting.audit_inventory(spec, source, data), {'state': 'invalid'})
 
     def test_official_domain_lists_select_vendor_hosts_and_leave_shared_dependencies_separate(self):
         body = ('<p>Vendor uses the following domains</p><ul>'

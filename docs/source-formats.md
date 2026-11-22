@@ -13,6 +13,7 @@
 | 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3320、Slack 3360 |
 | 请求示例和代码字段 | `purpose-url-table`、`labelled-url-pairs` 等只取指定用途的 HTTPS 或 WSS 主机，忽略普通链接和载荷 | API、支付与通讯入口 |
 | Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 4740、Teams 4750、Office 下载 4800 |
+| 官方服务地址表 | `service-address-table` 选择章节与 IPv4／IPv6 列，只接收单个公网地址，生成 `/32`、`/128` 与 `no-resolve`；宽网段、缺列或地址族错误时停止更新 | Cloudflare 公共 DNS 6590，只取标准解析器，和 Families 分开 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
@@ -68,7 +69,9 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 
 同一用途表同时列出跨产品主机时，`check-sharing` 从该份提取声明计算共用关系，并核对后续承接。拆分归属时使用本轮完整范围证据，不添加域名迁移豁免。
 
-公司通用补充可以用 `projection.all-domains: true` 读取已核对来源的全部域名，不能同时填写 `roots`、`exact`。这只适用于后置通用表，并要求在 `source-inventories` 声明同一来源的完整归属检查；不是放开整个云平台。Apple 2340 使用此方式，细分仍先匹配。
+用途明确的独立产品、地区来源或后置厂商共用表，可以用 `projection.all-domains: true` 跟随已核对来源的全部域名，不能同时填写 `roots`、`exact`，并且必须在 `source-inventories` 声明同一来源的完整归属检查。Apple 2340 使用此方式，细分仍先匹配。整份品牌顶级域、用途未核实的第三方主机等排除须写明原因，不能把“来源里有”当作业务归属的充分依据。
+
+读取含其他客户端语法的资料时，`projection.domain-lines-only` 和 `source-inventories.domain-lines-only` 只处理 Loon 支持的三种域名规则，其余行单独计数，不转换正则、进程或 IP。格式损坏的域名行仍会停止更新，不能把无法读取伪装成零条。
 
 `source-inventories.recipe` 可以复用读取器核对结构化的完整来源。Google 地区域名使用 `brand-domain-list`，按官方注册域清单逐项检查首条命中。完整性检查失败会阻止发布，读取失败也不能按零条处理。
 

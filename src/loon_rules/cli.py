@@ -20,6 +20,8 @@ def main():
             config=json.loads((pipeline.ROOT/'config/catalog.json').read_text())
             entries=pipeline.validate_declarations(config)
             (pipeline.ROOT/'docs/rules.md').write_text(pipeline.render_index(config,entries))
+            if directory:=pipeline.service_directory.render(config,entries):
+                (pipeline.ROOT/'docs/services.md').write_text(directory)
             if config.get('schema-version')==2:
                 (pipeline.ROOT/'config/catalog.json').write_text(json.dumps(config,ensure_ascii=False,indent=2)+'\n')
             return 0

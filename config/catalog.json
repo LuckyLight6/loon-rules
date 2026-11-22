@@ -225,7 +225,17 @@
         "x-social-and-media",
         "wechat-international-portal",
         "slack-workspaces",
-        "reddit-community"
+        "reddit-community",
+        "instagram-social",
+        "whatsapp-messaging",
+        "threads-social",
+        "pinterest-social",
+        "bluesky-social",
+        "lark-international",
+        "zoom-meetings",
+        "xiaomi-international-services",
+        "meta-shared-services",
+        "linkedin-network"
       ],
       "subheadings": {
         "telegram-messaging": "消息与团队协作",
@@ -241,7 +251,8 @@
         "link-payments",
         "braintree-payments",
         "venmo-payments",
-        "xoom-transfers"
+        "xoom-transfers",
+        "wise-transfers"
       ]
     },
     {
@@ -251,6 +262,9 @@
         "binance-platform",
         "okx-platform",
         "gemini-exchange",
+        "kraken-exchange",
+        "bybit-exchange",
+        "kucoin-exchange",
         "trust-wallet"
       ],
       "subheadings": {
@@ -274,7 +288,10 @@
         "bilibili-international-video",
         "bahamut-video-and-community",
         "bbc-news-and-video",
-        "iqiyi-international"
+        "iqiyi-international",
+        "soundcloud-audio",
+        "vimeo-video",
+        "hulu-streaming"
       ],
       "subheadings": {
         "overseas-media-all": "海外影音合集",
@@ -284,9 +301,10 @@
       }
     },
     {
-      "start": 4100,
+      "start": 4090,
       "title": "游戏（海外）",
       "ids": [
+        "overseas-games-all",
         "steam-international-platform",
         "epic-games-services",
         "playstation-network",
@@ -294,7 +312,22 @@
         "hoyoverse-international",
         "ea-games",
         "ubisoft-connect",
-        "blizzard-battlenet"
+        "blizzard-battlenet",
+        "netease-international-games"
+      ]
+    },
+    {
+      "start": 4190,
+      "title": "跨国厂商中国区与国内可用服务",
+      "ids": [
+        "multinational-mainland-all",
+        "qualcomm-mainland",
+        "nvidia-mainland",
+        "intel-mainland",
+        "samsung-mainland",
+        "cloudflare-mainland",
+        "adobe-mainland",
+        "amazon-mainland"
       ]
     },
     {
@@ -304,7 +337,9 @@
         "notion-workspace",
         "figma-design",
         "trello-boards",
-        "atlassian-cloud-services"
+        "atlassian-cloud-services",
+        "proton-suite",
+        "workos-authentication"
       ]
     },
     {
@@ -374,6 +409,7 @@
         "lingyi-mainland",
         "stepfun-mainland",
         "sensetime-mainland",
+        "ai-overseas-mainland-all",
         "jetbrains-ai-mainland",
         "modelscope-mainland",
         "xiaomi-mainland-and-shared"
@@ -408,7 +444,8 @@
         "wechat-shared-and-mainland",
         "dingtalk-public",
         "douban-community",
-        "weibo-social"
+        "weibo-social",
+        "feishu-mainland"
       ]
     },
     {
@@ -420,16 +457,20 @@
       ]
     },
     {
-      "start": 5900,
+      "start": 5890,
       "title": "媒体（国内）",
       "ids": [
+        "mainland-media-all",
         "bilibili-mainland-video",
         "douyin-mainland-video",
         "iqiyi-mainland",
         "youku-video",
         "qq-music",
         "kugou-music",
-        "kuaishou-video"
+        "kuaishou-video",
+        "netease-music",
+        "douyu-live",
+        "huya-live"
       ],
       "subheadings": {
         "bilibili-mainland-video": "视频平台",
@@ -437,9 +478,10 @@
       }
     },
     {
-      "start": 6100,
+      "start": 6090,
       "title": "游戏（国内）",
       "ids": [
+        "mainland-games-all",
         "steam-mainland-downloads",
         "mihoyo-mainland",
         "wegame-mainland"
@@ -447,14 +489,19 @@
     },
     {
       "start": 6300,
-      "title": "购物与社区（国内）",
+      "title": "购物、生活与办公（国内）",
       "ids": [
         "taobao-and-xianyu-shopping",
         "jingdong-shopping",
         "xiaohongshu-community",
         "zhihu-community",
         "railway-tickets",
-        "sina-shared-image-assets"
+        "sina-shared-image-assets",
+        "meituan-services",
+        "didi-mobility",
+        "youdao-products",
+        "aliyun-drive",
+        "wps-office"
       ]
     },
     {
@@ -465,6 +512,23 @@
       ]
     },
     {
+      "start": 6590,
+      "title": "全球厂商与云平台共用服务",
+      "ids": [
+        "cloudflare-public-dns",
+        "digitalocean-services",
+        "vultr-services",
+        "hetzner-services",
+        "vercel-shared-services",
+        "netlify-services",
+        "heroku-services",
+        "oracle-shared-services",
+        "adobe-shared-services",
+        "cloudflare-shared-services",
+        "amazon-shared-services"
+      ]
+    },
+    {
       "start": 6700,
       "title": "海外补充",
       "ids": [
@@ -472,6 +536,20 @@
         "overseas-sites-extra"
       ],
       "note": "具体产品先匹配，再补其他海外影音和受限站点；这两份分别选择影音策略和通用代理"
+    },
+    {
+      "start": 6800,
+      "title": "国内厂商共用服务",
+      "ids": [
+        "netease-shared-services",
+        "alibaba-shared-services",
+        "tencent-shared-services",
+        "bytedance-shared-services",
+        "baidu-shared-services",
+        "huawei-shared-services",
+        "xiaomi-shared-services",
+        "kingsoft-shared-services"
+      ]
     },
     {
       "start": 7000,
@@ -10922,6 +11000,1538 @@
           "apple-news-and-sports"
         ]
       }
+    },
+    {
+      "id": "overseas-games-all",
+      "priority": 4090,
+      "section": "games",
+      "mode": "view",
+      "policy-hint": "global",
+      "description": "海外游戏合集",
+      "boundary": "由所列产品细分生成，统一出口时使用；与成员二选一。厂商共用账号、共享下载及其他地区的服务仍按其专表处理",
+      "member-selection": {
+        "section": "games",
+        "policies": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "ai-overseas-mainland-all",
+      "priority": 5155,
+      "section": "ai",
+      "mode": "view",
+      "policy-hint": "domestic",
+      "description": "海外 AI 中国区服务合集",
+      "boundary": "汇总官方明确标注的中国区 AI 服务，与国产 AI 国内版分开；当前可识别范围见成员，合集与细分二选一",
+      "member-selection": {
+        "section": "ai",
+        "policies": [
+          "domestic"
+        ]
+      }
+    },
+    {
+      "id": "mainland-media-all",
+      "priority": 5890,
+      "section": "media",
+      "mode": "view",
+      "policy-hint": "domestic",
+      "description": "国内影音合集",
+      "boundary": "由所列产品细分生成，统一出口时使用；与成员二选一。厂商共用账号、共享下载及其他地区的服务仍按其专表处理",
+      "member-selection": {
+        "section": "media",
+        "policies": [
+          "domestic"
+        ]
+      }
+    },
+    {
+      "id": "mainland-games-all",
+      "priority": 6090,
+      "section": "games",
+      "mode": "view",
+      "policy-hint": "domestic",
+      "description": "国内游戏合集",
+      "boundary": "由所列产品细分生成，统一出口时使用；与成员二选一。厂商共用账号、共享下载及其他地区的服务仍按其专表处理",
+      "member-selection": {
+        "section": "games",
+        "policies": [
+          "domestic"
+        ]
+      }
+    },
+    {
+      "id": "qualcomm-mainland",
+      "priority": 4200,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "高通中国与国内可用系统服务",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list",
+        "https://www.qualcomm.cn/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://www.qualcomm.cn/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "Qualcomm",
+          "brand-field": "og:title",
+          "brand-match": "word"
+        }
+      ],
+      "product-probes": [
+        "www.qualcomm.cn"
+      ]
+    },
+    {
+      "id": "nvidia-mainland",
+      "priority": 4210,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "NVIDIA 中国网站与国内下载入口",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.nvidia.cn",
+        "cn.download.nvidia.com"
+      ]
+    },
+    {
+      "id": "intel-mainland",
+      "priority": 4220,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "Intel 中国网站",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.intel.cn"
+      ]
+    },
+    {
+      "id": "samsung-mainland",
+      "priority": 4230,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "Samsung 中国网站、云与健康服务",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.samsung.com.cn"
+      ]
+    },
+    {
+      "id": "cloudflare-mainland",
+      "priority": 4240,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "Cloudflare 中国网络相关入口",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "separates": [
+        "cloudflare-shared-services"
+      ],
+      "product-probes": [
+        "cloudflarechina.cn"
+      ]
+    },
+    {
+      "id": "adobe-mainland",
+      "priority": 4250,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "Adobe 中国区文档云入口",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "separates": [
+        "adobe-shared-services"
+      ],
+      "product-probes": [
+        "adobedc.cn"
+      ]
+    },
+    {
+      "id": "amazon-mainland",
+      "priority": 4260,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "mainland-vendor",
+      "description": "Amazon 与 AWS 中国区入口",
+      "boundary": "采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "separates": [
+        "amazon-shared-services"
+      ],
+      "product-probes": [
+        "www.amazon.cn",
+        "www.amazonaws.cn"
+      ]
+    },
+    {
+      "id": "multinational-mainland-all",
+      "priority": 4190,
+      "section": "vendors",
+      "mode": "view",
+      "policy-hint": "mainland-vendor",
+      "description": "跨国厂商国内可用服务合集",
+      "boundary": "合并所列厂商的中国区或明确国内可用入口；与成员二选一，不改变同厂商其他地区和共用服务的归属",
+      "member-selection": {
+        "section": "vendors",
+        "policies": [
+          "mainland-vendor"
+        ]
+      }
+    },
+    {
+      "id": "instagram-social",
+      "priority": 3380,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Instagram",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.instagram.com"
+      ]
+    },
+    {
+      "id": "whatsapp-messaging",
+      "priority": 3390,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "WhatsApp 消息、媒体与短链接",
+      "boundary": "只采用官方客户端使用的核心命名空间；未核实用途的品牌变体和修改版名称不直接并入，通用 Meta 连接另行识别",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list",
+          "domain-lines-only": true,
+          "roots": [
+            "whatsapp.com",
+            "whatsapp.net",
+            "wa.me"
+          ]
+        }
+      ],
+      "product-probes": [
+        "web.whatsapp.com"
+      ]
+    },
+    {
+      "id": "threads-social",
+      "priority": 3400,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Threads",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.threads.net"
+      ]
+    },
+    {
+      "id": "pinterest-social",
+      "priority": 3410,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Pinterest",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.pinterest.com"
+      ]
+    },
+    {
+      "id": "bluesky-social",
+      "priority": 3420,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Bluesky 官方应用与网络服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "bsky.app"
+      ]
+    },
+    {
+      "id": "lark-international",
+      "priority": 3430,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Lark 国际版协作服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.larksuite.com"
+      ]
+    },
+    {
+      "id": "zoom-meetings",
+      "priority": 3440,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Zoom 会议与共用服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "zoom.us"
+      ]
+    },
+    {
+      "id": "meta-shared-services",
+      "priority": 3480,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Meta、Facebook 与 Messenger 共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/facebook.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/facebook.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.facebook.com"
+      ]
+    },
+    {
+      "id": "linkedin-network",
+      "priority": 3490,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "LinkedIn",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.linkedin.com"
+      ]
+    },
+    {
+      "id": "wise-transfers",
+      "priority": 3560,
+      "section": "platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Wise 转账与账户服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "wise.com"
+      ]
+    },
+    {
+      "id": "kraken-exchange",
+      "priority": 3630,
+      "section": "crypto",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Kraken 交易平台",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.kraken.com"
+      ]
+    },
+    {
+      "id": "bybit-exchange",
+      "priority": 3640,
+      "section": "crypto",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Bybit 交易平台",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.bybit.com"
+      ]
+    },
+    {
+      "id": "kucoin-exchange",
+      "priority": 3650,
+      "section": "crypto",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "KuCoin 交易平台",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.kucoin.com"
+      ]
+    },
+    {
+      "id": "soundcloud-audio",
+      "priority": 3930,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "media",
+      "description": "SoundCloud 音频与创作者服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "soundcloud.com"
+      ]
+    },
+    {
+      "id": "vimeo-video",
+      "priority": 3940,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "media",
+      "description": "Vimeo 视频与交付",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "vimeo.com"
+      ]
+    },
+    {
+      "id": "hulu-streaming",
+      "priority": 3950,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "media",
+      "description": "Hulu 视频与交付",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.hulu.com"
+      ]
+    },
+    {
+      "id": "netease-international-games",
+      "priority": 4180,
+      "section": "games",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "网易国际游戏与共用 SDK",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "separates": [
+        "netease-shared-services"
+      ],
+      "product-probes": [
+        "easebar.com"
+      ]
+    },
+    {
+      "id": "proton-suite",
+      "priority": 4335,
+      "section": "productivity",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Proton 邮件、账户及共用服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "proton.me"
+      ]
+    },
+    {
+      "id": "feishu-mainland",
+      "priority": 5540,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "飞书国内协作服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.feishu.cn"
+      ]
+    },
+    {
+      "id": "douyu-live",
+      "priority": 5980,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "斗鱼直播",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.douyu.com"
+      ]
+    },
+    {
+      "id": "huya-live",
+      "priority": 5990,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "虎牙直播",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.huya.com"
+      ]
+    },
+    {
+      "id": "meituan-services",
+      "priority": 6360,
+      "section": "platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "美团与大众点评服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.meituan.com"
+      ]
+    },
+    {
+      "id": "didi-mobility",
+      "priority": 6370,
+      "section": "platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "滴滴出行",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.didiglobal.com"
+      ]
+    },
+    {
+      "id": "youdao-products",
+      "priority": 6380,
+      "section": "platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "有道词典、学习与内容服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list",
+          "domain-lines-only": true,
+          "roots": [
+            "youdao.com",
+            "ydstatic.com",
+            "ydshengxue.com"
+          ]
+        }
+      ],
+      "separates": [
+        "netease-shared-services"
+      ],
+      "product-probes": [
+        "www.youdao.com"
+      ]
+    },
+    {
+      "id": "aliyun-drive",
+      "priority": 6390,
+      "section": "platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "阿里云盘",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.aliyundrive.com"
+      ]
+    },
+    {
+      "id": "wps-office",
+      "priority": 6400,
+      "section": "platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "WPS Office 与文档服务",
+      "boundary": "按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "product-probes": [
+        "www.wps.cn"
+      ]
+    },
+    {
+      "id": "digitalocean-services",
+      "priority": 6600,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "DigitalOcean 云平台与共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/digitalocean.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/digitalocean.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.digitalocean.com"
+      ]
+    },
+    {
+      "id": "vultr-services",
+      "priority": 6610,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Vultr 云平台",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vultr.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vultr.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.vultr.com"
+      ]
+    },
+    {
+      "id": "hetzner-services",
+      "priority": 6620,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Hetzner 云与存储平台",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hetzner.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hetzner.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.hetzner.com"
+      ]
+    },
+    {
+      "id": "vercel-shared-services",
+      "priority": 6630,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Vercel、Next.js 与共用托管平台",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vercel.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vercel.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "vercel.com"
+      ]
+    },
+    {
+      "id": "netlify-services",
+      "priority": 6640,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Netlify 云平台与资源交付",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netlify.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netlify.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.netlify.com"
+      ]
+    },
+    {
+      "id": "heroku-services",
+      "priority": 6650,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Heroku 云平台与共用托管",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/heroku.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/heroku.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.heroku.com"
+      ]
+    },
+    {
+      "id": "oracle-shared-services",
+      "priority": 6660,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Oracle、Java 与云平台共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/oracle.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/oracle.list",
+          "domain-lines-only": true,
+          "all-domains": true,
+          "exclude": [
+            "oracle",
+            "java"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.oracle.com"
+      ]
+    },
+    {
+      "id": "adobe-shared-services",
+      "priority": 6670,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Adobe Creative Cloud、Acrobat 与共用平台",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list",
+        "https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/rest-api"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list",
+          "domain-lines-only": true,
+          "all-domains": true,
+          "exclude": [
+            "crl.versign.net"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.adobe.com",
+        "developers.marketo.com"
+      ]
+    },
+    {
+      "id": "cloudflare-shared-services",
+      "priority": 6680,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Cloudflare 控制台、WARP、Tunnel 与共用平台",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "allowed-shared": [
+        "cloudflare.com"
+      ],
+      "product-probes": [
+        "www.cloudflare.com"
+      ]
+    },
+    {
+      "id": "amazon-shared-services",
+      "priority": 6690,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "global",
+      "description": "Amazon、AWS 与共用云平台",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list",
+          "domain-lines-only": true,
+          "all-domains": true,
+          "exclude": [
+            "amazon",
+            "xn--cckwcxetd",
+            "xn--jlq480n2rg",
+            "yamaxun",
+            "zappos",
+            "kindle",
+            "imdb",
+            "aws"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "allowed-shared": [
+        "amazonaws.com"
+      ],
+      "product-probes": [
+        "www.amazon.com"
+      ]
+    },
+    {
+      "id": "netease-shared-services",
+      "priority": 6800,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "网易邮件、游戏、新闻与其他共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "mail.163.com"
+      ]
+    },
+    {
+      "id": "alibaba-shared-services",
+      "priority": 6810,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "阿里巴巴与阿里云共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list",
+          "domain-lines-only": true,
+          "roots": [
+            "alibaba.com",
+            "alibaba.cn",
+            "aliyun.com",
+            "aliyun.cn",
+            "alicdn.com",
+            "alibabadns.com",
+            "alipayobjects.com"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.aliyun.com"
+      ]
+    },
+    {
+      "id": "tencent-shared-services",
+      "priority": 6820,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "腾讯 QQ、邮箱、网站与共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+          "domain-lines-only": true,
+          "roots": [
+            "qq.com",
+            "tencent.com",
+            "gtimg.com",
+            "qpic.cn",
+            "qlogo.cn",
+            "qqmail.com",
+            "foxmail.com",
+            "qzone.com"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.qq.com"
+      ]
+    },
+    {
+      "id": "bytedance-shared-services",
+      "priority": 6830,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "字节跳动国内与共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance.list",
+          "domain-lines-only": true,
+          "roots": [
+            "bytedance.com",
+            "bytecdn.cn",
+            "bytecdn.com",
+            "bytetcc.com",
+            "bytedns.net",
+            "snssdk.com"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.bytedance.com"
+      ]
+    },
+    {
+      "id": "baidu-shared-services",
+      "priority": 6840,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "百度搜索、网盘与共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/baidu.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/baidu.list",
+          "domain-lines-only": true,
+          "all-domains": true,
+          "exclude": [
+            "baidu"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.baidu.com"
+      ]
+    },
+    {
+      "id": "huawei-shared-services",
+      "priority": 6850,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "华为账户、设备与共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huawei.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huawei.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.huawei.com"
+      ]
+    },
+    {
+      "id": "xiaomi-shared-services",
+      "priority": 6860,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "小米账户、设备与共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list",
+          "domain-lines-only": true,
+          "all-domains": true,
+          "exclude": [
+            "miwifi.com"
+          ]
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.mi.com"
+      ]
+    },
+    {
+      "id": "kingsoft-shared-services",
+      "priority": 6870,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "general",
+      "policy-hint": "domestic",
+      "description": "金山与其他共用服务",
+      "boundary": "仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "fallback": true,
+      "domain-remainder": true,
+      "product-probes": [
+        "www.kingsoft.com"
+      ]
+    },
+    {
+      "id": "workos-authentication",
+      "priority": 4340,
+      "section": "productivity",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "WorkOS 登录、企业认证与公共组件",
+      "boundary": "识别 WorkOS 自有命名空间与已列组件，不把使用 WorkOS 的所有网站认作同一应用；外部身份提供方另行处理",
+      "sources": [
+        "https://workos.com/",
+        "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps"
+      ],
+      "extract": [
+        {
+          "source": "https://workos.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "WorkOS",
+          "brand-field": "og:title",
+          "brand-match": "word"
+        },
+        {
+          "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "OpenAI uses the following domains"
+          ],
+          "select": {
+            "roots": [
+              "workos.com",
+              "workoscdn.com"
+            ],
+            "exact": [
+              "workos.imgix.net"
+            ]
+          },
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "api.workos.com"
+      ]
+    },
+    {
+      "id": "cloudflare-public-dns",
+      "priority": 6590,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Cloudflare 公共 DNS 与标准解析器地址",
+      "boundary": "从官方标准解析器表读取单个公网地址，全部 no-resolve；不使用 Cloudflare 大段 IP，也不导入 Families 产品地址",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list",
+        "https://developers.cloudflare.com/1.1.1.1/ip-addresses/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list",
+          "roots": [
+            "cloudflare-dns.com",
+            "one.one.one"
+          ],
+          "domain-lines-only": true
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+          "format": "service-address-table",
+          "section": "1111",
+          "columns": {
+            "IPv4": 4,
+            "IPv6": 6
+          }
+        }
+      ],
+      "ip-match": "target-ip",
+      "separates": [
+        "cloudflare-shared-services"
+      ],
+      "product-probes": [
+        "one.one.one.one",
+        "cloudflare-dns.com"
+      ]
+    },
+    {
+      "id": "netease-music",
+      "priority": 5970,
+      "section": "media",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "网易云音乐",
+      "boundary": "识别音乐 API、音频与专用内容主机；网易通用云、其他产品和上游大段 IP 不并入音乐表",
+      "sources": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/NetEaseMusic/NetEaseMusic.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/NetEaseMusic/NetEaseMusic.list",
+          "domain-lines-only": true,
+          "roots": [
+            "music.163.com",
+            "music.126.net",
+            "music.126.com",
+            "music.163.com.163jiasu.com"
+          ],
+          "exact": [
+            "netease.ugcvideoss.ourdvs.com"
+          ]
+        }
+      ],
+      "separates": [
+        "netease-shared-services"
+      ],
+      "product-probes": [
+        "music.163.com",
+        "music.126.net"
+      ]
+    },
+    {
+      "id": "xiaomi-international-services",
+      "priority": 3450,
+      "section": "social",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "小米国际社区与应用商店入口",
+      "boundary": "按来源标注的国际社区入口识别，和小米国内账户、设备及 MiMo API 分开",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list",
+          "all-domains": true,
+          "domain-lines-only": true
+        }
+      ],
+      "separates": [
+        "xiaomi-shared-services"
+      ],
+      "product-probes": [
+        "c.mi.com",
+        "global.market.xiaomi.com"
+      ]
     }
   ],
   "detailed": [
@@ -11065,28 +12675,54 @@
     "line-messenger",
     "slack-workspaces",
     "reddit-community",
+    "instagram-social",
+    "whatsapp-messaging",
+    "threads-social",
+    "pinterest-social",
+    "bluesky-social",
+    "lark-international",
+    "zoom-meetings",
+    "xiaomi-international-services",
+    "linkedin-network",
     "stripe-payments",
     "link-payments",
     "braintree-payments",
     "venmo-payments",
     "xoom-transfers",
+    "wise-transfers",
     "binance-platform",
     "okx-platform",
     "gemini-exchange",
+    "kraken-exchange",
+    "bybit-exchange",
+    "kucoin-exchange",
     "trust-wallet",
     "hbo-streaming",
     "bbc-news-and-video",
     "iqiyi-international",
+    "soundcloud-audio",
+    "vimeo-video",
+    "hulu-streaming",
     "playstation-network",
     "nintendo-platform",
     "hoyoverse-international",
     "ea-games",
     "ubisoft-connect",
     "blizzard-battlenet",
+    "netease-international-games",
+    "qualcomm-mainland",
+    "nvidia-mainland",
+    "intel-mainland",
+    "samsung-mainland",
+    "cloudflare-mainland",
+    "adobe-mainland",
+    "amazon-mainland",
     "notion-workspace",
     "figma-design",
     "trello-boards",
     "atlassian-cloud-services",
+    "proton-suite",
+    "workos-authentication",
     "google-scholar",
     "microsoft-vscode",
     "microsoft-power-bi",
@@ -11116,17 +12752,27 @@
     "dingtalk-public",
     "douban-community",
     "weibo-social",
+    "feishu-mainland",
     "unionpay-mainland",
     "iqiyi-mainland",
     "youku-video",
     "qq-music",
     "kugou-music",
     "kuaishou-video",
+    "netease-music",
+    "douyu-live",
+    "huya-live",
     "mihoyo-mainland",
     "wegame-mainland",
     "zhihu-community",
     "railway-tickets",
-    "sina-shared-image-assets"
+    "sina-shared-image-assets",
+    "meituan-services",
+    "didi-mobility",
+    "youdao-products",
+    "aliyun-drive",
+    "wps-office",
+    "cloudflare-public-dns"
   ],
   "general": [
     "local-links-and-addresses",
@@ -11140,6 +12786,7 @@
     "discord-messaging-and-voice",
     "x-social-and-media",
     "wechat-international-portal",
+    "meta-shared-services",
     "paypal-payments",
     "youtube-video-and-cdn",
     "netflix-video-and-delivery",
@@ -11178,8 +12825,26 @@
     "taobao-and-xianyu-shopping",
     "jingdong-shopping",
     "xiaohongshu-community",
+    "digitalocean-services",
+    "vultr-services",
+    "hetzner-services",
+    "vercel-shared-services",
+    "netlify-services",
+    "heroku-services",
+    "oracle-shared-services",
+    "adobe-shared-services",
+    "cloudflare-shared-services",
+    "amazon-shared-services",
     "overseas-media-extra",
     "overseas-sites-extra",
+    "netease-shared-services",
+    "alibaba-shared-services",
+    "tencent-shared-services",
+    "bytedance-shared-services",
+    "baidu-shared-services",
+    "huawei-shared-services",
+    "xiaomi-shared-services",
+    "kingsoft-shared-services",
     "mainland-domains",
     "mainland-networks",
     "mainland-geoip"
@@ -11198,9 +12863,14 @@
     "apple-overseas-all",
     "apple-direct-all",
     "overseas-media-all",
+    "overseas-games-all",
+    "multinational-mainland-all",
     "google-all",
     "microsoft-all",
     "ai-cn-all",
+    "ai-overseas-mainland-all",
+    "mainland-media-all",
+    "mainland-games-all",
     "mainland-routing-all"
   ],
   "critical": {
@@ -12444,7 +14114,7 @@
       "overseas-media-extra"
     ],
     "www.hulu.com": [
-      "overseas-media-extra"
+      "hulu-streaming"
     ],
     "www.max.com": [
       "hbo-streaming"
@@ -12465,10 +14135,10 @@
       "mainland-domains"
     ],
     "www.163.com": [
-      "mainland-domains"
+      "netease-shared-services"
     ],
     "www.baidu.com": [
-      "mainland-domains"
+      "baidu-shared-services"
     ],
     "www.sina.com.cn": [
       "mainland-domains"
@@ -12522,10 +14192,10 @@
       "liblib-mainland"
     ],
     "hima.auto": [
-      "mainland-domains"
+      "huawei-shared-services"
     ],
     "www.hima.auto": [
-      "mainland-domains"
+      "huawei-shared-services"
     ],
     "steamcommunity-a.akamaihd.net": [
       "steam-international-platform"
@@ -13311,7 +14981,184 @@
       "google-platform-services"
     ],
     "safebrowsing.urlsec.qq.com": [
-      "mainland-domains"
+      "tencent-shared-services"
+    ],
+    "www.qualcomm.cn": [
+      "qualcomm-mainland"
+    ],
+    "www.nvidia.cn": [
+      "nvidia-mainland"
+    ],
+    "cn.download.nvidia.com": [
+      "nvidia-mainland"
+    ],
+    "www.intel.cn": [
+      "intel-mainland"
+    ],
+    "www.samsung.com.cn": [
+      "samsung-mainland"
+    ],
+    "cloudflarechina.cn": [
+      "cloudflare-mainland"
+    ],
+    "adobedc.cn": [
+      "adobe-mainland"
+    ],
+    "www.amazon.cn": [
+      "amazon-mainland"
+    ],
+    "www.amazonaws.cn": [
+      "amazon-mainland"
+    ],
+    "www.instagram.com": [
+      "instagram-social"
+    ],
+    "web.whatsapp.com": [
+      "whatsapp-messaging"
+    ],
+    "www.threads.net": [
+      "threads-social"
+    ],
+    "www.pinterest.com": [
+      "pinterest-social"
+    ],
+    "bsky.app": [
+      "bluesky-social"
+    ],
+    "www.larksuite.com": [
+      "lark-international"
+    ],
+    "zoom.us": [
+      "zoom-meetings"
+    ],
+    "www.facebook.com": [
+      "meta-shared-services"
+    ],
+    "www.linkedin.com": [
+      "linkedin-network"
+    ],
+    "wise.com": [
+      "wise-transfers"
+    ],
+    "www.kraken.com": [
+      "kraken-exchange"
+    ],
+    "www.bybit.com": [
+      "bybit-exchange"
+    ],
+    "www.kucoin.com": [
+      "kucoin-exchange"
+    ],
+    "soundcloud.com": [
+      "soundcloud-audio"
+    ],
+    "vimeo.com": [
+      "vimeo-video"
+    ],
+    "easebar.com": [
+      "netease-international-games"
+    ],
+    "proton.me": [
+      "proton-suite"
+    ],
+    "www.feishu.cn": [
+      "feishu-mainland"
+    ],
+    "www.douyu.com": [
+      "douyu-live"
+    ],
+    "www.huya.com": [
+      "huya-live"
+    ],
+    "www.meituan.com": [
+      "meituan-services"
+    ],
+    "www.didiglobal.com": [
+      "didi-mobility"
+    ],
+    "www.youdao.com": [
+      "youdao-products"
+    ],
+    "www.aliyundrive.com": [
+      "aliyun-drive"
+    ],
+    "www.wps.cn": [
+      "wps-office"
+    ],
+    "www.digitalocean.com": [
+      "digitalocean-services"
+    ],
+    "www.vultr.com": [
+      "vultr-services"
+    ],
+    "www.hetzner.com": [
+      "hetzner-services"
+    ],
+    "vercel.com": [
+      "vercel-shared-services"
+    ],
+    "www.netlify.com": [
+      "netlify-services"
+    ],
+    "www.heroku.com": [
+      "heroku-services"
+    ],
+    "www.oracle.com": [
+      "oracle-shared-services"
+    ],
+    "www.adobe.com": [
+      "adobe-shared-services"
+    ],
+    "www.cloudflare.com": [
+      "cloudflare-shared-services"
+    ],
+    "www.amazon.com": [
+      "amazon-shared-services"
+    ],
+    "mail.163.com": [
+      "netease-shared-services"
+    ],
+    "www.aliyun.com": [
+      "alibaba-shared-services"
+    ],
+    "www.qq.com": [
+      "tencent-shared-services"
+    ],
+    "www.bytedance.com": [
+      "bytedance-shared-services"
+    ],
+    "www.huawei.com": [
+      "huawei-shared-services"
+    ],
+    "www.mi.com": [
+      "xiaomi-shared-services"
+    ],
+    "www.kingsoft.com": [
+      "kingsoft-shared-services"
+    ],
+    "api.workos.com": [
+      "workos-authentication"
+    ],
+    "one.one.one.one": [
+      "cloudflare-public-dns"
+    ],
+    "cloudflare-dns.com": [
+      "cloudflare-public-dns"
+    ],
+    "music.163.com": [
+      "netease-music"
+    ],
+    "music.126.net": [
+      "netease-music"
+    ],
+    "developers.marketo.com": [
+      "adobe-shared-services"
+    ],
+    "c.mi.com": [
+      "xiaomi-international-services"
+    ],
+    "global.market.xiaomi.com": [
+      "xiaomi-international-services"
     ]
   },
   "shared-negatives": [
@@ -13668,6 +15515,7 @@
         5130,
         5140,
         5150,
+        5155,
         5160,
         5180,
         5190
@@ -13685,10 +15533,21 @@
         3350,
         3360,
         3370,
+        3380,
+        3390,
+        3400,
+        3410,
+        3420,
+        3430,
+        3440,
+        3450,
+        3480,
+        3490,
         5500,
         5510,
         5520,
-        5530
+        5530,
+        5540
       ]
     },
     {
@@ -13764,19 +15623,27 @@
         3900,
         3910,
         3920,
+        3930,
+        3940,
+        3950,
+        5890,
         5900,
         5910,
         5920,
         5930,
         5940,
         5950,
-        5960
+        5960,
+        5970,
+        5980,
+        5990
       ]
     },
     {
       "id": "games",
       "title": "游戏与下载",
       "numbers": [
+        4090,
         4100,
         4110,
         4120,
@@ -13785,6 +15652,8 @@
         4150,
         4160,
         4170,
+        4180,
+        6090,
         6100,
         6110,
         6120
@@ -13826,6 +15695,7 @@
         3530,
         3540,
         3550,
+        3560,
         5700,
         5710,
         6300,
@@ -13833,7 +15703,12 @@
         6320,
         6330,
         6340,
-        6350
+        6350,
+        6360,
+        6370,
+        6380,
+        6390,
+        6400
       ]
     },
     {
@@ -13861,6 +15736,9 @@
         3600,
         3610,
         3620,
+        3630,
+        3640,
+        3650,
         3700
       ]
     },
@@ -13871,7 +15749,42 @@
         4300,
         4310,
         4320,
-        4330
+        4330,
+        4335,
+        4340
+      ]
+    },
+    {
+      "id": "vendors",
+      "title": "厂商、云平台与地区服务",
+      "numbers": [
+        4190,
+        4200,
+        4210,
+        4220,
+        4230,
+        4240,
+        4250,
+        4260,
+        6590,
+        6600,
+        6610,
+        6620,
+        6630,
+        6640,
+        6650,
+        6660,
+        6670,
+        6680,
+        6690,
+        6800,
+        6810,
+        6820,
+        6830,
+        6840,
+        6850,
+        6860,
+        6870
       ]
     }
   ],
@@ -14132,7 +16045,7 @@
     {
       "target": "1.1.1.1",
       "literal": true,
-      "rule": null
+      "rule": "cloudflare-public-dns"
     },
     {
       "target": "fe80::1",
@@ -14173,6 +16086,41 @@
       "target": "::1",
       "literal": false,
       "rule": "local-links-and-addresses"
+    },
+    {
+      "target": "1.1.1.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "1.0.0.1",
+      "literal": true,
+      "rule": "cloudflare-public-dns"
+    },
+    {
+      "target": "1.0.0.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "2606:4700:4700::1111",
+      "literal": true,
+      "rule": "cloudflare-public-dns"
+    },
+    {
+      "target": "2606:4700:4700::1111",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "2606:4700:4700::1001",
+      "literal": true,
+      "rule": "cloudflare-public-dns"
+    },
+    {
+      "target": "2606:4700:4700::1001",
+      "literal": false,
+      "rule": null
     }
   ],
   "scope-negatives": {
@@ -14944,6 +16892,451 @@
         "format": "brand-domain-list",
         "brand-label": "google"
       }
+    },
+    {
+      "id": "qualcomm-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list",
+      "owners": [
+        "qualcomm-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "nvidia-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list",
+      "owners": [
+        "nvidia-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "intel-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list",
+      "owners": [
+        "intel-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "samsung-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list",
+      "owners": [
+        "samsung-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "cloudflare-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list",
+      "owners": [
+        "cloudflare-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "adobe-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list",
+      "owners": [
+        "adobe-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "amazon-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list",
+      "owners": [
+        "amazon-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "instagram-social-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list",
+      "owners": [
+        "instagram-social"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "threads-social-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list",
+      "owners": [
+        "threads-social"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "pinterest-social-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list",
+      "owners": [
+        "pinterest-social"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "bluesky-social-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list",
+      "owners": [
+        "bluesky-social"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "lark-international-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list",
+      "owners": [
+        "lark-international"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "zoom-meetings-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list",
+      "owners": [
+        "zoom-meetings"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "meta-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/facebook.list",
+      "owners": [
+        "instagram-social",
+        "meta-ai-assistant",
+        "meta-shared-services",
+        "threads-social",
+        "whatsapp-messaging"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "linkedin-network-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list",
+      "owners": [
+        "linkedin-network"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "wise-transfers-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list",
+      "owners": [
+        "wise-transfers"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "kraken-exchange-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list",
+      "owners": [
+        "kraken-exchange"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "bybit-exchange-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list",
+      "owners": [
+        "bybit-exchange"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "kucoin-exchange-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list",
+      "owners": [
+        "kucoin-exchange"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "soundcloud-audio-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list",
+      "owners": [
+        "soundcloud-audio"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "vimeo-video-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list",
+      "owners": [
+        "vimeo-video"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "hulu-streaming-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list",
+      "owners": [
+        "hulu-streaming"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "netease-international-games-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list",
+      "owners": [
+        "netease-international-games"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "proton-suite-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list",
+      "owners": [
+        "proton-suite"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "feishu-mainland-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list",
+      "owners": [
+        "feishu-mainland"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "douyu-live-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list",
+      "owners": [
+        "douyu-live"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "huya-live-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list",
+      "owners": [
+        "huya-live"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "meituan-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list",
+      "owners": [
+        "meituan-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "didi-mobility-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list",
+      "owners": [
+        "didi-mobility"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "aliyun-drive-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list",
+      "owners": [
+        "aliyun-drive"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "wps-office-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list",
+      "owners": [
+        "wps-office"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "digitalocean-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/digitalocean.list",
+      "owners": [
+        "digitalocean-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "vultr-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vultr.list",
+      "owners": [
+        "vultr-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "hetzner-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hetzner.list",
+      "owners": [
+        "hetzner-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "vercel-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vercel.list",
+      "owners": [
+        "v0-app-builder",
+        "vercel-shared-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "netlify-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netlify.list",
+      "owners": [
+        "netlify-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "heroku-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/heroku.list",
+      "owners": [
+        "heroku-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "oracle-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/oracle.list",
+      "owners": [
+        "oracle-shared-services"
+      ],
+      "domain-lines-only": true,
+      "reviewed-outside": {
+        "DOMAIN-SUFFIX,oracle": "品牌顶级域不作为普通业务域名整段接管",
+        "DOMAIN-SUFFIX,java": "品牌顶级域不作为普通业务域名整段接管"
+      }
+    },
+    {
+      "id": "adobe-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list",
+      "owners": [
+        "adobe-mainland",
+        "adobe-shared-services"
+      ],
+      "domain-lines-only": true,
+      "reviewed-outside": {
+        "DOMAIN,crl.versign.net": "未确认的第三方证书主机，不认作 Adobe 专用服务"
+      },
+      "other-owners": {
+        "DOMAIN-SUFFIX,adbecrsl.com": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,tubemogul.com": "general-ad-and-tracking"
+      }
+    },
+    {
+      "id": "cloudflare-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list",
+      "owners": [
+        "cloudflare-mainland",
+        "cloudflare-public-dns",
+        "cloudflare-shared-services"
+      ],
+      "domain-lines-only": true,
+      "other-owners": {
+        "DOMAIN-SUFFIX,cloudflarecp.com": "network-sign-in-and-probes",
+        "DOMAIN-SUFFIX,cloudflareok.com": "network-sign-in-and-probes",
+        "DOMAIN-SUFFIX,cloudflareportal.com": "network-sign-in-and-probes"
+      }
+    },
+    {
+      "id": "amazon-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list",
+      "owners": [
+        "amazon-mainland",
+        "amazon-shared-services",
+        "prime-video-streaming",
+        "twitch-live-video"
+      ],
+      "domain-lines-only": true,
+      "reviewed-outside": {
+        "DOMAIN-SUFFIX,amazon": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,xn--cckwcxetd": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,xn--jlq480n2rg": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,yamaxun": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,zappos": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,kindle": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,imdb": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别",
+        "DOMAIN-SUFFIX,aws": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别"
+      },
+      "other-owners": {
+        "DOMAIN-SUFFIX,amazon-adsystem.com": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,serving-sys.com": "general-ad-and-tracking"
+      }
+    },
+    {
+      "id": "netease-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list",
+      "owners": [
+        "netease-international-games",
+        "netease-music",
+        "netease-shared-services",
+        "youdao-products"
+      ],
+      "domain-lines-only": true,
+      "other-owners": {
+        "DOMAIN-SUFFIX,a.youdao.com": "general-ad-and-tracking"
+      }
+    },
+    {
+      "id": "baidu-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/baidu.list",
+      "owners": [
+        "baidu-mainland",
+        "baidu-shared-services"
+      ],
+      "domain-lines-only": true,
+      "reviewed-outside": {
+        "DOMAIN-SUFFIX,baidu": "公共注册后缀不能整段归给厂商，实际业务域名另按来源识别"
+      },
+      "other-owners": {
+        "DOMAIN-SUFFIX,duapps.com": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,cpro.baidu.com": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,dup.baidustatic.com": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,pos.baidu.com": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,ubmcvideo.baidustatic.com": "general-ad-and-tracking"
+      }
+    },
+    {
+      "id": "huawei-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huawei.list",
+      "owners": [
+        "huawei-shared-services"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "xiaomi-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list",
+      "owners": [
+        "xiaomi-international",
+        "xiaomi-mainland-and-shared",
+        "xiaomi-shared-services",
+        "xiaomi-international-services"
+      ],
+      "domain-lines-only": true,
+      "reviewed-outside": {
+        "DOMAIN-SUFFIX,miwifi.com": "该域混合路由器本地入口与公网资料、固件服务，不能整体当作小米云服务；本地入口由网络规则处理"
+      },
+      "other-owners": {
+        "DOMAIN-SUFFIX,tjqonline.cn": "general-ad-and-tracking",
+        "DOMAIN-SUFFIX,tracking.miui.com": "general-ad-and-tracking"
+      }
+    },
+    {
+      "id": "kingsoft-shared-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list",
+      "owners": [
+        "kingsoft-shared-services",
+        "wps-office"
+      ],
+      "domain-lines-only": true
+    },
+    {
+      "id": "xiaomi-international-services-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list",
+      "owners": [
+        "xiaomi-international-services"
+      ],
+      "domain-lines-only": true
     }
   ],
   "source-alias-policies": {
@@ -15325,5 +17718,2958 @@
       ]
     }
   ],
-  "priority-width": 4
+  "priority-width": 4,
+  "service-directory": {
+    "vendors": [
+      {
+        "id": "tailscale-control-and-tailnet",
+        "name": "Tailscale",
+        "products": [
+          {
+            "name": "Tailscale 控制面、公开中继与 Tailnet 域名",
+            "rules": [
+              "tailscale-control-and-tailnet"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anthropic",
+        "name": "Anthropic",
+        "products": [
+          {
+            "name": "Claude 网页与 App",
+            "rules": [
+              "claude-connections"
+            ]
+          },
+          {
+            "name": "Claude Code、Desktop 与 Anthropic API",
+            "rules": [
+              "claude-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "openai",
+        "name": "OpenAI",
+        "products": [
+          {
+            "name": "ChatGPT、Codex 与 Sora",
+            "rules": [
+              "chatgpt-connections"
+            ]
+          },
+          {
+            "name": "OpenAI API、文件与语音",
+            "rules": [
+              "chatgpt-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google",
+        "name": "Google",
+        "products": [
+          {
+            "name": "Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel",
+            "rules": [
+              "gemini-connections"
+            ]
+          },
+          {
+            "name": "YouTube 视频、音乐、频道与专用 CDN",
+            "rules": [
+              "youtube-video-and-cdn"
+            ]
+          },
+          {
+            "name": "Google 学术搜索",
+            "rules": [
+              "google-scholar"
+            ]
+          },
+          {
+            "name": "Google 共享账号、地区登录、OAuth 授权与换令牌",
+            "rules": [
+              "google-account-authentication"
+            ]
+          },
+          {
+            "name": "Gmail 网页、邮件协议、专用 API 与投递诊断",
+            "rules": [
+              "google-gmail-mail"
+            ]
+          },
+          {
+            "name": "Google Meet 会议、API 与 Workspace 共用音视频媒体",
+            "rules": [
+              "google-meet-meetings"
+            ]
+          },
+          {
+            "name": "Google Drive、文档和上传下载入口",
+            "rules": [
+              "google-drive-and-documents"
+            ]
+          },
+          {
+            "name": "Google Play 商店、应用管理与专用 API",
+            "rules": [
+              "google-play-services"
+            ]
+          },
+          {
+            "name": "Google Play 游戏、发布与管理 API",
+            "rules": [
+              "google-play-games"
+            ]
+          },
+          {
+            "name": "Google 软件和更新已知下载主机",
+            "rules": [
+              "google-software-downloads"
+            ]
+          },
+          {
+            "name": "Google 搜索、安全浏览 API 和共享平台兜底",
+            "rules": [
+              "google-platform-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "xai",
+        "name": "X / xAI",
+        "products": [
+          {
+            "name": "xAI 账号、Grok 对话与模型 API",
+            "rules": [
+              "xai-connections"
+            ]
+          },
+          {
+            "name": "Grokipedia AI 百科站点",
+            "rules": [
+              "grokipedia-encyclopedia"
+            ]
+          },
+          {
+            "name": "X / Twitter 社交与图像视频",
+            "rules": [
+              "x-social-and-media"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "microsoft",
+        "name": "Microsoft",
+        "products": [
+          {
+            "name": "GitHub Copilot：补全、对话、API 与专用附件",
+            "rules": [
+              "github-copilot-connections"
+            ]
+          },
+          {
+            "name": "Microsoft Copilot 个人版与工作版独立入口",
+            "rules": [
+              "microsoft-copilot-connections"
+            ]
+          },
+          {
+            "name": "GitHub 代码托管、API、Actions 与容器镜像",
+            "rules": [
+              "github-code-and-packages"
+            ]
+          },
+          {
+            "name": "npm 软件包",
+            "rules": [
+              "npm-registry"
+            ]
+          },
+          {
+            "name": "LinkedIn",
+            "rules": [
+              "linkedin-network"
+            ]
+          },
+          {
+            "name": "Blizzard / Battle.net 国际服务",
+            "rules": [
+              "blizzard-battlenet"
+            ]
+          },
+          {
+            "name": "Microsoft Visual Studio Code",
+            "rules": [
+              "microsoft-vscode"
+            ]
+          },
+          {
+            "name": "Microsoft Power BI",
+            "rules": [
+              "microsoft-power-bi"
+            ]
+          },
+          {
+            "name": "Microsoft 个人账户与 Entra 登录",
+            "rules": [
+              "microsoft-account-authentication"
+            ]
+          },
+          {
+            "name": "Outlook 与 Exchange Online 邮箱入口",
+            "rules": [
+              "microsoft-outlook-mail"
+            ]
+          },
+          {
+            "name": "Teams 会议及 Skype for Business 共用通信入口",
+            "rules": [
+              "microsoft-teams-meetings"
+            ]
+          },
+          {
+            "name": "OneDrive 与 SharePoint 文件与同步",
+            "rules": [
+              "microsoft-files-and-sharepoint"
+            ]
+          },
+          {
+            "name": "Windows Update 检查与传递优化协调",
+            "rules": [
+              "microsoft-windows-update-services"
+            ]
+          },
+          {
+            "name": "Windows 更新和 Microsoft Store 已知内容下载",
+            "rules": [
+              "microsoft-update-and-store-downloads"
+            ]
+          },
+          {
+            "name": "Microsoft Store 商店目录与加载",
+            "rules": [
+              "microsoft-store-services"
+            ]
+          },
+          {
+            "name": "Microsoft Office 安装与更新下载",
+            "rules": [
+              "microsoft-office-downloads"
+            ]
+          },
+          {
+            "name": "Xbox Live 已知登录与服务端点",
+            "rules": [
+              "microsoft-xbox-services"
+            ]
+          },
+          {
+            "name": "Microsoft 通用客户端和共享服务兜底",
+            "rules": [
+              "microsoft-platform-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "meta",
+        "name": "Meta",
+        "products": [
+          {
+            "name": "Meta AI 助手的独立网站",
+            "rules": [
+              "meta-ai-assistant"
+            ]
+          },
+          {
+            "name": "Instagram",
+            "rules": [
+              "instagram-social"
+            ]
+          },
+          {
+            "name": "WhatsApp 消息、媒体与短链接",
+            "rules": [
+              "whatsapp-messaging"
+            ]
+          },
+          {
+            "name": "Threads",
+            "rules": [
+              "threads-social"
+            ]
+          },
+          {
+            "name": "Meta、Facebook 与 Messenger 共用服务",
+            "rules": [
+              "meta-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "muse-agent",
+        "name": "Muse",
+        "products": [
+          {
+            "name": "Muse 独立个人助手与其专用入口",
+            "rules": [
+              "muse-agent"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cursor-editor-and-api",
+        "name": "Cursor",
+        "products": [
+          {
+            "name": "Cursor 客户端及专用接口",
+            "rules": [
+              "cursor-editor-and-api"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "perplexity-search-and-api",
+        "name": "Perplexity",
+        "products": [
+          {
+            "name": "Perplexity 搜索、API 和专用内容入口",
+            "rules": [
+              "perplexity-search-and-api"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "poe-chat-and-api",
+        "name": "Poe",
+        "products": [
+          {
+            "name": "Poe 聊天与平台域名",
+            "rules": [
+              "poe-chat-and-api"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mistral-model-services",
+        "name": "Mistral",
+        "products": [
+          {
+            "name": "Mistral 平台专用域名",
+            "rules": [
+              "mistral-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "groq-inference",
+        "name": "Groq",
+        "products": [
+          {
+            "name": "Groq 推理服务入口",
+            "rules": [
+              "groq-inference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cohere-model-services",
+        "name": "Cohere",
+        "products": [
+          {
+            "name": "Cohere 的推理及平台域名",
+            "rules": [
+              "cohere-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hugging-face-model-hub",
+        "name": "Hugging Face",
+        "products": [
+          {
+            "name": "Hugging Face 模型库与专用 CDN",
+            "rules": [
+              "hugging-face-model-hub"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cognition",
+        "name": "Cognition",
+        "products": [
+          {
+            "name": "Devin 自有云编程入口",
+            "rules": [
+              "devin-cloud-coding"
+            ]
+          },
+          {
+            "name": "Windsurf 和 Codeium 专用接口",
+            "rules": [
+              "windsurf-editor-and-api"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "elevenlabs-voice-and-api",
+        "name": "ElevenLabs",
+        "products": [
+          {
+            "name": "ElevenLabs 语音生成、WebSocket、文件与 MCP",
+            "rules": [
+              "elevenlabs-voice-and-api"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "midjourney-image-tools",
+        "name": "Midjourney",
+        "products": [
+          {
+            "name": "Midjourney 图像服务入口",
+            "rules": [
+              "midjourney-image-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "openrouter-gateway",
+        "name": "OpenRouter",
+        "products": [
+          {
+            "name": "OpenRouter 的模型网关入口",
+            "rules": [
+              "openrouter-gateway"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-com-agents",
+        "name": "ai.com",
+        "products": [
+          {
+            "name": "ai.com 的个人 AI 代理",
+            "rules": [
+              "ai-com-agents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "apple",
+        "name": "Apple",
+        "products": [
+          {
+            "name": "Apple Intelligence 的 PCC 与系统 AI 扩展中继",
+            "rules": [
+              "apple-intelligence-relays"
+            ]
+          },
+          {
+            "name": "登录、GrandSlam、OAuth、账户恢复与 iCloud 账户控制",
+            "rules": [
+              "apple-account-authentication"
+            ]
+          },
+          {
+            "name": "应用验证、App Attest、macOS 公证与设备身份验证",
+            "rules": [
+              "apple-app-and-device-verification"
+            ]
+          },
+          {
+            "name": "Wallet 与 Apple Pay 已知支付入口",
+            "rules": [
+              "apple-wallet-payments"
+            ]
+          },
+          {
+            "name": "TestFlight 测试版安装和分发",
+            "rules": [
+              "apple-testflight"
+            ]
+          },
+          {
+            "name": "App Store API、搜索与提示、购买与安装指令、Apple Books 商店",
+            "rules": [
+              "apple-store-transactions"
+            ]
+          },
+          {
+            "name": "App Store 安装包下载",
+            "rules": [
+              "apple-app-package-downloads"
+            ]
+          },
+          {
+            "name": "Apple 通用链接的域名验证",
+            "rules": [
+              "apple-association-services"
+            ]
+          },
+          {
+            "name": "APNs 系统推送的域名与公开客户端网段",
+            "rules": [
+              "apple-push-connection"
+            ]
+          },
+          {
+            "name": "Find My 设备与朋友查找的已识别入口",
+            "rules": [
+              "apple-find-my"
+            ]
+          },
+          {
+            "name": "定位查询、地图配置与信号定位数据",
+            "rules": [
+              "apple-location-services"
+            ]
+          },
+          {
+            "name": "Apple IDS 共用身份、注册与查询服务",
+            "rules": [
+              "apple-messaging-identity"
+            ]
+          },
+          {
+            "name": "iCloud Private Relay（隐私中继）与 Apple DNS 别名",
+            "rules": [
+              "apple-private-relay-connections"
+            ]
+          },
+          {
+            "name": "中国大陆 iCloud 服务和内容专用域",
+            "rules": [
+              "apple-icloud-mainland"
+            ]
+          },
+          {
+            "name": "iCloud 通用内容域",
+            "rules": [
+              "apple-icloud-content-domains"
+            ]
+          },
+          {
+            "name": "iCloud 通用服务、CloudKit、同步、邮件及 iWork",
+            "rules": [
+              "apple-cloud-sync"
+            ]
+          },
+          {
+            "name": "Apple 播客",
+            "rules": [
+              "apple-podcasts"
+            ]
+          },
+          {
+            "name": "Apple Music、广播及共用 API 与应用门户",
+            "rules": [
+              "apple-music-and-radio"
+            ]
+          },
+          {
+            "name": "Apple Music 已识别音频交付主机",
+            "rules": [
+              "apple-music-audio-delivery"
+            ]
+          },
+          {
+            "name": "Apple TV／Fitness+ 的门户、播放控制与共用主机",
+            "rules": [
+              "apple-video-and-fitness"
+            ]
+          },
+          {
+            "name": "Apple TV 已识别的 HLS 视频交付",
+            "rules": [
+              "apple-tv-video-delivery"
+            ]
+          },
+          {
+            "name": "Apple News／News+、内容入口与 Apple Sports",
+            "rules": [
+              "apple-news-and-sports"
+            ]
+          },
+          {
+            "name": "Siri 与 Spotlight 的专用域名",
+            "rules": [
+              "apple-siri-and-search"
+            ]
+          },
+          {
+            "name": "系统更新目录、检查、授权与登记",
+            "rules": [
+              "apple-update-control"
+            ]
+          },
+          {
+            "name": "系统更新包与恢复内容下载",
+            "rules": [
+              "apple-update-downloads"
+            ]
+          },
+          {
+            "name": "Apple Developer 门户",
+            "rules": [
+              "apple-developer-portal"
+            ]
+          },
+          {
+            "name": "Xcode、Swift Playgrounds 和开发者组件的实际下载",
+            "rules": [
+              "apple-developer-downloads"
+            ]
+          },
+          {
+            "name": "已核对的 Apple 大陆就近分发别名",
+            "rules": [
+              "apple-mainland-delivery-aliases"
+            ]
+          },
+          {
+            "name": "Apple 商店与媒体共用的静态内容",
+            "rules": [
+              "apple-shared-store-assets"
+            ]
+          },
+          {
+            "name": "Apple 设备的证书状态和撤销检查",
+            "rules": [
+              "apple-certificate-validation"
+            ]
+          },
+          {
+            "name": "设备引导、MDM、校时、系统 DNS 与公共素材",
+            "rules": [
+              "apple-system-connectivity"
+            ]
+          },
+          {
+            "name": "Apple Schoolwork 讲义与资料交付",
+            "rules": [
+              "apple-schoolwork-handouts"
+            ]
+          },
+          {
+            "name": "设备激活与 APNs 证书登记门户",
+            "rules": [
+              "apple-device-registration"
+            ]
+          },
+          {
+            "name": "Feedback Assistant、错误报告与自愿诊断上传",
+            "rules": [
+              "apple-feedback-and-diagnostics"
+            ]
+          },
+          {
+            "name": "Apple 官网与尚未细分的通用服务",
+            "rules": [
+              "apple-other-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "jetbrains",
+        "name": "JetBrains",
+        "products": [
+          {
+            "name": "JetBrains AI",
+            "rules": [
+              "jetbrains-ai"
+            ]
+          },
+          {
+            "name": "JetBrains IDE、授权与插件",
+            "rules": [
+              "jetbrains-ides"
+            ]
+          },
+          {
+            "name": "JetBrains AI · 中国区 API",
+            "rules": [
+              "jetbrains-ai-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alibaba",
+        "name": "阿里巴巴",
+        "products": [
+          {
+            "name": "阿里千问与百炼 · 国际入口",
+            "rules": [
+              "qwen-international"
+            ]
+          },
+          {
+            "name": "Qoder · 国际产品入口",
+            "rules": [
+              "qoder-international"
+            ]
+          },
+          {
+            "name": "阿里千问与百炼 · 国内入口",
+            "rules": [
+              "qwen-mainland"
+            ]
+          },
+          {
+            "name": "魔搭 ModelScope · 模型 API",
+            "rules": [
+              "modelscope-mainland"
+            ]
+          },
+          {
+            "name": "npmmirror 国内镜像",
+            "rules": [
+              "npmmirror-registry"
+            ]
+          },
+          {
+            "name": "钉钉公共服务",
+            "rules": [
+              "dingtalk-public"
+            ]
+          },
+          {
+            "name": "淘宝、天猫、闲鱼购物与图片",
+            "rules": [
+              "taobao-and-xianyu-shopping"
+            ]
+          },
+          {
+            "name": "阿里云盘",
+            "rules": [
+              "aliyun-drive"
+            ]
+          },
+          {
+            "name": "阿里巴巴与阿里云共用服务",
+            "rules": [
+              "alibaba-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "moonshot",
+        "name": "Moonshot AI / 月之暗面",
+        "products": [
+          {
+            "name": "月之暗面 Kimi · 国际入口",
+            "rules": [
+              "kimi-international"
+            ]
+          },
+          {
+            "name": "月之暗面 Kimi · 国内入口",
+            "rules": [
+              "kimi-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "zhipu",
+        "name": "智谱 / Z.ai",
+        "products": [
+          {
+            "name": "智谱 · 国际入口",
+            "rules": [
+              "zhipu-international"
+            ]
+          },
+          {
+            "name": "智谱 · 国内入口",
+            "rules": [
+              "zhipu-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "minimax",
+        "name": "MiniMax",
+        "products": [
+          {
+            "name": "MiniMax 与海螺 · 国际入口",
+            "rules": [
+              "minimax-international"
+            ]
+          },
+          {
+            "name": "MiniMax 与海螺 · 国内入口",
+            "rules": [
+              "minimax-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bytedance",
+        "name": "字节跳动",
+        "products": [
+          {
+            "name": "字节豆包、扣子与模型平台 · 国际入口",
+            "rules": [
+              "bytedance-international"
+            ]
+          },
+          {
+            "name": "Lark 国际版协作服务",
+            "rules": [
+              "lark-international"
+            ]
+          },
+          {
+            "name": "TikTok 国际短视频与直播",
+            "rules": [
+              "tiktok-international-video"
+            ]
+          },
+          {
+            "name": "字节豆包、扣子与模型平台 · 国内入口",
+            "rules": [
+              "bytedance-mainland"
+            ]
+          },
+          {
+            "name": "飞书国内协作服务",
+            "rules": [
+              "feishu-mainland"
+            ]
+          },
+          {
+            "name": "抖音中国版短视频、直播、图片与素材",
+            "rules": [
+              "douyin-mainland-video"
+            ]
+          },
+          {
+            "name": "字节跳动国内与共用服务",
+            "rules": [
+              "bytedance-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "siliconflow",
+        "name": "硅基流动",
+        "products": [
+          {
+            "name": "硅基流动 · 国际入口",
+            "rules": [
+              "siliconflow-international"
+            ]
+          },
+          {
+            "name": "硅基流动 · 国内入口",
+            "rules": [
+              "siliconflow-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tencent",
+        "name": "腾讯",
+        "products": [
+          {
+            "name": "腾讯混元、元宝与 TokenHub · 国际入口",
+            "rules": [
+              "tencent-international"
+            ]
+          },
+          {
+            "name": "WeChat 国际网站、支付与部分 App 连接",
+            "rules": [
+              "wechat-international-portal"
+            ]
+          },
+          {
+            "name": "腾讯混元、元宝与 TokenHub · 国内入口",
+            "rules": [
+              "tencent-mainland"
+            ]
+          },
+          {
+            "name": "腾讯 CODING",
+            "rules": [
+              "coding-platform"
+            ]
+          },
+          {
+            "name": "微信国内及两版共用登录、消息与支付",
+            "rules": [
+              "wechat-shared-and-mainland"
+            ]
+          },
+          {
+            "name": "腾讯 WeGame 国内平台",
+            "rules": [
+              "wegame-mainland"
+            ]
+          },
+          {
+            "name": "QQ、邮箱与腾讯共用账户",
+            "rules": [
+              "tencent-shared-services"
+            ]
+          },
+          {
+            "name": "腾讯网站与共用平台",
+            "rules": [
+              "tencent-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "amp-connections",
+        "name": "Amp",
+        "products": [
+          {
+            "name": "Amp 登录、线程 WebSocket、CLI 与官方运行环境",
+            "rules": [
+              "amp-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anythingllm-connections",
+        "name": "AnythingLLM",
+        "products": [
+          {
+            "name": "AnythingLLM 官网与自营下载、云端入口",
+            "rules": [
+              "anythingllm-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fireworks-model-services",
+        "name": "Fireworks",
+        "products": [
+          {
+            "name": "Fireworks 模型 API、产品门户与自营资源",
+            "rules": [
+              "fireworks-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "opencode-connections",
+        "name": "OpenCode",
+        "products": [
+          {
+            "name": "OpenCode 与 Go 网关",
+            "rules": [
+              "opencode-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kilo-connections",
+        "name": "Kilo",
+        "products": [
+          {
+            "name": "Kilo 编程助手与模型网关",
+            "rules": [
+              "kilo-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cline-connections",
+        "name": "Cline",
+        "products": [
+          {
+            "name": "Cline 自营接入与账户",
+            "rules": [
+              "cline-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ollama-cloud",
+        "name": "Ollama Cloud",
+        "products": [
+          {
+            "name": "Ollama Cloud 远程接口",
+            "rules": [
+              "ollama-cloud"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "chutes-model-services",
+        "name": "Chutes",
+        "products": [
+          {
+            "name": "Chutes 模型服务",
+            "rules": [
+              "chutes-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bothub-model-services",
+        "name": "Bothub",
+        "products": [
+          {
+            "name": "Bothub 模型网关",
+            "rules": [
+              "bothub-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "commandcode-connections",
+        "name": "CommandCode",
+        "products": [
+          {
+            "name": "CommandCode 编程与模型接口",
+            "rules": [
+              "commandcode-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stackit-model-services",
+        "name": "STACKIT AI Model Serving",
+        "products": [
+          {
+            "name": "STACKIT AI Model Serving",
+            "rules": [
+              "stackit-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "novita-model-services",
+        "name": "Novita",
+        "products": [
+          {
+            "name": "Novita 模型服务",
+            "rules": [
+              "novita-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nebius-model-services",
+        "name": "Nebius Token Factory",
+        "products": [
+          {
+            "name": "Nebius Token Factory",
+            "rules": [
+              "nebius-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "baseten-model-services",
+        "name": "Baseten",
+        "products": [
+          {
+            "name": "Baseten 模型服务",
+            "rules": [
+              "baseten-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "deepinfra-model-services",
+        "name": "DeepInfra",
+        "products": [
+          {
+            "name": "DeepInfra 模型服务",
+            "rules": [
+              "deepinfra-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "together-model-services",
+        "name": "Together AI",
+        "products": [
+          {
+            "name": "Together AI 模型服务",
+            "rules": [
+              "together-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cerebras-model-services",
+        "name": "Cerebras",
+        "products": [
+          {
+            "name": "Cerebras 推理服务",
+            "rules": [
+              "cerebras-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stepfun",
+        "name": "阶跃星辰",
+        "products": [
+          {
+            "name": "阶跃星辰 StepFun · 国际入口",
+            "rules": [
+              "stepfun-international"
+            ]
+          },
+          {
+            "name": "阶跃星辰 · 国内入口",
+            "rules": [
+              "stepfun-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "xiaomi",
+        "name": "小米",
+        "products": [
+          {
+            "name": "小米 MiMo · 新加坡与欧洲计划",
+            "rules": [
+              "xiaomi-international"
+            ]
+          },
+          {
+            "name": "小米 MiMo · 国内计划与共用 API",
+            "rules": [
+              "xiaomi-mainland-and-shared"
+            ]
+          },
+          {
+            "name": "小米账户、设备与共用服务",
+            "rules": [
+              "xiaomi-shared-services"
+            ]
+          },
+          {
+            "name": "国际社区与应用商店入口（共用表）",
+            "rules": [
+              "xiaomi-international-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "replicate-model-services",
+        "name": "Replicate",
+        "products": [
+          {
+            "name": "Replicate 模型 API 与结果文件",
+            "rules": [
+              "replicate-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "runway-creative-tools",
+        "name": "Runway",
+        "products": [
+          {
+            "name": "Runway 视频与创作服务",
+            "rules": [
+              "runway-creative-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stability-model-services",
+        "name": "Stability AI",
+        "products": [
+          {
+            "name": "Stability AI 模型服务",
+            "rules": [
+              "stability-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "black-forest-model-services",
+        "name": "Black Forest Labs",
+        "products": [
+          {
+            "name": "Black Forest Labs 与 FLUX",
+            "rules": [
+              "black-forest-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "replit-cloud-development",
+        "name": "Replit",
+        "products": [
+          {
+            "name": "Replit 云端开发",
+            "rules": [
+              "replit-cloud-development"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "augment-code-assistant",
+        "name": "Augment Code",
+        "products": [
+          {
+            "name": "Augment Code 编程助手",
+            "rules": [
+              "augment-code-assistant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sourcegraph-code-and-cody",
+        "name": "Sourcegraph",
+        "products": [
+          {
+            "name": "Sourcegraph 与 Cody",
+            "rules": [
+              "sourcegraph-code-and-cody"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "continue-code-assistant",
+        "name": "Continue",
+        "products": [
+          {
+            "name": "Continue 编程助手",
+            "rules": [
+              "continue-code-assistant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "coderabbit-code-review",
+        "name": "CodeRabbit",
+        "products": [
+          {
+            "name": "CodeRabbit 代码审查",
+            "rules": [
+              "coderabbit-code-review"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tabnine-code-assistant",
+        "name": "Tabnine",
+        "products": [
+          {
+            "name": "Tabnine 编程助手",
+            "rules": [
+              "tabnine-code-assistant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "factory-coding-agents",
+        "name": "Factory",
+        "products": [
+          {
+            "name": "Factory 编程代理",
+            "rules": [
+              "factory-coding-agents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "zed-editor-and-ai",
+        "name": "Zed",
+        "products": [
+          {
+            "name": "Zed 编辑器与自营 AI",
+            "rules": [
+              "zed-editor-and-ai"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kiro-code-assistant",
+        "name": "Kiro",
+        "products": [
+          {
+            "name": "Kiro 编程助手",
+            "rules": [
+              "kiro-code-assistant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stackblitz",
+        "name": "StackBlitz",
+        "products": [
+          {
+            "name": "Bolt 应用构建",
+            "rules": [
+              "bolt-app-builder"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lovable-app-builder",
+        "name": "Lovable",
+        "products": [
+          {
+            "name": "Lovable 应用构建",
+            "rules": [
+              "lovable-app-builder"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vercel",
+        "name": "Vercel",
+        "products": [
+          {
+            "name": "Vercel v0 应用构建",
+            "rules": [
+              "v0-app-builder"
+            ]
+          },
+          {
+            "name": "Vercel、Next.js 与共用托管平台",
+            "rules": [
+              "vercel-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "genspark-connections",
+        "name": "Genspark",
+        "products": [
+          {
+            "name": "Genspark 搜索与代理",
+            "rules": [
+              "genspark-connections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "jasper-marketing-ai",
+        "name": "Jasper",
+        "products": [
+          {
+            "name": "Jasper 营销 AI",
+            "rules": [
+              "jasper-marketing-ai"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gamma-presentations",
+        "name": "Gamma",
+        "products": [
+          {
+            "name": "Gamma 演示与文档",
+            "rules": [
+              "gamma-presentations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phind-search",
+        "name": "Phind",
+        "products": [
+          {
+            "name": "Phind 搜索与问答",
+            "rules": [
+              "phind-search"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "inflection-and-pi",
+        "name": "Inflection",
+        "products": [
+          {
+            "name": "Inflection 与 Pi",
+            "rules": [
+              "inflection-and-pi"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "h2o-model-services",
+        "name": "H2O AI",
+        "products": [
+          {
+            "name": "H2O AI 平台",
+            "rules": [
+              "h2o-model-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "otter-meeting-assistant",
+        "name": "Otter",
+        "products": [
+          {
+            "name": "Otter 会议助手",
+            "rules": [
+              "otter-meeting-assistant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "descript-media-tools",
+        "name": "Descript",
+        "products": [
+          {
+            "name": "Descript 音视频编辑",
+            "rules": [
+              "descript-media-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "synthesia-video-tools",
+        "name": "Synthesia",
+        "products": [
+          {
+            "name": "Synthesia 视频生成",
+            "rules": [
+              "synthesia-video-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "luma-creative-tools",
+        "name": "Luma",
+        "products": [
+          {
+            "name": "Luma 创作服务",
+            "rules": [
+              "luma-creative-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leonardo-image-tools",
+        "name": "Leonardo",
+        "products": [
+          {
+            "name": "Leonardo 图像生成",
+            "rules": [
+              "leonardo-image-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pika-video-tools",
+        "name": "Pika",
+        "products": [
+          {
+            "name": "Pika 视频生成",
+            "rules": [
+              "pika-video-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recraft-design-tools",
+        "name": "Recraft",
+        "products": [
+          {
+            "name": "Recraft 设计与图像",
+            "rules": [
+              "recraft-design-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "udio-music-tools",
+        "name": "Udio",
+        "products": [
+          {
+            "name": "Udio 音乐生成",
+            "rules": [
+              "udio-music-tools"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "duck-ai-chat",
+        "name": "Duck.ai",
+        "products": [
+          {
+            "name": "Duck.ai 对话",
+            "rules": [
+              "duck-ai-chat"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "langchain-agent-platform",
+        "name": "LangChain",
+        "products": [
+          {
+            "name": "LangChain 与代理平台",
+            "rules": [
+              "langchain-agent-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "comfy-cloud-and-registry",
+        "name": "Comfy",
+        "products": [
+          {
+            "name": "Comfy 云端与组件目录",
+            "rules": [
+              "comfy-cloud-and-registry"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lmstudio-product-services",
+        "name": "LM Studio",
+        "products": [
+          {
+            "name": "LM Studio 产品与下载",
+            "rules": [
+              "lmstudio-product-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crewai-agent-platform",
+        "name": "CrewAI",
+        "products": [
+          {
+            "name": "CrewAI 代理平台",
+            "rules": [
+              "crewai-agent-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "eigent-agent-services",
+        "name": "Eigent",
+        "products": [
+          {
+            "name": "Eigent 代理与协作",
+            "rules": [
+              "eigent-agent-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "manus-agent-services",
+        "name": "Manus",
+        "products": [
+          {
+            "name": "Manus 代理与文件",
+            "rules": [
+              "manus-agent-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "youmind-international",
+        "name": "YouMind",
+        "products": [
+          {
+            "name": "YouMind · 国际产品入口",
+            "rules": [
+              "youmind-international"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lovart-international",
+        "name": "Lovart",
+        "products": [
+          {
+            "name": "Lovart · 国际产品入口",
+            "rules": [
+              "lovart-international"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dia-browser-services",
+        "name": "Dia",
+        "products": [
+          {
+            "name": "Dia 浏览器自营服务",
+            "rules": [
+              "dia-browser-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "openclaw-product-services",
+        "name": "OpenClaw",
+        "products": [
+          {
+            "name": "OpenClaw 产品与发布服务",
+            "rules": [
+              "openclaw-product-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gitlab-hosting",
+        "name": "GitLab",
+        "products": [
+          {
+            "name": "GitLab.com",
+            "rules": [
+              "gitlab-hosting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "atlassian",
+        "name": "Atlassian",
+        "products": [
+          {
+            "name": "Atlassian Bitbucket",
+            "rules": [
+              "bitbucket-hosting"
+            ]
+          },
+          {
+            "name": "Trello",
+            "rules": [
+              "trello-boards"
+            ]
+          },
+          {
+            "name": "Atlassian Cloud：共享平台、Jira 与 Confluence",
+            "rules": [
+              "atlassian-cloud-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sonatype",
+        "name": "Sonatype / Maven Central",
+        "products": [
+          {
+            "name": "Maven Central",
+            "rules": [
+              "maven-central"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "python",
+        "name": "Python 项目与包生态",
+        "products": [
+          {
+            "name": "PyPI 软件包",
+            "rules": [
+              "pypi-packages"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "docker-hub",
+        "name": "Docker",
+        "products": [
+          {
+            "name": "Docker Hub",
+            "rules": [
+              "docker-hub"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rust",
+        "name": "Rust 项目与包生态",
+        "products": [
+          {
+            "name": "Rust、Cargo 与 crates.io",
+            "rules": [
+              "rust-cargo"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "go",
+        "name": "Go 项目与包生态",
+        "products": [
+          {
+            "name": "Go 模块与工具链",
+            "rules": [
+              "go-modules"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "openjs",
+        "name": "OpenJS / Node.js",
+        "products": [
+          {
+            "name": "Node.js 运行时与官方发行站",
+            "rules": [
+              "nodejs-runtime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "agent-client-protocol",
+        "name": "ACP",
+        "products": [
+          {
+            "name": "ACP 协议、文档与代理注册表",
+            "rules": [
+              "agent-client-protocol"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "telegram-messaging",
+        "name": "Telegram",
+        "products": [
+          {
+            "name": "Telegram 登录、消息、文件与服务器地址",
+            "rules": [
+              "telegram-messaging"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discord-messaging-and-voice",
+        "name": "Discord",
+        "products": [
+          {
+            "name": "Discord 消息、语音、活动和附件",
+            "rules": [
+              "discord-messaging-and-voice"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "signal-messenger",
+        "name": "Signal",
+        "products": [
+          {
+            "name": "Signal 消息、通话、贴纸、群组与用户名链接",
+            "rules": [
+              "signal-messenger"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "line-messenger",
+        "name": "LINE",
+        "products": [
+          {
+            "name": "LINE",
+            "rules": [
+              "line-messenger"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "slack",
+        "name": "Slack",
+        "products": [
+          {
+            "name": "Slack",
+            "rules": [
+              "slack-workspaces"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reddit-community",
+        "name": "Reddit",
+        "products": [
+          {
+            "name": "Reddit",
+            "rules": [
+              "reddit-community"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pinterest",
+        "name": "Pinterest",
+        "products": [
+          {
+            "name": "Pinterest",
+            "rules": [
+              "pinterest-social"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bluesky",
+        "name": "Bluesky",
+        "products": [
+          {
+            "name": "Bluesky 官方应用与网络服务",
+            "rules": [
+              "bluesky-social"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "zoom",
+        "name": "Zoom",
+        "products": [
+          {
+            "name": "Zoom 会议与共用服务",
+            "rules": [
+              "zoom-meetings"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "paypal",
+        "name": "PayPal",
+        "products": [
+          {
+            "name": "PayPal 核心支付、验签和静态资源",
+            "rules": [
+              "paypal-payments"
+            ]
+          },
+          {
+            "name": "Braintree 商户支付、网关与 SDK",
+            "rules": [
+              "braintree-payments"
+            ]
+          },
+          {
+            "name": "Venmo 支付",
+            "rules": [
+              "venmo-payments"
+            ]
+          },
+          {
+            "name": "Xoom 汇款",
+            "rules": [
+              "xoom-transfers"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stripe",
+        "name": "Stripe",
+        "products": [
+          {
+            "name": "Stripe",
+            "rules": [
+              "stripe-payments"
+            ]
+          },
+          {
+            "name": "Link 快捷支付",
+            "rules": [
+              "link-payments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wise",
+        "name": "Wise",
+        "products": [
+          {
+            "name": "Wise 转账与账户服务",
+            "rules": [
+              "wise-transfers"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "binance-platform",
+        "name": "Binance",
+        "products": [
+          {
+            "name": "Binance 币安",
+            "rules": [
+              "binance-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "okx-platform",
+        "name": "OKX",
+        "products": [
+          {
+            "name": "OKX 欧易",
+            "rules": [
+              "okx-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gemini-exchange",
+        "name": "Gemini 交易平台",
+        "products": [
+          {
+            "name": "Gemini 交易平台与 API",
+            "rules": [
+              "gemini-exchange"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kraken",
+        "name": "Kraken",
+        "products": [
+          {
+            "name": "Kraken 交易平台",
+            "rules": [
+              "kraken-exchange"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bybit",
+        "name": "Bybit",
+        "products": [
+          {
+            "name": "Bybit 交易平台",
+            "rules": [
+              "bybit-exchange"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kucoin",
+        "name": "KuCoin",
+        "products": [
+          {
+            "name": "KuCoin 交易平台",
+            "rules": [
+              "kucoin-exchange"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "trust-wallet",
+        "name": "Trust Wallet",
+        "products": [
+          {
+            "name": "Trust Wallet",
+            "rules": [
+              "trust-wallet"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hbo-streaming",
+        "name": "HBO Max",
+        "products": [
+          {
+            "name": "HBO Max",
+            "rules": [
+              "hbo-streaming"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "netflix-video-and-delivery",
+        "name": "Netflix",
+        "products": [
+          {
+            "name": "Netflix 播放、设备 API 和内容分发",
+            "rules": [
+              "netflix-video-and-delivery"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "disney-plus-streaming",
+        "name": "Disney+",
+        "products": [
+          {
+            "name": "Disney+ 播放及其专用交付",
+            "rules": [
+              "disney-plus-streaming"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "amazon",
+        "name": "Amazon / AWS",
+        "products": [
+          {
+            "name": "Prime Video 视频 API 和内容",
+            "rules": [
+              "prime-video-streaming"
+            ]
+          },
+          {
+            "name": "Twitch 直播、聊天室和内容 CDN",
+            "rules": [
+              "twitch-live-video"
+            ]
+          },
+          {
+            "name": "Amazon 与 AWS 中国区入口",
+            "rules": [
+              "amazon-mainland"
+            ]
+          },
+          {
+            "name": "Amazon 商城、Kindle 与其他共用服务",
+            "rules": [
+              "amazon-shared-services"
+            ]
+          },
+          {
+            "name": "AWS 与共用云平台",
+            "rules": [
+              "amazon-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "spotify-audio",
+        "name": "Spotify",
+        "products": [
+          {
+            "name": "Spotify 音乐播放和音频文件",
+            "rules": [
+              "spotify-audio"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bilibili",
+        "name": "哔哩哔哩",
+        "products": [
+          {
+            "name": "哔哩哔哩国际版视频",
+            "rules": [
+              "bilibili-international-video"
+            ]
+          },
+          {
+            "name": "哔哩哔哩中国站视频与图片",
+            "rules": [
+              "bilibili-mainland-video"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bahamut-video-and-community",
+        "name": "巴哈姆特",
+        "products": [
+          {
+            "name": "巴哈姆特动画疯和电玩社区",
+            "rules": [
+              "bahamut-video-and-community"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bbc-news-and-video",
+        "name": "BBC",
+        "products": [
+          {
+            "name": "BBC 新闻与影音",
+            "rules": [
+              "bbc-news-and-video"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "iqiyi",
+        "name": "爱奇艺",
+        "products": [
+          {
+            "name": "爱奇艺国际版 iQIYI 与专用国际 API",
+            "rules": [
+              "iqiyi-international"
+            ]
+          },
+          {
+            "name": "爱奇艺国内版",
+            "rules": [
+              "iqiyi-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "soundcloud",
+        "name": "SoundCloud",
+        "products": [
+          {
+            "name": "SoundCloud 音频与创作者服务",
+            "rules": [
+              "soundcloud-audio"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vimeo",
+        "name": "Vimeo",
+        "products": [
+          {
+            "name": "Vimeo 视频与交付",
+            "rules": [
+              "vimeo-video"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hulu",
+        "name": "Hulu",
+        "products": [
+          {
+            "name": "Hulu 视频与交付",
+            "rules": [
+              "hulu-streaming"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "valve",
+        "name": "Valve / Steam",
+        "products": [
+          {
+            "name": "Steam 国际商店、社区、联机和下载",
+            "rules": [
+              "steam-international-platform"
+            ]
+          },
+          {
+            "name": "Steam 中国下载镜像与蒸汽平台内容",
+            "rules": [
+              "steam-mainland-downloads"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "epic-games-services",
+        "name": "Epic Games",
+        "products": [
+          {
+            "name": "Epic Games 商店、登录及 Unreal 服务",
+            "rules": [
+              "epic-games-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "playstation-network",
+        "name": "Sony / PlayStation",
+        "products": [
+          {
+            "name": "Sony PlayStation",
+            "rules": [
+              "playstation-network"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nintendo-platform",
+        "name": "Nintendo",
+        "products": [
+          {
+            "name": "Nintendo 任天堂",
+            "rules": [
+              "nintendo-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mihoyo",
+        "name": "米哈游 / HoYoverse",
+        "products": [
+          {
+            "name": "HoYoverse 国际版",
+            "rules": [
+              "hoyoverse-international"
+            ]
+          },
+          {
+            "name": "米哈游国服与米游社",
+            "rules": [
+              "mihoyo-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ea-games",
+        "name": "EA",
+        "products": [
+          {
+            "name": "EA 游戏平台",
+            "rules": [
+              "ea-games"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ubisoft-connect",
+        "name": "Ubisoft",
+        "products": [
+          {
+            "name": "Ubisoft Connect",
+            "rules": [
+              "ubisoft-connect"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "netease",
+        "name": "网易",
+        "products": [
+          {
+            "name": "网易国际游戏与共用 SDK",
+            "rules": [
+              "netease-international-games"
+            ]
+          },
+          {
+            "name": "网易云音乐",
+            "rules": [
+              "netease-music"
+            ]
+          },
+          {
+            "name": "有道词典、学习与内容服务",
+            "rules": [
+              "youdao-products"
+            ]
+          },
+          {
+            "name": "网易邮箱与共用账户",
+            "rules": [
+              "netease-shared-services"
+            ]
+          },
+          {
+            "name": "网易游戏、网易新闻与其他共用服务",
+            "rules": [
+              "netease-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "qualcomm",
+        "name": "Qualcomm / 高通",
+        "products": [
+          {
+            "name": "高通中国与国内可用系统服务",
+            "rules": [
+              "qualcomm-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nvidia",
+        "name": "NVIDIA",
+        "products": [
+          {
+            "name": "NVIDIA 中国网站与国内下载入口",
+            "rules": [
+              "nvidia-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intel",
+        "name": "Intel",
+        "products": [
+          {
+            "name": "Intel 中国网站",
+            "rules": [
+              "intel-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "samsung",
+        "name": "Samsung / 三星",
+        "products": [
+          {
+            "name": "Samsung 中国网站、云与健康服务",
+            "rules": [
+              "samsung-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cloudflare",
+        "name": "Cloudflare",
+        "products": [
+          {
+            "name": "Cloudflare 中国网络相关入口",
+            "rules": [
+              "cloudflare-mainland"
+            ]
+          },
+          {
+            "name": "公共 DNS 与 DoH",
+            "rules": [
+              "cloudflare-public-dns"
+            ]
+          },
+          {
+            "name": "Cloudflare 控制台与公共平台",
+            "rules": [
+              "cloudflare-shared-services"
+            ]
+          },
+          {
+            "name": "WARP、Zero Trust、Tunnel 与共用服务",
+            "rules": [
+              "cloudflare-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "adobe",
+        "name": "Adobe",
+        "products": [
+          {
+            "name": "Adobe 中国区文档云入口",
+            "rules": [
+              "adobe-mainland"
+            ]
+          },
+          {
+            "name": "Adobe Creative Cloud、Acrobat 与共用平台",
+            "rules": [
+              "adobe-shared-services"
+            ]
+          },
+          {
+            "name": "Marketo Engage 与开发文档",
+            "rules": [
+              "adobe-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "notion-workspace",
+        "name": "Notion",
+        "products": [
+          {
+            "name": "Notion",
+            "rules": [
+              "notion-workspace"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "figma-design",
+        "name": "Figma",
+        "products": [
+          {
+            "name": "Figma",
+            "rules": [
+              "figma-design"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "proton",
+        "name": "Proton",
+        "products": [
+          {
+            "name": "Proton 邮件、账户及共用服务",
+            "rules": [
+              "proton-suite"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "workos",
+        "name": "WorkOS",
+        "products": [
+          {
+            "name": "WorkOS 登录与公共组件",
+            "rules": [
+              "workos-authentication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "deepseek-mainland",
+        "name": "DeepSeek",
+        "products": [
+          {
+            "name": "DeepSeek · 国内入口",
+            "rules": [
+              "deepseek-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "baidu",
+        "name": "百度",
+        "products": [
+          {
+            "name": "百度文心与千帆",
+            "rules": [
+              "baidu-mainland"
+            ]
+          },
+          {
+            "name": "百度搜索、网盘与共用服务",
+            "rules": [
+              "baidu-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "iflytek",
+        "name": "科大讯飞",
+        "products": [
+          {
+            "name": "讯飞星火 · 国内入口",
+            "rules": [
+              "iflytek-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "liblib-mainland",
+        "name": "哩布哩布",
+        "products": [
+          {
+            "name": "哩布哩布 · 国内入口",
+            "rules": [
+              "liblib-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "baichuan-mainland",
+        "name": "百川智能",
+        "products": [
+          {
+            "name": "百川智能 · 国内入口",
+            "rules": [
+              "baichuan-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lingyi-mainland",
+        "name": "零一万物",
+        "products": [
+          {
+            "name": "零一万物 · 国内入口",
+            "rules": [
+              "lingyi-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sensetime-mainland",
+        "name": "商汤",
+        "products": [
+          {
+            "name": "商汤日日新 · 国内入口",
+            "rules": [
+              "sensetime-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gitee-hosting",
+        "name": "Gitee",
+        "products": [
+          {
+            "name": "Gitee 码云",
+            "rules": [
+              "gitee-hosting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gitcode-hosting",
+        "name": "GitCode",
+        "products": [
+          {
+            "name": "GitCode",
+            "rules": [
+              "gitcode-hosting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tuna",
+        "name": "清华 TUNA",
+        "products": [
+          {
+            "name": "清华 TUNA 开源镜像",
+            "rules": [
+              "tuna-mirrors"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "douban-community",
+        "name": "豆瓣",
+        "products": [
+          {
+            "name": "豆瓣",
+            "rules": [
+              "douban-community"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sina",
+        "name": "新浪与微博",
+        "products": [
+          {
+            "name": "微博",
+            "rules": [
+              "weibo-social"
+            ]
+          },
+          {
+            "name": "新浪与微博共用图片",
+            "rules": [
+              "sina-shared-image-assets"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ant",
+        "name": "蚂蚁集团",
+        "products": [
+          {
+            "name": "支付宝国内账户支付和静态资源",
+            "rules": [
+              "alipay-mainland-payments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unionpay-mainland",
+        "name": "银联",
+        "products": [
+          {
+            "name": "银联、云闪付国内服务",
+            "rules": [
+              "unionpay-mainland"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "youku-video",
+        "name": "优酷",
+        "products": [
+          {
+            "name": "优酷国内站",
+            "rules": [
+              "youku-video"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tme",
+        "name": "腾讯音乐",
+        "products": [
+          {
+            "name": "QQ 音乐",
+            "rules": [
+              "qq-music"
+            ]
+          },
+          {
+            "name": "酷狗音乐",
+            "rules": [
+              "kugou-music"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kuaishou-video",
+        "name": "快手",
+        "products": [
+          {
+            "name": "快手",
+            "rules": [
+              "kuaishou-video"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "douyu",
+        "name": "斗鱼",
+        "products": [
+          {
+            "name": "斗鱼直播",
+            "rules": [
+              "douyu-live"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "huya",
+        "name": "虎牙",
+        "products": [
+          {
+            "name": "虎牙直播",
+            "rules": [
+              "huya-live"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "jingdong-shopping",
+        "name": "京东",
+        "products": [
+          {
+            "name": "京东购物、账户与商品素材",
+            "rules": [
+              "jingdong-shopping"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "xiaohongshu-community",
+        "name": "小红书",
+        "products": [
+          {
+            "name": "小红书国内内容、社区及专用 CDN",
+            "rules": [
+              "xiaohongshu-community"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "zhihu-community",
+        "name": "知乎",
+        "products": [
+          {
+            "name": "知乎",
+            "rules": [
+              "zhihu-community"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "railway-china",
+        "name": "中国铁路 / 12306",
+        "products": [
+          {
+            "name": "铁路 12306",
+            "rules": [
+              "railway-tickets"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "meituan",
+        "name": "美团",
+        "products": [
+          {
+            "name": "美团与大众点评服务",
+            "rules": [
+              "meituan-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "didi",
+        "name": "滴滴",
+        "products": [
+          {
+            "name": "滴滴出行",
+            "rules": [
+              "didi-mobility"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kingsoft",
+        "name": "金山",
+        "products": [
+          {
+            "name": "WPS Office 与文档服务",
+            "rules": [
+              "wps-office"
+            ]
+          },
+          {
+            "name": "金山与其他共用服务",
+            "rules": [
+              "kingsoft-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "digitalocean",
+        "name": "DigitalOcean",
+        "products": [
+          {
+            "name": "DigitalOcean 云平台与共用服务",
+            "rules": [
+              "digitalocean-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vultr",
+        "name": "Vultr",
+        "products": [
+          {
+            "name": "Vultr 云平台",
+            "rules": [
+              "vultr-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hetzner",
+        "name": "Hetzner",
+        "products": [
+          {
+            "name": "Hetzner 云与存储平台",
+            "rules": [
+              "hetzner-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "netlify",
+        "name": "Netlify",
+        "products": [
+          {
+            "name": "Netlify 云平台与资源交付",
+            "rules": [
+              "netlify-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "heroku",
+        "name": "Heroku",
+        "products": [
+          {
+            "name": "Heroku 云平台与共用托管",
+            "rules": [
+              "heroku-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "oracle",
+        "name": "Oracle",
+        "products": [
+          {
+            "name": "Oracle、Java 与云平台共用服务",
+            "rules": [
+              "oracle-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "huawei",
+        "name": "华为",
+        "products": [
+          {
+            "name": "华为账户、设备与共用服务",
+            "rules": [
+              "huawei-shared-services"
+            ]
+          }
+        ]
+      }
+    ],
+    "common": [
+      "local-links-and-addresses",
+      "local-no-resolve-alt",
+      "network-sign-in-and-probes",
+      "ip-egress-checks",
+      "apple-and-ai-privacy-exceptions",
+      "general-ad-and-tracking",
+      "privacy-public-stun-endpoints",
+      "extended-ad-and-tracking",
+      "overseas-media-extra",
+      "overseas-sites-extra",
+      "mainland-domains",
+      "mainland-networks",
+      "mainland-geoip"
+    ]
+  }
 }

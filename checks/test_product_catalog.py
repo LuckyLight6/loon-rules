@@ -43,9 +43,28 @@ class ProductCatalog(unittest.TestCase):
                          'qwen.ai':'qwen-international',
                          'www.qianwen.com':'qwen-mainland',
                          'www.binance.info':'binance-platform',
-                         'www.okx.com':'okx-platform'}.items():
+                         'www.okx.com':'okx-platform',
+                         'www.qualcomm.cn':'qualcomm-mainland',
+                         'www.nvidia.cn':'nvidia-mainland',
+                         'cn.download.nvidia.com':'nvidia-mainland',
+                         'www.intel.cn':'intel-mainland',
+                         'music.163.com':'netease-music',
+                         'music.126.net':'netease-music',
+                         'www.cloudflare.com':'cloudflare-shared-services',
+                         'one.one.one.one':'cloudflare-public-dns'}.items():
             with self.subTest(host=host):
                 self.assertEqual(lib.ordered_route(host,order,self.data),key)
+
+    def test_company_region_and_music_rules_do_not_claim_other_products(self):
+        for host,key in {'www.qualcomm.com':'qualcomm-mainland',
+                         'www.nvidia.com':'nvidia-mainland',
+                         'www.intel.com':'intel-mainland',
+                         'mail.163.com':'netease-music',
+                         'tenant.163yun.com':'netease-music',
+                         'web.whatsapp-plus.info':'whatsapp-messaging',
+                         'tenant.workers.dev':'chatgpt-connections'}.items():
+            with self.subTest(host=host):
+                self.assertIsNone(lib.ordered_route(host,[key],self.data))
 
     def test_no_resolve_variant_preserves_names_and_literal_address_coverage(self):
         regular=self.data['local-links-and-addresses']

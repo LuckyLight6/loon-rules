@@ -1,9 +1,9 @@
 {
-  "checked-at": "2026-11-22T12:51:22Z",
-  "inputs-read": 489,
-  "critical": 703,
-  "inputs-requested": 489,
-  "profiles-checked": 1280,
+  "checked-at": "2026-11-22T15:07:41Z",
+  "inputs-read": 543,
+  "critical": 762,
+  "inputs-requested": 543,
+  "profiles-checked": 40960,
   "assigned-rules": {
     "apple-system-connectivity": {
       "DOMAIN-SUFFIX,appattest.apple.com": "apple-app-and-device-verification",
@@ -39,7 +39,466 @@
       "DOMAIN-SUFFIX,vscode-webview.net": "microsoft-vscode",
       "DOMAIN-SUFFIX,vscode.dev": "microsoft-vscode"
     },
+    "adobe-shared-services": {
+      "DOMAIN-SUFFIX,adbecrsl.com": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,adobedc.cn": "adobe-mainland",
+      "DOMAIN-SUFFIX,tubemogul.com": "general-ad-and-tracking"
+    },
+    "cloudflare-shared-services": {
+      "DOMAIN-SUFFIX,cloudflare-dns.com": "cloudflare-public-dns",
+      "DOMAIN-SUFFIX,cloudflarecp.com": "network-sign-in-and-probes",
+      "DOMAIN-SUFFIX,cloudflareok.com": "network-sign-in-and-probes",
+      "DOMAIN-SUFFIX,cloudflareportal.com": "network-sign-in-and-probes",
+      "DOMAIN-SUFFIX,one.one.one": "cloudflare-public-dns",
+      "DOMAIN-SUFFIX,cf-china.info": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cf-ns.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cf-ns.net": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cf-ns.site": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cf-ns.tech": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cftest5.cn": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cftest6.cn": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cftest7.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cftest8.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflare-cn.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflareanycast.net": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflarechina.cn": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflarecn.net": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflareglobal.net": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflareinsights-cn.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflareperf.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflareprod.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflarestaging.com": "cloudflare-mainland",
+      "DOMAIN-SUFFIX,cloudflarestoragegw.com": "cloudflare-mainland"
+    },
+    "amazon-shared-services": {
+      "DOMAIN-SUFFIX,pv-cdn.net": "prime-video-streaming",
+      "DOMAIN-SUFFIX,primevideo.com": "prime-video-streaming",
+      "DOMAIN-SUFFIX,amazonvideo.com": "prime-video-streaming",
+      "DOMAIN-SUFFIX,aiv-cdn.net": "prime-video-streaming",
+      "DOMAIN-SUFFIX,aboutamazon.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,alexafund.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,alexafund.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazon.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonbusiness.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonbusiness.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonchoice.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonchoice.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonchoices.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonchoices.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazoninspire.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazoninspire.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonlaunchpad.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonlaunchpad.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonlending.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonnow.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonnow.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,assoc-amazon.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,primeday.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,primeday.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,yamaxun.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,z.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazon-adsystem.com": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,serving-sys.com": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,a2z.org.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonaws.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonaws.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonwebservices.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonwebservices.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonworkdocs.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonworkdocs.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,asfiovnxocqpcry.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,aws-border.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,aws-icp-domain-manager.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,awsapps.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,awsapps.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,awsstatic.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,cloudfront-cn.net": "amazon-mainland",
+      "DOMAIN-SUFFIX,cloudfront-test.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,cloudfront.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,nwcdcloud.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,nwcdcloud.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,nwcddns.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,nwcdinfosec.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,route53.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,sagemaker.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amzndns-cn.biz": "amazon-mainland",
+      "DOMAIN-SUFFIX,amzndns-cn.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amzndns-cn.com": "amazon-mainland",
+      "DOMAIN-SUFFIX,amzndns-cn.net": "amazon-mainland",
+      "DOMAIN-SUFFIX,kindle.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,kindleoasis.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,kindleoasis.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonprimevideo.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonprimevideo.com.cn": "amazon-mainland"
+    },
+    "netease-shared-services": {
+      "DOMAIN-SUFFIX,ydshengxue.com": "youdao-products",
+      "DOMAIN-SUFFIX,ydstatic.com": "youdao-products",
+      "DOMAIN-SUFFIX,youdao.com": "youdao-products",
+      "DOMAIN-SUFFIX,easebar.com": "netease-international-games"
+    },
+    "alibaba-shared-services": {
+      "DOMAIN-SUFFIX,alipayobjects.com": "alipay-mainland-payments"
+    },
+    "tencent-shared-services": {
+      "DOMAIN-SUFFIX,qlogo.cn": "wechat-shared-and-mainland",
+      "DOMAIN-SUFFIX,qpic.cn": "wechat-shared-and-mainland"
+    },
+    "baidu-shared-services": {
+      "DOMAIN-SUFFIX,duapps.com": "general-ad-and-tracking"
+    },
+    "xiaomi-shared-services": {
+      "DOMAIN-SUFFIX,tjqonline.cn": "general-ad-and-tracking"
+    },
+    "kingsoft-shared-services": {
+      "DOMAIN-SUFFIX,wps.cn": "wps-office",
+      "DOMAIN-SUFFIX,wps.com": "wps-office",
+      "DOMAIN-SUFFIX,wpscdn.cn": "wps-office",
+      "DOMAIN-SUFFIX,wpscdn.com": "wps-office",
+      "DOMAIN-SUFFIX,qwps.cn": "wps-office",
+      "DOMAIN-SUFFIX,kimxz.com": "wps-office",
+      "DOMAIN-SUFFIX,51dzt.com": "wps-office",
+      "DOMAIN-SUFFIX,iciba.com": "wps-office",
+      "DOMAIN-SUFFIX,docer.com": "wps-office",
+      "DOMAIN-SUFFIX,kdocs.cn": "wps-office",
+      "DOMAIN-SUFFIX,wpsmail.net": "wps-office",
+      "DOMAIN-SUFFIX,papocket.com": "wps-office",
+      "DOMAIN-SUFFIX,wpspdf.cn": "wps-office"
+    },
     "mainland-domains": {
+      "DOMAIN-SUFFIX,126.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,126.link": "netease-shared-services",
+      "DOMAIN-SUFFIX,126.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,127.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,127.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,163.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,163industry.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,163jiasu.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,163mail.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,163yun.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,166.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,166.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,188.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,321fenx.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,51dzt.com": "wps-office",
+      "DOMAIN-SUFFIX,91.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,abhouses.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,agconnect.link": "huawei-shared-services",
+      "DOMAIN-SUFFIX,aipage.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,airstarfinance.net": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,alibaba.com": "alibaba-shared-services",
+      "DOMAIN-SUFFIX,alibabadns.com": "alibaba-shared-services",
+      "DOMAIN-SUFFIX,alicdn.com": "alibaba-shared-services",
+      "DOMAIN-SUFFIX,alicloudccp.com": "aliyun-drive",
+      "DOMAIN-SUFFIX,alipan.com": "aliyun-drive",
+      "DOMAIN-SUFFIX,aliyun.com": "alibaba-shared-services",
+      "DOMAIN-SUFFIX,aliyundrive.com": "aliyun-drive",
+      "DOMAIN-SUFFIX,aliyundrive.net": "aliyun-drive",
+      "DOMAIN-SUFFIX,antpcdn.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,apollo.auto": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidu-cdn.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidu-cdn.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidu-cdn.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidu.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidu.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidu.com.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baiduapp.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidubce.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baiducontent.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidupcs.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baidustatic.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baiduyuncdn.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baiduyuncdn.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baiduyuncdn.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baifae.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,baifubao.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bce-cdn.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bce-cdn.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bce-cdn.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bcebos.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bcelive.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdcloudapi.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdimg.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdstatic.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdtjrcv.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdurl.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdycdn.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdycdn.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdydns.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdydns.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bdydns.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,bisheng.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,bishengcompiler.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,bytecdn.cn": "bytedance-shared-services",
+      "DOMAIN-SUFFIX,bytecdn.com": "bytedance-shared-services",
+      "DOMAIN-SUFFIX,bytedance.com": "bytedance-shared-services",
+      "DOMAIN-SUFFIX,bytedns.net": "bytedance-shared-services",
+      "DOMAIN-SUFFIX,bytetcc.com": "bytedance-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc1.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc1.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc2.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc2.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc3.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc3.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc5.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc5.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc6.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc6.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc7.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwc7.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,cdnhwcibv122.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,chuanke.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,cmcm.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,cmcmcdn.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,dbank.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dbankcdn.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dbankcdn.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dbankcloud.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dbankcloud.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dbankedge.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dbankedge.net": "huawei-shared-services",
+      "DOMAIN-SUFFIX,devui.design": "huawei-shared-services",
+      "DOMAIN-SUFFIX,dianping.com": "meituan-services",
+      "DOMAIN-SUFFIX,didi-food.com": "didi-mobility",
+      "DOMAIN-SUFFIX,didi.cn": "didi-mobility",
+      "DOMAIN-SUFFIX,didialift.com": "didi-mobility",
+      "DOMAIN-SUFFIX,didiaustralia.blog": "didi-mobility",
+      "DOMAIN-SUFFIX,didichuxing.com": "didi-mobility",
+      "DOMAIN-SUFFIX,didiglobal.com": "didi-mobility",
+      "DOMAIN-SUFFIX,didimobility.co.jp": "didi-mobility",
+      "DOMAIN-SUFFIX,didistatic.com": "didi-mobility",
+      "DOMAIN-SUFFIX,diditaxi.com.cn": "didi-mobility",
+      "DOMAIN-SUFFIX,dlnel.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,dlnel.org": "baidu-shared-services",
+      "DOMAIN-SUFFIX,docer.com": "wps-office",
+      "DOMAIN-SUFFIX,douyu.com": "douyu-live",
+      "DOMAIN-SUFFIX,douyu.tv": "douyu-live",
+      "DOMAIN-SUFFIX,douyucdn.cn": "douyu-live",
+      "DOMAIN-SUFFIX,douyucdn2.cn": "douyu-live",
+      "DOMAIN-SUFFIX,douyuscdn.com": "douyu-live",
+      "DOMAIN-SUFFIX,douyutv.com": "douyu-live",
+      "DOMAIN-SUFFIX,dpfile.com": "meituan-services",
+      "DOMAIN-SUFFIX,drivergenius.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,duapp.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,duapp.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,duba.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,duba.net": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,duokan.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,duokanbox.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,duurl.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,dwz.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,easebar.com": "netease-international-games",
+      "DOMAIN-SUFFIX,edgesrv.com": "douyu-live",
+      "DOMAIN-SUFFIX,feishu.cn": "feishu-mainland",
+      "DOMAIN-SUFFIX,feishucdn.com": "feishu-mainland",
+      "DOMAIN-SUFFIX,foxmail.com": "tencent-shared-services",
+      "DOMAIN-SUFFIX,gneec.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,gneec.com.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,gneec3.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,gneec4.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,gneec7.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,gtimg.com": "tencent-shared-services",
+      "DOMAIN-SUFFIX,hao123.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,hao123img.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,hao222.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,haokan.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,haowu.link": "netease-shared-services",
+      "DOMAIN-SUFFIX,harmonyos.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hc-cdn.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hc-cdn.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hiascend.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hiascend.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hiclc.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hicloud.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hikunpeng.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hisilicon.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hisilicon.com.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huawei.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huawei.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huawei.com.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweiacad.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloud-dns.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloud-dns.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloud-dns.net": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloud-dns.org": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloud.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloud.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudapis.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudapis.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudlive.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudsite.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudsite.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudwaf.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweicloudwaf.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweiief.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweiief.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweisafedns.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweisafedns.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweisafehub.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweisre.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweisre.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweistatic.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweiyun.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huaweiyun.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,huya.com": "huya-live",
+      "DOMAIN-SUFFIX,hwad.net": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwccpc.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwccpc.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds-dns.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds-dns.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds-dns.net": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds.mobi": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwclouds.org.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwcloudsite.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwcloudsite.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwcloudvis.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwcloudvis.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwht.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwocloud.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,hwtrip.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,iciba.com": "wps-office",
+      "DOMAIN-SUFFIX,icourse163.org": "netease-shared-services",
+      "DOMAIN-SUFFIX,ijinshan.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,imc-oneaccess.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,imcapptest.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,jomocdn.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,jomocdn.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,jomodns.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,jomodns.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,jomodns.net": "baidu-shared-services",
+      "DOMAIN-SUFFIX,kada.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,kcdnvip.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,kdocs.cn": "wps-office",
+      "DOMAIN-SUFFIX,kimg.cn": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,kingsoft-office-service.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,kingsoft.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ks-cdn.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ks-cdn1.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ks-live.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ksmobile.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ksord.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ksosoft.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ksyun.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ksyuncdn.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ksyungslb.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,larksuite.com": "lark-international",
+      "DOMAIN-SUFFIX,larksuitecdn.com": "lark-international",
+      "DOMAIN-SUFFIX,lf126.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,lf127.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,liebao.cn": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,livehwc3.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,lofter.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,maoyan.com": "meituan-services",
+      "DOMAIN-SUFFIX,meituan.com": "meituan-services",
+      "DOMAIN-SUFFIX,meituan.net": "meituan-services",
+      "DOMAIN-SUFFIX,mgslb.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mi-dun.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mi-idc.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mi-img.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mi.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mieco.net": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mifile.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,migames.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mijia.tech": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mindspore.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,mioffice.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,miot-spec.org": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mipay.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,mipcdn.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,mitvos.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,miui.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,msstatic.com": "huya-live",
+      "DOMAIN-SUFFIX,mtyun.com": "meituan-services",
+      "DOMAIN-SUFFIX,myhuaweicloud.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhuaweicloud.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwcdn.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwcdn.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwcloudlive.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwclouds.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwclouds.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwclouds.com.cn": "huawei-shared-services",
+      "DOMAIN-SUFFIX,myhwclouds.net": "huawei-shared-services",
+      "DOMAIN-SUFFIX,nease.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,neixin.cn": "meituan-services",
+      "DOMAIN-SUFFIX,netease-inc.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,netease.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,netease.im": "netease-shared-services",
+      "DOMAIN-SUFFIX,netstatic.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,nuomi.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,owsgo.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,papocket.com": "wps-office",
+      "DOMAIN-SUFFIX,powerapp.io": "huawei-shared-services",
+      "DOMAIN-SUFFIX,qiyukf.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,qiyukf.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,qq.com": "tencent-shared-services",
+      "DOMAIN-SUFFIX,qqmail.com": "tencent-shared-services",
+      "DOMAIN-SUFFIX,quyaoya.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,qwps.cn": "wps-office",
+      "DOMAIN-SUFFIX,qzone.com": "tencent-shared-services",
+      "DOMAIN-SUFFIX,saasops.tech": "huawei-shared-services",
+      "DOMAIN-SUFFIX,sankuai.com": "meituan-services",
+      "DOMAIN-SUFFIX,seasungames.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,shifen.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,smartapps.cn": "baidu-shared-services",
+      "DOMAIN-SUFFIX,snssdk.com": "bytedance-shared-services",
+      "DOMAIN-SUFFIX,static163.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,teleows.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,tencent.com": "tencent-shared-services",
+      "DOMAIN-SUFFIX,testplus.cn": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,tieba.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,tiebaimg.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,udache.com": "didi-mobility",
+      "DOMAIN-SUFFIX,vmall.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,vmallres.com": "huawei-shared-services",
+      "DOMAIN-SUFFIX,wali.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,wps.cn": "wps-office",
+      "DOMAIN-SUFFIX,wps.com": "wps-office",
+      "DOMAIN-SUFFIX,wpscdn.cn": "wps-office",
+      "DOMAIN-SUFFIX,wpscdn.com": "wps-office",
+      "DOMAIN-SUFFIX,wpsmail.net": "wps-office",
+      "DOMAIN-SUFFIX,wpspdf.cn": "wps-office",
+      "DOMAIN-SUFFIX,xianfae.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,xiaoaiassist.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaodutv.com": "baidu-shared-services",
+      "DOMAIN-SUFFIX,xiaojukeji.com": "didi-mobility",
+      "DOMAIN-SUFFIX,xiaomi.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomi.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomi.net": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomicp.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomidns.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomidns.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomidns.com.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomidns.net": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiev.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiinc.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiinc.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiinc.com.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiinc.net": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomimobile.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaominr.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiprint.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomisa.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomisa.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomisa.net": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomisa.org": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiwear.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomixiaoai.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xiaomiyoupin.com": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,xishanju.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,xoyo.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,xoyocdn.com": "kingsoft-shared-services",
+      "DOMAIN-SUFFIX,ydstatic.com": "youdao-products",
+      "DOMAIN-SUFFIX,yeah.net": "netease-shared-services",
+      "DOMAIN-SUFFIX,youdao.com": "youdao-products",
+      "DOMAIN-SUFFIX,youpin.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,youpin.com.cn": "xiaomi-shared-services",
+      "DOMAIN-SUFFIX,yunxindns.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,yunxinfw.com": "netease-shared-services",
+      "DOMAIN-SUFFIX,zhuanzfx.com": "netease-shared-services",
+      "DOMAIN,hima.auto": "huawei-shared-services",
+      "DOMAIN,www.hima.auto": "huawei-shared-services",
       "DOMAIN-SUFFIX,bookbl.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,cnki.net": "overseas-sites-extra",
       "DOMAIN-SUFFIX,cqvip.com": "overseas-sites-extra",
@@ -48,7 +507,7 @@
       "DOMAIN-SUFFIX,qq.cn.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,apache.org": "overseas-sites-extra",
       "DOMAIN-SUFFIX,bet365.com": "overseas-sites-extra",
-      "DOMAIN-SUFFIX,d4z1onkegyrs5.cloudfront.net": "overseas-sites-extra",
+      "DOMAIN-SUFFIX,d4z1onkegyrs5.cloudfront.net": "amazon-shared-services",
       "DOMAIN-SUFFIX,fallenark.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,infoq.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,ip138.com": "overseas-sites-extra",
@@ -187,6 +646,20 @@
       "DOMAIN-SUFFIX,zhiziyun.com": "general-ad-and-tracking"
     },
     "extended-ad-and-tracking": {
+      "DOMAIN-SUFFIX,events.bsky.app": "bluesky-social",
+      "DOMAIN,bee.tc.easebar.com": "netease-international-games",
+      "DOMAIN-SUFFIX,t2.hulu.com": "hulu-streaming",
+      "DOMAIN-SUFFIX,vortex.hulu.com": "hulu-streaming",
+      "DOMAIN-SUFFIX,metric.huya.com": "huya-live",
+      "DOMAIN-SUFFIX,statwup.huya.com": "huya-live",
+      "DOMAIN-SUFFIX,ylog.huya.com": "huya-live",
+      "DOMAIN,analytics.pointdrive.linkedin.com": "linkedin-network",
+      "DOMAIN-SUFFIX,analytics.livestream.com": "vimeo-video",
+      "DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com": "samsung-mainland",
+      "DOMAIN-SUFFIX,telemetry.soundcloud.com": "soundcloud-audio",
+      "DOMAIN-SUFFIX,player-telemetry.vimeo.com": "vimeo-video",
+      "DOMAIN-SUFFIX,fresnel-events.vimeocdn.com": "vimeo-video",
+      "DOMAIN-SUFFIX,log-gateway.zoom.us": "zoom-meetings",
       "DOMAIN-SUFFIX,t.jasper.ai": "jasper-marketing-ai",
       "DOMAIN-SUFFIX,client-analytics.braintreegateway.com": "braintree-payments",
       "DOMAIN-SUFFIX,powerad.ai": "general-ad-and-tracking",
@@ -336,10 +809,10 @@
       "DOMAIN-SUFFIX,r.bbci.co.uk": "bbc-news-and-video",
       "DOMAIN-SUFFIX,mcs.tiktokv.us": "tiktok-international-video",
       "DOMAIN-SUFFIX,admicro.vn": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,bizographics.com": "linkedin-network",
       "DOMAIN-SUFFIX,gvt2.com": "google-platform-services",
       "DOMAIN-SUFFIX,adsensecustomsearchads.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,bidswitch.net": "overseas-sites-extra",
-      "DOMAIN-SUFFIX,bizographics.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,bongacams7.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,dirty.games": "overseas-sites-extra",
       "DOMAIN-SUFFIX,dobbyporn.com": "overseas-sites-extra",
@@ -361,7 +834,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 256,
+    "routine-tables": 311,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -590,15 +1063,29 @@
       "wechat-international-portal",
       "slack-workspaces",
       "reddit-community",
+      "instagram-social",
+      "whatsapp-messaging",
+      "threads-social",
+      "pinterest-social",
+      "bluesky-social",
+      "lark-international",
+      "zoom-meetings",
+      "xiaomi-international-services",
+      "meta-shared-services",
+      "linkedin-network",
       "paypal-payments",
       "stripe-payments",
       "link-payments",
       "braintree-payments",
       "venmo-payments",
       "xoom-transfers",
+      "wise-transfers",
       "binance-platform",
       "okx-platform",
       "gemini-exchange",
+      "kraken-exchange",
+      "bybit-exchange",
+      "kucoin-exchange",
       "trust-wallet",
       "hbo-streaming",
       "youtube-video-and-cdn",
@@ -611,6 +1098,9 @@
       "bilibili-international-video",
       "bbc-news-and-video",
       "iqiyi-international",
+      "soundcloud-audio",
+      "vimeo-video",
+      "hulu-streaming",
       "steam-international-platform",
       "epic-games-services",
       "playstation-network",
@@ -619,10 +1109,20 @@
       "ea-games",
       "ubisoft-connect",
       "blizzard-battlenet",
+      "netease-international-games",
+      "qualcomm-mainland",
+      "nvidia-mainland",
+      "intel-mainland",
+      "samsung-mainland",
+      "cloudflare-mainland",
+      "adobe-mainland",
+      "amazon-mainland",
       "notion-workspace",
       "figma-design",
       "trello-boards",
       "atlassian-cloud-services",
+      "proton-suite",
+      "workos-authentication",
       "google-scholar",
       "google-account-authentication",
       "google-gmail-mail",
@@ -668,6 +1168,7 @@
       "dingtalk-public",
       "douban-community",
       "weibo-social",
+      "feishu-mainland",
       "alipay-mainland-payments",
       "unionpay-mainland",
       "bilibili-mainland-video",
@@ -677,6 +1178,9 @@
       "qq-music",
       "kugou-music",
       "kuaishou-video",
+      "netease-music",
+      "douyu-live",
+      "huya-live",
       "steam-mainland-downloads",
       "mihoyo-mainland",
       "wegame-mainland",
@@ -685,7 +1189,31 @@
       "xiaohongshu-community",
       "zhihu-community",
       "railway-tickets",
-      "sina-shared-image-assets"
+      "sina-shared-image-assets",
+      "meituan-services",
+      "didi-mobility",
+      "youdao-products",
+      "aliyun-drive",
+      "wps-office",
+      "cloudflare-public-dns",
+      "digitalocean-services",
+      "vultr-services",
+      "hetzner-services",
+      "vercel-shared-services",
+      "netlify-services",
+      "heroku-services",
+      "oracle-shared-services",
+      "adobe-shared-services",
+      "cloudflare-shared-services",
+      "amazon-shared-services",
+      "netease-shared-services",
+      "alibaba-shared-services",
+      "tencent-shared-services",
+      "bytedance-shared-services",
+      "baidu-shared-services",
+      "huawei-shared-services",
+      "xiaomi-shared-services",
+      "kingsoft-shared-services"
     ],
     "official-checks": {
       "network-sign-in-and-probes": 2,
@@ -744,6 +1272,7 @@
       "prime-video-streaming": 5,
       "tiktok-international-video": 1,
       "ea-games": 1,
+      "workos-authentication": 1,
       "google-platform-services": 1,
       "microsoft-vscode": 1,
       "microsoft-account-authentication": 12,
@@ -751,6 +1280,7 @@
       "tuna-mirrors": 2,
       "wechat-shared-and-mainland": 6,
       "youku-video": 1,
+      "netease-music": 1,
       "steam-mainland-downloads": 5
     },
     "automatic-discovery": [
@@ -1584,11 +2114,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 1,
-      "fallback-scopes": 0,
+      "fallback-scopes": 1,
       "privacy-scopes": 0,
       "shared-scopes": 1,
       "declared-exclusions": 0,
-      "outside-selection": 1,
+      "outside-selection": 0,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list": {
@@ -2766,11 +3296,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 3,
-      "fallback-scopes": 2,
+      "fallback-scopes": 3,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
-      "outside-selection": 1,
+      "outside-selection": 0,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list": {
@@ -3131,6 +3661,270 @@
       "outside-selection": 4,
       "other-lines": 0
     },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list": {
+      "state": "current",
+      "products": [
+        "instagram-social"
+      ],
+      "filters": {
+        "instagram-social": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 74,
+      "selected-scopes": 74,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 74,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list": {
+      "state": "current",
+      "products": [
+        "whatsapp-messaging"
+      ],
+      "filters": {
+        "whatsapp-messaging": [
+          {
+            "roots": [
+              "whatsapp.com",
+              "whatsapp.net",
+              "wa.me"
+            ],
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 11,
+      "selected-scopes": 3,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 3,
+      "fallback-scopes": 8,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list": {
+      "state": "current",
+      "products": [
+        "threads-social"
+      ],
+      "filters": {
+        "threads-social": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list": {
+      "state": "current",
+      "products": [
+        "pinterest-social"
+      ],
+      "filters": {
+        "pinterest-social": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 52,
+      "selected-scopes": 52,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 50,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 2,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list": {
+      "state": "current",
+      "products": [
+        "bluesky-social"
+      ],
+      "filters": {
+        "bluesky-social": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 3,
+      "selected-scopes": 3,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 3,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list": {
+      "state": "current",
+      "products": [
+        "lark-international"
+      ],
+      "filters": {
+        "lark-international": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 31,
+      "selected-scopes": 31,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 31,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list": {
+      "state": "current",
+      "products": [
+        "zoom-meetings"
+      ],
+      "filters": {
+        "zoom-meetings": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 3,
+      "selected-scopes": 3,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 3,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list": {
+      "state": "current",
+      "products": [
+        "xiaomi-international-services"
+      ],
+      "filters": {
+        "xiaomi-international-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/facebook.list": {
+      "state": "current",
+      "products": [
+        "meta-shared-services"
+      ],
+      "filters": {
+        "meta-shared-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 397,
+      "selected-scopes": 397,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 397,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list": {
+      "state": "current",
+      "products": [
+        "linkedin-network"
+      ],
+      "filters": {
+        "linkedin-network": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 12,
+      "selected-scopes": 12,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 12,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/PayPal.lsr": {
       "state": "current",
       "products": [
@@ -3206,6 +4000,32 @@
       "outside-selection": 4,
       "other-lines": 0
     },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list": {
+      "state": "current",
+      "products": [
+        "wise-transfers"
+      ],
+      "filters": {
+        "wise-transfers": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/binance.list": {
       "state": "current",
       "products": [
@@ -3270,6 +4090,84 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 4,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list": {
+      "state": "current",
+      "products": [
+        "kraken-exchange"
+      ],
+      "filters": {
+        "kraken-exchange": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list": {
+      "state": "current",
+      "products": [
+        "bybit-exchange"
+      ],
+      "filters": {
+        "bybit-exchange": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 16,
+      "selected-scopes": 16,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 16,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list": {
+      "state": "current",
+      "products": [
+        "kucoin-exchange"
+      ],
+      "filters": {
+        "kucoin-exchange": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list": {
@@ -3406,11 +4304,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 10,
-      "fallback-scopes": 1,
+      "fallback-scopes": 2,
       "privacy-scopes": 0,
       "shared-scopes": 1,
       "declared-exclusions": 0,
-      "outside-selection": 16,
+      "outside-selection": 15,
       "other-lines": 470
     },
     "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list": {
@@ -3430,17 +4328,19 @@
           }
         ]
       },
-      "other-products": {},
+      "other-products": {
+        "hulu-streaming": 48
+      },
       "domain-scopes": 248,
       "selected-scopes": 3,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 3,
-      "fallback-scopes": 31,
+      "fallback-scopes": 25,
       "privacy-scopes": 1,
       "shared-scopes": 3,
       "declared-exclusions": 0,
-      "outside-selection": 210,
+      "outside-selection": 168,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AmazonPrimeVideo/AmazonPrimeVideo.list": {
@@ -3469,13 +4369,15 @@
           }
         ]
       },
-      "other-products": {},
+      "other-products": {
+        "amazon-mainland": 2
+      },
       "domain-scopes": 24,
       "selected-scopes": 11,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 11,
-      "fallback-scopes": 12,
+      "fallback-scopes": 10,
       "privacy-scopes": 0,
       "shared-scopes": 1,
       "declared-exclusions": 0,
@@ -3665,22 +4567,31 @@
         "alipay-mainland-payments": 2,
         "railway-tickets": 1,
         "zhihu-community": 2,
+        "meituan-services": 8,
         "kuaishou-video": 2,
+        "netease-music": 2,
         "unionpay-mainland": 1,
+        "didi-mobility": 5,
         "douban-community": 2,
+        "wps-office": 6,
         "dingtalk-public": 2,
         "weibo-social": 3,
         "sina-shared-image-assets": 2,
+        "aliyun-drive": 3,
         "mihoyo-mainland": 4,
         "coding-platform": 1,
+        "douyu-live": 3,
+        "feishu-mainland": 2,
         "gitcode-hosting": 1,
         "gitee-hosting": 1,
+        "huya-live": 2,
         "iqiyi-international": 1,
         "iqiyi-mainland": 4,
         "kugou-music": 1,
         "npmmirror-registry": 1,
         "youku-video": 3,
         "wegame-mainland": 1,
+        "youdao-products": 2,
         "wechat-shared-and-mainland": 14,
         "wechat-international-portal": 4,
         "xiaohongshu-community": 3
@@ -3690,11 +4601,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 31,
-      "fallback-scopes": 2436,
+      "fallback-scopes": 2414,
       "privacy-scopes": 16,
       "shared-scopes": 7,
       "declared-exclusions": 0,
-      "outside-selection": 624,
+      "outside-selection": 613,
       "other-lines": 69
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list": {
@@ -3785,21 +4696,101 @@
         "disney-plus-streaming": 3,
         "twitch-live-video": 6,
         "hbo-streaming": 4,
+        "hulu-streaming": 5,
         "tiktok-international-video": 6,
         "netflix-video-and-delivery": 9,
-        "spotify-audio": 6
+        "spotify-audio": 6,
+        "soundcloud-audio": 1
       },
       "domain-scopes": 258,
       "selected-scopes": 4,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 178,
+      "fallback-scopes": 172,
       "privacy-scopes": 1,
       "shared-scopes": 6,
       "declared-exclusions": 0,
       "outside-selection": 0,
       "other-lines": 63
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list": {
+      "state": "current",
+      "products": [
+        "soundcloud-audio"
+      ],
+      "filters": {
+        "soundcloud-audio": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 3,
+      "selected-scopes": 3,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 3,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list": {
+      "state": "current",
+      "products": [
+        "vimeo-video"
+      ],
+      "filters": {
+        "vimeo-video": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 16,
+      "selected-scopes": 16,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 16,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 1
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list": {
+      "state": "current",
+      "products": [
+        "hulu-streaming"
+      ],
+      "filters": {
+        "hulu-streaming": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 48,
+      "selected-scopes": 48,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 48,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr": {
       "state": "current",
@@ -3996,11 +4987,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 6,
-      "fallback-scopes": 1,
+      "fallback-scopes": 2,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
-      "outside-selection": 158,
+      "outside-selection": 157,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ubisoft.list": {
@@ -4026,11 +5017,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 1,
+      "fallback-scopes": 3,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
-      "outside-selection": 26,
+      "outside-selection": 24,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/blizzard.list": {
@@ -4061,6 +5052,214 @@
       "declared-exclusions": 0,
       "outside-selection": 23,
       "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list": {
+      "state": "current",
+      "products": [
+        "netease-international-games"
+      ],
+      "filters": {
+        "netease-international-games": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list": {
+      "state": "current",
+      "products": [
+        "qualcomm-mainland"
+      ],
+      "filters": {
+        "qualcomm-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 6,
+      "selected-scopes": 6,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 5,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 1,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list": {
+      "state": "current",
+      "products": [
+        "nvidia-mainland"
+      ],
+      "filters": {
+        "nvidia-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 4,
+      "selected-scopes": 4,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 4,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list": {
+      "state": "current",
+      "products": [
+        "intel-mainland"
+      ],
+      "filters": {
+        "intel-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list": {
+      "state": "current",
+      "products": [
+        "samsung-mainland"
+      ],
+      "filters": {
+        "samsung-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 4,
+      "selected-scopes": 4,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 4,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list": {
+      "state": "current",
+      "products": [
+        "cloudflare-mainland"
+      ],
+      "filters": {
+        "cloudflare-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 19,
+      "selected-scopes": 19,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 19,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list": {
+      "state": "current",
+      "products": [
+        "adobe-mainland"
+      ],
+      "filters": {
+        "adobe-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list": {
+      "state": "current",
+      "products": [
+        "amazon-mainland"
+      ],
+      "filters": {
+        "amazon-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 55,
+      "selected-scopes": 55,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 55,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 2
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list": {
       "state": "current",
@@ -4114,6 +5313,32 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list": {
+      "state": "current",
+      "products": [
+        "proton-suite"
+      ],
+      "filters": {
+        "proton-suite": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 9,
+      "selected-scopes": 9,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 9,
       "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 0,
@@ -4262,11 +5487,11 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 9,
-      "fallback-scopes": 579,
+      "fallback-scopes": 584,
       "privacy-scopes": 1,
       "shared-scopes": 29,
       "declared-exclusions": 0,
-      "outside-selection": 87,
+      "outside-selection": 82,
       "other-lines": 3
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/OneDrive.lsr": {
@@ -4430,22 +5655,32 @@
         ]
       },
       "other-products": {
+        "netease-music": 8,
         "tiktok-international-video": 9,
         "jingdong-shopping": 4,
+        "wps-office": 12,
+        "aliyun-drive": 4,
         "alipay-mainland-payments": 6,
         "douyin-mainland-video": 8,
         "mihoyo-mainland": 3,
         "bilibili-mainland-video": 10,
         "bilibili-international-video": 2,
         "coding-platform": 1,
+        "meituan-services": 8,
+        "didi-mobility": 11,
         "dingtalk-public": 2,
         "douban-community": 2,
         "bytedance-mainland": 1,
+        "douyu-live": 7,
+        "netease-international-games": 1,
         "epic-games-services": 2,
+        "feishu-mainland": 2,
         "kuaishou-video": 3,
         "gitee-hosting": 1,
+        "huya-live": 2,
         "iqiyi-mainland": 4,
         "kugou-music": 2,
+        "lark-international": 2,
         "bytedance-international": 2,
         "kimi-mainland": 1,
         "apple-shared-store-assets": 1,
@@ -4459,6 +5694,7 @@
         "weibo-social": 4,
         "xiaohongshu-community": 2,
         "qq-music": 1,
+        "youdao-products": 2,
         "zhihu-community": 2
       },
       "domain-scopes": 12912,
@@ -4466,17 +5702,18 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 12760,
+      "fallback-scopes": 12702,
       "privacy-scopes": 25,
       "shared-scopes": 26,
       "declared-exclusions": 0,
-      "outside-selection": 3,
+      "outside-selection": 2,
       "other-lines": 340
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list": {
       "state": "current",
       "products": [
-        "npmmirror-registry"
+        "npmmirror-registry",
+        "alibaba-shared-services"
       ],
       "filters": {
         "npmmirror-registry": [
@@ -4486,24 +5723,39 @@
             ],
             "domain-lines-only": true
           }
+        ],
+        "alibaba-shared-services": [
+          {
+            "roots": [
+              "alibaba.com",
+              "alibaba.cn",
+              "aliyun.com",
+              "aliyun.cn",
+              "alicdn.com",
+              "alibabadns.com",
+              "alipayobjects.com"
+            ],
+            "domain-lines-only": true
+          }
         ]
       },
       "other-products": {
         "youku-video": 23,
         "alipay-mainland-payments": 4,
         "taobao-and-xianyu-shopping": 24,
-        "dingtalk-public": 3
+        "dingtalk-public": 3,
+        "aliyun-drive": 5
       },
       "domain-scopes": 467,
-      "selected-scopes": 1,
+      "selected-scopes": 16,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 308,
+      "product-scopes": 13,
+      "fallback-scopes": 292,
       "privacy-scopes": 3,
       "shared-scopes": 5,
       "declared-exclusions": 0,
-      "outside-selection": 96,
+      "outside-selection": 95,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/dingtalk.list": {
@@ -4604,6 +5856,32 @@
       "shared-scopes": 4,
       "declared-exclusions": 0,
       "outside-selection": 3,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list": {
+      "state": "current",
+      "products": [
+        "feishu-mainland"
+      ],
+      "filters": {
+        "feishu-mainland": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 43,
+      "selected-scopes": 43,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 43,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
       "other-lines": 0
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AliPay/AliPay.list": {
@@ -4775,6 +6053,92 @@
       "outside-selection": 11,
       "other-lines": 0
     },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/NetEaseMusic/NetEaseMusic.list": {
+      "state": "current",
+      "products": [
+        "netease-music"
+      ],
+      "filters": {
+        "netease-music": [
+          {
+            "roots": [
+              "music.163.com",
+              "music.126.net",
+              "music.126.com",
+              "music.163.com.163jiasu.com"
+            ],
+            "exact": [
+              "netease.ugcvideoss.ourdvs.com"
+            ],
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 10,
+      "selected-scopes": 5,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 5,
+      "fallback-scopes": 5,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 20
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list": {
+      "state": "current",
+      "products": [
+        "douyu-live"
+      ],
+      "filters": {
+        "douyu-live": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 7,
+      "selected-scopes": 7,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 7,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list": {
+      "state": "current",
+      "products": [
+        "huya-live"
+      ],
+      "filters": {
+        "huya-live": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 2,
+      "selected-scopes": 2,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-games.list": {
       "state": "current",
       "products": [
@@ -4861,6 +6225,641 @@
       "declared-exclusions": 0,
       "outside-selection": 1,
       "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list": {
+      "state": "current",
+      "products": [
+        "meituan-services"
+      ],
+      "filters": {
+        "meituan-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 19,
+      "selected-scopes": 19,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 19,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list": {
+      "state": "current",
+      "products": [
+        "didi-mobility"
+      ],
+      "filters": {
+        "didi-mobility": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 12,
+      "selected-scopes": 12,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 12,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list": {
+      "state": "current",
+      "products": [
+        "youdao-products",
+        "netease-shared-services"
+      ],
+      "filters": {
+        "youdao-products": [
+          {
+            "roots": [
+              "youdao.com",
+              "ydstatic.com",
+              "ydshengxue.com"
+            ],
+            "domain-lines-only": true
+          }
+        ],
+        "netease-shared-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "netease-international-games": 1,
+        "netease-music": 5
+      },
+      "domain-scopes": 55,
+      "selected-scopes": 55,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 48,
+      "fallback-scopes": 0,
+      "privacy-scopes": 1,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list": {
+      "state": "current",
+      "products": [
+        "aliyun-drive"
+      ],
+      "filters": {
+        "aliyun-drive": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 6,
+      "selected-scopes": 6,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 6,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list": {
+      "state": "current",
+      "products": [
+        "wps-office"
+      ],
+      "filters": {
+        "wps-office": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 13,
+      "selected-scopes": 13,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 13,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list": {
+      "state": "current",
+      "products": [
+        "cloudflare-public-dns",
+        "cloudflare-shared-services"
+      ],
+      "filters": {
+        "cloudflare-public-dns": [
+          {
+            "roots": [
+              "cloudflare-dns.com",
+              "one.one.one"
+            ],
+            "domain-lines-only": true
+          }
+        ],
+        "cloudflare-shared-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "network-sign-in-and-probes": 3,
+        "cloudflare-mainland": 19
+      },
+      "domain-scopes": 76,
+      "selected-scopes": 76,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 45,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 9,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/digitalocean.list": {
+      "state": "current",
+      "products": [
+        "digitalocean-services"
+      ],
+      "filters": {
+        "digitalocean-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 6,
+      "selected-scopes": 6,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 6,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vultr.list": {
+      "state": "current",
+      "products": [
+        "vultr-services"
+      ],
+      "filters": {
+        "vultr-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 1,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hetzner.list": {
+      "state": "current",
+      "products": [
+        "hetzner-services"
+      ],
+      "filters": {
+        "hetzner-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 15,
+      "selected-scopes": 15,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 15,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vercel.list": {
+      "state": "current",
+      "products": [
+        "vercel-shared-services"
+      ],
+      "filters": {
+        "vercel-shared-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 27,
+      "selected-scopes": 27,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 24,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 3,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netlify.list": {
+      "state": "current",
+      "products": [
+        "netlify-services"
+      ],
+      "filters": {
+        "netlify-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 10,
+      "selected-scopes": 10,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 9,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 1,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/heroku.list": {
+      "state": "current",
+      "products": [
+        "heroku-services"
+      ],
+      "filters": {
+        "heroku-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 12,
+      "selected-scopes": 12,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 11,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 1,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/oracle.list": {
+      "state": "current",
+      "products": [
+        "oracle-shared-services"
+      ],
+      "filters": {
+        "oracle-shared-services": [
+          {
+            "exclude": [
+              "oracle",
+              "java"
+            ],
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 19,
+      "selected-scopes": 17,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 17,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 2,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list": {
+      "state": "current",
+      "products": [
+        "adobe-shared-services"
+      ],
+      "filters": {
+        "adobe-shared-services": [
+          {
+            "exclude": [
+              "crl.versign.net"
+            ],
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "adobe-mainland": 1
+      },
+      "domain-scopes": 260,
+      "selected-scopes": 259,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 254,
+      "fallback-scopes": 0,
+      "privacy-scopes": 2,
+      "shared-scopes": 2,
+      "declared-exclusions": 1,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list": {
+      "state": "current",
+      "products": [
+        "amazon-shared-services"
+      ],
+      "filters": {
+        "amazon-shared-services": [
+          {
+            "exclude": [
+              "amazon",
+              "xn--cckwcxetd",
+              "xn--jlq480n2rg",
+              "yamaxun",
+              "zappos",
+              "kindle",
+              "imdb",
+              "aws"
+            ],
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "prime-video-streaming": 9,
+        "amazon-mainland": 55
+      },
+      "domain-scopes": 247,
+      "selected-scopes": 239,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 167,
+      "fallback-scopes": 0,
+      "privacy-scopes": 2,
+      "shared-scopes": 6,
+      "declared-exclusions": 8,
+      "outside-selection": 0,
+      "other-lines": 3
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list": {
+      "state": "current",
+      "products": [
+        "tencent-shared-services"
+      ],
+      "filters": {
+        "tencent-shared-services": [
+          {
+            "roots": [
+              "qq.com",
+              "tencent.com",
+              "gtimg.com",
+              "qpic.cn",
+              "qlogo.cn",
+              "qqmail.com",
+              "foxmail.com",
+              "qzone.com"
+            ],
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "wechat-shared-and-mainland": 9,
+        "wechat-international-portal": 1,
+        "coding-platform": 1,
+        "wegame-mainland": 2,
+        "qq-music": 5,
+        "kugou-music": 4
+      },
+      "domain-scopes": 689,
+      "selected-scopes": 59,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 50,
+      "fallback-scopes": 552,
+      "privacy-scopes": 4,
+      "shared-scopes": 2,
+      "declared-exclusions": 0,
+      "outside-selection": 59,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance.list": {
+      "state": "current",
+      "products": [
+        "bytedance-shared-services"
+      ],
+      "filters": {
+        "bytedance-shared-services": [
+          {
+            "roots": [
+              "bytedance.com",
+              "bytecdn.cn",
+              "bytecdn.com",
+              "bytetcc.com",
+              "bytedns.net",
+              "snssdk.com"
+            ],
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "douyin-mainland-video": 8,
+        "bytedance-mainland": 2,
+        "feishu-mainland": 43,
+        "lark-international": 29,
+        "bytedance-international": 7,
+        "tiktok-international-video": 12
+      },
+      "domain-scopes": 961,
+      "selected-scopes": 14,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 14,
+      "fallback-scopes": 272,
+      "privacy-scopes": 4,
+      "shared-scopes": 6,
+      "declared-exclusions": 0,
+      "outside-selection": 564,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/baidu.list": {
+      "state": "current",
+      "products": [
+        "baidu-shared-services"
+      ],
+      "filters": {
+        "baidu-shared-services": [
+          {
+            "exclude": [
+              "baidu"
+            ],
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 132,
+      "selected-scopes": 131,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 126,
+      "fallback-scopes": 0,
+      "privacy-scopes": 5,
+      "shared-scopes": 0,
+      "declared-exclusions": 1,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huawei.list": {
+      "state": "current",
+      "products": [
+        "huawei-shared-services"
+      ],
+      "filters": {
+        "huawei-shared-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {},
+      "domain-scopes": 345,
+      "selected-scopes": 345,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 345,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list": {
+      "state": "current",
+      "products": [
+        "xiaomi-shared-services"
+      ],
+      "filters": {
+        "xiaomi-shared-services": [
+          {
+            "exclude": [
+              "miwifi.com"
+            ],
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "xiaomi-international-services": 2
+      },
+      "domain-scopes": 72,
+      "selected-scopes": 71,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 67,
+      "fallback-scopes": 0,
+      "privacy-scopes": 2,
+      "shared-scopes": 0,
+      "declared-exclusions": 1,
+      "outside-selection": 0,
+      "other-lines": 0
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list": {
+      "state": "current",
+      "products": [
+        "kingsoft-shared-services"
+      ],
+      "filters": {
+        "kingsoft-shared-services": [
+          {
+            "all-domains": true,
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "wps-office": 13
+      },
+      "domain-scopes": 45,
+      "selected-scopes": 45,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 32,
+      "fallback-scopes": 0,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
+      "other-lines": 0
     }
   },
   "projection-reassignments": {},
@@ -4932,8 +6931,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
     ],
     "apple-developer-downloads": [
@@ -5721,8 +7720,8 @@
     "unavailable-lookups": 0,
     "partial-lookups": 2,
     "incomplete-hosts": [
-      "iosapps.itunes.apple.com",
-      "oscdn.apple.com"
+      "appldnld.apple.com",
+      "swcdn.apple.com"
     ]
   },
   "source-mirrors-used": {
@@ -9950,7 +11949,62 @@
       6320,
       6330,
       6340,
-      6350
+      6350,
+      4200,
+      4210,
+      4220,
+      4230,
+      4240,
+      4250,
+      4260,
+      3380,
+      3390,
+      3400,
+      3410,
+      3420,
+      3430,
+      3440,
+      3480,
+      3490,
+      3560,
+      3630,
+      3640,
+      3650,
+      3930,
+      3940,
+      3950,
+      4180,
+      4335,
+      5540,
+      5980,
+      5990,
+      6360,
+      6370,
+      6380,
+      6390,
+      6400,
+      6600,
+      6610,
+      6620,
+      6630,
+      6640,
+      6650,
+      6660,
+      6670,
+      6680,
+      6690,
+      6800,
+      6810,
+      6820,
+      6830,
+      6840,
+      6850,
+      6860,
+      6870,
+      4340,
+      6590,
+      5970,
+      3450
     ],
     "已核清单": [
       210,
@@ -9972,7 +12026,12 @@
       6750,
       7020,
       2005,
-      2350
+      2350,
+      4090,
+      5155,
+      5890,
+      6090,
+      4190
     ],
     "按用途与来源家族自动补全": [
       1010,
@@ -10280,6 +12339,293 @@
       "domain-scopes": 187,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "qualcomm-mainland-source": {
+      "state": "current",
+      "domain-scopes": 6,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "nvidia-mainland-source": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "intel-mainland-source": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "samsung-mainland-source": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "cloudflare-mainland-source": {
+      "state": "current",
+      "domain-scopes": 19,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "adobe-mainland-source": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "amazon-mainland-source": {
+      "state": "current",
+      "domain-scopes": 55,
+      "outside-scope": 0,
+      "other-rules": 2
+    },
+    "instagram-social-source": {
+      "state": "current",
+      "domain-scopes": 74,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "threads-social-source": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "pinterest-social-source": {
+      "state": "current",
+      "domain-scopes": 52,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "bluesky-social-source": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "lark-international-source": {
+      "state": "current",
+      "domain-scopes": 31,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "zoom-meetings-source": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "meta-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 397,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "linkedin-network-source": {
+      "state": "current",
+      "domain-scopes": 12,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wise-transfers-source": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "kraken-exchange-source": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "bybit-exchange-source": {
+      "state": "current",
+      "domain-scopes": 16,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "kucoin-exchange-source": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "soundcloud-audio-source": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "vimeo-video-source": {
+      "state": "current",
+      "domain-scopes": 16,
+      "outside-scope": 0,
+      "other-rules": 1
+    },
+    "hulu-streaming-source": {
+      "state": "current",
+      "domain-scopes": 48,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "netease-international-games-source": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "proton-suite-source": {
+      "state": "current",
+      "domain-scopes": 9,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "feishu-mainland-source": {
+      "state": "current",
+      "domain-scopes": 43,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "douyu-live-source": {
+      "state": "current",
+      "domain-scopes": 7,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "huya-live-source": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "meituan-services-source": {
+      "state": "current",
+      "domain-scopes": 19,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "didi-mobility-source": {
+      "state": "current",
+      "domain-scopes": 12,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "aliyun-drive-source": {
+      "state": "current",
+      "domain-scopes": 6,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wps-office-source": {
+      "state": "current",
+      "domain-scopes": 13,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "digitalocean-services-source": {
+      "state": "current",
+      "domain-scopes": 6,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "vultr-services-source": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "hetzner-services-source": {
+      "state": "current",
+      "domain-scopes": 15,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "vercel-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 27,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "netlify-services-source": {
+      "state": "current",
+      "domain-scopes": 10,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "heroku-services-source": {
+      "state": "current",
+      "domain-scopes": 12,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "oracle-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 19,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "reviewed-outside": 2
+    },
+    "adobe-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 260,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "reviewed-outside": 1
+    },
+    "cloudflare-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 76,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "amazon-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 247,
+      "outside-scope": 0,
+      "other-rules": 3,
+      "reviewed-outside": 8
+    },
+    "netease-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 55,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "baidu-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 132,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "reviewed-outside": 1
+    },
+    "huawei-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 345,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "xiaomi-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 72,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "reviewed-outside": 1
+    },
+    "kingsoft-shared-services-source": {
+      "state": "current",
+      "domain-scopes": 45,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "xiaomi-international-services-source": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "functional-hosts": [
@@ -10583,6 +12929,7 @@
     "cdn.openaimerge.com",
     "cdn.platform.openai.com",
     "cdn.prod.atlassian-dev-us-gov-mod.net",
+    "cdn.workos.com",
     "cerebras.ai",
     "certs-lb.apple.com.akadns.net",
     "certs.apple.com",
@@ -10630,7 +12977,9 @@
     "fba.apple.com",
     "files.pythonhosted.org",
     "fireworks.ai",
+    "forwarder.workos.com",
     "frameworks.jetbrains.com",
+    "frontend-apps-multi-region.workos.com",
     "gallery.azure.com",
     "gallery.chinacloudapi.cn",
     "gallery.usgovcloudapi.net",
@@ -10663,6 +13012,7 @@
     "huggingface.co",
     "identity.apple.com",
     "identity.ess.apple.com",
+    "images.workoscdn.com",
     "imap.gmail.com",
     "img.notionusercontent.com",
     "inference.baseten.co",
@@ -10951,6 +13301,7 @@
     "secure.notion-static.com",
     "server.codeium.com",
     "setup.auth.openai.com",
+    "setup.workos.com",
     "signal.art",
     "signal.group",
     "signal.link",
@@ -10994,6 +13345,7 @@
     "vscode.dev",
     "vscode.download.prss.microsoft.com",
     "vsmarketplacebadges.dev",
+    "workos.imgix.net",
     "workspace.turns.goog",
     "wss-backup.slack.com",
     "wss-mobile.slack.com",
@@ -11044,7 +13396,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -11085,7 +13437,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "ollama-cloud": {
@@ -11116,7 +13468,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "stackit-model-services": {
@@ -11147,7 +13499,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "stepfun-international": {
@@ -11189,7 +13541,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "xiaomi-international": {
@@ -11232,7 +13584,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -11282,7 +13634,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -11323,7 +13675,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -11358,7 +13710,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -11590,7 +13942,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "npm-registry": {
@@ -11623,7 +13975,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11667,7 +14019,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11700,7 +14052,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -11753,7 +14105,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "braintree-payments": {
@@ -11780,7 +14132,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "notion-workspace": {
@@ -11806,7 +14158,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "google-account-authentication": {
@@ -12014,7 +14366,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -12040,7 +14392,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "google-play-services": {
@@ -12076,7 +14428,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "google-play-games": {
@@ -12104,7 +14456,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "kimi-mainland": {
@@ -12135,7 +14487,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -12174,7 +14526,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -12205,7 +14557,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -12248,7 +14600,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795351857,
+      "last-read": 1795360028,
       "state": "current"
     }
   },
@@ -12256,7 +14608,7 @@
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1157,
+  "business-domain-cases": 1216,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -12265,9 +14617,11 @@
     }
   },
   "shared-negatives": 19,
-  "changed": [],
+  "changed": [
+    "xiaomi-international-services"
+  ],
   "scope-negatives": 141,
-  "ip-cases": 37,
+  "ip-cases": 44,
   "ip-matching": {
     "local-links-and-addresses": {
       "intent": "per-rule",
@@ -12323,6 +14677,11 @@
       "intent": "allow-dns",
       "no-resolve": 0,
       "resolve-for-match": 1
+    },
+    "cloudflare-public-dns": {
+      "intent": "target-ip",
+      "no-resolve": 4,
+      "resolve-for-match": 0
     }
   },
   "rules": {
@@ -12332,7 +14691,7 @@
     "tailscale-control-and-tailnet": 3,
     "ip-egress-checks": 22,
     "apple-and-ai-privacy-exceptions": 3,
-    "general-ad-and-tracking": 6180,
+    "general-ad-and-tracking": 6179,
     "privacy-public-stun-endpoints": 2,
     "ai-overseas-all": 632,
     "claude-connections": 16,
@@ -12485,17 +14844,31 @@
     "wechat-international-portal": 4,
     "slack-workspaces": 6,
     "reddit-community": 4,
+    "instagram-social": 72,
+    "whatsapp-messaging": 3,
+    "threads-social": 2,
+    "pinterest-social": 52,
+    "bluesky-social": 3,
+    "lark-international": 31,
+    "zoom-meetings": 3,
+    "xiaomi-international-services": 2,
+    "meta-shared-services": 395,
+    "linkedin-network": 12,
     "paypal-payments": 5,
     "stripe-payments": 3,
     "link-payments": 1,
     "braintree-payments": 4,
     "venmo-payments": 1,
     "xoom-transfers": 1,
+    "wise-transfers": 2,
     "binance-platform": 6,
     "okx-platform": 6,
     "gemini-exchange": 1,
+    "kraken-exchange": 2,
+    "bybit-exchange": 16,
+    "kucoin-exchange": 2,
     "trust-wallet": 1,
-    "overseas-media-all": 84,
+    "overseas-media-all": 151,
     "hbo-streaming": 7,
     "youtube-video-and-cdn": 12,
     "netflix-video-and-delivery": 11,
@@ -12508,6 +14881,10 @@
     "bahamut-video-and-community": 5,
     "bbc-news-and-video": 3,
     "iqiyi-international": 4,
+    "soundcloud-audio": 3,
+    "vimeo-video": 16,
+    "hulu-streaming": 48,
+    "overseas-games-all": 49,
     "steam-international-platform": 12,
     "epic-games-services": 5,
     "playstation-network": 3,
@@ -12516,10 +14893,21 @@
     "ea-games": 4,
     "ubisoft-connect": 4,
     "blizzard-battlenet": 2,
+    "netease-international-games": 1,
+    "multinational-mainland-all": 90,
+    "qualcomm-mainland": 6,
+    "nvidia-mainland": 4,
+    "intel-mainland": 1,
+    "samsung-mainland": 4,
+    "cloudflare-mainland": 19,
+    "adobe-mainland": 1,
+    "amazon-mainland": 55,
     "notion-workspace": 6,
     "figma-design": 1,
     "trello-boards": 2,
     "atlassian-cloud-services": 13,
+    "proton-suite": 9,
+    "workos-authentication": 3,
     "google-all": 233,
     "google-scholar": 76,
     "google-account-authentication": 190,
@@ -12559,6 +14947,7 @@
     "lingyi-mainland": 2,
     "stepfun-mainland": 1,
     "sensetime-mainland": 1,
+    "ai-overseas-mainland-all": 1,
     "jetbrains-ai-mainland": 1,
     "modelscope-mainland": 1,
     "xiaomi-mainland-and-shared": 2,
@@ -12571,8 +14960,10 @@
     "dingtalk-public": 3,
     "douban-community": 2,
     "weibo-social": 4,
+    "feishu-mainland": 43,
     "alipay-mainland-payments": 6,
     "unionpay-mainland": 2,
+    "mainland-media-all": 48,
     "bilibili-mainland-video": 10,
     "douyin-mainland-video": 8,
     "iqiyi-mainland": 4,
@@ -12580,6 +14971,10 @@
     "qq-music": 3,
     "kugou-music": 2,
     "kuaishou-video": 3,
+    "netease-music": 5,
+    "douyu-live": 7,
+    "huya-live": 2,
+    "mainland-games-all": 14,
     "steam-mainland-downloads": 8,
     "mihoyo-mainland": 4,
     "wegame-mainland": 2,
@@ -12589,11 +14984,35 @@
     "zhihu-community": 2,
     "railway-tickets": 1,
     "sina-shared-image-assets": 2,
-    "extended-ad-and-tracking": 44492,
-    "overseas-media-extra": 181,
-    "overseas-sites-extra": 18748,
-    "mainland-routing-all": 19646,
-    "mainland-domains": 12643,
+    "meituan-services": 19,
+    "didi-mobility": 12,
+    "youdao-products": 3,
+    "aliyun-drive": 6,
+    "wps-office": 13,
+    "extended-ad-and-tracking": 44478,
+    "cloudflare-public-dns": 6,
+    "digitalocean-services": 6,
+    "vultr-services": 1,
+    "hetzner-services": 14,
+    "vercel-shared-services": 27,
+    "netlify-services": 10,
+    "heroku-services": 12,
+    "oracle-shared-services": 17,
+    "adobe-shared-services": 124,
+    "cloudflare-shared-services": 52,
+    "amazon-shared-services": 168,
+    "overseas-media-extra": 155,
+    "overseas-sites-extra": 17847,
+    "netease-shared-services": 39,
+    "alibaba-shared-services": 4,
+    "tencent-shared-services": 6,
+    "bytedance-shared-services": 6,
+    "baidu-shared-services": 80,
+    "huawei-shared-services": 302,
+    "xiaomi-shared-services": 48,
+    "kingsoft-shared-services": 32,
+    "mainland-routing-all": 19313,
+    "mainland-domains": 12310,
     "mainland-networks": 7002,
     "mainland-geoip": 1
   },

@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import json
 from loon_rules import rules, domains as domain_scope, catalog as catalog_schema
 from loon_rules.generation import contracts as endpoint_contracts, discovery, inventories as service_inventory, config_history
+from loon_rules.generation import directory as service_directory
 from loon_rules.sources.aliases import alias_patterns, cname_tenant
 from loon_rules.domains import covers
 from loon_rules.project import ROOT
@@ -49,6 +50,10 @@ def run(check=False, offline=False, adopt_ads=False):
     missing=new_outputs(paths,entries,present,known,refresh=not offline)
     if (ROOT/'docs/rules.md').read_text()!=render_index(config,entries):
         raise rules.Invalid('编号索引未更新（maintain.py --render-index）')
+    if directory:=service_directory.render(config,entries):
+        path=ROOT/'docs/services.md'
+        if not path.is_file() or path.read_text()!=directory:
+            raise rules.Invalid('厂商与产品目录未更新（maintain.py --render-index）')
     old={k:(None if k in missing else p.read_text()) for k,p in paths.items()}
     for key in components:
         rows=previous_state.get('component-rules',{}).get(key)
@@ -242,7 +247,7 @@ def run(check=False, offline=False, adopt_ads=False):
                 reassigned=transferred,
                 excluded_hosts=[host for host,owners in config.get('scope-negatives',{}).items() if k in owners],
                 official_networks=bool(e.get('cidr-source')
-                or any(r['format'] in ('labelled-networks','ip-prefix-json','section-media-networks','endpoint-network-sets')
+                or any(r['format'] in ('labelled-networks','ip-prefix-json','section-media-networks','endpoint-network-sets','service-address-table')
                        for r in e.get('extract',()))))
         data[k]=stable_order(candidate,previous)
         lint_content(k,data[k],e.get('allowed-shared',()))

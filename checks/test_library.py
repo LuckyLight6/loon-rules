@@ -177,7 +177,7 @@ class LibraryChecks(unittest.TestCase):
             'myip.ipip.net':'ip-egress-checks',
             'www.ip138.com':'overseas-sites-extra',
             'www.ipip.net':'mainland-domains',
-            'www.baidu.com':'mainland-domains',
+            'www.baidu.com':'baidu-shared-services',
             'chatgpt.com':'chatgpt-connections',
         }.items():
             with self.subTest(host=host):
@@ -210,8 +210,8 @@ class LibraryChecks(unittest.TestCase):
             'openapi.liblibai.cloud':'liblib-mainland',
             'qwen.ai':'qwen-international',
             'z.ai':'zhipu-international',
-            'hima.auto':'mainland-domains',
-            'www.hima.auto':'mainland-domains',
+            'hima.auto':'huawei-shared-services',
+            'www.hima.auto':'huawei-shared-services',
             'steamcommunity-a.akamaihd.net':'steam-international-platform',
             'steambroadcast.akamaized.net':'steam-international-platform',
             'dl.steam.clngaa.com':'steam-mainland-downloads',
@@ -245,9 +245,10 @@ class LibraryChecks(unittest.TestCase):
         data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
               for k in routine}
         media,web,mainland=routine
-        self.assertEqual(ordered_route('hulu.com',routine,data),media)
+        self.assertIsNone(ordered_route('hulu.com',routine,data))
+        self.assertEqual(ordered_route('dazn.com',routine,data),media)
         self.assertIsNone(ordered_route('www.okx.com',routine,data))
-        self.assertEqual(ordered_route('www.hima.auto',routine,data),mainland)
+        self.assertIsNone(ordered_route('www.hima.auto',routine,data))
         for host in ('claude.ai','anthropic.com','chatgpt.com','www.netflix.com'):
             self.assertIsNone(ordered_route(host,[media,web],data),host)
         self.assertIsNone(ordered_route('hulu.com',[web],data))

@@ -1,0 +1,26 @@
+# name: mainland-games-all
+# priority: 6090
+# section: games
+# description: 国内游戏合集
+# boundary: 由所列产品细分生成，统一出口时使用；与成员二选一。厂商共用账号、共享下载及其他地区的服务仍按其专表处理
+# created-at: 2026-11-22T13:34:15Z
+# updated-at: 2026-11-22T13:34:15Z
+# rule-count: 14
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/mihoyo.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-games.list
+
+DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
+DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
+DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
+DOMAIN,dl.steam.clngaa.com
+DOMAIN,dl.steam.ksyna.com
+DOMAIN,st.dl.bscstorage.net
+DOMAIN,st.dl.eccdnx.com
+DOMAIN,st.dl.pinyuncloud.com
+DOMAIN-SUFFIX,miyoushe.com
+DOMAIN-SUFFIX,bh3.com
+DOMAIN-SUFFIX,bhsr.com
+DOMAIN-SUFFIX,yuanshen.com
+DOMAIN-SUFFIX,wegame.com
+DOMAIN-SUFFIX,wegame.com.cn

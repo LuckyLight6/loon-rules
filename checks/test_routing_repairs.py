@@ -228,7 +228,7 @@ class PublishedRepairRoutes(unittest.TestCase):
                 self.assertEqual(lib.ordered_route(host,
                                  lib.route_order(self.config,self.entries,['google-all']),self.data),'google-all')
         self.assertEqual(lib.ordered_route('safebrowsing.urlsec.qq.com',self.order,self.data),
-                         'mainland-domains')
+                         'tencent-shared-services')
 
     def test_apple_aggregate_keeps_independent_certificate_and_general_fallback_routes(self):
         order=lib.route_order(self.config,self.entries,['apple-all'])

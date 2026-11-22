@@ -46,6 +46,7 @@ READERS = {
     'section-media-networks': networks.parse_section_media_networks,
     'section-code-domains': documents.section_code_domains,
     'service-default-host': api.parse_service_default_host,
+    'service-address-table': networks.service_address_table,
     'service-domain-table': tables.parse_service_domain_table,
     'service-domain-groups': structured.service_domain_groups,
     'site-identity': documents.parse_site_identity,

@@ -61,7 +61,7 @@ Apple 在中国大陆提供 App Store、Apple Music 和免费播客；TV、News�
 
 </details>
 
-2340 从 Sukka 的 Apple 来源只选择 `apple.com`、`cdn-apple.com`、`itunes.com`，不使用整个 Apple IP 段。2350 包含这层通用范围，因此海外例外和 APNs 必须先匹配。规则中的静态内容也可能带签名或需要许可，不能用“有没有认证”决定出口。
+2340 跟随 Sukka 的 Apple 公司域名来源，细分先匹配，不使用整个 Apple IP 段。2350 包含这层通用范围，因此海外例外和 APNs 必须先匹配。规则中的静态内容也可能带签名或需要许可，不能用“有没有认证”决定出口。
 
 2000 保留给希望统一出口的用法，包含 PCC、海外媒体和推送；2290、2340 在它后面独立使用。日常既要海外功能可用，又要大流量直连，采用上面的三份组合。
 
@@ -81,6 +81,7 @@ Apple 的企业网络表用于核对部分用途，不是消费者全部流量�
 | 国产 AI 国际版 | 1250 或其产品成员，包含模型平台及 Qoder、YouMind、Lovart 的国际产品入口；小米 MiMo 的新加坡、欧洲计划只收目录明确列出的 API |
 | 国产 AI 国内版与共用入口 | 5000 或其产品成员，包括 5010–5150、5180–5190；DeepSeek、文心、讯飞、魔搭、小米 MiMo 等各自说明范围，不把全部国产 AI 统称一个产品 |
 | JetBrains AI | 海外后端 1240、中国区 API 5160；IDE 与插件等在 3090，5160 不并入国产厂商合集 |
+| 海外 AI 中国区合集 | 5155，目前只有 JetBrains AI 中国区 API；与 5160 二选一，后续有可靠地区来源再加入其他产品 |
 | Apple 系统 AI | 细分方式选 1230，日常由 Apple 海外功能 2005 包含；不在海外 AI 合集 1000 内 |
 
 认证和模型请求尽量用同一稳定出口，长回复或上传过程中避免切节点。产品规则不要求禁用 QUIC、IPv6 或 HTTP/3，异常时根据真实连接比较协议与地址族。
@@ -93,23 +94,33 @@ iPhone 的 Loon 不控制另一台 Mac 或 PC；Desktop、Code 和 API 客户端
 
 ## 海外与国内产品分别管理
 
-下列产品都有独立订阅，多份规则可绑定同一个出口。已知国内镜像和国内版另列，不按厂商注册地把国际入口直连。
+下列产品都有独立订阅，多份规则可绑定同一个出口。[厂商目录](services.md)把同一家公司的产品与共用范围放在一起查找；无法可靠区分的连接共用一张表，不另建空组。已知国内镜像和国内版另列，不按厂商注册地决定出口。
 
 | 大类 | 已分出的产品与用途 |
 |---|---|
 | 海外开发 | GitHub、GitLab、Bitbucket、npm、Maven Central、PyPI、Docker Hub、Rust/Cargo、Go、JetBrains IDE、Node.js、ACP |
-| 海外通讯与社交 | Telegram、Discord、Signal、LINE、X、微信国际门户、Slack、Reddit |
-| 海外支付 | PayPal、Stripe、Link、Braintree、Venmo、Xoom；商户网站、银行和本地读卡器各自处理 |
-| 加密资产 | Binance、OKX、Gemini Exchange、Trust Wallet；Gemini 交易所与 Google AI 分开，第三方 DApp 和公链 RPC 不整包归钱包 |
-| 海外媒体 | HBO、YouTube、Netflix、Disney+、Prime Video、Spotify、Twitch、TikTok、哔哩哔哩国际、巴哈姆特、BBC、爱奇艺国际版；统一出口可用 3800 替代成员 |
-| 海外游戏 | Steam、Epic、PlayStation、Nintendo、HoYoverse、EA、Ubisoft、Battle.net；不代表所有对局 IP 都已覆盖 |
-| 海外协作 | Notion、Figma、Trello、Atlassian Cloud；Bitbucket 与 Trello 先匹配，共用 Jira、Confluence 和平台资源随后处理 |
+| 海外通讯与社交 | Telegram、Discord、Signal、LINE、X、微信国际门户、Slack、Reddit、Instagram、WhatsApp、Threads、Pinterest、Bluesky、Lark、Zoom、LinkedIn；Meta 共用服务另列 |
+| 海外支付 | PayPal、Stripe、Link、Braintree、Venmo、Xoom、Wise；商户网站、银行和本地读卡器各自处理 |
+| 加密资产 | Binance、OKX、Gemini Exchange、Kraken、Bybit、KuCoin、Trust Wallet；Gemini 交易所与 Google AI 分开，第三方 DApp 和公链 RPC 不整包归钱包 |
+| 海外媒体 | HBO、YouTube、Netflix、Disney+、Prime Video、Spotify、Twitch、TikTok、哔哩哔哩国际、巴哈姆特、BBC、爱奇艺国际版、SoundCloud、Vimeo、Hulu；统一出口用 3800 替代成员，Apple TV 仍在 Apple 海外功能里 |
+| 海外游戏 | Steam、Epic、PlayStation、Nintendo、HoYoverse、EA、Ubisoft、Battle.net、网易国际游戏共用 SDK；统一出口用 4090 替代成员，不代表所有对局 IP 都已覆盖 |
+| 海外协作 | Notion、Figma、Trello、Atlassian Cloud、Proton、WorkOS；Bitbucket 与 Trello 先匹配，共用 Jira、Confluence 和平台资源随后处理。WorkOS 服务多个产品，需要固定认证出口时与所用产品选择同一稳定节点 |
 | 国内开发 | Gitee、CODING、GitCode、npmmirror、TUNA 镜像；不会替 npm、pip 或 Maven 修改软件源 |
-| 国内通讯与支付 | 微信共用服务、钉钉公共产品、豆瓣、微博、支付宝、银联；无法按同一共享主机区分用户所在国家或全部支付用途 |
-| 国内媒体与游戏 | 哔哩哔哩、抖音、爱奇艺、优酷、QQ 音乐、酷狗、快手，Steam 国内下载、米哈游国服、WeGame |
-| 国内购物与社区 | 淘宝与闲鱼、京东、小红书、知乎、12306；新浪图片作为跨产品共用资源独立处理 |
+| 国内通讯与支付 | 微信共用服务、钉钉公共产品、飞书、豆瓣、微博、支付宝、银联；无法按同一共享主机区分用户所在国家或全部支付用途 |
+| 国内媒体与游戏 | 哔哩哔哩、抖音、爱奇艺、优酷、QQ 音乐、酷狗、快手、网易云音乐、斗鱼、虎牙，Steam 国内下载、米哈游国服、WeGame；统一出口分别用 5890 和 6090 替代成员 |
+| 国内购物、生活与办公 | 淘宝与闲鱼、京东、小红书、知乎、12306、美团、滴滴、有道、阿里云盘、WPS；新浪图片作为跨产品共用资源独立处理 |
 
 产品专用附件、登录和 API 尽量跟随产品。共享云、用户自定义域、第三方插件和自建实例按自身目标匹配，不收进公共产品表。常用规则的来源与边界可在清单直接查看。
+
+## 跨国厂商的中国区与云平台
+
+4190 合并高通、NVIDIA、Intel、Samsung、Cloudflare、Adobe、Amazon 的已列中国区或国内可用入口，建议交给国内策略。也可以分别使用 4200–4260。`www.qualcomm.cn` 由 4200 识别，国际官网仍按海外范围处理；不是把整个高通公司判作国内。
+
+地区来源的 `@cn` 表示来源标注有大陆接入，不证明服务器、账户或全部服务只在中国。地区表不根据域名含 `cn` 自动扩展；同厂商的国际产品、共用主机和第三方依赖分别处理。
+
+Cloudflare 公共 DNS 在 6590，标准解析器的四个 IPv4／IPv6 地址从官方表读取，全部带 `no-resolve`。6680 是 Cloudflare 其余平台范围；它不代表“所有使用 Cloudflare CDN 的网站”。6590 识别连接，不会替设备更换解析器，也不保证 DNS 或 WebRTC 已防泄漏。
+
+6600–6690 的全球云平台与厂商共用表排在具体产品和可选广告后面；6800–6870 的国内厂商共用表排在海外补充之后。这样既能接住 Cloudflare、Amazon、Adobe、网易等共用连接，又让明确的产品、国际入口和已采用的 GFW 范围先匹配。
 
 ## Google、Microsoft 与共享平台
 

@@ -2,7 +2,7 @@
 
 按服务和用途选择出口的 Loon 订阅规则，覆盖 AI、Apple、Google、Microsoft，以及开发、通讯、支付、影音、游戏等产品。规则不包含节点；同一份订阅可以在不同设备上绑定不同策略，也可以把多份订阅交给同一个策略组。
 
-[规则清单与订阅地址](docs/rules.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
+[规则清单与订阅地址](docs/rules.md) · [按厂商查产品](docs/services.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
 
 ## 开始使用
 
@@ -23,15 +23,18 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-over
 |---|---|
 | 海外 AI 用同一稳定出口 | 1000；需要分别选路时，改选 Claude、OpenAI、Gemini、xAI 等成员 |
 | 国产 AI 区分国内与国际入口 | 国内版 5000，国际版 1250；两者也各有产品细分。Apple Intelligence 选 1230，或由 Apple 海外功能 2005 涵盖 |
+| 海外 AI 的中国区服务 | 5155，目前只含已独立核实的 JetBrains AI 中国区 API；不会把海外厂商的全部 AI 自动直连 |
 | Apple 日常使用，普通服务直连 | 海外功能 2005、独立推送 2080、日常直连 2350；已含 PCC。需要分别调整时改用成员细分，2000 用于统一出口 |
 | Google 或 Microsoft 统一选路 | 分别选 4500、4700；需要区分账户、会议、文件或更新下载时，改选成员 |
+| 影音、游戏统一选路 | 海外影音 3800、海外游戏 4090；国内影音 5890、国内游戏 6090，各自保留产品成员 |
+| 跨国厂商的国内入口 | 4190 或其成员，识别高通、NVIDIA、Intel、Samsung、Cloudflare、Adobe、Amazon 的已列国内可用范围；国际和共用服务另行处理 |
 | 补充专项没有识别的网站 | 6700 交给海外影音策略，6750 交给通用代理。国内补充选 7020；需要分别控制时，用 7040、7070、7110 替代 |
 
 `-all` 是合集，**与它的成员二选一**。Apple 的日常组合 2005／2350 与完整合集 2000 也二选一。`-extra` 只补专项以外的范围，不能代替专项。规则按用途细分，不要求每份都新建一个策略组。
 
 ## 顺序与拦截
 
-清单和生成检查使用同一套顺序：网络接入与局域网、常规广告与隐私、海外及国际版 AI、Apple、海外具体产品、Google、Microsoft、国内 AI 与国内产品、可选扩展广告、海外补充、国内补充。具体产品先认领专用主机，共享平台和地区补充随后处理。
+清单和生成检查使用同一套顺序：网络接入与局域网、常规广告与隐私、海外及国际版 AI、Apple、海外具体产品、明确的厂商国内入口、Google、Microsoft、国内 AI 与国内产品、可选扩展广告、厂商共用服务及地区补充。具体位置见清单；产品专用主机先匹配，共用平台随后补缺。
 
 常规广告用 0220。0210 是明确的 Apple 广告与 OpenAI 广告像素；6500 是默认关闭的扩展拦截。0230 只拦已列出的公共 STUN 端点，可能影响会议和语音，不能凭它宣称 WebRTC 已防泄漏。[实际命中与防泄漏测试](docs/network-testing.md)
 

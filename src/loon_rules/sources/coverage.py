@@ -14,6 +14,11 @@ PROJECTION_FIELDS=('roots','exact','exclude','all-domains','domain-lines-only','
 FIELDS={'state','products','filters','other-products',*COUNTS}
 
 
+def same_business_family(first, second):
+    return (first.get('section')==second.get('section')
+            or bool(first.get('vendor')) and first['vendor']==second.get('vendor'))
+
+
 def groups(entries,order=None):
     active=set(entries if order is None else order);result=defaultdict(list)
     for key in sorted(active,key=lambda key:entries[key]['priority']):
@@ -73,15 +78,22 @@ def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hos
             chosen=row in kept
             if not chosen and kind=='DOMAIN-SUFFIX' and 'DOMAIN,'+host in kept:
                 chosen=True;lookup='DOMAIN,'+host;state['narrowed-scopes']+=1
+            selected_products={key for key in products
+                               if lookup in selected.get(key,{}).get(source,())}
+            expected_products={key for key in selected_products if not entries[key].get('fallback')}
+            expected_products=expected_products or selected_products
             state['selected-scopes']+=int(chosen)
             if row in exemptions.get(source,()):state['declared-exclusions']+=1;continue
             if shared_scope(row,shared_suffixes,shared_hosts):state['shared-scopes']+=1;continue
             bits=index.scope_bits(lookup)
             owner=next((key for key in order if bits&index.bits[key]),None)
-            if (chosen and owner is not None and owner not in products
+            split=(owner is not None and source in entries[owner].get('sources',())
+                   and any(parent in expected_products for parent in entries[owner].get('separates',())))
+            if (chosen and owner is not None and owner not in expected_products
                     and entries[owner].get('policy-hint')!='reject'
-                    and not all(entries[key].get('fallback') for key in products)):
-                raise Invalid('已选产品来源的归属被其他服务抢先匹配：'+source)
+                    and not split
+                    and not all(entries[key].get('fallback') for key in expected_products)):
+                raise Invalid('已选产品来源的归属被其他服务抢先匹配：'+source+' '+row+' → '+owner)
             if chosen and (not bits&(qualified|product_bits)
                     or owner not in products and owner is not None and entries[owner].get('fallback')
                     and entries[owner].get('policy-hint')!='reject'):
@@ -144,7 +156,7 @@ def reassignments(entries,previous,data,*,selected,order):
             for owner in order:
                 target=entries[owner]
                 if (key not in target.get('separates',()) or not concrete(target)
-                        or target.get('section')!=entries[key].get('section')
+                        or not same_business_family(target,entries[key])
                         or not covered&index.bits[owner]):
                     continue
                 shared=set(entries[key].get('sources',()))&set(target.get('sources',()))
@@ -171,7 +183,7 @@ def verify_reassignments(entries,data,report,*,order):
             owner=proof['owner'];sources=proof['sources']
             allowed=declared[key]&declared.get(owner,set())
             target=entries.get(owner,{})
-            if key in target.get('separates',()) and target.get('section')==entries[key].get('section'):
+            if key in target.get('separates',()) and same_business_family(target,entries[key]):
                 allowed|=set(entries[key].get('sources',()))&set(target.get('sources',()))
             if (owner not in index.bits or owner==key or not concrete(entries[owner])
                     or not isinstance(sources,list) or not sources or any(not isinstance(s,str) for s in sources)

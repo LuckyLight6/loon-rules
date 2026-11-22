@@ -3,8 +3,10 @@ from loon_rules import rules
 from loon_rules.sources import policy as source_policy
 from loon_rules.sources import transport as source_transport
 from loon_rules.sources import expansion as source_expansion
+from loon_rules.sources.coverage import same_business_family
 from loon_rules import catalog as catalog_schema
 from loon_rules.generation import inventories as service_inventory
+from loon_rules.generation import directory as service_directory
 from loon_rules.policy import SHARED_PARENT,SLUG
 from loon_rules.generation.feeds import calibration_urls
 from loon_rules.generation.ordering import subscription_order, view_replacements
@@ -118,10 +120,10 @@ def validate_declarations(config):
                 raise rules.Invalid('共享用途必须由产品的同一官方用途表核对：'+e['id'])
         for part in e.get('projection',()):
             if 'all-domains' in part and (type(part['all-domains']) is not bool or part['all-domains'] and (
-                    not e.get('fallback') or part.get('roots') or part.get('exact')
+                    part.get('roots') or part.get('exact')
                     or not any(spec['source']==part['source'] and e['id'] in spec['owners']
                                for spec in config.get('source-inventories',())))):
-                raise rules.Invalid('完整公司域名来源需要后置通用表和独立完整性检查：'+e['id'])
+                raise rules.Invalid('完整域名来源需要独立完整性检查，不能同时局部筛选：'+e['id'])
             if part['source'] not in e['sources'] or not (part.get('roots') or part.get('exact') or part.get('all-domains')):
                 raise rules.Invalid('筛选缺少来源或服务边界：'+e['id'])
             if part.get('parent-domains-source') and (part['parent-domains-source'] not in e['sources']
@@ -144,15 +146,18 @@ def validate_declarations(config):
                 or any(e['section']!=entries[k]['section']
                        for k in e['members'])):
                 raise rules.Invalid('合并视图包含未归类成员：'+e['id'])
+    owners=service_directory.validate(config,entries)
+    for key,owner in owners.items():
+        entries[key]=dict(entries[key],vendor=owner)
     for key,e in entries.items():
         if parents:=e.get('separates'):
             if (not isinstance(parents,list) or len(parents)!=len(set(parents))
                     or e['mode']!='compiled' or e.get('fallback') or e.get('domain-remainder')
                     or any(parent not in entries or parent==key
-                           or entries[parent]['section']!=e['section']
+                           or not same_business_family(entries[parent],e)
                            or entries[parent]['mode']=='view'
                            or not set(e['sources'])&set(entries[parent]['sources']) for parent in parents)):
-                raise rules.Invalid('业务细分必须声明同一分区、同一来源的原范围：'+key)
+                raise rules.Invalid('业务细分必须有相同用途或厂商，以及共同来源：'+key)
         if part:=e.get('refine'):
             parent=entries.get(part['from'],{})
             if parent.get('mode') not in ('compiled','managed') or parent.get('refine') or parent.get('merge-domains') or not (part.get('roots') or part.get('literal-ip-copy')):

@@ -4,8 +4,8 @@
 # description: 海外影音合集
 # boundary: 汇总所列海外视频、音乐、短视频和直播专项；与成员二选一。国内影音和其他海外影音补充不包含在本组
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-21T11:39:00Z
-# rule-count: 84
+# updated-at: 2026-11-22T15:05:24Z
+# rule-count: 151
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
@@ -19,6 +19,9 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list
 
 DOMAIN-SUFFIX,hbo.com
 DOMAIN-SUFFIX,hbomax.com
@@ -104,3 +107,70 @@ DOMAIN-SUFFIX,iq.com
 DOMAIN-SUFFIX,intl-rcd.iqiyi.com
 DOMAIN-SUFFIX,intl-subscription.iqiyi.com
 DOMAIN-SUFFIX,intl.iqiyi.com
+DOMAIN-SUFFIX,sndcdn.com
+DOMAIN-SUFFIX,soundcloud.cloud
+DOMAIN-SUFFIX,soundcloud.com
+DOMAIN-SUFFIX,vhx.tv
+DOMAIN-SUFFIX,vhxqa1.com
+DOMAIN-SUFFIX,vhxqa2.com
+DOMAIN-SUFFIX,vhxqa3.com
+DOMAIN-SUFFIX,vhxqa4.com
+DOMAIN-SUFFIX,vhxqa6.com
+DOMAIN-SUFFIX,vimeo-staging.com
+DOMAIN-SUFFIX,vimeo-staging2.com
+DOMAIN-SUFFIX,vimeo.com
+DOMAIN-SUFFIX,vimeo.fr
+DOMAIN-SUFFIX,vimeobusiness.com
+DOMAIN-SUFFIX,vimeocdn.com
+DOMAIN-SUFFIX,vimeogoods.com
+DOMAIN-SUFFIX,vimeoondemand.com
+DOMAIN-SUFFIX,vimeostatus.com
+DOMAIN-SUFFIX,livestream.com
+DOMAIN,hulu.playback.edge.bamgrid.com
+DOMAIN-SUFFIX,112263.com
+DOMAIN-SUFFIX,callhulu.com
+DOMAIN-SUFFIX,findyourlimits.com
+DOMAIN-SUFFIX,freehulu.com
+DOMAIN-SUFFIX,hooloo.tv
+DOMAIN-SUFFIX,hoolu.com
+DOMAIN-SUFFIX,hoolu.tv
+DOMAIN-SUFFIX,hu1u.com
+DOMAIN-SUFFIX,huloo.cc
+DOMAIN-SUFFIX,huloo.tv
+DOMAIN-SUFFIX,hulu.com
+DOMAIN-SUFFIX,hulu.jp
+DOMAIN-SUFFIX,hulu.tv
+DOMAIN-SUFFIX,hulu.us
+DOMAIN-SUFFIX,huluaction.com
+DOMAIN-SUFFIX,huluad.com
+DOMAIN-SUFFIX,huluapp.com
+DOMAIN-SUFFIX,huluasks.com
+DOMAIN-SUFFIX,hulucall.com
+DOMAIN-SUFFIX,hulufree.com
+DOMAIN-SUFFIX,hulugans.com
+DOMAIN-SUFFIX,hulugermany.com
+DOMAIN-SUFFIX,hulugo.com
+DOMAIN-SUFFIX,huluim.com
+DOMAIN-SUFFIX,huluinstantmessenger.com
+DOMAIN-SUFFIX,huluitaly.com
+DOMAIN-SUFFIX,hulunet.com
+DOMAIN-SUFFIX,hulunetwork.com
+DOMAIN-SUFFIX,huluplus.com
+DOMAIN-SUFFIX,hulupremium.com
+DOMAIN-SUFFIX,hulupurchase.com
+DOMAIN-SUFFIX,huluqa.com
+DOMAIN-SUFFIX,hulurussia.com
+DOMAIN-SUFFIX,huluspain.com
+DOMAIN-SUFFIX,hulusports.com
+DOMAIN-SUFFIX,hulustream.com
+DOMAIN-SUFFIX,huluteam.com
+DOMAIN-SUFFIX,hulutv.com
+DOMAIN-SUFFIX,huluusa.com
+DOMAIN-SUFFIX,joinmaidez.com
+DOMAIN-SUFFIX,mushymush.tv
+DOMAIN-SUFFIX,myhulu.com
+DOMAIN-SUFFIX,originalhulu.com
+DOMAIN-SUFFIX,payhulu.com
+DOMAIN-SUFFIX,registerhulu.com
+DOMAIN-SUFFIX,thehulubraintrust.com
+DOMAIN-SUFFIX,wwwhuluplus.com

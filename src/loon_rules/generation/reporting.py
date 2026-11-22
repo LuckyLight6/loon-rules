@@ -3,6 +3,7 @@ from loon_rules import rules
 from loon_rules.domains import covers
 from loon_rules.matching import RuleIndex
 from loon_rules.sources.inputs import extract_rows
+from loon_rules.sources.coverage import domain_lines
 from loon_rules.generation.ordering import route_order,shadowed_domains
 
 
@@ -10,9 +11,15 @@ from loon_rules.generation.ordering import route_order,shadowed_domains
 def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
     """Look outside the publishing filters for unassigned domain scopes. Never export candidates."""
     if spec['source'] not in downloaded: return {'state':'unavailable'}
+    other_lines=0
     try:
         text=downloaded[spec['source']]
-        rows=sorted(extract_rows(spec['recipe'],text)) if spec.get('recipe') else rules.read_rules(text)
+        if spec.get('recipe'):
+            rows=sorted(extract_rows(spec['recipe'],text))
+        elif spec.get('domain-lines-only'):
+            rows,other_lines=domain_lines(text)
+        else:
+            rows=rules.read_rules(text)
     except rules.Invalid:
         return {'state':'invalid'}
     domains=[r for r in rows if r.startswith(('DOMAIN,','DOMAIN-SUFFIX,','DOMAIN-WILDCARD,')) and r.count(',')==1]
@@ -29,7 +36,7 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
         owner=next((key for key in order if matching&index.bits[key]),None)
         if owner not in wanted: other+=1
     report={'state':'review' if other else 'current','domain-scopes':len(domains),
-            'outside-scope':other,'other-rules':len(rows)-len(domains)}
+            'outside-scope':other,'other-rules':other_lines+len(rows)-len(domains)}
     if spec.get('reviewed-outside'):
         report['reviewed-outside']=len(set(domains)&set(spec['reviewed-outside']))
     return report

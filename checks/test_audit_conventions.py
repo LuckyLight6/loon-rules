@@ -129,6 +129,29 @@ class AuditConventions(unittest.TestCase):
         with self.assertRaises(Invalid):
             lib.verify_combinations(cfg,entries,{**rows,'b-all':['DOMAIN,a.test','DOMAIN,b.test']})
 
+    def test_equivalent_targets_still_keep_different_expected_owners(self):
+        cfg={'detailed':['a','b'],'general':[],'views':[],
+             'critical':{'one.example':['a'],'two.example':['b']}}
+        entries={'a':{'priority':10},'b':{'priority':20}}
+        rows={'a':['DOMAIN-SUFFIX,example'],'b':[]}
+        with self.assertRaisesRegex(Invalid,'two.example'):
+            lib.verify_combinations(cfg,entries,rows)
+        cfg['critical']={'one.example':['a'],'two.example':['a'],'absent.test':['b']}
+        with self.assertRaisesRegex(Invalid,'absent.test'):
+            lib.verify_combinations(cfg,entries,rows)
+
+    def test_literal_address_and_no_expected_owner_remain_distinct_cases(self):
+        cfg={'detailed':['dns'],'general':[],'views':['dns-all'],'critical':{},
+             'ip-cases':[{'target':'1.1.1.1','literal':True,'rule':'dns'},
+                         {'target':'1.1.1.1','literal':False,'rule':None}]}
+        entries={'dns':{'priority':20},'dns-all':{'priority':10,'members':['dns']}}
+        rows={'dns':['IP-CIDR,1.1.1.1/32,no-resolve'],
+              'dns-all':['IP-CIDR,1.1.1.1/32,no-resolve']}
+        self.assertEqual(lib.verify_combinations(cfg,entries,rows),2)
+        cfg['ip-cases'][1]['rule']='dns'
+        with self.assertRaises(Invalid):
+            lib.verify_combinations(cfg,entries,rows)
+
     def test_regular_selection_has_no_repeated_rules(self):
         cfg=json.loads((lib.ROOT/'config/catalog.json').read_text());entries=lib.validate_declarations(cfg)
         owners={}

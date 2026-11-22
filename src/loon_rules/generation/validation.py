@@ -51,7 +51,19 @@ def verify_combinations(config,entries,data,*,index=None):
     domains=[(host,index.domain_bits(host),wanted) for host,wanted in config['critical'].items()]
     addresses=[(case['target'],index.ip_bits(case['target'],literal=case['literal']),
                 [case['rule']] if case['rule'] else []) for case in config.get('ip-cases',())]
-    repeated=[(row,owners) for row,owners in row_owners.items() if owners.bit_count()>1]
+    acceptable={key:bit for key,bit in bits.items()}
+    for view in config['views']:
+        for member in entries[view]['members']:
+            acceptable[member]|=bits[view]
+    cases={}
+    for target,matching,wanted in domains+addresses:
+        expected=0
+        for key in wanted:expected|=acceptable[key]
+        # 相同的匹配集合和预期归属在所有组合中等价；保留全部组合与不同预期。
+        cases.setdefault((matching,expected),target)
+    repeated={}
+    for row,owners in row_owners.items():
+        if owners.bit_count()>1:repeated.setdefault(owners,row)
     profile_count=0
     for views in view_selections(config,entries):
         replacements=view_replacements(config,entries,views)
@@ -60,7 +72,7 @@ def verify_combinations(config,entries,data,*,index=None):
         for optional in range(1<<len(extras)):
             selected=base|{key for i,key in enumerate(extras) if optional&(1<<i)}
             mask=sum(bits[k] for k in selected)
-            for row,owners in repeated:
+            for owners,row in repeated.items():
                 together=owners&mask
                 if together&(together-1):
                     first=names[together&-together]
@@ -69,11 +81,9 @@ def verify_combinations(config,entries,data,*,index=None):
                                  and all(entries[k].get('fallback') and entries[k].get('policy-hint')!='reject' for k in other))
                     if not ad_override:
                         raise rules.Invalid(f'订阅组合 {profile_count} 含重复规则：{row[0]},{row[1]}')
-            for target,matching,wanted in domains+addresses:
+            for (matching,expected),target in cases.items():
                 matching&=mask
                 first=matching&-matching
-                expected=0
-                for key in wanted:expected|=bits[replacements.get(key,key)]
                 if (first and not first&expected) or (not first and expected):
                     raise rules.Invalid(f'订阅组合 {profile_count}：{target} 命中 {names.get(first)!r}，与业务用例不符')
             profile_count+=1

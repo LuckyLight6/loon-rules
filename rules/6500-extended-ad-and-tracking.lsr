@@ -4,8 +4,8 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-22T09:11:42Z
-# rule-count: 44492
+# updated-at: 2026-11-22T15:05:24Z
+# rule-count: 44478
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
@@ -43,7 +43,6 @@ DOMAIN-SUFFIX,wylin.ai
 DOMAIN-SUFFIX,msg.71.am
 DOMAIN-SUFFIX,ads-blocker.app
 DOMAIN-SUFFIX,bidbrain.app
-DOMAIN-SUFFIX,events.bsky.app
 DOMAIN-SUFFIX,stats.darkreader.app
 DOMAIN-SUFFIX,analytics.egdata.app
 DOMAIN-SUFFIX,growthbuddy.app
@@ -7819,7 +7818,6 @@ DOMAIN-SUFFIX,earnify.com
 DOMAIN-SUFFIX,earningskingdeliberately.com
 DOMAIN-SUFFIX,earnvids.com
 DOMAIN-SUFFIX,earringsatisfiedsplice.com
-DOMAIN,bee.tc.easebar.com
 DOMAIN-SUFFIX,easelsakhlame.com
 DOMAIN-SUFFIX,easelunawarefunds.com
 DOMAIN-SUFFIX,easilygreateststuff.com
@@ -10215,8 +10213,6 @@ DOMAIN-SUFFIX,huhtoric.com
 DOMAIN-SUFFIX,track.hujiang.com
 DOMAIN-SUFFIX,trackcommon.hujiang.com
 DOMAIN-SUFFIX,hulledbubinga.com
-DOMAIN-SUFFIX,t2.hulu.com
-DOMAIN-SUFFIX,vortex.hulu.com
 DOMAIN-SUFFIX,humble-gap.com
 DOMAIN-SUFFIX,humbleparticular.com
 DOMAIN-SUFFIX,humblerenamour.com
@@ -10270,9 +10266,6 @@ DOMAIN-SUFFIX,hutchetcymblin.com
 DOMAIN-SUFFIX,hutojzbran.com
 DOMAIN-SUFFIX,hutteddyinfluenced.com
 DOMAIN-SUFFIX,huwejqglgy.com
-DOMAIN-SUFFIX,metric.huya.com
-DOMAIN-SUFFIX,statwup.huya.com
-DOMAIN-SUFFIX,ylog.huya.com
 DOMAIN-SUFFIX,huzzahfor.com
 DOMAIN-SUFFIX,hvryrpkrtiusl.com
 DOMAIN-SUFFIX,hvysnssofi.com
@@ -11705,7 +11698,6 @@ DOMAIN-SUFFIX,lingercatchpyramid.com
 DOMAIN-SUFFIX,linkaffectionately.com
 DOMAIN-SUFFIX,linkbuddies.com
 DOMAIN-SUFFIX,pubfeed.linkby.com
-DOMAIN,analytics.pointdrive.linkedin.com
 DOMAIN-SUFFIX,linkedkneebrisk.com
 DOMAIN-SUFFIX,linkedprepenseprepense.com
 DOMAIN-SUFFIX,linkev.com
@@ -11746,7 +11738,6 @@ DOMAIN-SUFFIX,livelycanoe.com
 DOMAIN-SUFFIX,livelymatter.com
 DOMAIN-SUFFIX,banners.livepartners.com
 DOMAIN-SUFFIX,livesexbar.com
-DOMAIN-SUFFIX,analytics.livestream.com
 DOMAIN-SUFFIX,livezombymil.com
 DOMAIN-SUFFIX,liwmwijpufa.com
 DOMAIN-SUFFIX,lizardvibrateencumbrance.com
@@ -15952,7 +15943,6 @@ DOMAIN-SUFFIX,nmetrics.samsung.com
 DOMAIN-SUFFIX,smetrics.samsung.com
 DOMAIN-SUFFIX,target-us.samsung.com
 DOMAIN-SUFFIX,samsungacr.com
-DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com
 DOMAIN-SUFFIX,sancontr.com
 DOMAIN-SUFFIX,sanctifyracesleech.com
 DOMAIN-SUFFIX,sandelf.com
@@ -16826,7 +16816,6 @@ DOMAIN-SUFFIX,sorrowdefinedasterisk.com
 DOMAIN-SUFFIX,sortswoopmarrying.com
 DOMAIN-SUFFIX,soulsdeliriousnoise.com
 DOMAIN-SUFFIX,soulunbornrib.com
-DOMAIN-SUFFIX,telemetry.soundcloud.com
 DOMAIN-SUFFIX,soundfrankcoke.com
 DOMAIN-SUFFIX,sourceauditoriumassure.com
 DOMAIN-SUFFIX,sourcerealisejeopardy.com
@@ -18963,8 +18952,6 @@ DOMAIN-SUFFIX,vileeconomical.com
 DOMAIN-SUFFIX,villagerhurricane.com
 DOMAIN-SUFFIX,villainindiscreetnewsletter.com
 DOMAIN-SUFFIX,vilytaku.com
-DOMAIN-SUFFIX,player-telemetry.vimeo.com
-DOMAIN-SUFFIX,fresnel-events.vimeocdn.com
 DOMAIN-SUFFIX,vindicosuite.com
 DOMAIN-SUFFIX,vindictivemopenthrone.com
 DOMAIN-SUFFIX,vinegardaring.com
@@ -40235,7 +40222,6 @@ DOMAIN-SUFFIX,retono42.us
 DOMAIN-SUFFIX,billing.roofnrack.us
 DOMAIN-SUFFIX,analytics-ipv6.tiktokw.us
 DOMAIN-SUFFIX,mcs.tiktokw.us
-DOMAIN-SUFFIX,log-gateway.zoom.us
 DOMAIN-SUFFIX,pl.elements.video
 DOMAIN-SUFFIX,gw-dv.vip
 DOMAIN-SUFFIX,as1.maturexxx.vip

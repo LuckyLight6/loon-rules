@@ -1,10 +1,45 @@
 """Public-source readers: networks. Read data without executing source code."""
-from ipaddress import ip_network
+from ipaddress import ip_address, ip_network
 import json
 import re
 from loon_rules.sources.formats.html import HostTables
 from loon_rules.rules import Invalid, valid_host
 from .common import within, LabelledLists, HeadingSectionText
+
+
+def service_address_table(recipe, text):
+    class AddressTables(HostTables):
+        def handle_starttag(self, tag, attrs):
+            if tag == 'br' and self.cell is not None and not self.hidden:
+                self.cell.append(' ')
+            super().handle_starttag(tag, attrs)
+
+    table = AddressTables()
+    table.feed(text)
+    rows = table.rows.get(recipe['section'], [])
+    columns = recipe['columns']
+    if (not rows or rows[0] != list(columns) or len(rows) < 2
+            or set(columns.values()) != {4, 6}):
+        raise Invalid('服务地址表缺少指定章节、列头或地址族')
+    result = set()
+    families = set()
+    for row in rows[1:]:
+        if len(row) != len(columns):
+            raise Invalid('服务地址表的列数变化')
+        for value, family in zip(row, columns.values()):
+            for field in value.split():
+                try:
+                    address = ip_address(field)
+                except ValueError as exc:
+                    raise Invalid('服务地址字段不是单个 IP') from exc
+                if address.version != family or not address.is_global:
+                    raise Invalid('服务地址不是对应地址族的公网 IP')
+                kind = 'IP-CIDR' if family == 4 else 'IP-CIDR6'
+                result.add(f'{kind},{address}/{address.max_prefixlen},no-resolve')
+                families.add(family)
+    if families != {4, 6}:
+        raise Invalid('服务地址表缺少完整地址族')
+    return result
 
 def labelled_networks(recipe, text):
     parser = LabelledLists(recipe['lists'])

@@ -1,0 +1,12 @@
+# name: ai-overseas-mainland-all
+# priority: 5155
+# section: ai
+# description: 海外 AI 中国区服务合集
+# boundary: 汇总官方明确标注的中国区 AI 服务，与国产 AI 国内版分开；当前可识别范围见成员，合集与细分二选一
+# created-at: 2026-11-22T13:34:15Z
+# updated-at: 2026-11-22T13:34:15Z
+# rule-count: 1
+# source: https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json
+# source: https://support.jetbrains.com/hc/en-us/articles/40250675463570-Firewall-or-proxy-allowlist-for-IntelliJ-based-IDEs-required-hosts-and-ports
+
+DOMAIN,api.ai.jetbrains.com.cn
