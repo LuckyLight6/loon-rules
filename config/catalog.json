@@ -6775,8 +6775,8 @@
       "id": "telegram-messaging",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "Telegram 登录、消息、文件与直连 IP",
-      "boundary": "核心域名 + 官方 CIDR。网段仅处理裸 IP；未收第三方 ASN、关键词和通用 CDN",
+      "description": "Telegram 登录、消息、文件与服务器地址",
+      "boundary": "核心域名与官方 IP 段使用同一策略；网段只处理已有目标 IP，使用 no-resolve；不收第三方 ASN、关键词和通用 CDN",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr",
         "https://core.telegram.org/resources/cidr.txt"
@@ -6937,8 +6937,8 @@
       "id": "wechat-international-portal",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "WeChat 国际门户与支付",
-      "boundary": "只分明确的国际入口；微信和 WeChat 共同使用的 qq.com 下精确子域由 5500 负责",
+      "description": "WeChat 国际网站、支付与部分 App 连接",
+      "boundary": "wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由 5500 处理",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list"
       ],

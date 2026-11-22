@@ -294,7 +294,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3300 | [telegram-messaging](../rules/3300-telegram-messaging.lsr) | Telegram 登录、消息、文件与直连 IP | 核心域名 + 官方 CIDR。网段仅处理裸 IP；未收第三方 ASN、关键词和通用 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3300-telegram-messaging.lsr) |
+| 3300 | [telegram-messaging](../rules/3300-telegram-messaging.lsr) | Telegram 登录、消息、文件与服务器地址 | 核心域名与官方 IP 段使用同一策略；网段只处理已有目标 IP，使用 no-resolve；不收第三方 ASN、关键词和通用 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3300-telegram-messaging.lsr) |
 | 3310 | [discord-messaging-and-voice](../rules/3310-discord-messaging-and-voice.lsr) | Discord 消息、语音、活动和附件 | 仅 Discord 专用域及精确附件存储主机；不给整个 Google Storage 或含 discord 的域名选路 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3310-discord-messaging-and-voice.lsr) |
 | 3320 | [signal-messenger](../rules/3320-signal-messenger.lsr) | Signal 消息、通话、贴纸、群组与用户名链接 | 按官方网络说明生成当前客户端入口；不将第三方代理、公共中继或未确认的历史域名并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3320-signal-messenger.lsr) |
 | 3330 | [line-messenger](../rules/3330-line-messenger.lsr) | LINE | 只收 LINE 产品入口和专用素材；不把 Naver 或其他应用整域纳入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3330-line-messenger.lsr) |
@@ -304,7 +304,7 @@
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
 | 3340 | [x-social-and-media](../rules/3340-x-social-and-media.lsr) | X / Twitter 社交与图像视频 | Grok 专用的 grok.x.com 由 1040 在前截取。只接产品和短链，不使用 twitter 关键词或广泛网段 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3340-x-social-and-media.lsr) |
-| 3350 | [wechat-international-portal](../rules/3350-wechat-international-portal.lsr) | WeChat 国际门户与支付 | 只分明确的国际入口；微信和 WeChat 共同使用的 qq.com 下精确子域由 5500 负责 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3350-wechat-international-portal.lsr) |
+| 3350 | [wechat-international-portal](../rules/3350-wechat-international-portal.lsr) | WeChat 国际网站、支付与部分 App 连接 | wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由 5500 处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3350-wechat-international-portal.lsr) |
 | 3360 | [slack-workspaces](../rules/3360-slack-workspaces.lsr) | Slack | 工作区、消息、文件和素材；外部登录分别匹配。日志统计留给可选隐私规则，培训、演示和旧版跳转不当作当前客户端必需入口 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3360-slack-workspaces.lsr) |
 | 3370 | [reddit-community](../rules/3370-reddit-community.lsr) | Reddit | 社区及专用内容域；不包括外链网站 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3370-reddit-community.lsr) |
 

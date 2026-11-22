@@ -19,6 +19,8 @@
 | TV 2190/2200、News 2210 | 实际播放一段可用内容，打开有权阅读的新闻正文 | 播放与正文完成，门户及内容连接均走预期出口 |
 | Apple Intelligence 1230 | 触发受支持的云端功能，再试系统 ChatGPT 扩展 | 实际产生的 PCC 或扩展连接命中 1230；纯本地运算不算云端测试 |
 | GitHub 3000、Docker 3060 | 访问 API，下载公开文件；登录 Docker 并拉取公开镜像 | 业务成功，专用入口归属正确，广告规则没有拒绝必需主机 |
+| Telegram 3300 | 打开 App 等待同步，发送文字并下载一个小文件 | 域名与直接使用的服务器 IP 都命中 3300；只打开网页或 Bot API 不能代替 App 测试 |
+| 微信 5500、WeChat 国际入口 3350 | 打开 App 等待同步，再试消息、图片与通话 | 检查实际连接，不能把 `wechat.com` 全当成网页；额外的 HTTPDNS 拦截插件可能先拒绝服务器发现请求 |
 | Meet 4540、Teams 4750 | 双向音视频并共享屏幕 | 声音、画面和共享持续传输，专用主机与媒体地址按预期选路 |
 
 Google 安全浏览 API 从官方服务字段生成，并受必需端点保护。全球入口与 `googleapis-cn.com` 的已列入口交给 Google，腾讯入口保留国内选路，均不当作广告拦截。[Apple 说明 Safari 会使用 Google 与腾讯的安全浏览服务](https://www.apple.com/legal/privacy/data/en/safari/)。核对命中时不需要提交真实网址、浏览记录或 API 密钥。
@@ -28,6 +30,8 @@ Google 安全浏览 API 从官方服务字段生成，并受必需端点保护�
 记录显示“已完成”，只说明这条连接已经结束，还要结合上传量、下载量和日志判断。UDP 没有收到数据、随后 TCP 成功，不能把两条都算成业务成功；只有连接数量，也不足以判断反复重试或耗电原因。Apple 官方将 [CloudKit 网关和证书检查](https://support.apple.com/en-us/101555)列为正常网络服务；验证这些连接不需要解密账户请求。
 
 只记公开主机、版本、命中规则和结果；请求 URL、头部、日志里可能有登录信息，不要整份提交。
+
+Telegram 原生客户端可按服务器 IP 使用 TCP，443 端口也不一定承载 HTTPS。3300 的 IP 来自[官方地址表](https://core.telegram.org/resources/cidr.txt)，使用 `no-resolve`；检查登录与同步时同时看这类连接，不能只搜 `telegram.org`。[Telegram 传输协议](https://core.telegram.org/mtproto/transports)
 
 ## DNS：先看查询走了哪里
 
