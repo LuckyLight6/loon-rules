@@ -608,6 +608,7 @@ s.mzstatic.com = server:https://1.1.1.1/dns-query
 sandbox.itunes.apple.com = server:https://1.1.1.1/dns-query
 se-edge.itunes.apple.com = server:https://1.1.1.1/dns-query
 se.itunes.apple.com = server:https://1.1.1.1/dns-query
+search.itunes.apple.com = server:https://1.1.1.1/dns-query
 sensenova.cn = server:https://223.5.5.5/dns-query
 servd-anthropic-website.b-cdn.net = server:https://1.1.1.1/dns-query
 serverstatus.apple.com = server:https://1.1.1.1/dns-query

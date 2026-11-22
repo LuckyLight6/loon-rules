@@ -179,6 +179,32 @@ class PublishedRepairRoutes(unittest.TestCase):
                 self.assertEqual(lib.ordered_route(host,self.order,self.data),'apple-account-authentication')
                 self.assertEqual(lib.ordered_route(host,['apple-all'],self.data),'apple-all')
 
+    def test_store_search_is_recognized_before_ip_fallback_and_images_keep_the_cdn_route(self):
+        self.assertEqual(lib.ordered_route('search.itunes.apple.com',self.order,self.data),
+                         'apple-store-transactions')
+        self.assertEqual(lib.ordered_route('is1-ssl.mzstatic.com',self.order,self.data),
+                         'apple-shared-store-assets')
+
+    def test_icloud_account_controls_follow_numeric_shards(self):
+        for host in ('p181-acsegateway.icloud.com', 'p181-mcc.icloud.com', 'p181-quota.icloud.com',
+                     'p48-acsegateway.icloud.com', 'p47-mcc.icloud.com', 'p05-quota.icloud.com'):
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,self.order,self.data),'apple-account-authentication')
+
+    def test_icloud_account_routing_excludes_content_and_unconfirmed_names(self):
+        expected = {
+            'p181-mccgateway.icloud.com': 'apple-cloud-sync',
+            'p181-docws.icloud.com': 'apple-cloud-sync',
+            'p181-ckdatabasews.icloud.com': 'apple-cloud-sync',
+            'gatewayws.icloud.com': 'apple-cloud-sync',
+            'pX1-mcc.icloud.com': 'apple-cloud-sync',
+            'p181-acsegateway.icloud.com.cn': 'apple-icloud-mainland',
+            'p181-content.icloud-content.com': 'apple-icloud-content-domains',
+        }
+        for host, owner in expected.items():
+            with self.subTest(host=host):
+                self.assertEqual(lib.ordered_route(host,self.order,self.data),owner)
+
     def test_device_registration_is_separate_from_esim_time_and_management(self):
         expected={'albert.apple.com':'apple-device-registration',
                   'identity.apple.com':'apple-device-registration',

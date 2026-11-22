@@ -1,12 +1,50 @@
-from checks.source_fixtures import prepare_workspace
+import json
 import plistlib
 
-from checks.source_fixtures import PublicSourceExamples
+from checks.source_fixtures import PublicSourceExamples, prepare_workspace
+from loon_rules.project import ROOT
 from loon_rules.rules import Invalid
 from loon_rules.sources.inputs import extract_rows
 
 
 class PlistSources(PublicSourceExamples):
+    def store_search_recipe(self):
+        entries = json.loads((ROOT / 'config/catalog.json').read_text())['entries']
+        store = next(entry for entry in entries if entry['id'] == 'apple-store-transactions')
+        return next(recipe for recipe in store['extract'] if recipe['format'] == 'plist-service-fields')
+
+    def store_search_document(self):
+        return {
+            'jingleDocType': 'initiateSessionSuccess',
+            'jingleAction': 'mzInitiateSession',
+            'apps-media-api-host': 'apps.vendor.example',
+            'search': 'https://search.vendor.example/search',
+            'searchHints': 'https://hints.vendor.example/hints',
+            'p3-games-search': 'https://new-search.other-provider.example/search?media=software',
+            'ampMusicAPIDomains': {'search': 'https://music.vendor.example/search'},
+            'research': 'https://unrelated.vendor.example/',
+            'searchAnalytics': 'https://stats.vendor.example/',
+        }
+
+    def test_store_search_fields_follow_new_endpoints_without_taking_music_or_metrics(self):
+        actual = extract_rows(self.store_search_recipe(), self.encode(self.store_search_document()))
+        self.assertEqual(actual, {
+            'DOMAIN,apps.vendor.example', 'DOMAIN,search.vendor.example',
+            'DOMAIN,hints.vendor.example', 'DOMAIN,new-search.other-provider.example',
+        })
+
+    def test_store_search_missing_required_fields_cannot_publish_only_the_media_api(self):
+        document = self.store_search_document()
+        document.pop('searchHints')
+        with self.assertRaises(Invalid):
+            extract_rows(self.store_search_recipe(), self.encode(document))
+
+    def test_store_search_still_rejects_url_credentials(self):
+        document = self.store_search_document()
+        document['searchHints'] = 'https://user@hints.vendor.example/hints?media=software'
+        with self.assertRaises(Invalid):
+            extract_rows(self.store_search_recipe(), self.encode(document))
+
     def recipe(self):
         return {'format':'plist-service-fields',
                 'source':'https://config.vendor.example/services.plist',

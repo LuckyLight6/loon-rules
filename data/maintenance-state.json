@@ -1,7 +1,7 @@
 {
-  "checked-at": "2026-11-21T18:57:53Z",
+  "checked-at": "2026-11-22T08:35:26Z",
   "inputs-read": 486,
-  "critical": 693,
+  "critical": 697,
   "inputs-requested": 486,
   "profiles-checked": 512,
   "assigned-rules": {
@@ -372,7 +372,7 @@
       "kimi-international": 1,
       "minimax-international": 1,
       "bytedance-international": 1,
-      "apple-account-authentication": 4,
+      "apple-account-authentication": 10,
       "apple-app-and-device-verification": 3,
       "apple-wallet-payments": 2,
       "apple-store-transactions": 11,
@@ -4973,7 +4973,7 @@
         "canonical-hosts": [
           "updates-http.cdn-apple.com"
         ],
-        "state": "historical"
+        "state": "retained"
       }
     },
     "microsoft-office-downloads": {
@@ -5674,14 +5674,14 @@
     "unavailable-lookups": 0,
     "partial-lookups": 2,
     "incomplete-hosts": [
-      "officecdn.microsoft.com",
-      "swcdn.apple.com"
+      "appldnld.apple.com.edgesuite.net",
+      "updates-http.cdn-apple.com"
     ]
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
-    "state": "retained-newer",
-    "source-version": "2026-11-20_10-39-09_UTC",
+    "state": "current",
+    "source-version": "2026-11-21_04-33-45_UTC",
     "active-version": "2026-11-21_04-33-45_UTC"
   },
   "shared-service-transfers": {
@@ -5696,7 +5696,7 @@
       "method": "ios-client-config",
       "directory": "https://gdmf.apple.com/v2/pmv",
       "configuration": "https://configuration.ls.apple.com/config/defaults",
-      "as-of": "2026-11-21",
+      "as-of": "2026-11-22",
       "selection": {
         "source": "https://gdmf.apple.com/v2/pmv",
         "config-source": "https://configuration.ls.apple.com/config/defaults",
@@ -5742,7 +5742,7 @@
         {
           "version": "12.5.8",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad4,1",
             "iPad4,2",
@@ -5763,7 +5763,7 @@
         {
           "version": "15.8.8",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad5,1",
             "iPad5,2",
@@ -5782,7 +5782,7 @@
         {
           "version": "16.7.16",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad6,11",
             "iPad6,12",
@@ -5801,7 +5801,7 @@
         {
           "version": "17.7.11",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad7,1",
             "iPad7,2",
@@ -5814,7 +5814,7 @@
         {
           "version": "18.7.12",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad7,11",
             "iPad7,12"
@@ -5823,7 +5823,7 @@
         {
           "version": "18.7.12",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad7,11",
             "iPad7,12",
@@ -5836,7 +5836,7 @@
         {
           "version": "26.7.3",
           "posted": "2026-11-09",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad12,1",
             "iPad12,2",
@@ -5924,7 +5924,7 @@
         {
           "version": "26.7.3",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad11,1",
             "iPad11,2",
@@ -5945,7 +5945,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad12,1",
             "iPad12,2",
@@ -6036,7 +6036,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPad19,1",
             "iPad19,2"
@@ -6045,7 +6045,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-19",
+          "expires": "2027-02-20",
           "devices": [
             "iPhone19,4"
           ]
@@ -10863,6 +10863,7 @@
     "runnerproxsdc1.actions.githubusercontent.com",
     "runnerproxweu1.actions.githubusercontent.com",
     "sandbox.braintreegateway.com",
+    "search.itunes.apple.com",
     "secure.notion-static.com",
     "server.codeium.com",
     "signal.art",
@@ -10957,7 +10958,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -10998,7 +10999,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "ollama-cloud": {
@@ -11029,7 +11030,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "stackit-model-services": {
@@ -11060,7 +11061,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "stepfun-international": {
@@ -11102,7 +11103,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "xiaomi-international": {
@@ -11145,7 +11146,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -11171,16 +11172,31 @@
               ],
               "equals": "mzInitiateSession"
             }
-          ]
+          ],
+          "records": {
+            "paths": [
+              []
+            ],
+            "allow-query": true,
+            "url-patterns": [
+              "advancedSearch",
+              "(?:[a-z0-9]+-)*search(?:Api|Hints)?"
+            ],
+            "required-fields": [
+              "search",
+              "searchHints"
+            ]
+          }
         }
       ],
       "observed": [
-        "DOMAIN,amp-api.apps.apple.com"
+        "DOMAIN,amp-api.apps.apple.com",
+        "DOMAIN,search.itunes.apple.com"
       ],
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -11221,7 +11237,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -11256,7 +11272,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -11488,7 +11504,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "npm-registry": {
@@ -11521,7 +11537,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11565,7 +11581,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11598,7 +11614,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -11651,7 +11667,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "braintree-payments": {
@@ -11678,7 +11694,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "notion-workspace": {
@@ -11704,7 +11720,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "google-account-authentication": {
@@ -11912,7 +11928,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -11938,7 +11954,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "google-play-services": {
@@ -11974,7 +11990,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "google-play-games": {
@@ -12002,7 +12018,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "kimi-mainland": {
@@ -12033,7 +12049,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -12072,7 +12088,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -12103,7 +12119,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -12146,15 +12162,15 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795287457,
+      "last-read": 1795336509,
       "state": "current"
     }
   },
-  "inventory-domain-cases": 465,
+  "inventory-domain-cases": 466,
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1147,
+  "business-domain-cases": 1151,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -12165,7 +12181,8 @@
   "shared-negatives": 20,
   "changed": [
     "apple-all",
-    "apple-account-authentication"
+    "apple-account-authentication",
+    "apple-store-transactions"
   ],
   "scope-negatives": 141,
   "ip-cases": 37,
@@ -12329,12 +12346,12 @@
     "lovart-international": 1,
     "dia-browser-services": 2,
     "openclaw-product-services": 1,
-    "apple-all": 260,
-    "apple-account-authentication": 9,
+    "apple-all": 267,
+    "apple-account-authentication": 15,
     "apple-app-and-device-verification": 8,
     "apple-wallet-payments": 4,
     "apple-testflight": 2,
-    "apple-store-transactions": 16,
+    "apple-store-transactions": 17,
     "apple-app-package-downloads": 2,
     "apple-association-services": 2,
     "apple-push-connection": 11,

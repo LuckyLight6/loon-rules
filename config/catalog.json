@@ -4667,12 +4667,17 @@
       "id": "apple-account-authentication",
       "mode": "compiled",
       "policy-hint": "apple-account",
-      "description": "登录、GrandSlam、OAuth、iCloud 初始化与账户恢复",
-      "boundary": "包括 GrandSlam 的账户关联设备登记；按专用用途读取精确主机，优先于商店、iCloud 与共享 Apple CDN",
+      "description": "登录、GrandSlam、OAuth、账户恢复与 iCloud 账户控制",
+      "boundary": "包括 GrandSlam 账户关联设备登记及 iCloud 的订阅、发件设置和配额分片；iCloud 文件、邮件内容与共享网关继续由同步和内容规则处理",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list",
         "https://support.apple.com/en-us/101555",
-        "https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go"
+        "https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go",
+        "https://github.com/timlaing/pyicloud/blob/main/pyicloud/endpoints.py",
+        "https://github.com/timlaing/pyicloud/blob/main/pyicloud/services/account.py",
+        "https://dns.google/resolve?name=p181-acsegateway.icloud.com&type=CNAME",
+        "https://dns.google/resolve?name=p181-mcc.icloud.com&type=CNAME",
+        "https://dns.google/resolve?name=p181-quota.icloud.com&type=CNAME"
       ],
       "priority": 2010,
       "section": "apple",
@@ -4710,7 +4715,13 @@
         "DOMAIN,iforgot.apple.com",
         "DOMAIN,setup.icloud.com",
         "DOMAIN,auth.itunes.apple.com",
-        "DOMAIN,appleid.apple.com"
+        "DOMAIN,appleid.apple.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-acsegateway.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-acsegateway.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-mcc.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-mcc.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9]-quota.icloud.com",
+        "DOMAIN-WILDCARD,p[0-9][0-9][0-9]-quota.icloud.com"
       ],
       "selection": "detailed"
     },
@@ -4843,7 +4854,7 @@
       "id": "apple-store-transactions",
       "mode": "compiled",
       "policy-hint": "apple-store-api",
-      "description": "App Store API、购买与安装指令、Apple Books 商店",
+      "description": "App Store API、搜索与提示、购买与安装指令、Apple Books 商店",
       "boundary": "包括 iTunes 签名初始化、第三方市场安装入口和 Apple Books 门户。账户认证、App 下载和 TestFlight 分开，不包揽整个 itunes.apple.com",
       "sources": [
         "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list",
@@ -4885,7 +4896,21 @@
               "apps-media-api-host"
             ]
           ],
-          "protect-from-reject": true
+          "protect-from-reject": true,
+          "records": {
+            "paths": [
+              []
+            ],
+            "allow-query": true,
+            "url-patterns": [
+              "advancedSearch",
+              "(?:[a-z0-9]+-)*search(?:Api|Hints)?"
+            ],
+            "required-fields": [
+              "search",
+              "searchHints"
+            ]
+          }
         }
       ],
       "include": [
@@ -11155,6 +11180,15 @@
     "setup.icloud.com": [
       "apple-account-authentication"
     ],
+    "p181-acsegateway.icloud.com": [
+      "apple-account-authentication"
+    ],
+    "p181-mcc.icloud.com": [
+      "apple-account-authentication"
+    ],
+    "p181-quota.icloud.com": [
+      "apple-account-authentication"
+    ],
     "app-site-association.cdn-apple.com": [
       "apple-association-services"
     ],
@@ -13140,6 +13174,9 @@
     ],
     "gsas.apple.com": [
       "apple-account-authentication"
+    ],
+    "search.itunes.apple.com": [
+      "apple-store-transactions"
     ]
   },
   "shared-negatives": [

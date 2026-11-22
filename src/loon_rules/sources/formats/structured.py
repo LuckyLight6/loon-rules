@@ -122,11 +122,12 @@ def json_service_urls(recipe,text):
     return result
 
 
-def service_url_host(value):
+def service_url_host(value, *, allow_query=False):
     if not isinstance(value,str) or value!=value.strip() or any(ord(c)<32 for c in value):
         raise Invalid('服务 URL 字段不是有效字符串')
     url=urlsplit(value)
-    if url.scheme!='https' or not url.hostname or url.username is not None or url.query or url.fragment:
+    if (url.scheme != 'https' or not url.hostname or url.username is not None
+            or url.fragment or (url.query and not allow_query)):
         raise Invalid('服务 URL 字段不是无凭据的 HTTPS 入口')
     return domain_scope.public_host(url.hostname)
 
@@ -191,9 +192,12 @@ def plist_service_fields(recipe,text):
 
 
 def plist_record_urls(document,spec):
-    if (not isinstance(spec,dict) or set(spec)-{'paths','url-fields','url-patterns','typed-url-patterns','required-fields'}
+    if (not isinstance(spec,dict) or set(spec)-{'paths','url-fields','url-patterns','typed-url-patterns','required-fields','allow-query'}
             or not isinstance(spec.get('paths'),list) or not spec['paths']):
         raise Invalid('服务配置缺少明确的记录选择')
+    allow_query = spec.get('allow-query', False)
+    if not isinstance(allow_query, bool):
+        raise Invalid('服务配置的 allow-query 必须是布尔值')
     for field in ('url-fields','url-patterns','typed-url-patterns','required-fields'):
         values=spec.get(field,[])
         if not isinstance(values,list) or any(not isinstance(value,str) or not value for value in values):
@@ -216,6 +220,7 @@ def plist_record_urls(document,spec):
             for field,value in record.items():
                 typed_url=(named(field,typed) and isinstance(value,str) and re.match(r'[A-Za-z][A-Za-z0-9+.-]*://',value))
                 if field in fields or field in required or named(field,patterns) or typed_url:
-                    seen.add(field);rows.add('DOMAIN,'+service_url_host(value))
+                    seen.add(field)
+                    rows.add('DOMAIN,' + service_url_host(value, allow_query=allow_query))
     if not set(spec.get('required-fields',()))<=seen:raise Invalid('服务配置缺少必需的用途字段')
     return rows

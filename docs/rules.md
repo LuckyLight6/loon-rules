@@ -179,7 +179,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 2010 | [apple-account-authentication](../rules/2010-apple-account-authentication.lsr) | 登录、GrandSlam、OAuth、iCloud 初始化与账户恢复 | 包括 GrandSlam 的账户关联设备登记；按专用用途读取精确主机，优先于商店、iCloud 与共享 Apple CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2010-apple-account-authentication.lsr) |
+| 2010 | [apple-account-authentication](../rules/2010-apple-account-authentication.lsr) | 登录、GrandSlam、OAuth、账户恢复与 iCloud 账户控制 | 包括 GrandSlam 账户关联设备登记及 iCloud 的订阅、发件设置和配额分片；iCloud 文件、邮件内容与共享网关继续由同步和内容规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2010-apple-account-authentication.lsr) |
 | 2020 | [apple-app-and-device-verification](../rules/2020-apple-app-and-device-verification.lsr) | 应用验证、App Attest、macOS 公证与设备身份验证 | 保留系统服务直连；共享 apple-cloudkit.com 不从此组抢走 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2020-apple-app-and-device-verification.lsr) |
 | 2030 | [apple-wallet-payments](../rules/2030-apple-wallet-payments.lsr) | Wallet 与 Apple Pay 已知支付入口 | 只收可追溯的精确主机。支付仍依赖账户、设备校验及商户；不吞 ca、Apple 全域或其他支付公司 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2030-apple-wallet-payments.lsr) |
 
@@ -188,7 +188,7 @@
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
 | 2040 | [apple-testflight](../rules/2040-apple-testflight.lsr) | TestFlight 测试版安装和分发 | 剔除整个 TestFlight 关键词；商店生产环境和系统 OTA 分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2040-apple-testflight.lsr) |
-| 2050 | [apple-store-transactions](../rules/2050-apple-store-transactions.lsr) | App Store API、购买与安装指令、Apple Books 商店 | 包括 iTunes 签名初始化、第三方市场安装入口和 Apple Books 门户。账户认证、App 下载和 TestFlight 分开，不包揽整个 itunes.apple.com | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2050-apple-store-transactions.lsr) |
+| 2050 | [apple-store-transactions](../rules/2050-apple-store-transactions.lsr) | App Store API、搜索与提示、购买与安装指令、Apple Books 商店 | 包括 iTunes 签名初始化、第三方市场安装入口和 Apple Books 门户。账户认证、App 下载和 TestFlight 分开，不包揽整个 itunes.apple.com | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2050-apple-store-transactions.lsr) |
 | 2060 | [apple-app-package-downloads](../rules/2060-apple-app-package-downloads.lsr) | App Store 安装包下载 | 只匹配已知安装包入口和别名，不把 mzstatic 整段算作安装包。TestFlight、购买、设备验证和系统更新各有专表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2060-apple-app-package-downloads.lsr) |
 | 2070 | [apple-association-services](../rules/2070-apple-association-services.lsr) | Apple 通用链接的域名验证 | 只匹配 Associated Domains 端点，不放开整个 Apple CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/2070-apple-association-services.lsr) |
 
