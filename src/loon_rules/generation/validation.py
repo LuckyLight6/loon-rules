@@ -4,7 +4,7 @@ from loon_rules.generation import contracts as endpoint_contracts
 from loon_rules.domains import covers
 from loon_rules.matching import RuleIndex
 from loon_rules.generation.membership import compact,overlapping_rules,without_protected
-from loon_rules.generation.ordering import ordered_route,route_order,subscription_order,verify_domain_order,verify_ip_order
+from loon_rules.generation.ordering import ordered_route,route_order,subscription_order,verify_domain_order,verify_ip_order,view_replacements,view_selections
 from loon_rules.policy import overbroad
 from loon_rules.generation.protection import protected_hosts
 
@@ -52,32 +52,31 @@ def verify_combinations(config,entries,data,*,index=None):
     addresses=[(case['target'],index.ip_bits(case['target'],literal=case['literal']),
                 [case['rule']] if case['rule'] else []) for case in config.get('ip-cases',())]
     repeated=[(row,owners) for row,owners in row_owners.items() if owners.bit_count()>1]
-    profile_count=1<<(len(config['views'])+len(extras))
-    for selection in range(profile_count):
-        selected=set(active);replacements={}
-        for i,key in enumerate(config['views']):
-            if selection&(1<<i):
-                selected.difference_update(entries[key]['members']);selected.add(key)
-                replacements.update((member,key) for member in entries[key]['members'])
-        for i,key in enumerate(extras,len(config['views'])):
-            if selection&(1<<i):selected.add(key)
-        mask=sum(bits[k] for k in selected)
-        for row,owners in repeated:
-            together=owners&mask
-            if together&(together-1):
-                first=names[together&-together]
-                other=[k for k in selected if k!=first and bits[k]&together]
-                ad_override=(first in extras and entries[first].get('policy-hint')=='reject'
-                             and all(entries[k].get('fallback') and entries[k].get('policy-hint')!='reject' for k in other))
-                if not ad_override:
-                    raise rules.Invalid(f'订阅组合 {selection} 含重复规则：{row[0]},{row[1]}')
-        for target,matching,wanted in domains+addresses:
-            matching&=mask
-            first=matching&-matching
-            expected=0
-            for key in wanted:expected|=bits[replacements.get(key,key)]
-            if (first and not first&expected) or (not first and expected):
-                raise rules.Invalid(f'订阅组合 {selection}：{target} 命中 {names.get(first)!r}，与业务用例不符')
+    profile_count=0
+    for views in view_selections(config,entries):
+        replacements=view_replacements(config,entries,views)
+        base=active-set(replacements)
+        base.update(replacements.values())
+        for optional in range(1<<len(extras)):
+            selected=base|{key for i,key in enumerate(extras) if optional&(1<<i)}
+            mask=sum(bits[k] for k in selected)
+            for row,owners in repeated:
+                together=owners&mask
+                if together&(together-1):
+                    first=names[together&-together]
+                    other=[k for k in selected if k!=first and bits[k]&together]
+                    ad_override=(first in extras and entries[first].get('policy-hint')=='reject'
+                                 and all(entries[k].get('fallback') and entries[k].get('policy-hint')!='reject' for k in other))
+                    if not ad_override:
+                        raise rules.Invalid(f'订阅组合 {profile_count} 含重复规则：{row[0]},{row[1]}')
+            for target,matching,wanted in domains+addresses:
+                matching&=mask
+                first=matching&-matching
+                expected=0
+                for key in wanted:expected|=bits[replacements.get(key,key)]
+                if (first and not first&expected) or (not first and expected):
+                    raise rules.Invalid(f'订阅组合 {profile_count}：{target} 命中 {names.get(first)!r}，与业务用例不符')
+            profile_count+=1
     return profile_count
 
 
@@ -126,9 +125,10 @@ def verify_cases(config, entries, data, online, contracts=(), functional=()):
         verify_domain_order(order,entries,data)
         verify_ip_order(order,entries,data)
         endpoint_contracts.verify_routes(contracts,entries,order,data)
-        scenarios=[[view] for view in config['views']]+[config['views']]
+        scenarios=list(dict.fromkeys([(view,) for view in config['views']]+
+                                     list(view_selections(config,entries,maximal=True))))
         for views in scenarios:
-            replacements={k:view for view in views for k in entries[view]['members']}
+            replacements=view_replacements(config,entries,views)
             combined=route_order(config,entries,views)
             verify_domain_order(combined,entries,data)
             verify_ip_order(combined,entries,data)

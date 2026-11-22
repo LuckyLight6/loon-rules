@@ -7,7 +7,7 @@ from loon_rules import catalog as catalog_schema
 from loon_rules.generation import inventories as service_inventory
 from loon_rules.policy import SHARED_PARENT,SLUG
 from loon_rules.generation.feeds import calibration_urls
-from loon_rules.generation.ordering import subscription_order
+from loon_rules.generation.ordering import subscription_order, view_replacements
 
 
 
@@ -134,6 +134,7 @@ def validate_declarations(config):
                 raise rules.Invalid('域名兜底的优先来源必须来自合并输入且不能同时作为保护来源：'+e['id'])
         if e['mode']=='view':
             if (e['id'] not in config['views'] or not e['members']
+                or len(e['members'])!=len(set(e['members']))
                 or not set(e['members'])<=set(names)
                 or any(e['section']!=entries[k]['section']
                        for k in e['members'])):
@@ -159,9 +160,7 @@ def validate_declarations(config):
         for ref in section.get('related',()):
             if ref['id'] not in entries or entries[ref['id']]['section']==section['id'] or not ref['note']:
                 raise rules.Invalid('跨区引用无效：'+ref['id'])
-    members=[k for view in config['views'] for k in entries[view]['members']]
-    if len(members)!=len(set(members)):
-        raise rules.Invalid('合集之间含相同成员')
+    view_replacements(config,entries,config.get('recommended-views',()))
     for spec in config.get('source-inventories',[]):
         owners=set(spec['owners'])|set(spec.get('other-owners',{}).values())
         if not spec['owners'] or not owners<=set(entries) or not any(

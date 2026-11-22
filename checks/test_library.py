@@ -39,21 +39,23 @@ class LibraryChecks(unittest.TestCase):
                 self.assertEqual(ordered_route(host,order,data),wanted)
 
     def test_ecosystem_bundles_keep_other_views_in_charge_of_ai_and_video(self):
+        from loon_rules.generation.ordering import view_selections
         c=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(c)
         self.assertIn('google-all',c['views'])
         self.assertIn('microsoft-all',c['views'])
-        order=library.route_order(c,entries,c['views'])
-        data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
-              for k in order}
-        for host,wanted in {
-            'gemini.google.com':'ai-overseas-all',
-            'copilot.cloud.microsoft':'ai-overseas-all',
-            'www.youtube.com':'overseas-media-all',
-            'accounts.google.com':'google-all',
-            'outlook.live.com':'microsoft-all',
-        }.items():
-            self.assertEqual(ordered_route(host,order,data),wanted,host)
+        for selection in view_selections(c,entries,maximal=True):
+            order=library.route_order(c,entries,selection)
+            data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
+                  for k in order}
+            for host,wanted in {
+                'gemini.google.com':'ai-overseas-all',
+                'copilot.cloud.microsoft':'ai-overseas-all',
+                'www.youtube.com':'overseas-media-all',
+                'accounts.google.com':'google-all',
+                'outlook.live.com':'microsoft-all',
+            }.items():
+                self.assertEqual(ordered_route(host,order,data),wanted,(selection,host))
 
     def test_merge_does_not_treat_ip_dns_options_as_duplicates(self):
         rows=['DOMAIN,api.product.example','DOMAIN-SUFFIX,product.example',

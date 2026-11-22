@@ -22,12 +22,12 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-over
 | 使用方式 | 选择 |
 |---|---|
 | 海外 AI 用同一稳定出口 | 1000；需要分别选路时，改选 Claude、OpenAI、Gemini、xAI 等成员 |
-| 国产 AI 区分国内与国际入口 | 国内版 5000，国际版 1250；两者也各有产品细分。Apple Intelligence 独立使用 1230 |
-| Apple 登录和下载用不同出口 | 用 Apple 细分表。账户 2010、交易 2050 可选同一稳定节点；安装包 2060、系统下载 2240、iCloud 内容 2140 分别选路。TV、News、PCC 使用可用地区的代理 |
+| 国产 AI 区分国内与国际入口 | 国内版 5000，国际版 1250；两者也各有产品细分。Apple Intelligence 选 1230，或由 Apple 海外功能 2005 涵盖 |
+| Apple 日常使用，普通服务直连 | 海外功能 2005、独立推送 2080、日常直连 2350；已含 PCC。需要分别调整时改用成员细分，2000 用于统一出口 |
 | Google 或 Microsoft 统一选路 | 分别选 4500、4700；需要区分账户、会议、文件或更新下载时，改选成员 |
 | 补充专项没有识别的网站 | 6700 交给海外影音策略，6750 交给通用代理。国内补充选 7020；需要分别控制时，用 7040、7070、7110 替代 |
 
-`-all` 是合集，**与它的成员二选一**。`-extra` 只补专项以外的范围，不能代替专项。规则按用途细分，不要求每份都新建一个策略组。
+`-all` 是合集，**与它的成员二选一**。Apple 的日常组合 2005／2350 与完整合集 2000 也二选一。`-extra` 只补专项以外的范围，不能代替专项。规则按用途细分，不要求每份都新建一个策略组。
 
 ## 顺序与拦截
 
@@ -37,11 +37,11 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-over
 
 ## DNS 插件单独选择
 
-[公网服务分域 DoH 插件](plugins/public-services-doh.plugin)为所列海外业务使用 Cloudflare，为国产 AI 国内版与大陆 iCloud 使用阿里公共 DoH；其他名称沿用系统或 VPN 的解析器。插件只有域名映射，不解密 HTTPS，不运行脚本。DoH 连接的最终出口与失败回落要在设备上检查；选择加密上游不等于防泄漏已经通过。内网名称和私有网段只放在自己的配置里。[选择与测试 DNS](docs/network-testing.md#dns先看查询走了哪里)
+[公网服务分域 DoH 插件](plugins/public-services-doh.plugin)为所列海外业务使用 Cloudflare，为国产 AI 国内版和所列直连 Apple 服务使用阿里公共 DoH；其他名称沿用系统或 VPN 的解析器。插件只有域名映射，不解密 HTTPS，不运行脚本。DoH 连接的最终出口与失败回落要在设备上检查；选择加密上游不等于防泄漏已经通过。内网名称和私有网段只放在自己的配置里。[选择与测试 DNS](docs/network-testing.md#dns先看查询走了哪里)
 
 ## 更新与反馈
 
-仓库配置了每天北京时间 **11:37** 的更新任务。生成器读取官方用途资料和社区来源，检查新增、撤回、归属与首条命中，通过后才提交成品。源码、分类条件与维护依据都保留在仓库中；每轮检查摘要在 GitHub Actions，详细维护状态在 `data/maintenance-state.json`。[自动更新能做什么](docs/maintenance.md)
+仓库计划每天北京时间 **11:37 和 23:37** 更新，定时触发状态以 Actions 中的 `schedule` 记录为准。生成器读取官方用途资料和社区来源，检查新增、撤回、归属与首条命中，通过后才提交成品。源码、分类条件与维护依据都保留在仓库中；每轮检查摘要在 GitHub Actions，详细维护状态在 `data/maintenance-state.json`。[自动更新能做什么](docs/maintenance.md)
 
 反馈错分时，提供公开主机名、Loon 版本、命中规则、预期出口和操作结果即可。请勿提交完整配置、节点凭据、证书、内部名称或带登录信息的 URL。
 

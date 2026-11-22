@@ -137,6 +137,7 @@
       "title": "Apple 生态",
       "ids": [
         "apple-all",
+        "apple-overseas-all",
         "apple-account-authentication",
         "apple-app-and-device-verification",
         "apple-wallet-payments",
@@ -170,7 +171,8 @@
         "apple-schoolwork-handouts",
         "apple-device-registration",
         "apple-feedback-and-diagnostics",
-        "apple-other-services"
+        "apple-other-services",
+        "apple-direct-all"
       ],
       "subheadings": {
         "apple-account-authentication": "账户、验证与支付",
@@ -182,9 +184,11 @@
         "apple-certificate-validation": "证书、设备管理和学校服务",
         "apple-all": "Apple 生态合集",
         "apple-find-my": "设备与朋友查找",
-        "apple-device-registration": "设备登记与诊断"
+        "apple-device-registration": "设备登记与诊断",
+        "apple-overseas-all": "Apple 海外功能合集",
+        "apple-direct-all": "Apple 日常直连合集"
       },
-      "note": "账户与商店交易可固定代理，安装包和更新包另选直连。合集用于统一出口，和成员二选一"
+      "note": "日常选 2005 海外功能、2080 推送、2350 普通服务；普通服务默认直连。细分表用于单独调整，2000 用于统一出口，按所列成员二选一"
     },
     {
       "start": 3000,
@@ -493,8 +497,6 @@
         "provider": "Cloudflare DNS",
         "groups": [
           "ip-egress-checks",
-          "apple-account-authentication",
-          "apple-store-transactions",
           "apple-video-and-fitness",
           "apple-news-and-sports",
           "apple-intelligence-relays",
@@ -502,6 +504,20 @@
           "chatgpt-connections",
           "gemini-connections",
           "xai-connections",
+          "ai-overseas-all",
+          "ai-cn-international-all",
+          "apple-private-relay-connections"
+        ]
+      },
+      {
+        "label": "国内直连与普通 Apple 服务",
+        "resolver": "https://223.5.5.5/dns-query",
+        "provider": "阿里公共 DNS",
+        "groups": [
+          "ai-cn-all",
+          "apple-icloud-mainland",
+          "apple-account-authentication",
+          "apple-store-transactions",
           "apple-find-my",
           "apple-app-and-device-verification",
           "apple-testflight",
@@ -509,17 +525,7 @@
           "apple-update-control",
           "apple-device-registration",
           "apple-feedback-and-diagnostics",
-          "ai-overseas-all",
-          "ai-cn-international-all"
-        ]
-      },
-      {
-        "label": "国内已选服务",
-        "resolver": "https://223.5.5.5/dns-query",
-        "provider": "阿里公共 DNS",
-        "groups": [
-          "ai-cn-all",
-          "apple-icloud-mainland"
+          "apple-icloud-content-domains"
         ]
       }
     ]
@@ -4648,7 +4654,7 @@
       "mode": "view",
       "policy-hint": "apple-services",
       "description": "Apple 生态合集",
-      "boundary": "替换所列账户、系统、海外媒体、智能与 iCloud 细分。涵盖海外服务，不能整表设直连；混合出口用细分。证书 2290 与通用补充 2340 在合集之后独立使用",
+      "boundary": "所列业务使用同一出口时选用，包含海外功能。日常分流改选 2005、2080、2350；两套方案不叠加。本表的证书 2290 与通用补充 2340 仍独立使用",
       "exclude": [
         "DOMAIN,crl3.digicert.com",
         "DOMAIN,crl4.digicert.com",
@@ -10858,6 +10864,47 @@
       "section": "mainland-fallback",
       "fallback": true,
       "ip-match": "allow-dns"
+    },
+    {
+      "id": "apple-overseas-all",
+      "mode": "view",
+      "policy-hint": "global",
+      "description": "Apple 海外功能合集",
+      "boundary": "PCC 与系统 AI 扩展、Private Relay、TV、Fitness+、News 和 Sports。日常在直连合集前使用；与 2000 及所列成员二选一，APNs 独立选择",
+      "priority": 2005,
+      "section": "apple",
+      "members": [
+        "apple-intelligence-relays",
+        "apple-private-relay-connections",
+        "apple-video-and-fitness",
+        "apple-tv-video-delivery",
+        "apple-news-and-sports"
+      ]
+    },
+    {
+      "id": "apple-direct-all",
+      "mode": "view",
+      "policy-hint": "direct",
+      "description": "Apple 日常直连合集",
+      "boundary": "账户、商店、iCloud、音乐、普通 Siri、下载与系统服务，包含证书和 Apple 通用补充。日常在海外功能与 APNs 后使用；与 2000 及所列成员二选一",
+      "priority": 2350,
+      "section": "apple",
+      "fallback": true,
+      "allowed-shared": [
+        "apple.com",
+        "cdn-apple.com"
+      ],
+      "member-selection": {
+        "section": "apple",
+        "exclude": [
+          "apple-push-connection",
+          "apple-intelligence-relays",
+          "apple-private-relay-connections",
+          "apple-video-and-fitness",
+          "apple-tv-video-delivery",
+          "apple-news-and-sports"
+        ]
+      }
     }
   ],
   "detailed": [
@@ -11131,6 +11178,8 @@
     "ai-overseas-all",
     "ai-cn-international-all",
     "apple-all",
+    "apple-overseas-all",
+    "apple-direct-all",
     "overseas-media-all",
     "google-all",
     "microsoft-all",
@@ -13356,23 +13405,32 @@
       "ai-cn-international-all"
     ],
     "mask-api.icloud.com": [
-      "apple-all"
+      "apple-all",
+      "apple-overseas-all",
+      "apple-direct-all"
     ],
     "iosapps.itunes.apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-direct-all"
     ],
     "auth.itunes.apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-direct-all"
     ],
-    "ocsp.digicert.com": [],
+    "ocsp.digicert.com": [
+      "apple-direct-all"
+    ],
     "idv.cdn-apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-direct-all"
     ],
     "gspe1-ssl.ls.apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-direct-all"
     ],
     "static.gc.apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-direct-all"
     ],
     "copilot.cloud.microsoft": [
       "ai-overseas-all",
@@ -13382,13 +13440,18 @@
       "ai-overseas-all"
     ],
     "news.apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-overseas-all",
+      "apple-direct-all"
     ],
     "apple-relay.apple.com": [
-      "apple-all"
+      "apple-all",
+      "apple-overseas-all",
+      "apple-direct-all"
     ],
     "data.icloud-content.com.cn": [
-      "apple-all"
+      "apple-all",
+      "apple-direct-all"
     ],
     "accounts.google.com": [
       "google-all"
@@ -13431,6 +13494,7 @@
       "numbers": [
         1230,
         2000,
+        2005,
         2010,
         2020,
         2030,
@@ -13464,7 +13528,8 @@
         2310,
         2320,
         2330,
-        2340
+        2340,
+        2350
       ]
     },
     {
@@ -14703,7 +14768,9 @@
     ]
   },
   "recommended-views": [
-    "mainland-routing-all"
+    "mainland-routing-all",
+    "apple-overseas-all",
+    "apple-direct-all"
   ],
   "source-inventories": [
     {

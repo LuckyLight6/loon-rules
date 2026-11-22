@@ -1,9 +1,9 @@
 {
-  "checked-at": "2026-11-22T10:15:11Z",
+  "checked-at": "2026-11-22T11:56:41Z",
   "inputs-read": 488,
   "critical": 703,
   "inputs-requested": 488,
-  "profiles-checked": 512,
+  "profiles-checked": 1280,
   "assigned-rules": {
     "apple-system-connectivity": {
       "DOMAIN-SUFFIX,appattest.apple.com": "apple-app-and-device-verification",
@@ -5710,10 +5710,16 @@
     "http-requests": 36,
     "unavailable-hosts": 0,
     "unavailable-lookups": 0,
-    "partial-lookups": 0,
-    "incomplete-hosts": []
+    "partial-lookups": 3,
+    "incomplete-hosts": [
+      "iosapps.itunes.apple.com",
+      "swcdn.apple.com",
+      "updates.cdn-apple.com"
+    ]
   },
-  "source-mirrors-used": {},
+  "source-mirrors-used": {
+    "https://ftp.apnic.net/stats/apnic/delegated-apnic-latest": "https://rsync.apnic.net/stats/apnic/delegated-apnic-latest"
+  },
   "public-suffix-state": {
     "state": "current",
     "source-version": "2026-11-21_04-33-45_UTC",
@@ -9956,7 +9962,9 @@
       5000,
       6700,
       6750,
-      7020
+      7020,
+      2005,
+      2350
     ],
     "按用途与来源家族自动补全": [
       1010,
@@ -10996,7 +11004,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -11037,7 +11045,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "ollama-cloud": {
@@ -11068,7 +11076,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "stackit-model-services": {
@@ -11099,7 +11107,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "stepfun-international": {
@@ -11141,7 +11149,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "xiaomi-international": {
@@ -11184,7 +11192,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -11234,7 +11242,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -11275,7 +11283,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -11310,7 +11318,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -11542,7 +11550,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "npm-registry": {
@@ -11575,7 +11583,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11619,7 +11627,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -11652,7 +11660,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -11705,7 +11713,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "braintree-payments": {
@@ -11732,7 +11740,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "notion-workspace": {
@@ -11758,7 +11766,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "google-account-authentication": {
@@ -11966,7 +11974,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -11992,7 +12000,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "google-play-services": {
@@ -12028,7 +12036,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "google-play-games": {
@@ -12056,7 +12064,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "kimi-mainland": {
@@ -12087,7 +12095,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -12126,7 +12134,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -12157,7 +12165,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -12200,7 +12208,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795342490,
+      "last-read": 1795348586,
       "state": "current"
     }
   },
@@ -12217,7 +12225,11 @@
     }
   },
   "shared-negatives": 19,
-  "changed": [],
+  "changed": [
+    "apple-all",
+    "apple-overseas-all",
+    "apple-direct-all"
+  ],
   "scope-negatives": 141,
   "ip-cases": 37,
   "ip-matching": {
@@ -12381,6 +12393,7 @@
     "dia-browser-services": 2,
     "openclaw-product-services": 1,
     "apple-all": 267,
+    "apple-overseas-all": 27,
     "apple-account-authentication": 15,
     "apple-app-and-device-verification": 8,
     "apple-wallet-payments": 4,
@@ -12415,6 +12428,7 @@
     "apple-device-registration": 2,
     "apple-feedback-and-diagnostics": 16,
     "apple-other-services": 3,
+    "apple-direct-all": 106,
     "github-code-and-packages": 157,
     "gitlab-hosting": 4,
     "bitbucket-hosting": 1,

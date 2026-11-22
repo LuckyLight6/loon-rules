@@ -23,11 +23,36 @@ def subscription_order(config, entries):
     return order
 
 
-def route_order(config, entries, views=()):
-    active=set(config['detailed']+config['general'])
+def view_replacements(config, entries, views):
+    replacements={}
+    seen=set()
     for key in views:
-        active.difference_update(entries[key]['members'])
-        active.add(key)
+        if key not in config.get('views',()) or key in seen:
+            raise rules.Invalid('未知或重复的合集选择：'+key)
+        seen.add(key)
+        for member in entries[key]['members']:
+            if member in replacements:
+                raise rules.Invalid('合集不能同时订阅：'+replacements[member]+' / '+key+'；共同成员 '+member)
+            replacements[member]=key
+    return replacements
+
+
+def view_selections(config, entries, *, maximal=False):
+    members={key:set(entries[key]['members']) for key in config['views']}
+    choices=[((),set())]
+    for key,owned in members.items():
+        choices.extend([(selected+(key,),used|owned) for selected,used in choices
+                        if not used&owned])
+    for selected,used in choices:
+        if not maximal or all(key in selected or used&owned for key,owned in members.items()):
+            yield selected
+
+
+def route_order(config, entries, views=()):
+    replacements=view_replacements(config,entries,views)
+    active=set(config['detailed']+config['general'])
+    active.difference_update(replacements)
+    active.update(replacements.values())
     return [key for key in subscription_order(config,entries) if key in active]
 
 

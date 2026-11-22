@@ -3,6 +3,7 @@ import json
 import unittest
 from loon_rules.generation import pipeline as lib
 from loon_rules.catalog import priority_label
+from loon_rules.generation.ordering import view_selections
 
 class BusinessOrder(unittest.TestCase):
     def test_shadow_check_covers_wildcards_without_rejecting_partial_overlap(self):
@@ -60,7 +61,7 @@ class BusinessOrder(unittest.TestCase):
         by_number={priority_label(e):key for key,e in entries.items() if 'priority' in e}
         published=[by_number[n] for n in rows]
         self.assertEqual(published,lib.subscription_order(cfg,entries))
-        for selection in ((),*((v,) for v in cfg['views']),cfg['views']):
+        for selection in view_selections(cfg,entries):
             active=lib.route_order(cfg,entries,selection)
             self.assertEqual([k for k in published if k in active],active)
 
