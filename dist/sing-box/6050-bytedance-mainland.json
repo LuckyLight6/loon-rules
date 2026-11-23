@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "doubao.com",
+        "coze.cn"
+      ],
+      "domain": [
+        "ark.cn-beijing.volces.com",
+        "ark.volcengine.com"
+      ]
+    }
+  ]
+}

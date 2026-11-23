@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "steamcommunity-a.akamaihd.net",
+        "steambroadcast.akamaized.net",
+        "eaassets-a.akamaihd.net"
+      ],
+      "domain_suffix": [
+        "dota2.com",
+        "playartifact.com",
+        "s.team",
+        "steam-chat.com",
+        "steam.tv",
+        "steamcommunity.com",
+        "steamdeck.com",
+        "steampowered.com",
+        "steamstatic.com",
+        "valvesoftware.com",
+        "epicgames.com",
+        "epicgames.dev",
+        "fortnite.com",
+        "unrealengine.com",
+        "unrealtournament.com",
+        "playstation.com",
+        "playstation.net",
+        "playstationnetwork.com",
+        "nintendo.com",
+        "nintendo.net",
+        "nintendo.co.jp",
+        "nintendo.co.il",
+        "nintendo.co.za",
+        "nintendo.dk",
+        "nintendo.fi",
+        "nintendo.gr",
+        "nintendo.hu",
+        "nintendo.no",
+        "nintendo.pl",
+        "nintendo.sa",
+        "nintendo.se",
+        "nintendo.sk",
+        "genshinimpact.com",
+        "honkaistarrail.com",
+        "hoyolab.com",
+        "hoyoverse.com",
+        "ea.com",
+        "tnt-ea.com",
+        "origin.com",
+        "ubi.com",
+        "ubisoft.com",
+        "uplay.com",
+        "ubisoftconnect.com",
+        "blizzard.com",
+        "battle.net",
+        "easebar.com"
+      ]
+    }
+  ]
+}

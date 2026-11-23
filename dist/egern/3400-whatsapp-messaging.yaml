@@ -1,0 +1,17 @@
+# name: whatsapp-messaging
+# priority: 3400
+# section: social
+# description: WhatsApp 消息、媒体与短链接
+# boundary: 只采用官方客户端使用的核心命名空间；未核实用途的品牌变体和修改版名称不直接并入，通用 Meta 连接另行识别
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/3400-whatsapp-messaging.lsr
+
+domain_suffix_set:
+  - "wa.me"
+  - "whatsapp.com"
+  - "whatsapp.net"

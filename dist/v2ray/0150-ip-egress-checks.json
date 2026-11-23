@@ -1,0 +1,34 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:2026.ip138.com",
+          "full:my.ip.cn",
+          "full:myip.ipip.net",
+          "full:myip.la",
+          "full:www.myip.la",
+          "full:checkip.amazonaws.com",
+          "full:checkip.global.api.aws",
+          "full:api.ipify.org",
+          "full:api6.ipify.org",
+          "full:api64.ipify.org",
+          "full:checkip.spdyn.de",
+          "full:icanhazip.com",
+          "full:ident.me",
+          "full:ifconfig.io",
+          "full:ip.changeip.com",
+          "full:ip.nnev.de",
+          "full:ip4.nnev.de",
+          "full:ip6.nnev.de",
+          "full:ipv4.icanhazip.com",
+          "full:ipv6.icanhazip.com",
+          "full:v4.ident.me",
+          "full:v6.ident.me"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

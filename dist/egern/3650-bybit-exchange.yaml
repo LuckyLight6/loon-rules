@@ -1,0 +1,31 @@
+# name: bybit-exchange
+# priority: 3650
+# section: crypto
+# description: Bybit 交易平台
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list
+# canonical-rule-count: 16
+# rule-count: 16
+# format: egern
+# canonical: rules/3650-bybit-exchange.lsr
+
+domain_set:
+  - "bybit-exchange.github.io"
+  - "bybit.ada.support"
+domain_suffix_set:
+  - "bybit.com"
+  - "bycsi.com"
+  - "bytick.com"
+  - "byapis.com"
+  - "bycbe.com"
+  - "bymj.io"
+  - "byabcde.com"
+  - "byapps.net"
+  - "byd3c3.com"
+  - "bybit.biz"
+  - "bybdc6.com"
+  - "bybit-global.com"
+  - "bybit.cloud"
+  - "bybitglobal.com"

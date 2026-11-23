@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:gsp9-ssl.apple.com",
+          "full:gsp10-ssl.apple.com",
+          "domain:ls.apple.com",
+          "domain:gs-loc.apple.com",
+          "full:cl2-cn.apple.com",
+          "full:cl4-cn.apple.com",
+          "full:gs-loc-cn.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

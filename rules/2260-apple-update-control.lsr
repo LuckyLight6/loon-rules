@@ -2,7 +2,7 @@
 # priority: 2260
 # section: apple
 # description: 系统更新目录、检查、授权与登记
-# boundary: 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 2330，二进制包体在 2240，不把整组当成匿名静态下载
+# boundary: 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交和二进制包体各有专表，不把整组当成匿名静态下载
 # created-at: 2026-11-19T08:04:26Z
 # updated-at: 2026-11-21T11:39:00Z
 # rule-count: 59

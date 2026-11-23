@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "token-plan-ams.xiaomimimo.com",
+        "token-plan-sgp.xiaomimimo.com"
+      ]
+    }
+  ]
+}

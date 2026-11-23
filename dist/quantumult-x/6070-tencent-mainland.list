@@ -1,0 +1,25 @@
+# name: tencent-mainland
+# priority: 6070
+# section: ai
+# description: 腾讯混元、元宝与 TokenHub · 国内入口
+# boundary: 按已核实的国内产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://cloud.tencent.com/document/api/1823/132282
+# source: https://cloud.tencent.com/document/product/1729/111007
+# canonical-rule-count: 11
+# rule-count: 11
+# format: quantumult-x
+# canonical: rules/6070-tencent-mainland.lsr
+
+host,api.hunyuan.cloud.tencent.com,proxy
+host,tokenhub.tencentcloudapi.com,proxy
+host,tokenhub.ap-guangzhou.tencentcloudapi.com,proxy
+host,tokenhub.ap-shanghai.tencentcloudapi.com,proxy
+host,tokenhub.ap-nanjing.tencentcloudapi.com,proxy
+host,tokenhub.ap-beijing.tencentcloudapi.com,proxy
+host,tokenhub.ap-chengdu.tencentcloudapi.com,proxy
+host,tokenhub.ap-chongqing.tencentcloudapi.com,proxy
+host,tokenhub.ap-shanghai-fsi.tencentcloudapi.com,proxy
+host,tokenhub.ap-shenzhen-fsi.tencentcloudapi.com,proxy
+host,yuanbao.tencent.com,proxy

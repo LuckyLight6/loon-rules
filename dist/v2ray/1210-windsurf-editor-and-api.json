@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:codeium.com",
+          "domain:codeiumdata.com",
+          "domain:windsurf.build",
+          "domain:windsurf.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

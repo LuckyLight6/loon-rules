@@ -1,0 +1,44 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:kimg.cn",
+          "domain:kingsoft-office-service.com",
+          "domain:kingsoft.com",
+          "domain:ks-live.com",
+          "domain:ksmobile.com",
+          "domain:ksord.com",
+          "domain:ksosoft.com",
+          "domain:kcdnvip.com",
+          "domain:ks-cdn.com",
+          "domain:ks-cdn1.com",
+          "domain:ksyun.com",
+          "domain:ksyuncdn.com",
+          "domain:ksyungslb.com",
+          "domain:cheetahfun.com",
+          "domain:cmcm.com",
+          "domain:cmcmcdn.com",
+          "domain:liebao.cn",
+          "domain:zhhainiao.com",
+          "domain:drivergenius.com",
+          "domain:duba.com",
+          "domain:duba.net",
+          "domain:ijinshan.com",
+          "domain:keniu.com",
+          "domain:yuanqidesk.com",
+          "domain:seasungames.cn",
+          "domain:seasungames.com",
+          "domain:seasunwbl.com",
+          "domain:xishanju.com",
+          "domain:xoyo.com",
+          "domain:xoyocdn.com",
+          "domain:cbjq.com",
+          "domain:testplus.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

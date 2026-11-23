@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "qwen.ai",
+        "ap-northeast-1.maas.aliyuncs.com",
+        "ap-southeast-1.maas.aliyuncs.com",
+        "cn-hongkong.maas.aliyuncs.com",
+        "eu-central-1.maas.aliyuncs.com",
+        "us-east-1.maas.aliyuncs.com",
+        "kimi.ai",
+        "moonshot.ai",
+        "z.ai",
+        "hailuoai.video",
+        "minimax.io",
+        "coze.com",
+        "marscode.com",
+        "trae.ai",
+        "cici.com",
+        "ciciai.com",
+        "ciciaicdn.com",
+        "dola.com",
+        "youmind.ai",
+        "youmind.com",
+        "youmind.site",
+        "qoder.com",
+        "lovart.ai"
+      ],
+      "domain": [
+        "chat.qwenlm.ai",
+        "cn-hongkong.dashscope.aliyuncs.com",
+        "coding-intl.dashscope.aliyuncs.com",
+        "dashscope-intl.aliyuncs.com",
+        "dashscope-us.aliyuncs.com",
+        "ark.ap-southeast.bytepluses.com",
+        "api.siliconflow.com",
+        "cloud.siliconflow.com",
+        "tokenhub.ap-hongkong.tencentcloudapi.com",
+        "tokenhub.ap-singapore.tencentcloudapi.com",
+        "tokenhub.ap-jakarta.tencentcloudapi.com",
+        "tokenhub.ap-bangkok.tencentcloudapi.com",
+        "tokenhub.ap-seoul.tencentcloudapi.com",
+        "tokenhub.ap-tokyo.tencentcloudapi.com",
+        "tokenhub.na-ashburn.tencentcloudapi.com",
+        "tokenhub.na-siliconvalley.tencentcloudapi.com",
+        "tokenhub.sa-saopaulo.tencentcloudapi.com",
+        "tokenhub.eu-frankfurt.tencentcloudapi.com",
+        "api.stepfun.ai",
+        "token-plan-ams.xiaomimimo.com",
+        "token-plan-sgp.xiaomimimo.com"
+      ]
+    }
+  ]
+}

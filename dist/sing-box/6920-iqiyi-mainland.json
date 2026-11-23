@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "iqiyi.com",
+        "iqiyipic.com",
+        "qiyi.com",
+        "qiyipic.com"
+      ]
+    }
+  ]
+}

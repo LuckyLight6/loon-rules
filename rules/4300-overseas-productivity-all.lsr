@@ -4,14 +4,16 @@
 # description: 海外办公、邮件与协作合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T17:48:09Z
-# rule-count: 31
+# updated-at: 2026-11-23T18:50:42Z
+# rule-count: 54
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list
 # source: https://www.notion.com/help/allowlist-ip
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
 # source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list
+# source: https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
 
 DOMAIN-SUFFIX,notion-static.com
 DOMAIN-SUFFIX,notion.com
@@ -44,3 +46,26 @@ DOMAIN-SUFFIX,protontech.ch
 DOMAIN-SUFFIX,protonvpn.ch
 DOMAIN-SUFFIX,protonvpn.com
 DOMAIN-SUFFIX,protonweb.com
+DOMAIN-SUFFIX,intercom.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomassets.com
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,au.intercom-attachments.com
+DOMAIN-SUFFIX,downloads.intercomcdn.eu
+DOMAIN-SUFFIX,intercom-attachments-1.com
+DOMAIN-SUFFIX,intercom-attachments-2.com
+DOMAIN-SUFFIX,intercom-attachments-3.com
+DOMAIN-SUFFIX,intercom-attachments-4.com
+DOMAIN-SUFFIX,intercom-attachments-5.com
+DOMAIN-SUFFIX,intercom-attachments-6.com
+DOMAIN-SUFFIX,intercom-attachments-7.com
+DOMAIN-SUFFIX,intercom-attachments-8.com
+DOMAIN-SUFFIX,intercom-attachments-9.com
+DOMAIN-SUFFIX,intercom-attachments.eu
+DOMAIN-SUFFIX,intercom-messenger.com
+DOMAIN-SUFFIX,intercom-sheets.com
+DOMAIN-SUFFIX,intercom.help
+DOMAIN-SUFFIX,static.intercomassets.eu
+DOMAIN-SUFFIX,uploads.intercomcdn.eu
+DOMAIN-SUFFIX,uploads.intercomusercontent.com
+DOMAIN-SUFFIX,www.intercom-reporting.com

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "www-cdn.icloud.com.akadns.net"
+      ],
+      "domain_suffix": [
+        "apple-cloudkit.com",
+        "apple-livephotoskit.com",
+        "gc.apple.com",
+        "icloud.apple.com",
+        "icloud.com",
+        "iwork.apple.com",
+        "me.com",
+        "apple-dns.net"
+      ]
+    }
+  ]
+}

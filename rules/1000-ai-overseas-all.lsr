@@ -4,11 +4,15 @@
 # description: 海外 AI 合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-22T18:51:30Z
-# rule-count: 635
+# updated-at: 2026-11-23T18:06:27Z
+# rule-count: 639
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list
+# source: https://platform.claude.com/docs/en/api/ip-addresses
+# source: https://rdap.arin.net/registry/autnum/399358
+# source: https://academy.claude.com/products/platform
 # source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
 # source: https://openai.com/chatgpt-voice.json
@@ -175,6 +179,10 @@ IP-CIDR,160.79.104.0/23,no-resolve
 IP-CIDR,153.61.224.0/22,no-resolve
 IP-CIDR6,2607:6bc0::/48,no-resolve
 IP-ASN,399358,no-resolve
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claude.new
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudeacademy.com
 DOMAIN,openaiassets.blob.core.windows.net
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,oaistatsig.com

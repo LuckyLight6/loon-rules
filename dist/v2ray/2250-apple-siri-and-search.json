@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:guzzoni.apple.com",
+          "domain:siri.apple.com",
+          "full:dejavu.apple.com",
+          "full:sequoia.apple.com",
+          "domain:smoot.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

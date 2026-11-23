@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "binance.com",
+        "binance.info",
+        "binance.net",
+        "binance.us"
+      ],
+      "domain": [
+        "data-api.binance.vision",
+        "data-stream.binance.vision"
+      ]
+    }
+  ]
+}

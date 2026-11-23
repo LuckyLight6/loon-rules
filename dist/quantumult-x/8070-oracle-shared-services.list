@@ -1,0 +1,30 @@
+# name: oracle-shared-services
+# priority: 8070
+# section: vendors
+# description: Oracle、Java 与云平台共用服务
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/oracle.list
+# canonical-rule-count: 17
+# rule-count: 17
+# format: quantumult-x
+# canonical: rules/8070-oracle-shared-services.lsr
+
+host-suffix,oraclefoundation.org,proxy
+host-suffix,sun.com,proxy
+host-suffix,covid19rx.org,proxy
+host-suffix,custhelp.com,proxy
+host-suffix,oracle.com,proxy
+host-suffix,oraclecloud.com,proxy
+host-suffix,bronto.com,proxy
+host-suffix,oracleimg.com,proxy
+host-suffix,oracleinfinity.io,proxy
+host-suffix,covid19-rx.org,proxy
+host-suffix,virtualbox.org,proxy
+host-suffix,ateam-oracle.com,proxy
+host-suffix,java.com,proxy
+host-suffix,java.net,proxy
+host-suffix,addthis.com,proxy
+host-suffix,addthiscdn.com,proxy
+host-suffix,addthisedge.com,proxy

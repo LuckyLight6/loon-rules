@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:fmipmobile.icloud.com",
+          "full:fmfmobile.icloud.com",
+          "regexp:(?i)^p[0123456789][0123456789]\\-fmipmobile\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789][0123456789]\\-fmipmobile\\.icloud\\.com$",
+          "full:fmfmobile.fe2.apple-dns.net",
+          "regexp:(?i)^p[0123456789][0123456789]\\-fmfmobile\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789][0123456789]\\-fmfmobile\\.icloud\\.com$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

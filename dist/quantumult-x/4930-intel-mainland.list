@@ -1,0 +1,14 @@
+# name: intel-mainland
+# priority: 4930
+# section: vendors
+# description: Intel 中国网站
+# boundary: 采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/4930-intel-mainland.lsr
+
+host-suffix,intel.cn,proxy

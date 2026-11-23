@@ -1,0 +1,16 @@
+# name: bilibili-international-video
+# priority: 3880
+# section: media
+# description: 哔哩哔哩国际版视频
+# boundary: 只收明确的国际版根域；共用视频 CDN 和中国站仍按各自规则或通用层
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# canonical-rule-count: 3
+# rule-count: 3
+# format: surge-compatible
+# canonical: rules/3880-bilibili-international-video.lsr
+
+DOMAIN-SUFFIX,bilibili.tv
+DOMAIN-SUFFIX,biliintl.co
+DOMAIN-SUFFIX,biliintl.com

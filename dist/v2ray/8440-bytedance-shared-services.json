@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:bytecdn.cn",
+          "domain:bytecdn.com",
+          "domain:bytedance.com",
+          "domain:bytedns.net",
+          "domain:bytetcc.com",
+          "domain:snssdk.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

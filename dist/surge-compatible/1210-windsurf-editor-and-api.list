@@ -1,0 +1,18 @@
+# name: windsurf-editor-and-api
+# priority: 1210
+# section: ai
+# description: Windsurf 和 Codeium 专用接口
+# boundary: 不把公共托管平台当开发助手
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/windsurf.list
+# source: https://raw.githubusercontent.com/Exafunction/codeium.vim/main/autoload/codeium/server.vim
+# canonical-rule-count: 4
+# rule-count: 4
+# format: surge-compatible
+# canonical: rules/1210-windsurf-editor-and-api.lsr
+
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,windsurf.build
+DOMAIN-SUFFIX,windsurf.com

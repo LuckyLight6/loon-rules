@@ -1,0 +1,266 @@
+# name: overseas-development-all
+# priority: 3000
+# section: development
+# description: 海外开发合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr
+# source: https://api.github.com/meta
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
+# source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/npmjs.list
+# source: https://registry.npmjs.org/npm/latest
+# source: https://maven.apache.org/guides/introduction/introduction-to-repositories.html
+# source: https://pypi.org/pypi/pip/json
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/docker.list
+# source: https://docs.docker.com/desktop/enterprise/allow-list/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list
+# source: https://index.crates.io/config.json
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/golang.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains.list
+# source: https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json
+# source: https://support.jetbrains.com/hc/en-us/articles/40250675463570-Firewall-or-proxy-allowlist-for-IntelliJ-based-IDEs-required-hosts-and-ports
+# source: https://nodejs.org/en
+# source: https://agentclientprotocol.com/
+# source: https://youtrack.jetbrains.com/articles/SUPPORT-A-297
+# source: https://workos.com/
+# source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# source: https://docs.datadoghq.com/getting_started/site/
+# source: https://docs.datadoghq.com/real_user_monitoring/guide/browser-sdk-upgrade/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list
+# source: https://docs.statsig.com/infrastructure/statsig_domains
+# source: https://usefathom.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list
+# source: https://docs.withpersona.com/embedded-flow-troubleshooting-common-issues
+# source: https://www.yoti.com/
+# source: https://sift.com/
+# source: https://developers.sift.com/guides/payment-gateway
+# canonical-rule-count: 222
+# rule-count: 222
+# format: quantumult-x
+# canonical: rules/3000-overseas-development-all.lsr
+
+host-suffix,ghcr.io,proxy
+host-suffix,git.io,proxy
+host,github-avatars.oss-cn-hongkong.aliyuncs.com,proxy
+host,github-cloud.s3.amazonaws.com,proxy
+host-suffix,github.blog,proxy
+host-suffix,github.com,proxy
+host-suffix,github.community,proxy
+host-suffix,github.dev,proxy
+host-suffix,githubapp.com,proxy
+host-suffix,githubassets.com,proxy
+host-suffix,githubpreview.dev,proxy
+host-suffix,githubstatus.com,proxy
+host-suffix,githubusercontent.com,proxy
+host,mavenregistryv2prod.blob.core.windows.net,proxy
+host,npmregistryv2prod.blob.core.windows.net,proxy
+host,nugetregistryv2prod.blob.core.windows.net,proxy
+host,productionresultssa0.blob.core.windows.net,proxy
+host,productionresultssa1.blob.core.windows.net,proxy
+host,productionresultssa10.blob.core.windows.net,proxy
+host,productionresultssa100.blob.core.windows.net,proxy
+host,productionresultssa101.blob.core.windows.net,proxy
+host,productionresultssa102.blob.core.windows.net,proxy
+host,productionresultssa103.blob.core.windows.net,proxy
+host,productionresultssa104.blob.core.windows.net,proxy
+host,productionresultssa105.blob.core.windows.net,proxy
+host,productionresultssa106.blob.core.windows.net,proxy
+host,productionresultssa107.blob.core.windows.net,proxy
+host,productionresultssa108.blob.core.windows.net,proxy
+host,productionresultssa109.blob.core.windows.net,proxy
+host,productionresultssa11.blob.core.windows.net,proxy
+host,productionresultssa110.blob.core.windows.net,proxy
+host,productionresultssa111.blob.core.windows.net,proxy
+host,productionresultssa112.blob.core.windows.net,proxy
+host,productionresultssa113.blob.core.windows.net,proxy
+host,productionresultssa114.blob.core.windows.net,proxy
+host,productionresultssa115.blob.core.windows.net,proxy
+host,productionresultssa116.blob.core.windows.net,proxy
+host,productionresultssa117.blob.core.windows.net,proxy
+host,productionresultssa118.blob.core.windows.net,proxy
+host,productionresultssa119.blob.core.windows.net,proxy
+host,productionresultssa12.blob.core.windows.net,proxy
+host,productionresultssa120.blob.core.windows.net,proxy
+host,productionresultssa121.blob.core.windows.net,proxy
+host,productionresultssa122.blob.core.windows.net,proxy
+host,productionresultssa123.blob.core.windows.net,proxy
+host,productionresultssa124.blob.core.windows.net,proxy
+host,productionresultssa125.blob.core.windows.net,proxy
+host,productionresultssa126.blob.core.windows.net,proxy
+host,productionresultssa127.blob.core.windows.net,proxy
+host,productionresultssa128.blob.core.windows.net,proxy
+host,productionresultssa129.blob.core.windows.net,proxy
+host,productionresultssa13.blob.core.windows.net,proxy
+host,productionresultssa130.blob.core.windows.net,proxy
+host,productionresultssa131.blob.core.windows.net,proxy
+host,productionresultssa132.blob.core.windows.net,proxy
+host,productionresultssa133.blob.core.windows.net,proxy
+host,productionresultssa134.blob.core.windows.net,proxy
+host,productionresultssa135.blob.core.windows.net,proxy
+host,productionresultssa136.blob.core.windows.net,proxy
+host,productionresultssa137.blob.core.windows.net,proxy
+host,productionresultssa138.blob.core.windows.net,proxy
+host,productionresultssa139.blob.core.windows.net,proxy
+host,productionresultssa14.blob.core.windows.net,proxy
+host,productionresultssa140.blob.core.windows.net,proxy
+host,productionresultssa141.blob.core.windows.net,proxy
+host,productionresultssa142.blob.core.windows.net,proxy
+host,productionresultssa143.blob.core.windows.net,proxy
+host,productionresultssa144.blob.core.windows.net,proxy
+host,productionresultssa145.blob.core.windows.net,proxy
+host,productionresultssa146.blob.core.windows.net,proxy
+host,productionresultssa147.blob.core.windows.net,proxy
+host,productionresultssa148.blob.core.windows.net,proxy
+host,productionresultssa149.blob.core.windows.net,proxy
+host,productionresultssa15.blob.core.windows.net,proxy
+host,productionresultssa150.blob.core.windows.net,proxy
+host,productionresultssa151.blob.core.windows.net,proxy
+host,productionresultssa152.blob.core.windows.net,proxy
+host,productionresultssa153.blob.core.windows.net,proxy
+host,productionresultssa154.blob.core.windows.net,proxy
+host,productionresultssa155.blob.core.windows.net,proxy
+host,productionresultssa156.blob.core.windows.net,proxy
+host,productionresultssa157.blob.core.windows.net,proxy
+host,productionresultssa158.blob.core.windows.net,proxy
+host,productionresultssa159.blob.core.windows.net,proxy
+host,productionresultssa16.blob.core.windows.net,proxy
+host,productionresultssa160.blob.core.windows.net,proxy
+host,productionresultssa161.blob.core.windows.net,proxy
+host,productionresultssa162.blob.core.windows.net,proxy
+host,productionresultssa163.blob.core.windows.net,proxy
+host,productionresultssa164.blob.core.windows.net,proxy
+host,productionresultssa165.blob.core.windows.net,proxy
+host,productionresultssa166.blob.core.windows.net,proxy
+host,productionresultssa167.blob.core.windows.net,proxy
+host,productionresultssa168.blob.core.windows.net,proxy
+host,productionresultssa169.blob.core.windows.net,proxy
+host,productionresultssa17.blob.core.windows.net,proxy
+host,productionresultssa170.blob.core.windows.net,proxy
+host,productionresultssa171.blob.core.windows.net,proxy
+host,productionresultssa172.blob.core.windows.net,proxy
+host,productionresultssa173.blob.core.windows.net,proxy
+host,productionresultssa174.blob.core.windows.net,proxy
+host,productionresultssa175.blob.core.windows.net,proxy
+host,productionresultssa176.blob.core.windows.net,proxy
+host,productionresultssa177.blob.core.windows.net,proxy
+host,productionresultssa178.blob.core.windows.net,proxy
+host,productionresultssa179.blob.core.windows.net,proxy
+host,productionresultssa18.blob.core.windows.net,proxy
+host,productionresultssa180.blob.core.windows.net,proxy
+host,productionresultssa181.blob.core.windows.net,proxy
+host,productionresultssa182.blob.core.windows.net,proxy
+host,productionresultssa183.blob.core.windows.net,proxy
+host,productionresultssa184.blob.core.windows.net,proxy
+host,productionresultssa185.blob.core.windows.net,proxy
+host,productionresultssa186.blob.core.windows.net,proxy
+host,productionresultssa187.blob.core.windows.net,proxy
+host,productionresultssa188.blob.core.windows.net,proxy
+host,productionresultssa189.blob.core.windows.net,proxy
+host,productionresultssa19.blob.core.windows.net,proxy
+host,productionresultssa190.blob.core.windows.net,proxy
+host,productionresultssa191.blob.core.windows.net,proxy
+host,productionresultssa192.blob.core.windows.net,proxy
+host,productionresultssa193.blob.core.windows.net,proxy
+host,productionresultssa194.blob.core.windows.net,proxy
+host,productionresultssa195.blob.core.windows.net,proxy
+host,productionresultssa196.blob.core.windows.net,proxy
+host,productionresultssa197.blob.core.windows.net,proxy
+host,productionresultssa198.blob.core.windows.net,proxy
+host,productionresultssa199.blob.core.windows.net,proxy
+host,productionresultssa2.blob.core.windows.net,proxy
+host,productionresultssa3.blob.core.windows.net,proxy
+host,productionresultssa30.blob.core.windows.net,proxy
+host,productionresultssa31.blob.core.windows.net,proxy
+host,productionresultssa32.blob.core.windows.net,proxy
+host,productionresultssa33.blob.core.windows.net,proxy
+host,productionresultssa34.blob.core.windows.net,proxy
+host,productionresultssa35.blob.core.windows.net,proxy
+host,productionresultssa36.blob.core.windows.net,proxy
+host,productionresultssa37.blob.core.windows.net,proxy
+host,productionresultssa38.blob.core.windows.net,proxy
+host,productionresultssa39.blob.core.windows.net,proxy
+host,productionresultssa4.blob.core.windows.net,proxy
+host,productionresultssa40.blob.core.windows.net,proxy
+host,productionresultssa41.blob.core.windows.net,proxy
+host,productionresultssa42.blob.core.windows.net,proxy
+host,productionresultssa43.blob.core.windows.net,proxy
+host,productionresultssa44.blob.core.windows.net,proxy
+host,productionresultssa45.blob.core.windows.net,proxy
+host,productionresultssa46.blob.core.windows.net,proxy
+host,productionresultssa47.blob.core.windows.net,proxy
+host,productionresultssa48.blob.core.windows.net,proxy
+host,productionresultssa49.blob.core.windows.net,proxy
+host,productionresultssa5.blob.core.windows.net,proxy
+host,productionresultssa6.blob.core.windows.net,proxy
+host,productionresultssa7.blob.core.windows.net,proxy
+host,productionresultssa8.blob.core.windows.net,proxy
+host,productionresultssa9.blob.core.windows.net,proxy
+host,rubygemsregistryv2prod.blob.core.windows.net,proxy
+host,gitlab-assets.oss-cn-hongkong.aliyuncs.com,proxy
+host-suffix,gitlab.com,proxy
+host-suffix,gitlab.net,proxy
+host-suffix,gitlab-static.net,proxy
+host-suffix,bitbucket.org,proxy
+host-suffix,npmjs.com,proxy
+host-suffix,npmjs.org,proxy
+host,repo.maven.apache.org,proxy
+host,files.pythonhosted.org,proxy
+host-suffix,pypi.org,proxy
+host,docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com,proxy
+host-suffix,docker.io,proxy
+host-suffix,dockerstatic.com,proxy
+host,production.cloudfront.docker.com,proxy
+host,auth.docker.com,proxy
+host,hub.docker.com,proxy
+host,login.docker.com,proxy
+host-suffix,rust-lang.org,proxy
+host-suffix,rustup.rs,proxy
+host-suffix,crates.io,proxy
+host-suffix,docs.rs,proxy
+host-suffix,go.dev,proxy
+host-suffix,golang.org,proxy
+host-suffix,jetbrains.com,proxy
+host-suffix,nodejs.org,proxy
+host-suffix,agentclientprotocol.com,proxy
+host-suffix,workos.com,proxy
+host,images.workoscdn.com,proxy
+host,workos.imgix.net,proxy
+host-suffix,datadoghq.com,proxy
+host-suffix,datadoghq.eu,proxy
+host-suffix,ddog-gov.com,proxy
+host-suffix,browser-intake-ap1-datadoghq.com,proxy
+host-suffix,browser-intake-datadoghq.com,proxy
+host-suffix,browser-intake-datadoghq.eu,proxy
+host-suffix,browser-intake-ddog-gov.com,proxy
+host-suffix,browser-intake-uk1-datadoghq.com,proxy
+host-suffix,browser-intake-us2-ddog-gov.com,proxy
+host-suffix,browser-intake-us3-datadoghq.com,proxy
+host-suffix,browser-intake-us5-datadoghq.com,proxy
+host-suffix,datadoghq-browser-agent.com,proxy
+host-suffix,getsentry.com,proxy
+host-suffix,sentry.dev,proxy
+host-suffix,sentry.io,proxy
+host-suffix,sentry-cdn.com,proxy
+host,api.statsig.com,proxy
+host,api.statsigcdn.com,proxy
+host,assetsconfigcdn.org,proxy
+host,beyondwickedmapping.org,proxy
+host,events.statsigapi.net,proxy
+host,featureassets.org,proxy
+host,featuregates.org,proxy
+host,prodregistryv2.org,proxy
+host,statsigapi.net,proxy
+host,cdn.console.statsig.com,proxy
+host,console.statsig.com,proxy
+host,console.statsigcdn.com,proxy
+host,idliststorage.blob.core.windows.net,proxy
+host-suffix,usefathom.com,proxy
+host-suffix,hcaptcha.com,proxy
+host-suffix,hcaptchastatus.com,proxy
+host-suffix,withpersona.com,proxy
+host-suffix,yoti.com,proxy
+host-suffix,sift.com,proxy
+host-suffix,siftscience.com,proxy

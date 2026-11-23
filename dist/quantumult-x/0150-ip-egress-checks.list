@@ -1,0 +1,41 @@
+# name: ip-egress-checks
+# priority: 0150
+# section: network
+# description: 查询当前公网出口：国内检测页、IPv4、IPv6 和双栈 API
+# boundary: 只收用途明确的查询主机，不接管 IP 资料站、DNS、STUN 或多用途网站。设为代理后，用这些主机查地址的 DDNS 客户端也会看到代理出口
+# created-at: 2026-11-19T17:59:30Z
+# updated-at: 2026-11-20T02:48:32Z
+# source: https://2026.ip138.com/
+# source: https://my.ip.cn/
+# source: https://www.ipip.net/myip.html
+# source: https://raw.githubusercontent.com/qdm12/ddns-updater/master/README.md
+# source: https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-sg.html
+# source: https://www.ipify.org/
+# source: https://www.ip138.com/
+# canonical-rule-count: 22
+# rule-count: 22
+# format: quantumult-x
+# canonical: rules/0150-ip-egress-checks.lsr
+
+host,2026.ip138.com,proxy
+host,my.ip.cn,proxy
+host,myip.ipip.net,proxy
+host,myip.la,proxy
+host,www.myip.la,proxy
+host,checkip.amazonaws.com,proxy
+host,checkip.global.api.aws,proxy
+host,api.ipify.org,proxy
+host,api6.ipify.org,proxy
+host,api64.ipify.org,proxy
+host,checkip.spdyn.de,proxy
+host,icanhazip.com,proxy
+host,ident.me,proxy
+host,ifconfig.io,proxy
+host,ip.changeip.com,proxy
+host,ip.nnev.de,proxy
+host,ip4.nnev.de,proxy
+host,ip6.nnev.de,proxy
+host,ipv4.icanhazip.com,proxy
+host,ipv6.icanhazip.com,proxy
+host,v4.ident.me,proxy
+host,v6.ident.me,proxy

@@ -1,0 +1,26 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:cdn-ali.content.steamchina.com",
+          "domain:cdn-qc.content.steamchina.com",
+          "domain:cdn-ws.content.steamchina.com",
+          "full:dl.steam.clngaa.com",
+          "full:dl.steam.ksyna.com",
+          "full:st.dl.bscstorage.net",
+          "full:st.dl.eccdnx.com",
+          "full:st.dl.pinyuncloud.com",
+          "domain:miyoushe.com",
+          "domain:bh3.com",
+          "domain:bhsr.com",
+          "domain:yuanshen.com",
+          "domain:wegame.com",
+          "domain:wegame.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:cody.dev",
+          "domain:sourcegraph.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

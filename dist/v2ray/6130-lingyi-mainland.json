@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:01.ai",
+          "domain:lingyiwanwu.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

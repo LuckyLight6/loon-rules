@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:adcdownload.apple.com",
+          "full:adcdownload.apple.com.akadns.net",
+          "full:devimages-cdn.apple.com",
+          "full:download.developer.apple.com",
+          "full:playground-assets-cdn.apple.com",
+          "full:playground-cdn.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

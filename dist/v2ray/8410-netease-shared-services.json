@@ -1,0 +1,51 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:lf127.net",
+          "domain:lofter.com",
+          "domain:126.net",
+          "domain:127.com",
+          "domain:127.net",
+          "domain:163.com",
+          "domain:163cn.tv",
+          "domain:163industry.com",
+          "domain:163jiasu.com",
+          "domain:163mail.com",
+          "domain:163qiyukf.com",
+          "domain:163yun.com",
+          "domain:166.com",
+          "domain:166.net",
+          "domain:188.com",
+          "domain:321fenx.com",
+          "domain:haowu.link",
+          "domain:icourse163.org",
+          "domain:kada.com",
+          "domain:lf126.net",
+          "domain:126.link",
+          "domain:nease.net",
+          "domain:126.com",
+          "domain:netease-inc.com",
+          "domain:netease.com",
+          "domain:netease.im",
+          "domain:netstatic.net",
+          "domain:qiyukf.com",
+          "domain:qiyukf.net",
+          "domain:yysls.cn",
+          "domain:static163.net",
+          "domain:weiyang.cn",
+          "domain:yeah.net",
+          "domain:yunxindns.com",
+          "domain:yunxinfw.com",
+          "domain:zhuanzfx.com",
+          "domain:yjwujian.cn",
+          "domain:qiyukf.net.cn",
+          "domain:youdaoads.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

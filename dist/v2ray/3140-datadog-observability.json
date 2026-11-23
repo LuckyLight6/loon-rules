@@ -1,0 +1,24 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:datadoghq.com",
+          "domain:datadoghq.eu",
+          "domain:ddog-gov.com",
+          "domain:browser-intake-ap1-datadoghq.com",
+          "domain:browser-intake-datadoghq.com",
+          "domain:browser-intake-datadoghq.eu",
+          "domain:browser-intake-ddog-gov.com",
+          "domain:browser-intake-uk1-datadoghq.com",
+          "domain:browser-intake-us2-ddog-gov.com",
+          "domain:browser-intake-us3-datadoghq.com",
+          "domain:browser-intake-us5-datadoghq.com",
+          "domain:datadoghq-browser-agent.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

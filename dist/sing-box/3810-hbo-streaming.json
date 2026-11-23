@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "hbo.com",
+        "hbomax.com",
+        "hbomax.eu",
+        "hbomaxcdn.com",
+        "max.com"
+      ],
+      "domain": [
+        "hbomax-images.warnermediacdn.com",
+        "hbomaxdash.s.llnwi.net"
+      ]
+    }
+  ]
+}

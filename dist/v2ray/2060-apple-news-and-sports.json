@@ -1,0 +1,21 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:news-assets.apple.com",
+          "domain:news-client.apple.com",
+          "domain:news-edge.apple.com",
+          "domain:apple.news",
+          "full:news-client-search.apple.com",
+          "full:news-events.apple.com",
+          "domain:sports.apple.com",
+          "full:news.apple.com",
+          "full:prod-domep-news-apple.v.aaplimg.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

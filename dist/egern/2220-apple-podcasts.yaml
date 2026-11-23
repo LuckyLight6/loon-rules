@@ -1,0 +1,15 @@
+# name: apple-podcasts
+# priority: 2220
+# section: apple
+# description: Apple 播客
+# boundary: 识别播客目录，不把创作者自己托管的音频也归给 Apple
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://podcasts.apple.com/us/browse
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/2220-apple-podcasts.lsr
+
+domain_set:
+  - "podcasts.apple.com"

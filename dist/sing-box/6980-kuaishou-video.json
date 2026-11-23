@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "gifshow.com",
+        "kuaishou.com",
+        "kwimgs.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "miyoushe.com",
+        "bh3.com",
+        "bhsr.com",
+        "yuanshen.com"
+      ]
+    }
+  ]
+}

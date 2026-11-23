@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:12306.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

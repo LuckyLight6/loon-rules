@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:paypal.com",
+          "domain:paypalobjects.com",
+          "domain:paypal.me",
+          "domain:paypal-corp.com",
+          "domain:paypalcorp.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

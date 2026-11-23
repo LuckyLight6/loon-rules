@@ -1,0 +1,39 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:apple-relay.apple.com",
+          "full:apple-relay.cloudflare.com",
+          "full:cp4.cloudflare.com",
+          "full:apple-relay.fastly-edge.com",
+          "full:mask-api.fe.apple-dns.net",
+          "full:mask-api.icloud.com",
+          "full:mask-t.apple-dns.net",
+          "full:mask.apple-dns.net",
+          "domain:mask-h2.icloud.com",
+          "domain:mask.icloud.com",
+          "domain:fitness.apple.com",
+          "full:np-edge.itunes.apple.com",
+          "full:play-edge.itunes.apple.com",
+          "full:uts-api.itunes.apple.com",
+          "domain:tv.apple.com",
+          "full:amp-api.videos.apple.com",
+          "full:hls-amt.itunes.apple.com",
+          "full:hls.itunes.apple.com",
+          "domain:news-assets.apple.com",
+          "domain:news-client.apple.com",
+          "domain:news-edge.apple.com",
+          "domain:apple.news",
+          "full:news-client-search.apple.com",
+          "full:news-events.apple.com",
+          "domain:sports.apple.com",
+          "full:news.apple.com",
+          "full:prod-domep-news-apple.v.aaplimg.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

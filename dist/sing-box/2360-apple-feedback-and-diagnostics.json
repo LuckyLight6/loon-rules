@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "radarsubmissions.apple.com",
+        "iphonesubmissions.apple.com",
+        "cssubmissions.apple.com",
+        "fba.apple.com",
+        "iphonesubmissions-cdn.apple.com.akadns.net",
+        "iphonesubmissions-cdn.origin-apple.com.akadns.net",
+        "iphonesubmissions-lb.apple.com.akadns.net",
+        "iphonesubmissions.apple.com.akadns.net",
+        "iphonesubmissions.apple.com.mwcname.com",
+        "iphonesubmissions.g.aaplimg.com",
+        "radarsubmissions-cdn.apple.com.akadns.net",
+        "radarsubmissions-cdn.origin-apple.com.akadns.net",
+        "radarsubmissions-lb.apple.com.akadns.net",
+        "radarsubmissions.apple.com.akadns.net",
+        "radarsubmissions.apple.com.mwcname.com",
+        "radarsubmissions.g.aaplimg.com"
+      ]
+    }
+  ]
+}

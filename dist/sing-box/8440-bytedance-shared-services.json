@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "bytecdn.cn",
+        "bytecdn.com",
+        "bytedance.com",
+        "bytedns.net",
+        "bytetcc.com",
+        "snssdk.com"
+      ]
+    }
+  ]
+}

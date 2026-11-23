@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "bili22.cn",
+        "bili33.cn",
+        "biliapi.com",
+        "biliapi.net",
+        "bilibili.cn",
+        "bilibili.com",
+        "biliimg.com",
+        "bilivideo.cn",
+        "bilivideo.com",
+        "bilivideo.net"
+      ]
+    }
+  ]
+}

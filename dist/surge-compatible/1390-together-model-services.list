@@ -1,0 +1,17 @@
+# name: together-model-services
+# priority: 1390
+# section: ai
+# description: Together AI 模型服务
+# boundary: 只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-22T18:51:30Z
+# source: https://models.dev/api.json
+# source: https://docs.together.ai/docs/serverless-models
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: surge-compatible
+# canonical: rules/1390-together-model-services.lsr
+
+DOMAIN-SUFFIX,together.ai
+DOMAIN,api.together.xyz

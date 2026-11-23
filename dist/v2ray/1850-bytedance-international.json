@@ -1,0 +1,20 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:ark.ap-southeast.bytepluses.com",
+          "domain:coze.com",
+          "domain:marscode.com",
+          "domain:trae.ai",
+          "domain:cici.com",
+          "domain:ciciai.com",
+          "domain:ciciaicdn.com",
+          "domain:dola.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

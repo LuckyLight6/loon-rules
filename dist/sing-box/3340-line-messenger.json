@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "line-apps.com",
+        "line-scdn.net",
+        "line.me"
+      ]
+    }
+  ]
+}

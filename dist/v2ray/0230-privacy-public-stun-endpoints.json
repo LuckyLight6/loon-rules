@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:stun.l.google.com",
+          "full:stun.cloudflare.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

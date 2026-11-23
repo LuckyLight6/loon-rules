@@ -1,0 +1,17 @@
+# name: stepfun-international
+# priority: 1880
+# section: ai
+# description: 阶跃星辰 StepFun · 国际入口
+# boundary: 国际模型 API 与国际 Step Plan；国内 stepfun.com 继续独立，不按厂商合并两版
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://platform.stepfun.ai/docs/en/overview/concept
+# source: https://platform.stepfun.ai/docs/en/step-plan/integrations/reasoning-api
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/1880-stepfun-international.lsr
+
+domain_set:
+  - "api.stepfun.ai"

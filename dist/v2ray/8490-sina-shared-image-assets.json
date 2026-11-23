@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:sinaimg.cn",
+          "domain:sinaimg.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

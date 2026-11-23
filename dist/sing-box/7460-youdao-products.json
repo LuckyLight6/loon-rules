@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "ydshengxue.com",
+        "ydstatic.com",
+        "youdao.com"
+      ]
+    }
+  ]
+}

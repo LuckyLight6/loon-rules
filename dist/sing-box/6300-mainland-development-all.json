@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "gitee.com",
+        "coding.net",
+        "gitcode.com",
+        "npmmirror.com"
+      ],
+      "domain": [
+        "mirrors.tuna.tsinghua.edu.cn",
+        "pypi.tuna.tsinghua.edu.cn"
+      ]
+    }
+  ]
+}

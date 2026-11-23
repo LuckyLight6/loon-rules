@@ -4,8 +4,8 @@
 # description: Apple 生态完整合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-22T18:51:30Z
-# rule-count: 99
+# updated-at: 2026-11-23T19:28:52Z
+# rule-count: 100
 # source: https://support.apple.com/en-us/101555
 # source: https://support.apple.com/en-us/121115
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list
@@ -131,6 +131,7 @@ DOMAIN,appldnld-cdn.origin-apple.com.akadns.net
 DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net
 DOMAIN,oscdn.origin-apple.com.akadns.net
 DOMAIN,updates-http.cdn-apple.com.edgesuite.net
+DOMAIN,swcdn.apple.com.edgesuite.net
 DOMAIN,adcdownload.apple.com.akadns.net
 DOMAIN,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
 DOMAIN-SUFFIX,mzstatic.com

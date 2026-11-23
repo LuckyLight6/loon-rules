@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "outlook.com",
+        "outlook.live.com",
+        "outlook.cloud.microsoft",
+        "outlook.office.com",
+        "outlook.office365.com",
+        "smtp.office365.com"
+      ],
+      "domain_suffix": [
+        "acompli.net",
+        "outlookmobile.com"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.mx\\.microsoft$",
+        "(?i)^.*\\.outlook\\.com$"
+      ]
+    }
+  ]
+}

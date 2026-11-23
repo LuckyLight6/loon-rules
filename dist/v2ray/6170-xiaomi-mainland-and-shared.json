@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.xiaomimimo.com",
+          "full:token-plan-cn.xiaomimimo.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

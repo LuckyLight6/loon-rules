@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:copilot.com",
+          "full:www.copilot.com",
+          "full:copilot.microsoft.com",
+          "full:copilot.cloud.microsoft",
+          "full:copilot.ai"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

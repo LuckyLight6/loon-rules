@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:ext-twitch.tv",
+          "domain:jtvnw.net",
+          "domain:live-video.net",
+          "domain:ttvnw.net",
+          "domain:twitch.tv",
+          "domain:twitchcdn.net",
+          "domain:twitchsvc.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

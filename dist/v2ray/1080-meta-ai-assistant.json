@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:meta.ai",
+          "domain:llama.com",
+          "domain:metaaiusercontent.com",
+          "domain:metaaivm.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

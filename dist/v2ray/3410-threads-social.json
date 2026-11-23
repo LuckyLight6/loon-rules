@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:threads.com",
+          "domain:threads.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

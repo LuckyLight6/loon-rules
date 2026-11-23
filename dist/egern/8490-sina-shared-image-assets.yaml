@@ -1,0 +1,16 @@
+# name: sina-shared-image-assets
+# priority: 8490
+# section: vendors
+# description: 新浪与微博共用图片
+# boundary: 新浪新闻、微博等服务共用的图片域，不代表微博专用；图片域下的广告仍按前置拦截规则处理
+# created-at: 2026-11-21T02:32:18Z
+# updated-at: 2026-11-21T02:32:18Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/8490-sina-shared-image-assets.lsr
+
+domain_suffix_set:
+  - "sinaimg.cn"
+  - "sinaimg.com"

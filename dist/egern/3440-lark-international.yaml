@@ -1,0 +1,45 @@
+# name: lark-international
+# priority: 3440
+# section: social
+# description: Lark 国际版协作服务
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list
+# canonical-rule-count: 31
+# rule-count: 31
+# format: egern
+# canonical: rules/3440-lark-international.lsr
+
+domain_suffix_set:
+  - "larkofficecdn.com"
+  - "larkofficepkg.com"
+  - "lark.cn"
+  - "larkcloud.com"
+  - "larkcloud.net"
+  - "larkfn.com"
+  - "larkmeetings.cn"
+  - "larkmeetings.com"
+  - "larkoffice.com"
+  - "thelarkcloud.com"
+  - "larkofficeapp-boe.com"
+  - "larkofficeapp-pre.com"
+  - "larkofficeapp.com"
+  - "larkofficeboe.com"
+  - "lark-passport-qa-sg.net"
+  - "statuslarkoffice.com"
+  - "larkrooms.cn"
+  - "larkofficepre.com"
+  - "larkofficeimg.com"
+  - "larkrooms.com"
+  - "larksuite-pre.com"
+  - "larksuite.com"
+  - "larkvc.com"
+  - "larksuiteimg.com"
+  - "larksuitecdn.com"
+  - "larksuiteimg-boe.com"
+  - "larksuiteimg-pre.com"
+  - "larksuite.com.ttdns2.com"
+  - "larksuite.com.ttdns1.com"
+  - "frontier-lark-lb-v3.lf.bytelb.net"
+  - "larkoffice.com.bytedns1.com"

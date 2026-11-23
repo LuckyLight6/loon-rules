@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "atlassian.net",
+        "jira.com",
+        "atl-paas.net",
+        "atlassian-3p-us-gov-mod.com",
+        "atlassian-3p.com",
+        "atlassian-dev.net",
+        "atlassian-us-gov-mod.com",
+        "atlassian-us-gov-mod.net",
+        "atlassian.com",
+        "cdn.prod.atlassian-dev-us-gov-mod.net",
+        "ss-inf.net",
+        "teamworkgraph.ai",
+        "teamworkgraph.com"
+      ]
+    }
+  ]
+}

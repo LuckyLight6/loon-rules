@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "lf127.net",
+        "lofter.com",
+        "126.net",
+        "127.com",
+        "127.net",
+        "163.com",
+        "163cn.tv",
+        "163industry.com",
+        "163jiasu.com",
+        "163mail.com",
+        "163qiyukf.com",
+        "163yun.com",
+        "166.com",
+        "166.net",
+        "188.com",
+        "321fenx.com",
+        "haowu.link",
+        "icourse163.org",
+        "kada.com",
+        "lf126.net",
+        "126.link",
+        "nease.net",
+        "126.com",
+        "netease-inc.com",
+        "netease.com",
+        "netease.im",
+        "netstatic.net",
+        "qiyukf.com",
+        "qiyukf.net",
+        "yysls.cn",
+        "static163.net",
+        "weiyang.cn",
+        "yeah.net",
+        "yunxindns.com",
+        "yunxinfw.com",
+        "zhuanzfx.com",
+        "yjwujian.cn",
+        "qiyukf.net.cn",
+        "youdaoads.com"
+      ]
+    }
+  ]
+}

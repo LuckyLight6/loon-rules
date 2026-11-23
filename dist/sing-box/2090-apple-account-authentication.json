@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "iforgot.apple.com",
+        "setup.icloud.com",
+        "auth.itunes.apple.com",
+        "account.apple.com",
+        "appleid.cdn-apple.com",
+        "gsa.apple.com",
+        "idmsa.apple.com",
+        "appleid.apple.com",
+        "gsas.apple.com"
+      ],
+      "domain_regex": [
+        "(?i)^p[0123456789][0123456789]\\-acsegateway\\.icloud\\.com$",
+        "(?i)^p[0123456789][0123456789][0123456789]\\-acsegateway\\.icloud\\.com$",
+        "(?i)^p[0123456789][0123456789]\\-mcc\\.icloud\\.com$",
+        "(?i)^p[0123456789][0123456789][0123456789]\\-mcc\\.icloud\\.com$",
+        "(?i)^p[0123456789][0123456789]\\-quota\\.icloud\\.com$",
+        "(?i)^p[0123456789][0123456789][0123456789]\\-quota\\.icloud\\.com$"
+      ]
+    }
+  ]
+}

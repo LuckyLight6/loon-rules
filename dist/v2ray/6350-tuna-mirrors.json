@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:mirrors.tuna.tsinghua.edu.cn",
+          "full:pypi.tuna.tsinghua.edu.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

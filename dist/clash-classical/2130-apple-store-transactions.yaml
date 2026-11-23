@@ -1,0 +1,37 @@
+# name: apple-store-transactions
+# priority: 2130
+# section: apple
+# description: App Store API、搜索与提示、购买与安装指令、Apple Books 商店
+# boundary: 包括 iTunes 签名初始化、第三方市场安装入口和 Apple Books 门户。账户认证、App 下载和 TestFlight 分开，不包揽整个 itunes.apple.com
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-22T08:35:26Z
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/TestFlight.list
+# source: https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl
+# source: https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list
+# source: https://books.apple.com/us/charts
+# source: https://support.apple.com/en-us/101555
+# source: https://init.itunes.apple.com/bag.xml
+# canonical-rule-count: 17
+# rule-count: 17
+# format: clash-classical
+# canonical: rules/2130-apple-store-transactions.lsr
+
+payload:
+  - "DOMAIN-REGEX,(?i)^.*\\.apps\\.apple\\.com$"
+  - "DOMAIN-REGEX,(?i)^.*buy\\.itunes\\.apple\\.com$"
+  - "DOMAIN,sandbox.itunes.apple.com"
+  - "DOMAIN-SUFFIX,appstore.com"
+  - "DOMAIN,bag.itunes.apple.com"
+  - "DOMAIN,se.itunes.apple.com"
+  - "DOMAIN,se-edge.itunes.apple.com"
+  - "DOMAIN,su.itunes.apple.com"
+  - "DOMAIN,upp.itunes.apple.com"
+  - "DOMAIN,apps.apple.com"
+  - "DOMAIN,itunes.apple.com"
+  - "DOMAIN,lookup-api.apple.com"
+  - "DOMAIN-SUFFIX,appsto.re"
+  - "DOMAIN,books.apple.com"
+  - "DOMAIN-SUFFIX,apps-marketplace.apple.com"
+  - "DOMAIN,fpinit.itunes.apple.com"
+  - "DOMAIN,search.itunes.apple.com"

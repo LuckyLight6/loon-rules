@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:go.dev",
+          "domain:golang.org"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

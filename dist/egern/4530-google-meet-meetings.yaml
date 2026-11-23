@@ -1,0 +1,30 @@
+# name: google-meet-meetings
+# priority: 4530
+# section: google
+# description: Google Meet 会议、API 与 Workspace 共用音视频媒体
+# boundary: 普通账户、字体和 Chat API 分开；媒体按官方章节的 CIDR 与精确 SNI，只匹配目标 IP，不为匹配解析 DNS。同一 Workspace 媒体入口不能再按发起应用细分
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-20T10:24:10Z
+# source: https://knowledge.workspace.google.com/admin/meet/prepare-your-network-for-meet-meetings-and-live-streams
+# source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/apps/meet/v2/service.proto
+# canonical-rule-count: 11
+# rule-count: 11
+# format: egern
+# canonical: rules/4530-google-meet-meetings.lsr
+
+no_resolve: true
+domain_suffix_set:
+  - "meet.google.com"
+domain_set:
+  - "meetings.googleapis.com"
+  - "meet.googleapis.com"
+  - "meet.turns.goog"
+  - "workspace.turns.goog"
+ip_cidr_set:
+  - "142.250.82.0/24"
+  - "74.125.247.128/32"
+  - "74.125.250.0/24"
+ip_cidr6_set:
+  - "2001:4860:4864:4:8000::/128"
+  - "2001:4860:4864:5::/64"
+  - "2001:4860:4864:6::/64"

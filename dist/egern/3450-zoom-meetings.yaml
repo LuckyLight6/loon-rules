@@ -1,0 +1,17 @@
+# name: zoom-meetings
+# priority: 3450
+# section: social
+# description: Zoom 会议与共用服务
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/3450-zoom-meetings.lsr
+
+domain_suffix_set:
+  - "zoom.com"
+  - "zoom.us"
+  - "zoom.com.cn"

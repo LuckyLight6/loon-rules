@@ -7,6 +7,44 @@ from loon_rules.rules import Invalid, valid_host
 from .common import within, LabelledLists, HeadingSectionText
 
 
+def rdap_autnum(recipe, text):
+    asn = recipe.get('asn')
+    owners = recipe.get('registrant-ids')
+    name = recipe.get('registrant-name')
+    if (type(asn) is not int or not 1 <= asn <= 4294967295
+            or not isinstance(owners, list) or not owners
+            or any(not isinstance(owner, str) or not owner.strip() for owner in owners)
+            or not isinstance(name, str) or not name.strip()):
+        raise Invalid('ASN 来源声明缺少编号或注册持有人')
+    try:
+        record = json.loads(text)
+    except ValueError as error:
+        raise Invalid('ASN 记录不是有效 JSON') from error
+    if (not isinstance(record, dict) or record.get('objectClassName') != 'autnum'
+            or any(type(record.get(field)) is not int or record[field] != asn
+                   for field in ('startAutnum', 'endAutnum'))
+            or record.get('handle') != 'AS' + str(asn)):
+        raise Invalid('ASN 记录身份与声明不符')
+    entities = record.get('entities')
+    if isinstance(entities, list):
+        for entity in entities:
+            if not isinstance(entity, dict) or entity.get('handle') not in owners:
+                continue
+            roles = entity.get('roles')
+            if not isinstance(roles, list) or 'registrant' not in roles:
+                continue
+            card = entity.get('vcardArray')
+            if (not isinstance(card, list) or len(card) != 2 or card[0] != 'vcard'
+                    or not isinstance(card[1], list)):
+                continue
+            names = [field[3] for field in card[1] if isinstance(field, list) and len(field) == 4
+                     and field[0] == 'fn' and isinstance(field[3], str)]
+            if any(' '.join(value.split()).casefold() == ' '.join(name.split()).casefold()
+                   for value in names):
+                return {'IP-ASN,' + str(asn) + ',no-resolve'}
+    raise Invalid('ASN 注册持有人与声明不符')
+
+
 def service_address_table(recipe, text):
     class AddressTables(HostTables):
         def handle_starttag(self, tag, attrs):
@@ -65,6 +103,31 @@ def public_media_network(value, recipe):
     if not net.is_global or net.prefixlen < recipe['min-prefix'][str(net.version)]:
         raise Invalid('媒体地址超过已确认范围')
     return (('IP-CIDR,' if net.version == 4 else 'IP-CIDR6,') + str(net) + ',no-resolve', net.version)
+
+
+def section_network_blocks(recipe, text):
+    families = recipe.get('families')
+    if (not isinstance(families, list) or not families
+            or any(type(family) is not int or family not in (4, 6) for family in families)
+            or len(set(families)) != len(families)):
+        raise Invalid('地址章节缺少明确的地址族')
+    section = HeadingSectionText(recipe['section'])
+    section.feed(text)
+    if section.found != 1 or not section.examples:
+        raise Invalid('地址章节缺失、重复或没有 CIDR 字段')
+    result = set()
+    observed = set()
+    for block in section.examples:
+        for value in block.split():
+            if '/' not in value:
+                raise Invalid('地址章节包含未声明掩码的字段')
+            row, family = public_media_network(value, recipe)
+            result.add(row)
+            observed.add(family)
+    if observed != set(families):
+        raise Invalid('地址章节的地址族与声明不符')
+    return result
+
 
 def parse_section_media_networks(recipe, text):
     section = HeadingSectionText(recipe['section'])

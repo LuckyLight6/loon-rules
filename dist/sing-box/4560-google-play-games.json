@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "games.googleapis.com",
+        "games.mtls.googleapis.com",
+        "gamesconfiguration.googleapis.com",
+        "gamesconfiguration.mtls.googleapis.com",
+        "gamesmanagement.googleapis.com",
+        "gamesmanagement.mtls.googleapis.com"
+      ]
+    }
+  ]
+}

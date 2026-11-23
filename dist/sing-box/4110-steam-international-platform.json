@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "steamcommunity-a.akamaihd.net",
+        "steambroadcast.akamaized.net"
+      ],
+      "domain_suffix": [
+        "dota2.com",
+        "playartifact.com",
+        "s.team",
+        "steam-chat.com",
+        "steam.tv",
+        "steamcommunity.com",
+        "steamdeck.com",
+        "steampowered.com",
+        "steamstatic.com",
+        "valvesoftware.com"
+      ]
+    }
+  ]
+}

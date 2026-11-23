@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:c.mi.com",
+          "domain:global.market.xiaomi.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

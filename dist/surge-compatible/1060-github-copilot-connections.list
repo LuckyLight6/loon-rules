@@ -1,0 +1,29 @@
+# name: github-copilot-connections
+# priority: 1060
+# section: ai
+# description: Copilot API、补全、对话及已证实的附件服务
+# boundary: Copilot 专用接口、实时连接、附件、报告与遥测；必需接口另按用途核对，共用认证归 GitHub 代码托管表。实验、通用模型目录与跨租户云通配符不纳入
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-20T20:04:44Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# canonical-rule-count: 15
+# rule-count: 15
+# format: surge-compatible
+# canonical: rules/1060-github-copilot-connections.lsr
+
+DOMAIN,origin-tracker.githubusercontent.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,copilot-workspace.githubnext.com
+DOMAIN,production-copilot-host-westus.webpubsub.azure.com
+DOMAIN,copilotprodattachments.blob.core.windows.net
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN,copilot-telemetry-service.githubusercontent.com
+DOMAIN,copilot-telemetry.githubusercontent.com
+DOMAIN,copilot-reports.github.com
+DOMAIN,production-copilot-host-austriaeast.webpubsub.azure.com
+DOMAIN,production-copilot-host-centralus-02.webpubsub.azure.com
+DOMAIN,production-copilot-host-centralus.webpubsub.azure.com
+DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com
+DOMAIN,production-copilot-host-westus3.webpubsub.azure.com
+DOMAIN,production-copilot-host.webpubsub.azure.com

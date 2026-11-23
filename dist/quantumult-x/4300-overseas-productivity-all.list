@@ -1,0 +1,74 @@
+# name: overseas-productivity-all
+# priority: 4300
+# section: productivity
+# description: 海外办公、邮件与协作合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list
+# source: https://www.notion.com/help/allowlist-ip
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
+# source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list
+# source: https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+# canonical-rule-count: 54
+# rule-count: 54
+# format: quantumult-x
+# canonical: rules/4300-overseas-productivity-all.lsr
+
+host-suffix,notion-static.com,proxy
+host-suffix,notion.com,proxy
+host-suffix,notion.so,proxy
+host-suffix,notionusercontent.com,proxy
+host,notion-custom.com,proxy
+host,www.notion-status.com,proxy
+host-suffix,figma.com,proxy
+host-suffix,trello.com,proxy
+host-suffix,trellocdn.com,proxy
+host-suffix,atlassian.net,proxy
+host-suffix,jira.com,proxy
+host-suffix,atl-paas.net,proxy
+host-suffix,atlassian-3p-us-gov-mod.com,proxy
+host-suffix,atlassian-3p.com,proxy
+host-suffix,atlassian-dev.net,proxy
+host-suffix,atlassian-us-gov-mod.com,proxy
+host-suffix,atlassian-us-gov-mod.net,proxy
+host-suffix,atlassian.com,proxy
+host-suffix,cdn.prod.atlassian-dev-us-gov-mod.net,proxy
+host-suffix,ss-inf.net,proxy
+host-suffix,teamworkgraph.ai,proxy
+host-suffix,teamworkgraph.com,proxy
+host-suffix,pm.me,proxy
+host-suffix,proton.me,proxy
+host-suffix,protonmail.ch,proxy
+host-suffix,protonmail.com,proxy
+host-suffix,protonstatus.com,proxy
+host-suffix,protontech.ch,proxy
+host-suffix,protonvpn.ch,proxy
+host-suffix,protonvpn.com,proxy
+host-suffix,protonweb.com,proxy
+host-suffix,intercom.com,proxy
+host-suffix,intercom.io,proxy
+host-suffix,intercomassets.com,proxy
+host-suffix,intercomcdn.com,proxy
+host-suffix,au.intercom-attachments.com,proxy
+host-suffix,downloads.intercomcdn.eu,proxy
+host-suffix,intercom-attachments-1.com,proxy
+host-suffix,intercom-attachments-2.com,proxy
+host-suffix,intercom-attachments-3.com,proxy
+host-suffix,intercom-attachments-4.com,proxy
+host-suffix,intercom-attachments-5.com,proxy
+host-suffix,intercom-attachments-6.com,proxy
+host-suffix,intercom-attachments-7.com,proxy
+host-suffix,intercom-attachments-8.com,proxy
+host-suffix,intercom-attachments-9.com,proxy
+host-suffix,intercom-attachments.eu,proxy
+host-suffix,intercom-messenger.com,proxy
+host-suffix,intercom-sheets.com,proxy
+host-suffix,intercom.help,proxy
+host-suffix,static.intercomassets.eu,proxy
+host-suffix,uploads.intercomcdn.eu,proxy
+host-suffix,uploads.intercomusercontent.com,proxy
+host-suffix,www.intercom-reporting.com,proxy

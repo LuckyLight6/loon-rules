@@ -1,0 +1,20 @@
+# name: spotify-audio
+# priority: 3910
+# section: media
+# description: Spotify 音乐播放和音频文件
+# boundary: 去掉任意包含 spotify 的关键词；播放走 spotify.com、scdn.co 等专用后缀
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: egern
+# canonical: rules/3910-spotify-audio.lsr
+
+domain_suffix_set:
+  - "pscdn.co"
+  - "scdn.co"
+  - "spoti.fi"
+  - "spotify.com"
+  - "spotifycdn.com"
+  - "spotifycdn.net"

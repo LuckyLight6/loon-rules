@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:trello.com",
+          "domain:trellocdn.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

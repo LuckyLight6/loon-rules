@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "qwen.ai",
+        "ap-northeast-1.maas.aliyuncs.com",
+        "ap-southeast-1.maas.aliyuncs.com",
+        "cn-hongkong.maas.aliyuncs.com",
+        "eu-central-1.maas.aliyuncs.com",
+        "us-east-1.maas.aliyuncs.com"
+      ],
+      "domain": [
+        "chat.qwenlm.ai",
+        "cn-hongkong.dashscope.aliyuncs.com",
+        "coding-intl.dashscope.aliyuncs.com",
+        "dashscope-intl.aliyuncs.com",
+        "dashscope-us.aliyuncs.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "netflix.ca",
+        "netflix.com",
+        "netflix.com.au",
+        "netflix.com.edgesuite.net",
+        "netflix.net",
+        "nflxext.com",
+        "nflximg.com",
+        "nflximg.net",
+        "nflxsearch.net",
+        "nflxso.net",
+        "nflxvideo.net"
+      ]
+    }
+  ]
+}

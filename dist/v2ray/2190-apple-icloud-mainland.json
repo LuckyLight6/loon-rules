@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:apzones.com",
+          "domain:icloud-content.com.cn",
+          "domain:icloud.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

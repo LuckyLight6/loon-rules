@@ -1,0 +1,18 @@
+# name: reddit-community
+# priority: 3380
+# section: social
+# description: Reddit
+# boundary: 社区及专用内容域；不包括外链网站
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: egern
+# canonical: rules/3380-reddit-community.lsr
+
+domain_suffix_set:
+  - "redd.it"
+  - "reddit.com"
+  - "redditmedia.com"
+  - "redditstatic.com"

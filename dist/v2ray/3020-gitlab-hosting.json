@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:gitlab-assets.oss-cn-hongkong.aliyuncs.com",
+          "domain:gitlab.com",
+          "domain:gitlab.net",
+          "domain:gitlab-static.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

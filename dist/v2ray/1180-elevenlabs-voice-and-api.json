@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:elevenlabs.io",
+          "domain:elevenlabsusercontent.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

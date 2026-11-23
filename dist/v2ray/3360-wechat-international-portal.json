@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:wechat.com",
+          "domain:wechatlegal.net",
+          "domain:wechatos.net",
+          "domain:wechatpay.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

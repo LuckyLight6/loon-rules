@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:user.auth.xboxlive.com",
+          "full:xsts.auth.xboxlive.com",
+          "full:dlassets-ssl.xboxlive.com",
+          "full:da.xboxservices.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

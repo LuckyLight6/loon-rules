@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.openai-compat.model-serving.eu01.onstackit.cloud"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

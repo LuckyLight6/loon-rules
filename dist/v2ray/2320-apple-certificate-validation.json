@@ -1,0 +1,30 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:certs-lb.apple.com.akadns.net",
+          "full:certs.apple.com",
+          "full:crl-lb.apple.com.akadns.net",
+          "full:crl.apple.com",
+          "full:ocsp2.apple.com",
+          "full:valid.apple.com",
+          "full:valid.origin-apple.com.akadns.net",
+          "full:crl3.digicert.com",
+          "full:crl4.digicert.com",
+          "full:ocsp.digicert.cn",
+          "full:ocsp.digicert.com",
+          "full:ocsp-cdn.apple.com.akadns.net",
+          "full:ocsp-cdn.origin-apple.com.akadns.net",
+          "full:ocsp.apple.com.akadns.net",
+          "full:ocsp.apple.com.mwcname.com",
+          "domain:ocsp-lb.apple.com.akadns.net",
+          "domain:ocsp.apple.com",
+          "domain:ocsp.g.aaplimg.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

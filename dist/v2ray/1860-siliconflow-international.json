@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.siliconflow.com",
+          "full:cloud.siliconflow.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

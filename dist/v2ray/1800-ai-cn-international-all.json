@@ -1,0 +1,56 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:qwen.ai",
+          "full:chat.qwenlm.ai",
+          "full:cn-hongkong.dashscope.aliyuncs.com",
+          "full:coding-intl.dashscope.aliyuncs.com",
+          "full:dashscope-intl.aliyuncs.com",
+          "full:dashscope-us.aliyuncs.com",
+          "domain:ap-northeast-1.maas.aliyuncs.com",
+          "domain:ap-southeast-1.maas.aliyuncs.com",
+          "domain:cn-hongkong.maas.aliyuncs.com",
+          "domain:eu-central-1.maas.aliyuncs.com",
+          "domain:us-east-1.maas.aliyuncs.com",
+          "domain:kimi.ai",
+          "domain:moonshot.ai",
+          "domain:z.ai",
+          "domain:hailuoai.video",
+          "domain:minimax.io",
+          "full:ark.ap-southeast.bytepluses.com",
+          "domain:coze.com",
+          "domain:marscode.com",
+          "domain:trae.ai",
+          "domain:cici.com",
+          "domain:ciciai.com",
+          "domain:ciciaicdn.com",
+          "domain:dola.com",
+          "full:api.siliconflow.com",
+          "full:cloud.siliconflow.com",
+          "full:tokenhub.ap-hongkong.tencentcloudapi.com",
+          "full:tokenhub.ap-singapore.tencentcloudapi.com",
+          "full:tokenhub.ap-jakarta.tencentcloudapi.com",
+          "full:tokenhub.ap-bangkok.tencentcloudapi.com",
+          "full:tokenhub.ap-seoul.tencentcloudapi.com",
+          "full:tokenhub.ap-tokyo.tencentcloudapi.com",
+          "full:tokenhub.na-ashburn.tencentcloudapi.com",
+          "full:tokenhub.na-siliconvalley.tencentcloudapi.com",
+          "full:tokenhub.sa-saopaulo.tencentcloudapi.com",
+          "full:tokenhub.eu-frankfurt.tencentcloudapi.com",
+          "full:api.stepfun.ai",
+          "full:token-plan-ams.xiaomimimo.com",
+          "full:token-plan-sgp.xiaomimimo.com",
+          "domain:youmind.ai",
+          "domain:youmind.com",
+          "domain:youmind.site",
+          "domain:qoder.com",
+          "domain:lovart.ai"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

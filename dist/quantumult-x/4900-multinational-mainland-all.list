@@ -1,0 +1,122 @@
+# name: multinational-mainland-all
+# priority: 4900
+# section: vendors
+# description: 跨国厂商国内可用服务合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T18:37:28Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list
+# source: https://www.qualcomm.cn/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list
+# source: https://raw.githubusercontent.com/Azure/azure-cli/dev/src/azure-cli-core/azure/cli/core/cloud.py
+# source: https://learn.microsoft.com/en-us/graph/deployments
+# source: https://docs.azure.cn/zh-cn/storage/common/storage-explorer-network
+# canonical-rule-count: 96
+# rule-count: 96
+# format: quantumult-x
+# canonical: rules/4900-multinational-mainland-all.lsr
+
+host-suffix,gpsonextra.net,proxy
+host-suffix,izatcloud.net,proxy
+host-suffix,qceventscenter.com.cn,proxy
+host-suffix,qualcomm.cn,proxy
+host-suffix,qualcomm.cn.cdn.cloudflare.net,proxy
+host-suffix,xtracloud.cn,proxy
+host-suffix,geforce.cn,proxy
+host-suffix,gputechconf.cn,proxy
+host-suffix,nvidia.cn,proxy
+host,cn.download.nvidia.com,proxy
+host-suffix,intel.cn,proxy
+host-suffix,samsung.com.cn,proxy
+host-suffix,samsungcloudcn.com,proxy
+host-suffix,samsungeshop.com.cn,proxy
+host-suffix,samsunghealthcn.com,proxy
+host-suffix,cf-china.info,proxy
+host-suffix,cf-ns.com,proxy
+host-suffix,cf-ns.net,proxy
+host-suffix,cf-ns.site,proxy
+host-suffix,cf-ns.tech,proxy
+host-suffix,cftest5.cn,proxy
+host-suffix,cftest6.cn,proxy
+host-suffix,cftest7.com,proxy
+host-suffix,cftest8.com,proxy
+host-suffix,cloudflare-cn.com,proxy
+host-suffix,cloudflareanycast.net,proxy
+host-suffix,cloudflarechina.cn,proxy
+host-suffix,cloudflarecn.net,proxy
+host-suffix,cloudflareglobal.net,proxy
+host-suffix,cloudflareinsights-cn.com,proxy
+host-suffix,cloudflareperf.com,proxy
+host-suffix,cloudflareprod.com,proxy
+host-suffix,cloudflarestaging.com,proxy
+host-suffix,cloudflarestoragegw.com,proxy
+host-suffix,adobedc.cn,proxy
+host-suffix,aboutamazon.cn,proxy
+host-suffix,alexafund.cn,proxy
+host-suffix,alexafund.com.cn,proxy
+host-suffix,amazon.cn,proxy
+host-suffix,amazonbusiness.cn,proxy
+host-suffix,amazonbusiness.com.cn,proxy
+host-suffix,amazonchoice.cn,proxy
+host-suffix,amazonchoice.com.cn,proxy
+host-suffix,amazonchoices.cn,proxy
+host-suffix,amazonchoices.com.cn,proxy
+host-suffix,amazoninspire.cn,proxy
+host-suffix,amazoninspire.com.cn,proxy
+host-suffix,amazonlaunchpad.cn,proxy
+host-suffix,amazonlaunchpad.com.cn,proxy
+host-suffix,amazonlending.com.cn,proxy
+host-suffix,amazonnow.cn,proxy
+host-suffix,amazonnow.com.cn,proxy
+host-suffix,assoc-amazon.cn,proxy
+host-suffix,primeday.cn,proxy
+host-suffix,primeday.com.cn,proxy
+host-suffix,yamaxun.cn,proxy
+host-suffix,z.cn,proxy
+host,images-cn.ssl-images-amazon.com,proxy
+host,images-cn-8.ssl-images-amazon.com,proxy
+host-suffix,a2z.org.cn,proxy
+host-suffix,amazonaws.cn,proxy
+host-suffix,amazonaws.com.cn,proxy
+host-suffix,amazonwebservices.cn,proxy
+host-suffix,amazonwebservices.com.cn,proxy
+host-suffix,amazonworkdocs.cn,proxy
+host-suffix,amazonworkdocs.com.cn,proxy
+host-suffix,asfiovnxocqpcry.com.cn,proxy
+host-suffix,aws-border.cn,proxy
+host-suffix,aws-icp-domain-manager.cn,proxy
+host-suffix,awsapps.cn,proxy
+host-suffix,awsapps.com.cn,proxy
+host-suffix,awsstatic.cn,proxy
+host-suffix,cloudfront-cn.net,proxy
+host-suffix,cloudfront-test.cn,proxy
+host-suffix,cloudfront.cn,proxy
+host-suffix,nwcdcloud.cn,proxy
+host-suffix,nwcdcloud.com.cn,proxy
+host-suffix,nwcddns.cn,proxy
+host-suffix,nwcdinfosec.cn,proxy
+host-suffix,route53.cn,proxy
+host-suffix,sagemaker.com.cn,proxy
+host-suffix,amzndns-cn.biz,proxy
+host-suffix,amzndns-cn.cn,proxy
+host-suffix,amzndns-cn.com,proxy
+host-suffix,amzndns-cn.net,proxy
+host-suffix,kindle.cn,proxy
+host-suffix,kindleoasis.cn,proxy
+host-suffix,kindleoasis.com.cn,proxy
+host-suffix,amazonprimevideo.cn,proxy
+host-suffix,amazonprimevideo.com.cn,proxy
+host,gallery.chinacloudapi.cn,proxy
+host,login.chinacloudapi.cn,proxy
+host,management.chinacloudapi.cn,proxy
+host,management.core.chinacloudapi.cn,proxy
+host,microsoftgraph.chinacloudapi.cn,proxy
+host,portal.azure.cn,proxy

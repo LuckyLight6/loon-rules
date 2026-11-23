@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:netease.ugcvideoss.ourdvs.com",
+          "domain:music.126.com",
+          "domain:music.126.net",
+          "domain:music.163.com",
+          "domain:music.163.com.163jiasu.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com",
+          "domain:docker.io",
+          "domain:dockerstatic.com",
+          "full:production.cloudfront.docker.com",
+          "full:auth.docker.com",
+          "full:hub.docker.com",
+          "full:login.docker.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

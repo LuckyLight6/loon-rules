@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "update.microsoft.com",
+        "prod.do.dsp.mp.microsoft.com"
+      ],
+      "domain": [
+        "tsfe.trafficshaping.dsp.mp.microsoft.com"
+      ]
+    }
+  ]
+}

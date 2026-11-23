@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:hbo.com",
+          "domain:hbomax.com",
+          "domain:hbomax.eu",
+          "domain:hbomaxcdn.com",
+          "domain:max.com",
+          "full:hbomax-images.warnermediacdn.com",
+          "full:hbomaxdash.s.llnwi.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

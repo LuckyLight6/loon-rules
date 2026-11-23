@@ -1,0 +1,58 @@
+# name: apple-system-connectivity
+# priority: 2330
+# section: apple
+# description: 设备引导、MDM、校时、系统 DNS 与公共素材
+# boundary: 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活、设备证书登记与反馈诊断另有专表，不把本组称为匿名 CDN
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# canonical-rule-count: 39
+# rule-count: 39
+# format: surge-compatible
+# canonical: rules/2330-apple-system-connectivity.lsr
+
+DOMAIN,doh.dns.apple.com
+DOMAIN,apple-native-relay.apple.com
+DOMAIN,konut-cdn.apple.com
+DOMAIN-SUFFIX,gnip.apple.com
+DOMAIN-SUFFIX,time.apple.com
+DOMAIN,wps.apple.com
+DOMAIN-SUFFIX,sandbox.apple.com
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,business.apple.com
+DOMAIN-SUFFIX,school.apple.com
+DOMAIN,www.apple.com.cn
+DOMAIN-SUFFIX,cn.apple.com
+DOMAIN,static.ips.apple.com
+DOMAIN,sq-device.apple.com
+DOMAIN,tbsc.apple.com
+DOMAIN,time-ios.apple.com
+DOMAIN,time-macos.apple.com
+DOMAIN,deviceenrollment.apple.com
+DOMAIN,deviceservices-external.apple.com
+DOMAIN,iprofiles.apple.com
+DOMAIN,mdmenrollment.apple.com
+DOMAIN,axm-servicediscovery.apple.com
+DOMAIN,api.ent.apple.com
+DOMAIN,api.edu.apple.com
+DOMAIN,upload.appleschoolcontent.com
+DOMAIN,api-business.apple.com
+DOMAIN,api-school.apple.com
+DOMAIN,axm-adm-enroll.apple.com
+DOMAIN,axm-adm-mdm.apple.com
+DOMAIN,axm-adm-scep.apple.com
+DOMAIN,axm-app.apple.com
+DOMAIN,icons.axm-usercontent-apple.com
+DOMAIN,audiocontentdownload.apple.com
+DOMAIN,playgrounds-assets-cdn.apple.com
+DOMAIN,playgrounds-cdn.apple.com
+DOMAIN,diagassets.apple.com
+DOMAIN,fpservices-prod1.apple.com
+DOMAIN,vpp.itunes.apple.com
+DOMAIN,sylvan.apple.com

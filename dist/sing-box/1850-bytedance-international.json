@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ark.ap-southeast.bytepluses.com"
+      ],
+      "domain_suffix": [
+        "coze.com",
+        "marscode.com",
+        "trae.ai",
+        "cici.com",
+        "ciciai.com",
+        "ciciaicdn.com",
+        "dola.com"
+      ]
+    }
+  ]
+}

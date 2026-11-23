@@ -23,6 +23,10 @@
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GoogleDrive.lsr
 # source: https://support.google.com/chrome/a/answer/6334001
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list
+# source: https://raw.githubusercontent.com/googleapis/google-api-python-client/main/googleapiclient/discovery_cache/documents/fcm.v1.json
+# source: https://raw.githubusercontent.com/firebase/firebase-ios-sdk/main/FirebaseMessaging/Sources/FIRMessagingUtilities.m
+# source: https://raw.githubusercontent.com/firebase/firebase-js-sdk/master/packages/messaging/src/util/constants.ts
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
 # source: https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest
 

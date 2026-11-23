@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:v0.app",
+          "domain:v0.dev"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

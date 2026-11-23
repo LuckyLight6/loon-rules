@@ -1,0 +1,18 @@
+# name: rust-cargo
+# priority: 3080
+# section: development
+# description: Rust、Cargo 与 crates.io
+# boundary: 软件包、工具链和文档；不包括私有 Cargo 注册表
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list
+# source: https://index.crates.io/config.json
+# canonical-rule-count: 4
+# rule-count: 4
+# format: surge-compatible
+# canonical: rules/3080-rust-cargo.lsr
+
+DOMAIN-SUFFIX,rust-lang.org
+DOMAIN-SUFFIX,rustup.rs
+DOMAIN-SUFFIX,crates.io
+DOMAIN-SUFFIX,docs.rs

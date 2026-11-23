@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api.statsig.com",
+        "api.statsigcdn.com",
+        "assetsconfigcdn.org",
+        "beyondwickedmapping.org",
+        "events.statsigapi.net",
+        "featureassets.org",
+        "featuregates.org",
+        "prodregistryv2.org",
+        "statsigapi.net",
+        "cdn.console.statsig.com",
+        "console.statsig.com",
+        "console.statsigcdn.com",
+        "idliststorage.blob.core.windows.net"
+      ]
+    }
+  ]
+}

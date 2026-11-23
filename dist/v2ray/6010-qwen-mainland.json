@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:cn-beijing.maas.aliyuncs.com",
+          "full:dashscope.aliyuncs.com",
+          "full:coding.dashscope.aliyuncs.com",
+          "full:www.qianwen.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:factory.ai",
+          "domain:factory.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

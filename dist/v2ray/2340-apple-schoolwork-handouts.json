@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:pg-bootstrap.itunes.apple.com",
+          "full:cls-iosclient.itunes.apple.com",
+          "full:cls-ingest.itunes.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

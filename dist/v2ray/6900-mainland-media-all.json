@@ -1,0 +1,60 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:bili22.cn",
+          "domain:bili33.cn",
+          "domain:biliapi.com",
+          "domain:biliapi.net",
+          "domain:bilibili.cn",
+          "domain:bilibili.com",
+          "domain:biliimg.com",
+          "domain:bilivideo.cn",
+          "domain:bilivideo.com",
+          "domain:bilivideo.net",
+          "domain:iqiyi.com",
+          "domain:iqiyipic.com",
+          "domain:qiyi.com",
+          "domain:qiyipic.com",
+          "full:ykimg.alicdn.com",
+          "domain:soku.com",
+          "domain:ykimg.com",
+          "domain:youku.com",
+          "domain:qqmusic.com",
+          "domain:y.qq.com",
+          "domain:music.qq.com",
+          "domain:kugou.com",
+          "domain:kugou.net",
+          "full:netease.ugcvideoss.ourdvs.com",
+          "domain:music.126.com",
+          "domain:music.126.net",
+          "domain:music.163.com",
+          "domain:music.163.com.163jiasu.com",
+          "domain:douyin.com",
+          "domain:douyinliving.com",
+          "domain:amemv.com",
+          "domain:douyincdn.com",
+          "domain:douyinpic.com",
+          "domain:douyinstatic.com",
+          "domain:douyinvod.com",
+          "domain:idouyinvod.com",
+          "domain:gifshow.com",
+          "domain:kuaishou.com",
+          "domain:kwimgs.com",
+          "domain:douyu.com",
+          "domain:douyu.tv",
+          "domain:douyucdn.cn",
+          "domain:douyucdn2.cn",
+          "domain:douyuscdn.com",
+          "domain:douyutv.com",
+          "domain:edgesrv.com",
+          "domain:huya.com",
+          "domain:msstatic.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

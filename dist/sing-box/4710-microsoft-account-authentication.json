@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "account.live.com",
+        "login.live.com",
+        "login.microsoftonline.com",
+        "login.microsoft.com",
+        "login.windows.net",
+        "device.login.microsoftonline.com",
+        "ccs.login.microsoftonline.com",
+        "login-us.microsoftonline.com",
+        "logincert.microsoftonline.com",
+        "autologon.microsoftazuread-sso.com",
+        "api.passwordreset.microsoftonline.com",
+        "passwordreset.microsoftonline.com",
+        "login.microsoftonline-p.com",
+        "loginex.microsoftonline.com",
+        "login.microsoftonline.us"
+      ],
+      "domain_suffix": [
+        "auth.microsoft.com",
+        "msauth.net",
+        "msftauth.net",
+        "msftidentity.com"
+      ]
+    }
+  ]
+}

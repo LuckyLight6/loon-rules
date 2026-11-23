@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:app-site-association.cdn-apple.com",
+          "full:app-site-association.networking.apple"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

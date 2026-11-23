@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "vscode.blob.core.windows.net",
+        "code.visualstudio.com",
+        "update.code.visualstudio.com",
+        "vscode-sync-insiders.trafficmanager.net",
+        "vscode-sync.trafficmanager.net",
+        "vscode.download.prss.microsoft.com"
+      ],
+      "domain_suffix": [
+        "vscode-cdn.net",
+        "vscode-unpkg.net",
+        "vscode-webview.net",
+        "vscode.dev"
+      ]
+    }
+  ]
+}

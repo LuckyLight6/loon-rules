@@ -1,0 +1,22 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:vscode.blob.core.windows.net",
+          "domain:vscode-cdn.net",
+          "domain:vscode-unpkg.net",
+          "domain:vscode-webview.net",
+          "domain:vscode.dev",
+          "full:code.visualstudio.com",
+          "full:update.code.visualstudio.com",
+          "full:vscode-sync-insiders.trafficmanager.net",
+          "full:vscode-sync.trafficmanager.net",
+          "full:vscode.download.prss.microsoft.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

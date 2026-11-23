@@ -247,7 +247,7 @@ def run(check=False, offline=False, adopt_ads=False):
                 reassigned=transferred,
                 excluded_hosts=[host for host,owners in config.get('scope-negatives',{}).items() if k in owners],
                 official_networks=bool(e.get('cidr-source')
-                or any(r['format'] in ('labelled-networks','ip-prefix-json','section-media-networks','endpoint-network-sets','service-address-table')
+                or any(r['format'] in ('labelled-networks','ip-prefix-json','section-media-networks','section-network-blocks','endpoint-network-sets','service-address-table')
                        for r in e.get('extract',()))))
         data[k]=stable_order(candidate,previous)
         lint_content(k,data[k],e.get('allowed-shared',()))

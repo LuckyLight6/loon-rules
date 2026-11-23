@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "doh.dns.apple.com",
+        "apple-native-relay.apple.com",
+        "konut-cdn.apple.com",
+        "wps.apple.com",
+        "www.apple.com.cn",
+        "static.ips.apple.com",
+        "sq-device.apple.com",
+        "tbsc.apple.com",
+        "time-ios.apple.com",
+        "time-macos.apple.com",
+        "deviceenrollment.apple.com",
+        "deviceservices-external.apple.com",
+        "iprofiles.apple.com",
+        "mdmenrollment.apple.com",
+        "axm-servicediscovery.apple.com",
+        "api.ent.apple.com",
+        "api.edu.apple.com",
+        "upload.appleschoolcontent.com",
+        "api-business.apple.com",
+        "api-school.apple.com",
+        "axm-adm-enroll.apple.com",
+        "axm-adm-mdm.apple.com",
+        "axm-adm-scep.apple.com",
+        "axm-app.apple.com",
+        "icons.axm-usercontent-apple.com",
+        "audiocontentdownload.apple.com",
+        "playgrounds-assets-cdn.apple.com",
+        "playgrounds-cdn.apple.com",
+        "diagassets.apple.com",
+        "fpservices-prod1.apple.com",
+        "vpp.itunes.apple.com",
+        "sylvan.apple.com"
+      ],
+      "domain_suffix": [
+        "gnip.apple.com",
+        "time.apple.com",
+        "sandbox.apple.com",
+        "apple-mapkit.com",
+        "business.apple.com",
+        "school.apple.com",
+        "cn.apple.com"
+      ]
+    }
+  ]
+}

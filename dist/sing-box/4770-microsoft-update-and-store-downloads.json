@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "dl.delivery.mp.microsoft.com"
+      ],
+      "domain": [
+        "download.windowsupdate.com",
+        "download.windowsupdate.com.delivery.microsoft.com",
+        "wu-f-net.trafficmanager.net",
+        "definitionupdates.microsoft.com"
+      ]
+    }
+  ]
+}

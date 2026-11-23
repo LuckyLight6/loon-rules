@@ -1,8 +1,8 @@
-# Loon 分流规则
+# Loon 分流规则与多客户端格式
 
-按服务和用途选择出口的 Loon 订阅规则，覆盖 AI、Apple、Google、Microsoft，以及开发、通讯、支付、影音、游戏等产品。规则不包含节点；同一份订阅可以在不同设备上绑定不同策略，也可以把多份订阅交给同一个策略组。
+按服务和用途选择出口的 Loon 订阅规则，覆盖 AI、Apple、Google、Microsoft，以及开发、通讯、支付、影音、游戏等产品。规则不包含节点；同一份订阅可以在不同设备上绑定不同策略，也可以把多份订阅交给同一个策略组。同时从同一套数据生成 Surge、Mihomo、Stash、Egern、Surfboard、Shadowrocket、Quantumult X、sing-box 和 V2Ray 格式，具体范围见[客户端格式与限制](docs/clients.md)。
 
-[规则清单与订阅地址](docs/rules.md) · [按厂商查产品](docs/services.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
+[规则清单与订阅地址](docs/rules.md) · [其他客户端](docs/clients.md) · [按厂商查产品](docs/services.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
 
 ## 开始使用
 

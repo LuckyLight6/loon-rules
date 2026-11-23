@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "tr.iadsdk.apple.com",
+        "bzr.openai.com",
+        "bzrcdn.openai.com"
+      ]
+    }
+  ]
+}

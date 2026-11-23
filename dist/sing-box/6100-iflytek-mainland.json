@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "sparkchain.cn"
+      ],
+      "domain": [
+        "spark-api-open.xf-yun.com",
+        "xinghuo.xfyun.cn"
+      ]
+    }
+  ]
+}

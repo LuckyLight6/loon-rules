@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:eaassets-a.akamaihd.net",
+          "domain:ea.com",
+          "domain:tnt-ea.com",
+          "domain:origin.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

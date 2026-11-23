@@ -1,0 +1,25 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:atlassian.net",
+          "domain:jira.com",
+          "domain:atl-paas.net",
+          "domain:atlassian-3p-us-gov-mod.com",
+          "domain:atlassian-3p.com",
+          "domain:atlassian-dev.net",
+          "domain:atlassian-us-gov-mod.com",
+          "domain:atlassian-us-gov-mod.net",
+          "domain:atlassian.com",
+          "domain:cdn.prod.atlassian-dev-us-gov-mod.net",
+          "domain:ss-inf.net",
+          "domain:teamworkgraph.ai",
+          "domain:teamworkgraph.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

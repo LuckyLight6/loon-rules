@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:taobao.com",
+          "domain:tmall.com",
+          "domain:idlefish.com",
+          "domain:goofish.com",
+          "domain:taobaocdn.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

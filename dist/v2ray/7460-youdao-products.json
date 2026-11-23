@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:ydshengxue.com",
+          "domain:ydstatic.com",
+          "domain:youdao.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

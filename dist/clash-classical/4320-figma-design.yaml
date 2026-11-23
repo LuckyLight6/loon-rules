@@ -1,0 +1,15 @@
+# name: figma-design
+# priority: 4320
+# section: productivity
+# description: Figma
+# boundary: 在线设计和团队工作区，不收第三方插件访问的任意主机
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/4320-figma-design.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,figma.com"

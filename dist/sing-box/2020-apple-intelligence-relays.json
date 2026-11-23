@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "apple-relay.apple.com",
+        "apple-relay.cloudflare.com",
+        "cp4.cloudflare.com",
+        "apple-relay.fastly-edge.com"
+      ]
+    }
+  ]
+}

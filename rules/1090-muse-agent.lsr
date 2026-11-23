@@ -2,7 +2,7 @@
 # priority: 1090
 # section: ai
 # description: Muse 独立个人助手与其专用入口
-# boundary: 只匹配 muse.ai。Meta AI 本站是 1080；不把 Meta 社交 App 或 Muse 连接到的第三方网站归进来
+# boundary: 只匹配 muse.ai；Meta AI 本站单独处理，不把 Meta 社交 App 或 Muse 连接到的第三方网站归进来
 # created-at: 2026-11-19T08:04:26Z
 # updated-at: 2026-11-19T10:51:17Z
 # rule-count: 1

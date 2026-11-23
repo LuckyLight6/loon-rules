@@ -1,0 +1,27 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:dis.gd",
+          "domain:discord-activities.com",
+          "full:discord-attachments-uploads-prd.storage.googleapis.com",
+          "domain:discord.co",
+          "domain:discord.com",
+          "domain:discord.gg",
+          "domain:discord.gift",
+          "domain:discord.gifts",
+          "domain:discord.media",
+          "domain:discordactivities.com",
+          "domain:discordapp.com",
+          "domain:discordapp.net",
+          "domain:discordcdn.com",
+          "domain:discordpartygames.com",
+          "domain:discordstatus.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

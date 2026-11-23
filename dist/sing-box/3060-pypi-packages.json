@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "files.pythonhosted.org"
+      ],
+      "domain_suffix": [
+        "pypi.org"
+      ]
+    }
+  ]
+}

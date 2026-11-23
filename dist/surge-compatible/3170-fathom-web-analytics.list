@@ -1,0 +1,14 @@
+# name: fathom-web-analytics
+# priority: 3170
+# section: development
+# description: Fathom 网站访问统计
+# boundary: Fathom 服务与自有统计脚本；客户自定义代理和网站不归本组，分类不代表免于用户选择的隐私拦截
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://usefathom.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surge-compatible
+# canonical: rules/3170-fathom-web-analytics.lsr
+
+DOMAIN-SUFFIX,usefathom.com

@@ -1,0 +1,33 @@
+name: Check native rule formats
+description: Validate all compatible outputs with official cores in temporary directories
+runs:
+  using: composite
+  steps:
+    - name: Download official client cores
+      shell: bash
+      run: |
+        set -euo pipefail
+        loon_native_dir="$RUNNER_TEMP/loon-rule-native"
+        mkdir -p "$loon_native_dir"
+        curl -q -fsSL --retry 2 --connect-timeout 10 --max-time 120 \
+          https://github.com/MetaCubeX/mihomo/releases/download/v1.19.34/mihomo-linux-amd64-v1-v1.19.34.gz \
+          -o "$loon_native_dir/mihomo.gz"
+        gzip -dc "$loon_native_dir/mihomo.gz" > "$loon_native_dir/mihomo"
+        curl -q -fsSL --retry 2 --connect-timeout 10 --max-time 120 \
+          https://github.com/SagerNet/sing-box/releases/download/v1.14.4/sing-box-1.14.4-linux-amd64.tar.gz \
+          -o "$loon_native_dir/sing-box.tar.gz"
+        tar -xzf "$loon_native_dir/sing-box.tar.gz" -C "$loon_native_dir" --strip-components=1 sing-box-1.14.4-linux-amd64/sing-box
+        curl -q -fsSL --retry 2 --connect-timeout 10 --max-time 120 \
+          https://github.com/v2fly/v2ray-core/releases/download/v5.53.0/v2ray-linux-64.zip \
+          -o "$loon_native_dir/v2ray.zip"
+        unzip -j -o "$loon_native_dir/v2ray.zip" v2ray -d "$loon_native_dir"
+        chmod +x "$loon_native_dir/mihomo" "$loon_native_dir/sing-box" "$loon_native_dir/v2ray"
+    - name: Parse and compile every compatible rule file
+      shell: bash
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
+      run: |
+        python3 -B checks/native_formats.py \
+          --mihomo "$RUNNER_TEMP/loon-rule-native/mihomo" \
+          --sing-box "$RUNNER_TEMP/loon-rule-native/sing-box" \
+          --v2ray "$RUNNER_TEMP/loon-rule-native/v2ray"

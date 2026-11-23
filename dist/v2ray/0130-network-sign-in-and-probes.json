@@ -1,0 +1,30 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:www.msftconnecttest.com",
+          "full:www.msftncsi.com",
+          "full:dns.msftncsi.com",
+          "full:easy-login.10099.com.cn",
+          "full:open.e.189.cn",
+          "full:token.safebrowsing.apple",
+          "full:connectivitycheck.android.com",
+          "full:captive.apple.com",
+          "full:securelogin.arubanetworks.com",
+          "full:connectivity.cloudflareclient.com",
+          "domain:cloudflarecp.com",
+          "domain:cloudflareok.com",
+          "domain:cloudflareportal.com",
+          "full:detectportal.firefox.com",
+          "full:connectivitycheck.gstatic.com",
+          "full:ping.archlinux.org",
+          "full:network-test.debian.org",
+          "full:networkcheck.kde.org"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

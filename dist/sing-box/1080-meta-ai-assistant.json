@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "meta.ai",
+        "llama.com",
+        "metaaiusercontent.com",
+        "metaaivm.com"
+      ]
+    }
+  ]
+}

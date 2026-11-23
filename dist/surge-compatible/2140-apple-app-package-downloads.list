@@ -1,0 +1,17 @@
+# name: apple-app-package-downloads
+# priority: 2140
+# section: apple
+# description: App Store 安装包下载
+# boundary: 只匹配已知安装包入口和别名，不把 mzstatic 整段算作安装包。TestFlight、购买、设备验证和系统更新各有专表
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://support.apple.com/en-us/101555
+# source: https://royli.dev/blog/2019/better-proxy-rules-for-apple-services
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: surge-compatible
+# canonical: rules/2140-apple-app-package-downloads.lsr
+
+DOMAIN,iosapps.itunes.apple.com
+DOMAIN,iosapps.itunes.g.aaplimg.com

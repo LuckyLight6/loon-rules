@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:qianfan.baidubce.com",
+          "full:ernie.baidu.com",
+          "full:yiyan.baidu.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

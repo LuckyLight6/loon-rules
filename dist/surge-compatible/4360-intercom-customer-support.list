@@ -1,0 +1,37 @@
+# name: intercom-customer-support
+# priority: 4360
+# section: productivity
+# description: Intercom 客服、会话、附件与实时通信
+# boundary: 核心站点与官方 CSP 中 Intercom 品牌来源；地区 CDN 和附件范围跟随文档，不收 YouTube、Vimeo 等外部嵌入产品
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list
+# source: https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+# canonical-rule-count: 23
+# rule-count: 23
+# format: surge-compatible
+# canonical: rules/4360-intercom-customer-support.lsr
+
+DOMAIN-SUFFIX,intercom.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomassets.com
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,au.intercom-attachments.com
+DOMAIN-SUFFIX,downloads.intercomcdn.eu
+DOMAIN-SUFFIX,intercom-attachments-1.com
+DOMAIN-SUFFIX,intercom-attachments-2.com
+DOMAIN-SUFFIX,intercom-attachments-3.com
+DOMAIN-SUFFIX,intercom-attachments-4.com
+DOMAIN-SUFFIX,intercom-attachments-5.com
+DOMAIN-SUFFIX,intercom-attachments-6.com
+DOMAIN-SUFFIX,intercom-attachments-7.com
+DOMAIN-SUFFIX,intercom-attachments-8.com
+DOMAIN-SUFFIX,intercom-attachments-9.com
+DOMAIN-SUFFIX,intercom-attachments.eu
+DOMAIN-SUFFIX,intercom-messenger.com
+DOMAIN-SUFFIX,intercom-sheets.com
+DOMAIN-SUFFIX,intercom.help
+DOMAIN-SUFFIX,static.intercomassets.eu
+DOMAIN-SUFFIX,uploads.intercomcdn.eu
+DOMAIN-SUFFIX,uploads.intercomusercontent.com
+DOMAIN-SUFFIX,www.intercom-reporting.com

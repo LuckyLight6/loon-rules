@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "hf.co",
+        "hf.space",
+        "huggingface.co"
+      ],
+      "domain": [
+        "api.endpoints.huggingface.cloud"
+      ]
+    }
+  ]
+}

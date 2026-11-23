@@ -1,0 +1,17 @@
+# name: stripe-payments
+# priority: 3520
+# section: payments
+# description: Stripe
+# boundary: 托管结账、接口和产品专用素材；不接管商户网站
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/stripe.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/3520-stripe-payments.lsr
+
+domain_suffix_set:
+  - "stripe.com"
+  - "stripe.network"
+  - "stripecdn.com"

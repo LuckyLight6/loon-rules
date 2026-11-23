@@ -21,7 +21,9 @@ jobs:
           echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
       - run: python3 -B -m unittest discover -s checks
       - run: python3 -B maintain.py --verify-files
+      - run: python3 -B maintain.py --check-exports
       - run: python3 -B scoped_dns.py --check
+      - uses: ./.github/actions/native-formats
       - uses: ./.github/actions/source-trust
       - run: python3 -B maintain.py --check
         env:

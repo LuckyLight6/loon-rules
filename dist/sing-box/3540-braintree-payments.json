@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "braintreegateway.com",
+        "braintreepayments.com"
+      ],
+      "domain": [
+        "payments.braintree-api.com",
+        "payments.sandbox.braintree-api.com"
+      ]
+    }
+  ]
+}

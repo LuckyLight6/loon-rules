@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:360buy.com",
+          "domain:360buyimg.com",
+          "domain:jd.com",
+          "domain:jd.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

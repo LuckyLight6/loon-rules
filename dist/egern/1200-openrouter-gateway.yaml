@@ -1,0 +1,16 @@
+# name: openrouter-gateway
+# priority: 1200
+# section: ai
+# description: OpenRouter 的模型网关入口
+# boundary: 同一个网关不根据模型名称切流
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openrouter.list
+# source: https://openrouter.ai/docs/quickstart
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/1200-openrouter-gateway.lsr
+
+domain_suffix_set:
+  - "openrouter.ai"

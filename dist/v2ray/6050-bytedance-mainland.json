@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:doubao.com",
+          "domain:coze.cn",
+          "full:ark.cn-beijing.volces.com",
+          "full:ark.volcengine.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

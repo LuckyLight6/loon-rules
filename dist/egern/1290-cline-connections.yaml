@@ -1,0 +1,16 @@
+# name: cline-connections
+# priority: 1290
+# section: ai
+# description: Cline 自营接入与账户
+# boundary: 只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://docs.cline.bot/getting-started/clinepass
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/1290-cline-connections.lsr
+
+domain_suffix_set:
+  - "cline.bot"

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "certs-lb.apple.com.akadns.net",
+        "certs.apple.com",
+        "crl-lb.apple.com.akadns.net",
+        "crl.apple.com",
+        "ocsp2.apple.com",
+        "valid.apple.com",
+        "valid.origin-apple.com.akadns.net",
+        "crl3.digicert.com",
+        "crl4.digicert.com",
+        "ocsp.digicert.cn",
+        "ocsp.digicert.com",
+        "ocsp-cdn.apple.com.akadns.net",
+        "ocsp-cdn.origin-apple.com.akadns.net",
+        "ocsp.apple.com.akadns.net",
+        "ocsp.apple.com.mwcname.com"
+      ],
+      "domain_suffix": [
+        "ocsp-lb.apple.com.akadns.net",
+        "ocsp.apple.com",
+        "ocsp.g.aaplimg.com"
+      ]
+    }
+  ]
+}

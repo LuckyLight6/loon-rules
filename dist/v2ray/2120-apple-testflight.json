@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:testflight.apple.com",
+          "full:beta.itunes.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

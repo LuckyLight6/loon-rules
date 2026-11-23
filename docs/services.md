@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 180 个厂商或项目、310 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 189 个厂商或项目、320 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -10,13 +10,13 @@
 |---|---|---:|
 | 海外 AI 合集 | [1000 海外 AI 合集](../rules/1000-ai-overseas-all.lsr) | 79 |
 | 国产 AI 国际版合集 | [1800 国产 AI 国际版合集](../rules/1800-ai-cn-international-all.lsr) | 12 |
-| 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 13 |
+| 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 21 |
 | 海外通讯与社交合集 | [3300 海外通讯与社交合集](../rules/3300-overseas-social-all.lsr) | 18 |
 | 海外支付合集 | [3500 海外支付合集](../rules/3500-overseas-payments-all.lsr) | 7 |
 | 海外加密资产服务合集 | [3600 海外加密资产服务合集](../rules/3600-overseas-crypto-all.lsr) | 7 |
 | 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 15 |
 | 海外游戏合集 | [4100 海外游戏合集](../rules/4100-overseas-games-all.lsr) | 9 |
-| 海外办公、邮件与协作合集 | [4300 海外办公、邮件与协作合集](../rules/4300-overseas-productivity-all.lsr) | 5 |
+| 海外办公、邮件与协作合集 | [4300 海外办公、邮件与协作合集](../rules/4300-overseas-productivity-all.lsr) | 6 |
 | 跨国厂商国内可用服务合集 | [4900 跨国厂商国内可用服务合集](../rules/4900-multinational-mainland-all.lsr) | 8 |
 | 国产 AI 国内版与共用入口合集 | [6000 国产 AI 国内版与共用入口合集](../rules/6000-ai-cn-all.lsr) | 17 |
 | 国内开发合集 | [6300 国内开发合集](../rules/6300-mainland-development-all.lsr) | 5 |
@@ -73,6 +73,7 @@
 | Google Play 游戏、发布与管理 API | [4560 Google Play 游戏、发布与管理 API](../rules/4560-google-play-games.lsr) |
 | Google 软件和更新已知下载主机 | [4570 Google 软件和更新已知下载主机](../rules/4570-google-software-downloads.lsr) |
 | Google 学术搜索 | [4580 Google 学术搜索](../rules/4580-google-scholar.lsr) |
+| Google Firebase Cloud Messaging 推送与令牌注册 | [4585 Google Firebase Cloud Messaging 推送与令牌注册](../rules/4585-google-firebase-messaging.lsr) |
 | Google 搜索、安全浏览 API 和共享平台兜底 | [4590 Google 搜索、安全浏览 API 和共享平台兜底](../rules/4590-google-platform-services.lsr) |
 
 ## X / xAI
@@ -744,6 +745,54 @@
 |---|---|
 | WorkOS 登录与公共组件 | [3130 WorkOS 登录、企业认证与公共组件](../rules/3130-workos-authentication.lsr) |
 
+## Datadog
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Datadog 监控、日志与浏览器 SDK | [3140 Datadog 监控、日志与浏览器 SDK](../rules/3140-datadog-observability.lsr) |
+
+## Sentry
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Sentry 错误监控、API 与 SDK | [3150 Sentry 错误监控、API 与 SDK](../rules/3150-sentry-error-monitoring.lsr) |
+
+## Statsig
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Statsig 功能开关、实验、配置与事件 API | [3160 Statsig 功能开关、实验、配置与事件 API](../rules/3160-statsig-feature-management.lsr) |
+
+## Fathom Analytics
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Fathom 网站访问统计 | [3170 Fathom 网站访问统计](../rules/3170-fathom-web-analytics.lsr) |
+
+## hcaptcha
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| hcaptcha 人机验证与服务状态 | [3180 hcaptcha 人机验证与服务状态](../rules/3180-hcaptcha-verification.lsr) |
+
+## Persona
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Persona 身份、企业与年龄验证 | [3190 Persona 身份、企业与年龄验证](../rules/3190-persona-identity-verification.lsr) |
+
+## Yoti
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Yoti 数字身份与年龄验证 | [3200 Yoti 数字身份与年龄验证](../rules/3200-yoti-identity-verification.lsr) |
+
+## Sift
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Sift 反欺诈、设备与风险 API | [3210 Sift 反欺诈、设备与风险 API](../rules/3210-sift-fraud-prevention.lsr) |
+
 ## Telegram
 
 | 产品或服务 | 对应规则 |
@@ -1011,6 +1060,12 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Proton 邮件、账户及共用服务 | [4350 Proton 邮件、账户及共用服务](../rules/4350-proton-suite.lsr) |
+
+## Intercom
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Intercom 客服、会话、附件与实时通信 | [4360 Intercom 客服、会话、附件与实时通信](../rules/4360-intercom-customer-support.lsr) |
 
 ## Qualcomm / 高通
 

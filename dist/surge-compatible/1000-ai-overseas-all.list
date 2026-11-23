@@ -1,0 +1,807 @@
+# name: ai-overseas-all
+# priority: 1000
+# section: ai
+# description: 海外 AI 合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-23T18:06:27Z
+# source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
+# source: https://code.claude.com/docs/en/network-config#network-access-requirements
+# source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list
+# source: https://platform.claude.com/docs/en/api/ip-addresses
+# source: https://rdap.arin.net/registry/autnum/399358
+# source: https://academy.claude.com/products/platform
+# source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
+# source: https://openai.com/chatgpt-voice.json
+# source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
+# source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
+# source: https://cursor.com/help/troubleshooting/sign-in-domains
+# source: https://cursor.com/docs/enterprise/network-configuration
+# source: https://docs.x.ai/x-subscription/sign-in
+# source: https://docs.x.ai/developers/faq/accounts
+# source: https://grokipedia.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# source: https://support.microsoft.com/en-us/microsoft-365-copilot/what-is-microsoft-copilot-app
+# source: https://learn.microsoft.com/en-us/copilot/plan/copilot-app-overview
+# source: https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/
+# source: https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse
+# source: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meta.list
+# source: https://muse.ai/
+# source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cursor.list
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/perplexity.list
+# source: https://raw.githubusercontent.com/perplexityai/perplexity-py/main/src/perplexity/_client.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/poe.list
+# source: https://raw.githubusercontent.com/poe-platform/fastapi_poe/main/src/fastapi_poe/client.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/mistral-ai.list
+# source: https://raw.githubusercontent.com/mistralai/client-python/main/src/mistralai/client/sdkconfiguration.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/groq.list
+# source: https://raw.githubusercontent.com/groq/groq-python/main/src/groq/_client.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/cohere.list
+# source: https://raw.githubusercontent.com/cohere-ai/cohere-python/main/src/cohere/environment.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/huggingface.list
+# source: https://raw.githubusercontent.com/huggingface/huggingface_hub/main/src/huggingface_hub/constants.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/devin.list
+# source: https://docs.devin.ai/api-reference/authentication
+# source: https://elevenlabs.io/docs/eleven-api/resources/mcp-server
+# source: https://raw.githubusercontent.com/elevenlabs/elevenlabs-python/main/src/elevenlabs/environment.py
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/midjourney.list
+# source: https://docs.midjourney.com/api/v2/help_center/en-us/articles.json
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openrouter.list
+# source: https://openrouter.ai/docs/quickstart
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/windsurf.list
+# source: https://raw.githubusercontent.com/Exafunction/codeium.vim/main/autoload/codeium/server.vim
+# source: https://ai.com/start
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains-ai.list
+# source: https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json
+# source: https://support.jetbrains.com/hc/en-us/articles/40250675463570-Firewall-or-proxy-allowlist-for-IntelliJ-based-IDEs-required-hosts-and-ports
+# source: https://ampcode.com/security
+# source: https://anythingllm.com/
+# source: https://docs.anythingllm.com/introduction
+# source: https://docs.fireworks.ai/tools-sdks/openai-compatibility.md
+# source: https://docs.fireworks.ai/getting-started/quickstart.md
+# source: https://models.dev/api.json
+# source: https://opencode.ai/v2/docs/console/models/
+# source: https://opencode.ai/v2/docs/console/go/
+# source: https://kilo.ai
+# source: https://docs.cline.bot/getting-started/clinepass
+# source: https://docs.ollama.com/cloud
+# source: https://llm.chutes.ai/v1/models
+# source: https://bothub.ru/models
+# source: https://commandcode.ai/docs/provider
+# source: https://docs.stackit.cloud/products/data-and-ai/ai-model-serving/basics/available-shared-models
+# source: https://novita.ai/docs/guides/introduction
+# source: https://docs.tokenfactory.nebius.com/
+# source: https://docs.baseten.co/inference/model-apis/overview
+# source: https://deepinfra.com/models
+# source: https://docs.together.ai/docs/serverless-models
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
+# source: https://inference-docs.cerebras.ai/models/overview
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list
+# source: https://replicate.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list
+# source: https://runwayml.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list
+# source: https://stability.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list
+# source: https://bfl.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list
+# source: https://replit.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/augment-code.list
+# source: https://augmentcode.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list
+# source: https://sourcegraph.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list
+# source: https://continue.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list
+# source: https://coderabbit.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list
+# source: https://tabnine.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list
+# source: https://factory.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list
+# source: https://zed.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://kiro.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list
+# source: https://bolt.new/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list
+# source: https://lovable.dev/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list
+# source: https://v0.app/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list
+# source: https://genspark.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list
+# source: https://jasper.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list
+# source: https://gamma.app/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list
+# source: https://phind.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list
+# source: https://inflection.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list
+# source: https://h2o.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list
+# source: https://otter.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list
+# source: https://descript.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list
+# source: https://synthesia.io/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list
+# source: https://lumalabs.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list
+# source: https://leonardo.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list
+# source: https://pika.art/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list
+# source: https://recraft.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list
+# source: https://udio.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list
+# source: https://duck.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list
+# source: https://langchain.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list
+# source: https://comfy.org/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list
+# source: https://lmstudio.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list
+# source: https://crewai.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list
+# source: https://eigent.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list
+# source: https://manus.im/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list
+# source: https://diabrowser.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list
+# source: https://openclaw.ai/
+# canonical-rule-count: 639
+# rule-count: 639
+# format: surge-compatible
+# canonical: rules/1000-ai-overseas-all.lsr
+
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR,153.61.224.0/22,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
+IP-ASN,399358,no-resolve
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claude.new
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudeacademy.com
+DOMAIN,openaiassets.blob.core.windows.net
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN,cdn.openaimerge.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+IP-CIDR,102.37.57.54/32,no-resolve
+IP-CIDR,104.211.223.134/32,no-resolve
+IP-CIDR,104.215.182.146/32,no-resolve
+IP-CIDR,128.203.193.150/32,no-resolve
+IP-CIDR,128.24.72.208/32,no-resolve
+IP-CIDR,128.24.89.254/32,no-resolve
+IP-CIDR,13.71.25.29/32,no-resolve
+IP-CIDR,13.78.198.12/32,no-resolve
+IP-CIDR,13.78.35.240/32,no-resolve
+IP-CIDR,13.87.67.156/32,no-resolve
+IP-CIDR,130.131.193.230/32,no-resolve
+IP-CIDR,130.131.217.150/32,no-resolve
+IP-CIDR,130.131.242.81/32,no-resolve
+IP-CIDR,130.131.63.28/32,no-resolve
+IP-CIDR,130.33.52.154/32,no-resolve
+IP-CIDR,132.196.3.237/32,no-resolve
+IP-CIDR,132.196.88.56/32,no-resolve
+IP-CIDR,134.138.48.132/32,no-resolve
+IP-CIDR,134.138.48.156/32,no-resolve
+IP-CIDR,134.138.48.201/32,no-resolve
+IP-CIDR,134.138.48.220/32,no-resolve
+IP-CIDR,134.138.48.99/32,no-resolve
+IP-CIDR,134.138.49.186/32,no-resolve
+IP-CIDR,134.138.49.233/32,no-resolve
+IP-CIDR,134.138.50.120/32,no-resolve
+IP-CIDR,134.138.50.121/32,no-resolve
+IP-CIDR,134.138.50.190/32,no-resolve
+IP-CIDR,134.138.50.236/32,no-resolve
+IP-CIDR,134.138.50.85/32,no-resolve
+IP-CIDR,135.119.54.176/32,no-resolve
+IP-CIDR,135.220.40.201/32,no-resolve
+IP-CIDR,135.225.27.170/32,no-resolve
+IP-CIDR,135.234.25.52/32,no-resolve
+IP-CIDR,137.116.45.81/32,no-resolve
+IP-CIDR,138.91.23.93/32,no-resolve
+IP-CIDR,158.158.101.5/32,no-resolve
+IP-CIDR,158.158.104.5/32,no-resolve
+IP-CIDR,158.158.35.12/32,no-resolve
+IP-CIDR,158.158.43.147/32,no-resolve
+IP-CIDR,158.158.47.203/32,no-resolve
+IP-CIDR,158.158.54.76/32,no-resolve
+IP-CIDR,158.158.72.151/32,no-resolve
+IP-CIDR,158.158.96.28/32,no-resolve
+IP-CIDR,158.158.98.53/32,no-resolve
+IP-CIDR,172.166.108.88/32,no-resolve
+IP-CIDR,172.167.99.101/32,no-resolve
+IP-CIDR,172.173.91.17/32,no-resolve
+IP-CIDR,172.176.115.233/32,no-resolve
+IP-CIDR,172.178.132.252/32,no-resolve
+IP-CIDR,172.182.200.81/32,no-resolve
+IP-CIDR,172.183.195.174/32,no-resolve
+IP-CIDR,172.184.108.82/32,no-resolve
+IP-CIDR,172.184.136.176/32,no-resolve
+IP-CIDR,172.184.143.123/32,no-resolve
+IP-CIDR,172.196.32.32/32,no-resolve
+IP-CIDR,172.196.41.217/32,no-resolve
+IP-CIDR,172.196.43.226/32,no-resolve
+IP-CIDR,172.196.43.82/32,no-resolve
+IP-CIDR,172.196.50.223/32,no-resolve
+IP-CIDR,172.198.138.215/32,no-resolve
+IP-CIDR,172.198.138.218/32,no-resolve
+IP-CIDR,172.198.75.176/32,no-resolve
+IP-CIDR,172.200.47.199/32,no-resolve
+IP-CIDR,172.202.168.144/32,no-resolve
+IP-CIDR,172.202.169.179/32,no-resolve
+IP-CIDR,172.202.198.115/32,no-resolve
+IP-CIDR,172.202.198.128/32,no-resolve
+IP-CIDR,172.202.23.232/32,no-resolve
+IP-CIDR,172.203.39.49/32,no-resolve
+IP-CIDR,172.204.24.194/32,no-resolve
+IP-CIDR,172.204.25.108/32,no-resolve
+IP-CIDR,172.204.26.187/32,no-resolve
+IP-CIDR,172.204.26.194/32,no-resolve
+IP-CIDR,172.207.173.200/32,no-resolve
+IP-CIDR,172.212.162.141/32,no-resolve
+IP-CIDR,172.212.177.184/32,no-resolve
+IP-CIDR,172.212.183.151/32,no-resolve
+IP-CIDR,172.212.186.208/32,no-resolve
+IP-CIDR,172.213.16.221/32,no-resolve
+IP-CIDR,172.214.226.198/32,no-resolve
+IP-CIDR,172.214.254.250/32,no-resolve
+IP-CIDR,172.215.136.137/32,no-resolve
+IP-CIDR,191.232.190.216/32,no-resolve
+IP-CIDR,191.232.198.181/32,no-resolve
+IP-CIDR,191.232.51.120/32,no-resolve
+IP-CIDR,191.233.251.27/32,no-resolve
+IP-CIDR,191.235.237.21/32,no-resolve
+IP-CIDR,20.106.75.64/32,no-resolve
+IP-CIDR,20.107.200.148/32,no-resolve
+IP-CIDR,20.113.195.227/32,no-resolve
+IP-CIDR,20.113.199.182/32,no-resolve
+IP-CIDR,20.113.204.227/32,no-resolve
+IP-CIDR,20.113.205.18/32,no-resolve
+IP-CIDR,20.113.207.178/32,no-resolve
+IP-CIDR,20.113.209.102/32,no-resolve
+IP-CIDR,20.114.70.148/32,no-resolve
+IP-CIDR,20.118.174.239/32,no-resolve
+IP-CIDR,20.118.36.228/32,no-resolve
+IP-CIDR,20.12.176.106/32,no-resolve
+IP-CIDR,20.12.214.56/32,no-resolve
+IP-CIDR,20.125.120.177/32,no-resolve
+IP-CIDR,20.125.138.65/32,no-resolve
+IP-CIDR,20.125.96.144/32,no-resolve
+IP-CIDR,20.162.96.163/32,no-resolve
+IP-CIDR,20.165.148.234/32,no-resolve
+IP-CIDR,20.165.155.240/32,no-resolve
+IP-CIDR,20.165.158.214/32,no-resolve
+IP-CIDR,20.165.41.24/32,no-resolve
+IP-CIDR,20.168.16.20/32,no-resolve
+IP-CIDR,20.168.16.99/32,no-resolve
+IP-CIDR,20.168.48.117/32,no-resolve
+IP-CIDR,20.168.65.250/32,no-resolve
+IP-CIDR,20.168.72.85/32,no-resolve
+IP-CIDR,20.169.22.39/32,no-resolve
+IP-CIDR,20.169.33.151/32,no-resolve
+IP-CIDR,20.169.33.200/32,no-resolve
+IP-CIDR,20.171.138.58/32,no-resolve
+IP-CIDR,20.171.252.186/32,no-resolve
+IP-CIDR,20.171.68.30/32,no-resolve
+IP-CIDR,20.171.97.109/32,no-resolve
+IP-CIDR,20.184.36.134/32,no-resolve
+IP-CIDR,20.190.104.59/32,no-resolve
+IP-CIDR,20.193.73.108/32,no-resolve
+IP-CIDR,20.194.216.119/32,no-resolve
+IP-CIDR,20.194.216.186/32,no-resolve
+IP-CIDR,20.194.51.26/32,no-resolve
+IP-CIDR,20.195.180.205/32,no-resolve
+IP-CIDR,20.195.185.53/32,no-resolve
+IP-CIDR,20.195.188.32/32,no-resolve
+IP-CIDR,20.195.188.94/32,no-resolve
+IP-CIDR,20.196.195.248/32,no-resolve
+IP-CIDR,20.197.177.17/32,no-resolve
+IP-CIDR,20.197.179.218/32,no-resolve
+IP-CIDR,20.197.180.156/32,no-resolve
+IP-CIDR,20.197.192.104/32,no-resolve
+IP-CIDR,20.197.26.229/32,no-resolve
+IP-CIDR,20.198.73.88/32,no-resolve
+IP-CIDR,20.199.240.35/32,no-resolve
+IP-CIDR,20.203.136.26/32,no-resolve
+IP-CIDR,20.203.144.245/32,no-resolve
+IP-CIDR,20.203.145.145/32,no-resolve
+IP-CIDR,20.203.145.225/32,no-resolve
+IP-CIDR,20.203.241.30/32,no-resolve
+IP-CIDR,20.205.234.64/32,no-resolve
+IP-CIDR,20.206.69.234/32,no-resolve
+IP-CIDR,20.206.90.17/32,no-resolve
+IP-CIDR,20.207.196.19/32,no-resolve
+IP-CIDR,20.207.197.123/32,no-resolve
+IP-CIDR,20.207.202.126/32,no-resolve
+IP-CIDR,20.210.247.237/32,no-resolve
+IP-CIDR,20.211.100.168/32,no-resolve
+IP-CIDR,20.211.124.176/32,no-resolve
+IP-CIDR,20.211.160.187/32,no-resolve
+IP-CIDR,20.211.204.106/32,no-resolve
+IP-CIDR,20.211.207.196/32,no-resolve
+IP-CIDR,20.211.232.159/32,no-resolve
+IP-CIDR,20.211.28.213/32,no-resolve
+IP-CIDR,20.212.25.108/32,no-resolve
+IP-CIDR,20.212.83.76/32,no-resolve
+IP-CIDR,20.213.73.163/32,no-resolve
+IP-CIDR,20.214.186.125/32,no-resolve
+IP-CIDR,20.214.225.136/32,no-resolve
+IP-CIDR,20.215.189.48/32,no-resolve
+IP-CIDR,20.215.211.9/32,no-resolve
+IP-CIDR,20.215.219.87/32,no-resolve
+IP-CIDR,20.215.248.137/32,no-resolve
+IP-CIDR,20.215.253.155/32,no-resolve
+IP-CIDR,20.215.254.178/32,no-resolve
+IP-CIDR,20.215.51.56/32,no-resolve
+IP-CIDR,20.215.69.18/32,no-resolve
+IP-CIDR,20.218.37.123/32,no-resolve
+IP-CIDR,20.218.43.103/32,no-resolve
+IP-CIDR,20.219.1.167/32,no-resolve
+IP-CIDR,20.219.100.169/32,no-resolve
+IP-CIDR,20.219.102.5/32,no-resolve
+IP-CIDR,20.219.109.3/32,no-resolve
+IP-CIDR,20.219.11.5/32,no-resolve
+IP-CIDR,20.219.120.240/32,no-resolve
+IP-CIDR,20.219.124.186/32,no-resolve
+IP-CIDR,20.219.56.35/32,no-resolve
+IP-CIDR,20.225.138.3/32,no-resolve
+IP-CIDR,20.225.156.200/32,no-resolve
+IP-CIDR,20.226.104.46/32,no-resolve
+IP-CIDR,20.226.19.149/32,no-resolve
+IP-CIDR,20.226.2.110/32,no-resolve
+IP-CIDR,20.226.20.169/32,no-resolve
+IP-CIDR,20.226.21.227/32,no-resolve
+IP-CIDR,20.226.25.167/32,no-resolve
+IP-CIDR,20.226.36.119/32,no-resolve
+IP-CIDR,20.226.36.140/32,no-resolve
+IP-CIDR,20.226.38.105/32,no-resolve
+IP-CIDR,20.226.40.52/32,no-resolve
+IP-CIDR,20.226.41.247/32,no-resolve
+IP-CIDR,20.226.42.137/32,no-resolve
+IP-CIDR,20.226.51.38/32,no-resolve
+IP-CIDR,20.226.52.74/32,no-resolve
+IP-CIDR,20.226.74.46/32,no-resolve
+IP-CIDR,20.226.84.92/32,no-resolve
+IP-CIDR,20.226.86.24/32,no-resolve
+IP-CIDR,20.226.89.95/32,no-resolve
+IP-CIDR,20.229.39.104/32,no-resolve
+IP-CIDR,20.229.39.45/32,no-resolve
+IP-CIDR,20.230.47.206/32,no-resolve
+IP-CIDR,20.234.111.90/32,no-resolve
+IP-CIDR,20.236.141.128/32,no-resolve
+IP-CIDR,20.236.64.56/32,no-resolve
+IP-CIDR,20.237.207.200/32,no-resolve
+IP-CIDR,20.242.106.26/32,no-resolve
+IP-CIDR,20.242.22.99/32,no-resolve
+IP-CIDR,20.245.11.12/32,no-resolve
+IP-CIDR,20.245.239.248/32,no-resolve
+IP-CIDR,20.248.121.10/32,no-resolve
+IP-CIDR,20.25.136.71/32,no-resolve
+IP-CIDR,20.25.176.169/32,no-resolve
+IP-CIDR,20.250.8.66/32,no-resolve
+IP-CIDR,20.253.201.211/32,no-resolve
+IP-CIDR,20.29.106.142/32,no-resolve
+IP-CIDR,20.29.109.127/32,no-resolve
+IP-CIDR,20.29.73.138/32,no-resolve
+IP-CIDR,20.29.94.5/32,no-resolve
+IP-CIDR,20.37.248.26/32,no-resolve
+IP-CIDR,20.38.171.133/32,no-resolve
+IP-CIDR,20.41.220.129/32,no-resolve
+IP-CIDR,20.41.97.13/32,no-resolve
+IP-CIDR,20.42.209.232/32,no-resolve
+IP-CIDR,20.42.216.2/32,no-resolve
+IP-CIDR,20.45.59.121/32,no-resolve
+IP-CIDR,20.46.180.229/32,no-resolve
+IP-CIDR,20.55.129.73/32,no-resolve
+IP-CIDR,20.58.186.41/32,no-resolve
+IP-CIDR,20.59.119.195/32,no-resolve
+IP-CIDR,20.61.69.127/32,no-resolve
+IP-CIDR,20.63.211.30/32,no-resolve
+IP-CIDR,20.66.44.126/32,no-resolve
+IP-CIDR,20.69.27.102/32,no-resolve
+IP-CIDR,20.70.109.186/32,no-resolve
+IP-CIDR,20.70.32.20/32,no-resolve
+IP-CIDR,20.74.221.21/32,no-resolve
+IP-CIDR,20.78.149.97/32,no-resolve
+IP-CIDR,20.83.246.205/32,no-resolve
+IP-CIDR,20.85.214.85/32,no-resolve
+IP-CIDR,20.86.156.204/32,no-resolve
+IP-CIDR,20.89.101.223/32,no-resolve
+IP-CIDR,20.89.130.145/32,no-resolve
+IP-CIDR,20.89.216.20/32,no-resolve
+IP-CIDR,20.89.236.125/32,no-resolve
+IP-CIDR,20.89.40.149/32,no-resolve
+IP-CIDR,20.89.98.73/32,no-resolve
+IP-CIDR,20.9.6.44/32,no-resolve
+IP-CIDR,20.9.65.240/32,no-resolve
+IP-CIDR,20.97.18.7/32,no-resolve
+IP-CIDR,20.98.53.205/32,no-resolve
+IP-CIDR,20.98.94.72/32,no-resolve
+IP-CIDR,23.101.123.148/32,no-resolve
+IP-CIDR,23.101.216.138/32,no-resolve
+IP-CIDR,23.101.226.95/32,no-resolve
+IP-CIDR,4.150.48.254/32,no-resolve
+IP-CIDR,4.151.125.58/32,no-resolve
+IP-CIDR,4.151.146.120/32,no-resolve
+IP-CIDR,4.151.150.176/32,no-resolve
+IP-CIDR,4.151.162.218/32,no-resolve
+IP-CIDR,4.151.178.112/32,no-resolve
+IP-CIDR,4.151.200.38/32,no-resolve
+IP-CIDR,4.151.204.68/32,no-resolve
+IP-CIDR,4.151.50.34/32,no-resolve
+IP-CIDR,4.154.76.98/32,no-resolve
+IP-CIDR,4.155.146.196/32,no-resolve
+IP-CIDR,4.155.233.173/32,no-resolve
+IP-CIDR,4.190.204.74/32,no-resolve
+IP-CIDR,4.197.155.147/32,no-resolve
+IP-CIDR,4.197.172.116/32,no-resolve
+IP-CIDR,4.197.185.255/32,no-resolve
+IP-CIDR,4.201.104.14/32,no-resolve
+IP-CIDR,4.201.155.22/32,no-resolve
+IP-CIDR,4.201.169.177/32,no-resolve
+IP-CIDR,4.201.186.94/32,no-resolve
+IP-CIDR,4.213.138.217/32,no-resolve
+IP-CIDR,4.217.222.97/32,no-resolve
+IP-CIDR,4.217.235.100/32,no-resolve
+IP-CIDR,4.218.14.95/32,no-resolve
+IP-CIDR,4.225.200.166/32,no-resolve
+IP-CIDR,4.225.221.123/32,no-resolve
+IP-CIDR,4.232.88.121/32,no-resolve
+IP-CIDR,4.242.133.59/32,no-resolve
+IP-CIDR,4.245.198.13/32,no-resolve
+IP-CIDR,4.246.114.35/32,no-resolve
+IP-CIDR,4.255.228.31/32,no-resolve
+IP-CIDR,40.112.161.169/32,no-resolve
+IP-CIDR,40.115.143.140/32,no-resolve
+IP-CIDR,40.118.236.137/32,no-resolve
+IP-CIDR,40.124.7.113/32,no-resolve
+IP-CIDR,40.64.120.63/32,no-resolve
+IP-CIDR,40.75.170.15/32,no-resolve
+IP-CIDR,48.193.40.95/32,no-resolve
+IP-CIDR,48.193.41.10/32,no-resolve
+IP-CIDR,48.193.41.165/32,no-resolve
+IP-CIDR,51.103.128.240/32,no-resolve
+IP-CIDR,51.107.168.125/32,no-resolve
+IP-CIDR,51.107.175.203/32,no-resolve
+IP-CIDR,51.107.225.131/32,no-resolve
+IP-CIDR,51.107.238.19/32,no-resolve
+IP-CIDR,51.107.238.43/32,no-resolve
+IP-CIDR,51.116.220.101/32,no-resolve
+IP-CIDR,51.116.3.178/32,no-resolve
+IP-CIDR,51.116.3.185/32,no-resolve
+IP-CIDR,51.116.82.1/32,no-resolve
+IP-CIDR,51.116.84.241/32,no-resolve
+IP-CIDR,51.116.89.102/32,no-resolve
+IP-CIDR,51.116.89.99/32,no-resolve
+IP-CIDR,51.4.112.173/32,no-resolve
+IP-CIDR,51.57.68.153/32,no-resolve
+IP-CIDR,51.57.79.182/32,no-resolve
+IP-CIDR,52.140.124.30/32,no-resolve
+IP-CIDR,52.141.0.43/32,no-resolve
+IP-CIDR,52.141.4.85/32,no-resolve
+IP-CIDR,52.143.181.161/32,no-resolve
+IP-CIDR,52.148.5.163/32,no-resolve
+IP-CIDR,52.150.164.49/32,no-resolve
+IP-CIDR,52.157.177.65/32,no-resolve
+IP-CIDR,52.159.141.180/32,no-resolve
+IP-CIDR,52.182.134.239/32,no-resolve
+IP-CIDR,52.188.151.95/32,no-resolve
+IP-CIDR,52.188.65.158/32,no-resolve
+IP-CIDR,52.230.89.145/32,no-resolve
+IP-CIDR,52.233.253.172/32,no-resolve
+IP-CIDR,52.234.45.139/32,no-resolve
+IP-CIDR,52.236.51.132/32,no-resolve
+IP-CIDR,52.237.113.253/32,no-resolve
+IP-CIDR,52.241.6.99/32,no-resolve
+IP-CIDR,52.243.62.231/32,no-resolve
+IP-CIDR,52.247.69.68/32,no-resolve
+IP-CIDR,52.253.104.78/32,no-resolve
+IP-CIDR,52.253.109.199/32,no-resolve
+IP-CIDR,52.253.109.90/32,no-resolve
+IP-CIDR,57.154.22.182/32,no-resolve
+IP-CIDR,57.154.40.120/32,no-resolve
+IP-CIDR,57.154.42.34/32,no-resolve
+IP-CIDR,57.154.51.173/32,no-resolve
+IP-CIDR,57.154.55.99/32,no-resolve
+IP-CIDR,57.154.67.255/32,no-resolve
+IP-CIDR,64.236.175.115/32,no-resolve
+IP-CIDR,68.155.152.41/32,no-resolve
+IP-CIDR,68.221.176.216/32,no-resolve
+IP-CIDR,68.221.200.92/32,no-resolve
+IP-CIDR,68.221.76.47/32,no-resolve
+IP-CIDR,70.153.147.32/32,no-resolve
+IP-CIDR,70.153.147.96/32,no-resolve
+IP-CIDR,70.153.148.19/32,no-resolve
+IP-CIDR,70.153.150.120/32,no-resolve
+IP-CIDR,70.153.151.108/32,no-resolve
+IP-CIDR,70.153.83.155/32,no-resolve
+IP-CIDR,72.146.20.246/32,no-resolve
+IP-CIDR,72.146.45.116/32,no-resolve
+IP-CIDR,74.152.48.241/32,no-resolve
+IP-CIDR,74.152.49.125/32,no-resolve
+IP-CIDR,74.159.28.251/32,no-resolve
+IP-CIDR,74.159.51.124/32,no-resolve
+IP-CIDR,74.159.51.54/32,no-resolve
+IP-CIDR,74.225.202.57/32,no-resolve
+IP-CIDR,74.225.219.218/32,no-resolve
+IP-CIDR,74.248.120.121/32,no-resolve
+IP-CIDR,74.248.136.89/32,no-resolve
+IP-CIDR,74.248.148.7/32,no-resolve
+IP-CIDR,74.248.19.80/32,no-resolve
+IP-CIDR,74.248.21.91/32,no-resolve
+IP-CIDR,74.248.21.95/32,no-resolve
+IP-CIDR,74.248.32.218/32,no-resolve
+IP-CIDR,74.248.34.11/32,no-resolve
+IP-CIDR,74.248.35.102/32,no-resolve
+IP-CIDR,74.248.35.12/32,no-resolve
+IP-CIDR,74.248.36.40/32,no-resolve
+IP-CIDR,74.249.207.14/32,no-resolve
+IP-CIDR,74.249.241.198/32,no-resolve
+IP-CIDR,74.249.249.6/32,no-resolve
+IP-CIDR,74.7.32.207/32,no-resolve
+IP-CIDR,74.7.32.33/32,no-resolve
+IP-CIDR,74.7.32.69/32,no-resolve
+IP-CIDR,74.7.33.139/32,no-resolve
+IP-CIDR,74.7.33.140/32,no-resolve
+IP-CIDR,74.7.33.71/32,no-resolve
+IP-CIDR,85.211.180.16/32,no-resolve
+IP-CIDR,85.211.180.65/32,no-resolve
+IP-CIDR,85.211.181.109/32,no-resolve
+IP-CIDR,85.211.182.61/32,no-resolve
+IP-CIDR,85.211.193.130/32,no-resolve
+IP-CIDR,85.211.195.125/32,no-resolve
+IP-CIDR,85.211.241.13/32,no-resolve
+IP-CIDR,85.211.245.237/32,no-resolve
+IP-CIDR,85.211.247.9/32,no-resolve
+IP-CIDR,9.160.160.178/32,no-resolve
+IP-CIDR,9.160.163.154/32,no-resolve
+IP-CIDR,9.160.164.236/32,no-resolve
+IP-CIDR,9.160.165.37/32,no-resolve
+IP-CIDR,9.160.35.238/32,no-resolve
+IP-CIDR,9.160.36.206/32,no-resolve
+IP-CIDR,9.160.37.102/32,no-resolve
+IP-CIDR,9.160.37.127/32,no-resolve
+IP-CIDR,9.160.37.213/32,no-resolve
+IP-CIDR,9.160.37.69/32,no-resolve
+IP-CIDR,9.205.154.223/32,no-resolve
+IP-CIDR,9.205.159.112/32,no-resolve
+IP-CIDR,9.205.159.128/32,no-resolve
+IP-CIDR,9.205.159.144/32,no-resolve
+IP-CIDR,9.205.248.20/32,no-resolve
+IP-CIDR,9.205.248.21/32,no-resolve
+IP-CIDR,9.205.248.226/32,no-resolve
+IP-CIDR,9.205.248.42/32,no-resolve
+IP-CIDR,9.205.248.77/32,no-resolve
+IP-CIDR,9.205.250.159/32,no-resolve
+IP-CIDR,9.205.94.183/32,no-resolve
+IP-CIDR,9.205.94.184/32,no-resolve
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN,appsgenaiserver-pa.clients.google.com
+DOMAIN,geminiweb-pa.clients.google.com
+DOMAIN,alkalicore-pa.clients6.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,appsgenaiserver-pa.clients6.google.com
+DOMAIN,geminiweb-pa.clients6.google.com
+DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,flow.google.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,jules.google.com
+DOMAIN-SUFFIX,labs.google.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,notebook.google.com
+DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,opal.google.com
+DOMAIN-SUFFIX,aicode.googleapis.com
+DOMAIN-SUFFIX,aida.googleapis.com
+DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
+DOMAIN,antigravity.googleapis.com
+DOMAIN,antigravity-pa.googleapis.com
+DOMAIN,appsgenaiserver-pa.googleapis.com
+DOMAIN,cloudaicompanion.googleapis.com
+DOMAIN,cloudcode-pa.googleapis.com
+DOMAIN,daily-cloudcode-pa.googleapis.com
+DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN,notebooklm.googleapis.com
+DOMAIN,notebooklm-pa.googleapis.com
+DOMAIN-SUFFIX,labstailwind.pa.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
+DOMAIN-SUFFIX,gemini.gstatic.com
+DOMAIN-SUFFIX,stitch.withgoogle.com
+DOMAIN,ai.google.dev
+DOMAIN-SUFFIX,antigravity-unleash.goog
+DOMAIN-SUFFIX,antigravity.google
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,flow.google
+DOMAIN-SUFFIX,gemini.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,jules.google
+DOMAIN-SUFFIX,labs.google
+DOMAIN-SUFFIX,notebook.google
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,opal.google
+DOMAIN-SUFFIX,ai.studio
+DOMAIN,webchannel-robinfrontend-pa.googleapis.com
+DOMAIN,geminiweb-pa.googleapis.com
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,grok.x.com
+DOMAIN-SUFFIX,x.ai
+DOMAIN-WILDCARD,*.grokusercontent.com
+DOMAIN,accounts.spacexsi.com
+DOMAIN,accounts.spacex.ai
+DOMAIN-SUFFIX,grokipedia.com
+DOMAIN,origin-tracker.githubusercontent.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,copilot-workspace.githubnext.com
+DOMAIN,production-copilot-host-westus.webpubsub.azure.com
+DOMAIN,copilotprodattachments.blob.core.windows.net
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN,copilot-telemetry-service.githubusercontent.com
+DOMAIN,copilot-telemetry.githubusercontent.com
+DOMAIN,copilot-reports.github.com
+DOMAIN,production-copilot-host-austriaeast.webpubsub.azure.com
+DOMAIN,production-copilot-host-centralus-02.webpubsub.azure.com
+DOMAIN,production-copilot-host-centralus.webpubsub.azure.com
+DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com
+DOMAIN,production-copilot-host-westus3.webpubsub.azure.com
+DOMAIN,production-copilot-host.webpubsub.azure.com
+DOMAIN,copilot.com
+DOMAIN,www.copilot.com
+DOMAIN,copilot.microsoft.com
+DOMAIN,copilot.cloud.microsoft
+DOMAIN,copilot.ai
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,llama.com
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,metaaivm.com
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursorapi.com
+DOMAIN-SUFFIX,cursorvm.com
+DOMAIN,agent-stores.s3.amazonaws.com
+DOMAIN,agent-stores.s3.us-east-1.amazonaws.com
+DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
+DOMAIN,cursor.blob.core.windows.net
+DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
+DOMAIN,pplx-res.cloudinary.com
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,perplexity.com
+DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,poecdn.net
+DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,hf.space
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN,api.endpoints.huggingface.cloud
+DOMAIN-SUFFIX,devin.ai
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabsusercontent.com
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,windsurf.build
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,jetbrains.ai
+DOMAIN,api.app.prod.grazie.aws.intellij.net
+DOMAIN,api.jetbrains.cloud
+DOMAIN,ampcode.com
+DOMAIN,auth.ampcode.com
+DOMAIN,static.ampcode.com
+DOMAIN,tunnel.ampcode.com
+DOMAIN-WILDCARD,*.onamp.dev
+DOMAIN-SUFFIX,anythingllm.com
+DOMAIN-SUFFIX,fireworks.ai
+DOMAIN-SUFFIX,opencode.ai
+DOMAIN-SUFFIX,kilo.ai
+DOMAIN-SUFFIX,cline.bot
+DOMAIN,ollama.com
+DOMAIN-SUFFIX,chutes.ai
+DOMAIN-SUFFIX,bothub.ru
+DOMAIN-SUFFIX,commandcode.ai
+DOMAIN,api.openai-compat.model-serving.eu01.onstackit.cloud
+DOMAIN-SUFFIX,novita.ai
+DOMAIN-SUFFIX,tokenfactory.nebius.com
+DOMAIN-SUFFIX,baseten.co
+DOMAIN-SUFFIX,deepinfra.com
+DOMAIN-SUFFIX,together.ai
+DOMAIN,api.together.xyz
+DOMAIN-SUFFIX,cerebras.ai
+DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,replicate.delivery
+DOMAIN-SUFFIX,runway.com
+DOMAIN-SUFFIX,runwayml.com
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,bfl.ai
+DOMAIN-SUFFIX,repl.it
+DOMAIN-SUFFIX,replit.com
+DOMAIN-SUFFIX,replit.dev
+DOMAIN-SUFFIX,augmentcode.com
+DOMAIN-SUFFIX,cody.dev
+DOMAIN-SUFFIX,sourcegraph.com
+DOMAIN-SUFFIX,continue.dev
+DOMAIN-SUFFIX,coderabbit.ai
+DOMAIN-SUFFIX,tabnine.com
+DOMAIN-SUFFIX,factory.ai
+DOMAIN-SUFFIX,factory.com
+DOMAIN-SUFFIX,zed.dev
+DOMAIN-SUFFIX,kiro.dev
+DOMAIN-SUFFIX,bolt.new
+DOMAIN-SUFFIX,lovable.dev
+DOMAIN-SUFFIX,v0.app
+DOMAIN-SUFFIX,v0.dev
+DOMAIN-SUFFIX,genspark.ai
+DOMAIN-SUFFIX,jasper.ai
+DOMAIN-SUFFIX,gamma.app
+DOMAIN-SUFFIX,phind.com
+DOMAIN-SUFFIX,inflection.ai
+DOMAIN-SUFFIX,pi.ai
+DOMAIN-SUFFIX,h2o.ai
+DOMAIN-SUFFIX,otter.ai
+DOMAIN-SUFFIX,descript.com
+DOMAIN-SUFFIX,synthesia.io
+DOMAIN-SUFFIX,lumalabs.ai
+DOMAIN-SUFFIX,leonardo.ai
+DOMAIN-SUFFIX,pika.art
+DOMAIN-SUFFIX,recraft.ai
+DOMAIN-SUFFIX,udio.com
+DOMAIN-SUFFIX,duck.ai
+DOMAIN-SUFFIX,langchain.com
+DOMAIN-SUFFIX,comfy.org
+DOMAIN-SUFFIX,comfyregistry.org
+DOMAIN-SUFFIX,lmstudio.ai
+DOMAIN-SUFFIX,crewai.com
+DOMAIN-SUFFIX,eigent.ai
+DOMAIN-SUFFIX,manus.im
+DOMAIN-SUFFIX,manuscdn.com
+DOMAIN-SUFFIX,diabrowser.com
+DOMAIN-SUFFIX,diabrowser.engineering
+DOMAIN-SUFFIX,openclaw.ai

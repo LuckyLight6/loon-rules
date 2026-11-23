@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "pg-bootstrap.itunes.apple.com",
+        "cls-iosclient.itunes.apple.com",
+        "cls-ingest.itunes.apple.com"
+      ]
+    }
+  ]
+}

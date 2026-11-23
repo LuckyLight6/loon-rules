@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:dl.google.com",
+          "full:dl-ssl.google.com",
+          "full:edgedl.me.gvt1.com",
+          "full:ota-cache1.googlezip.net",
+          "full:ota-cache3.googlezip.net",
+          "full:ota.googlezip.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

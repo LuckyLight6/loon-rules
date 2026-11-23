@@ -1,0 +1,32 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:appldnld.apple.com.mwcname.com",
+          "domain:appldnld.apple.com",
+          "domain:appldnld.apple.com.akadns.net",
+          "domain:appldnld.g.aaplimg.com",
+          "domain:oscdn.apple.com",
+          "domain:swcdn.apple.com",
+          "domain:swdownload.apple.com",
+          "domain:updates-http.cdn-apple.com",
+          "domain:updates.cdn-apple.com",
+          "full:appldnld.apple.com.edgesuite.net",
+          "full:swcdn.g.aaplimg.com",
+          "full:updates-http.cdn-apple.com.akadns.net",
+          "full:updates-http.g.aaplimg.com",
+          "full:appldnld-cdn.apple.com.akadns.net",
+          "full:appldnld-cdn.origin-apple.com.akadns.net",
+          "domain:appldnld-lb.apple.com.akadns.net",
+          "full:oscdn.origin-apple.com.akadns.net",
+          "full:updates.g.aaplimg.com",
+          "full:updates-http.cdn-apple.com.edgesuite.net",
+          "full:swcdn.apple.com.edgesuite.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

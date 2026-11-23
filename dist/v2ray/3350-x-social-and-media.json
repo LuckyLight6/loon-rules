@@ -1,0 +1,20 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:t.co",
+          "domain:tweetdeck.com",
+          "domain:twimg.co",
+          "domain:twimg.com",
+          "domain:twitter.com",
+          "domain:twttr.com",
+          "domain:twvid.com",
+          "domain:x.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

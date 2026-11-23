@@ -1,0 +1,16 @@
+# name: zhihu-community
+# priority: 6570
+# section: social
+# description: 知乎
+# boundary: 社区和图片域；明确的广告仍由前置拦截规则处理
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zhihu.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/6570-zhihu-community.lsr
+
+domain_suffix_set:
+  - "zhihu.com"
+  - "zhimg.com"

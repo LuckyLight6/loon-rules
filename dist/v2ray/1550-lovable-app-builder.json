@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:lovable.dev"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+# name: apple-wallet-payments
+# priority: 2110
+# section: apple
+# description: Wallet 与 Apple Pay 已知支付入口
+# boundary: 只收可追溯的精确主机。支付仍依赖账户、设备校验及商户；不吞 ca、Apple 全域或其他支付公司
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T11:51:28Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+# source: https://developer.apple.com/documentation/applepaywebmerchantregistrationapi
+# source: https://support.apple.com/en-us/101555
+# canonical-rule-count: 4
+# rule-count: 4
+# format: clash-classical
+# canonical: rules/2110-apple-wallet-payments.lsr
+
+payload:
+  - "DOMAIN,pos-device.apple.com"
+  - "DOMAIN,smp-paymentservices.apple.com"
+  - "DOMAIN,cn-smp-paymentservices.apple.com"
+  - "DOMAIN,humb.apple.com"

@@ -1,0 +1,21 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:pm.me",
+          "domain:proton.me",
+          "domain:protonmail.ch",
+          "domain:protonmail.com",
+          "domain:protonstatus.com",
+          "domain:protontech.ch",
+          "domain:protonvpn.ch",
+          "domain:protonvpn.com",
+          "domain:protonweb.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

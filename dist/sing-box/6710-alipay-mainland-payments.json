@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "alipay.cn",
+        "alipay.com",
+        "alipay.com.cn",
+        "alipay.net",
+        "alipayeshop.com",
+        "alipayobjects.com"
+      ]
+    }
+  ]
+}

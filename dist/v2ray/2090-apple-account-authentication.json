@@ -1,0 +1,27 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:iforgot.apple.com",
+          "full:setup.icloud.com",
+          "full:auth.itunes.apple.com",
+          "full:account.apple.com",
+          "full:appleid.cdn-apple.com",
+          "full:gsa.apple.com",
+          "full:idmsa.apple.com",
+          "full:appleid.apple.com",
+          "full:gsas.apple.com",
+          "regexp:(?i)^p[0123456789][0123456789]\\-acsegateway\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789][0123456789]\\-acsegateway\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789]\\-mcc\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789][0123456789]\\-mcc\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789]\\-quota\\.icloud\\.com$",
+          "regexp:(?i)^p[0123456789][0123456789][0123456789]\\-quota\\.icloud\\.com$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

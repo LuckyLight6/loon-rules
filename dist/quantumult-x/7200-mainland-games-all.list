@@ -1,0 +1,29 @@
+# name: mainland-games-all
+# priority: 7200
+# section: games
+# description: 国内游戏合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T13:34:15Z
+# updated-at: 2026-11-22T13:34:15Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/mihoyo.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-games.list
+# canonical-rule-count: 14
+# rule-count: 14
+# format: quantumult-x
+# canonical: rules/7200-mainland-games-all.lsr
+
+host-suffix,cdn-ali.content.steamchina.com,proxy
+host-suffix,cdn-qc.content.steamchina.com,proxy
+host-suffix,cdn-ws.content.steamchina.com,proxy
+host,dl.steam.clngaa.com,proxy
+host,dl.steam.ksyna.com,proxy
+host,st.dl.bscstorage.net,proxy
+host,st.dl.eccdnx.com,proxy
+host,st.dl.pinyuncloud.com,proxy
+host-suffix,miyoushe.com,proxy
+host-suffix,bh3.com,proxy
+host-suffix,bhsr.com,proxy
+host-suffix,yuanshen.com,proxy
+host-suffix,wegame.com,proxy
+host-suffix,wegame.com.cn,proxy

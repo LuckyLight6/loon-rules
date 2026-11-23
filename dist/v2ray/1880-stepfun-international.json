@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.stepfun.ai"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

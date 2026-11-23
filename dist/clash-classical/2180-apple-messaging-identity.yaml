@@ -1,0 +1,18 @@
+# name: apple-messaging-identity
+# priority: 2180
+# section: apple
+# description: Apple IDS 共用身份、注册与查询服务
+# boundary: 从 Apple 公开配置读取认证、注册、查询与资料入口；保留既有 IDS 父域补充，与定位和推送分开，不代替全部消息媒体或 FaceTime 中继
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-20T04:32:59Z
+# source: https://init.ess.apple.com/WebObjects/VCInit.woa/wa/getBag?ix=3
+# source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
+# source: https://support.apple.com/guide/security/sec70e68c949/web
+# source: https://github.com/OpenBubbles/rustpush/blob/master/src/util.rs
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/2180-apple-messaging-identity.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,ess.apple.com"

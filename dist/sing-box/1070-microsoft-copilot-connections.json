@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "copilot.com",
+        "www.copilot.com",
+        "copilot.microsoft.com",
+        "copilot.cloud.microsoft",
+        "copilot.ai"
+      ]
+    }
+  ]
+}

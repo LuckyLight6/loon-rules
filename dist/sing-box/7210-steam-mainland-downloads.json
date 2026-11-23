@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "cdn-ali.content.steamchina.com",
+        "cdn-qc.content.steamchina.com",
+        "cdn-ws.content.steamchina.com"
+      ],
+      "domain": [
+        "dl.steam.clngaa.com",
+        "dl.steam.ksyna.com",
+        "st.dl.bscstorage.net",
+        "st.dl.eccdnx.com",
+        "st.dl.pinyuncloud.com"
+      ]
+    }
+  ]
+}

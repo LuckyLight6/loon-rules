@@ -1,0 +1,17 @@
+# name: playstation-network
+# priority: 4130
+# section: games
+# description: Sony PlayStation
+# boundary: 商店、账户和产品网络；不把所有 Sony 服务或联机 IP 归入
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/playstation.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/4130-playstation-network.lsr
+
+domain_suffix_set:
+  - "playstation.com"
+  - "playstation.net"
+  - "playstationnetwork.com"

@@ -7,6 +7,39 @@ from loon_rules.sources.formats.html import HostTables, AppleTables
 from loon_rules.rules import Invalid, valid_host
 from .common import within, DestinationTables, public_domain_pattern
 
+
+def domain_column_table(recipe, text):
+    headers = recipe['headers']
+    column = recipe['column']
+    scope = recipe.get('domain-scope', 'listed')
+    if (not isinstance(headers, list) or not headers or len(set(headers)) != len(headers)
+            or column not in headers or scope not in ('listed', 'domain-and-subdomains')):
+        raise Invalid('域名表缺少明确的列和匹配范围')
+    table = HostTables()
+    table.feed(text)
+    rows = table.rows.get(recipe['section'], [])
+    if rows.count(headers) != 1:
+        raise Invalid('域名表的章节或标题列缺失、重复')
+    result = set()
+    for cells in rows:
+        if cells == headers:
+            continue
+        if len(cells) != len(headers):
+            raise Invalid('域名表的列数发生变化')
+        value = cells[headers.index(column)].strip()
+        row = public_domain_pattern(value)
+        if row is None:
+            continue
+        if scope == 'domain-and-subdomains':
+            if not row.startswith('DOMAIN,'):
+                raise Invalid('域名列的整域匹配不接受通配符')
+            row = 'DOMAIN-SUFFIX,' + row.split(',')[1]
+        result.add(row)
+    if not result:
+        raise Invalid('域名表没有可归属的公开名称')
+    return result
+
+
 def host_table(text, recipe):
     parser = AppleTables()
     parser.feed(text)

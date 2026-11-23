@@ -1,0 +1,24 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:steamcommunity-a.akamaihd.net",
+          "full:steambroadcast.akamaized.net",
+          "domain:dota2.com",
+          "domain:playartifact.com",
+          "domain:s.team",
+          "domain:steam-chat.com",
+          "domain:steam.tv",
+          "domain:steamcommunity.com",
+          "domain:steamdeck.com",
+          "domain:steampowered.com",
+          "domain:steamstatic.com",
+          "domain:valvesoftware.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

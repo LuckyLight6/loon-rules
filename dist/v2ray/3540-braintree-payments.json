@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:braintreegateway.com",
+          "domain:braintreepayments.com",
+          "full:payments.braintree-api.com",
+          "full:payments.sandbox.braintree-api.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

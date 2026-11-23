@@ -1,0 +1,20 @@
+# name: apple-private-relay-connections
+# priority: 2030
+# section: apple
+# description: iCloud Private Relay（隐私中继）与 Apple DNS 别名
+# boundary: 在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 Apple Intelligence 规则处理，不包含整个 iCloud 或 Apple DNS 后缀
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: clash-classical
+# canonical: rules/2030-apple-private-relay-connections.lsr
+
+payload:
+  - "DOMAIN,mask-api.fe.apple-dns.net"
+  - "DOMAIN,mask-api.icloud.com"
+  - "DOMAIN,mask-t.apple-dns.net"
+  - "DOMAIN,mask.apple-dns.net"
+  - "DOMAIN-SUFFIX,mask-h2.icloud.com"
+  - "DOMAIN-SUFFIX,mask.icloud.com"

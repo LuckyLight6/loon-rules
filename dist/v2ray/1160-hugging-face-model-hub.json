@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:hf.co",
+          "domain:hf.space",
+          "domain:huggingface.co",
+          "full:api.endpoints.huggingface.cloud"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net"
+      ]
+    }
+  ]
+}

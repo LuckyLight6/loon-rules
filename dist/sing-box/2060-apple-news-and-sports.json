@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "news-assets.apple.com",
+        "news-client.apple.com",
+        "news-edge.apple.com",
+        "apple.news",
+        "sports.apple.com"
+      ],
+      "domain": [
+        "news-client-search.apple.com",
+        "news-events.apple.com",
+        "news.apple.com",
+        "prod-domep-news-apple.v.aaplimg.com"
+      ]
+    }
+  ]
+}

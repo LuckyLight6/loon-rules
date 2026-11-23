@@ -1,0 +1,19 @@
+# name: iqiyi-international
+# priority: 3890
+# section: media
+# description: 爱奇艺国际版 iQIYI 与专用国际 API
+# boundary: 国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 由国内版规则处理
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: clash-classical
+# canonical: rules/3890-iqiyi-international.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,iq.com"
+  - "DOMAIN-SUFFIX,intl-rcd.iqiyi.com"
+  - "DOMAIN-SUFFIX,intl-subscription.iqiyi.com"
+  - "DOMAIN-SUFFIX,intl.iqiyi.com"

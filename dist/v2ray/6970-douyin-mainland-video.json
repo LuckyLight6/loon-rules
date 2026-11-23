@@ -1,0 +1,20 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:douyin.com",
+          "domain:douyinliving.com",
+          "domain:amemv.com",
+          "domain:douyincdn.com",
+          "domain:douyinpic.com",
+          "domain:douyinstatic.com",
+          "domain:douyinvod.com",
+          "domain:idouyinvod.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

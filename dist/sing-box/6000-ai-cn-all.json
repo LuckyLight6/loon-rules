@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "cn-beijing.maas.aliyuncs.com",
+        "moonshot.cn",
+        "kimichat.com",
+        "zhipuai.cn",
+        "chatglm.cn",
+        "bigmodel.cn",
+        "minimaxi.com",
+        "hailuoai.com",
+        "doubao.com",
+        "coze.cn",
+        "deepseek.com",
+        "deepseeksvc.com",
+        "sparkchain.cn",
+        "liblib.art",
+        "baichuan-ai.com",
+        "01.ai",
+        "lingyiwanwu.com",
+        "stepfun.com",
+        "sensenova.cn"
+      ],
+      "domain": [
+        "dashscope.aliyuncs.com",
+        "coding.dashscope.aliyuncs.com",
+        "www.qianwen.com",
+        "platform.kimi.com",
+        "api.kimi.com",
+        "ark.cn-beijing.volces.com",
+        "ark.volcengine.com",
+        "api.siliconflow.cn",
+        "cloud.siliconflow.cn",
+        "api.hunyuan.cloud.tencent.com",
+        "tokenhub.tencentcloudapi.com",
+        "tokenhub.ap-guangzhou.tencentcloudapi.com",
+        "tokenhub.ap-shanghai.tencentcloudapi.com",
+        "tokenhub.ap-nanjing.tencentcloudapi.com",
+        "tokenhub.ap-beijing.tencentcloudapi.com",
+        "tokenhub.ap-chengdu.tencentcloudapi.com",
+        "tokenhub.ap-chongqing.tencentcloudapi.com",
+        "tokenhub.ap-shanghai-fsi.tencentcloudapi.com",
+        "tokenhub.ap-shenzhen-fsi.tencentcloudapi.com",
+        "yuanbao.tencent.com",
+        "qianfan.baidubce.com",
+        "ernie.baidu.com",
+        "yiyan.baidu.com",
+        "spark-api-open.xf-yun.com",
+        "xinghuo.xfyun.cn",
+        "openapi.liblibai.cloud",
+        "liblibai-web-static.liblib.cloud",
+        "api-inference.modelscope.cn",
+        "api.xiaomimimo.com",
+        "token-plan-cn.xiaomimimo.com"
+      ]
+    }
+  ]
+}

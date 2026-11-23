@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:apple-relay.apple.com",
+          "full:apple-relay.cloudflare.com",
+          "full:cp4.cloudflare.com",
+          "full:apple-relay.fastly-edge.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

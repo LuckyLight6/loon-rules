@@ -1,0 +1,16 @@
+# name: nebius-model-services
+# priority: 1360
+# section: ai
+# description: Nebius Token Factory
+# boundary: 只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://docs.tokenfactory.nebius.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/1360-nebius-model-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,tokenfactory.nebius.com"

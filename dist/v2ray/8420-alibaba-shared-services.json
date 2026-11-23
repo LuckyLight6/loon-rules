@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:alibaba.com",
+          "domain:alibabadns.com",
+          "domain:alicdn.com",
+          "domain:aliyun.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

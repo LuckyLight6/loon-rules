@@ -1,0 +1,18 @@
+# name: alibaba-shared-services
+# priority: 8420
+# section: vendors
+# description: 阿里巴巴与阿里云共用服务
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: egern
+# canonical: rules/8420-alibaba-shared-services.lsr
+
+domain_suffix_set:
+  - "alibaba.com"
+  - "alibabadns.com"
+  - "alicdn.com"
+  - "aliyun.com"

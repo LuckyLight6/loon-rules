@@ -1,0 +1,23 @@
+# name: apple-app-and-device-verification
+# priority: 2100
+# section: apple
+# description: 应用验证、App Attest、macOS 公证与设备身份验证
+# boundary: 保留系统服务直连；共享 apple-cloudkit.com 不从此组抢走
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T13:33:48Z
+# source: https://support.apple.com/en-us/101555
+# canonical-rule-count: 8
+# rule-count: 8
+# format: egern
+# canonical: rules/2100-apple-app-and-device-verification.lsr
+
+domain_set:
+  - "ppq.apple.com"
+  - "s.mzstatic.com"
+  - "play.itunes.apple.com"
+  - "idv-prod1.apple.com"
+  - "smp-device-content.apple.com"
+  - "idv.cdn-apple.com"
+  - "api.apple-cloudkit.com"
+domain_suffix_set:
+  - "appattest.apple.com"

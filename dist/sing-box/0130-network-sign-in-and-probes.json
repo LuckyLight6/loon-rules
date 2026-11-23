@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "www.msftconnecttest.com",
+        "www.msftncsi.com",
+        "dns.msftncsi.com",
+        "easy-login.10099.com.cn",
+        "open.e.189.cn",
+        "token.safebrowsing.apple",
+        "connectivitycheck.android.com",
+        "captive.apple.com",
+        "securelogin.arubanetworks.com",
+        "connectivity.cloudflareclient.com",
+        "detectportal.firefox.com",
+        "connectivitycheck.gstatic.com",
+        "ping.archlinux.org",
+        "network-test.debian.org",
+        "networkcheck.kde.org"
+      ],
+      "domain_suffix": [
+        "cloudflarecp.com",
+        "cloudflareok.com",
+        "cloudflareportal.com"
+      ]
+    }
+  ]
+}

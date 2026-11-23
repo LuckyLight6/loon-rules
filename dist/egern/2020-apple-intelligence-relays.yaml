@@ -1,0 +1,19 @@
+# name: apple-intelligence-relays
+# priority: 2020
+# section: apple
+# description: Apple Intelligence 的 PCC 与系统 AI 扩展中继
+# boundary: 按 Apple 官方明确用途提取精确主机；iCloud Private Relay、普通 Siri、独立 AI App 和模型下载分别处理。功能资格仍取决于设备、账户和地区
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T08:04:26Z
+# source: https://support.apple.com/en-us/101555
+# source: https://support.apple.com/en-us/121115
+# canonical-rule-count: 4
+# rule-count: 4
+# format: egern
+# canonical: rules/2020-apple-intelligence-relays.lsr
+
+domain_set:
+  - "apple-relay.apple.com"
+  - "apple-relay.cloudflare.com"
+  - "cp4.cloudflare.com"
+  - "apple-relay.fastly-edge.com"

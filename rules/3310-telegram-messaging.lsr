@@ -2,12 +2,18 @@
 # priority: 3310
 # section: social
 # description: Telegram 登录、消息、文件与服务器地址
-# boundary: 核心域名与官方 IP 段使用同一策略；网段只处理已有目标 IP，使用 no-resolve；不收第三方 ASN、关键词和通用 CDN
+# boundary: 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册持有人仍为 Telegram 的 ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
-# rule-count: 24
+# updated-at: 2026-11-23T18:06:27Z
+# rule-count: 32
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
+# source: https://core.telegram.org/bug-bounty
+# source: https://rdap.db.ripe.net/autnum/211157
+# source: https://rdap.db.ripe.net/autnum/44907
+# source: https://rdap.db.ripe.net/autnum/59930
+# source: https://rdap.db.ripe.net/autnum/62014
+# source: https://rdap.db.ripe.net/autnum/62041
 
 DOMAIN-SUFFIX,cdn-telegram.org
 DOMAIN-SUFFIX,t.me
@@ -33,3 +39,11 @@ IP-CIDR6,2001:b28:f23f::/48,no-resolve
 IP-CIDR6,2001:67c:4e8::/48,no-resolve
 IP-CIDR6,2001:b28:f23c::/48,no-resolve
 IP-CIDR6,2a0a:f280::/32,no-resolve
+DOMAIN,contest.com
+DOMAIN,quiz.directory
+DOMAIN-WILDCARD,*.stel.com
+IP-ASN,211157,no-resolve
+IP-ASN,44907,no-resolve
+IP-ASN,59930,no-resolve
+IP-ASN,62014,no-resolve
+IP-ASN,62041,no-resolve

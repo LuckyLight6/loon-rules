@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "alibaba.com",
+        "alibabadns.com",
+        "alicdn.com",
+        "aliyun.com"
+      ]
+    }
+  ]
+}

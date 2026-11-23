@@ -1,0 +1,51 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:doh.dns.apple.com",
+          "full:apple-native-relay.apple.com",
+          "full:konut-cdn.apple.com",
+          "domain:gnip.apple.com",
+          "domain:time.apple.com",
+          "full:wps.apple.com",
+          "domain:sandbox.apple.com",
+          "domain:apple-mapkit.com",
+          "domain:business.apple.com",
+          "domain:school.apple.com",
+          "full:www.apple.com.cn",
+          "domain:cn.apple.com",
+          "full:static.ips.apple.com",
+          "full:sq-device.apple.com",
+          "full:tbsc.apple.com",
+          "full:time-ios.apple.com",
+          "full:time-macos.apple.com",
+          "full:deviceenrollment.apple.com",
+          "full:deviceservices-external.apple.com",
+          "full:iprofiles.apple.com",
+          "full:mdmenrollment.apple.com",
+          "full:axm-servicediscovery.apple.com",
+          "full:api.ent.apple.com",
+          "full:api.edu.apple.com",
+          "full:upload.appleschoolcontent.com",
+          "full:api-business.apple.com",
+          "full:api-school.apple.com",
+          "full:axm-adm-enroll.apple.com",
+          "full:axm-adm-mdm.apple.com",
+          "full:axm-adm-scep.apple.com",
+          "full:axm-app.apple.com",
+          "full:icons.axm-usercontent-apple.com",
+          "full:audiocontentdownload.apple.com",
+          "full:playgrounds-assets-cdn.apple.com",
+          "full:playgrounds-cdn.apple.com",
+          "full:diagassets.apple.com",
+          "full:fpservices-prod1.apple.com",
+          "full:vpp.itunes.apple.com",
+          "full:sylvan.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

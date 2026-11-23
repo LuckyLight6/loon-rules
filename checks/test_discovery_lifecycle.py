@@ -12,6 +12,56 @@ from loon_rules.generation import pipeline as lib
 
 
 class DiscoveryLifecycle(PublicSourceExamples):
+    def test_compiled_discovery_failure_stops_publication_even_when_the_parent_still_matches(self):
+        feed = 'https://public.example/product.rules'
+        sdk = 'https://public.example/product.sdk'
+        entry = {
+            'id': 'product', 'mode': 'compiled', 'priority': 30, 'section': 'service',
+            'description': '产品', 'boundary': '业务入口', 'sources': [feed, sdk],
+            'projection': [{'source': feed, 'roots': ['vendor.example']}],
+            'discovery': {'inputs': [{
+                'source': sdk, 'family': 'vendor', 'authority': True,
+                'recipe': {'format': 'python-sdk-endpoints', 'module-level': True,
+                           'fields': ['API_ENDPOINT']},
+            }]},
+        }
+        config = {'schema-version': 2, 'entries': [entry], 'critical': {},
+                  'shared-negatives': [], 'sections': [{'id': 'service', 'title': '服务'}]}
+        for failure in ('invalid', 'unavailable'):
+            with self.subTest(failure=failure), TemporaryDirectory() as tmp, \
+                    patch.object(lib, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
+                root = prepare_workspace(tmp)
+                (root / 'rules').mkdir()
+                (root / 'config/endpoint-contracts.json').write_text('[]')
+                entries = lib.validate_declarations(config)
+                (root / 'config/catalog.json').write_text(json.dumps(config))
+                (root / 'docs/rules.md').write_text(lib.render_index(config, entries))
+                output = root / 'rules' / lib.rule_filename(entry)
+                output.write_text(lib.decorate(entry, ['DOMAIN-SUFFIX,vendor.example'],
+                                                None, '2020-01-01T00:00:00Z'))
+                downloads = {feed: 'DOMAIN-SUFFIX,vendor.example',
+                             sdk: 'API_ENDPOINT="https://api.vendor.example"'}
+
+                def read(url):
+                    if url not in downloads:
+                        raise lib.rules.Invalid('official source unavailable')
+                    return downloads[url]
+
+                with patch.object(lib.transport, 'download', side_effect=read):
+                    lib.run()
+                    before = {p: p.read_bytes() for p in root.rglob('*') if p.is_file()}
+                    if failure == 'invalid':
+                        downloads[sdk] = 'UNRELATED="https://other.example"'
+                    else:
+                        downloads.pop(sdk)
+                    with self.assertRaisesRegex(lib.rules.Invalid, '自动发现来源'):
+                        lib.run()
+                    self.assertEqual(before, {p: p.read_bytes() for p in root.rglob('*') if p.is_file()})
+                    downloads[sdk] = 'API_ENDPOINT="https://api.new-provider.example"'
+                    lib.run()
+                    self.assertIn('DOMAIN,api.new-provider.example',
+                                  lib.rules.read_rules(output.read_text()))
+
     def test_failed_official_input_cannot_retire_a_published_endpoint_or_its_protection(self):
         feed='https://public.example/rules';sdk='https://public.example/sdk'
         endpoint='DOMAIN,api.product.example'

@@ -1,0 +1,17 @@
+# name: wechat-international-portal
+# priority: 3360
+# section: social
+# description: WeChat 国际网站、支付与部分 App 连接
+# boundary: wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由微信国内及共用规则处理
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/3360-wechat-international-portal.lsr
+
+host-suffix,wechat.com,proxy
+host-suffix,wechatlegal.net,proxy
+host-suffix,wechatos.net,proxy
+host-suffix,wechatpay.com,proxy

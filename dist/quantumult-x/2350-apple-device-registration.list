@@ -1,0 +1,15 @@
+# name: apple-device-registration
+# priority: 2350
+# section: apple
+# description: 设备激活与 APNs 证书登记门户
+# boundary: 按 Apple 官方用途读取设备激活与证书请求；eSIM、校时、机构 MDM 和设备素材保留在系统联网组，不按主机名猜测身份用途
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://support.apple.com/en-us/101555
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/2350-apple-device-registration.lsr
+
+host,albert.apple.com,proxy
+host,identity.apple.com,proxy

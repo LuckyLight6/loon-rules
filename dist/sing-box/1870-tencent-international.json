@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "tokenhub.ap-hongkong.tencentcloudapi.com",
+        "tokenhub.ap-singapore.tencentcloudapi.com",
+        "tokenhub.ap-jakarta.tencentcloudapi.com",
+        "tokenhub.ap-bangkok.tencentcloudapi.com",
+        "tokenhub.ap-seoul.tencentcloudapi.com",
+        "tokenhub.ap-tokyo.tencentcloudapi.com",
+        "tokenhub.na-ashburn.tencentcloudapi.com",
+        "tokenhub.na-siliconvalley.tencentcloudapi.com",
+        "tokenhub.sa-saopaulo.tencentcloudapi.com",
+        "tokenhub.eu-frankfurt.tencentcloudapi.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# name: kiro-code-assistant
+# priority: 1530
+# section: ai
+# description: Kiro 编程助手
+# boundary: Kiro 自营域；共享 AWS 登录、Q 与云服务不能仅凭同一来源列表整段归入
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://kiro.dev/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/1530-kiro-code-assistant.lsr
+
+domain_suffix_set:
+  - "kiro.dev"

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "app-site-association.cdn-apple.com",
+        "app-site-association.networking.apple"
+      ]
+    }
+  ]
+}

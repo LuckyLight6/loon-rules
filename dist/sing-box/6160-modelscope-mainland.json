@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api-inference.modelscope.cn"
+      ]
+    }
+  ]
+}

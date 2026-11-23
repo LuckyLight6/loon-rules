@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:workos.com",
+          "full:images.workoscdn.com",
+          "full:workos.imgix.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

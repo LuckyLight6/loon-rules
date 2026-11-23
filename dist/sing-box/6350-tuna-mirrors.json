@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "mirrors.tuna.tsinghua.edu.cn",
+        "pypi.tuna.tsinghua.edu.cn"
+      ]
+    }
+  ]
+}

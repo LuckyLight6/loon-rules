@@ -4,10 +4,16 @@
 # description: 海外通讯与社交合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T18:44:31Z
-# rule-count: 204
+# updated-at: 2026-11-23T18:06:27Z
+# rule-count: 212
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
+# source: https://core.telegram.org/bug-bounty
+# source: https://rdap.db.ripe.net/autnum/211157
+# source: https://rdap.db.ripe.net/autnum/44907
+# source: https://rdap.db.ripe.net/autnum/59930
+# source: https://rdap.db.ripe.net/autnum/62014
+# source: https://rdap.db.ripe.net/autnum/62041
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/signal.list
 # source: https://support.signal.org/hc/en-us/articles/360007320291-Firewall-and-Internet-settings
@@ -57,6 +63,14 @@ IP-CIDR6,2001:b28:f23f::/48,no-resolve
 IP-CIDR6,2001:67c:4e8::/48,no-resolve
 IP-CIDR6,2001:b28:f23c::/48,no-resolve
 IP-CIDR6,2a0a:f280::/32,no-resolve
+DOMAIN,contest.com
+DOMAIN,quiz.directory
+DOMAIN-WILDCARD,*.stel.com
+IP-ASN,211157,no-resolve
+IP-ASN,44907,no-resolve
+IP-ASN,59930,no-resolve
+IP-ASN,62014,no-resolve
+IP-ASN,62041,no-resolve
 DOMAIN-SUFFIX,dis.gd
 DOMAIN-SUFFIX,discord-activities.com
 DOMAIN,discord-attachments-uploads-prd.storage.googleapis.com

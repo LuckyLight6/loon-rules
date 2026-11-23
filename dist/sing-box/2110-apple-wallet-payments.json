@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "pos-device.apple.com",
+        "smp-paymentservices.apple.com",
+        "cn-smp-paymentservices.apple.com",
+        "humb.apple.com"
+      ]
+    }
+  ]
+}

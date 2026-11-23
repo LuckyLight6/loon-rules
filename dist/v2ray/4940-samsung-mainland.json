@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:samsung.com.cn",
+          "domain:samsungcloudcn.com",
+          "domain:samsungeshop.com.cn",
+          "domain:samsunghealthcn.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

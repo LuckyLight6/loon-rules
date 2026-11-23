@@ -1,0 +1,19 @@
+# name: apple-other-services
+# priority: 2370
+# section: apple
+# description: Apple 官网与尚未细分的通用服务
+# boundary: 放在 Apple 细分之后，接住来源列出的 Apple 自有服务域；随完整域名来源补入，不另列一份根域白名单。细分先匹配；忽略上游进程和 IP 规则，不使用整个 17.0.0.0/8
+# created-at: 2026-11-22T09:45:58Z
+# updated-at: 2026-11-22T12:45:19Z
+# source: https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf
+# canonical-rule-count: 6
+# rule-count: 6
+# format: quantumult-x
+# canonical: rules/2370-apple-other-services.lsr
+
+host-suffix,apple.com,proxy
+host-suffix,cdn-apple.com,proxy
+host-suffix,itunes.com,proxy
+host-suffix,aaplimg.com,proxy
+host-suffix,apple.co,proxy
+host-suffix,organicfruitapps.com,proxy

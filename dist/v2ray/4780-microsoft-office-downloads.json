@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:officecdn.microsoft.com",
+          "full:officecdn.microsoft.com.delivery.microsoft.com",
+          "full:office-f-net.trafficmanager.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -30,3 +30,43 @@ class ServiceAddresses(unittest.TestCase):
         for body in documents:
             with self.subTest(body=body[:100]), self.assertRaises(Invalid):
                 extract_rows(self.recipe(), body)
+
+
+class SectionNetworkBlocks(unittest.TestCase):
+    def recipe(self):
+        return {'format': 'section-network-blocks', 'section': 'inbound',
+                'families': [4, 6], 'min-prefix': {'4': 16, '6': 24}}
+
+    def document(self, additional=''):
+        return (
+            '<h2 id="inbound">Inbound addresses</h2>'
+            '<h3>IPv4</h3><p><code>160.79.104.0/23</code></p>'
+            '<h3>IPv6</h3><p><code>2607:6bc0::/48</code></p>' + additional +
+            '<h2 id="outbound">Outbound addresses</h2>'
+            '<p><code>160.79.104.0/21</code></p><p><code>153.61.208.0/20</code></p>'
+            '<h2 id="retired">Retired addresses</h2><p><code>34.162.46.92/32</code></p>')
+
+    def test_only_the_selected_direction_is_used_and_new_blocks_are_discovered(self):
+        expected = {'IP-CIDR,160.79.104.0/23,no-resolve',
+                    'IP-CIDR6,2607:6bc0::/48,no-resolve'}
+        self.assertEqual(extract_rows(self.recipe(), self.document()), expected)
+        updated = self.document('<p><code>153.61.224.0/22</code></p>')
+        self.assertEqual(extract_rows(self.recipe(), updated),
+                         expected | {'IP-CIDR,153.61.224.0/22,no-resolve'})
+
+    def test_scripts_and_other_sections_do_not_supply_missing_addresses(self):
+        body = self.document().replace('<p><code>2607:6bc0::/48</code></p>', '')
+        body += '<script>"<h2 id=\"inbound\"><code>2607:6bc0::/48</code>"</script>'
+        with self.assertRaises(Invalid):
+            extract_rows(self.recipe(), body)
+
+    def test_unscoped_broad_malformed_or_private_blocks_stop_generation(self):
+        documents = [self.document().replace('id="inbound"', 'id="other"'),
+                     self.document() + self.document(),
+                     self.document('<p><code>0.0.0.0/0</code></p>'),
+                     self.document('<p><code>192.168.1.0/24</code></p>'),
+                     self.document('<p><code>160.79.104.1/23</code></p>'),
+                     self.document('<p><code>160.79.104.1</code></p>')]
+        for body in documents:
+            with self.subTest(body=body), self.assertRaises(Invalid):
+                extract_rows(self.recipe(), body)

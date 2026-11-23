@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:wa.me",
+          "domain:whatsapp.com",
+          "domain:whatsapp.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

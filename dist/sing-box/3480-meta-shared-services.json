@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "fbcdn-a.akamaihd.net"
+      ],
+      "domain_suffix": [
+        "atmeta.com",
+        "meta.com",
+        "facebook.com",
+        "facebook.net",
+        "facebookmail.com",
+        "fb.com",
+        "fb.me",
+        "fbcdn.com",
+        "fbcdn.net",
+        "fbsbx.com",
+        "workplace.com",
+        "accountkit.com",
+        "m.me",
+        "messenger.com",
+        "ocul.us",
+        "oculus.com",
+        "oculuscdn.com",
+        "oculusvr.com"
+      ]
+    }
+  ]
+}

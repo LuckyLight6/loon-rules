@@ -1,0 +1,18 @@
+# name: weibo-social
+# priority: 6540
+# section: social
+# description: 微博
+# boundary: 微博自己的站点与分发域，包括同域地区子站；新浪与微博共用的图片域另列，不按页面语言判断出口
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-21T02:32:18Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: clash-classical
+# canonical: rules/6540-weibo-social.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,weibo.cn"
+  - "DOMAIN-SUFFIX,weibo.com"
+  - "DOMAIN-SUFFIX,weibocdn.com"
+  - "DOMAIN-SUFFIX,weibo.com.cn"

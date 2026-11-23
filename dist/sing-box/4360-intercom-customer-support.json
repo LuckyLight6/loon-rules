@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "intercom.com",
+        "intercom.io",
+        "intercomassets.com",
+        "intercomcdn.com",
+        "au.intercom-attachments.com",
+        "downloads.intercomcdn.eu",
+        "intercom-attachments-1.com",
+        "intercom-attachments-2.com",
+        "intercom-attachments-3.com",
+        "intercom-attachments-4.com",
+        "intercom-attachments-5.com",
+        "intercom-attachments-6.com",
+        "intercom-attachments-7.com",
+        "intercom-attachments-8.com",
+        "intercom-attachments-9.com",
+        "intercom-attachments.eu",
+        "intercom-messenger.com",
+        "intercom-sheets.com",
+        "intercom.help",
+        "static.intercomassets.eu",
+        "uploads.intercomcdn.eu",
+        "uploads.intercomusercontent.com",
+        "www.intercom-reporting.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "paypal.com",
+        "paypalobjects.com",
+        "paypal.me",
+        "paypal-corp.com",
+        "paypalcorp.com",
+        "stripe.com",
+        "stripe.network",
+        "stripecdn.com",
+        "link.com",
+        "braintreegateway.com",
+        "braintreepayments.com",
+        "venmo.com",
+        "xoom.com",
+        "transferwise.com",
+        "wise.com"
+      ],
+      "domain": [
+        "payments.braintree-api.com",
+        "payments.sandbox.braintree-api.com"
+      ]
+    }
+  ]
+}

@@ -78,7 +78,10 @@ def parse_https_hosts(recipe, text):
         authority = match[1]
         if '@' in authority:
             continue
-        host = urlsplit('https://' + authority).hostname
+        try:
+            host = urlsplit('https://' + authority).hostname
+        except ValueError:
+            continue
         if not host:
             continue
         if host in exact:

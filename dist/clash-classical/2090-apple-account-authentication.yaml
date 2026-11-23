@@ -1,0 +1,36 @@
+# name: apple-account-authentication
+# priority: 2090
+# section: apple
+# description: 登录、GrandSlam、OAuth、账户恢复与 iCloud 账户控制
+# boundary: 包括 GrandSlam 账户关联设备登记及 iCloud 的订阅、发件设置和配额分片；iCloud 文件、邮件内容与共享网关继续由同步和内容规则处理
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-22T08:35:26Z
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go
+# source: https://github.com/timlaing/pyicloud/blob/main/pyicloud/endpoints.py
+# source: https://github.com/timlaing/pyicloud/blob/main/pyicloud/services/account.py
+# source: https://dns.google/resolve?name=p181-acsegateway.icloud.com&type=CNAME
+# source: https://dns.google/resolve?name=p181-mcc.icloud.com&type=CNAME
+# source: https://dns.google/resolve?name=p181-quota.icloud.com&type=CNAME
+# canonical-rule-count: 15
+# rule-count: 15
+# format: clash-classical
+# canonical: rules/2090-apple-account-authentication.lsr
+
+payload:
+  - "DOMAIN,iforgot.apple.com"
+  - "DOMAIN,setup.icloud.com"
+  - "DOMAIN,auth.itunes.apple.com"
+  - "DOMAIN,account.apple.com"
+  - "DOMAIN,appleid.cdn-apple.com"
+  - "DOMAIN,gsa.apple.com"
+  - "DOMAIN,idmsa.apple.com"
+  - "DOMAIN,appleid.apple.com"
+  - "DOMAIN,gsas.apple.com"
+  - "DOMAIN-REGEX,(?i)^p[0123456789][0123456789]\\-acsegateway\\.icloud\\.com$"
+  - "DOMAIN-REGEX,(?i)^p[0123456789][0123456789][0123456789]\\-acsegateway\\.icloud\\.com$"
+  - "DOMAIN-REGEX,(?i)^p[0123456789][0123456789]\\-mcc\\.icloud\\.com$"
+  - "DOMAIN-REGEX,(?i)^p[0123456789][0123456789][0123456789]\\-mcc\\.icloud\\.com$"
+  - "DOMAIN-REGEX,(?i)^p[0123456789][0123456789]\\-quota\\.icloud\\.com$"
+  - "DOMAIN-REGEX,(?i)^p[0123456789][0123456789][0123456789]\\-quota\\.icloud\\.com$"

@@ -1,0 +1,31 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:account.live.com",
+          "full:login.live.com",
+          "full:login.microsoftonline.com",
+          "full:login.microsoft.com",
+          "full:login.windows.net",
+          "full:device.login.microsoftonline.com",
+          "full:ccs.login.microsoftonline.com",
+          "domain:auth.microsoft.com",
+          "domain:msauth.net",
+          "domain:msftauth.net",
+          "full:login-us.microsoftonline.com",
+          "full:logincert.microsoftonline.com",
+          "full:autologon.microsoftazuread-sso.com",
+          "full:api.passwordreset.microsoftonline.com",
+          "full:passwordreset.microsoftonline.com",
+          "domain:msftidentity.com",
+          "full:login.microsoftonline-p.com",
+          "full:loginex.microsoftonline.com",
+          "full:login.microsoftonline.us"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

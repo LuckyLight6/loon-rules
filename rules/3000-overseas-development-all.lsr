@@ -4,8 +4,8 @@
 # description: 海外开发合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T17:48:09Z
-# rule-count: 186
+# updated-at: 2026-11-23T18:50:42Z
+# rule-count: 222
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr
 # source: https://api.github.com/meta
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
@@ -28,6 +28,16 @@
 # source: https://youtrack.jetbrains.com/articles/SUPPORT-A-297
 # source: https://workos.com/
 # source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# source: https://docs.datadoghq.com/getting_started/site/
+# source: https://docs.datadoghq.com/real_user_monitoring/guide/browser-sdk-upgrade/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list
+# source: https://docs.statsig.com/infrastructure/statsig_domains
+# source: https://usefathom.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list
+# source: https://docs.withpersona.com/embedded-flow-troubleshooting-common-issues
+# source: https://www.yoti.com/
+# source: https://sift.com/
+# source: https://developers.sift.com/guides/payment-gateway
 
 DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,git.io
@@ -215,3 +225,39 @@ DOMAIN-SUFFIX,agentclientprotocol.com
 DOMAIN-SUFFIX,workos.com
 DOMAIN,images.workoscdn.com
 DOMAIN,workos.imgix.net
+DOMAIN-SUFFIX,datadoghq.com
+DOMAIN-SUFFIX,datadoghq.eu
+DOMAIN-SUFFIX,ddog-gov.com
+DOMAIN-SUFFIX,browser-intake-ap1-datadoghq.com
+DOMAIN-SUFFIX,browser-intake-datadoghq.com
+DOMAIN-SUFFIX,browser-intake-datadoghq.eu
+DOMAIN-SUFFIX,browser-intake-ddog-gov.com
+DOMAIN-SUFFIX,browser-intake-uk1-datadoghq.com
+DOMAIN-SUFFIX,browser-intake-us2-ddog-gov.com
+DOMAIN-SUFFIX,browser-intake-us3-datadoghq.com
+DOMAIN-SUFFIX,browser-intake-us5-datadoghq.com
+DOMAIN-SUFFIX,datadoghq-browser-agent.com
+DOMAIN-SUFFIX,getsentry.com
+DOMAIN-SUFFIX,sentry.dev
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,sentry-cdn.com
+DOMAIN,api.statsig.com
+DOMAIN,api.statsigcdn.com
+DOMAIN,assetsconfigcdn.org
+DOMAIN,beyondwickedmapping.org
+DOMAIN,events.statsigapi.net
+DOMAIN,featureassets.org
+DOMAIN,featuregates.org
+DOMAIN,prodregistryv2.org
+DOMAIN,statsigapi.net
+DOMAIN,cdn.console.statsig.com
+DOMAIN,console.statsig.com
+DOMAIN,console.statsigcdn.com
+DOMAIN,idliststorage.blob.core.windows.net
+DOMAIN-SUFFIX,usefathom.com
+DOMAIN-SUFFIX,hcaptcha.com
+DOMAIN-SUFFIX,hcaptchastatus.com
+DOMAIN-SUFFIX,withpersona.com
+DOMAIN-SUFFIX,yoti.com
+DOMAIN-SUFFIX,sift.com
+DOMAIN-SUFFIX,siftscience.com

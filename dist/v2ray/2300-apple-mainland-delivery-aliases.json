@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

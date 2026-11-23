@@ -1,0 +1,46 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:binance.com",
+          "domain:binance.info",
+          "domain:binance.net",
+          "domain:binance.us",
+          "full:data-api.binance.vision",
+          "full:data-stream.binance.vision",
+          "domain:okex.com",
+          "domain:okx-dns.com",
+          "domain:okx-dns1.com",
+          "domain:okx-dns2.com",
+          "domain:okx.com",
+          "full:okx.com.cdn.cloudflare.net",
+          "domain:gemini.com",
+          "domain:kraken.com",
+          "domain:kraken.onl",
+          "full:bybit-exchange.github.io",
+          "full:bybit.ada.support",
+          "domain:bybit.com",
+          "domain:bycsi.com",
+          "domain:bytick.com",
+          "domain:byapis.com",
+          "domain:bycbe.com",
+          "domain:bymj.io",
+          "domain:byabcde.com",
+          "domain:byapps.net",
+          "domain:byd3c3.com",
+          "domain:bybit.biz",
+          "domain:bybdc6.com",
+          "domain:bybit-global.com",
+          "domain:bybit.cloud",
+          "domain:bybitglobal.com",
+          "domain:kucoin.com",
+          "domain:kucoin.plus",
+          "domain:trustwallet.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

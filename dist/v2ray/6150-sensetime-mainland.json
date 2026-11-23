@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:sensenova.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

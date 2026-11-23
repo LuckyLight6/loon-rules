@@ -1,0 +1,16 @@
+# name: line-messenger
+# priority: 3340
+# section: social
+# description: LINE
+# boundary: 只收 LINE 产品入口和专用素材；不把 Naver 或其他应用整域纳入
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/line.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: quantumult-x
+# canonical: rules/3340-line-messenger.lsr
+
+host-suffix,line-apps.com,proxy
+host-suffix,line-scdn.net,proxy
+host-suffix,line.me,proxy

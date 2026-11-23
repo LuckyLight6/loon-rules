@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:xhscdn.com",
+          "domain:xhscdn.net",
+          "domain:xiaohongshu.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

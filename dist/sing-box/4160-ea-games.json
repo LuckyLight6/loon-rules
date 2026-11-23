@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "eaassets-a.akamaihd.net"
+      ],
+      "domain_suffix": [
+        "ea.com",
+        "tnt-ea.com",
+        "origin.com"
+      ]
+    }
+  ]
+}

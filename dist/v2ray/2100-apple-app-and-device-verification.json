@@ -1,0 +1,20 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:ppq.apple.com",
+          "full:s.mzstatic.com",
+          "full:play.itunes.apple.com",
+          "full:idv-prod1.apple.com",
+          "full:smp-device-content.apple.com",
+          "domain:appattest.apple.com",
+          "full:idv.cdn-apple.com",
+          "full:api.apple-cloudkit.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

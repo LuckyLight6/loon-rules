@@ -6,22 +6,22 @@
 
 先导出最初的配置并妥善保留，再复制一份用于测试。同时记下客户端版本、DoH 出口模式、查询回落和系统 DNS 设置；这些全局设置不会随配置副本一起回退。在同一网络、同一手选节点下，先用原配置完成操作，再在副本中加一组订阅对照。每次只调整一项；重新打开 App 或建立新连接后看记录，不先改 IPv6、QUIC 或 DNS 来掩盖原因。
 
-订阅按[清单](rules.md)顺序排列。如果先命中本地或插件规则，移动订阅位置不会解决，应找到那条先命中的规则。切回原配置和原节点可作回退；多设备各自测试，不把一台的结果当作另一台的结果。[Loon 匹配优先级](https://nsloon.app/docs/Rule/#匹配优先级)
+订阅按[清单](rules.md)顺序排列。下表列出细分表；使用合集时，以对应合集作为预期命中。如果先命中本地或插件规则，移动订阅位置不会解决，应找到那条先命中的规则。切回原配置和原节点可作回退；多设备各自测试，不把一台的结果当作另一台的结果。[Loon 匹配优先级](https://nsloon.app/docs/Rule/#匹配优先级)
 
 | 测试对象 | 实际操作 | 通过条件 |
 |---|---|---|
-| Claude 1010 | Safari 和 App 分别上传无敏感内容的 PDF，要求按附件连续回答；Desktop、Code 在实际运行的电脑另测 | 附件内容可读，流式回复持续到完成；专用登录、API 与附件用预期出口 |
-| OpenAI 1020、Gemini 1030、xAI 1040 | 分别完成一次流式对话；OpenAI 再试持续语音 | 对话完成，规则与出口正确；语音实际使用的 UDP 或 TCP 路径能持续传输 |
-| Apple 账户 2090、商店 2130，或日常合集 2080 | 正常打开账户页面和商店，观察已有会话的认证或续签；不为测试反复退出登录 | 出现的认证与交易主机按预期选路；没有出现续签只能记未测到 |
-| Apple 官网与补充 2370 | 打开官网、支持与隐私页面，再打开账户注册入口 | 官网由 2370 识别，账户与认证仍由 2090 识别；已有系统和内容直连例外没有被补充表抢走 |
-| App 包 2140、iCloud 2140/2150、系统更新 2230/2240，或日常合集 2080 | 下载小 App；上传小文件后在第二设备下载；检查更新 | 各操作按相应用途选择出口，2080 默认直连。下载必须实际完成；只查更新没有测到系统包下载，2210 也可能有上传下载 |
-| CloudKit 网关 2210、证书检查 2320 | 在正常使用中观察 `gateway.icloud.com`、`ocsp2.apple.com` | 前者属于 CloudKit 内容连接，后者检查证书状态；均保留正常访问，不因请求频繁而拒绝 |
-| TV 2190/2200、News 2060 | 实际播放一段可用内容，打开有权阅读的新闻正文 | 播放与正文完成，门户及内容连接均走预期出口 |
-| Apple Intelligence 2020，或海外功能 2010 | 触发受支持的云端功能，再试系统 ChatGPT 扩展 | 实际产生的 PCC 或扩展连接命中 2020 或 2010；纯本地运算不算云端测试 |
-| GitHub 3010、Docker 3070 | 访问 API，下载公开文件；登录 Docker 并拉取公开镜像 | 业务成功，专用入口归属正确，广告规则没有拒绝必需主机 |
-| Telegram 3310 | 打开 App 等待同步，发送文字并下载一个小文件 | 域名与直接使用的服务器 IP 都命中 3310；只打开网页或 Bot API 不能代替 App 测试 |
-| 微信 6510、WeChat 国际入口 3360 | 打开 App 等待同步，再试消息、图片与通话 | 检查实际连接，不能把 `wechat.com` 全当成网页；额外的 HTTPDNS 拦截插件可能先拒绝服务器发现请求 |
-| Meet 4530、Teams 4730 | 双向音视频并共享屏幕 | 声音、画面和共享持续传输，专用主机与媒体地址按预期选路 |
+| Claude [1010](../rules/1010-claude-connections.lsr) | Safari 和 App 分别上传无敏感内容的 PDF，要求按附件连续回答；Desktop、Code 在实际运行的电脑另测 | 附件内容可读，流式回复持续到完成；专用登录、API 与附件用预期出口 |
+| OpenAI [1020](../rules/1020-chatgpt-connections.lsr)、Gemini [1030](../rules/1030-gemini-connections.lsr)、xAI [1040](../rules/1040-xai-connections.lsr) | 分别完成一次流式对话；OpenAI 再试持续语音 | 对话完成，规则与出口正确；语音实际使用的 UDP 或 TCP 路径能持续传输 |
+| Apple 账户 [2090](../rules/2090-apple-account-authentication.lsr)、商店 [2130](../rules/2130-apple-store-transactions.lsr)，或日常合集 [2080](../rules/2080-apple-direct-all.lsr) | 正常打开账户页面和商店，观察已有会话的认证或续签；不为测试反复退出登录 | 出现的认证与交易主机按预期选路；没有出现续签只能记未测到 |
+| Apple 官网与补充 [2370](../rules/2370-apple-other-services.lsr) | 打开官网、支持与隐私页面，再打开账户注册入口 | 官网由 [2370](../rules/2370-apple-other-services.lsr) 识别，账户与认证仍由 [2090](../rules/2090-apple-account-authentication.lsr) 识别；已有系统和内容直连例外没有被补充表抢走 |
+| App 包 [2140](../rules/2140-apple-app-package-downloads.lsr)、iCloud 内容 [2200](../rules/2200-apple-icloud-content-domains.lsr)／同步 [2210](../rules/2210-apple-cloud-sync.lsr)、更新检查 [2260](../rules/2260-apple-update-control.lsr)／更新包 [2270](../rules/2270-apple-update-downloads.lsr)，或日常合集 [2080](../rules/2080-apple-direct-all.lsr) | 下载小 App；上传小文件后在第二设备下载；检查更新 | 各操作按相应用途选择出口，[2080](../rules/2080-apple-direct-all.lsr) 默认直连。下载必须实际完成；只查更新没有测到系统包下载，[2210](../rules/2210-apple-cloud-sync.lsr) 也可能有上传下载 |
+| CloudKit 网关 [2210](../rules/2210-apple-cloud-sync.lsr)、证书检查 [2320](../rules/2320-apple-certificate-validation.lsr) | 在正常使用中观察 `gateway.icloud.com`、`ocsp2.apple.com` | 前者属于 CloudKit 内容连接，后者检查证书状态；均保留正常访问，不因请求频繁而拒绝 |
+| TV 门户 [2040](../rules/2040-apple-video-and-fitness.lsr)／视频 [2050](../rules/2050-apple-tv-video-delivery.lsr)、News [2060](../rules/2060-apple-news-and-sports.lsr) | 实际播放一段可用内容，打开有权阅读的新闻正文 | 播放与正文完成，门户及内容连接均走预期出口 |
+| Apple Intelligence [2020](../rules/2020-apple-intelligence-relays.lsr)，或海外功能 [2010](../rules/2010-apple-overseas-all.lsr) | 触发受支持的云端功能，再试系统 ChatGPT 扩展 | 实际产生的 PCC 或扩展连接命中 [2020](../rules/2020-apple-intelligence-relays.lsr) 或 [2010](../rules/2010-apple-overseas-all.lsr)；纯本地运算不算云端测试 |
+| GitHub [3010](../rules/3010-github-code-and-packages.lsr)、Docker [3070](../rules/3070-docker-hub.lsr) | 访问 API，下载公开文件；登录 Docker 并拉取公开镜像 | 业务成功，专用入口归属正确，广告规则没有拒绝必需主机 |
+| Telegram [3310](../rules/3310-telegram-messaging.lsr) | 打开 App 等待同步，发送文字并下载一个小文件 | 域名与直接使用的服务器 IP 都命中 Telegram 细分或所选通讯合集；只打开网页或 Bot API 不能代替 App 测试 |
+| 微信 [6510](../rules/6510-wechat-shared-and-mainland.lsr)、WeChat 国际入口 [3360](../rules/3360-wechat-international-portal.lsr) | 打开 App 等待同步，再试消息、图片与通话 | 检查实际连接，不能把 `wechat.com` 全当成网页；额外的 HTTPDNS 拦截插件可能先拒绝服务器发现请求 |
+| Meet [4530](../rules/4530-google-meet-meetings.lsr)、Teams [4730](../rules/4730-microsoft-teams-meetings.lsr) | 双向音视频并共享屏幕 | 声音、画面和共享持续传输，专用主机与媒体地址按预期选路 |
 
 Google 安全浏览 API 从官方服务字段生成，并受必需端点保护。全球入口与 `googleapis-cn.com` 的已列入口交给 Google，腾讯入口保留国内选路，均不当作广告拦截。[Apple 说明 Safari 会使用 Google 与腾讯的安全浏览服务](https://www.apple.com/legal/privacy/data/en/safari/)。核对命中时不需要提交真实网址、浏览记录或 API 密钥。
 
@@ -31,7 +31,7 @@ Google 安全浏览 API 从官方服务字段生成，并受必需端点保护�
 
 只记公开主机、版本、命中规则和结果；请求 URL、头部、日志里可能有登录信息，不要整份提交。
 
-Telegram 原生客户端可按服务器 IP 使用 TCP，443 端口也不一定承载 HTTPS。3310 的 IP 来自[官方地址表](https://core.telegram.org/resources/cidr.txt)，使用 `no-resolve`；检查登录与同步时同时看这类连接，不能只搜 `telegram.org`。[Telegram 传输协议](https://core.telegram.org/mtproto/transports)
+Telegram 原生客户端可按服务器 IP 使用 TCP，443 端口也不一定承载 HTTPS。3310 保留[官方地址表](https://core.telegram.org/resources/cidr.txt)的全部网段，并以注册持有人仍为 Telegram 的 ASN 补充裸地址匹配，两类规则都使用 `no-resolve`。ASN 是否实际命中还受客户端数据影响；检查登录、同步和文件下载时，记录域名、CIDR 或 ASN 的真实命中，不能只搜 `telegram.org`。[Telegram 传输协议](https://core.telegram.org/mtproto/transports)
 
 ## DNS：先看查询走了哪里
 

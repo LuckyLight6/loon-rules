@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:mzstatic.com",
+          "full:store.storeimages.cdn-apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

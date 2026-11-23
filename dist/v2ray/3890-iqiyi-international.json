@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:iq.com",
+          "domain:intl-rcd.iqiyi.com",
+          "domain:intl-subscription.iqiyi.com",
+          "domain:intl.iqiyi.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+# name: zhipu-international
+# priority: 1830
+# section: ai
+# description: 智谱 · 国际入口
+# boundary: 按已核实的国际产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://docs.bigmodel.cn/cn/guide/start/quick-start
+# source: https://docs.z.ai/guides/overview/quick-start
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/1830-zhipu-international.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,z.ai"

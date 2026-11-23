@@ -1,0 +1,60 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:xiaomiprint.com",
+          "domain:mi-fds.com",
+          "domain:mi-idc.com",
+          "domain:mi-img.com",
+          "domain:mi.com",
+          "domain:mieco.net",
+          "domain:mifile.cn",
+          "domain:mijia.tech",
+          "domain:mioffice.cn",
+          "domain:mitvos.com",
+          "domain:miui.com",
+          "domain:mgslb.com",
+          "domain:xiaomi.cn",
+          "domain:xiaomi.com",
+          "domain:xiaomi.net",
+          "domain:xiaomicp.com",
+          "domain:xiaomidns.cn",
+          "domain:xiaomidns.com",
+          "domain:xiaomidns.net",
+          "domain:xiaomiev.com",
+          "domain:xiaomiinc.cn",
+          "domain:xiaomiinc.com",
+          "domain:xiaomiinc.net",
+          "domain:mi-dun.com",
+          "domain:miot-spec.org",
+          "domain:xiaomimobile.com",
+          "domain:xiaomisa.cn",
+          "domain:xiaomisa.com",
+          "domain:xiaomisa.net",
+          "domain:xiaomisa.org",
+          "domain:xiaomiwear.com",
+          "domain:xiaomixiaoai.com",
+          "domain:migames.com",
+          "domain:wali.com",
+          "domain:airstarfinance.net",
+          "domain:mipay.com",
+          "domain:duokan.com",
+          "domain:duokanbox.com",
+          "domain:xiaomiyoupin.com",
+          "domain:youpin.cn",
+          "domain:zmifi.com",
+          "domain:miaibox.com",
+          "domain:xiaominr.com",
+          "domain:xiaoaiassist.com",
+          "domain:xiaomimimo.com",
+          "domain:xiaomidns.com.cn",
+          "domain:xiaomiinc.com.cn",
+          "domain:youpin.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

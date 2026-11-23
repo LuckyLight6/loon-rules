@@ -1,0 +1,19 @@
+# name: aliyun-drive
+# priority: 7470
+# section: lifestyle
+# description: 阿里云盘
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: quantumult-x
+# canonical: rules/7470-aliyun-drive.lsr
+
+host-suffix,alicloudccp.com,proxy
+host-suffix,alipan.com,proxy
+host-suffix,aliyundrive.cloud,proxy
+host-suffix,aliyundrive.com,proxy
+host-suffix,aliyundrive.net,proxy
+host-suffix,yunpan.aliyun.com,proxy

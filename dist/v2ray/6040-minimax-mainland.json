@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:minimaxi.com",
+          "domain:hailuoai.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

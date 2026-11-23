@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:files.pythonhosted.org",
+          "domain:pypi.org"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

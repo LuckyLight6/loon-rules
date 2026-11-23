@@ -1,0 +1,23 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:netflix.ca",
+          "domain:netflix.com",
+          "domain:netflix.com.au",
+          "domain:netflix.com.edgesuite.net",
+          "domain:netflix.net",
+          "domain:nflxext.com",
+          "domain:nflximg.com",
+          "domain:nflximg.net",
+          "domain:nflxsearch.net",
+          "domain:nflxso.net",
+          "domain:nflxvideo.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:radarsubmissions.apple.com",
+          "full:iphonesubmissions.apple.com",
+          "full:cssubmissions.apple.com",
+          "full:fba.apple.com",
+          "full:iphonesubmissions-cdn.apple.com.akadns.net",
+          "full:iphonesubmissions-cdn.origin-apple.com.akadns.net",
+          "full:iphonesubmissions-lb.apple.com.akadns.net",
+          "full:iphonesubmissions.apple.com.akadns.net",
+          "full:iphonesubmissions.apple.com.mwcname.com",
+          "full:iphonesubmissions.g.aaplimg.com",
+          "full:radarsubmissions-cdn.apple.com.akadns.net",
+          "full:radarsubmissions-cdn.origin-apple.com.akadns.net",
+          "full:radarsubmissions-lb.apple.com.akadns.net",
+          "full:radarsubmissions.apple.com.akadns.net",
+          "full:radarsubmissions.apple.com.mwcname.com",
+          "full:radarsubmissions.g.aaplimg.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

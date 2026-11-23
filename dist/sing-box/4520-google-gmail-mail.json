@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "mail.google.com",
+        "gmail.googleapis.com",
+        "imap.gmail.com",
+        "smtp.gmail.com",
+        "pop.gmail.com",
+        "smtp-relay.gmail.com",
+        "gmail.mtls.googleapis.com",
+        "gmailpostmastertools.googleapis.com",
+        "gmailpostmastertools.mtls.googleapis.com"
+      ]
+    }
+  ]
+}

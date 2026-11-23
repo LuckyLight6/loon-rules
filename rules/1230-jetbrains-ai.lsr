@@ -2,7 +2,7 @@
 # priority: 1230
 # section: ai
 # description: JetBrains AI
-# boundary: AI 专用域和官方明确列出的海外后端；中国区 API 另列 5160，IDE、账号和插件市场仍归 3090，不认领共用配置服务
+# boundary: AI 专用域和官方明确列出的海外后端；中国区 API 单列，IDE、账号和插件市场由 JetBrains IDE 规则处理，不认领共用配置服务
 # created-at: 2026-11-20T06:07:48Z
 # updated-at: 2026-11-20T23:14:01Z
 # rule-count: 3

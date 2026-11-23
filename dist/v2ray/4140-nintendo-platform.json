@@ -1,0 +1,26 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:nintendo.com",
+          "domain:nintendo.net",
+          "domain:nintendo.co.jp",
+          "domain:nintendo.co.il",
+          "domain:nintendo.co.za",
+          "domain:nintendo.dk",
+          "domain:nintendo.fi",
+          "domain:nintendo.gr",
+          "domain:nintendo.hu",
+          "domain:nintendo.no",
+          "domain:nintendo.pl",
+          "domain:nintendo.sa",
+          "domain:nintendo.se",
+          "domain:nintendo.sk"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

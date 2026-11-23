@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:moonshot.cn",
+          "domain:kimichat.com",
+          "full:platform.kimi.com",
+          "full:api.kimi.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

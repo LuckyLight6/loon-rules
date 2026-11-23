@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "cn-beijing.maas.aliyuncs.com"
+      ],
+      "domain": [
+        "dashscope.aliyuncs.com",
+        "coding.dashscope.aliyuncs.com",
+        "www.qianwen.com"
+      ]
+    }
+  ]
+}

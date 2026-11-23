@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:npmjs.com",
+          "domain:npmjs.org"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

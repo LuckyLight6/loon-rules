@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "epicgames.com",
+        "epicgames.dev",
+        "fortnite.com",
+        "unrealengine.com",
+        "unrealtournament.com"
+      ]
+    }
+  ]
+}

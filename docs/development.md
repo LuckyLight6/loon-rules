@@ -20,6 +20,7 @@ python3 -m pip install --editable .
 python3 -B -m unittest discover -s checks
 python3 -B -m loon_rules --verify-files
 python3 -B scoped_dns.py --check
+python3 -B -m loon_rules --check-exports
 ```
 
 改过分类、来源或目录说明后，依次生成并检查：
@@ -30,6 +31,8 @@ python3 -B -m loon_rules --refresh
 python3 -B scoped_dns.py
 python3 -B scoped_dns.py --check
 python3 -B -m loon_rules --verify-files
+python3 -B -m loon_rules --export
+python3 -B -m loon_rules --check-exports
 ```
 
 `--refresh` 联网读取来源并写入通过检查的结果；`--check` 执行来源和生成检查，不写文件；`--verify-files` 只检查本地文件。安装后也可运行 `loon-rules --verify-files`；普通安装从当前目录向上查找规则仓库，在仓库内或其子目录运行即可。源码方式始终处理命令所在的仓库，原有 `python3 -B maintain.py ...` 和 `python3 -B scoped_dns.py ...` 无需安装包也可直接运行。`--adopt-ad-scope` 是维护者审阅扩展广告大幅变更后的手动操作，不在定时任务中使用。
@@ -42,12 +45,13 @@ python3 -B -m loon_rules --verify-files
 | `config/scope-policy.json` | 共享基础设施和不能整段归给单个产品的范围 |
 | `config/endpoint-contracts.json` | 独立核对的官方端点、业务用途和预期归属 |
 | `src/loon_rules/sources/` | 下载公开资料、按用途提取、展开版本与地区文档、核对来源依据 |
+| `src/loon_rules/exports/` | 从同一份已验证规则生成客户端格式，检查不能等价转换的类型、参数与通配符 |
 | `src/loon_rules/generation/` | 编译规则、处理归属、补充与合集、验证候选、生成文件和报告 |
 | `src/loon_rules/rules.py`、`domains.py`、`matching.py` | 规则语法、域名范围和首条匹配；IPv4、IPv6 与 IP 参数检查 |
 | `src/loon_rules/catalog.py`、`policy.py` | 分类声明、生成字段和共同边界 |
 | `src/loon_rules/cli.py`、`src/loon_rules/plugins/` | 命令入口与分域 DNS 插件生成 |
 | `checks/` | 来源解析、连续更新、错误输入、范围归属与优先级测试 |
-| `rules/`、`plugins/` | 可订阅的规则与可选插件 |
+| `rules/`、`dist/`、`plugins/` | Loon 原规则、多客户端成品与索引、可选插件 |
 | `data/` | 公共后缀表及下一轮更新必需的维护状态 |
 | `docs/` | 使用、选路、测试和开发说明 |
 | `build/` | 本轮检查输出，已忽略，不提交 |
@@ -95,3 +99,15 @@ python3 -B -m loon_rules --verify-files
 提交来源声明、代码、测试和相关成品；`data/maintenance-state.json` 中被下一轮使用的依据也要同步。不要提交 `build/`、抓取原文、工作日志或设备记录。DNS、WebRTC、推送、播放和长连接需要设备测试，不能以规则测试通过代替。[设备测试](network-testing.md)
 
 合法合集选择按共同成员互斥。组合检查只枚举能影响当前域名、IP 或重复规则的选择，其余选择不改变结果；所有局部合法选择都能扩展成完整合法选择，因此覆盖全部配置，不做随机抽样。完整组合数按互斥关系精确计算；同时检查每条域名范围与相交 IP 在任意合法选择中是否会被提前覆盖
+
+## 检查其他客户端格式
+
+`--export` 先验证本地规则，再生成 `dist/`；`--check-exports` 重新计算成品，发现缺失、过时或多余的生成文件就失败。来源更新仍先经过原有分类、完整性和顺序检查，导出器不重新决定业务归属。不能等价转换的整组记录在 `dist/manifest.json`，不按客户端另维护删减版名单
+
+有官方命令行程序时，可以逐份检查原生格式。程序路径由维护者提供，测试放在临时目录，不启用 TUN 或改动系统代理：
+
+```sh
+python3 -B checks/native_formats.py --mihomo /path/to/mihomo --sing-box /path/to/sing-box --v2ray /path/to/v2ray
+```
+
+CI 从官方发布下载固定版本到临时目录，检查 Mihomo Classical provider、sing-box source 编译和 V2Ray 配置片段；不把二进制程序或本机检查记录提交到仓库。使用方式和不能等价转换的范围见[客户端说明](clients.md)

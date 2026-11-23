@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:repo.maven.apache.org"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

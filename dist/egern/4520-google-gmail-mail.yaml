@@ -1,0 +1,28 @@
+# name: google-gmail-mail
+# priority: 4520
+# section: google
+# description: Gmail 网页、邮件协议、专用 API 与投递诊断
+# boundary: 区分 Gmail 网页、API 和 IMAP、SMTP、POP，含 Workspace 邮件中继。专用 API 和投递诊断随官方目录更新；登录与其他 Google API 分开
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-21T01:01:37Z
+# source: https://developers.google.com/workspace/gmail/api/reference/rest
+# source: https://developers.google.com/workspace/gmail/imap/imap-smtp
+# source: https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google
+# source: https://autoconfig.thunderbird.net/v1.1/gmail.com
+# source: https://www.googleapis.com/discovery/v1/apis
+# source: https://github.com/googleapis/google-api-python-client/tree/main/googleapiclient/discovery_cache/documents
+# canonical-rule-count: 9
+# rule-count: 9
+# format: egern
+# canonical: rules/4520-google-gmail-mail.lsr
+
+domain_set:
+  - "mail.google.com"
+  - "gmail.googleapis.com"
+  - "imap.gmail.com"
+  - "smtp.gmail.com"
+  - "pop.gmail.com"
+  - "smtp-relay.gmail.com"
+  - "gmail.mtls.googleapis.com"
+  - "gmailpostmastertools.googleapis.com"
+  - "gmailpostmastertools.mtls.googleapis.com"

@@ -1,0 +1,40 @@
+# name: overseas-payments-all
+# priority: 3500
+# section: payments
+# description: 海外支付合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-22T17:48:09Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/PayPal.lsr
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/stripe.list
+# source: https://www.link.com/
+# source: https://docs.stripe.com/payments/link
+# source: https://developer.paypal.com/braintree/docs/reference/general/braintree-ip-addresses
+# source: https://developer.paypal.com/braintree/graphql/guides/making_api_calls/
+# source: https://venmo.com/
+# source: https://www.xoom.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list
+# canonical-rule-count: 17
+# rule-count: 17
+# format: egern
+# canonical: rules/3500-overseas-payments-all.lsr
+
+domain_suffix_set:
+  - "paypal.com"
+  - "paypalobjects.com"
+  - "paypal.me"
+  - "paypal-corp.com"
+  - "paypalcorp.com"
+  - "stripe.com"
+  - "stripe.network"
+  - "stripecdn.com"
+  - "link.com"
+  - "braintreegateway.com"
+  - "braintreepayments.com"
+  - "venmo.com"
+  - "xoom.com"
+  - "transferwise.com"
+  - "wise.com"
+domain_set:
+  - "payments.braintree-api.com"
+  - "payments.sandbox.braintree-api.com"

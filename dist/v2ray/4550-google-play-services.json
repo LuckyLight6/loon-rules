@@ -1,0 +1,25 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:play.google.com",
+          "full:androidenterprise.googleapis.com",
+          "full:androidenterprise.mtls.googleapis.com",
+          "full:androidpublisher.googleapis.com",
+          "full:androidpublisher.mtls.googleapis.com",
+          "full:playcustomapp.googleapis.com",
+          "full:playcustomapp.mtls.googleapis.com",
+          "full:playdeveloperreporting.googleapis.com",
+          "full:playdeveloperreporting.mtls.googleapis.com",
+          "full:playgrouping.googleapis.com",
+          "full:playgrouping.mtls.googleapis.com",
+          "full:playintegrity.googleapis.com",
+          "full:playintegrity.mtls.googleapis.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

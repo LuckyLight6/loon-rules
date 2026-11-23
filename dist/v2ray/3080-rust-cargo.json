@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:rust-lang.org",
+          "domain:rustup.rs",
+          "domain:crates.io",
+          "domain:docs.rs"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

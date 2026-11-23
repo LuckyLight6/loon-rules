@@ -1,0 +1,29 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "regexp:(?i)^.*\\.apps\\.apple\\.com$",
+          "regexp:(?i)^.*buy\\.itunes\\.apple\\.com$",
+          "full:sandbox.itunes.apple.com",
+          "domain:appstore.com",
+          "full:bag.itunes.apple.com",
+          "full:se.itunes.apple.com",
+          "full:se-edge.itunes.apple.com",
+          "full:su.itunes.apple.com",
+          "full:upp.itunes.apple.com",
+          "full:apps.apple.com",
+          "full:itunes.apple.com",
+          "full:lookup-api.apple.com",
+          "domain:appsto.re",
+          "full:books.apple.com",
+          "domain:apps-marketplace.apple.com",
+          "full:fpinit.itunes.apple.com",
+          "full:search.itunes.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

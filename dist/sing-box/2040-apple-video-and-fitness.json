@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "fitness.apple.com",
+        "tv.apple.com"
+      ],
+      "domain": [
+        "np-edge.itunes.apple.com",
+        "play-edge.itunes.apple.com",
+        "uts-api.itunes.apple.com",
+        "amp-api.videos.apple.com"
+      ]
+    }
+  ]
+}

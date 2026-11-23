@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "dis.gd",
+        "discord-activities.com",
+        "discord.co",
+        "discord.com",
+        "discord.gg",
+        "discord.gift",
+        "discord.gifts",
+        "discord.media",
+        "discordactivities.com",
+        "discordapp.com",
+        "discordapp.net",
+        "discordcdn.com",
+        "discordpartygames.com",
+        "discordstatus.com"
+      ],
+      "domain": [
+        "discord-attachments-uploads-prd.storage.googleapis.com"
+      ]
+    }
+  ]
+}

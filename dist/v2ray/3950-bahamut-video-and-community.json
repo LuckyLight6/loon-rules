@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:bahamut.akamaized.net",
+          "full:gamer-cds.cdn.hinet.net",
+          "full:gamer2-cds.cdn.hinet.net",
+          "domain:bahamut.com.tw",
+          "domain:gamer.com.tw"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

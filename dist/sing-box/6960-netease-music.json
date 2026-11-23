@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "netease.ugcvideoss.ourdvs.com"
+      ],
+      "domain_suffix": [
+        "music.126.com",
+        "music.126.net",
+        "music.163.com",
+        "music.163.com.163jiasu.com"
+      ]
+    }
+  ]
+}

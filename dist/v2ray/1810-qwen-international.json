@@ -1,0 +1,23 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:qwen.ai",
+          "full:chat.qwenlm.ai",
+          "full:cn-hongkong.dashscope.aliyuncs.com",
+          "full:coding-intl.dashscope.aliyuncs.com",
+          "full:dashscope-intl.aliyuncs.com",
+          "full:dashscope-us.aliyuncs.com",
+          "domain:ap-northeast-1.maas.aliyuncs.com",
+          "domain:ap-southeast-1.maas.aliyuncs.com",
+          "domain:cn-hongkong.maas.aliyuncs.com",
+          "domain:eu-central-1.maas.aliyuncs.com",
+          "domain:us-east-1.maas.aliyuncs.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

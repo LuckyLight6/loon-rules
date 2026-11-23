@@ -1,0 +1,26 @@
+# name: xai-connections
+# priority: 1040
+# section: ai
+# description: xAI 账号、Grok 对话与模型 API
+# boundary: Grok、xAI API 及 Grok、Cursor、Grokipedia 共用账号；Cursor 编辑器、百科内容与 X 社交分别处理
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-21T05:48:54Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
+# source: https://cursor.com/help/troubleshooting/sign-in-domains
+# source: https://cursor.com/docs/enterprise/network-configuration
+# source: https://docs.x.ai/x-subscription/sign-in
+# source: https://docs.x.ai/developers/faq/accounts
+# canonical-rule-count: 7
+# rule-count: 7
+# format: clash-classical
+# canonical: rules/1040-xai-connections.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,grok.com"
+  - "DOMAIN-SUFFIX,grok.x.com"
+  - "DOMAIN-SUFFIX,x.ai"
+  - "DOMAIN-REGEX,(?i)^.*\\.grokusercontent\\.com$"
+  - "DOMAIN,accounts.spacexsi.com"
+  - "DOMAIN,auth.grokipedia.com"
+  - "DOMAIN,accounts.spacex.ai"

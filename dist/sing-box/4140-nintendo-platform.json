@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "nintendo.com",
+        "nintendo.net",
+        "nintendo.co.jp",
+        "nintendo.co.il",
+        "nintendo.co.za",
+        "nintendo.dk",
+        "nintendo.fi",
+        "nintendo.gr",
+        "nintendo.hu",
+        "nintendo.no",
+        "nintendo.pl",
+        "nintendo.sa",
+        "nintendo.se",
+        "nintendo.sk"
+      ]
+    }
+  ]
+}

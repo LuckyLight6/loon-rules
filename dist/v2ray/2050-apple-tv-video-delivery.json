@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:hls-amt.itunes.apple.com",
+          "full:hls.itunes.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

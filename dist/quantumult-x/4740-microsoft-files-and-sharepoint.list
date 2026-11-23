@@ -1,0 +1,27 @@
+# name: microsoft-files-and-sharepoint
+# priority: 4740
+# section: microsoft
+# description: OneDrive 与 SharePoint 文件与同步
+# boundary: 仅文件产品的专用后缀，去掉 onedrive/skydrive 关键词；共享登录由账号专项处理
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/OneDrive.lsr
+# canonical-rule-count: 14
+# rule-count: 14
+# format: quantumult-x
+# canonical: rules/4740-microsoft-files-and-sharepoint.lsr
+
+host-suffix,1drv.ms,proxy
+host-suffix,1drv.com,proxy
+host-suffix,livefilestore.com,proxy
+host-suffix,microsoftpersonalcontent.com,proxy
+host-suffix,oneclient.sfx.ms,proxy
+host-suffix,onedrive.com,proxy
+host-suffix,onedrive.live.com,proxy
+host,photos.live.com,proxy
+host-suffix,sharepoint.com,proxy
+host-suffix,sharepointonline.com,proxy
+host,skydrive.wns.windows.com,proxy
+host,spoprod-a.akamaihd.net,proxy
+host-suffix,storage.live.com,proxy
+host,storage.msn.com,proxy

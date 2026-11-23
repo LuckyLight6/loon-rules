@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "stun.l.google.com",
+        "stun.cloudflare.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:intercom.com",
+          "domain:intercom.io",
+          "domain:intercomassets.com",
+          "domain:intercomcdn.com",
+          "domain:au.intercom-attachments.com",
+          "domain:downloads.intercomcdn.eu",
+          "domain:intercom-attachments-1.com",
+          "domain:intercom-attachments-2.com",
+          "domain:intercom-attachments-3.com",
+          "domain:intercom-attachments-4.com",
+          "domain:intercom-attachments-5.com",
+          "domain:intercom-attachments-6.com",
+          "domain:intercom-attachments-7.com",
+          "domain:intercom-attachments-8.com",
+          "domain:intercom-attachments-9.com",
+          "domain:intercom-attachments.eu",
+          "domain:intercom-messenger.com",
+          "domain:intercom-sheets.com",
+          "domain:intercom.help",
+          "domain:static.intercomassets.eu",
+          "domain:uploads.intercomcdn.eu",
+          "domain:uploads.intercomusercontent.com",
+          "domain:www.intercom-reporting.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:hcaptcha.com",
+          "domain:hcaptchastatus.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

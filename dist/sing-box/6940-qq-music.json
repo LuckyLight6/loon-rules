@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "qqmusic.com",
+        "y.qq.com",
+        "music.qq.com"
+      ]
+    }
+  ]
+}

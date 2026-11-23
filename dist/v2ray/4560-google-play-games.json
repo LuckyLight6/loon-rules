@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:games.googleapis.com",
+          "full:games.mtls.googleapis.com",
+          "full:gamesconfiguration.googleapis.com",
+          "full:gamesconfiguration.mtls.googleapis.com",
+          "full:gamesmanagement.googleapis.com",
+          "full:gamesmanagement.mtls.googleapis.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

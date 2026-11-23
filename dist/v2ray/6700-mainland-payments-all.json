@@ -1,0 +1,20 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:alipay.cn",
+          "domain:alipay.com",
+          "domain:alipay.com.cn",
+          "domain:alipay.net",
+          "domain:alipayeshop.com",
+          "domain:alipayobjects.com",
+          "domain:95516.com",
+          "domain:chinaunionpay.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

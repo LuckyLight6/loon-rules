@@ -1,0 +1,25 @@
+# name: qwen-international
+# priority: 1810
+# section: ai
+# description: 阿里千问与百炼 · 国际入口
+# boundary: 按已核实的国际产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://www.alibabacloud.com/help/en/model-studio/base-url
+# source: https://www.qianwen.com/
+# canonical-rule-count: 11
+# rule-count: 11
+# format: quantumult-x
+# canonical: rules/1810-qwen-international.lsr
+
+host-suffix,qwen.ai,proxy
+host,chat.qwenlm.ai,proxy
+host,cn-hongkong.dashscope.aliyuncs.com,proxy
+host,coding-intl.dashscope.aliyuncs.com,proxy
+host,dashscope-intl.aliyuncs.com,proxy
+host,dashscope-us.aliyuncs.com,proxy
+host-suffix,ap-northeast-1.maas.aliyuncs.com,proxy
+host-suffix,ap-southeast-1.maas.aliyuncs.com,proxy
+host-suffix,cn-hongkong.maas.aliyuncs.com,proxy
+host-suffix,eu-central-1.maas.aliyuncs.com,proxy
+host-suffix,us-east-1.maas.aliyuncs.com,proxy

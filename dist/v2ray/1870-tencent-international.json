@@ -1,0 +1,22 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:tokenhub.ap-hongkong.tencentcloudapi.com",
+          "full:tokenhub.ap-singapore.tencentcloudapi.com",
+          "full:tokenhub.ap-jakarta.tencentcloudapi.com",
+          "full:tokenhub.ap-bangkok.tencentcloudapi.com",
+          "full:tokenhub.ap-seoul.tencentcloudapi.com",
+          "full:tokenhub.ap-tokyo.tencentcloudapi.com",
+          "full:tokenhub.na-ashburn.tencentcloudapi.com",
+          "full:tokenhub.na-siliconvalley.tencentcloudapi.com",
+          "full:tokenhub.sa-saopaulo.tencentcloudapi.com",
+          "full:tokenhub.eu-frankfurt.tencentcloudapi.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

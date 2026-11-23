@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:blizzard.com",
+          "domain:battle.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

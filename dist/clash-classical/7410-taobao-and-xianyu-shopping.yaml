@@ -1,0 +1,19 @@
+# name: taobao-and-xianyu-shopping
+# priority: 7410
+# section: lifestyle
+# description: 淘宝、天猫、闲鱼购物与图片
+# boundary: 只收国内消费平台及专用 CDN。不含 AliExpress、整个阿里云或支付宝
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# canonical-rule-count: 5
+# rule-count: 5
+# format: clash-classical
+# canonical: rules/7410-taobao-and-xianyu-shopping.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,taobao.com"
+  - "DOMAIN-SUFFIX,tmall.com"
+  - "DOMAIN-SUFFIX,idlefish.com"
+  - "DOMAIN-SUFFIX,goofish.com"
+  - "DOMAIN-SUFFIX,taobaocdn.com"

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api.siliconflow.com",
+        "cloud.siliconflow.com"
+      ]
+    }
+  ]
+}

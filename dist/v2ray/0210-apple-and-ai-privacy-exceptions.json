@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:tr.iadsdk.apple.com",
+          "full:bzr.openai.com",
+          "full:bzrcdn.openai.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

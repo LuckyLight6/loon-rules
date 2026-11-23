@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "apzones.com",
+        "icloud-content.com.cn",
+        "icloud.com.cn"
+      ]
+    }
+  ]
+}

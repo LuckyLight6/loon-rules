@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:gallery.chinacloudapi.cn",
+          "full:login.chinacloudapi.cn",
+          "full:management.chinacloudapi.cn",
+          "full:management.core.chinacloudapi.cn",
+          "full:microsoftgraph.chinacloudapi.cn",
+          "full:portal.azure.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

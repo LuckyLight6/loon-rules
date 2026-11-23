@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api.hunyuan.cloud.tencent.com",
+        "tokenhub.tencentcloudapi.com",
+        "tokenhub.ap-guangzhou.tencentcloudapi.com",
+        "tokenhub.ap-shanghai.tencentcloudapi.com",
+        "tokenhub.ap-nanjing.tencentcloudapi.com",
+        "tokenhub.ap-beijing.tencentcloudapi.com",
+        "tokenhub.ap-chengdu.tencentcloudapi.com",
+        "tokenhub.ap-chongqing.tencentcloudapi.com",
+        "tokenhub.ap-shanghai-fsi.tencentcloudapi.com",
+        "tokenhub.ap-shenzhen-fsi.tencentcloudapi.com",
+        "yuanbao.tencent.com"
+      ]
+    }
+  ]
+}

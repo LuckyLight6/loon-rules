@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:genshinimpact.com",
+          "domain:honkaistarrail.com",
+          "domain:hoyolab.com",
+          "domain:hoyoverse.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

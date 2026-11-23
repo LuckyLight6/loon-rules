@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "officecdn.microsoft.com",
+        "officecdn.microsoft.com.delivery.microsoft.com",
+        "office-f-net.trafficmanager.net"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:qoder.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

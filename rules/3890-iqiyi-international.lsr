@@ -2,7 +2,7 @@
 # priority: 3890
 # section: media
 # description: 爱奇艺国际版 iQIYI 与专用国际 API
-# boundary: 国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 仍由 5920 处理
+# boundary: 国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 由国内版规则处理
 # created-at: 2026-11-21T11:39:00Z
 # updated-at: 2026-11-21T11:39:00Z
 # rule-count: 4

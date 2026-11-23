@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:aod.itunes.apple.com",
+          "full:aod-ssl.itunes.apple.com",
+          "full:audio.itunes.apple.com",
+          "full:audio-ssl.itunes.apple.com",
+          "full:streamingaudio.itunes.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

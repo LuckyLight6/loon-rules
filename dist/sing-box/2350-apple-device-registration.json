@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "albert.apple.com",
+        "identity.apple.com"
+      ]
+    }
+  ]
+}

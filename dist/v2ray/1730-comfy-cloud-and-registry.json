@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:comfy.org",
+          "domain:comfyregistry.org"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

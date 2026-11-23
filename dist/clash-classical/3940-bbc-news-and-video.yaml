@@ -1,0 +1,17 @@
+# name: bbc-news-and-video
+# priority: 3940
+# section: media
+# description: BBC 新闻与影音
+# boundary: BBC 自有产品域；不包揽共享 CDN 或据此保证地区版权可用
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: clash-classical
+# canonical: rules/3940-bbc-news-and-video.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,bbc.com"
+  - "DOMAIN-SUFFIX,bbci.co.uk"
+  - "DOMAIN-SUFFIX,bbc.co.uk"

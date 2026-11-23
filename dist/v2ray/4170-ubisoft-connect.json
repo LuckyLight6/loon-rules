@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:ubi.com",
+          "domain:ubisoft.com",
+          "domain:uplay.com",
+          "domain:ubisoftconnect.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

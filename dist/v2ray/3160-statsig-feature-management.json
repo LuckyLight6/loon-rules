@@ -1,0 +1,25 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.statsig.com",
+          "full:api.statsigcdn.com",
+          "full:assetsconfigcdn.org",
+          "full:beyondwickedmapping.org",
+          "full:events.statsigapi.net",
+          "full:featureassets.org",
+          "full:featuregates.org",
+          "full:prodregistryv2.org",
+          "full:statsigapi.net",
+          "full:cdn.console.statsig.com",
+          "full:console.statsig.com",
+          "full:console.statsigcdn.com",
+          "full:idliststorage.blob.core.windows.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

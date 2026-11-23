@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:redd.it",
+          "domain:reddit.com",
+          "domain:redditmedia.com",
+          "domain:redditstatic.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

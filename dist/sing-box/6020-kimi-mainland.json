@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "moonshot.cn",
+        "kimichat.com"
+      ],
+      "domain": [
+        "platform.kimi.com",
+        "api.kimi.com"
+      ]
+    }
+  ]
+}

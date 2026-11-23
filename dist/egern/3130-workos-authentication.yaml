@@ -1,0 +1,19 @@
+# name: workos-authentication
+# priority: 3130
+# section: development
+# description: WorkOS 登录、企业认证与公共组件
+# boundary: 识别 WorkOS 自有命名空间与已列组件，不把使用 WorkOS 的所有网站认作同一应用；外部身份提供方另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://workos.com/
+# source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/3130-workos-authentication.lsr
+
+domain_suffix_set:
+  - "workos.com"
+domain_set:
+  - "images.workoscdn.com"
+  - "workos.imgix.net"

@@ -1,0 +1,21 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:www-cdn.icloud.com.akadns.net",
+          "domain:apple-cloudkit.com",
+          "domain:apple-livephotoskit.com",
+          "domain:gc.apple.com",
+          "domain:icloud.apple.com",
+          "domain:icloud.com",
+          "domain:iwork.apple.com",
+          "domain:me.com",
+          "domain:apple-dns.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

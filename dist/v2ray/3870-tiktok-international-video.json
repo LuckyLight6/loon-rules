@@ -1,0 +1,24 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:p16-tiktokcdn-com.akamaized.net",
+          "domain:muscdn.com",
+          "domain:musical.ly",
+          "domain:tik-tokapi.com",
+          "domain:tiktok.com",
+          "domain:tiktokcdn-us.com",
+          "domain:tiktokcdn.com",
+          "domain:tiktokd.net",
+          "domain:tiktokd.org",
+          "domain:tiktokmusic.app",
+          "domain:tiktokv.com",
+          "domain:tiktokv.us"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:mail.google.com",
+          "full:gmail.googleapis.com",
+          "full:imap.gmail.com",
+          "full:smtp.gmail.com",
+          "full:pop.gmail.com",
+          "full:smtp-relay.gmail.com",
+          "full:gmail.mtls.googleapis.com",
+          "full:gmailpostmastertools.googleapis.com",
+          "full:gmailpostmastertools.mtls.googleapis.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

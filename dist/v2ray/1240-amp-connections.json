@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:ampcode.com",
+          "full:auth.ampcode.com",
+          "full:static.ampcode.com",
+          "full:tunnel.ampcode.com",
+          "regexp:(?i)^.*\\.onamp\\.dev$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

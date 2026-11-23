@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:together.ai",
+          "full:api.together.xyz"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

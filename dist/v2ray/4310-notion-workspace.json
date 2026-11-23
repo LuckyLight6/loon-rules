@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:notion-static.com",
+          "domain:notion.com",
+          "domain:notion.so",
+          "domain:notionusercontent.com",
+          "full:notion-custom.com",
+          "full:www.notion-status.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

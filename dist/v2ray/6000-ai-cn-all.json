@@ -1,0 +1,61 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:cn-beijing.maas.aliyuncs.com",
+          "full:dashscope.aliyuncs.com",
+          "full:coding.dashscope.aliyuncs.com",
+          "full:www.qianwen.com",
+          "domain:moonshot.cn",
+          "domain:kimichat.com",
+          "full:platform.kimi.com",
+          "full:api.kimi.com",
+          "domain:zhipuai.cn",
+          "domain:chatglm.cn",
+          "domain:bigmodel.cn",
+          "domain:minimaxi.com",
+          "domain:hailuoai.com",
+          "domain:doubao.com",
+          "domain:coze.cn",
+          "full:ark.cn-beijing.volces.com",
+          "full:ark.volcengine.com",
+          "full:api.siliconflow.cn",
+          "full:cloud.siliconflow.cn",
+          "full:api.hunyuan.cloud.tencent.com",
+          "full:tokenhub.tencentcloudapi.com",
+          "full:tokenhub.ap-guangzhou.tencentcloudapi.com",
+          "full:tokenhub.ap-shanghai.tencentcloudapi.com",
+          "full:tokenhub.ap-nanjing.tencentcloudapi.com",
+          "full:tokenhub.ap-beijing.tencentcloudapi.com",
+          "full:tokenhub.ap-chengdu.tencentcloudapi.com",
+          "full:tokenhub.ap-chongqing.tencentcloudapi.com",
+          "full:tokenhub.ap-shanghai-fsi.tencentcloudapi.com",
+          "full:tokenhub.ap-shenzhen-fsi.tencentcloudapi.com",
+          "full:yuanbao.tencent.com",
+          "domain:deepseek.com",
+          "domain:deepseeksvc.com",
+          "full:qianfan.baidubce.com",
+          "full:ernie.baidu.com",
+          "full:yiyan.baidu.com",
+          "domain:sparkchain.cn",
+          "full:spark-api-open.xf-yun.com",
+          "full:xinghuo.xfyun.cn",
+          "domain:liblib.art",
+          "full:openapi.liblibai.cloud",
+          "full:liblibai-web-static.liblib.cloud",
+          "domain:baichuan-ai.com",
+          "domain:01.ai",
+          "domain:lingyiwanwu.com",
+          "domain:stepfun.com",
+          "domain:sensenova.cn",
+          "full:api-inference.modelscope.cn",
+          "full:api.xiaomimimo.com",
+          "full:token-plan-cn.xiaomimimo.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -18,6 +18,7 @@ runs:
       run: |
         python3 -B -m unittest discover -s checks
         python3 -B maintain.py --verify-files
+        python3 -B maintain.py --check-exports
     - uses: ./.github/actions/source-trust
     - name: Check sources and refresh rules
       env:
@@ -28,13 +29,16 @@ runs:
         python3 -B scoped_dns.py
         python3 -B scoped_dns.py --check
         python3 -B maintain.py --verify-files
+        python3 -B maintain.py --export
+        python3 -B maintain.py --check-exports
+    - uses: ./.github/actions/native-formats
     - name: Summarize source changes
       shell: bash
       run: cat build/verification.md >> "$GITHUB_STEP_SUMMARY"
     - name: Commit validated outputs
       shell: bash
       run: |
-        git add -- ':(glob)rules/*.lsr' plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json
+        git add -- ':(glob)rules/*.lsr' dist/ plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json
         if git diff --cached --quiet; then
           exit 0
         fi

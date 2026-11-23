@@ -1,0 +1,15 @@
+# name: crewai-agent-platform
+# priority: 1750
+# section: ai
+# description: CrewAI 代理平台
+# boundary: 只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list
+# source: https://crewai.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/1750-crewai-agent-platform.lsr
+
+host-suffix,crewai.com,proxy

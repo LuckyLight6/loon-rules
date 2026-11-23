@@ -1,0 +1,15 @@
+# name: ollama-cloud
+# priority: 1300
+# section: ai
+# description: Ollama Cloud 远程接口
+# boundary: 只识别远程 Cloud 主机，本地 localhost 与内网 Ollama 不归入；同主机下载也可能跟随该出口，独立模型仓库和 CDN 不整段加入
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://docs.ollama.com/cloud
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surge-compatible
+# canonical: rules/1300-ollama-cloud.lsr
+
+DOMAIN,ollama.com

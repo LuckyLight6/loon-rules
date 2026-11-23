@@ -1,0 +1,16 @@
+# name: anythingllm-connections
+# priority: 1250
+# section: ai
+# description: AnythingLLM 官网与自营下载、云端入口
+# boundary: 仅识别 AnythingLLM 自营产品域；本地推理、自建实例及连接的模型服务按各自地址处理，不代理整个共享存储平台
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://anythingllm.com/
+# source: https://docs.anythingllm.com/introduction
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/1250-anythingllm-connections.lsr
+
+domain_suffix_set:
+  - "anythingllm.com"

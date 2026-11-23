@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ampcode.com",
+        "auth.ampcode.com",
+        "static.ampcode.com",
+        "tunnel.ampcode.com"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.onamp\\.dev$"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api.ai.jetbrains.com.cn"
+      ]
+    }
+  ]
+}

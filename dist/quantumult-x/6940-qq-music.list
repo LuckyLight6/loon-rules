@@ -1,0 +1,16 @@
+# name: qq-music
+# priority: 6940
+# section: media
+# description: QQ 音乐
+# boundary: 只收音乐专用主机；不接管 QQ、微信或整个腾讯平台
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: quantumult-x
+# canonical: rules/6940-qq-music.lsr
+
+host-suffix,qqmusic.com,proxy
+host-suffix,y.qq.com,proxy
+host-suffix,music.qq.com,proxy

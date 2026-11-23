@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "gallery.chinacloudapi.cn",
+        "login.chinacloudapi.cn",
+        "management.chinacloudapi.cn",
+        "management.core.chinacloudapi.cn",
+        "microsoftgraph.chinacloudapi.cn",
+        "portal.azure.cn"
+      ]
+    }
+  ]
+}

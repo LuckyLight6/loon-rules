@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "apple.com",
+        "cdn-apple.com",
+        "itunes.com",
+        "aaplimg.com",
+        "apple.co",
+        "organicfruitapps.com"
+      ]
+    }
+  ]
+}

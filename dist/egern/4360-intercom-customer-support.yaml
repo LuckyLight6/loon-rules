@@ -1,0 +1,38 @@
+# name: intercom-customer-support
+# priority: 4360
+# section: productivity
+# description: Intercom 客服、会话、附件与实时通信
+# boundary: 核心站点与官方 CSP 中 Intercom 品牌来源；地区 CDN 和附件范围跟随文档，不收 YouTube、Vimeo 等外部嵌入产品
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list
+# source: https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy
+# canonical-rule-count: 23
+# rule-count: 23
+# format: egern
+# canonical: rules/4360-intercom-customer-support.lsr
+
+domain_suffix_set:
+  - "intercom.com"
+  - "intercom.io"
+  - "intercomassets.com"
+  - "intercomcdn.com"
+  - "au.intercom-attachments.com"
+  - "downloads.intercomcdn.eu"
+  - "intercom-attachments-1.com"
+  - "intercom-attachments-2.com"
+  - "intercom-attachments-3.com"
+  - "intercom-attachments-4.com"
+  - "intercom-attachments-5.com"
+  - "intercom-attachments-6.com"
+  - "intercom-attachments-7.com"
+  - "intercom-attachments-8.com"
+  - "intercom-attachments-9.com"
+  - "intercom-attachments.eu"
+  - "intercom-messenger.com"
+  - "intercom-sheets.com"
+  - "intercom.help"
+  - "static.intercomassets.eu"
+  - "uploads.intercomcdn.eu"
+  - "uploads.intercomusercontent.com"
+  - "www.intercom-reporting.com"

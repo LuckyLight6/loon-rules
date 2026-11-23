@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:huya.com",
+          "domain:msstatic.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "liblib.art"
+      ],
+      "domain": [
+        "openapi.liblibai.cloud",
+        "liblibai-web-static.liblib.cloud"
+      ]
+    }
+  ]
+}

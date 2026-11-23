@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:diabrowser.com",
+          "domain:diabrowser.engineering"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

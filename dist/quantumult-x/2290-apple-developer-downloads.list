@@ -1,0 +1,25 @@
+# name: apple-developer-downloads
+# priority: 2290
+# section: apple
+# description: Xcode、Swift Playgrounds 和开发者组件的实际下载
+# boundary: 开发下载与 App Store、OTA 和共享的 App 公证端点分开
+# created-at: 2026-11-19T08:37:30Z
+# updated-at: 2026-11-20T02:22:00Z
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://developer.apple.com/account/
+# source: https://developer.apple.com/download/
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: quantumult-x
+# canonical: rules/2290-apple-developer-downloads.lsr
+
+host,adcdownload.apple.com,proxy
+host,adcdownload.apple.com.akadns.net,proxy
+host,devimages-cdn.apple.com,proxy
+host,download.developer.apple.com,proxy
+host,playground-assets-cdn.apple.com,proxy
+host,playground-cdn.apple.com,proxy

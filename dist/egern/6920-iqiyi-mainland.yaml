@@ -1,0 +1,18 @@
+# name: iqiyi-mainland
+# priority: 6920
+# section: media
+# description: 爱奇艺国内版
+# boundary: 国内版与专用素材；同时使用国际版规则时，国际专用子域先匹配；单用本表不能从 iqiyi.com 父域排除国际业务
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: egern
+# canonical: rules/6920-iqiyi-mainland.lsr
+
+domain_suffix_set:
+  - "iqiyi.com"
+  - "iqiyipic.com"
+  - "qiyi.com"
+  - "qiyipic.com"

@@ -1,0 +1,16 @@
+# name: xiaomi-international-services
+# priority: 3460
+# section: social
+# description: 小米国际社区与应用商店入口
+# boundary: 按来源标注的国际社区入口识别，和小米国内账户、设备及 MiMo API 分开
+# created-at: 2026-11-22T15:07:41Z
+# updated-at: 2026-11-22T15:07:41Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: surge-compatible
+# canonical: rules/3460-xiaomi-international-services.lsr
+
+DOMAIN-SUFFIX,c.mi.com
+DOMAIN-SUFFIX,global.market.xiaomi.com

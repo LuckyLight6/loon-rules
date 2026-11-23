@@ -1,0 +1,16 @@
+# name: groq-inference
+# priority: 1140
+# section: ai
+# description: Groq 推理服务入口
+# boundary: 与 Grok/xAI 无关
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/groq.list
+# source: https://raw.githubusercontent.com/groq/groq-python/main/src/groq/_client.py
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/1140-groq-inference.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,groq.com"

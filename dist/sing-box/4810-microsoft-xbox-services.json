@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "user.auth.xboxlive.com",
+        "xsts.auth.xboxlive.com",
+        "dlassets-ssl.xboxlive.com",
+        "da.xboxservices.com"
+      ]
+    }
+  ]
+}

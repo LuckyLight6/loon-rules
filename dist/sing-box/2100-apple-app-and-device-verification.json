@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ppq.apple.com",
+        "s.mzstatic.com",
+        "play.itunes.apple.com",
+        "idv-prod1.apple.com",
+        "smp-device-content.apple.com",
+        "idv.cdn-apple.com",
+        "api.apple-cloudkit.com"
+      ],
+      "domain_suffix": [
+        "appattest.apple.com"
+      ]
+    }
+  ]
+}

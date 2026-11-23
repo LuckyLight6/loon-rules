@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:iqiyi.com",
+          "domain:iqiyipic.com",
+          "domain:qiyi.com",
+          "domain:qiyipic.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

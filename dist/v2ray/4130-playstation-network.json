@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:playstation.com",
+          "domain:playstation.net",
+          "domain:playstationnetwork.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

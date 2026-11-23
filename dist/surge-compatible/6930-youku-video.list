@@ -1,0 +1,17 @@
+# name: youku-video
+# priority: 6930
+# section: media
+# description: 优酷国内站
+# boundary: 只认国内站及专用素材，不收国际站、整个阿里 CDN
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/youku.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: surge-compatible
+# canonical: rules/6930-youku-video.lsr
+
+DOMAIN,ykimg.alicdn.com
+DOMAIN-SUFFIX,soku.com
+DOMAIN-SUFFIX,ykimg.com
+DOMAIN-SUFFIX,youku.com

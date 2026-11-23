@@ -7,13 +7,16 @@
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
 | 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3010、Cargo 3080、PyPI 3060、npm 3040 |
-| SDK 静态配置 | 按模块、类和字段解析默认端点；不运行下载的源码 | Claude 1010、xAI 1040 等 |
+| SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 只读取指定函数直接返回的字面 HTTPS；`code-api-endpoints` 可读取指定源码字段，不运行下载的源码 | Claude 1010、xAI 1040、Firebase 消息 4585 等 |
+| 服务域名列与 CSP | `domain-column-table` 核对列头后读取指定域名列；`csp-origins` 只处理所选章节、指令和品牌前缀下的源，不能整页扫描 | Datadog 3140 的站点与 RUM 接收地址、Intercom 4360 的客服和附件来源 |
 | Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2090 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
 | 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3330、Slack 3370 |
 | 请求示例和代码字段 | `purpose-url-table`、`labelled-url-pairs` 等只取指定用途的 HTTPS 或 WSS 主机，忽略普通链接和载荷 | API、支付与通讯入口 |
 | Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 4720、Teams 4730、Office 下载 4780 |
 | 官方服务地址表 | `service-address-table` 选择章节与 IPv4／IPv6 列，只接收单个公网地址，生成 `/32`、`/128` 与 `no-resolve`；宽网段、缺列或地址族错误时停止更新 | Cloudflare 公共 DNS 0160，只取标准解析器，和 Families 分开 |
+| 指定方向的地址章节 | `section-network-blocks` 只读所选标题下的 CIDR 代码字段，核对地址族与最宽掩码，生成 `no-resolve` | Claude 1010 只读官方入站地址；出站工具调用和已停用地址不混入客户端目的地址 |
+| ASN 注册记录 | `rdap-autnum` 核对 ASN 编号、注册实体 ID 和组织名称，只生成该 ASN 与 `no-resolve`；持有人不符时停止更新 | Telegram 3310 与 Claude 1010；维护联系人不等于注册持有人，登记关系也不能独自证明全部业务用途 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
@@ -74,6 +77,8 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 读取含其他客户端语法的资料时，`projection.domain-lines-only` 和 `source-inventories.domain-lines-only` 只处理 Loon 支持的三种域名规则，其余行单独计数，不转换正则、进程或 IP。格式损坏的域名行仍会停止更新，不能把无法读取伪装成零条。
 
 `source-inventories.recipe` 可以复用读取器核对结构化的完整来源。Google 地区域名使用 `brand-domain-list`，按官方注册域清单逐项检查首条命中。完整性检查失败会阻止发布，读取失败也不能按零条处理。
+
+Telegram 3310 同时读取官方 CIDR、官方列明的域名范围和已核实的 ASN 注册记录。域名范围新增项会进入细分表及通讯合集；官方漏洞奖励范围并非全部客户端端点清单，因此不据此撤回其他仍有来源的域名。ASN 用来补充裸地址匹配，实际命中还依赖客户端的 ASN 数据，不能用静态登记核查代替设备测试。
 
 ## 如何证明读取器真的能更新
 

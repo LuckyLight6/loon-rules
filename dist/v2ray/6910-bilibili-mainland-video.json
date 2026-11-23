@@ -1,0 +1,22 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:bili22.cn",
+          "domain:bili33.cn",
+          "domain:biliapi.com",
+          "domain:biliapi.net",
+          "domain:bilibili.cn",
+          "domain:bilibili.com",
+          "domain:biliimg.com",
+          "domain:bilivideo.cn",
+          "domain:bilivideo.com",
+          "domain:bilivideo.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:albert.apple.com",
+          "full:identity.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

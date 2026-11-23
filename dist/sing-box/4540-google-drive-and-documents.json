@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "drive-thirdparty.google.com",
+        "filepickup.google.com",
+        "drive.usercontent.google.com",
+        "drive-data-export.usercontent.google.com",
+        "drive-data-export-eu.usercontent.google.com",
+        "sheets.google.com",
+        "slides.google.com"
+      ],
+      "domain_suffix": [
+        "docs.google.com",
+        "drive.google.com",
+        "googledrive.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "appldnld.apple.com.mwcname.com",
+        "appldnld.apple.com.edgesuite.net",
+        "swcdn.g.aaplimg.com",
+        "updates-http.cdn-apple.com.akadns.net",
+        "updates-http.g.aaplimg.com",
+        "appldnld-cdn.apple.com.akadns.net",
+        "appldnld-cdn.origin-apple.com.akadns.net",
+        "oscdn.origin-apple.com.akadns.net",
+        "updates.g.aaplimg.com",
+        "updates-http.cdn-apple.com.edgesuite.net",
+        "swcdn.apple.com.edgesuite.net"
+      ],
+      "domain_suffix": [
+        "appldnld.apple.com",
+        "appldnld.apple.com.akadns.net",
+        "appldnld.g.aaplimg.com",
+        "oscdn.apple.com",
+        "swcdn.apple.com",
+        "swdownload.apple.com",
+        "updates-http.cdn-apple.com",
+        "updates.cdn-apple.com",
+        "appldnld-lb.apple.com.akadns.net"
+      ]
+    }
+  ]
+}

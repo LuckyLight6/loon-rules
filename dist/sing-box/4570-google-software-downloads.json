@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "dl.google.com",
+        "dl-ssl.google.com",
+        "edgedl.me.gvt1.com",
+        "ota-cache1.googlezip.net",
+        "ota-cache3.googlezip.net",
+        "ota.googlezip.net"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:cdninstagram.com",
+          "domain:ig.me",
+          "domain:igcdn.com",
+          "domain:igsonar.com",
+          "domain:igtv.com",
+          "domain:instagram.com",
+          "domain:instagr.am"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

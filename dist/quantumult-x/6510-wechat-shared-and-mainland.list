@@ -1,0 +1,32 @@
+# name: wechat-shared-and-mainland
+# priority: 6510
+# section: social
+# description: 微信国内及两版共用登录、消息与支付
+# boundary: 限定微信专用域及明确 qq.com、腾讯云主机，不将腾讯 ASN 或整个 QQ 判作微信
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
+# canonical-rule-count: 19
+# rule-count: 19
+# format: quantumult-x
+# canonical: rules/6510-wechat-shared-and-mainland.lsr
+
+host,apd-pcdnwxlogin.teg.tencent-cloud.net,proxy
+host,btrace.qq.com,proxy
+host,dldir1.qq.com,proxy
+host,vweixinf.tc.qq.com,proxy
+host,weixin110.qq.com,proxy
+host,wup.imtt.qq.com,proxy
+host-suffix,qlogo.cn,proxy
+host-suffix,qpic.cn,proxy
+host-suffix,servicewechat.com,proxy
+host-suffix,tenpay.com,proxy
+host-suffix,vweixinthumb.tc.qq.com,proxy
+host-suffix,weixin.com,proxy
+host-suffix,weixin.qq.com,proxy
+host-suffix,weixinbridge.com,proxy
+host-suffix,weixinsxy.com,proxy
+host-suffix,wx.gtimg.com,proxy
+host-suffix,wx.qq.com,proxy
+host-suffix,wxapp.tc.qq.com,proxy
+host-suffix,wxs.qq.com,proxy

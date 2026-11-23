@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:iosapps.itunes.apple.com",
+          "full:iosapps.itunes.g.aaplimg.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

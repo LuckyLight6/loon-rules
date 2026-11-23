@@ -1,0 +1,31 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:fbcdn-a.akamaihd.net",
+          "domain:atmeta.com",
+          "domain:meta.com",
+          "domain:facebook.com",
+          "domain:facebook.net",
+          "domain:facebookmail.com",
+          "domain:fb.com",
+          "domain:fb.me",
+          "domain:fbcdn.com",
+          "domain:fbcdn.net",
+          "domain:fbsbx.com",
+          "domain:workplace.com",
+          "domain:accountkit.com",
+          "domain:m.me",
+          "domain:messenger.com",
+          "domain:ocul.us",
+          "domain:oculus.com",
+          "domain:oculuscdn.com",
+          "domain:oculusvr.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

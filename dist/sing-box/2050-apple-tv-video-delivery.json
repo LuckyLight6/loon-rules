@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "hls-amt.itunes.apple.com",
+        "hls.itunes.apple.com"
+      ]
+    }
+  ]
+}

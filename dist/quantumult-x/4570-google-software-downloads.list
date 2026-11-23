@@ -1,0 +1,20 @@
+# name: google-software-downloads
+# priority: 4570
+# section: google
+# description: Google 软件和更新已知下载主机
+# boundary: Google 软件包，以及使用 Google OTA 的设备下载更新的已知主机。只按下载用途认领精确主机，不按整个 CDN 分流
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-20T05:00:34Z
+# source: https://support.google.com/work/android/answer/10513641
+# source: https://support.google.com/chrome/a/answer/6334001
+# canonical-rule-count: 6
+# rule-count: 6
+# format: quantumult-x
+# canonical: rules/4570-google-software-downloads.lsr
+
+host,dl.google.com,proxy
+host,dl-ssl.google.com,proxy
+host,edgedl.me.gvt1.com,proxy
+host,ota-cache1.googlezip.net,proxy
+host,ota-cache3.googlezip.net,proxy
+host,ota.googlezip.net,proxy

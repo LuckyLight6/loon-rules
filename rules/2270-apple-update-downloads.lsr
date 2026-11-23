@@ -4,8 +4,8 @@
 # description: 系统更新包与恢复内容下载
 # boundary: 收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-21T11:39:00Z
-# rule-count: 19
+# updated-at: 2026-11-23T19:28:52Z
+# rule-count: 20
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
 # source: https://support.apple.com/en-us/101555
@@ -33,3 +33,4 @@ DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net
 DOMAIN,oscdn.origin-apple.com.akadns.net
 DOMAIN,updates.g.aaplimg.com
 DOMAIN,updates-http.cdn-apple.com.edgesuite.net
+DOMAIN,swcdn.apple.com.edgesuite.net

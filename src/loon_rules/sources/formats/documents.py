@@ -143,6 +143,64 @@ def parse_product_role_links(recipe, text):
         raise Invalid('官方资料缺少指定用途的产品入口')
     return result
 
+
+def csp_origins(recipe, text):
+    directives = {
+        'default-src', 'script-src', 'script-src-elem', 'script-src-attr',
+        'style-src', 'style-src-elem', 'style-src-attr', 'img-src', 'font-src',
+        'connect-src', 'media-src', 'object-src', 'frame-src', 'child-src',
+        'worker-src', 'manifest-src', 'base-uri', 'form-action', 'frame-ancestors',
+    }
+    wanted = recipe.get('directives', [])
+    scope = recipe.get('domain-scope', 'listed')
+    if not wanted or not set(wanted) <= directives or scope not in ('listed', 'domain-and-subdomains'):
+        raise Invalid('CSP 来源缺少明确的指令和匹配范围')
+    examples = []
+    if sections := recipe.get('sections'):
+        for name in sections:
+            section = HeadingSectionText(name)
+            section.feed(text)
+            if section.found != 1:
+                raise Invalid('CSP 来源的章节缺失或重复')
+            examples.extend(section.examples)
+    else:
+        page = PurposeFragments()
+        page.feed(text)
+        examples = page.examples
+    pattern = re.compile(r'(?m)(?:^|[;\n])[ \t]*(' + '|'.join(sorted(directives))
+                         + r')(?::[ \t]*|[ \t]+|$)')
+    result = set()
+    for example in examples:
+        matches = list(pattern.finditer(example))
+        for index, match in enumerate(matches):
+            if match[1] not in wanted:
+                continue
+            end = matches[index + 1].start() if index + 1 < len(matches) else len(example)
+            for token in example[match.end():end].replace(';', ' ').split():
+                if token.startswith("'") or token in ('*', 'data:', 'blob:', 'https:', 'http:'):
+                    continue
+                url = urlsplit(token if '://' in token else 'https://' + token)
+                if (url.scheme not in ('https', 'wss') or not url.hostname
+                        or url.username is not None or url.query or url.fragment):
+                    raise Invalid('CSP 来源包含无效或带凭据的连接地址')
+                host = url.hostname
+                tail = domain_scope.fixed_tail(host)
+                if prefixes := recipe.get('brand-prefixes'):
+                    root = domain_scope.current().registrable(tail)
+                    if not root or not any(root.split('.')[0].startswith(prefix) for prefix in prefixes):
+                        continue
+                if row := public_domain_pattern(host):
+                    if scope == 'domain-and-subdomains':
+                        base = host.removeprefix('*.')
+                        if re.search(r'[*?\[\]]', base):
+                            raise Invalid('CSP 的整域匹配不接受主机前缀通配符')
+                        row = 'DOMAIN-SUFFIX,' + base
+                    result.add(row)
+    if not result:
+        raise Invalid('CSP 来源没有所选用途的公开连接地址')
+    return result
+
+
 def parse_site_identity(recipe, text):
     guide = PurposeFragments()
     guide.feed(text)

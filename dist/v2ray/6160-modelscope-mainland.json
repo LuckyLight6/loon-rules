@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api-inference.modelscope.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -4,8 +4,8 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-22T18:51:30Z
-# rule-count: 18511
+# updated-at: 2026-11-23T18:50:42Z
+# rule-count: 18503
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
@@ -7020,7 +7020,6 @@ DOMAIN-SUFFIX,haygo.com
 DOMAIN-SUFFIX,hbg.com
 DOMAIN-SUFFIX,hbox.jp
 DOMAIN-SUFFIX,hbrowse.com
-DOMAIN-SUFFIX,hcaptcha.com
 DOMAIN-SUFFIX,hcbdsm.com
 DOMAIN-SUFFIX,hclips.com
 DOMAIN-SUFFIX,hcm.com.tw
@@ -8288,11 +8287,6 @@ DOMAIN-SUFFIX,intelstore.com
 DOMAIN-SUFFIX,inteltechnologyprovider.com
 DOMAIN-SUFFIX,intelvmwarecybersecurity.com
 DOMAIN-SUFFIX,interactivebrokers.com
-DOMAIN-SUFFIX,intercom.com
-DOMAIN-SUFFIX,intercom.help
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomassets.com
-DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,internet.org
 DOMAIN-SUFFIX,internetdefenseleague.org
 DOMAIN-SUFFIX,internetexxxplorer.com
@@ -13626,8 +13620,6 @@ DOMAIN-SUFFIX,sensorynetworks.com
 DOMAIN-SUFFIX,sensualgirls.org
 DOMAIN-SUFFIX,sensualmothers.com
 DOMAIN-SUFFIX,sensueel.net
-DOMAIN-SUFFIX,sentry.dev
-DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,sentry.prod.mozaws.net
 DOMAIN-SUFFIX,senzuritv.net
 DOMAIN-SUFFIX,seqing.one

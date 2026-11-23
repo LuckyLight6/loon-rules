@@ -32,6 +32,7 @@
     "17.0.0.0/8"
   ],
   "shared-hostnames": [
-    "www.quora.com"
+    "www.quora.com",
+    "cloudflare-dns.com"
   ]
 }

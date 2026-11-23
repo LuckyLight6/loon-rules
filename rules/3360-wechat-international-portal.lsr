@@ -2,7 +2,7 @@
 # priority: 3360
 # section: social
 # description: WeChat 国际网站、支付与部分 App 连接
-# boundary: wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由 5500 处理
+# boundary: wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由微信国内及共用规则处理
 # created-at: 2026-11-19T09:33:57Z
 # updated-at: 2026-11-19T09:33:57Z
 # rule-count: 4

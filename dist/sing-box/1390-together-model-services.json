@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "together.ai"
+      ],
+      "domain": [
+        "api.together.xyz"
+      ]
+    }
+  ]
+}

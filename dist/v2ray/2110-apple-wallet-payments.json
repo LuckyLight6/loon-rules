@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:pos-device.apple.com",
+          "full:smp-paymentservices.apple.com",
+          "full:cn-smp-paymentservices.apple.com",
+          "full:humb.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

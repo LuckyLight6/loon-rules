@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_regex": [
+        "(?i)^.*\\.apps\\.apple\\.com$",
+        "(?i)^.*buy\\.itunes\\.apple\\.com$"
+      ],
+      "domain": [
+        "sandbox.itunes.apple.com",
+        "bag.itunes.apple.com",
+        "se.itunes.apple.com",
+        "se-edge.itunes.apple.com",
+        "su.itunes.apple.com",
+        "upp.itunes.apple.com",
+        "apps.apple.com",
+        "itunes.apple.com",
+        "lookup-api.apple.com",
+        "books.apple.com",
+        "fpinit.itunes.apple.com",
+        "search.itunes.apple.com"
+      ],
+      "domain_suffix": [
+        "appstore.com",
+        "appsto.re",
+        "apps-marketplace.apple.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:weibo.cn",
+          "domain:weibo.com",
+          "domain:weibocdn.com",
+          "domain:weibo.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

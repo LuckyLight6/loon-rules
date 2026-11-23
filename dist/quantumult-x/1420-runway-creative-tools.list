@@ -1,0 +1,16 @@
+# name: runway-creative-tools
+# priority: 1420
+# section: ai
+# description: Runway 视频与创作服务
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list
+# source: https://runwayml.com/
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/1420-runway-creative-tools.lsr
+
+host-suffix,runway.com,proxy
+host-suffix,runwayml.com,proxy

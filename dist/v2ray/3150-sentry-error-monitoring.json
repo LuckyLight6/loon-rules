@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:getsentry.com",
+          "domain:sentry.dev",
+          "domain:sentry.io",
+          "domain:sentry-cdn.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

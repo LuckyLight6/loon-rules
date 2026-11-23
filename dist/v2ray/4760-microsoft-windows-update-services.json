@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:update.microsoft.com",
+          "domain:prod.do.dsp.mp.microsoft.com",
+          "full:tsfe.trafficshaping.dsp.mp.microsoft.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

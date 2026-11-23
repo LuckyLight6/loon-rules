@@ -1,0 +1,31 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:apd-pcdnwxlogin.teg.tencent-cloud.net",
+          "full:btrace.qq.com",
+          "full:dldir1.qq.com",
+          "full:vweixinf.tc.qq.com",
+          "full:weixin110.qq.com",
+          "full:wup.imtt.qq.com",
+          "domain:qlogo.cn",
+          "domain:qpic.cn",
+          "domain:servicewechat.com",
+          "domain:tenpay.com",
+          "domain:vweixinthumb.tc.qq.com",
+          "domain:weixin.com",
+          "domain:weixin.qq.com",
+          "domain:weixinbridge.com",
+          "domain:weixinsxy.com",
+          "domain:wx.gtimg.com",
+          "domain:wx.qq.com",
+          "domain:wxapp.tc.qq.com",
+          "domain:wxs.qq.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

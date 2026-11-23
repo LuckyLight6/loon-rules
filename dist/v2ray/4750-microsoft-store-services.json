@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:storeedgefd.dsx.mp.microsoft.com",
+          "full:livetileedge.dsx.mp.microsoft.com",
+          "full:displaycatalog.mp.microsoft.com",
+          "full:share.microsoft.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

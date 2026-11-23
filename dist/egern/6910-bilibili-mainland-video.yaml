@@ -1,0 +1,24 @@
+# name: bilibili-mainland-video
+# priority: 6910
+# section: media
+# description: 哔哩哔哩中国站视频与图片
+# boundary: 保留国内平台及常用内容交付；国际版专域不混入，API/CDN 共用部分不能按国家强行拆分
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# canonical-rule-count: 10
+# rule-count: 10
+# format: egern
+# canonical: rules/6910-bilibili-mainland-video.lsr
+
+domain_suffix_set:
+  - "bili22.cn"
+  - "bili33.cn"
+  - "biliapi.com"
+  - "biliapi.net"
+  - "bilibili.cn"
+  - "bilibili.com"
+  - "biliimg.com"
+  - "bilivideo.cn"
+  - "bilivideo.com"
+  - "bilivideo.net"

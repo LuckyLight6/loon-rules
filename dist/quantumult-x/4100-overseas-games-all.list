@@ -1,0 +1,73 @@
+# name: overseas-games-all
+# priority: 4100
+# section: games
+# description: 海外游戏合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T13:34:15Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# source: https://store.steampowered.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/playstation.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nintendo.list
+# source: https://www.nintendo.com/regionselector/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/mihoyo.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ea.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ubisoft.list
+# source: https://www.ubisoft.com/legal/documents/termsofuse/en-US
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/blizzard.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list
+# canonical-rule-count: 49
+# rule-count: 49
+# format: quantumult-x
+# canonical: rules/4100-overseas-games-all.lsr
+
+host,steamcommunity-a.akamaihd.net,proxy
+host,steambroadcast.akamaized.net,proxy
+host-suffix,dota2.com,proxy
+host-suffix,playartifact.com,proxy
+host-suffix,s.team,proxy
+host-suffix,steam-chat.com,proxy
+host-suffix,steam.tv,proxy
+host-suffix,steamcommunity.com,proxy
+host-suffix,steamdeck.com,proxy
+host-suffix,steampowered.com,proxy
+host-suffix,steamstatic.com,proxy
+host-suffix,valvesoftware.com,proxy
+host-suffix,epicgames.com,proxy
+host-suffix,epicgames.dev,proxy
+host-suffix,fortnite.com,proxy
+host-suffix,unrealengine.com,proxy
+host-suffix,unrealtournament.com,proxy
+host-suffix,playstation.com,proxy
+host-suffix,playstation.net,proxy
+host-suffix,playstationnetwork.com,proxy
+host-suffix,nintendo.com,proxy
+host-suffix,nintendo.net,proxy
+host-suffix,nintendo.co.jp,proxy
+host-suffix,nintendo.co.il,proxy
+host-suffix,nintendo.co.za,proxy
+host-suffix,nintendo.dk,proxy
+host-suffix,nintendo.fi,proxy
+host-suffix,nintendo.gr,proxy
+host-suffix,nintendo.hu,proxy
+host-suffix,nintendo.no,proxy
+host-suffix,nintendo.pl,proxy
+host-suffix,nintendo.sa,proxy
+host-suffix,nintendo.se,proxy
+host-suffix,nintendo.sk,proxy
+host-suffix,genshinimpact.com,proxy
+host-suffix,honkaistarrail.com,proxy
+host-suffix,hoyolab.com,proxy
+host-suffix,hoyoverse.com,proxy
+host,eaassets-a.akamaihd.net,proxy
+host-suffix,ea.com,proxy
+host-suffix,tnt-ea.com,proxy
+host-suffix,origin.com,proxy
+host-suffix,ubi.com,proxy
+host-suffix,ubisoft.com,proxy
+host-suffix,uplay.com,proxy
+host-suffix,ubisoftconnect.com,proxy
+host-suffix,blizzard.com,proxy
+host-suffix,battle.net,proxy
+host-suffix,easebar.com,proxy

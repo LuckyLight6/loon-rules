@@ -1,0 +1,22 @@
+# name: x-social-and-media
+# priority: 3350
+# section: social
+# description: X / Twitter 社交与图像视频
+# boundary: Grok 专用的 grok.x.com 先由 xAI 规则匹配；只接产品和短链，不使用 twitter 关键词或广泛网段
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr
+# canonical-rule-count: 8
+# rule-count: 8
+# format: clash-classical
+# canonical: rules/3350-x-social-and-media.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,t.co"
+  - "DOMAIN-SUFFIX,tweetdeck.com"
+  - "DOMAIN-SUFFIX,twimg.co"
+  - "DOMAIN-SUFFIX,twimg.com"
+  - "DOMAIN-SUFFIX,twitter.com"
+  - "DOMAIN-SUFFIX,twttr.com"
+  - "DOMAIN-SUFFIX,twvid.com"
+  - "DOMAIN-SUFFIX,x.com"

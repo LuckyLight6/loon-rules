@@ -8,6 +8,50 @@ from loon_rules.rules import Invalid, valid_host
 from .common import within, PurposeFragments
 
 
+def literal_code_tokens(text):
+    tokens = re.findall(
+        r'''(?s)/\*.*?\*/|//[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z_]\w*|[^\s]''',
+        text,
+    )
+    return [token for token in tokens if not token.startswith(('//', '/*'))]
+
+
+def c_function_url(recipe, text):
+    function = recipe.get('function', '')
+    if not re.fullmatch(r'[A-Za-z_]\w*', function):
+        raise Invalid('C 端点来源缺少函数名')
+    tokens = literal_code_tokens(text)
+    bodies = []
+    for index, token in enumerate(tokens):
+        if token != function:
+            continue
+        tail = tokens[index + 1:]
+        if tail[:3] == ['(', ')', '{']:
+            start = 3
+        elif tail[:4] == ['(', 'void', ')', '{']:
+            start = 4
+        else:
+            continue
+        try:
+            end = tail.index('}', start)
+        except ValueError as error:
+            raise Invalid('C 端点函数缺少结束符') from error
+        bodies.append(tail[start:end])
+    if len(bodies) != 1:
+        raise Invalid('C 端点函数缺失或重复')
+    body = bodies[0]
+    if len(body) == 4 and body[1] == '@':
+        body = [body[0], *body[2:]]
+    if (len(body) != 3 or body[0] != 'return' or body[-1] != ';'
+            or not re.fullmatch(r'"[^"\\]+"', body[1])):
+        raise Invalid('C 端点函数不是单个字面 URL 返回')
+    url = urlsplit(body[1][1:-1])
+    if (url.scheme != 'https' or not url.hostname or url.username is not None
+            or url.query or url.fragment):
+        raise Invalid('C 端点函数没有公开 HTTPS 地址')
+    return {'DOMAIN,' + domain_scope.public_host(url.hostname)}
+
+
 def go_host_switch(recipe,text):
     """Read literal host cases that return one named service's trust policy."""
     function=recipe.get('function','');callee=recipe.get('return-call','')
@@ -195,7 +239,20 @@ def code_api_endpoints(recipe, text):
     fields = '|'.join((re.escape(field) for field in recipe['api-fields']))
     pattern = re.compile('(?<![\\w.])(?:' + fields + ')\\s*[:=]\\s*["\'](https://[^"\'\\s]+)["\']')
     result = set()
-    for example in code_examples(recipe, text):
+    examples = code_examples(recipe, text)
+    if recipe.get('markup') == 'source':
+        examples = []
+        tokens = literal_code_tokens(text)
+        for index, token in enumerate(tokens):
+            if (token not in recipe['api-fields'] or tokens[index + 1:index + 2] != ['=']
+                    or index and tokens[index - 1] == '.'):
+                continue
+            value = tokens[index + 2:index + 3]
+            if (not value or not re.fullmatch(r'''["'][^"'\\]+["']''', value[0])
+                    or tokens[index + 3:index + 4] not in ([], [';'])):
+                raise Invalid('SDK API 字段不再是单个字面地址')
+            examples.append(token + '=' + value[0])
+    for example in examples:
         for value in pattern.findall(example):
             url = urlsplit(value)
             if url.scheme == 'https' and url.hostname and (url.username is None) and valid_host(url.hostname):

@@ -90,6 +90,23 @@ OpenAI 1020 的语音地址来自[官方公开 JSON](https://openai.com/chatgpt-
 
 Claude 网页、App、Desktop、Code 和 Anthropic API 使用 1010 的产品范围，工具调用访问的第三方网站仍按目标网站处理。通用 GitHub、包源、Google Storage 与云平台网关不整域归入 AI。[Claude Code 网络要求](https://code.claude.com/docs/en/network-config)
 
+Claude 的入口地址与服务器出站地址要分清。[官方地址说明](https://platform.claude.com/docs/en/api/ip-addresses)把 `160.79.104.0/23`、`153.61.224.0/22`、`2607:6bc0::/48` 列为入站地址，1010 自动读取这一章节。`160.79.104.0/21`、`153.61.208.0/20` 是 Anthropic 向外部 MCP 等服务发起请求时使用的源地址，不据此扩大客户端分流范围；Google 的整个 `34.8.0.0/16` 也不归 Claude。
+
+1010 还包含已核实的开发者博客 `claude.dev`、Artifact 域 `claude.site`、新对话快捷入口 `claude.new` 和课程入口 `claudeacademy.com`。名称相似的域名不自动认作生产服务；内部环境与业务用途未确认的域名不因社区清单收录就加入。
+
+| 第三方依赖 | 用途与处理 |
+|---|---|
+| Google 登录、WorkOS、Auth0 | 共用登录服务按各自产品处理；Claude 专用的 `anthropic.auth0.com` 已在 1010，整个 Auth0 不归 Claude |
+| Stripe、Link | 支付按 3520、3530 或 3500 合集处理；商户、银行的验证页面仍按自身目标匹配 |
+| Intercom 4360 | 客服会话、素材和实时通信是共享服务，归海外办公与客服，也进入 4300 合集 |
+| hcaptcha 3180、Cloudflare 验证 | 人机验证平台可被多个产品使用；验证失败时检查实际主机与出口，不把整家 Cloudflare 加入 Claude |
+| Persona 3190、Yoti 3200 | Claude 官方说明了[身份验证](https://support.claude.com/en/articles/14328960-identity-verification-on-claude)和[年龄验证](https://support.claude.com/en/articles/15171100-age-assurance-on-claude)的相关用途；并非每次登录或每位用户都会触发 |
+| Datadog 3140、Sentry 3150、Statsig 3160、Fathom 3170、Sift 3210 | 分别涉及运行监控、错误报告、功能配置与实验、网站统计、反欺诈；用途不同，不能统称身份验证，也不能整体划给 Claude。Code 文档中的两项 Datadog 上报为可选。这些共享开发服务也进入 3000 合集 |
+
+Firebase 消息 4585 归 Google 生态，也进入 4500 合集；它包括 SDK 发布的令牌注册主机和 FCM API，不把全部 Google APIs、设备配置地址或共享 IP 当成消息服务
+
+分流按当前请求的目标匹配，不能只凭域名知道“这次 Stripe 付款来自哪个商户”。需要一次登录或付款全程使用同一出口时，应在操作设备上检查共享登录、支付及银行验证的实际路径，并在建立新连接前选择一致的出口。漏过产品规则的请求仍会继续匹配后续域名和 IP 规则，再到 `FINAL`；是否直连取决于完整配置。出口一致性本身也不是账号安全保证。
+
 iPhone 的 Loon 不控制另一台 Mac 或 PC；Desktop、Code 和 API 客户端要在实际运行设备上单独验证。
 
 ## 海外与国内产品分别管理

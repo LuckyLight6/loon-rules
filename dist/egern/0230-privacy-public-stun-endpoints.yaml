@@ -1,0 +1,17 @@
+# name: privacy-public-stun-endpoints
+# priority: 0230
+# section: privacy
+# description: 已公开的 STUN 主机，供选择性阻断
+# boundary: 仅两个精确主机，不拦 webrtc.org 或所有 stun.*。启用可能影响语音和会议；不能代替 WebRTC 或 DNS 出口检查
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://webrtc.org/getting-started/peer-connections
+# source: https://developers.cloudflare.com/realtime/turn/generate-credentials/
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/0230-privacy-public-stun-endpoints.lsr
+
+domain_set:
+  - "stun.l.google.com"
+  - "stun.cloudflare.com"

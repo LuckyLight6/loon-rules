@@ -1,0 +1,12 @@
+# name: hcaptcha-verification
+# priority: 3180
+# section: development
+# description: hcaptcha 人机验证与服务状态
+# boundary: 验证服务与已列状态站；不接管使用验证码的客户网站，未核实归属的其它产品不并入
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list
+
+DOMAIN-SUFFIX,hcaptcha.com
+DOMAIN-SUFFIX,hcaptchastatus.com

@@ -2,7 +2,7 @@
 # priority: 2160
 # section: apple
 # description: Find My 设备与朋友查找的已识别入口
-# boundary: 查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 2100，共用 iCloud 网页、推送与静态素材不并入
+# boundary: 查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号由定位服务规则处理，共用 iCloud 网页、推送与静态素材不并入
 # created-at: 2026-11-21T11:39:00Z
 # updated-at: 2026-11-21T11:39:00Z
 # rule-count: 7

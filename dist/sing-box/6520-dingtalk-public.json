@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "dingtalk.com",
+        "dingtalkapps.com",
+        "dingtalkcloud.com"
+      ]
+    }
+  ]
+}

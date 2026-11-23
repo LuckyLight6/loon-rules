@@ -151,6 +151,9 @@ def verify_report(entries, data, report):
     if set(report) != expected:
         raise Invalid('自动发现报告与业务清单不一致')
     for key, stats in report.items():
+        if (entries[key].get('mode') == 'compiled'
+                and stats.get('state') in ('invalid', 'unavailable')):
+            raise Invalid('自动发现来源未完整读取，保留上一版：' + key)
         inputs = {s['source']: s for s in entries[key]['discovery']['inputs']}
         owners=stats.get('reserved-owners',{})
         if (not isinstance(owners,dict) or any(owner==key or owner not in entries or owner not in data

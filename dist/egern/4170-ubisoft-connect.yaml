@@ -1,0 +1,19 @@
+# name: ubisoft-connect
+# priority: 4170
+# section: games
+# description: Ubisoft Connect
+# boundary: 育碧账号、启动器与产品服务，独立客户端站点从官方产品说明读取；不把 AWS、Akamai 或调查工具整域归入
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T23:43:58Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ubisoft.list
+# source: https://www.ubisoft.com/legal/documents/termsofuse/en-US
+# canonical-rule-count: 4
+# rule-count: 4
+# format: egern
+# canonical: rules/4170-ubisoft-connect.lsr
+
+domain_suffix_set:
+  - "ubi.com"
+  - "ubisoft.com"
+  - "uplay.com"
+  - "ubisoftconnect.com"

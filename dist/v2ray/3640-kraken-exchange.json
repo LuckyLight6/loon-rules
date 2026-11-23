@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:kraken.com",
+          "domain:kraken.onl"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

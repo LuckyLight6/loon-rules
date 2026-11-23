@@ -1,0 +1,27 @@
+# name: atlassian-cloud-services
+# priority: 4340
+# section: productivity
+# description: Atlassian Cloud：共享平台、Jira 与 Confluence
+# boundary: Jira、Confluence、共享认证、素材与政府云的第一方域；Bitbucket、Trello 各有专表。忽略合作方整域、出站 IP 和私有隔离云占位符
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T21:08:12Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
+# source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
+# canonical-rule-count: 13
+# rule-count: 13
+# format: quantumult-x
+# canonical: rules/4340-atlassian-cloud-services.lsr
+
+host-suffix,atlassian.net,proxy
+host-suffix,jira.com,proxy
+host-suffix,atl-paas.net,proxy
+host-suffix,atlassian-3p-us-gov-mod.com,proxy
+host-suffix,atlassian-3p.com,proxy
+host-suffix,atlassian-dev.net,proxy
+host-suffix,atlassian-us-gov-mod.com,proxy
+host-suffix,atlassian-us-gov-mod.net,proxy
+host-suffix,atlassian.com,proxy
+host-suffix,cdn.prod.atlassian-dev-us-gov-mod.net,proxy
+host-suffix,ss-inf.net,proxy
+host-suffix,teamworkgraph.ai,proxy
+host-suffix,teamworkgraph.com,proxy

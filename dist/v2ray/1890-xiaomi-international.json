@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:token-plan-ams.xiaomimimo.com",
+          "full:token-plan-sgp.xiaomimimo.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

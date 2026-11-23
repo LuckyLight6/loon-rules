@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:douyu.com",
+          "domain:douyu.tv",
+          "domain:douyucdn.cn",
+          "domain:douyucdn2.cn",
+          "domain:douyuscdn.com",
+          "domain:douyutv.com",
+          "domain:edgesrv.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

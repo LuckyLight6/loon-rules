@@ -1,0 +1,17 @@
+# name: hoyoverse-international
+# priority: 4150
+# section: games
+# description: HoYoverse 国际版
+# boundary: 国际门户及专用游戏站；米游社和国服另列
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/mihoyo.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/4150-hoyoverse-international.lsr
+
+host-suffix,genshinimpact.com,proxy
+host-suffix,honkaistarrail.com,proxy
+host-suffix,hoyolab.com,proxy
+host-suffix,hoyoverse.com,proxy

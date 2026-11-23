@@ -2,7 +2,7 @@
 # priority: 4790
 # section: microsoft
 # description: Microsoft Visual Studio Code
-# boundary: 编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 依赖下载归 4820，GitHub 文件归 3000，Copilot 归 1060。实验和崩溃统计不按核心入口收录
+# boundary: 编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 下载由 Microsoft 共用服务处理，GitHub 文件和 Copilot 各有专项；实验和崩溃统计不按核心入口收录
 # created-at: 2026-11-20T06:07:48Z
 # updated-at: 2026-11-20T20:04:44Z
 # rule-count: 10

@@ -1,0 +1,15 @@
+# name: devin-cloud-coding
+# priority: 1170
+# section: ai
+# description: Devin 自有云编程入口
+# boundary: 不覆盖它所访问的外部仓库
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/devin.list
+# source: https://docs.devin.ai/api-reference/authentication
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/1170-devin-cloud-coding.lsr
+
+host-suffix,devin.ai,proxy

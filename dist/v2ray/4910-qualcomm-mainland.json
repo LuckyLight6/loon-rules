@@ -1,0 +1,18 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:gpsonextra.net",
+          "domain:izatcloud.net",
+          "domain:qceventscenter.com.cn",
+          "domain:qualcomm.cn",
+          "domain:qualcomm.cn.cdn.cloudflare.net",
+          "domain:xtracloud.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

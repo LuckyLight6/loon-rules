@@ -1,0 +1,13 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:podcasts.apple.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:line-apps.com",
+          "domain:line-scdn.net",
+          "domain:line.me"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

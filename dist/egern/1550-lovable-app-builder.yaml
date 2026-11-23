@@ -1,0 +1,16 @@
+# name: lovable-app-builder
+# priority: 1550
+# section: ai
+# description: Lovable 应用构建
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list
+# source: https://lovable.dev/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/1550-lovable-app-builder.lsr
+
+domain_suffix_set:
+  - "lovable.dev"

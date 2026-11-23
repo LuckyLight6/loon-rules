@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "signal.group",
+        "signal.link",
+        "signal.me",
+        "signal.org",
+        "signal.art",
+        "signal.tube"
+      ]
+    }
+  ]
+}

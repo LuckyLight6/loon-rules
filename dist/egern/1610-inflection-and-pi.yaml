@@ -1,0 +1,17 @@
+# name: inflection-and-pi
+# priority: 1610
+# section: ai
+# description: Inflection 与 Pi
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list
+# source: https://inflection.ai/
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/1610-inflection-and-pi.lsr
+
+domain_suffix_set:
+  - "inflection.ai"
+  - "pi.ai"

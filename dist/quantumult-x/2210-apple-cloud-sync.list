@@ -1,0 +1,24 @@
+# name: apple-cloud-sync
+# priority: 2210
+# section: apple
+# description: iCloud 通用服务、CloudKit、同步、邮件及 iWork
+# boundary: 认证、查找、Private Relay、确定的内容域及大陆服务分别匹配；通用域不能用来判断账户或存储国家
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T12:26:59Z
+# source: https://support.apple.com/en-us/101555
+# source: https://support.apple.com/en-us/118230
+# source: https://support.apple.com/zh-cn/111754
+# canonical-rule-count: 9
+# rule-count: 9
+# format: quantumult-x
+# canonical: rules/2210-apple-cloud-sync.lsr
+
+host,www-cdn.icloud.com.akadns.net,proxy
+host-suffix,apple-cloudkit.com,proxy
+host-suffix,apple-livephotoskit.com,proxy
+host-suffix,gc.apple.com,proxy
+host-suffix,icloud.apple.com,proxy
+host-suffix,icloud.com,proxy
+host-suffix,iwork.apple.com,proxy
+host-suffix,me.com,proxy
+host-suffix,apple-dns.net,proxy

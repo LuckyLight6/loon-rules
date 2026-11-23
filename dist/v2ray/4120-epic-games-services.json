@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:epicgames.com",
+          "domain:epicgames.dev",
+          "domain:fortnite.com",
+          "domain:unrealengine.com",
+          "domain:unrealtournament.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

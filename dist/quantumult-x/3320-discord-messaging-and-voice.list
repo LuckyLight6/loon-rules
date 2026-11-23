@@ -1,0 +1,28 @@
+# name: discord-messaging-and-voice
+# priority: 3320
+# section: social
+# description: Discord 消息、语音、活动和附件
+# boundary: 仅 Discord 专用域及精确附件存储主机；不给整个 Google Storage 或含 discord 的域名选路
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
+# canonical-rule-count: 15
+# rule-count: 15
+# format: quantumult-x
+# canonical: rules/3320-discord-messaging-and-voice.lsr
+
+host-suffix,dis.gd,proxy
+host-suffix,discord-activities.com,proxy
+host,discord-attachments-uploads-prd.storage.googleapis.com,proxy
+host-suffix,discord.co,proxy
+host-suffix,discord.com,proxy
+host-suffix,discord.gg,proxy
+host-suffix,discord.gift,proxy
+host-suffix,discord.gifts,proxy
+host-suffix,discord.media,proxy
+host-suffix,discordactivities.com,proxy
+host-suffix,discordapp.com,proxy
+host-suffix,discordapp.net,proxy
+host-suffix,discordcdn.com,proxy
+host-suffix,discordpartygames.com,proxy
+host-suffix,discordstatus.com,proxy

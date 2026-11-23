@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "2026.ip138.com",
+        "my.ip.cn",
+        "myip.ipip.net",
+        "myip.la",
+        "www.myip.la",
+        "checkip.amazonaws.com",
+        "checkip.global.api.aws",
+        "api.ipify.org",
+        "api6.ipify.org",
+        "api64.ipify.org",
+        "checkip.spdyn.de",
+        "icanhazip.com",
+        "ident.me",
+        "ifconfig.io",
+        "ip.changeip.com",
+        "ip.nnev.de",
+        "ip4.nnev.de",
+        "ip6.nnev.de",
+        "ipv4.icanhazip.com",
+        "ipv6.icanhazip.com",
+        "v4.ident.me",
+        "v6.ident.me"
+      ]
+    }
+  ]
+}

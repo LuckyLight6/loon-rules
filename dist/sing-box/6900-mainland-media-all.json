@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "bili22.cn",
+        "bili33.cn",
+        "biliapi.com",
+        "biliapi.net",
+        "bilibili.cn",
+        "bilibili.com",
+        "biliimg.com",
+        "bilivideo.cn",
+        "bilivideo.com",
+        "bilivideo.net",
+        "iqiyi.com",
+        "iqiyipic.com",
+        "qiyi.com",
+        "qiyipic.com",
+        "soku.com",
+        "ykimg.com",
+        "youku.com",
+        "qqmusic.com",
+        "y.qq.com",
+        "music.qq.com",
+        "kugou.com",
+        "kugou.net",
+        "music.126.com",
+        "music.126.net",
+        "music.163.com",
+        "music.163.com.163jiasu.com",
+        "douyin.com",
+        "douyinliving.com",
+        "amemv.com",
+        "douyincdn.com",
+        "douyinpic.com",
+        "douyinstatic.com",
+        "douyinvod.com",
+        "idouyinvod.com",
+        "gifshow.com",
+        "kuaishou.com",
+        "kwimgs.com",
+        "douyu.com",
+        "douyu.tv",
+        "douyucdn.cn",
+        "douyucdn2.cn",
+        "douyuscdn.com",
+        "douyutv.com",
+        "edgesrv.com",
+        "huya.com",
+        "msstatic.com"
+      ],
+      "domain": [
+        "ykimg.alicdn.com",
+        "netease.ugcvideoss.ourdvs.com"
+      ]
+    }
+  ]
+}

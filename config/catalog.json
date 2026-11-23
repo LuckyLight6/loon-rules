@@ -263,7 +263,15 @@
         "jetbrains-ides",
         "nodejs-runtime",
         "agent-client-protocol",
-        "workos-authentication"
+        "workos-authentication",
+        "datadog-observability",
+        "sentry-error-monitoring",
+        "statsig-feature-management",
+        "fathom-web-analytics",
+        "hcaptcha-verification",
+        "persona-identity-verification",
+        "yoti-identity-verification",
+        "sift-fraud-prevention"
       ],
       "subheadings": {
         "github-code-and-packages": "海外开发 · 产品细分"
@@ -459,7 +467,8 @@
         "figma-design",
         "trello-boards",
         "atlassian-cloud-services",
-        "proton-suite"
+        "proton-suite",
+        "intercom-customer-support"
       ],
       "subheadings": {
         "notion-workspace": "海外办公、邮件与协作 · 产品细分"
@@ -486,6 +495,7 @@
         "google-play-games",
         "google-software-downloads",
         "google-scholar",
+        "google-firebase-messaging",
         "google-platform-services"
       ],
       "subheadings": {
@@ -1435,34 +1445,24 @@
     },
     {
       "id": "claude-connections",
-      "mode": "managed",
+      "mode": "compiled",
       "policy-hint": "claude",
       "description": "Claude 登录、API、MCP、更新、附件和 Artifact",
-      "boundary": "Claude 自有入口走同一个策略。外部 MCP、Bedrock、Vertex、Microsoft Foundry 和共享支付不归本组；IP 只匹配已核对的裸地址",
+      "boundary": "Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和仍登记为 Anthropic 的 ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude",
       "sources": [
         "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list",
         "https://code.claude.com/docs/en/network-config#network-access-requirements",
-        "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py"
-      ],
-      "kinds": [
-        "DOMAIN",
-        "DOMAIN-SUFFIX",
-        "IP-ASN",
-        "IP-CIDR",
-        "IP-CIDR6"
-      ],
-      "flags": [
-        "no-resolve"
+        "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list",
+        "https://platform.claude.com/docs/en/api/ip-addresses",
+        "https://rdap.arin.net/registry/autnum/399358",
+        "https://academy.claude.com/products/platform"
       ],
       "license": "MIT",
       "notice": "erwanjun--surge-claude-rules.txt",
       "priority": 1010,
       "section": "ai",
-      "feed-sources": [
-        "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list"
-      ],
       "ip-match": "target-ip",
-      "official-hosts": true,
       "index-title": "Anthropic：Claude、Claude Code 与 API（登录、附件、MCP 和更新）",
       "discovery": {
         "inputs": [
@@ -1484,11 +1484,102 @@
                 "base_url"
               ]
             }
+          },
+          {
+            "source": "https://academy.claude.com/products/platform",
+            "family": "vendor-claude-connections",
+            "authority": true,
+            "recipe": {
+              "format": "product-role-links",
+              "labels": [
+                "Developer blog (opens in new tab)"
+              ]
+            }
           }
         ]
       },
       "selection": "detailed",
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list",
+          "roots": [
+            "anthropic.com",
+            "claude.ai",
+            "claude.com",
+            "claude.app",
+            "clau.de",
+            "claudemcpclient.com",
+            "claudemcpcontent.com",
+            "claudeusercontent.com"
+          ],
+          "exact": [
+            "anthropic.com.cdn.cloudflare.net",
+            "servd-anthropic-website.b-cdn.net",
+            "anthropic.auth0.com",
+            "anthropic-com.ghost.io"
+          ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list",
+          "domain-lines-only": true,
+          "roots": [
+            "claude.dev",
+            "claude.site",
+            "claude.new",
+            "claudeacademy.com"
+          ]
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://platform.claude.com/docs/en/api/ip-addresses",
+          "format": "section-network-blocks",
+          "section": "inbound-ip-addresses",
+          "families": [
+            4,
+            6
+          ],
+          "min-prefix": {
+            "4": 16,
+            "6": 24
+          }
+        },
+        {
+          "source": "https://rdap.arin.net/registry/autnum/399358",
+          "format": "rdap-autnum",
+          "asn": 399358,
+          "registrant-ids": [
+            "AP-2440"
+          ],
+          "registrant-name": "Anthropic, PBC"
+        },
+        {
+          "source": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py",
+          "format": "python-sdk-endpoints",
+          "classes": [
+            "Anthropic",
+            "AsyncAnthropic"
+          ],
+          "fields": [
+            "base_url"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "feed-sources": [
+        "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list"
+      ],
+      "kinds": [
+        "DOMAIN",
+        "DOMAIN-SUFFIX",
+        "IP-ASN",
+        "IP-CIDR",
+        "IP-CIDR6"
+      ],
+      "flags": [
+        "no-resolve"
+      ]
     },
     {
       "id": "chatgpt-connections",
@@ -1815,7 +1906,7 @@
       "section": "ai",
       "mode": "compiled",
       "description": "Grokipedia AI 百科站点",
-      "boundary": "百科页面与内容；共用账号登录由 1040 xAI 处理",
+      "boundary": "百科页面与内容；共用账号登录由 xAI 账号规则处理",
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
         "https://grokipedia.com/"
@@ -1960,7 +2051,7 @@
       "mode": "compiled",
       "policy-hint": "ai-overseas",
       "description": "Muse 独立个人助手与其专用入口",
-      "boundary": "只匹配 muse.ai。Meta AI 本站是 1080；不把 Meta 社交 App 或 Muse 连接到的第三方网站归进来",
+      "boundary": "只匹配 muse.ai；Meta AI 本站单独处理，不把 Meta 社交 App 或 Muse 连接到的第三方网站归进来",
       "sources": [
         "https://muse.ai/",
         "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
@@ -2503,7 +2594,7 @@
       "section": "ai",
       "policy-hint": "global",
       "description": "ai.com 的个人 AI 代理",
-      "boundary": "ai.com 是独立服务，不归 ChatGPT 或 Claude。海外 AI 统一出口时选 1000 即可",
+      "boundary": "ai.com 是独立服务，不归 ChatGPT 或 Claude；海外 AI 统一出口时可选择海外 AI 合集",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
         "https://ai.com/start"
@@ -2525,7 +2616,7 @@
       "section": "ai",
       "mode": "compiled",
       "description": "JetBrains AI",
-      "boundary": "AI 专用域和官方明确列出的海外后端；中国区 API 另列 5160，IDE、账号和插件市场仍归 3090，不认领共用配置服务",
+      "boundary": "AI 专用域和官方明确列出的海外后端；中国区 API 单列，IDE、账号和插件市场由 JetBrains IDE 规则处理，不认领共用配置服务",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains-ai.list",
         "https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json",
@@ -5338,7 +5429,7 @@
       "mode": "managed",
       "policy-hint": "global",
       "description": "iCloud Private Relay（隐私中继）与 Apple DNS 别名",
-      "boundary": "在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 1230 处理，不包含整个 iCloud 或 Apple DNS 后缀",
+      "boundary": "在 iCloud 同步前识别隐私中继；PCC 和系统 AI 扩展由 Apple Intelligence 规则处理，不包含整个 iCloud 或 Apple DNS 后缀",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloudPrivateRelay/iCloudPrivateRelay.list"
       ],
@@ -5893,7 +5984,7 @@
       "selection": "detailed",
       "policy-hint": "apple-account",
       "description": "Find My 设备与朋友查找的已识别入口",
-      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号在 2100，共用 iCloud 网页、推送与静态素材不并入",
+      "boundary": "查找专用主机与已核对的分片模式先于 iCloud 共用域；定位信号由定位服务规则处理，共用 iCloud 网页、推送与静态素材不并入",
       "sources": [
         "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr",
         "https://support.apple.com/en-us/104978",
@@ -6221,7 +6312,7 @@
       "mode": "compiled",
       "policy-hint": "apple-media",
       "description": "Apple Music、广播及共用 API 与应用门户",
-      "boundary": "保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量。明确音频传输在 2180",
+      "boundary": "保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量；明确音频传输由 Apple Music 音频分发规则处理",
       "sources": [
         "https://rules.xkww3n.cyou/classical/apple-music.txt",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr",
@@ -6338,7 +6429,7 @@
       "mode": "compiled",
       "policy-hint": "apple-account",
       "description": "系统更新目录、检查、授权与登记",
-      "boundary": "更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交在 2330，二进制包体在 2240，不把整组当成匿名静态下载",
+      "boundary": "更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交和二进制包体各有专表，不把整组当成匿名静态下载",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list",
@@ -6611,7 +6702,7 @@
       "section": "apple",
       "mode": "compiled",
       "description": "Apple 商店与媒体共用的静态内容",
-      "boundary": "mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包。s.mzstatic.com 应先命中 2020；静态图片别名不保证专供大陆",
+      "boundary": "mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包；s.mzstatic.com 应先命中商店交易规则，静态图片别名不保证专供大陆",
       "sources": [
         "https://support.apple.com/en-us/101555",
         "https://royli.dev/blog/2019/better-proxy-rules-for-apple-services",
@@ -6677,7 +6768,7 @@
       "mode": "compiled",
       "policy-hint": "direct",
       "description": "设备引导、MDM、校时、系统 DNS 与公共素材",
-      "boundary": "保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 2320，反馈诊断在 2330，不把本组称为匿名 CDN",
+      "boundary": "保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活、设备证书登记与反馈诊断另有专表，不把本组称为匿名 CDN",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list",
         "https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list",
@@ -6973,7 +7064,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "GitHub 代码托管、API、Actions 与容器镜像",
-      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符。Copilot 接口先由 1060 匹配，npm 公共仓库仍归 3030",
+      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符；Copilot 接口先由专项匹配，npm 公共仓库另有专表",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr",
         "https://api.github.com/meta"
@@ -7585,10 +7676,16 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Telegram 登录、消息、文件与服务器地址",
-      "boundary": "核心域名与官方 IP 段使用同一策略；网段只处理已有目标 IP，使用 no-resolve；不收第三方 ASN、关键词和通用 CDN",
+      "boundary": "登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册持有人仍为 Telegram 的 ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr",
-        "https://core.telegram.org/resources/cidr.txt"
+        "https://core.telegram.org/resources/cidr.txt",
+        "https://core.telegram.org/bug-bounty",
+        "https://rdap.db.ripe.net/autnum/211157",
+        "https://rdap.db.ripe.net/autnum/44907",
+        "https://rdap.db.ripe.net/autnum/59930",
+        "https://rdap.db.ripe.net/autnum/62014",
+        "https://rdap.db.ripe.net/autnum/62041"
       ],
       "projection": [
         {
@@ -7611,7 +7708,62 @@
       "priority": 3310,
       "section": "social",
       "ip-match": "target-ip",
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://core.telegram.org/bug-bounty",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "Below is a list of Telegram domains which can be considered in scope."
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://rdap.db.ripe.net/autnum/211157",
+          "format": "rdap-autnum",
+          "asn": 211157,
+          "registrant-ids": [
+            "ORG-TMI5-RIPE"
+          ],
+          "registrant-name": "Telegram Messenger Inc"
+        },
+        {
+          "source": "https://rdap.db.ripe.net/autnum/44907",
+          "format": "rdap-autnum",
+          "asn": 44907,
+          "registrant-ids": [
+            "ORG-TMI4-RIPE"
+          ],
+          "registrant-name": "Telegram Messenger Inc"
+        },
+        {
+          "source": "https://rdap.db.ripe.net/autnum/59930",
+          "format": "rdap-autnum",
+          "asn": 59930,
+          "registrant-ids": [
+            "ORG-TMI4-RIPE"
+          ],
+          "registrant-name": "Telegram Messenger Inc"
+        },
+        {
+          "source": "https://rdap.db.ripe.net/autnum/62014",
+          "format": "rdap-autnum",
+          "asn": 62014,
+          "registrant-ids": [
+            "ORG-TMI4-RIPE"
+          ],
+          "registrant-name": "Telegram Messenger Inc"
+        },
+        {
+          "source": "https://rdap.db.ripe.net/autnum/62041",
+          "format": "rdap-autnum",
+          "asn": 62041,
+          "registrant-ids": [
+            "ORG-TMI4-RIPE"
+          ],
+          "registrant-name": "Telegram Messenger Inc"
+        }
+      ]
     },
     {
       "id": "discord-messaging-and-voice",
@@ -7718,7 +7870,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "X / Twitter 社交与图像视频",
-      "boundary": "Grok 专用的 grok.x.com 由 1040 在前截取。只接产品和短链，不使用 twitter 关键词或广泛网段",
+      "boundary": "Grok 专用的 grok.x.com 先由 xAI 规则匹配；只接产品和短链，不使用 twitter 关键词或广泛网段",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr"
       ],
@@ -7752,7 +7904,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "WeChat 国际网站、支付与部分 App 连接",
-      "boundary": "wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由 5500 处理",
+      "boundary": "wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由微信国内及共用规则处理",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list"
       ],
@@ -8871,7 +9023,7 @@
       "selection": "detailed",
       "policy-hint": "media",
       "description": "爱奇艺国际版 iQIYI 与专用国际 API",
-      "boundary": "国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 仍由 5920 处理",
+      "boundary": "国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 由国内版规则处理",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
         "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list"
@@ -9075,7 +9227,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Steam 国际商店、社区、联机和下载",
-      "boundary": "国内下载镜像由 6100 处理。社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段",
+      "boundary": "国内下载镜像单列；社区素材和直播只收 Steam 专用主机，不匹配整个第三方 CDN 或共享网段",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr",
         "https://store.steampowered.com/"
@@ -10341,7 +10493,7 @@
       "section": "microsoft",
       "mode": "compiled",
       "description": "Microsoft Visual Studio Code",
-      "boundary": "编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 依赖下载归 4820，GitHub 文件归 3000，Copilot 归 1060。实验和崩溃统计不按核心入口收录",
+      "boundary": "编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 下载由 Microsoft 共用服务处理，GitHub 文件和 Copilot 各有专项；实验和崩溃统计不按核心入口收录",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list",
         "https://code.visualstudio.com/docs/setup/network"
@@ -11396,7 +11548,7 @@
       "selection": "detailed",
       "policy-hint": "ai-cn",
       "description": "小米 MiMo · 国内计划与共用 API",
-      "boundary": "MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在 1510",
+      "boundary": "MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在国际版规则中",
       "sources": [
         "https://models.dev/api.json",
         "https://platform.xiaomimimo.com/"
@@ -12000,7 +12152,7 @@
       "section": "media",
       "mode": "compiled",
       "description": "爱奇艺国内版",
-      "boundary": "国内版与专用素材；与 3920 配套时国际专用子域先匹配。单用本表不能从 iqiyi.com 父域排除国际业务",
+      "boundary": "国内版与专用素材；同时使用国际版规则时，国际专用子域先匹配；单用本表不能从 iqiyi.com 父域排除国际业务",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi.list"
       ],
@@ -12278,7 +12430,7 @@
       "mode": "compiled",
       "policy-hint": "domestic",
       "description": "Steam 中国下载镜像与蒸汽平台内容",
-      "boundary": "只收已确认的国内下载镜像；游戏账户、商店和社区归 4100。不按第三方 CDN 整域判断",
+      "boundary": "只收已确认的国内下载镜像；游戏账户、商店和社区归 Steam 国际平台规则，不按第三方 CDN 整域判断",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr"
       ],
@@ -13546,6 +13698,376 @@
         "microsoft-account-authentication",
         "microsoft-platform-services"
       ]
+    },
+    {
+      "id": "datadog-observability",
+      "priority": 3140,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Datadog 监控、日志与浏览器 SDK",
+      "boundary": "读取官方地区站点、浏览器接收端和 SDK 分发范围；各区域自动跟随表格更新，不把遥测说成 Claude 专用认证",
+      "sources": [
+        "https://docs.datadoghq.com/getting_started/site/",
+        "https://docs.datadoghq.com/real_user_monitoring/guide/browser-sdk-upgrade/"
+      ],
+      "product-probes": [
+        "us5.datadoghq.com",
+        "browser-intake-us5-datadoghq.com",
+        "quota.browser-intake-us5-datadoghq.com"
+      ],
+      "extract": [
+        {
+          "source": "https://docs.datadoghq.com/getting_started/site/",
+          "format": "domain-column-table",
+          "section": "access-the-datadog-site",
+          "headers": [
+            "Site",
+            "Site URL",
+            "Site Parameter",
+            "Location"
+          ],
+          "column": "Site Parameter",
+          "domain-scope": "domain-and-subdomains"
+        },
+        {
+          "source": "https://docs.datadoghq.com/real_user_monitoring/guide/browser-sdk-upgrade/",
+          "format": "csp-origins",
+          "sections": [
+            "intake-domains"
+          ],
+          "directives": [
+            "connect-src"
+          ],
+          "domain-scope": "domain-and-subdomains"
+        },
+        {
+          "source": "https://docs.datadoghq.com/real_user_monitoring/guide/browser-sdk-upgrade/",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "datadoghq-browser-agent.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sentry-error-monitoring",
+      "priority": 3150,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Sentry 错误监控、API 与 SDK",
+      "boundary": "Sentry 共享平台、地区 API 和 SDK 素材；不把整个平台认作任一接入应用",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list"
+      ],
+      "product-probes": [
+        "us.sentry.io",
+        "de.sentry.io",
+        "browser.sentry-cdn.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list",
+          "domain-lines-only": true,
+          "roots": [
+            "getsentry.com",
+            "sentry.dev",
+            "sentry.io",
+            "sentry-cdn.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statsig-feature-management",
+      "priority": 3160,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Statsig 功能开关、实验、配置与事件 API",
+      "boundary": "按官方服务清单跟随主机与专用存储租户；共享 DNS 另归解析器，不扩大到整个 Azure",
+      "sources": [
+        "https://docs.statsig.com/infrastructure/statsig_domains"
+      ],
+      "product-probes": [
+        "statsigapi.net",
+        "api.statsig.com",
+        "console.statsig.com",
+        "idliststorage.blob.core.windows.net"
+      ],
+      "extract": [
+        {
+          "source": "https://docs.statsig.com/infrastructure/statsig_domains",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "Statsig SDKs use these domains to communicate with the backend"
+          ]
+        },
+        {
+          "source": "https://docs.statsig.com/infrastructure/statsig_domains",
+          "format": "section-code-domains",
+          "sections": [
+            "statsig-console",
+            "server-side-apis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fathom-web-analytics",
+      "priority": 3170,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Fathom 网站访问统计",
+      "boundary": "Fathom 服务与自有统计脚本；客户自定义代理和网站不归本组，分类不代表免于用户选择的隐私拦截",
+      "sources": [
+        "https://usefathom.com/"
+      ],
+      "product-probes": [
+        "usefathom.com",
+        "cdn.usefathom.com"
+      ],
+      "extract": [
+        {
+          "source": "https://usefathom.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "Fathom Analytics"
+        }
+      ]
+    },
+    {
+      "id": "hcaptcha-verification",
+      "priority": 3180,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "hcaptcha 人机验证与服务状态",
+      "boundary": "验证服务与已列状态站；不接管使用验证码的客户网站，未核实归属的其它产品不并入",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list"
+      ],
+      "product-probes": [
+        "hcaptcha.com",
+        "js.hcaptcha.com",
+        "api.hcaptcha.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list",
+          "domain-lines-only": true,
+          "roots": [
+            "hcaptcha.com",
+            "hcaptchastatus.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "persona-identity-verification",
+      "priority": 3190,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Persona 身份、企业与年龄验证",
+      "boundary": "Persona 自有服务命名空间；官方嵌入文档确认范围，不把第三方商户或客户账号归给 Persona",
+      "sources": [
+        "https://docs.withpersona.com/embedded-flow-troubleshooting-common-issues"
+      ],
+      "product-probes": [
+        "withpersona.com",
+        "inquiry.withpersona.com"
+      ],
+      "extract": [
+        {
+          "source": "https://docs.withpersona.com/embedded-flow-troubleshooting-common-issues",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "withpersona.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yoti-identity-verification",
+      "priority": 3200,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Yoti 数字身份与年龄验证",
+      "boundary": "Yoti 已确认的自有站点与子域；客户网站和未证实的相似域名不并入",
+      "sources": [
+        "https://www.yoti.com/"
+      ],
+      "product-probes": [
+        "yoti.com",
+        "www.yoti.com"
+      ],
+      "extract": [
+        {
+          "source": "https://www.yoti.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "Yoti"
+        }
+      ]
+    },
+    {
+      "id": "sift-fraud-prevention",
+      "priority": 3210,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Sift 反欺诈、设备与风险 API",
+      "boundary": "Sift 自有站点、SDK 与旧品牌 API 命名空间；不接管使用风控服务的商户，不称为 Claude 自有认证",
+      "sources": [
+        "https://sift.com/",
+        "https://developers.sift.com/guides/payment-gateway"
+      ],
+      "product-probes": [
+        "siftscience.com",
+        "api3.siftscience.com",
+        "cdn.sift.com"
+      ],
+      "extract": [
+        {
+          "source": "https://sift.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "Sift"
+        },
+        {
+          "source": "https://developers.sift.com/guides/payment-gateway",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "siftscience.com"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intercom-customer-support",
+      "priority": 4360,
+      "section": "productivity",
+      "routing-group": "overseas-productivity",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Intercom 客服、会话、附件与实时通信",
+      "boundary": "核心站点与官方 CSP 中 Intercom 品牌来源；地区 CDN 和附件范围跟随文档，不收 YouTube、Vimeo 等外部嵌入产品",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list",
+        "https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy"
+      ],
+      "product-probes": [
+        "intercom.io",
+        "intercom-messenger.com",
+        "uploads.intercomusercontent.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list",
+          "domain-lines-only": true,
+          "roots": [
+            "intercom.com",
+            "intercom.io",
+            "intercomassets.com",
+            "intercomcdn.com"
+          ]
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy",
+          "format": "csp-origins",
+          "brand-prefixes": [
+            "intercom"
+          ],
+          "directives": [
+            "script-src",
+            "connect-src",
+            "child-src",
+            "font-src",
+            "form-action",
+            "media-src",
+            "img-src"
+          ],
+          "domain-scope": "domain-and-subdomains",
+          "protect-from-reject": true
+        }
+      ]
+    },
+    {
+      "id": "google-firebase-messaging",
+      "priority": 4585,
+      "section": "google",
+      "routing-group": "google-services",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Google Firebase Cloud Messaging 推送与令牌注册",
+      "boundary": "Web、iOS SDK 与官方 API 元数据读取推送专用主机；不把设备配置、Firebase 安装标识或 Google 网段都判作推送；iOS 通知的 APNs 接收路径仍在 Apple",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list",
+        "https://raw.githubusercontent.com/googleapis/google-api-python-client/main/googleapiclient/discovery_cache/documents/fcm.v1.json",
+        "https://raw.githubusercontent.com/firebase/firebase-ios-sdk/main/FirebaseMessaging/Sources/FIRMessagingUtilities.m",
+        "https://raw.githubusercontent.com/firebase/firebase-js-sdk/master/packages/messaging/src/util/constants.ts"
+      ],
+      "product-probes": [
+        "fcmtoken.googleapis.com",
+        "fcmregistrations.googleapis.com",
+        "fcm.googleapis.com",
+        "alt1-mtalk.google.com"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list",
+          "domain-lines-only": true,
+          "all-domains": true
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/googleapis/google-api-python-client/main/googleapiclient/discovery_cache/documents/fcm.v1.json",
+          "format": "api-discovery",
+          "name": "fcm",
+          "version": "v1",
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/firebase/firebase-ios-sdk/main/FirebaseMessaging/Sources/FIRMessagingUtilities.m",
+          "format": "c-function-url",
+          "function": "FIRMessagingTokenRegisterServer",
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/firebase/firebase-js-sdk/master/packages/messaging/src/util/constants.ts",
+          "format": "code-api-endpoints",
+          "markup": "source",
+          "api-fields": [
+            "ENDPOINT"
+          ],
+          "protect-from-reject": true
+        }
+      ]
     }
   ],
   "detailed": [
@@ -13687,6 +14209,14 @@
     "nodejs-runtime",
     "agent-client-protocol",
     "workos-authentication",
+    "datadog-observability",
+    "sentry-error-monitoring",
+    "statsig-feature-management",
+    "fathom-web-analytics",
+    "hcaptcha-verification",
+    "persona-identity-verification",
+    "yoti-identity-verification",
+    "sift-fraud-prevention",
     "signal-messenger",
     "line-messenger",
     "slack-workspaces",
@@ -13731,7 +14261,9 @@
     "trello-boards",
     "atlassian-cloud-services",
     "proton-suite",
+    "intercom-customer-support",
     "google-scholar",
+    "google-firebase-messaging",
     "microsoft-vscode",
     "microsoft-power-bi",
     "qualcomm-mainland",
@@ -16231,6 +16763,105 @@
     ],
     "api.together.xyz": [
       "together-model-services"
+    ],
+    "claude.dev": [
+      "claude-connections"
+    ],
+    "claude.site": [
+      "claude-connections"
+    ],
+    "claude.new": [
+      "claude-connections"
+    ],
+    "claudeacademy.com": [
+      "claude-connections"
+    ],
+    "us5.datadoghq.com": [
+      "datadog-observability"
+    ],
+    "browser-intake-us5-datadoghq.com": [
+      "datadog-observability"
+    ],
+    "quota.browser-intake-us5-datadoghq.com": [
+      "datadog-observability"
+    ],
+    "us.sentry.io": [
+      "sentry-error-monitoring"
+    ],
+    "de.sentry.io": [
+      "sentry-error-monitoring"
+    ],
+    "browser.sentry-cdn.com": [
+      "sentry-error-monitoring"
+    ],
+    "statsigapi.net": [
+      "statsig-feature-management"
+    ],
+    "api.statsig.com": [
+      "statsig-feature-management"
+    ],
+    "console.statsig.com": [
+      "statsig-feature-management"
+    ],
+    "idliststorage.blob.core.windows.net": [
+      "statsig-feature-management"
+    ],
+    "usefathom.com": [
+      "fathom-web-analytics"
+    ],
+    "cdn.usefathom.com": [
+      "fathom-web-analytics"
+    ],
+    "hcaptcha.com": [
+      "hcaptcha-verification"
+    ],
+    "js.hcaptcha.com": [
+      "hcaptcha-verification"
+    ],
+    "api.hcaptcha.com": [
+      "hcaptcha-verification"
+    ],
+    "withpersona.com": [
+      "persona-identity-verification"
+    ],
+    "inquiry.withpersona.com": [
+      "persona-identity-verification"
+    ],
+    "yoti.com": [
+      "yoti-identity-verification"
+    ],
+    "www.yoti.com": [
+      "yoti-identity-verification"
+    ],
+    "siftscience.com": [
+      "sift-fraud-prevention"
+    ],
+    "api3.siftscience.com": [
+      "sift-fraud-prevention"
+    ],
+    "cdn.sift.com": [
+      "sift-fraud-prevention"
+    ],
+    "intercom.io": [
+      "intercom-customer-support"
+    ],
+    "intercom-messenger.com": [
+      "intercom-customer-support"
+    ],
+    "uploads.intercomusercontent.com": [
+      "intercom-customer-support"
+    ],
+    "fcmtoken.googleapis.com": [
+      "google-firebase-messaging"
+    ],
+    "fcmregistrations.googleapis.com": [
+      "google-firebase-messaging"
+    ],
+    "fcm.googleapis.com": [
+      "google-firebase-messaging"
+    ],
+    "alt1-mtalk.google.com": [
+      "google-firebase-messaging"
     ]
   },
   "shared-negatives": [
@@ -16681,6 +17312,14 @@
         3110,
         3120,
         3130,
+        3140,
+        3150,
+        3160,
+        3170,
+        3180,
+        3190,
+        3200,
+        3210,
         6300,
         6310,
         6320,
@@ -16765,6 +17404,7 @@
         4560,
         4570,
         4580,
+        4585,
         4590
       ]
     },
@@ -16810,7 +17450,8 @@
         4320,
         4330,
         4340,
-        4350
+        4350,
+        4360
       ]
     },
     {
@@ -17525,10 +18166,7 @@
       "extended-ad-and-tracking"
     ],
     "cloudflare-dns.com": [
-      "apple-and-ai-privacy-exceptions",
-      "general-ad-and-tracking",
-      "extended-ad-and-tracking",
-      "ip-egress-checks"
+      "statsig-feature-management"
     ],
     "one.one.one.one": [
       "apple-and-ai-privacy-exceptions",
@@ -18452,6 +19090,139 @@
         "instagram-social"
       ],
       "domain-lines-only": true
+    },
+    {
+      "id": "telegram-official-domain-scope",
+      "source": "https://core.telegram.org/bug-bounty",
+      "recipe": {
+        "format": "purpose-domain-lists",
+        "labels": [
+          "Below is a list of Telegram domains which can be considered in scope."
+        ]
+      },
+      "owners": [
+        "telegram-messaging"
+      ]
+    },
+    {
+      "id": "datadog-observability-source-58",
+      "source": "https://docs.datadoghq.com/getting_started/site/",
+      "owners": [
+        "datadog-observability"
+      ],
+      "recipe": {
+        "format": "domain-column-table",
+        "section": "access-the-datadog-site",
+        "headers": [
+          "Site",
+          "Site URL",
+          "Site Parameter",
+          "Location"
+        ],
+        "column": "Site Parameter",
+        "domain-scope": "domain-and-subdomains"
+      }
+    },
+    {
+      "id": "datadog-observability-source-59",
+      "source": "https://docs.datadoghq.com/real_user_monitoring/guide/browser-sdk-upgrade/",
+      "owners": [
+        "datadog-observability"
+      ],
+      "recipe": {
+        "format": "csp-origins",
+        "sections": [
+          "intake-domains"
+        ],
+        "directives": [
+          "connect-src"
+        ],
+        "domain-scope": "domain-and-subdomains"
+      }
+    },
+    {
+      "id": "sentry-error-monitoring-source-60",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list",
+      "owners": [
+        "sentry-error-monitoring"
+      ]
+    },
+    {
+      "id": "statsig-feature-management-source-61",
+      "source": "https://docs.statsig.com/infrastructure/statsig_domains",
+      "owners": [
+        "statsig-feature-management"
+      ],
+      "recipe": {
+        "format": "purpose-domain-lists",
+        "labels": [
+          "Statsig SDKs use these domains to communicate with the backend"
+        ]
+      },
+      "other-owners": {
+        "DOMAIN,cloudflare-dns.com": "cloudflare-public-dns"
+      }
+    },
+    {
+      "id": "statsig-feature-management-source-62",
+      "source": "https://docs.statsig.com/infrastructure/statsig_domains",
+      "owners": [
+        "statsig-feature-management"
+      ],
+      "recipe": {
+        "format": "section-code-domains",
+        "sections": [
+          "statsig-console",
+          "server-side-apis"
+        ]
+      }
+    },
+    {
+      "id": "hcaptcha-verification-source-63",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list",
+      "owners": [
+        "hcaptcha-verification"
+      ],
+      "reviewed-outside": {
+        "DOMAIN-SUFFIX,botstop.com": "尚未取得足以确认本组产品归属的资料，不按名称扩大范围"
+      }
+    },
+    {
+      "id": "intercom-customer-support-source-64",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list",
+      "owners": [
+        "intercom-customer-support"
+      ]
+    },
+    {
+      "id": "intercom-customer-support-source-65",
+      "source": "https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy",
+      "owners": [
+        "intercom-customer-support"
+      ],
+      "recipe": {
+        "format": "csp-origins",
+        "brand-prefixes": [
+          "intercom"
+        ],
+        "directives": [
+          "script-src",
+          "connect-src",
+          "child-src",
+          "font-src",
+          "form-action",
+          "media-src",
+          "img-src"
+        ],
+        "domain-scope": "domain-and-subdomains"
+      }
+    },
+    {
+      "id": "google-firebase-messaging-source-66",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list",
+      "owners": [
+        "google-firebase-messaging"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -18952,6 +19723,12 @@
             "name": "Google 搜索、安全浏览 API 和共享平台兜底",
             "rules": [
               "google-platform-services"
+            ]
+          },
+          {
+            "name": "Google Firebase Cloud Messaging 推送与令牌注册",
+            "rules": [
+              "google-firebase-messaging"
             ]
           }
         ]
@@ -21772,6 +22549,114 @@
             "name": "华为账户、设备与共用服务",
             "rules": [
               "huawei-shared-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "datadog-observability",
+        "name": "Datadog",
+        "products": [
+          {
+            "name": "Datadog 监控、日志与浏览器 SDK",
+            "rules": [
+              "datadog-observability"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sentry-error-monitoring",
+        "name": "Sentry",
+        "products": [
+          {
+            "name": "Sentry 错误监控、API 与 SDK",
+            "rules": [
+              "sentry-error-monitoring"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "statsig-feature-management",
+        "name": "Statsig",
+        "products": [
+          {
+            "name": "Statsig 功能开关、实验、配置与事件 API",
+            "rules": [
+              "statsig-feature-management"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fathom-web-analytics",
+        "name": "Fathom Analytics",
+        "products": [
+          {
+            "name": "Fathom 网站访问统计",
+            "rules": [
+              "fathom-web-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hcaptcha-verification",
+        "name": "hcaptcha",
+        "products": [
+          {
+            "name": "hcaptcha 人机验证与服务状态",
+            "rules": [
+              "hcaptcha-verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "persona-identity-verification",
+        "name": "Persona",
+        "products": [
+          {
+            "name": "Persona 身份、企业与年龄验证",
+            "rules": [
+              "persona-identity-verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "yoti-identity-verification",
+        "name": "Yoti",
+        "products": [
+          {
+            "name": "Yoti 数字身份与年龄验证",
+            "rules": [
+              "yoti-identity-verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sift-fraud-prevention",
+        "name": "Sift",
+        "products": [
+          {
+            "name": "Sift 反欺诈、设备与风险 API",
+            "rules": [
+              "sift-fraud-prevention"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intercom-customer-support",
+        "name": "Intercom",
+        "products": [
+          {
+            "name": "Intercom 客服、会话、附件与实时通信",
+            "rules": [
+              "intercom-customer-support"
             ]
           }
         ]

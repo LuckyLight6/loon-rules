@@ -1,0 +1,23 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.hunyuan.cloud.tencent.com",
+          "full:tokenhub.tencentcloudapi.com",
+          "full:tokenhub.ap-guangzhou.tencentcloudapi.com",
+          "full:tokenhub.ap-shanghai.tencentcloudapi.com",
+          "full:tokenhub.ap-nanjing.tencentcloudapi.com",
+          "full:tokenhub.ap-beijing.tencentcloudapi.com",
+          "full:tokenhub.ap-chengdu.tencentcloudapi.com",
+          "full:tokenhub.ap-chongqing.tencentcloudapi.com",
+          "full:tokenhub.ap-shanghai-fsi.tencentcloudapi.com",
+          "full:tokenhub.ap-shenzhen-fsi.tencentcloudapi.com",
+          "full:yuanbao.tencent.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+# name: openclaw-product-services
+# priority: 1790
+# section: ai
+# description: OpenClaw 产品与发布服务
+# boundary: 只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list
+# source: https://openclaw.ai/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/1790-openclaw-product-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,openclaw.ai"

@@ -1,0 +1,20 @@
+# name: kimi-mainland
+# priority: 6020
+# section: ai
+# description: 月之暗面 Kimi · 国内入口
+# boundary: 按已核实的国内产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://platform.kimi.com/docs/get-api-key
+# source: https://platform.kimi.ai/docs/get-your-api-key
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr
+# source: https://models.dev/api.json
+# canonical-rule-count: 4
+# rule-count: 4
+# format: surge-compatible
+# canonical: rules/6020-kimi-mainland.lsr
+
+DOMAIN-SUFFIX,moonshot.cn
+DOMAIN-SUFFIX,kimichat.com
+DOMAIN,platform.kimi.com
+DOMAIN,api.kimi.com

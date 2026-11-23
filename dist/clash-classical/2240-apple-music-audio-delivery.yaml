@@ -1,0 +1,20 @@
+# name: apple-music-audio-delivery
+# priority: 2240
+# section: apple
+# description: Apple Music 已识别音频交付主机
+# boundary: 社区资料中的明确音频传输主机，不包含 Music API、账户和整个 itunes.apple.com。缓存是否在大陆不能由域名推定
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://rules.xkww3n.cyou/classical/apple-music.txt
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
+# canonical-rule-count: 5
+# rule-count: 5
+# format: clash-classical
+# canonical: rules/2240-apple-music-audio-delivery.lsr
+
+payload:
+  - "DOMAIN,aod.itunes.apple.com"
+  - "DOMAIN,aod-ssl.itunes.apple.com"
+  - "DOMAIN,audio.itunes.apple.com"
+  - "DOMAIN,audio-ssl.itunes.apple.com"
+  - "DOMAIN,streamingaudio.itunes.apple.com"

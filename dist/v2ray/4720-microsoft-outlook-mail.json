@@ -1,0 +1,22 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:outlook.com",
+          "full:outlook.live.com",
+          "full:outlook.cloud.microsoft",
+          "full:outlook.office.com",
+          "full:outlook.office365.com",
+          "full:smtp.office365.com",
+          "domain:acompli.net",
+          "domain:outlookmobile.com",
+          "regexp:(?i)^.*\\.mx\\.microsoft$",
+          "regexp:(?i)^.*\\.outlook\\.com$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

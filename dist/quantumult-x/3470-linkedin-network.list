@@ -1,0 +1,25 @@
+# name: linkedin-network
+# priority: 3470
+# section: social
+# description: LinkedIn
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list
+# canonical-rule-count: 12
+# rule-count: 12
+# format: quantumult-x
+# canonical: rules/3470-linkedin-network.lsr
+
+host,e122475.dscg.akamaiedge.net,proxy
+host,licdn.cn.cdn20.com,proxy
+host,linkedin.sc.omtrdc.net,proxy
+host-suffix,bizographics.com,proxy
+host-suffix,licdn.com,proxy
+host-suffix,linkedin.at,proxy
+host-suffix,linkedin.com,proxy
+host-suffix,lnkd.in,proxy
+host-suffix,l-0005.dc-msedge.net,proxy
+host-suffix,l-0005.l-msedge.net,proxy
+host-suffix,licdn.cn,proxy
+host-suffix,linkedin.cn,proxy

@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:dl.delivery.mp.microsoft.com",
+          "full:download.windowsupdate.com",
+          "full:download.windowsupdate.com.delivery.microsoft.com",
+          "full:wu-f-net.trafficmanager.net",
+          "full:definitionupdates.microsoft.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

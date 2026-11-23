@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:amp-api.media.apple.com",
+          "full:mvod.itunes.apple.com",
+          "domain:music.apple.com",
+          "domain:applemusic.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

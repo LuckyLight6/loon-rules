@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "ubi.com",
+        "ubisoft.com",
+        "uplay.com",
+        "ubisoftconnect.com"
+      ]
+    }
+  ]
+}

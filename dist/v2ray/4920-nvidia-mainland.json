@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:geforce.cn",
+          "domain:gputechconf.cn",
+          "domain:nvidia.cn",
+          "full:cn.download.nvidia.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

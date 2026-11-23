@@ -1,0 +1,22 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:drive-thirdparty.google.com",
+          "full:filepickup.google.com",
+          "domain:docs.google.com",
+          "domain:drive.google.com",
+          "domain:googledrive.com",
+          "full:drive.usercontent.google.com",
+          "full:drive-data-export.usercontent.google.com",
+          "full:drive-data-export-eu.usercontent.google.com",
+          "full:sheets.google.com",
+          "full:slides.google.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+# name: apple-system-connectivity
+# priority: 2330
+# section: apple
+# description: 设备引导、MDM、校时、系统 DNS 与公共素材
+# boundary: 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活、设备证书登记与反馈诊断另有专表，不把本组称为匿名 CDN
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# canonical-rule-count: 39
+# rule-count: 39
+# format: quantumult-x
+# canonical: rules/2330-apple-system-connectivity.lsr
+
+host,doh.dns.apple.com,proxy
+host,apple-native-relay.apple.com,proxy
+host,konut-cdn.apple.com,proxy
+host-suffix,gnip.apple.com,proxy
+host-suffix,time.apple.com,proxy
+host,wps.apple.com,proxy
+host-suffix,sandbox.apple.com,proxy
+host-suffix,apple-mapkit.com,proxy
+host-suffix,business.apple.com,proxy
+host-suffix,school.apple.com,proxy
+host,www.apple.com.cn,proxy
+host-suffix,cn.apple.com,proxy
+host,static.ips.apple.com,proxy
+host,sq-device.apple.com,proxy
+host,tbsc.apple.com,proxy
+host,time-ios.apple.com,proxy
+host,time-macos.apple.com,proxy
+host,deviceenrollment.apple.com,proxy
+host,deviceservices-external.apple.com,proxy
+host,iprofiles.apple.com,proxy
+host,mdmenrollment.apple.com,proxy
+host,axm-servicediscovery.apple.com,proxy
+host,api.ent.apple.com,proxy
+host,api.edu.apple.com,proxy
+host,upload.appleschoolcontent.com,proxy
+host,api-business.apple.com,proxy
+host,api-school.apple.com,proxy
+host,axm-adm-enroll.apple.com,proxy
+host,axm-adm-mdm.apple.com,proxy
+host,axm-adm-scep.apple.com,proxy
+host,axm-app.apple.com,proxy
+host,icons.axm-usercontent-apple.com,proxy
+host,audiocontentdownload.apple.com,proxy
+host,playgrounds-assets-cdn.apple.com,proxy
+host,playgrounds-cdn.apple.com,proxy
+host,diagassets.apple.com,proxy
+host,fpservices-prod1.apple.com,proxy
+host,vpp.itunes.apple.com,proxy
+host,sylvan.apple.com,proxy

@@ -1,0 +1,25 @@
+# name: tiktok-international-video
+# priority: 3870
+# section: media
+# description: TikTok 国际短视频与直播
+# boundary: 只含 TikTok 专有域；CapCut、抖音、Trae 以及两版共用字节云不划进本组
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list
+# canonical-rule-count: 12
+# rule-count: 12
+# format: quantumult-x
+# canonical: rules/3870-tiktok-international-video.lsr
+
+host,p16-tiktokcdn-com.akamaized.net,proxy
+host-suffix,muscdn.com,proxy
+host-suffix,musical.ly,proxy
+host-suffix,tik-tokapi.com,proxy
+host-suffix,tiktok.com,proxy
+host-suffix,tiktokcdn-us.com,proxy
+host-suffix,tiktokcdn.com,proxy
+host-suffix,tiktokd.net,proxy
+host-suffix,tiktokd.org,proxy
+host-suffix,tiktokmusic.app,proxy
+host-suffix,tiktokv.com,proxy
+host-suffix,tiktokv.us,proxy

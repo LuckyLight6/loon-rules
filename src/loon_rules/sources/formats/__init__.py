@@ -9,9 +9,12 @@ READERS = {
     'azure-cloud-metadata': api.parse_azure_cloud_metadata,
     'brand-region-links': documents.parse_brand_region_links,
     'brand-domain-list': structured.brand_domain_list,
+    'c-function-url': api.c_function_url,
     'code-api-endpoints': api.parse_code_api_endpoints,
+    'csp-origins': documents.csp_origins,
     'curl-api-endpoints': api.parse_curl_api_endpoints,
     'destination-table': tables.parse_destination_table,
+    'domain-column-table': tables.domain_column_table,
     'derp-map': structured.derp_map,
     'endpoint-network-sets': networks.parse_endpoint_network_sets,
     'endpoint-sets': tables.parse_endpoint_sets,
@@ -41,6 +44,8 @@ READERS = {
     'purpose-url-table': tables.purpose_url_table,
     'python-sdk-endpoints': api.parse_python_sdk_endpoints,
     'region-endpoint-table': regions.extract,
+    'rdap-autnum': networks.rdap_autnum,
+    'section-network-blocks': networks.section_network_blocks,
     'rules': feeds.parse_rules,
     'sdk-client-endpoints': api.parse_sdk_client_endpoints,
     'section-media-networks': networks.parse_section_media_networks,
@@ -65,7 +70,8 @@ def extract_rows(recipe, text, *, shared_hosts=()):
     if form not in READERS:
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
-    if (form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists','go-host-switch')
+    if (form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
+                 'go-host-switch','c-function-url','csp-origins','domain-column-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')
             or form=='product-domain-statements' and recipe.get('code-only')):
         result=set(domain_scope.exclude_shared_scopes(result,shared_hosts))

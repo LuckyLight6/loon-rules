@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "amp-api.media.apple.com",
+        "mvod.itunes.apple.com"
+      ],
+      "domain_suffix": [
+        "music.apple.com",
+        "applemusic.com"
+      ]
+    }
+  ]
+}

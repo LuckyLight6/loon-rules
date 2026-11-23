@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "apple-relay.apple.com",
+        "apple-relay.cloudflare.com",
+        "cp4.cloudflare.com",
+        "apple-relay.fastly-edge.com",
+        "mask-api.fe.apple-dns.net",
+        "mask-api.icloud.com",
+        "mask-t.apple-dns.net",
+        "mask.apple-dns.net",
+        "np-edge.itunes.apple.com",
+        "play-edge.itunes.apple.com",
+        "uts-api.itunes.apple.com",
+        "amp-api.videos.apple.com",
+        "hls-amt.itunes.apple.com",
+        "hls.itunes.apple.com",
+        "news-client-search.apple.com",
+        "news-events.apple.com",
+        "news.apple.com",
+        "prod-domep-news-apple.v.aaplimg.com"
+      ],
+      "domain_suffix": [
+        "mask-h2.icloud.com",
+        "mask.icloud.com",
+        "fitness.apple.com",
+        "tv.apple.com",
+        "news-assets.apple.com",
+        "news-client.apple.com",
+        "news-edge.apple.com",
+        "apple.news",
+        "sports.apple.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:inflection.ai",
+          "domain:pi.ai"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

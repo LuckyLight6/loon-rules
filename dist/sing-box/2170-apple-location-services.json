@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "gsp9-ssl.apple.com",
+        "gsp10-ssl.apple.com",
+        "cl2-cn.apple.com",
+        "cl4-cn.apple.com",
+        "gs-loc-cn.apple.com"
+      ],
+      "domain_suffix": [
+        "ls.apple.com",
+        "gs-loc.apple.com"
+      ]
+    }
+  ]
+}

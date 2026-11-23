@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "mzstatic.com"
+      ],
+      "domain": [
+        "store.storeimages.cdn-apple.com"
+      ]
+    }
+  ]
+}

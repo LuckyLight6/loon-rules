@@ -1,0 +1,61 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:steamcommunity-a.akamaihd.net",
+          "full:steambroadcast.akamaized.net",
+          "domain:dota2.com",
+          "domain:playartifact.com",
+          "domain:s.team",
+          "domain:steam-chat.com",
+          "domain:steam.tv",
+          "domain:steamcommunity.com",
+          "domain:steamdeck.com",
+          "domain:steampowered.com",
+          "domain:steamstatic.com",
+          "domain:valvesoftware.com",
+          "domain:epicgames.com",
+          "domain:epicgames.dev",
+          "domain:fortnite.com",
+          "domain:unrealengine.com",
+          "domain:unrealtournament.com",
+          "domain:playstation.com",
+          "domain:playstation.net",
+          "domain:playstationnetwork.com",
+          "domain:nintendo.com",
+          "domain:nintendo.net",
+          "domain:nintendo.co.jp",
+          "domain:nintendo.co.il",
+          "domain:nintendo.co.za",
+          "domain:nintendo.dk",
+          "domain:nintendo.fi",
+          "domain:nintendo.gr",
+          "domain:nintendo.hu",
+          "domain:nintendo.no",
+          "domain:nintendo.pl",
+          "domain:nintendo.sa",
+          "domain:nintendo.se",
+          "domain:nintendo.sk",
+          "domain:genshinimpact.com",
+          "domain:honkaistarrail.com",
+          "domain:hoyolab.com",
+          "domain:hoyoverse.com",
+          "full:eaassets-a.akamaihd.net",
+          "domain:ea.com",
+          "domain:tnt-ea.com",
+          "domain:origin.com",
+          "domain:ubi.com",
+          "domain:ubisoft.com",
+          "domain:uplay.com",
+          "domain:ubisoftconnect.com",
+          "domain:blizzard.com",
+          "domain:battle.net",
+          "domain:easebar.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

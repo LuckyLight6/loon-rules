@@ -1,0 +1,26 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:1drv.ms",
+          "domain:1drv.com",
+          "domain:livefilestore.com",
+          "domain:microsoftpersonalcontent.com",
+          "domain:oneclient.sfx.ms",
+          "domain:onedrive.com",
+          "domain:onedrive.live.com",
+          "full:photos.live.com",
+          "domain:sharepoint.com",
+          "domain:sharepointonline.com",
+          "full:skydrive.wns.windows.com",
+          "full:spoprod-a.akamaihd.net",
+          "domain:storage.live.com",
+          "full:storage.msn.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api.openai-compat.model-serving.eu01.onstackit.cloud"
+      ]
+    }
+  ]
+}

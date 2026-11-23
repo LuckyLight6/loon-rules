@@ -2,7 +2,7 @@
 # priority: 2330
 # section: apple
 # description: 设备引导、MDM、校时、系统 DNS 与公共素材
-# boundary: 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活与证书登记在 2320，反馈诊断在 2330，不把本组称为匿名 CDN
+# boundary: 保留 eSIM、机构管理、校时和公共设备资源的系统路径；激活、设备证书登记与反馈诊断另有专表，不把本组称为匿名 CDN
 # created-at: 2026-11-19T08:04:26Z
 # updated-at: 2026-11-21T11:39:00Z
 # rule-count: 39
