@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-22T21:18:19Z",
+  "checked-at": "2026-11-23T13:40:43Z",
   "inputs-read": 544,
   "critical": 777,
   "inputs-requested": 544,
@@ -71,10 +71,10 @@
       "DOMAIN-SUFFIX,cloudflarestoragegw.com": "cloudflare-mainland"
     },
     "amazon-shared-services": {
-      "DOMAIN-SUFFIX,pv-cdn.net": "prime-video-streaming",
-      "DOMAIN-SUFFIX,primevideo.com": "prime-video-streaming",
       "DOMAIN-SUFFIX,amazonvideo.com": "prime-video-streaming",
       "DOMAIN-SUFFIX,aiv-cdn.net": "prime-video-streaming",
+      "DOMAIN-SUFFIX,primevideo.com": "prime-video-streaming",
+      "DOMAIN-SUFFIX,pv-cdn.net": "prime-video-streaming",
       "DOMAIN-SUFFIX,aboutamazon.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,alexafund.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,alexafund.com.cn": "amazon-mainland",
@@ -99,6 +99,8 @@
       "DOMAIN-SUFFIX,z.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,amazon-adsystem.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,serving-sys.com": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,amazonprimevideo.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonprimevideo.com.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,a2z.org.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,amazonaws.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,amazonaws.com.cn": "amazon-mainland",
@@ -127,9 +129,7 @@
       "DOMAIN-SUFFIX,amzndns-cn.net": "amazon-mainland",
       "DOMAIN-SUFFIX,kindle.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,kindleoasis.cn": "amazon-mainland",
-      "DOMAIN-SUFFIX,kindleoasis.com.cn": "amazon-mainland",
-      "DOMAIN-SUFFIX,amazonprimevideo.cn": "amazon-mainland",
-      "DOMAIN-SUFFIX,amazonprimevideo.com.cn": "amazon-mainland"
+      "DOMAIN-SUFFIX,kindleoasis.com.cn": "amazon-mainland"
     },
     "netease-shared-services": {
       "DOMAIN-SUFFIX,ydshengxue.com": "youdao-products",
@@ -6928,12 +6928,12 @@
         ]
       },
       "other-products": {
-        "douyin-mainland-video": 8,
         "bytedance-mainland": 2,
-        "feishu-mainland": 43,
         "lark-international": 29,
-        "bytedance-international": 7,
-        "tiktok-international-video": 12
+        "douyin-mainland-video": 8,
+        "feishu-mainland": 43,
+        "tiktok-international-video": 12,
+        "bytedance-international": 7
       },
       "domain-scopes": 961,
       "selected-scopes": 14,
@@ -7131,8 +7131,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
     ],
     "apple-developer-downloads": [
@@ -7939,7 +7939,7 @@
       "method": "ios-client-config",
       "directory": "https://gdmf.apple.com/v2/pmv",
       "configuration": "https://configuration.ls.apple.com/config/defaults",
-      "as-of": "2026-11-22",
+      "as-of": "2026-11-23",
       "selection": {
         "source": "https://gdmf.apple.com/v2/pmv",
         "config-source": "https://configuration.ls.apple.com/config/defaults",
@@ -7985,7 +7985,7 @@
         {
           "version": "12.5.8",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad4,1",
             "iPad4,2",
@@ -8006,7 +8006,7 @@
         {
           "version": "15.8.8",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad5,1",
             "iPad5,2",
@@ -8025,7 +8025,7 @@
         {
           "version": "16.7.16",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad6,11",
             "iPad6,12",
@@ -8044,7 +8044,7 @@
         {
           "version": "17.7.11",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad7,1",
             "iPad7,2",
@@ -8057,7 +8057,7 @@
         {
           "version": "18.7.12",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad7,11",
             "iPad7,12"
@@ -8066,7 +8066,7 @@
         {
           "version": "18.7.12",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad7,11",
             "iPad7,12",
@@ -8079,7 +8079,7 @@
         {
           "version": "26.7.3",
           "posted": "2026-11-09",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad12,1",
             "iPad12,2",
@@ -8167,7 +8167,7 @@
         {
           "version": "26.7.3",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad11,1",
             "iPad11,2",
@@ -8188,7 +8188,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad12,1",
             "iPad12,2",
@@ -8279,7 +8279,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPad19,1",
             "iPad19,2"
@@ -8288,7 +8288,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-20",
+          "expires": "2027-02-21",
           "devices": [
             "iPhone19,4"
           ]
@@ -12381,9 +12381,9 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 0,
-      "unconfirmed-prefixes": 519,
-      "retired-prefixes": 0
+      "accepted-prefixes": 1,
+      "unconfirmed-prefixes": 528,
+      "retired-prefixes": 9
     },
     "mainland-geoip": {
       "state": "current"
@@ -12415,14 +12415,14 @@
     },
     "general-ad-and-tracking": {
       "state": "review",
-      "new-matches": 4142,
+      "new-matches": 4859,
       "missing-rules": 3683
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 17961,
-      "admitted-rules": 353,
-      "retired-rules": 0
+      "not-whole-host-consensus": 19745,
+      "admitted-rules": 3,
+      "retired-rules": 1787
     }
   },
   "official-endpoints": {
@@ -13601,7 +13601,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -13642,7 +13642,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "ollama-cloud": {
@@ -13673,7 +13673,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "stackit-model-services": {
@@ -13704,7 +13704,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "stepfun-international": {
@@ -13746,7 +13746,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "xiaomi-international": {
@@ -13789,7 +13789,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13824,7 +13824,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13874,7 +13874,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13915,7 +13915,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14147,7 +14147,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "npm-registry": {
@@ -14180,7 +14180,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14224,7 +14224,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14257,7 +14257,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14310,7 +14310,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "braintree-payments": {
@@ -14337,7 +14337,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "notion-workspace": {
@@ -14363,7 +14363,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14571,7 +14571,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14597,7 +14597,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "google-play-services": {
@@ -14633,7 +14633,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "google-play-games": {
@@ -14661,7 +14661,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "kimi-mainland": {
@@ -14692,7 +14692,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -14723,7 +14723,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -14766,7 +14766,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14805,7 +14805,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795382260,
+      "last-read": 1795441200,
       "state": "current"
     }
   },
@@ -14823,7 +14823,9 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "extended-ad-and-tracking"
+    "extended-ad-and-tracking",
+    "mainland-routing-all",
+    "mainland-networks"
   ],
   "scope-negatives": 143,
   "ip-cases": 44,
@@ -14881,7 +14883,7 @@
     "mainland-networks": {
       "intent": "allow-dns",
       "no-resolve": 0,
-      "resolve-for-match": 7009
+      "resolve-for-match": 7017
     },
     "mainland-geoip": {
       "intent": "allow-dns",
@@ -15204,7 +15206,7 @@
     "youdao-products": 3,
     "aliyun-drive": 6,
     "wps-office": 13,
-    "extended-ad-and-tracking": 44831,
+    "extended-ad-and-tracking": 43047,
     "global-platforms-all": 428,
     "digitalocean-services": 6,
     "vultr-services": 1,
@@ -15229,9 +15231,9 @@
     "xiaomi-shared-services": 48,
     "kingsoft-shared-services": 32,
     "sina-shared-image-assets": 2,
-    "mainland-routing-all": 19308,
+    "mainland-routing-all": 19316,
     "mainland-domains": 12298,
-    "mainland-networks": 7009,
+    "mainland-networks": 7017,
     "mainland-geoip": 1
   },
   "component-rules": {
