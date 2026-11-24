@@ -8996,23 +8996,40 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "哔哩哔哩国际版视频",
-      "boundary": "只收明确的国际版根域；共用视频 CDN 和中国站仍按各自规则或通用层",
+      "boundary": "国际版网站、API、素材与专用视频主机，按业务清单全文更新；子域主机用精确匹配，中国站及其海外 CDN 不按地理标签混入",
       "sources": [
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr"
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/biliintl.list",
+        "https://www.bilibili.tv/en"
       ],
       "projection": [
         {
           "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr",
           "roots": [
-            "bilibili.tv",
-            "biliintl.com",
             "biliintl.co"
           ]
         }
       ],
       "priority": 3880,
       "section": "media",
-      "routing-group": "overseas-video"
+      "routing-group": "overseas-video",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/biliintl.list",
+          "format": "domain-scope-list",
+          "subdomains-as-hosts": true
+        }
+      ],
+      "product-probes": [
+        "www.bilibili.tv",
+        "p.bstarstatic.com",
+        "api.global.bilibili.com"
+      ],
+      "product-negatives": [
+        "www.bilibili.com",
+        "api.bilibili.com",
+        "upos-hz-mirrorakam.akamaized.net"
+      ]
     },
     {
       "id": "iqiyi-international",
@@ -12183,7 +12200,7 @@
       "mode": "compiled",
       "policy-hint": "domestic",
       "description": "哔哩哔哩中国站视频与图片",
-      "boundary": "保留国内平台及常用内容交付；国际版专域不混入，API/CDN 共用部分不能按国家强行拆分",
+      "boundary": "中国站及两版共用的 API、图片和视频父域；国际版已识别的专用主机在前面精确匹配，其余范围保留国内策略，不按服务器国家强行拆分共用服务",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr"
       ],
@@ -17306,6 +17323,27 @@
     ],
     "q.eu-central-1.amazonaws.com": [
       "kiro-code-assistant"
+    ],
+    "p.bstarstatic.com": [
+      "bilibili-international-video"
+    ],
+    "pic.bstarstatic.com": [
+      "bilibili-international-video"
+    ],
+    "api.global.bilibili.com": [
+      "bilibili-international-video"
+    ],
+    "app.global.bilibili.com": [
+      "bilibili-international-video"
+    ],
+    "apm-misaka.biliapi.net": [
+      "bilibili-international-video"
+    ],
+    "upos-bstar-mirrorakam.akamaized.net": [
+      "bilibili-international-video"
+    ],
+    "upos-sz-mirrorcosbstar1.bilivideo.com": [
+      "bilibili-international-video"
     ]
   },
   "shared-negatives": [
@@ -18008,10 +18046,6 @@
     [
       "wechat-international-portal",
       "wechat-shared-and-mainland"
-    ],
-    [
-      "bilibili-international-video",
-      "bilibili-mainland-video"
     ],
     [
       "apple-cloud-sync",
@@ -19816,6 +19850,36 @@
       ],
       "other-owners": {
         "DOMAIN,statici.icloud.com": "apple-cloud-sync"
+      }
+    },
+    {
+      "id": "bilibili-international-business-domains",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/biliintl.list",
+      "owners": [
+        "bilibili-international-video"
+      ],
+      "recipe": {
+        "format": "domain-scope-list",
+        "subdomains-as-hosts": true
+      }
+    },
+    {
+      "id": "bilibili-international-official-resource",
+      "source": "https://www.bilibili.tv/en",
+      "owners": [
+        "bilibili-international-video"
+      ],
+      "recipe": {
+        "format": "site-resource-hosts",
+        "source": "https://www.bilibili.tv/en",
+        "identity": {
+          "scope": "source-root",
+          "brand": "BiliBili",
+          "brand-field": "og:title"
+        },
+        "properties": [
+          "og:image"
+        ]
       }
     }
   ],

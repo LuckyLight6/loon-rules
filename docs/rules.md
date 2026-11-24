@@ -338,7 +338,7 @@
 | 3850 | [hulu-streaming](../rules/3850-hulu-streaming.lsr) | Hulu 视频与交付 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3850-hulu-streaming.lsr) |
 | 3860 | [youtube-video-and-cdn](../rules/3860-youtube-video-and-cdn.lsr) | YouTube 视频、音乐、频道与专用 CDN | 保留 youtubei、googlevideo 和 YouTube 静态域；不收整个 gvt2、Google IP 或 youtube 关键词 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3860-youtube-video-and-cdn.lsr) |
 | 3870 | [tiktok-international-video](../rules/3870-tiktok-international-video.lsr) | TikTok 国际短视频与直播 | 只含 TikTok 专有域；CapCut、抖音、Trae 以及两版共用字节云不划进本组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3870-tiktok-international-video.lsr) |
-| 3880 | [bilibili-international-video](../rules/3880-bilibili-international-video.lsr) | 哔哩哔哩国际版视频 | 只收明确的国际版根域；共用视频 CDN 和中国站仍按各自规则或通用层 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3880-bilibili-international-video.lsr) |
+| 3880 | [bilibili-international-video](../rules/3880-bilibili-international-video.lsr) | 哔哩哔哩国际版视频 | 国际版网站、API、素材与专用视频主机，按业务清单全文更新；子域主机用精确匹配，中国站及其海外 CDN 不按地理标签混入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3880-bilibili-international-video.lsr) |
 | 3890 | [iqiyi-international](../rules/3890-iqiyi-international.lsr) | 爱奇艺国际版 iQIYI 与专用国际 API | 国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 由国内版规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3890-iqiyi-international.lsr) |
 | 3900 | [vimeo-video](../rules/3900-vimeo-video.lsr) | Vimeo 视频与交付 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3900-vimeo-video.lsr) |
 
@@ -582,7 +582,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 6910 | [bilibili-mainland-video](../rules/6910-bilibili-mainland-video.lsr) | 哔哩哔哩中国站视频与图片 | 保留国内平台及常用内容交付；国际版专域不混入，API/CDN 共用部分不能按国家强行拆分 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6910-bilibili-mainland-video.lsr) |
+| 6910 | [bilibili-mainland-video](../rules/6910-bilibili-mainland-video.lsr) | 哔哩哔哩中国站视频与图片 | 中国站及两版共用的 API、图片和视频父域；国际版已识别的专用主机在前面精确匹配，其余范围保留国内策略，不按服务器国家强行拆分共用服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6910-bilibili-mainland-video.lsr) |
 | 6920 | [iqiyi-mainland](../rules/6920-iqiyi-mainland.lsr) | 爱奇艺国内版 | 国内版与专用素材；同时使用国际版规则时，国际专用子域先匹配；单用本表不能从 iqiyi.com 父域排除国际业务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6920-iqiyi-mainland.lsr) |
 | 6930 | [youku-video](../rules/6930-youku-video.lsr) | 优酷国内站 | 只认国内站及专用素材，不收国际站、整个阿里 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6930-youku-video.lsr) |
 

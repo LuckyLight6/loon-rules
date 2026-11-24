@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T14:29:55Z",
-  "inputs-read": 578,
-  "critical": 834,
-  "inputs-requested": 578,
+  "checked-at": "2026-11-24T14:59:22Z",
+  "inputs-read": 580,
+  "critical": 841,
+  "inputs-requested": 580,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -4983,8 +4983,6 @@
         "bilibili-international-video": [
           {
             "roots": [
-              "bilibili.tv",
-              "biliintl.com",
               "biliintl.co"
             ]
           }
@@ -5078,15 +5076,15 @@
         "xiaohongshu-community": 3
       },
       "domain-scopes": 3170,
-      "selected-scopes": 31,
+      "selected-scopes": 29,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 31,
-      "fallback-scopes": 2411,
+      "product-scopes": 35,
+      "fallback-scopes": 2409,
       "privacy-scopes": 16,
       "shared-scopes": 7,
       "declared-exclusions": 0,
-      "outside-selection": 612,
+      "outside-selection": 610,
       "other-lines": 69,
       "other-rule-types": {
         "USER-AGENT": 6,
@@ -5142,7 +5140,7 @@
         ]
       },
       "other-products": {
-        "bilibili-mainland-video": 1,
+        "bilibili-international-video": 5,
         "iqiyi-mainland": 1,
         "prime-video-streaming": 10,
         "bahamut-video-and-community": 5,
@@ -5151,7 +5149,6 @@
         "youtube-video-and-cdn": 7,
         "apple-music-and-radio": 1,
         "bbc-news-and-video": 2,
-        "bilibili-international-video": 2,
         "disney-plus-streaming": 3,
         "twitch-live-video": 6,
         "hbo-streaming": 4,
@@ -5166,7 +5163,7 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 172,
+      "fallback-scopes": 170,
       "privacy-scopes": 1,
       "shared-scopes": 6,
       "declared-exclusions": 0,
@@ -7597,8 +7594,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,swcdn.apple.com.edgesuite.net",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
     ],
@@ -13441,6 +13438,18 @@
       "domain-scopes": 3,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "bilibili-international-business-domains": {
+      "state": "current",
+      "domain-scopes": 11,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "bilibili-international-official-resource": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "functional-hosts": [
@@ -14289,7 +14298,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -14330,7 +14339,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "ollama-cloud": {
@@ -14361,7 +14370,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "stackit-model-services": {
@@ -14392,7 +14401,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "stepfun-international": {
@@ -14434,7 +14443,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "xiaomi-international": {
@@ -14477,7 +14486,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -14512,7 +14521,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -14562,7 +14571,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -14603,7 +14612,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14835,7 +14844,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "npm-registry": {
@@ -14868,7 +14877,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14912,7 +14921,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14945,7 +14954,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14998,7 +15007,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "braintree-payments": {
@@ -15025,7 +15034,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "notion-workspace": {
@@ -15051,7 +15060,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "google-account-authentication": {
@@ -15259,7 +15268,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -15285,7 +15294,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "google-play-services": {
@@ -15321,7 +15330,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "google-play-games": {
@@ -15349,7 +15358,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "kimi-mainland": {
@@ -15380,7 +15389,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -15411,7 +15420,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -15454,7 +15463,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -15493,7 +15502,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795530572,
+      "last-read": 1795532331,
       "state": "current"
     }
   },
@@ -15501,7 +15510,7 @@
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1286,
+  "business-domain-cases": 1293,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -15511,7 +15520,11 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "ai-overseas-all"
+    "overseas-media-all",
+    "bilibili-international-video",
+    "bilibili-mainland-video",
+    "overseas-extra-all",
+    "overseas-media-extra"
   ],
   "scope-negatives": 149,
   "ip-cases": 44,
@@ -15779,7 +15792,7 @@
     "bybit-exchange": 16,
     "kucoin-exchange": 2,
     "trust-wallet": 1,
-    "overseas-media-all": 151,
+    "overseas-media-all": 160,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
     "disney-plus-streaming": 3,
@@ -15787,7 +15800,7 @@
     "hulu-streaming": 48,
     "youtube-video-and-cdn": 12,
     "tiktok-international-video": 12,
-    "bilibili-international-video": 3,
+    "bilibili-international-video": 12,
     "iqiyi-international": 4,
     "vimeo-video": 16,
     "spotify-audio": 6,
@@ -15919,8 +15932,8 @@
     "adobe-shared-services": 124,
     "cloudflare-shared-services": 52,
     "amazon-shared-services": 168,
-    "overseas-extra-all": 18640,
-    "overseas-media-extra": 155,
+    "overseas-extra-all": 18638,
+    "overseas-media-extra": 153,
     "overseas-sites-extra": 18499,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,

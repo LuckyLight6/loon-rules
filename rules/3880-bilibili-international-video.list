@@ -2,12 +2,23 @@
 # priority: 3880
 # section: media
 # description: 哔哩哔哩国际版视频
-# boundary: 只收明确的国际版根域；共用视频 CDN 和中国站仍按各自规则或通用层
+# boundary: 国际版网站、API、素材与专用视频主机，按业务清单全文更新；子域主机用精确匹配，中国站及其海外 CDN 不按地理标签混入
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
-# rule-count: 3
+# updated-at: 2026-11-24T14:59:22Z
+# rule-count: 12
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/biliintl.list
+# source: https://www.bilibili.tv/en
 
 DOMAIN-SUFFIX,bilibili.tv
 DOMAIN-SUFFIX,biliintl.co
 DOMAIN-SUFFIX,biliintl.com
+DOMAIN,api.global.bilibili.com
+DOMAIN,apm-misaka.biliapi.net
+DOMAIN,app.global.bilibili.com
+DOMAIN,p-bstarstatic.akamaized.net
+DOMAIN,upos-bstar-mirrorakam.akamaized.net
+DOMAIN,upos-bstar1-mirrorakam.akamaized.net
+DOMAIN,upos-sz-mirroralibstar1.bilivideo.com
+DOMAIN,upos-sz-mirrorcosbstar1.bilivideo.com
+DOMAIN-SUFFIX,bstarstatic.com

@@ -15,6 +15,7 @@ READERS = {
     'curl-api-endpoints': api.parse_curl_api_endpoints,
     'destination-table': tables.parse_destination_table,
     'domain-column-table': tables.domain_column_table,
+    'domain-scope-list': feeds.domain_scope_list,
     'derp-map': structured.derp_map,
     'endpoint-network-sets': networks.parse_endpoint_network_sets,
     'endpoint-sets': tables.parse_endpoint_sets,
@@ -56,6 +57,7 @@ READERS = {
     'service-domain-table': tables.parse_service_domain_table,
     'service-domain-groups': structured.service_domain_groups,
     'site-identity': documents.parse_site_identity,
+    'site-resource-hosts': documents.site_resource_hosts,
     'vim-config-defaults': api.parse_vim_config_defaults,
     'windows-purpose': tables.parse_windows_purpose,
 }
@@ -72,13 +74,14 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    if (source_alias or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
+    strict_scope = source_alias or form in ('domain-scope-list', 'site-resource-hosts')
+    if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')
             or form=='product-domain-statements' and recipe.get('code-only')):
         before=result
         result=set(domain_scope.exclude_shared_scopes(result,shared_hosts))
-        if source_alias and result!=before:
-            raise Invalid('共享平台不能作为产品自有网站别名')
+        if strict_scope and result!=before:
+            raise Invalid('完整产品范围包含共享主机，不能静默忽略或认领')
         if not result:raise Invalid('服务 URL 仅指向共用请求入口，不能按文件路径认领整个主机')
     return result

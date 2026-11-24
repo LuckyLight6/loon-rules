@@ -20,6 +20,8 @@
 | 单个 ASN 注册记录 | `rdap-autnum` 核对指定 ASN、注册实体 ID 和组织名称；持有人不符时停止更新 | 只核对一个已知自治系统时使用，维护联系人不等于注册持有人 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
 | 同一业务的地区端点表 | `purpose-host-table` 可用 `purpose-prefixes` 选择同类用途、`value-format: domain` 读取主机列；`all-exact: true` 只生成精确主机 | Kiro 1530 跟随官方表中的模型服务地区，不收相邻的 AWS 共用登录与验证码 |
+| 独立产品域名清单 | `domain-scope-list` 读取整份原生域名规则；`subdomains-as-hosts: true` 保留注册域后缀，将清单中具体服务器收窄为精确主机 | Bilibili 国际版 3880 使用业务专表，不使用混有中国站海外 CDN 的地理标签表 |
+| 官网资源元数据 | `site-resource-hosts` 先用 `identity` 核对站点，再从 `properties` 指定的 Open Graph 图片、音频或视频 URL 取精确主机 | 3880 的独立完整性检查核对官网实际引用的素材；不扫描页面全部链接、广告或脚本 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
 
@@ -81,6 +83,8 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 用途明确的独立产品、地区来源或后置厂商共用表，可以用 `projection.all-domains: true` 跟随已核对来源的全部域名，不能同时填写 `roots`、`exact`，并且必须在 `source-inventories` 声明同一来源的完整归属检查。Apple 2370 使用此方式，细分仍先匹配。整份品牌顶级域、用途未核实的第三方主机等排除须写明原因，不能把“来源里有”当作业务归属的充分依据。
 
 `projection.exact-from-extract: true` 用本轮用途字段生成精确筛选，不再另列同一批主机名。社区表把服务器写成后缀规则、官方用途表只证明这个主机时，结果保持 `DOMAIN`，不会扩大到它的子域。固定 `roots` 仍按声明处理；共享主机保护继续生效。Kiro 的地区 API，以及 OpenAI、Docker 部分已由用途资料证明的主机采用这种方式。
+
+`domain-scope-list` 不把主机扩大为注册域。例如 `api.global.example.com` 在主机模式下保持精确匹配，`example.com` 若原本是后缀规则则保持不变。出现 IP、ASN、参数、公共后缀或共享托管后缀时停止读取；主机模式也不接受来源新增的通配符，避免把格式变化当作普通补全。源中已有的精确规则不会被扩大。
 
 确认来源描述的是完整产品范围后，设置 `require-domain-closure: true`。检查读取整份来源，发生在筛选前：未选范围也必须由正确产品完整承接，或有明确的共享、排除依据。落到补充、Reject 或无关产品都不能算通过；其他产品的承接须在独立来源清单中声明并通过首条命中检查。宽泛的地区合集和混有历史品牌的公司表仍按参考资料核对，不能为了消除待查数量开启整表收录。
 

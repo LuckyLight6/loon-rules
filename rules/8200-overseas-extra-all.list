@@ -4,8 +4,8 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T04:48:27Z
-# rule-count: 18640
+# updated-at: 2026-11-24T14:59:22Z
+# rule-count: 18638
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -30,8 +30,6 @@ DOMAIN,itvpnpmobile-a.akamaihd.net
 DOMAIN,staticasiafox.akamaized.net
 DOMAIN,tubi.tv
 DOMAIN,tubitv.com
-DOMAIN,upos-bstar-mirrorakam.akamaized.net
-DOMAIN,upos-bstar1-mirrorakam.akamaized.net
 DOMAIN,vudu.com
 DOMAIN,www.tubi.tv
 DOMAIN,www.tubitv.com

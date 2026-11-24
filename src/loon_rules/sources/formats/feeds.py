@@ -3,8 +3,32 @@ import json
 import re
 import xml.etree.ElementTree as ET
 from urllib.parse import urlsplit
+from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid, read_rules, valid_host
 from .common import within
+
+
+def domain_scope_list(recipe, text):
+    narrow = recipe.get('subdomains-as-hosts', False)
+    if type(narrow) is not bool:
+        raise Invalid('产品主机清单的范围选择必须为布尔值')
+    result = set()
+    for row in read_rules(text):
+        kind, host, *flags = row.split(',')
+        if flags or kind not in ('DOMAIN', 'DOMAIN-SUFFIX'):
+            raise Invalid('产品域名清单包含未经声明的规则类型或参数')
+        host = domain_scope.public_host(host)
+        suffixes = domain_scope.current()
+        suffix, private = suffixes.suffix(host)
+        if host == suffix:
+            raise Invalid('公共后缀或共享托管后缀不能作为产品域名')
+        if narrow and kind == 'DOMAIN-SUFFIX' and (private or host != suffixes.registrable(host)):
+            kind = 'DOMAIN'
+        result.add(kind + ',' + host)
+    if not result:
+        raise Invalid('产品域名清单为空')
+    return result
+
 
 def http_provider_hosts(recipe, text):
     """Read only the HTTP discovery lists, never DNS resolvers or update URLs."""

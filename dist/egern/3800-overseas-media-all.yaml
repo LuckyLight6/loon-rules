@@ -4,7 +4,7 @@
 # description: 海外影音与内容合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-24T14:59:22Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list
@@ -13,6 +13,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/biliintl.list
+# source: https://www.bilibili.tv/en
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list
@@ -21,8 +23,8 @@
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Bahamut.list
-# canonical-rule-count: 151
-# rule-count: 151
+# canonical-rule-count: 160
+# rule-count: 160
 # format: egern
 # canonical: rules/3800-overseas-media-all.lsr
 
@@ -123,6 +125,7 @@ domain_suffix_set:
   - "bilibili.tv"
   - "biliintl.co"
   - "biliintl.com"
+  - "bstarstatic.com"
   - "iq.com"
   - "intl-rcd.iqiyi.com"
   - "intl-subscription.iqiyi.com"
@@ -176,6 +179,14 @@ domain_set:
   - "youtubei.googleapis.com"
   - "yt3.ggpht.com"
   - "p16-tiktokcdn-com.akamaized.net"
+  - "api.global.bilibili.com"
+  - "apm-misaka.biliapi.net"
+  - "app.global.bilibili.com"
+  - "p-bstarstatic.akamaized.net"
+  - "upos-bstar-mirrorakam.akamaized.net"
+  - "upos-bstar1-mirrorakam.akamaized.net"
+  - "upos-sz-mirroralibstar1.bilivideo.com"
+  - "upos-sz-mirrorcosbstar1.bilivideo.com"
   - "bahamut.akamaized.net"
   - "gamer-cds.cdn.hinet.net"
   - "gamer2-cds.cdn.hinet.net"

@@ -6,7 +6,16 @@
         "domains": [
           "domain:bilibili.tv",
           "domain:biliintl.co",
-          "domain:biliintl.com"
+          "domain:biliintl.com",
+          "full:api.global.bilibili.com",
+          "full:apm-misaka.biliapi.net",
+          "full:app.global.bilibili.com",
+          "full:p-bstarstatic.akamaized.net",
+          "full:upos-bstar-mirrorakam.akamaized.net",
+          "full:upos-bstar1-mirrorakam.akamaized.net",
+          "full:upos-sz-mirroralibstar1.bilivideo.com",
+          "full:upos-sz-mirrorcosbstar1.bilivideo.com",
+          "domain:bstarstatic.com"
         ],
         "outboundTag": "PROXY"
       }

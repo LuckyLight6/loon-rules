@@ -4,8 +4,8 @@
 # description: 海外影音与内容合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-22T17:48:09Z
-# rule-count: 151
+# updated-at: 2026-11-24T14:59:22Z
+# rule-count: 160
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list
@@ -14,6 +14,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/biliintl.list
+# source: https://www.bilibili.tv/en
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list
@@ -130,6 +132,15 @@ DOMAIN-SUFFIX,tiktokv.us
 DOMAIN-SUFFIX,bilibili.tv
 DOMAIN-SUFFIX,biliintl.co
 DOMAIN-SUFFIX,biliintl.com
+DOMAIN,api.global.bilibili.com
+DOMAIN,apm-misaka.biliapi.net
+DOMAIN,app.global.bilibili.com
+DOMAIN,p-bstarstatic.akamaized.net
+DOMAIN,upos-bstar-mirrorakam.akamaized.net
+DOMAIN,upos-bstar1-mirrorakam.akamaized.net
+DOMAIN,upos-sz-mirroralibstar1.bilivideo.com
+DOMAIN,upos-sz-mirrorcosbstar1.bilivideo.com
+DOMAIN-SUFFIX,bstarstatic.com
 DOMAIN-SUFFIX,iq.com
 DOMAIN-SUFFIX,intl-rcd.iqiyi.com
 DOMAIN-SUFFIX,intl-subscription.iqiyi.com

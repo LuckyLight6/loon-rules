@@ -260,6 +260,28 @@ def parse_site_identity(recipe, text):
     return result
 
 
+def site_resource_hosts(recipe, text):
+    identity = recipe.get('identity')
+    properties = recipe.get('properties')
+    if (not isinstance(identity, dict) or not identity
+            or not isinstance(properties, list) or not properties
+            or len(properties) != len(set(properties))
+            or not set(properties) <= {'og:image', 'og:video', 'og:audio'}):
+        raise Invalid('网站资源缺少品牌身份或明确的资源属性')
+    if 'source' in identity and identity['source'] != recipe['source']:
+        raise Invalid('网站资源不能改变身份来源')
+    parse_site_identity({**identity, 'source': recipe['source']}, text)
+    guide = PurposeFragments()
+    guide.feed(text)
+    result = set()
+    for field in properties:
+        if not guide.metadata.get(field):
+            raise Invalid('网站缺少所选资源属性：' + field)
+        for value in guide.metadata[field]:
+            result.add('DOMAIN,' + https_product_host(value).split(',')[1])
+    return result
+
+
 def section_code_domains(recipe,text):
     result=set()
     for name in recipe['sections']:

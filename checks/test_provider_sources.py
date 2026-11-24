@@ -5,6 +5,129 @@ from loon_rules.sources.inputs import extract_rows
 
 
 class ProviderSources(PublicSourceExamples):
+    def test_international_hosts_precede_shared_company_domains_in_fine_and_combined_outputs(self):
+        import json
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from checks.source_fixtures import prepare_workspace
+        from loon_rules.generation import pipeline
+        from loon_rules.exports import publish
+
+        manifest = 'https://rules.example/international.list'
+        company = 'https://rules.example/company.list'
+        page = 'https://video.example/'
+        source_recipe = {'format': 'domain-scope-list', 'subdomains-as-hosts': True}
+        resource_recipe = {'format': 'site-resource-hosts', 'source': page,
+                           'identity': {'scope': 'source-root', 'brand': 'Video'},
+                           'properties': ['og:image']}
+        international = {'id': 'international', 'priority': 20, 'mode': 'compiled',
+                         'section': 'media', 'description': '国际版', 'boundary': '国际版专用入口',
+                         'policy-hint': 'global', 'sources': [manifest, page],
+                         'extract': [{'source': manifest, **source_recipe}],
+                         'product-negatives': ['www.vendor.example']}
+        mainland = {'id': 'mainland', 'priority': 40, 'mode': 'compiled',
+                    'section': 'media', 'description': '国内与共用入口', 'boundary': '专项之后的父域',
+                    'policy-hint': 'domestic', 'sources': [company],
+                    'extract': [{'source': company, 'format': 'domain-scope-list'}]}
+        views = [{'id': key + '-all', 'priority': rank, 'mode': 'view', 'section': 'media',
+                  'description': key + ' 合集', 'boundary': '替代成员', 'members': [key]}
+                 for key, rank in [('international', 10), ('mainland', 30)]]
+        config = {'schema-version': 2, 'entries': [*views, international, mainland],
+                  'sections': [{'id': 'media', 'title': '媒体'}], 'shared-negatives': [],
+                  'critical': {'api.global.vendor.example': ['international'],
+                               'www.vendor.example': ['mainland']},
+                  'recommended-views': [view['id'] for view in views],
+                  'source-inventories': [
+                      {'id': 'international-manifest', 'source': manifest,
+                       'recipe': source_recipe, 'owners': ['international']},
+                      {'id': 'official-resource', 'source': page,
+                       'recipe': resource_recipe, 'owners': ['international']}]}
+
+        def document(host):
+            return ('<link rel="canonical" href="https://video.example/">'
+                    '<meta property="og:site_name" content="Video">'
+                    '<meta property="og:url" content="https://video.example/">'
+                    '<meta property="og:image" content="https://' + host + '/cover.png">')
+
+        inputs = {manifest: 'DOMAIN-SUFFIX,video.example\nDOMAIN-SUFFIX,api.global.vendor.example\n'
+                            'DOMAIN-SUFFIX,assets.images.example',
+                  company: 'DOMAIN-SUFFIX,vendor.example', page: document('assets.images.example')}
+        with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
+            root = prepare_workspace(tmp)
+            (root / 'rules').mkdir()
+            entries = pipeline.validate_declarations(config)
+            (root / 'config/catalog.json').write_text(json.dumps(config))
+            (root / 'config/endpoint-contracts.json').write_text('[]')
+            (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
+            for entry in entries.values():
+                rows = ['DOMAIN-SUFFIX,vendor.example'] if entry['id'].startswith('mainland') else ['DOMAIN-SUFFIX,video.example']
+                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                    pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
+            with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
+                pipeline.run()
+                inputs[manifest] += '\nDOMAIN-SUFFIX,runtime.new-region.vendor.example\nDOMAIN-SUFFIX,cdn.new-images.example'
+                inputs[page] = document('cdn.new-images.example')
+                pipeline.run()
+                publish(root)
+                pipeline.run(offline=True)
+                for key in ('international', 'international-all'):
+                    path = root / 'rules' / pipeline.rule_filename(entries[key])
+                    rows = pipeline.rules.read_rules(path.read_text())
+                    self.assertIn('DOMAIN,runtime.new-region.vendor.example', rows)
+                    self.assertIn('DOMAIN,cdn.new-images.example', rows)
+                    self.assertNotIn('DOMAIN-SUFFIX,vendor.example', rows)
+                    self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
+                    output = root / 'dist/sing-box' / path.with_suffix('.json').name
+                    self.assertIn('runtime.new-region.vendor.example', output.read_text())
+                state = json.loads((root / 'data/maintenance-state.json').read_text())
+                self.assertEqual(state['subscription-audit']['duplicate-rules'], 0)
+                self.assertEqual(state['subscription-audit']['shadowed-domain-rules'], 0)
+                before = {path: path.read_bytes() for folder in ('rules', 'dist', 'data')
+                          for path in (root / folder).rglob('*') if path.is_file()}
+                inputs[manifest] += '\nDOMAIN-SUFFIX,vendor.example'
+                with self.assertRaises(Invalid):
+                    pipeline.run()
+                self.assertTrue(all(path.read_bytes() == body for path, body in before.items()))
+
+    def test_product_domain_manifest_keeps_roots_and_narrows_listed_server_hosts(self):
+        recipe = {'format': 'domain-scope-list', 'subdomains-as-hosts': True}
+        body = ('DOMAIN-SUFFIX,product.co.uk\nDOMAIN-SUFFIX,runtime.shared.example\n'
+                'DOMAIN,exact-root.example\nDOMAIN-SUFFIX,tenant.github.io')
+        self.assertEqual(extract_rows(recipe, body), {
+            'DOMAIN-SUFFIX,product.co.uk', 'DOMAIN,runtime.shared.example',
+            'DOMAIN,exact-root.example', 'DOMAIN,tenant.github.io'})
+        changed = body + '\nDOMAIN-SUFFIX,files.new-provider.example'
+        self.assertIn('DOMAIN,files.new-provider.example', extract_rows(recipe, changed))
+        for extra in ('IP-CIDR,8.8.8.0/24,no-resolve', 'DOMAIN-SUFFIX,com',
+                      'DOMAIN-SUFFIX,github.io', 'DOMAIN-WILDCARD,*.shared.example',
+                      'DOMAIN-SUFFIX,product.internal'):
+            with self.subTest(extra=extra), self.assertRaises(Invalid):
+                extract_rows(recipe, body + '\n' + extra)
+        with self.assertRaises(Invalid):
+            extract_rows(recipe, body, shared_hosts={'runtime.shared.example'})
+
+    def test_first_party_resource_metadata_checks_identity_and_new_resource_hosts(self):
+        recipe = {'format': 'site-resource-hosts', 'source': 'https://product.example/',
+                  'identity': {'scope': 'source-root', 'brand': 'Product'},
+                  'properties': ['og:image']}
+        body = ('<link rel="canonical" href="https://product.example/">'
+                '<meta property="og:site_name" content="Product">'
+                '<meta property="og:url" content="https://product.example/">'
+                '<meta property="og:image" content="https://images.assets.example/cover.png?width=600">'
+                '<script src="https://unrelated.shared.example/track.js"></script>')
+        self.assertEqual(extract_rows(recipe, body), {'DOMAIN,images.assets.example'})
+        changed = body.replace('images.assets.example', 'files.unlisted-provider.example')
+        self.assertEqual(extract_rows(recipe, changed), {'DOMAIN,files.unlisted-provider.example'})
+        for bad in (body.replace('content="Product"', 'content="Different product"'),
+                    body.replace('og:image', 'other-field'),
+                    body.replace('https://images.assets.example', 'https://127.0.0.1'),
+                    body.replace('https://images.assets.example', 'https://user:example@images.assets.example')):
+            with self.subTest(body=bad), self.assertRaises(Invalid):
+                extract_rows(recipe, bad)
+
     def test_named_service_table_follows_new_regions_without_claiming_shared_login(self):
         recipe = {'format': 'purpose-host-table', 'section': 'core',
                   'headers': ['URL', 'Purpose'], 'purpose-prefixes': ['Model service'],
