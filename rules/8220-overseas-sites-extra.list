@@ -4,8 +4,8 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-24T17:50:37Z
-# rule-count: 18479
+# updated-at: 2026-11-24T20:44:08Z
+# rule-count: 18477
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
@@ -998,7 +998,6 @@ DOMAIN-SUFFIX,analvids.com
 DOMAIN-SUFFIX,analytictech.com
 DOMAIN-SUFFIX,anb.org
 DOMAIN-SUFFIX,ancensored.com
-DOMAIN-SUFFIX,anchor.fm
 DOMAIN-SUFFIX,anchorfree.com
 DOMAIN-SUFFIX,ancsconf.org
 DOMAIN-SUFFIX,andfaraway.net
@@ -11961,7 +11960,6 @@ DOMAIN-SUFFIX,pdfchm.net
 DOMAIN-SUFFIX,pdfexpert.com
 DOMAIN-SUFFIX,pdncommunity.com
 DOMAIN-SUFFIX,pdproxy.com
-DOMAIN-SUFFIX,pdst.fm
 DOMAIN-SUFFIX,pdxbmw.com
 DOMAIN-SUFFIX,peace.ca
 DOMAIN-SUFFIX,peacefire.org

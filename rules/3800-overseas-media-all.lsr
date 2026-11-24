@@ -4,8 +4,8 @@
 # description: 海外影音与内容合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-24T18:52:07Z
-# rule-count: 182
+# updated-at: 2026-11-24T20:44:08Z
+# rule-count: 200
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list
@@ -22,6 +22,10 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list
 # source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
 # source: https://developer.spotify.com/documentation/embeds/reference/oembed
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://www.spotify.com/bounty
+# source: https://anchor.fm/
+# source: https://newsroom.spotify.com/2026-04-20/deeper-music-features-about-the-song-dj-songdna/
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
@@ -191,6 +195,24 @@ DOMAIN-SUFFIX,spotifyforbrands.com
 DOMAIN-SUFFIX,spotifyforvendors.com
 DOMAIN-SUFFIX,spotifyjobs.com
 DOMAIN-SUFFIX,tospotify.com
+DOMAIN,spotifycs.my.salesforce.com
+DOMAIN-SUFFIX,anchor.fm
+DOMAIN-SUFFIX,eyeofthestormers.com
+DOMAIN-SUFFIX,sonalytic.com
+DOMAIN-SUFFIX,spotifyforpartners.com
+DOMAIN-SUFFIX,spotifynewsroom.jp
+DOMAIN-SUFFIX,spotifyonstage.com
+DOMAIN-SUFFIX,spotifypremium.jp
+DOMAIN-SUFFIX,spotifyvault.com
+DOMAIN-SUFFIX,timetoplayfair.com
+DOMAIN-WILDCARD,*.atspotify.com
+DOMAIN-WILDCARD,*.avecspotify.com
+DOMAIN-WILDCARD,*.enspotify.com
+DOMAIN-WILDCARD,*.forspotify.com
+DOMAIN-WILDCARD,*.fromspotify.com
+DOMAIN-WILDCARD,*.spotify.net
+DOMAIN-WILDCARD,*.withspotify.com
+DOMAIN,www.whosampled.com
 DOMAIN-SUFFIX,sndcdn.com
 DOMAIN-SUFFIX,soundcloud.cloud
 DOMAIN-SUFFIX,soundcloud.com

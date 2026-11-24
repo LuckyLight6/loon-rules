@@ -4,8 +4,8 @@
 # description: 海外 AI 合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-24T14:29:55Z
-# rule-count: 645
+# updated-at: 2026-11-24T20:44:08Z
+# rule-count: 682
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
@@ -53,6 +53,8 @@
 # source: https://docs.devin.ai/api-reference/authentication
 # source: https://elevenlabs.io/docs/eleven-api/resources/mcp-server
 # source: https://raw.githubusercontent.com/elevenlabs/elevenlabs-python/main/src/elevenlabs/environment.py
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://newsroom.spotify.com/2022-06-13/spotify-to-acquire-sonantic-an-ai-voice-platform/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/midjourney.list
 # source: https://docs.midjourney.com/api/v2/help_center/en-us/articles.json
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openrouter.list
@@ -616,6 +618,39 @@ IP-CIDR,9.205.248.77/32,no-resolve
 IP-CIDR,9.205.250.159/32,no-resolve
 IP-CIDR,9.205.94.183/32,no-resolve
 IP-CIDR,9.205.94.184/32,no-resolve
+IP-CIDR,134.138.52.114/32,no-resolve
+IP-CIDR,134.138.52.187/32,no-resolve
+IP-CIDR,134.138.52.195/32,no-resolve
+IP-CIDR,172.172.179.197/32,no-resolve
+IP-CIDR,172.196.43.61/32,no-resolve
+IP-CIDR,172.198.153.202/32,no-resolve
+IP-CIDR,20.100.176.238/32,no-resolve
+IP-CIDR,20.101.89.121/32,no-resolve
+IP-CIDR,20.12.234.67/32,no-resolve
+IP-CIDR,20.124.184.226/32,no-resolve
+IP-CIDR,20.124.193.23/32,no-resolve
+IP-CIDR,20.127.120.244/32,no-resolve
+IP-CIDR,20.165.191.7/32,no-resolve
+IP-CIDR,20.175.112.94/32,no-resolve
+IP-CIDR,20.200.182.97/32,no-resolve
+IP-CIDR,20.208.217.90/32,no-resolve
+IP-CIDR,20.213.235.219/32,no-resolve
+IP-CIDR,20.218.28.103/32,no-resolve
+IP-CIDR,20.220.212.87/32,no-resolve
+IP-CIDR,20.78.168.55/32,no-resolve
+IP-CIDR,20.92.18.45/32,no-resolve
+IP-CIDR,4.223.117.119/32,no-resolve
+IP-CIDR,48.193.46.27/32,no-resolve
+IP-CIDR,51.105.39.183/32,no-resolve
+IP-CIDR,51.57.168.20/32,no-resolve
+IP-CIDR,57.156.64.73/32,no-resolve
+IP-CIDR,68.221.70.192/32,no-resolve
+IP-CIDR,74.152.64.2/32,no-resolve
+IP-CIDR,74.152.66.187/32,no-resolve
+IP-CIDR,85.211.181.129/32,no-resolve
+IP-CIDR,9.160.160.218/32,no-resolve
+IP-CIDR,9.160.162.11/32,no-resolve
+IP-CIDR,9.205.91.41/32,no-resolve
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,bard.google.com
@@ -726,6 +761,10 @@ DOMAIN,api.endpoints.huggingface.cloud
 DOMAIN-SUFFIX,devin.ai
 DOMAIN-SUFFIX,elevenlabs.io
 DOMAIN-SUFFIX,elevenlabsusercontent.com
+DOMAIN,api.sonantic.io
+DOMAIN,app.sonantic.io
+DOMAIN,label-studio-public.sonantic.io
+DOMAIN,www.sonantic.io
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,openrouter.ai
 DOMAIN-SUFFIX,codeium.com

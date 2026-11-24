@@ -1,0 +1,16 @@
+# name: whosampled-music-discovery
+# priority: 3915
+# section: media
+# description: WhoSampled 音乐采样与作品资料库
+# boundary: 按官方项目说明读取音乐资料网站与同主机 API，和 Spotify 播放入口分开；不因移动 App 未纳入漏洞奖励就认定其网络流量可忽略
+# created-at: 2026-11-24T20:44:08Z
+# updated-at: 2026-11-24T20:44:08Z
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://newsroom.spotify.com/2026-04-20/deeper-music-features-about-the-song-dj-songdna/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/3915-whosampled-music-discovery.lsr
+
+domain_set:
+  - "www.whosampled.com"

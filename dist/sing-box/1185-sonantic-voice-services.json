@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api.sonantic.io",
+        "app.sonantic.io",
+        "label-studio-public.sonantic.io",
+        "www.sonantic.io"
+      ]
+    }
+  ]
+}

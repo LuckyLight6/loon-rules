@@ -4,7 +4,7 @@
 # description: 海外开发合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T20:44:08Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr
 # source: https://api.github.com/meta
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
@@ -39,8 +39,11 @@
 # source: https://developers.sift.com/guides/payment-gateway
 # source: https://auth0.com/
 # source: https://docs.bugsnag.com/platforms/javascript/configuration-options/
-# canonical-rule-count: 224
-# rule-count: 224
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://backstage.io/docs/overview/background/
+# source: https://newsroom.spotify.com/2023-06-13/evolving-brands-measurement-experience-with-all-new-spotify-ad-analytics/
+# canonical-rule-count: 230
+# rule-count: 230
 # format: egern
 # canonical: rules/3000-overseas-development-all.lsr
 
@@ -102,6 +105,9 @@ domain_suffix_set:
   - "siftscience.com"
   - "auth0.com"
   - "bugsnag.com"
+  - "backstage.io"
+  - "pdst.fm"
+  - "podsights.com"
 domain_set:
   - "github-avatars.oss-cn-hongkong.aliyuncs.com"
   - "github-cloud.s3.amazonaws.com"
@@ -270,3 +276,6 @@ domain_set:
   - "console.statsig.com"
   - "console.statsigcdn.com"
   - "idliststorage.blob.core.windows.net"
+  - "api-partner.spotify.com"
+  - "metarouter.pdst.io"
+  - "podcast-graph-dot-adaptive-growth.appspot.com"

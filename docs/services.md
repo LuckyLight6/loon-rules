@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 195 个厂商或项目、338 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 196 个厂商或项目、342 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -8,13 +8,13 @@
 
 | 用途 | 合集 | 成员数量 |
 |---|---|---:|
-| 海外 AI 合集 | [1000 海外 AI 合集](../rules/1000-ai-overseas-all.lsr) | 79 |
+| 海外 AI 合集 | [1000 海外 AI 合集](../rules/1000-ai-overseas-all.lsr) | 80 |
 | 国产 AI 国际版合集 | [1800 国产 AI 国际版合集](../rules/1800-ai-cn-international-all.lsr) | 12 |
-| 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 24 |
+| 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 26 |
 | 海外通讯与社交合集 | [3300 海外通讯与社交合集](../rules/3300-overseas-social-all.lsr) | 18 |
 | 海外支付合集 | [3500 海外支付合集](../rules/3500-overseas-payments-all.lsr) | 8 |
 | 海外加密资产服务合集 | [3600 海外加密资产服务合集](../rules/3600-overseas-crypto-all.lsr) | 10 |
-| 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 15 |
+| 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 16 |
 | 海外游戏合集 | [4100 海外游戏合集](../rules/4100-overseas-games-all.lsr) | 9 |
 | 海外办公、邮件与协作合集 | [4300 海外办公、邮件与协作合集](../rules/4300-overseas-productivity-all.lsr) | 6 |
 | 跨国厂商国内可用服务合集 | [4900 跨国厂商国内可用服务合集](../rules/4900-multinational-mainland-all.lsr) | 8 |
@@ -180,6 +180,15 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | ElevenLabs 语音生成、WebSocket、文件与 MCP | [1180 ElevenLabs 语音生成、WebSocket、文件与 MCP](../rules/1180-elevenlabs-voice-and-api.lsr) |
+
+## Spotify
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Sonantic AI 语音 | [1185 Sonantic AI 语音平台](../rules/1185-sonantic-voice-services.lsr) |
+| Ads API 与 Spotify Ad Analytics | [3250 Spotify 广告 API 与广告分析](../rules/3250-spotify-advertising-and-analytics.lsr) |
+| Spotify 音乐、播客及相关网站 | [3910 Spotify 音乐、播客及相关网站](../rules/3910-spotify-audio.lsr) |
+| WhoSampled 音乐资料库 | [3915 WhoSampled 音乐采样与作品资料库](../rules/3915-whosampled-music-discovery.lsr) |
 
 ## Midjourney
 
@@ -809,6 +818,12 @@
 |---|---|
 | Bugsnag 错误监控与会话报告 | [3230 Bugsnag 错误监控与会话报告](../rules/3230-bugsnag-error-monitoring.lsr) |
 
+## CNCF
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Backstage 开发者门户 | [3240 Backstage 开发者门户项目](../rules/3240-backstage-developer-portal.lsr) |
+
 ## Telegram
 
 | 产品或服务 | 对应规则 |
@@ -1000,12 +1015,6 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Vimeo 视频与交付 | [3900 Vimeo 视频与交付](../rules/3900-vimeo-video.lsr) |
-
-## Spotify
-
-| 产品或服务 | 对应规则 |
-|---|---|
-| Spotify 音乐、播客及相关网站 | [3910 Spotify 音乐、播客及相关网站](../rules/3910-spotify-audio.lsr) |
 
 ## SoundCloud
 

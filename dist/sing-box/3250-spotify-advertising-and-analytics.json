@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "api-partner.spotify.com",
+        "metarouter.pdst.io",
+        "podcast-graph-dot-adaptive-growth.appspot.com"
+      ],
+      "domain_suffix": [
+        "pdst.fm",
+        "podsights.com"
+      ]
+    }
+  ]
+}

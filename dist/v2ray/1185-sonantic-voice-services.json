@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api.sonantic.io",
+          "full:app.sonantic.io",
+          "full:label-studio-public.sonantic.io",
+          "full:www.sonantic.io"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

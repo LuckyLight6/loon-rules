@@ -6,7 +6,7 @@
 
 ## 在本地检查和生成
 
-需要 Python 3.10 或更新版本，联网更新还需要 `curl`。在虚拟环境安装本仓包，会一并安装读取 JavaScript SDK 所需的 Tree-sitter 解析器；它生成语法树，不执行 SDK。源码布局使用 [`src/`](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)：
+需要 Python 3.10 或更新版本，联网更新还需要 `curl`。在虚拟环境安装本仓包，会一并安装 Tree-sitter 和 Markdown 解析器，用于读取 SDK 静态配置及公开资产说明，不执行下载的代码。源码布局使用 [`src/`](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)：
 
 ```sh
 python3 -m venv .venv
@@ -91,6 +91,8 @@ python3 -B -m loon_rules --check-exports
 合集可以用 `member-selection.groups` 跟随所属子类的全部细分成员；新增产品同时进入细分清单和对应合集。
 
 `source-inventories` 是发布条件，不只是统计。新增范围未归属、被错误产品抢先匹配或完整清单读取失败时，生成器保留上一版。选择整份公司域名来源时，必须配套这项检查；不能靠扩大父域让用例通过。
+
+安全项目的资产资料用 `security-program-domains` 读取。每个产品除了自己的用途清单，还须配套同一项目的 `complete: true` 全表核对。新资产、未处理类型或用途变化会停止更新；源码、App 标识等非网络类型要说明处理依据。安全测试的排除项既不自动加入规则，也不能用来撤回其他有效来源支持的入口。[读取方式](source-formats.md#公开安全资产怎样按产品分配)
 
 已确认是完整产品表时，优先使用 `domain-scope-list` 或原生 `geosite-domain-list`，配套相同范围的独立清单检查，避免再维护一份 `roots` 白名单。原生分类引用指向实际产品来源；共享平台按独立用途分配，并检查目标组的完整范围。不要从自由文本注释推断全站停用，也不要为消除差异把历史入口、第三方产品或公共后缀整表收进来。[读取条件与实例](source-formats.md#原生-geosite-清单怎样分配)
 

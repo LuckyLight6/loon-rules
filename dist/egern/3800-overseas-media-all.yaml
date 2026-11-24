@@ -4,7 +4,7 @@
 # description: 海外影音与内容合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-24T18:52:07Z
+# updated-at: 2026-11-24T20:44:08Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list
@@ -21,12 +21,16 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list
 # source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
 # source: https://developer.spotify.com/documentation/embeds/reference/oembed
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://www.spotify.com/bounty
+# source: https://anchor.fm/
+# source: https://newsroom.spotify.com/2026-04-20/deeper-music-features-about-the-song-dj-songdna/
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Bahamut.list
-# canonical-rule-count: 182
-# rule-count: 182
+# canonical-rule-count: 200
+# rule-count: 200
 # format: egern
 # canonical: rules/3800-overseas-media-all.lsr
 
@@ -165,6 +169,15 @@ domain_suffix_set:
   - "spotifyforvendors.com"
   - "spotifyjobs.com"
   - "tospotify.com"
+  - "anchor.fm"
+  - "eyeofthestormers.com"
+  - "sonalytic.com"
+  - "spotifyforpartners.com"
+  - "spotifynewsroom.jp"
+  - "spotifyonstage.com"
+  - "spotifypremium.jp"
+  - "spotifyvault.com"
+  - "timetoplayfair.com"
   - "sndcdn.com"
   - "soundcloud.cloud"
   - "soundcloud.com"
@@ -211,6 +224,16 @@ domain_set:
   - "spotify.com.edgesuite.net"
   - "spotify.map.fastly.net"
   - "spotify.map.fastlylb.net"
+  - "spotifycs.my.salesforce.com"
+  - "www.whosampled.com"
   - "bahamut.akamaized.net"
   - "gamer-cds.cdn.hinet.net"
   - "gamer2-cds.cdn.hinet.net"
+domain_regex_set:
+  - "(?i)^.*\\.atspotify\\.com$"
+  - "(?i)^.*\\.avecspotify\\.com$"
+  - "(?i)^.*\\.enspotify\\.com$"
+  - "(?i)^.*\\.forspotify\\.com$"
+  - "(?i)^.*\\.fromspotify\\.com$"
+  - "(?i)^.*\\.spotify\\.net$"
+  - "(?i)^.*\\.withspotify\\.com$"

@@ -2,13 +2,16 @@
 # priority: 3910
 # section: media
 # description: Spotify 音乐、播客及相关网站
-# boundary: 播放、短链、产品网站和清单中的专用 CDN；共享 CDN 只取列出的精确主机，不采用 spotify 关键词、桌面 User-Agent 或共享云 IP
+# boundary: 音乐、播客、创作者入口、品牌网站和专用 CDN；完整来源中的独立开发、语音 AI、音乐资料库和广告平台分别归类，共享租户保持精确匹配，不采用关键词、User-Agent 或共享云 IP
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-24T16:40:58Z
+# updated-at: 2026-11-24T20:44:08Z
 # source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
 # source: https://developer.spotify.com/documentation/embeds/reference/oembed
-# canonical-rule-count: 25
-# rule-count: 25
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://www.spotify.com/bounty
+# source: https://anchor.fm/
+# canonical-rule-count: 42
+# rule-count: 42
 # format: egern
 # canonical: rules/3910-spotify-audio.lsr
 
@@ -30,6 +33,15 @@ domain_suffix_set:
   - "spotifyforvendors.com"
   - "spotifyjobs.com"
   - "tospotify.com"
+  - "anchor.fm"
+  - "eyeofthestormers.com"
+  - "sonalytic.com"
+  - "spotifyforpartners.com"
+  - "spotifynewsroom.jp"
+  - "spotifyonstage.com"
+  - "spotifypremium.jp"
+  - "spotifyvault.com"
+  - "timetoplayfair.com"
 domain_set:
   - "audio-ak-spotify-com.akamaized.net"
   - "audio4-ak-spotify-com.akamaized.net"
@@ -39,3 +51,12 @@ domain_set:
   - "spotify.com.edgesuite.net"
   - "spotify.map.fastly.net"
   - "spotify.map.fastlylb.net"
+  - "spotifycs.my.salesforce.com"
+domain_regex_set:
+  - "(?i)^.*\\.atspotify\\.com$"
+  - "(?i)^.*\\.avecspotify\\.com$"
+  - "(?i)^.*\\.enspotify\\.com$"
+  - "(?i)^.*\\.forspotify\\.com$"
+  - "(?i)^.*\\.fromspotify\\.com$"
+  - "(?i)^.*\\.spotify\\.net$"
+  - "(?i)^.*\\.withspotify\\.com$"

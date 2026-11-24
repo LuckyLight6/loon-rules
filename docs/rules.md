@@ -63,6 +63,7 @@
 | 1160 | [hugging-face-model-hub](../rules/1160-hugging-face-model-hub.lsr) | Hugging Face 模型库与专用 CDN | 共享存储不整段代理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1160-hugging-face-model-hub.lsr) |
 | 1170 | [devin-cloud-coding](../rules/1170-devin-cloud-coding.lsr) | Devin 自有云编程入口 | 不覆盖它所访问的外部仓库 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1170-devin-cloud-coding.lsr) |
 | 1180 | [elevenlabs-voice-and-api](../rules/1180-elevenlabs-voice-and-api.lsr) | ElevenLabs 语音生成、WebSocket、文件与 MCP | 只收厂商专用根域，包含 API 与 ElevenLabs CDN，不扩到第三方语音或存储基础设施 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1180-elevenlabs-voice-and-api.lsr) |
+| 1185 | [sonantic-voice-services](../rules/1185-sonantic-voice-services.lsr) | Sonantic AI 语音平台 | 按产品用途读取语音平台主机，并跟随官方 Sonantic 入口链接；Spotify 音乐、共享云和广告分析不归本组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1185-sonantic-voice-services.lsr) |
 | 1190 | [midjourney-image-tools](../rules/1190-midjourney-image-tools.lsr) | Midjourney 图像服务入口 | 不把 Discord 基础设施都交给它 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1190-midjourney-image-tools.lsr) |
 | 1200 | [openrouter-gateway](../rules/1200-openrouter-gateway.lsr) | OpenRouter 的模型网关入口 | 同一个网关不根据模型名称切流 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1200-openrouter-gateway.lsr) |
 | 1210 | [windsurf-editor-and-api](../rules/1210-windsurf-editor-and-api.lsr) | Windsurf 和 Codeium 专用接口 | 不把公共托管平台当开发助手 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1210-windsurf-editor-and-api.lsr) |
@@ -224,7 +225,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3000 | [overseas-development-all](../rules/3000-overseas-development-all.lsr) | 海外开发合集 | **合集：替代 3010–3230。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3000-overseas-development-all.lsr) |
+| 3000 | [overseas-development-all](../rules/3000-overseas-development-all.lsr) | 海外开发合集 | **合集：替代 3010–3250。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3000-overseas-development-all.lsr) |
 
 ### 5.2 海外开发 · 产品细分
 
@@ -254,6 +255,8 @@
 | 3210 | [sift-fraud-prevention](../rules/3210-sift-fraud-prevention.lsr) | Sift 反欺诈、设备与风险 API | Sift 自有站点、SDK 与旧品牌 API 命名空间；不接管使用风控服务的商户，不称为 Claude 自有认证 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3210-sift-fraud-prevention.lsr) |
 | 3220 | [auth0-identity-platform](../rules/3220-auth0-identity-platform.lsr) | Auth0 身份认证与共享登录平台 | 供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3220-auth0-identity-platform.lsr) |
 | 3230 | [bugsnag-error-monitoring](../rules/3230-bugsnag-error-monitoring.lsr) | Bugsnag 错误监控与会话报告 | 供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3230-bugsnag-error-monitoring.lsr) |
+| 3240 | [backstage-developer-portal](../rules/3240-backstage-developer-portal.lsr) | Backstage 开发者门户项目 | Backstage 项目网站与公开产品清单；用户自行部署的门户、GitHub 源码托管和 Spotify 音乐不归本组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3240-backstage-developer-portal.lsr) |
+| 3250 | [spotify-advertising-and-analytics](../rules/3250-spotify-advertising-and-analytics.lsr) | Spotify 广告 API 与广告分析 | Ads API 及 Podsights／Spotify Ad Analytics 的控制台、统计和指定租户；分类不代表免于广告与隐私拦截，不接管整个 Spotify 或 Google 云 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3250-spotify-advertising-and-analytics.lsr) |
 
 ## 6 通讯与社交（海外）
 
@@ -357,7 +360,8 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3910 | [spotify-audio](../rules/3910-spotify-audio.lsr) | Spotify 音乐、播客及相关网站 | 播放、短链、产品网站和清单中的专用 CDN；共享 CDN 只取列出的精确主机，不采用 spotify 关键词、桌面 User-Agent 或共享云 IP | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3910-spotify-audio.lsr) |
+| 3910 | [spotify-audio](../rules/3910-spotify-audio.lsr) | Spotify 音乐、播客及相关网站 | 音乐、播客、创作者入口、品牌网站和专用 CDN；完整来源中的独立开发、语音 AI、音乐资料库和广告平台分别归类，共享租户保持精确匹配，不采用关键词、User-Agent 或共享云 IP | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3910-spotify-audio.lsr) |
+| 3915 | [whosampled-music-discovery](../rules/3915-whosampled-music-discovery.lsr) | WhoSampled 音乐采样与作品资料库 | 按官方项目说明读取音乐资料网站与同主机 API，和 Spotify 播放入口分开；不因移动 App 未纳入漏洞奖励就认定其网络流量可忽略 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3915-whosampled-music-discovery.lsr) |
 | 3920 | [soundcloud-audio](../rules/3920-soundcloud-audio.lsr) | SoundCloud 音频与创作者服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3920-soundcloud-audio.lsr) |
 
 ### 9.4 直播平台

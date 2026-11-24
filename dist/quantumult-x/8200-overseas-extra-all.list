@@ -4,7 +4,7 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T20:44:08Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -12,8 +12,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18610
-# rule-count: 18610
+# canonical-rule-count: 18607
+# rule-count: 18607
 # format: quantumult-x
 # canonical: rules/8200-overseas-extra-all.lsr
 
@@ -131,7 +131,6 @@ host-suffix,showtime.com,proxy
 host-suffix,skyking.com.tw,proxy
 host-suffix,smartmediarep.com,proxy
 host-suffix,spotify-com.akamaized.net,proxy
-host-suffix,spotifynewsroom.jp,proxy
 host-suffix,spotilocal.com,proxy
 host-suffix,theplatform.com,proxy
 host-suffix,tidal.com,proxy
@@ -1134,7 +1133,6 @@ host-suffix,analvids.com,proxy
 host-suffix,analytictech.com,proxy
 host-suffix,anb.org,proxy
 host-suffix,ancensored.com,proxy
-host-suffix,anchor.fm,proxy
 host-suffix,anchorfree.com,proxy
 host-suffix,ancsconf.org,proxy
 host-suffix,andfaraway.net,proxy
@@ -12097,7 +12095,6 @@ host-suffix,pdfchm.net,proxy
 host-suffix,pdfexpert.com,proxy
 host-suffix,pdncommunity.com,proxy
 host-suffix,pdproxy.com,proxy
-host-suffix,pdst.fm,proxy
 host-suffix,pdxbmw.com,proxy
 host-suffix,peace.ca,proxy
 host-suffix,peacefire.org,proxy

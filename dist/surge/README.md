@@ -35,6 +35,7 @@
 | 1160 | hugging-face-model-hub | Hugging Face 模型库与专用 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1160-hugging-face-model-hub.list) |
 | 1170 | devin-cloud-coding | Devin 自有云编程入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1170-devin-cloud-coding.list) |
 | 1180 | elevenlabs-voice-and-api | ElevenLabs 语音生成、WebSocket、文件与 MCP | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1180-elevenlabs-voice-and-api.list) |
+| 1185 | sonantic-voice-services | Sonantic AI 语音平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1185-sonantic-voice-services.list) |
 | 1190 | midjourney-image-tools | Midjourney 图像服务入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1190-midjourney-image-tools.list) |
 | 1200 | openrouter-gateway | OpenRouter 的模型网关入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1200-openrouter-gateway.list) |
 | 1210 | windsurf-editor-and-api | Windsurf 和 Codeium 专用接口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1210-windsurf-editor-and-api.list) |
@@ -172,6 +173,8 @@
 | 3210 | sift-fraud-prevention | Sift 反欺诈、设备与风险 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3210-sift-fraud-prevention.list) |
 | 3220 | auth0-identity-platform | Auth0 身份认证与共享登录平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3220-auth0-identity-platform.list) |
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3230-bugsnag-error-monitoring.list) |
+| 3240 | backstage-developer-portal | Backstage 开发者门户项目 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3240-backstage-developer-portal.list) |
+| 3250 | spotify-advertising-and-analytics | Spotify 广告 API 与广告分析 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3250-spotify-advertising-and-analytics.list) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3300-overseas-social-all.list) |
 | 3310 | telegram-messaging | Telegram 通讯、文件与官方关联工具 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3310-telegram-messaging.list) |
 | 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3320-discord-messaging-and-voice.list) |
@@ -223,6 +226,7 @@
 | 3890 | iqiyi-international | 爱奇艺国际版 iQIYI 与专用国际 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3890-iqiyi-international.list) |
 | 3900 | vimeo-video | Vimeo 视频与交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3900-vimeo-video.list) |
 | 3910 | spotify-audio | Spotify 音乐、播客及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3910-spotify-audio.list) |
+| 3915 | whosampled-music-discovery | WhoSampled 音乐采样与作品资料库 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3915-whosampled-music-discovery.list) |
 | 3920 | soundcloud-audio | SoundCloud 音频与创作者服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3920-soundcloud-audio.list) |
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3930-twitch-live-video.list) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3940-bbc-news-and-video.list) |

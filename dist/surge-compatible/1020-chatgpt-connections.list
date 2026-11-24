@@ -4,12 +4,12 @@
 # description: ChatGPT、Codex、OpenAI API、语音信令与媒体连接
 # boundary: 登录、对话和文件按专用域名，语音媒体按官方公开的单个服务器 IP；IP 不为匹配触发 DNS。不把 LiveKit、Stripe、Cloudflare、Azure 或 Google 的共享域和网段一并代理
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-20T09:02:33Z
+# updated-at: 2026-11-24T20:44:08Z
 # source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
 # source: https://openai.com/chatgpt-voice.json
-# canonical-rule-count: 427
-# rule-count: 427
+# canonical-rule-count: 460
+# rule-count: 460
 # format: surge-compatible
 # canonical: rules/1020-chatgpt-connections.lsr
 
@@ -440,3 +440,36 @@ IP-CIDR,9.205.248.77/32,no-resolve
 IP-CIDR,9.205.250.159/32,no-resolve
 IP-CIDR,9.205.94.183/32,no-resolve
 IP-CIDR,9.205.94.184/32,no-resolve
+IP-CIDR,134.138.52.114/32,no-resolve
+IP-CIDR,134.138.52.187/32,no-resolve
+IP-CIDR,134.138.52.195/32,no-resolve
+IP-CIDR,172.172.179.197/32,no-resolve
+IP-CIDR,172.196.43.61/32,no-resolve
+IP-CIDR,172.198.153.202/32,no-resolve
+IP-CIDR,20.100.176.238/32,no-resolve
+IP-CIDR,20.101.89.121/32,no-resolve
+IP-CIDR,20.12.234.67/32,no-resolve
+IP-CIDR,20.124.184.226/32,no-resolve
+IP-CIDR,20.124.193.23/32,no-resolve
+IP-CIDR,20.127.120.244/32,no-resolve
+IP-CIDR,20.165.191.7/32,no-resolve
+IP-CIDR,20.175.112.94/32,no-resolve
+IP-CIDR,20.200.182.97/32,no-resolve
+IP-CIDR,20.208.217.90/32,no-resolve
+IP-CIDR,20.213.235.219/32,no-resolve
+IP-CIDR,20.218.28.103/32,no-resolve
+IP-CIDR,20.220.212.87/32,no-resolve
+IP-CIDR,20.78.168.55/32,no-resolve
+IP-CIDR,20.92.18.45/32,no-resolve
+IP-CIDR,4.223.117.119/32,no-resolve
+IP-CIDR,48.193.46.27/32,no-resolve
+IP-CIDR,51.105.39.183/32,no-resolve
+IP-CIDR,51.57.168.20/32,no-resolve
+IP-CIDR,57.156.64.73/32,no-resolve
+IP-CIDR,68.221.70.192/32,no-resolve
+IP-CIDR,74.152.64.2/32,no-resolve
+IP-CIDR,74.152.66.187/32,no-resolve
+IP-CIDR,85.211.181.129/32,no-resolve
+IP-CIDR,9.160.160.218/32,no-resolve
+IP-CIDR,9.160.162.11/32,no-resolve
+IP-CIDR,9.205.91.41/32,no-resolve

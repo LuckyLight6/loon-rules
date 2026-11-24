@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T20:44:08Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18479
-# rule-count: 18479
+# canonical-rule-count: 18477
+# rule-count: 18477
 # format: quantumult-x
 # canonical: rules/8220-overseas-sites-extra.lsr
 
@@ -1001,7 +1001,6 @@ host-suffix,analvids.com,proxy
 host-suffix,analytictech.com,proxy
 host-suffix,anb.org,proxy
 host-suffix,ancensored.com,proxy
-host-suffix,anchor.fm,proxy
 host-suffix,anchorfree.com,proxy
 host-suffix,ancsconf.org,proxy
 host-suffix,andfaraway.net,proxy
@@ -11964,7 +11963,6 @@ host-suffix,pdfchm.net,proxy
 host-suffix,pdfexpert.com,proxy
 host-suffix,pdncommunity.com,proxy
 host-suffix,pdproxy.com,proxy
-host-suffix,pdst.fm,proxy
 host-suffix,pdxbmw.com,proxy
 host-suffix,peace.ca,proxy
 host-suffix,peacefire.org,proxy

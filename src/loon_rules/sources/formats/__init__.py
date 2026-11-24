@@ -2,6 +2,14 @@
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
 from . import api, contextual, documents, feeds, networks, regions, structured, tables
+
+
+def security_program_rows(recipe, text):
+    # The audit module also imports format helpers, so load it after dispatch setup.
+    from loon_rules.sources.security_programs import extract
+    return extract(recipe, text)
+
+
 READERS = {
     'annotated-domains': feeds.parse_annotated_domains,
     'api-discovery': structured.api_discovery,
@@ -60,6 +68,7 @@ READERS = {
     'service-address-table': networks.service_address_table,
     'service-domain-table': tables.parse_service_domain_table,
     'service-domain-groups': structured.service_domain_groups,
+    'security-program-domains': security_program_rows,
     'site-identity': documents.parse_site_identity,
     'site-resource-hosts': documents.site_resource_hosts,
     'vim-config-defaults': api.parse_vim_config_defaults,
@@ -78,7 +87,7 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts', 'qt-host-predicate', 'next-service-urls', 'literal-object-urls')
+    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts', 'qt-host-predicate', 'next-service-urls', 'literal-object-urls', 'security-program-domains')
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

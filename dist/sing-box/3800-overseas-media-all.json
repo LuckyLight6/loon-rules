@@ -137,6 +137,15 @@
         "spotifyforvendors.com",
         "spotifyjobs.com",
         "tospotify.com",
+        "anchor.fm",
+        "eyeofthestormers.com",
+        "sonalytic.com",
+        "spotifyforpartners.com",
+        "spotifynewsroom.jp",
+        "spotifyonstage.com",
+        "spotifypremium.jp",
+        "spotifyvault.com",
+        "timetoplayfair.com",
         "sndcdn.com",
         "soundcloud.cloud",
         "soundcloud.com",
@@ -184,9 +193,20 @@
         "spotify.com.edgesuite.net",
         "spotify.map.fastly.net",
         "spotify.map.fastlylb.net",
+        "spotifycs.my.salesforce.com",
+        "www.whosampled.com",
         "bahamut.akamaized.net",
         "gamer-cds.cdn.hinet.net",
         "gamer2-cds.cdn.hinet.net"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.atspotify\\.com$",
+        "(?i)^.*\\.avecspotify\\.com$",
+        "(?i)^.*\\.enspotify\\.com$",
+        "(?i)^.*\\.forspotify\\.com$",
+        "(?i)^.*\\.fromspotify\\.com$",
+        "(?i)^.*\\.spotify\\.net$",
+        "(?i)^.*\\.withspotify\\.com$"
       ]
     }
   ]

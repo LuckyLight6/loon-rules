@@ -94,6 +94,7 @@
         "hugging-face-model-hub",
         "devin-cloud-coding",
         "elevenlabs-voice-and-api",
+        "sonantic-voice-services",
         "midjourney-image-tools",
         "openrouter-gateway",
         "windsurf-editor-and-api",
@@ -287,7 +288,9 @@
         "yoti-identity-verification",
         "sift-fraud-prevention",
         "auth0-identity-platform",
-        "bugsnag-error-monitoring"
+        "bugsnag-error-monitoring",
+        "backstage-developer-portal",
+        "spotify-advertising-and-analytics"
       ],
       "subheadings": {
         "github-code-and-packages": "海外开发 · 产品细分"
@@ -431,6 +434,7 @@
         "iqiyi-international",
         "vimeo-video",
         "spotify-audio",
+        "whosampled-music-discovery",
         "soundcloud-audio",
         "twitch-live-video",
         "bbc-news-and-video",
@@ -9041,10 +9045,13 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Spotify 音乐、播客及相关网站",
-      "boundary": "播放、短链、产品网站和清单中的专用 CDN；共享 CDN 只取列出的精确主机，不采用 spotify 关键词、桌面 User-Agent 或共享云 IP",
+      "boundary": "音乐、播客、创作者入口、品牌网站和专用 CDN；完整来源中的独立开发、语音 AI、音乐资料库和广告平台分别归类，共享租户保持精确匹配，不采用关键词、User-Agent 或共享云 IP",
       "sources": [
         "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify",
-        "https://developer.spotify.com/documentation/embeds/reference/oembed"
+        "https://developer.spotify.com/documentation/embeds/reference/oembed",
+        "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+        "https://www.spotify.com/bounty",
+        "https://anchor.fm/"
       ],
       "priority": 3910,
       "section": "media",
@@ -9066,6 +9073,44 @@
             "The base URI is"
           ],
           "protect-from-reject": true
+        },
+        {
+          "format": "security-program-domains",
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "WILDCARD",
+              "read": "identifier"
+            },
+            {
+              "type": "URL",
+              "read": "identifier",
+              "within-wildcards": true,
+              "purpose-contains": "Spotify Web API endpoints return JSON metadata"
+            },
+            {
+              "type": "URL",
+              "read": "identifier",
+              "within-wildcards": true,
+              "label": "assets.spotify.com"
+            },
+            {
+              "type": "OTHER",
+              "label": "Other Spotify websites",
+              "read": "fenced-domains",
+              "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+            },
+            {
+              "type": "OTHER",
+              "label": "Anchor",
+              "read": "fenced-domains"
+            }
+          ],
+          "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json"
         }
       ]
     },
@@ -14812,6 +14857,177 @@
           ]
         }
       }
+    },
+    {
+      "id": "sonantic-voice-services",
+      "priority": 1185,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "description": "Sonantic AI 语音平台",
+      "policy-hint": "ai-overseas",
+      "boundary": "按产品用途读取语音平台主机，并跟随官方 Sonantic 入口链接；Spotify 音乐、共享云和广告分析不归本组",
+      "product-probes": [
+        "api.sonantic.io",
+        "app.sonantic.io",
+        "www.sonantic.io"
+      ],
+      "mode": "compiled",
+      "selection": "detailed",
+      "sources": [
+        "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+        "https://newsroom.spotify.com/2022-06-13/spotify-to-acquire-sonantic-an-ai-voice-platform/"
+      ],
+      "extract": [
+        {
+          "format": "security-program-domains",
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "OTHER",
+              "label": "Sonantic",
+              "read": "fenced-domains",
+              "purpose": "These targets are in scope:"
+            }
+          ],
+          "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json"
+        },
+        {
+          "format": "product-role-links",
+          "source": "https://newsroom.spotify.com/2022-06-13/spotify-to-acquire-sonantic-an-ai-voice-platform/",
+          "labels": [
+            "Sonantic"
+          ]
+        }
+      ],
+      "license": "MIT",
+      "notice": "arkadiyt--bounty-targets-data.txt"
+    },
+    {
+      "id": "backstage-developer-portal",
+      "priority": 3240,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "description": "Backstage 开发者门户项目",
+      "policy-hint": "global",
+      "boundary": "Backstage 项目网站与公开产品清单；用户自行部署的门户、GitHub 源码托管和 Spotify 音乐不归本组",
+      "product-probes": [
+        "backstage.io"
+      ],
+      "mode": "compiled",
+      "selection": "detailed",
+      "sources": [
+        "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+        "https://backstage.io/docs/overview/background/"
+      ],
+      "extract": [
+        {
+          "format": "security-program-domains",
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "URL",
+              "purpose-prefix": "Backstage is an open-source developer portal.",
+              "read": "fenced-domains",
+              "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+            }
+          ],
+          "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json"
+        }
+      ],
+      "license": "MIT",
+      "notice": "arkadiyt--bounty-targets-data.txt"
+    },
+    {
+      "id": "spotify-advertising-and-analytics",
+      "priority": 3250,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "description": "Spotify 广告 API 与广告分析",
+      "policy-hint": "global",
+      "boundary": "Ads API 及 Podsights／Spotify Ad Analytics 的控制台、统计和指定租户；分类不代表免于广告与隐私拦截，不接管整个 Spotify 或 Google 云",
+      "product-probes": [
+        "api-partner.spotify.com",
+        "api.pdst.fm",
+        "dash.podsights.com"
+      ],
+      "mode": "compiled",
+      "selection": "detailed",
+      "sources": [
+        "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+        "https://newsroom.spotify.com/2023-06-13/evolving-brands-measurement-experience-with-all-new-spotify-ad-analytics/"
+      ],
+      "extract": [
+        {
+          "format": "security-program-domains",
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "OTHER",
+              "label": "Podsights",
+              "read": "fenced-domains",
+              "purpose": "These targets are in scope:"
+            },
+            {
+              "type": "API",
+              "purpose-contains": "api-partner is used by Spotify's partners, aka Ads API.",
+              "read": "identifier"
+            }
+          ],
+          "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json"
+        }
+      ],
+      "license": "MIT",
+      "notice": "arkadiyt--bounty-targets-data.txt"
+    },
+    {
+      "id": "whosampled-music-discovery",
+      "priority": 3915,
+      "section": "media",
+      "routing-group": "overseas-audio",
+      "description": "WhoSampled 音乐采样与作品资料库",
+      "policy-hint": "global",
+      "boundary": "按官方项目说明读取音乐资料网站与同主机 API，和 Spotify 播放入口分开；不因移动 App 未纳入漏洞奖励就认定其网络流量可忽略",
+      "product-probes": [
+        "www.whosampled.com"
+      ],
+      "mode": "compiled",
+      "selection": "detailed",
+      "sources": [
+        "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+        "https://newsroom.spotify.com/2026-04-20/deeper-music-features-about-the-song-dj-songdna/"
+      ],
+      "extract": [
+        {
+          "format": "security-program-domains",
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "URL",
+              "purpose-prefix": "[Non-core asset] Reports accepted for the whosampled website only",
+              "read": "identifier"
+            }
+          ],
+          "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json"
+        }
+      ],
+      "license": "MIT",
+      "notice": "arkadiyt--bounty-targets-data.txt"
     }
   ],
   "detailed": [
@@ -14834,6 +15050,7 @@
     "hugging-face-model-hub",
     "devin-cloud-coding",
     "elevenlabs-voice-and-api",
+    "sonantic-voice-services",
     "midjourney-image-tools",
     "openrouter-gateway",
     "windsurf-editor-and-api",
@@ -14964,6 +15181,8 @@
     "sift-fraud-prevention",
     "auth0-identity-platform",
     "bugsnag-error-monitoring",
+    "backstage-developer-portal",
+    "spotify-advertising-and-analytics",
     "signal-messenger",
     "line-messenger",
     "slack-workspaces",
@@ -14998,6 +15217,7 @@
     "hulu-streaming",
     "iqiyi-international",
     "vimeo-video",
+    "whosampled-music-discovery",
     "soundcloud-audio",
     "bbc-news-and-video",
     "playstation-network",
@@ -17819,6 +18039,36 @@
     ],
     "login.disney.com": [
       "disney-shared-services"
+    ],
+    "api.sonantic.io": [
+      "sonantic-voice-services"
+    ],
+    "app.sonantic.io": [
+      "sonantic-voice-services"
+    ],
+    "backstage.io": [
+      "backstage-developer-portal"
+    ],
+    "api-partner.spotify.com": [
+      "spotify-advertising-and-analytics"
+    ],
+    "dash.podsights.com": [
+      "spotify-advertising-and-analytics"
+    ],
+    "www.whosampled.com": [
+      "whosampled-music-discovery"
+    ],
+    "anchor.fm": [
+      "spotify-audio"
+    ],
+    "spotifycs.my.salesforce.com": [
+      "spotify-audio"
+    ],
+    "www.sonantic.io": [
+      "sonantic-voice-services"
+    ],
+    "api.pdst.fm": [
+      "spotify-advertising-and-analytics"
     ]
   },
   "shared-negatives": [
@@ -18089,6 +18339,7 @@
         1160,
         1170,
         1180,
+        1185,
         1190,
         1200,
         1210,
@@ -18280,6 +18531,8 @@
         3210,
         3220,
         3230,
+        3240,
+        3250,
         6300,
         6310,
         6320,
@@ -18304,6 +18557,7 @@
         3890,
         3900,
         3910,
+        3915,
         3920,
         3930,
         3940,
@@ -21317,6 +21571,297 @@
       "owners": [
         "disney-shared-services"
       ]
+    },
+    {
+      "id": "spotify-complete-security-assets",
+      "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+      "recipe": {
+        "format": "security-program-domains",
+        "program": {
+          "handle": "spotify",
+          "name": "Spotify",
+          "url": "https://hackerone.com/spotify"
+        },
+        "complete": true,
+        "assets": [
+          {
+            "type": "WILDCARD",
+            "read": "identifier"
+          },
+          {
+            "type": "URL",
+            "read": "identifier",
+            "within-wildcards": true,
+            "purpose-contains": "Spotify Web API endpoints return JSON metadata"
+          },
+          {
+            "type": "URL",
+            "read": "identifier",
+            "within-wildcards": true,
+            "label": "assets.spotify.com"
+          },
+          {
+            "type": "OTHER",
+            "label": "Other Spotify websites",
+            "read": "fenced-domains",
+            "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+          },
+          {
+            "type": "OTHER",
+            "label": "Anchor",
+            "read": "fenced-domains"
+          },
+          {
+            "type": "URL",
+            "purpose-prefix": "Backstage is an open-source developer portal.",
+            "read": "fenced-domains",
+            "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+          },
+          {
+            "type": "OTHER",
+            "label": "Sonantic",
+            "read": "fenced-domains",
+            "purpose": "These targets are in scope:"
+          },
+          {
+            "type": "URL",
+            "purpose-prefix": "[Non-core asset] Reports accepted for the whosampled website only",
+            "read": "identifier"
+          },
+          {
+            "type": "OTHER",
+            "label": "Podsights",
+            "read": "fenced-domains",
+            "purpose": "These targets are in scope:"
+          },
+          {
+            "type": "API",
+            "purpose-contains": "api-partner is used by Spotify's partners, aka Ads API.",
+            "read": "identifier"
+          },
+          {
+            "type": "OTHER",
+            "label": "Core Assets",
+            "read": "no-network-target",
+            "reason": "项目核心资产标题，没有网络目标"
+          },
+          {
+            "type": "OTHER",
+            "label": "DRM (Digital Rights Management) System",
+            "read": "no-network-target",
+            "reason": "客户端 DRM 实现和版本说明，没有网络目标"
+          },
+          {
+            "type": "OTHER",
+            "label": "GHE",
+            "read": "no-network-target",
+            "reason": "仅标明 GitHub Enterprise 用途，未列主机，不推断实例地址"
+          },
+          {
+            "type": "OTHER",
+            "label": "Jira",
+            "read": "no-network-target",
+            "reason": "仅标明 Jira 用途，未列主机，不推断实例地址"
+          },
+          {
+            "type": "OTHER",
+            "label": "Non-Core Assets",
+            "read": "no-network-target",
+            "reason": "项目非核心资产标题，没有网络目标"
+          },
+          {
+            "type": "OTHER",
+            "label": "Okta",
+            "read": "no-network-target",
+            "reason": "仅标明身份平台用途，未列租户，不接管整个 Okta"
+          },
+          {
+            "type": "OTHER",
+            "label": "VPN",
+            "read": "no-network-target",
+            "reason": "仅标明内部 VPN 用途，未列主机或网段，不猜测内部入口"
+          },
+          {
+            "type": "OTHER",
+            "label": "Wrapped",
+            "read": "no-network-target",
+            "reason": "功能说明引用已收录的 Spotify 网站，没有单列网络目标"
+          },
+          {
+            "type": "OTHER",
+            "label": "Megaphone",
+            "read": "negative-fence",
+            "purpose": "These targets are NOT in scope:",
+            "reason": "这里只列安全测试排除项，不能把否定列表当成产品端点，也不据此删除其他有效来源"
+          }
+        ],
+        "non-network-types": {
+          "SOURCE_CODE": "源码与 SDK 仓库不是产品自营服务器或客户端进程条件",
+          "DOWNLOADABLE_EXECUTABLES": "程序和下载项目名称不能直接当作网络主机或进程名",
+          "APPLE_STORE_APP_ID": "App 标识不能直接当作 iOS 通用规则的进程条件",
+          "GOOGLE_PLAY_APP_ID": "Android 包名不能直接当作所有客户端的进程条件"
+        }
+      },
+      "owners": [
+        "spotify-audio",
+        "backstage-developer-portal",
+        "sonantic-voice-services",
+        "whosampled-music-discovery",
+        "spotify-advertising-and-analytics"
+      ]
+    },
+    {
+      "id": "spotify-audio-security-asset-purpose",
+      "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+      "recipe": {
+        "format": "security-program-domains",
+        "program": {
+          "handle": "spotify",
+          "name": "Spotify",
+          "url": "https://hackerone.com/spotify"
+        },
+        "assets": [
+          {
+            "type": "WILDCARD",
+            "read": "identifier"
+          },
+          {
+            "type": "URL",
+            "read": "identifier",
+            "within-wildcards": true,
+            "purpose-contains": "Spotify Web API endpoints return JSON metadata"
+          },
+          {
+            "type": "URL",
+            "read": "identifier",
+            "within-wildcards": true,
+            "label": "assets.spotify.com"
+          },
+          {
+            "type": "OTHER",
+            "label": "Other Spotify websites",
+            "read": "fenced-domains",
+            "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+          },
+          {
+            "type": "OTHER",
+            "label": "Anchor",
+            "read": "fenced-domains"
+          }
+        ]
+      },
+      "owners": [
+        "spotify-audio"
+      ]
+    },
+    {
+      "id": "backstage-developer-portal-security-asset-purpose",
+      "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+      "recipe": {
+        "format": "security-program-domains",
+        "program": {
+          "handle": "spotify",
+          "name": "Spotify",
+          "url": "https://hackerone.com/spotify"
+        },
+        "assets": [
+          {
+            "type": "URL",
+            "purpose-prefix": "Backstage is an open-source developer portal.",
+            "read": "fenced-domains",
+            "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+          }
+        ]
+      },
+      "owners": [
+        "backstage-developer-portal"
+      ]
+    },
+    {
+      "id": "sonantic-voice-services-security-asset-purpose",
+      "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+      "recipe": {
+        "format": "security-program-domains",
+        "program": {
+          "handle": "spotify",
+          "name": "Spotify",
+          "url": "https://hackerone.com/spotify"
+        },
+        "assets": [
+          {
+            "type": "OTHER",
+            "label": "Sonantic",
+            "read": "fenced-domains",
+            "purpose": "These targets are in scope:"
+          }
+        ]
+      },
+      "owners": [
+        "sonantic-voice-services"
+      ]
+    },
+    {
+      "id": "whosampled-music-discovery-security-asset-purpose",
+      "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+      "recipe": {
+        "format": "security-program-domains",
+        "program": {
+          "handle": "spotify",
+          "name": "Spotify",
+          "url": "https://hackerone.com/spotify"
+        },
+        "assets": [
+          {
+            "type": "URL",
+            "purpose-prefix": "[Non-core asset] Reports accepted for the whosampled website only",
+            "read": "identifier"
+          }
+        ]
+      },
+      "owners": [
+        "whosampled-music-discovery"
+      ]
+    },
+    {
+      "id": "spotify-advertising-and-analytics-security-asset-purpose",
+      "source": "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json",
+      "recipe": {
+        "format": "security-program-domains",
+        "program": {
+          "handle": "spotify",
+          "name": "Spotify",
+          "url": "https://hackerone.com/spotify"
+        },
+        "assets": [
+          {
+            "type": "OTHER",
+            "label": "Podsights",
+            "read": "fenced-domains",
+            "purpose": "These targets are in scope:"
+          },
+          {
+            "type": "API",
+            "purpose-contains": "api-partner is used by Spotify's partners, aka Ads API.",
+            "read": "identifier"
+          }
+        ]
+      },
+      "owners": [
+        "spotify-advertising-and-analytics"
+      ]
+    },
+    {
+      "id": "sonantic-official-product-link",
+      "source": "https://newsroom.spotify.com/2022-06-13/spotify-to-acquire-sonantic-an-ai-voice-platform/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "Sonantic"
+        ]
+      },
+      "owners": [
+        "sonantic-voice-services"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -23895,13 +24440,31 @@
         ]
       },
       {
-        "id": "spotify-audio",
+        "id": "spotify",
         "name": "Spotify",
         "products": [
           {
             "name": "Spotify 音乐、播客及相关网站",
             "rules": [
               "spotify-audio"
+            ]
+          },
+          {
+            "name": "Sonantic AI 语音",
+            "rules": [
+              "sonantic-voice-services"
+            ]
+          },
+          {
+            "name": "WhoSampled 音乐资料库",
+            "rules": [
+              "whosampled-music-discovery"
+            ]
+          },
+          {
+            "name": "Ads API 与 Spotify Ad Analytics",
+            "rules": [
+              "spotify-advertising-and-analytics"
             ]
           }
         ]
@@ -24916,6 +25479,18 @@
             "name": "Fragment 用户名与数字资产服务",
             "rules": [
               "fragment-digital-assets"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cncf",
+        "name": "CNCF",
+        "products": [
+          {
+            "name": "Backstage 开发者门户",
+            "rules": [
+              "backstage-developer-portal"
             ]
           }
         ]

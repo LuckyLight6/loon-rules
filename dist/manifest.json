@@ -150,11 +150,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
-          "output-rule-count": 645,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 682,
           "status": "available",
           "path": "rules/1000-ai-overseas-all.lsr"
         },
@@ -170,11 +170,11 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
-          "output-rule-count": 427,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 460,
           "status": "available",
           "path": "rules/1020-chatgpt-connections.lsr"
         },
@@ -337,6 +337,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "rules/1180-elevenlabs-voice-and-api.lsr"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/1185-sonantic-voice-services.lsr"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -1460,11 +1470,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "rules/3000-overseas-development-all.lsr"
         },
@@ -1707,6 +1717,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "rules/3230-bugsnag-error-monitoring.lsr"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3240-backstage-developer-portal.lsr"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "rules/3250-spotify-advertising-and-analytics.lsr"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -2100,11 +2130,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "rules/3800-overseas-media-all.lsr"
         },
@@ -2210,13 +2240,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "rules/3910-spotify-audio.lsr"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3915-whosampled-music-discovery.lsr"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -3570,31 +3610,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.lsr"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "rules/8210-overseas-media-extra.lsr"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.lsr"
         },
@@ -3759,7 +3799,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 371,
+      "available": 375,
       "unsupported": 0
     },
     "surge": {
@@ -3866,11 +3906,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
-          "output-rule-count": 645,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 682,
           "status": "available",
           "path": "rules/1000-ai-overseas-all.list"
         },
@@ -3886,11 +3926,11 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
-          "output-rule-count": 427,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 460,
           "status": "available",
           "path": "rules/1020-chatgpt-connections.list"
         },
@@ -4053,6 +4093,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "rules/1180-elevenlabs-voice-and-api.list"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/1185-sonantic-voice-services.list"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -5176,11 +5226,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "rules/3000-overseas-development-all.list"
         },
@@ -5423,6 +5473,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "rules/3230-bugsnag-error-monitoring.list"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3240-backstage-developer-portal.list"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "rules/3250-spotify-advertising-and-analytics.list"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -5816,11 +5886,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "rules/3800-overseas-media-all.list"
         },
@@ -5926,13 +5996,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "rules/3910-spotify-audio.list"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3915-whosampled-music-discovery.list"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -7286,31 +7366,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "rules/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.list"
         },
@@ -7475,7 +7555,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 371,
+      "available": 375,
       "unsupported": 0
     },
     "clash-classical": {
@@ -7582,11 +7662,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
-          "output-rule-count": 645,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 682,
           "status": "available",
           "path": "dist/clash-classical/1000-ai-overseas-all.yaml"
         },
@@ -7602,11 +7682,11 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
-          "output-rule-count": 427,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 460,
           "status": "available",
           "path": "dist/clash-classical/1020-chatgpt-connections.yaml"
         },
@@ -7769,6 +7849,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/clash-classical/1180-elevenlabs-voice-and-api.yaml"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/clash-classical/1185-sonantic-voice-services.yaml"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -8892,11 +8982,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/clash-classical/3000-overseas-development-all.yaml"
         },
@@ -9139,6 +9229,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/clash-classical/3230-bugsnag-error-monitoring.yaml"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/3240-backstage-developer-portal.yaml"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/clash-classical/3250-spotify-advertising-and-analytics.yaml"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -9532,11 +9642,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/clash-classical/3800-overseas-media-all.yaml"
         },
@@ -9642,13 +9752,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/clash-classical/3910-spotify-audio.yaml"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/3915-whosampled-music-discovery.yaml"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -11002,31 +11122,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/clash-classical/8200-overseas-extra-all.yaml"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/clash-classical/8210-overseas-media-extra.yaml"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/clash-classical/8220-overseas-sites-extra.yaml"
         },
@@ -11191,7 +11311,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 371,
+      "available": 375,
       "unsupported": 0
     },
     "egern": {
@@ -11298,11 +11418,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
-          "output-rule-count": 645,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 682,
           "status": "available",
           "path": "dist/egern/1000-ai-overseas-all.yaml"
         },
@@ -11318,11 +11438,11 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
-          "output-rule-count": 427,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 460,
           "status": "available",
           "path": "dist/egern/1020-chatgpt-connections.yaml"
         },
@@ -11485,6 +11605,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/egern/1180-elevenlabs-voice-and-api.yaml"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/egern/1185-sonantic-voice-services.yaml"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -12608,11 +12738,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/egern/3000-overseas-development-all.yaml"
         },
@@ -12855,6 +12985,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/egern/3230-bugsnag-error-monitoring.yaml"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/3240-backstage-developer-portal.yaml"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/egern/3250-spotify-advertising-and-analytics.yaml"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -13248,11 +13398,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/egern/3800-overseas-media-all.yaml"
         },
@@ -13358,13 +13508,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/egern/3910-spotify-audio.yaml"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/3915-whosampled-music-discovery.yaml"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -14718,31 +14878,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/egern/8200-overseas-extra-all.yaml"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/egern/8210-overseas-media-extra.yaml"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/egern/8220-overseas-sites-extra.yaml"
         },
@@ -14907,7 +15067,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 371,
+      "available": 375,
       "unsupported": 0
     },
     "surfboard": {
@@ -15014,10 +15174,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -15032,11 +15192,11 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
-          "output-rule-count": 427,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 460,
           "status": "available",
           "path": "dist/surge-compatible/1020-chatgpt-connections.list"
         },
@@ -15199,6 +15359,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/surge-compatible/1180-elevenlabs-voice-and-api.list"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/surge-compatible/1185-sonantic-voice-services.list"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -16322,11 +16492,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/surge-compatible/3000-overseas-development-all.list"
         },
@@ -16569,6 +16739,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/surge-compatible/3230-bugsnag-error-monitoring.list"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3240-backstage-developer-portal.list"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/surge-compatible/3250-spotify-advertising-and-analytics.list"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -16960,11 +17150,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -17070,13 +17260,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/surge-compatible/3910-spotify-audio.list"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3915-whosampled-music-discovery.list"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -18430,31 +18630,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/surge-compatible/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -18619,7 +18819,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 367,
+      "available": 371,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -18726,11 +18926,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
-          "output-rule-count": 645,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 682,
           "status": "available",
           "path": "dist/surge-compatible/1000-ai-overseas-all.list"
         },
@@ -18746,11 +18946,11 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
-          "output-rule-count": 427,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 460,
           "status": "available",
           "path": "dist/surge-compatible/1020-chatgpt-connections.list"
         },
@@ -18913,6 +19113,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/surge-compatible/1180-elevenlabs-voice-and-api.list"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/surge-compatible/1185-sonantic-voice-services.list"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -20036,11 +20246,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/surge-compatible/3000-overseas-development-all.list"
         },
@@ -20283,6 +20493,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/surge-compatible/3230-bugsnag-error-monitoring.list"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3240-backstage-developer-portal.list"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/surge-compatible/3250-spotify-advertising-and-analytics.list"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -20676,11 +20906,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -20786,13 +21016,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/surge-compatible/3910-spotify-audio.list"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3915-whosampled-music-discovery.list"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -22146,31 +22386,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/surge-compatible/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -22335,7 +22575,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 371,
+      "available": 375,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -22438,10 +22678,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -22456,10 +22696,10 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -22622,6 +22862,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/quantumult-x/1180-elevenlabs-voice-and-api.list"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/quantumult-x/1185-sonantic-voice-services.list"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -23743,11 +23993,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/quantumult-x/3000-overseas-development-all.list"
         },
@@ -23990,6 +24240,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/quantumult-x/3230-bugsnag-error-monitoring.list"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/3240-backstage-developer-portal.list"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/quantumult-x/3250-spotify-advertising-and-analytics.list"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -24381,11 +24651,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/quantumult-x/3800-overseas-media-all.list"
         },
@@ -24491,13 +24761,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/quantumult-x/3910-spotify-audio.list"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/3915-whosampled-music-discovery.list"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -25847,31 +26127,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/quantumult-x/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/quantumult-x/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/quantumult-x/8220-overseas-sites-extra.list"
         },
@@ -26036,7 +26316,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 356,
+      "available": 360,
       "unsupported": 15
     },
     "sing-box": {
@@ -26139,10 +26419,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -26157,10 +26437,10 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -26323,6 +26603,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/sing-box/1180-elevenlabs-voice-and-api.json"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/sing-box/1185-sonantic-voice-services.json"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -27444,11 +27734,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/sing-box/3000-overseas-development-all.json"
         },
@@ -27691,6 +27981,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/sing-box/3230-bugsnag-error-monitoring.json"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/3240-backstage-developer-portal.json"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/sing-box/3250-spotify-advertising-and-analytics.json"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -28082,11 +28392,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/sing-box/3800-overseas-media-all.json"
         },
@@ -28192,13 +28502,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/sing-box/3910-spotify-audio.json"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/3915-whosampled-music-discovery.json"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -29548,31 +29868,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/sing-box/8200-overseas-extra-all.json"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/sing-box/8210-overseas-media-extra.json"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/sing-box/8220-overseas-sites-extra.json"
         },
@@ -29734,7 +30054,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 353,
+      "available": 357,
       "unsupported": 18
     },
     "v2ray": {
@@ -29837,10 +30157,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 645,
+          "rule-count": 682,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:29:55Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -29855,10 +30175,10 @@
         },
         "1020-chatgpt-connections": {
           "source": "rules/1020-chatgpt-connections.lsr",
-          "rule-count": 427,
+          "rule-count": 460,
           "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-20T09:02:33Z",
+          "updated-at": "2026-11-24T20:44:08Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -30021,6 +30341,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/v2ray/1180-elevenlabs-voice-and-api.json"
+        },
+        "1185-sonantic-voice-services": {
+          "source": "rules/1185-sonantic-voice-services.lsr",
+          "rule-count": 4,
+          "description": "Sonantic AI 语音平台",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/v2ray/1185-sonantic-voice-services.json"
         },
         "1190-midjourney-image-tools": {
           "source": "rules/1190-midjourney-image-tools.lsr",
@@ -31142,11 +31472,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/3000-overseas-development-all.lsr",
-          "rule-count": 224,
+          "rule-count": 230,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 224,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 230,
           "status": "available",
           "path": "dist/v2ray/3000-overseas-development-all.json"
         },
@@ -31389,6 +31719,26 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/v2ray/3230-bugsnag-error-monitoring.json"
+        },
+        "3240-backstage-developer-portal": {
+          "source": "rules/3240-backstage-developer-portal.lsr",
+          "rule-count": 1,
+          "description": "Backstage 开发者门户项目",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/3240-backstage-developer-portal.json"
+        },
+        "3250-spotify-advertising-and-analytics": {
+          "source": "rules/3250-spotify-advertising-and-analytics.lsr",
+          "rule-count": 5,
+          "description": "Spotify 广告 API 与广告分析",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 5,
+          "status": "available",
+          "path": "dist/v2ray/3250-spotify-advertising-and-analytics.json"
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
@@ -31780,11 +32130,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 182,
+          "rule-count": 200,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T18:52:07Z",
-          "output-rule-count": 182,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 200,
           "status": "available",
           "path": "dist/v2ray/3800-overseas-media-all.json"
         },
@@ -31890,13 +32240,23 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 25,
+          "rule-count": 42,
           "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 25,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 42,
           "status": "available",
           "path": "dist/v2ray/3910-spotify-audio.json"
+        },
+        "3915-whosampled-music-discovery": {
+          "source": "rules/3915-whosampled-music-discovery.lsr",
+          "rule-count": 1,
+          "description": "WhoSampled 音乐采样与作品资料库",
+          "created-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/3915-whosampled-music-discovery.json"
         },
         "3920-soundcloud-audio": {
           "source": "rules/3920-soundcloud-audio.lsr",
@@ -33246,31 +33606,31 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18610,
+          "rule-count": 18607,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18610,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18607,
           "status": "available",
           "path": "dist/v2ray/8200-overseas-extra-all.json"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 145,
+          "rule-count": 144,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 145,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 144,
           "status": "available",
           "path": "dist/v2ray/8210-overseas-media-extra.json"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18479,
+          "rule-count": 18477,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 18479,
+          "updated-at": "2026-11-24T20:44:08Z",
+          "output-rule-count": 18477,
           "status": "available",
           "path": "dist/v2ray/8220-overseas-sites-extra.json"
         },
@@ -33432,7 +33792,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 353,
+      "available": 357,
       "unsupported": 18
     }
   },

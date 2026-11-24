@@ -5,6 +5,7 @@ from loon_rules.matching import RuleIndex
 from loon_rules.sources.inputs import extract_rows
 from loon_rules.sources.coverage import domain_lines
 from loon_rules.sources import geosite
+from loon_rules.sources import security_programs
 from loon_rules.generation.ordering import route_order,shadowed_domains
 
 
@@ -34,6 +35,8 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
                                   'delegated-domain-scopes': record['delegated-scopes'],
                                   'reading-policy': geosite.scope_options(spec['recipe'])}
                 delegated_domains=record['delegated-scopes']
+            if recipe.get('format') == security_programs.FORMAT:
+                source_details['program-assets'] = security_programs.audit(recipe, text)
             rows=sorted(extract_rows(recipe,text))
             rows.extend(delegated_domains)
         elif spec.get('domain-lines-only'):
@@ -77,6 +80,8 @@ def verify_inventories(specs, report, *, data=None, order=None):
                 or type(state.get('domain-scopes')) is not int or state['domain-scopes']<=0
                 or type(state.get('other-rules')) is not int or state['other-rules']<0):
             raise rules.Invalid('服务来源清单未完整归属，停止发布：'+name)
+        if spec.get('recipe', {}).get('format') == security_programs.FORMAT:
+            security_programs.verify(spec['recipe'], state.get('program-assets'))
         if spec.get('recipe', {}).get('format') == geosite.FORMAT:
             omitted=state.get('omitted-rule-types')
             delegated=state.get('delegated-includes')

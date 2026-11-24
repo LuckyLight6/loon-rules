@@ -1,0 +1,20 @@
+# name: spotify-advertising-and-analytics
+# priority: 3250
+# section: development
+# description: Spotify 广告 API 与广告分析
+# boundary: Ads API 及 Podsights／Spotify Ad Analytics 的控制台、统计和指定租户；分类不代表免于广告与隐私拦截，不接管整个 Spotify 或 Google 云
+# created-at: 2026-11-24T20:44:08Z
+# updated-at: 2026-11-24T20:44:08Z
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://newsroom.spotify.com/2023-06-13/evolving-brands-measurement-experience-with-all-new-spotify-ad-analytics/
+# canonical-rule-count: 5
+# rule-count: 5
+# format: clash-classical
+# canonical: rules/3250-spotify-advertising-and-analytics.lsr
+
+payload:
+  - "DOMAIN,api-partner.spotify.com"
+  - "DOMAIN,metarouter.pdst.io"
+  - "DOMAIN,podcast-graph-dot-adaptive-growth.appspot.com"
+  - "DOMAIN-SUFFIX,pdst.fm"
+  - "DOMAIN-SUFFIX,podsights.com"

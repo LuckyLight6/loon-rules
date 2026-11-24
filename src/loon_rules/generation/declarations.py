@@ -4,6 +4,7 @@ from loon_rules.sources import policy as source_policy
 from loon_rules.sources import transport as source_transport
 from loon_rules.sources import expansion as source_expansion
 from loon_rules.sources import geosite
+from loon_rules.sources import security_programs
 from loon_rules.sources.coverage import same_business_family
 from loon_rules import catalog as catalog_schema
 from loon_rules.generation import inventories as service_inventory
@@ -129,6 +130,18 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') == security_programs.FORMAT:
+                inventories = [spec for spec in config.get('source-inventories', ())
+                               if spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                               and spec.get('recipe', {}).get('format') == security_programs.FORMAT
+                               and spec['recipe'].get('program') == recipe.get('program')]
+                own = {key: value for key, value in recipe.items() if key != 'source'}
+                if not any(spec['recipe'] == own for spec in inventories):
+                    raise rules.Invalid('安全资产产品缺少同用途的独立归属核对：' + e['id'])
+                if not any(spec['recipe'].get('complete') is True
+                           and all(selector in spec['recipe'].get('assets', ())
+                                   for selector in recipe.get('assets', ())) for spec in inventories):
+                    raise rules.Invalid('安全资产产品还须核对筛选前的完整项目：' + e['id'])
             if recipe.get('format') == 'next-service-urls':
                 fields = ('paths', 'url-fields', 'identity')
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']

@@ -28,7 +28,24 @@
           "domain:spotifyforbrands.com",
           "domain:spotifyforvendors.com",
           "domain:spotifyjobs.com",
-          "domain:tospotify.com"
+          "domain:tospotify.com",
+          "full:spotifycs.my.salesforce.com",
+          "domain:anchor.fm",
+          "domain:eyeofthestormers.com",
+          "domain:sonalytic.com",
+          "domain:spotifyforpartners.com",
+          "domain:spotifynewsroom.jp",
+          "domain:spotifyonstage.com",
+          "domain:spotifypremium.jp",
+          "domain:spotifyvault.com",
+          "domain:timetoplayfair.com",
+          "regexp:(?i)^.*\\.atspotify\\.com$",
+          "regexp:(?i)^.*\\.avecspotify\\.com$",
+          "regexp:(?i)^.*\\.enspotify\\.com$",
+          "regexp:(?i)^.*\\.forspotify\\.com$",
+          "regexp:(?i)^.*\\.fromspotify\\.com$",
+          "regexp:(?i)^.*\\.spotify\\.net$",
+          "regexp:(?i)^.*\\.withspotify\\.com$"
         ],
         "outboundTag": "PROXY"
       }

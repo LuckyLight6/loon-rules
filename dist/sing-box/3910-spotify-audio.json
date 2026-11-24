@@ -19,7 +19,16 @@
         "spotifyforbrands.com",
         "spotifyforvendors.com",
         "spotifyjobs.com",
-        "tospotify.com"
+        "tospotify.com",
+        "anchor.fm",
+        "eyeofthestormers.com",
+        "sonalytic.com",
+        "spotifyforpartners.com",
+        "spotifynewsroom.jp",
+        "spotifyonstage.com",
+        "spotifypremium.jp",
+        "spotifyvault.com",
+        "timetoplayfair.com"
       ],
       "domain": [
         "audio-ak-spotify-com.akamaized.net",
@@ -29,7 +38,17 @@
         "heads4-ak-spotify-com.akamaized.net",
         "spotify.com.edgesuite.net",
         "spotify.map.fastly.net",
-        "spotify.map.fastlylb.net"
+        "spotify.map.fastlylb.net",
+        "spotifycs.my.salesforce.com"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.atspotify\\.com$",
+        "(?i)^.*\\.avecspotify\\.com$",
+        "(?i)^.*\\.enspotify\\.com$",
+        "(?i)^.*\\.forspotify\\.com$",
+        "(?i)^.*\\.fromspotify\\.com$",
+        "(?i)^.*\\.spotify\\.net$",
+        "(?i)^.*\\.withspotify\\.com$"
       ]
     }
   ]

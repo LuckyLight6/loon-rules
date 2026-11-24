@@ -59,7 +59,10 @@
         "sift.com",
         "siftscience.com",
         "auth0.com",
-        "bugsnag.com"
+        "bugsnag.com",
+        "backstage.io",
+        "pdst.fm",
+        "podsights.com"
       ],
       "domain": [
         "github-avatars.oss-cn-hongkong.aliyuncs.com",
@@ -228,7 +231,10 @@
         "cdn.console.statsig.com",
         "console.statsig.com",
         "console.statsigcdn.com",
-        "idliststorage.blob.core.windows.net"
+        "idliststorage.blob.core.windows.net",
+        "api-partner.spotify.com",
+        "metarouter.pdst.io",
+        "podcast-graph-dot-adaptive-growth.appspot.com"
       ]
     }
   ]

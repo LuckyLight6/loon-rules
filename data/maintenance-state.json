@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T19:23:01Z",
-  "inputs-read": 596,
-  "critical": 875,
-  "inputs-requested": 596,
+  "checked-at": "2026-11-24T20:48:40Z",
+  "inputs-read": 598,
+  "critical": 885,
+  "inputs-requested": 598,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -844,7 +844,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 340,
+    "routine-tables": 344,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -953,6 +953,7 @@
       "meta-ai-assistant",
       "muse-agent",
       "elevenlabs-voice-and-api",
+      "sonantic-voice-services",
       "ai-com-agents",
       "jetbrains-ai",
       "amp-connections",
@@ -1078,6 +1079,8 @@
       "sift-fraud-prevention",
       "auth0-identity-platform",
       "bugsnag-error-monitoring",
+      "backstage-developer-portal",
+      "spotify-advertising-and-analytics",
       "telegram-messaging",
       "discord-messaging-and-voice",
       "signal-messenger",
@@ -1125,6 +1128,7 @@
       "iqiyi-international",
       "vimeo-video",
       "spotify-audio",
+      "whosampled-music-discovery",
       "soundcloud-audio",
       "twitch-live-video",
       "bbc-news-and-video",
@@ -3479,7 +3483,7 @@
         "youtube-video-and-cdn": 7,
         "apple-music-and-radio": 1,
         "bbc-news-and-video": 2,
-        "spotify-audio": 14,
+        "spotify-audio": 15,
         "disney-plus-streaming": 3,
         "twitch-live-video": 6,
         "hbo-streaming": 4,
@@ -3493,7 +3497,7 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 162,
+      "fallback-scopes": 161,
       "privacy-scopes": 1,
       "shared-scopes": 6,
       "declared-exclusions": 0,
@@ -5321,8 +5325,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates-http.g.aaplimg.com",
       "DOMAIN,updates.g.aaplimg.com",
+      "DOMAIN,updates-http.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net",
       "DOMAIN,swcdn.apple.com.edgesuite.net"
     ],
@@ -10538,7 +10542,11 @@
       6965,
       3680,
       3690,
-      3700
+      3700,
+      1185,
+      3240,
+      3250,
+      3915
     ],
     "已核清单": [
       210,
@@ -11936,6 +11944,376 @@
       "domain-scopes": 1,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "spotify-complete-security-assets": {
+      "state": "current",
+      "domain-scopes": 43,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "program-assets": {
+        "asset-types": {
+          "API": 1,
+          "APPLE_STORE_APP_ID": 4,
+          "DOWNLOADABLE_EXECUTABLES": 2,
+          "GOOGLE_PLAY_APP_ID": 5,
+          "OTHER": 13,
+          "SOURCE_CODE": 6,
+          "URL": 4,
+          "WILDCARD": 10
+        },
+        "assets": 45,
+        "selected-assets": 28,
+        "non-network-assets": 26,
+        "unselected-assets": 0,
+        "out-of-scope-assets": 9,
+        "reading-policy": {
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "WILDCARD",
+              "read": "identifier"
+            },
+            {
+              "type": "URL",
+              "read": "identifier",
+              "within-wildcards": true,
+              "purpose-contains": "Spotify Web API endpoints return JSON metadata"
+            },
+            {
+              "type": "URL",
+              "read": "identifier",
+              "within-wildcards": true,
+              "label": "assets.spotify.com"
+            },
+            {
+              "type": "OTHER",
+              "label": "Other Spotify websites",
+              "read": "fenced-domains",
+              "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+            },
+            {
+              "type": "OTHER",
+              "label": "Anchor",
+              "read": "fenced-domains"
+            },
+            {
+              "type": "URL",
+              "purpose-prefix": "Backstage is an open-source developer portal.",
+              "read": "fenced-domains",
+              "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+            },
+            {
+              "type": "OTHER",
+              "label": "Sonantic",
+              "read": "fenced-domains",
+              "purpose": "These targets are in scope:"
+            },
+            {
+              "type": "URL",
+              "purpose-prefix": "[Non-core asset] Reports accepted for the whosampled website only",
+              "read": "identifier"
+            },
+            {
+              "type": "OTHER",
+              "label": "Podsights",
+              "read": "fenced-domains",
+              "purpose": "These targets are in scope:"
+            },
+            {
+              "type": "API",
+              "purpose-contains": "api-partner is used by Spotify's partners, aka Ads API.",
+              "read": "identifier"
+            },
+            {
+              "type": "OTHER",
+              "label": "Core Assets",
+              "read": "no-network-target",
+              "reason": "项目核心资产标题，没有网络目标"
+            },
+            {
+              "type": "OTHER",
+              "label": "DRM (Digital Rights Management) System",
+              "read": "no-network-target",
+              "reason": "客户端 DRM 实现和版本说明，没有网络目标"
+            },
+            {
+              "type": "OTHER",
+              "label": "GHE",
+              "read": "no-network-target",
+              "reason": "仅标明 GitHub Enterprise 用途，未列主机，不推断实例地址"
+            },
+            {
+              "type": "OTHER",
+              "label": "Jira",
+              "read": "no-network-target",
+              "reason": "仅标明 Jira 用途，未列主机，不推断实例地址"
+            },
+            {
+              "type": "OTHER",
+              "label": "Non-Core Assets",
+              "read": "no-network-target",
+              "reason": "项目非核心资产标题，没有网络目标"
+            },
+            {
+              "type": "OTHER",
+              "label": "Okta",
+              "read": "no-network-target",
+              "reason": "仅标明身份平台用途，未列租户，不接管整个 Okta"
+            },
+            {
+              "type": "OTHER",
+              "label": "VPN",
+              "read": "no-network-target",
+              "reason": "仅标明内部 VPN 用途，未列主机或网段，不猜测内部入口"
+            },
+            {
+              "type": "OTHER",
+              "label": "Wrapped",
+              "read": "no-network-target",
+              "reason": "功能说明引用已收录的 Spotify 网站，没有单列网络目标"
+            },
+            {
+              "type": "OTHER",
+              "label": "Megaphone",
+              "read": "negative-fence",
+              "purpose": "These targets are NOT in scope:",
+              "reason": "这里只列安全测试排除项，不能把否定列表当成产品端点，也不据此删除其他有效来源"
+            }
+          ],
+          "complete": true,
+          "non-network-types": {
+            "SOURCE_CODE": "源码与 SDK 仓库不是产品自营服务器或客户端进程条件",
+            "DOWNLOADABLE_EXECUTABLES": "程序和下载项目名称不能直接当作网络主机或进程名",
+            "APPLE_STORE_APP_ID": "App 标识不能直接当作 iOS 通用规则的进程条件",
+            "GOOGLE_PLAY_APP_ID": "Android 包名不能直接当作所有客户端的进程条件"
+          }
+        }
+      }
+    },
+    "spotify-audio-security-asset-purpose": {
+      "state": "current",
+      "domain-scopes": 27,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "program-assets": {
+        "asset-types": {
+          "API": 1,
+          "APPLE_STORE_APP_ID": 4,
+          "DOWNLOADABLE_EXECUTABLES": 2,
+          "GOOGLE_PLAY_APP_ID": 5,
+          "OTHER": 13,
+          "SOURCE_CODE": 6,
+          "URL": 4,
+          "WILDCARD": 10
+        },
+        "assets": 45,
+        "selected-assets": 14,
+        "non-network-assets": 0,
+        "unselected-assets": 31,
+        "out-of-scope-assets": 9,
+        "reading-policy": {
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "WILDCARD",
+              "read": "identifier"
+            },
+            {
+              "type": "URL",
+              "read": "identifier",
+              "within-wildcards": true,
+              "purpose-contains": "Spotify Web API endpoints return JSON metadata"
+            },
+            {
+              "type": "URL",
+              "read": "identifier",
+              "within-wildcards": true,
+              "label": "assets.spotify.com"
+            },
+            {
+              "type": "OTHER",
+              "label": "Other Spotify websites",
+              "read": "fenced-domains",
+              "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+            },
+            {
+              "type": "OTHER",
+              "label": "Anchor",
+              "read": "fenced-domains"
+            }
+          ]
+        }
+      }
+    },
+    "backstage-developer-portal-security-asset-purpose": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "program-assets": {
+        "asset-types": {
+          "API": 1,
+          "APPLE_STORE_APP_ID": 4,
+          "DOWNLOADABLE_EXECUTABLES": 2,
+          "GOOGLE_PLAY_APP_ID": 5,
+          "OTHER": 13,
+          "SOURCE_CODE": 6,
+          "URL": 4,
+          "WILDCARD": 10
+        },
+        "assets": 45,
+        "selected-assets": 1,
+        "non-network-assets": 0,
+        "unselected-assets": 44,
+        "out-of-scope-assets": 9,
+        "reading-policy": {
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "URL",
+              "purpose-prefix": "Backstage is an open-source developer portal.",
+              "read": "fenced-domains",
+              "purpose": "Find below a list of in-scope targets. Note that it is continuously updated:"
+            }
+          ]
+        }
+      }
+    },
+    "sonantic-voice-services-security-asset-purpose": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "program-assets": {
+        "asset-types": {
+          "API": 1,
+          "APPLE_STORE_APP_ID": 4,
+          "DOWNLOADABLE_EXECUTABLES": 2,
+          "GOOGLE_PLAY_APP_ID": 5,
+          "OTHER": 13,
+          "SOURCE_CODE": 6,
+          "URL": 4,
+          "WILDCARD": 10
+        },
+        "assets": 45,
+        "selected-assets": 1,
+        "non-network-assets": 0,
+        "unselected-assets": 44,
+        "out-of-scope-assets": 9,
+        "reading-policy": {
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "OTHER",
+              "label": "Sonantic",
+              "read": "fenced-domains",
+              "purpose": "These targets are in scope:"
+            }
+          ]
+        }
+      }
+    },
+    "whosampled-music-discovery-security-asset-purpose": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "program-assets": {
+        "asset-types": {
+          "API": 1,
+          "APPLE_STORE_APP_ID": 4,
+          "DOWNLOADABLE_EXECUTABLES": 2,
+          "GOOGLE_PLAY_APP_ID": 5,
+          "OTHER": 13,
+          "SOURCE_CODE": 6,
+          "URL": 4,
+          "WILDCARD": 10
+        },
+        "assets": 45,
+        "selected-assets": 1,
+        "non-network-assets": 0,
+        "unselected-assets": 44,
+        "out-of-scope-assets": 9,
+        "reading-policy": {
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "URL",
+              "purpose-prefix": "[Non-core asset] Reports accepted for the whosampled website only",
+              "read": "identifier"
+            }
+          ]
+        }
+      }
+    },
+    "spotify-advertising-and-analytics-security-asset-purpose": {
+      "state": "current",
+      "domain-scopes": 11,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "program-assets": {
+        "asset-types": {
+          "API": 1,
+          "APPLE_STORE_APP_ID": 4,
+          "DOWNLOADABLE_EXECUTABLES": 2,
+          "GOOGLE_PLAY_APP_ID": 5,
+          "OTHER": 13,
+          "SOURCE_CODE": 6,
+          "URL": 4,
+          "WILDCARD": 10
+        },
+        "assets": 45,
+        "selected-assets": 2,
+        "non-network-assets": 0,
+        "unselected-assets": 43,
+        "out-of-scope-assets": 9,
+        "reading-policy": {
+          "program": {
+            "handle": "spotify",
+            "name": "Spotify",
+            "url": "https://hackerone.com/spotify"
+          },
+          "assets": [
+            {
+              "type": "OTHER",
+              "label": "Podsights",
+              "read": "fenced-domains",
+              "purpose": "These targets are in scope:"
+            },
+            {
+              "type": "API",
+              "purpose-contains": "api-partner is used by Spotify's partners, aka Ads API.",
+              "read": "identifier"
+            }
+          ]
+        }
+      }
+    },
+    "sonantic-official-product-link": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "functional-hosts": [
@@ -12799,7 +13177,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -12840,7 +13218,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "ollama-cloud": {
@@ -12871,7 +13249,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "stackit-model-services": {
@@ -12902,7 +13280,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "stepfun-international": {
@@ -12944,7 +13322,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "xiaomi-international": {
@@ -12987,7 +13365,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13022,7 +13400,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13072,7 +13450,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13113,7 +13491,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -13345,7 +13723,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "npm-registry": {
@@ -13378,7 +13756,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -13422,7 +13800,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -13455,7 +13833,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -13508,7 +13886,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "braintree-payments": {
@@ -13535,7 +13913,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "notion-workspace": {
@@ -13561,7 +13939,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "google-account-authentication": {
@@ -13769,7 +14147,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -13795,7 +14173,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "google-play-services": {
@@ -13831,7 +14209,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "google-play-games": {
@@ -13859,7 +14237,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "kimi-mainland": {
@@ -13890,7 +14268,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -13921,7 +14299,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -13964,7 +14342,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14003,7 +14381,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795548146,
+      "last-read": 1795553280,
       "state": "current"
     }
   },
@@ -14011,7 +14389,7 @@
   "expanded-domain-cases": 222,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1328,
+  "business-domain-cases": 1338,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -14051,7 +14429,7 @@
     },
     "chatgpt-connections": {
       "intent": "target-ip",
-      "no-resolve": 411,
+      "no-resolve": 444,
       "resolve-for-match": 0
     },
     "apple-push-connection": {
@@ -14096,9 +14474,9 @@
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
     "extended-ad-and-tracking": 43508,
-    "ai-overseas-all": 645,
+    "ai-overseas-all": 682,
     "claude-connections": 24,
-    "chatgpt-connections": 427,
+    "chatgpt-connections": 460,
     "gemini-connections": 52,
     "xai-connections": 6,
     "grokipedia-encyclopedia": 1,
@@ -14115,6 +14493,7 @@
     "hugging-face-model-hub": 4,
     "devin-cloud-coding": 1,
     "elevenlabs-voice-and-api": 2,
+    "sonantic-voice-services": 4,
     "midjourney-image-tools": 1,
     "openrouter-gateway": 1,
     "windsurf-editor-and-api": 4,
@@ -14227,7 +14606,7 @@
     "apple-device-registration": 2,
     "apple-feedback-and-diagnostics": 16,
     "apple-other-services": 6,
-    "overseas-development-all": 224,
+    "overseas-development-all": 230,
     "github-code-and-packages": 157,
     "gitlab-hosting": 4,
     "bitbucket-hosting": 1,
@@ -14252,6 +14631,8 @@
     "sift-fraud-prevention": 2,
     "auth0-identity-platform": 1,
     "bugsnag-error-monitoring": 1,
+    "backstage-developer-portal": 1,
+    "spotify-advertising-and-analytics": 5,
     "overseas-social-all": 240,
     "telegram-messaging": 35,
     "discord-messaging-and-voice": 26,
@@ -14291,7 +14672,7 @@
     "ton-foundation-sites": 1,
     "toncenter-blockchain-api": 1,
     "fragment-digital-assets": 1,
-    "overseas-media-all": 182,
+    "overseas-media-all": 200,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
     "disney-plus-streaming": 6,
@@ -14302,7 +14683,8 @@
     "bilibili-international-video": 12,
     "iqiyi-international": 4,
     "vimeo-video": 16,
-    "spotify-audio": 25,
+    "spotify-audio": 42,
+    "whosampled-music-discovery": 1,
     "soundcloud-audio": 3,
     "twitch-live-video": 7,
     "bbc-news-and-video": 3,
@@ -14438,9 +14820,9 @@
     "amazon-shared-services": 168,
     "discord-activities-proxy": 1,
     "disney-shared-services": 4,
-    "overseas-extra-all": 18610,
-    "overseas-media-extra": 145,
-    "overseas-sites-extra": 18479,
+    "overseas-extra-all": 18607,
+    "overseas-media-extra": 144,
+    "overseas-sites-extra": 18477,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,

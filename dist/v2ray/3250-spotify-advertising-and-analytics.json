@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:api-partner.spotify.com",
+          "full:metarouter.pdst.io",
+          "full:podcast-graph-dot-adaptive-growth.appspot.com",
+          "domain:pdst.fm",
+          "domain:podsights.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}
