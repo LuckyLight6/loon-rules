@@ -129,6 +129,12 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') == 'qt-host-predicate':
+                if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                           and spec.get('recipe', {}).get('format') == 'qt-host-predicate'
+                           and spec['recipe'].get('function') == recipe.get('function')
+                           for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('Qt 主机用途函数缺少同范围的完整归属核对：' + e['id'])
             if recipe.get('format') in ('domain-scope-list', geosite.FORMAT):
                 options = geosite.SCOPE_OPTIONS
                 inventories = [spec for spec in config.get('source-inventories', ())
@@ -139,6 +145,13 @@ def validate_declarations(config):
                            and not any(recipe.get(option) for option in options)
                            for spec in inventories):
                     raise rules.Invalid('完整产品清单缺少同范围的独立归属核对：' + e['id'])
+                if recipe.get('include-comment-blocks'):
+                    whole = dict(recipe)
+                    del whole['include-comment-blocks']
+                    if not any(spec.get('recipe', {}).get('format') == recipe['format']
+                               and geosite.scope_options(spec['recipe']) == geosite.scope_options(whole)
+                               for spec in inventories):
+                        raise rules.Invalid('产品块还需要筛选前的整份来源归属核对：' + e['id'])
             if recipe.get('check-sharing') and (e['mode']!='compiled'
                     or recipe.get('format')!='exclusive-purpose-table' or recipe.get('part')=='shared'):
                 raise rules.Invalid('共享用途必须由产品的同一官方用途表核对：'+e['id'])

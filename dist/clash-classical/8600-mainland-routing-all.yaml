@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T14:17:53Z
+# updated-at: 2026-11-24T17:50:37Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19289
-# rule-count: 19289
+# canonical-rule-count: 19276
+# rule-count: 19276
 # format: clash-classical
 # canonical: rules/8600-mainland-routing-all.lsr
 
@@ -5877,8 +5877,6 @@ payload:
   - "DOMAIN-SUFFIX,kf5.com"
   - "DOMAIN-SUFFIX,kfb126.com"
   - "DOMAIN-SUFFIX,kfb163.com"
-  - "DOMAIN-SUFFIX,kgimg.com"
-  - "DOMAIN-SUFFIX,kglink.cn"
   - "DOMAIN-SUFFIX,kgrestrg.com"
   - "DOMAIN-SUFFIX,khfw.net.cn"
   - "DOMAIN-SUFFIX,khfwedu.cn"
@@ -5929,8 +5927,6 @@ payload:
   - "DOMAIN-SUFFIX,kongfz.com"
   - "DOMAIN-SUFFIX,konlan.org"
   - "DOMAIN-SUFFIX,koolearn.com"
-  - "DOMAIN-SUFFIX,koowo.cn"
-  - "DOMAIN-SUFFIX,koowo.com"
   - "DOMAIN-SUFFIX,korqqr1l13.com"
   - "DOMAIN-SUFFIX,kortatb.com"
   - "DOMAIN-SUFFIX,kotaqkew.com"
@@ -5988,7 +5984,6 @@ payload:
   - "DOMAIN-SUFFIX,ksyunwaf.com"
   - "DOMAIN-SUFFIX,kting.info"
   - "DOMAIN-SUFFIX,ktovztie.com"
-  - "DOMAIN-SUFFIX,ktv.com"
   - "DOMAIN-SUFFIX,ku6.cn"
   - "DOMAIN-SUFFIX,ku6.com"
   - "DOMAIN-SUFFIX,ku6.com.cn"
@@ -6044,8 +6039,6 @@ payload:
   - "DOMAIN-SUFFIX,kubiji.net"
   - "DOMAIN-SUFFIX,kuche.com"
   - "DOMAIN-SUFFIX,kufm.cn"
-  - "DOMAIN-SUFFIX,kugoo.com"
-  - "DOMAIN-SUFFIX,kugouipv6.com"
   - "DOMAIN-SUFFIX,kuhimalayandp.com"
   - "DOMAIN-SUFFIX,kuhu168.com"
   - "DOMAIN-SUFFIX,kuiniuca.com"
@@ -6078,7 +6071,6 @@ payload:
   - "DOMAIN-SUFFIX,kunlunvi.com"
   - "DOMAIN-SUFFIX,kunlunwe.com"
   - "DOMAIN-SUFFIX,kuqin.com"
-  - "DOMAIN-SUFFIX,kuwo.cn"
   - "DOMAIN-SUFFIX,kuxiaomiao.cn"
   - "DOMAIN-SUFFIX,kuxiaomiao.com"
   - "DOMAIN-SUFFIX,kuxiaomiao.com.cn"
@@ -6391,7 +6383,6 @@ payload:
   - "DOMAIN-SUFFIX,lqdsw.com"
   - "DOMAIN-SUFFIX,lrcgc.com"
   - "DOMAIN-SUFFIX,lrcku.com"
-  - "DOMAIN-SUFFIX,lrts.me"
   - "DOMAIN-SUFFIX,lrxsw.org"
   - "DOMAIN-SUFFIX,lsgenius.com"
   - "DOMAIN-SUFFIX,lssdexternal.com"
@@ -6938,7 +6929,6 @@ payload:
   - "DOMAIN-SUFFIX,mtfamily.cn"
   - "DOMAIN-SUFFIX,mtgmcim.com"
   - "DOMAIN-SUFFIX,mti100.com"
-  - "DOMAIN-SUFFIX,mting.info"
   - "DOMAIN-SUFFIX,mtmyg.com"
   - "DOMAIN-SUFFIX,mtshare.cn"
   - "DOMAIN-SUFFIX,mtw.so"
@@ -9594,7 +9584,6 @@ payload:
   - "DOMAIN-SUFFIX,tencentmfa.com.cn"
   - "DOMAIN-SUFFIX,tencentmind.com"
   - "DOMAIN-SUFFIX,tencentmovie.com"
-  - "DOMAIN-SUFFIX,tencentmusic.com"
   - "DOMAIN-SUFFIX,tencentntp.cn"
   - "DOMAIN-SUFFIX,tencentntp.com.cn"
   - "DOMAIN-SUFFIX,tencentoa.com"
@@ -10966,7 +10955,6 @@ payload:
   - "DOMAIN-SUFFIX,wswebpic.org"
   - "DOMAIN-SUFFIX,wsxsdf.com"
   - "DOMAIN-SUFFIX,wtg7ew8cvzxbk.com"
-  - "DOMAIN-SUFFIX,wting.info"
   - "DOMAIN-SUFFIX,wtturl.cn"
   - "DOMAIN-SUFFIX,wtxcdn.com"
   - "DOMAIN-SUFFIX,wubashangban.com"
@@ -11237,7 +11225,6 @@ payload:
   - "DOMAIN-SUFFIX,xijingjianzhan8.com"
   - "DOMAIN-SUFFIX,xijingjianzhan9.com"
   - "DOMAIN-SUFFIX,xima.tv"
-  - "DOMAIN-SUFFIX,ximalaya.com"
   - "DOMAIN-SUFFIX,ximalaya.fm"
   - "DOMAIN-SUFFIX,ximalaya.tv"
   - "DOMAIN-SUFFIX,ximalayadata.com"
@@ -11327,7 +11314,6 @@ payload:
   - "DOMAIN-SUFFIX,xlsdn.cn"
   - "DOMAIN-SUFFIX,xlsdn.com"
   - "DOMAIN-SUFFIX,xlyouxi.net"
-  - "DOMAIN-SUFFIX,xmcdn.com"
   - "DOMAIN-SUFFIX,xmgouemc.com"
   - "DOMAIN-SUFFIX,xmmtu.com"
   - "DOMAIN-SUFFIX,xmq123.cn"
@@ -17069,6 +17055,7 @@ payload:
   - "IP-CIDR6,2402:8300::/32"
   - "IP-CIDR6,2402:8380::/32"
   - "IP-CIDR6,2402:840::/32"
+  - "IP-CIDR6,2402:8420::/32"
   - "IP-CIDR6,2402:85c0::/32"
   - "IP-CIDR6,2402:8800::/32"
   - "IP-CIDR6,2402:8840::/32"

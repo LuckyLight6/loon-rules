@@ -4,8 +4,8 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-24T16:40:58Z
-# rule-count: 18480
+# updated-at: 2026-11-24T17:50:37Z
+# rule-count: 18479
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
@@ -3591,7 +3591,6 @@ DOMAIN-SUFFIX,comicuniverse.org
 DOMAIN-SUFFIX,comixharem.com
 DOMAIN-SUFFIX,comixzilla.com
 DOMAIN-SUFFIX,commandarms.com
-DOMAIN-SUFFIX,comments.app
 DOMAIN-SUFFIX,commentshk.com
 DOMAIN-SUFFIX,communistcrimes.org
 DOMAIN-SUFFIX,communities.win

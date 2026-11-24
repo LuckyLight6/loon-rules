@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T14:17:53Z
+# updated-at: 2026-11-24T17:50:37Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19289
-# rule-count: 19289
+# canonical-rule-count: 19276
+# rule-count: 19276
 # format: quantumult-x
 # canonical: rules/8600-mainland-routing-all.lsr
 
@@ -5876,8 +5876,6 @@ host-suffix,kewucool.com,proxy
 host-suffix,kf5.com,proxy
 host-suffix,kfb126.com,proxy
 host-suffix,kfb163.com,proxy
-host-suffix,kgimg.com,proxy
-host-suffix,kglink.cn,proxy
 host-suffix,kgrestrg.com,proxy
 host-suffix,khfw.net.cn,proxy
 host-suffix,khfwedu.cn,proxy
@@ -5928,8 +5926,6 @@ host-suffix,kong.so,proxy
 host-suffix,kongfz.com,proxy
 host-suffix,konlan.org,proxy
 host-suffix,koolearn.com,proxy
-host-suffix,koowo.cn,proxy
-host-suffix,koowo.com,proxy
 host-suffix,korqqr1l13.com,proxy
 host-suffix,kortatb.com,proxy
 host-suffix,kotaqkew.com,proxy
@@ -5987,7 +5983,6 @@ host-suffix,ksyunv7.com,proxy
 host-suffix,ksyunwaf.com,proxy
 host-suffix,kting.info,proxy
 host-suffix,ktovztie.com,proxy
-host-suffix,ktv.com,proxy
 host-suffix,ku6.cn,proxy
 host-suffix,ku6.com,proxy
 host-suffix,ku6.com.cn,proxy
@@ -6043,8 +6038,6 @@ host-suffix,kubesphere.com.cn,proxy
 host-suffix,kubiji.net,proxy
 host-suffix,kuche.com,proxy
 host-suffix,kufm.cn,proxy
-host-suffix,kugoo.com,proxy
-host-suffix,kugouipv6.com,proxy
 host-suffix,kuhimalayandp.com,proxy
 host-suffix,kuhu168.com,proxy
 host-suffix,kuiniuca.com,proxy
@@ -6077,7 +6070,6 @@ host-suffix,kunlunta.com,proxy
 host-suffix,kunlunvi.com,proxy
 host-suffix,kunlunwe.com,proxy
 host-suffix,kuqin.com,proxy
-host-suffix,kuwo.cn,proxy
 host-suffix,kuxiaomiao.cn,proxy
 host-suffix,kuxiaomiao.com,proxy
 host-suffix,kuxiaomiao.com.cn,proxy
@@ -6390,7 +6382,6 @@ host-suffix,lppzimg.com,proxy
 host-suffix,lqdsw.com,proxy
 host-suffix,lrcgc.com,proxy
 host-suffix,lrcku.com,proxy
-host-suffix,lrts.me,proxy
 host-suffix,lrxsw.org,proxy
 host-suffix,lsgenius.com,proxy
 host-suffix,lssdexternal.com,proxy
@@ -6937,7 +6928,6 @@ host-suffix,mtadvert.com,proxy
 host-suffix,mtfamily.cn,proxy
 host-suffix,mtgmcim.com,proxy
 host-suffix,mti100.com,proxy
-host-suffix,mting.info,proxy
 host-suffix,mtmyg.com,proxy
 host-suffix,mtshare.cn,proxy
 host-suffix,mtw.so,proxy
@@ -9593,7 +9583,6 @@ host-suffix,tencentmfa.com,proxy
 host-suffix,tencentmfa.com.cn,proxy
 host-suffix,tencentmind.com,proxy
 host-suffix,tencentmovie.com,proxy
-host-suffix,tencentmusic.com,proxy
 host-suffix,tencentntp.cn,proxy
 host-suffix,tencentntp.com.cn,proxy
 host-suffix,tencentoa.com,proxy
@@ -10965,7 +10954,6 @@ host-suffix,wswebpic.info,proxy
 host-suffix,wswebpic.org,proxy
 host-suffix,wsxsdf.com,proxy
 host-suffix,wtg7ew8cvzxbk.com,proxy
-host-suffix,wting.info,proxy
 host-suffix,wtturl.cn,proxy
 host-suffix,wtxcdn.com,proxy
 host-suffix,wubashangban.com,proxy
@@ -11236,7 +11224,6 @@ host-suffix,xijingjianzhan7.com,proxy
 host-suffix,xijingjianzhan8.com,proxy
 host-suffix,xijingjianzhan9.com,proxy
 host-suffix,xima.tv,proxy
-host-suffix,ximalaya.com,proxy
 host-suffix,ximalaya.fm,proxy
 host-suffix,ximalaya.tv,proxy
 host-suffix,ximalayadata.com,proxy
@@ -11326,7 +11313,6 @@ host-suffix,xlpan.com,proxy
 host-suffix,xlsdn.cn,proxy
 host-suffix,xlsdn.com,proxy
 host-suffix,xlyouxi.net,proxy
-host-suffix,xmcdn.com,proxy
 host-suffix,xmgouemc.com,proxy
 host-suffix,xmmtu.com,proxy
 host-suffix,xmq123.cn,proxy
@@ -17068,6 +17054,7 @@ ip6-cidr,2402:8260:c00::/38,proxy
 ip6-cidr,2402:8300::/32,proxy
 ip6-cidr,2402:8380::/32,proxy
 ip6-cidr,2402:840::/32,proxy
+ip6-cidr,2402:8420::/32,proxy
 ip6-cidr,2402:85c0::/32,proxy
 ip6-cidr,2402:8800::/32,proxy
 ip6-cidr,2402:8840::/32,proxy

@@ -1,0 +1,15 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:97ting.com",
+          "domain:tingmall.com",
+          "domain:ultimatemusic.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

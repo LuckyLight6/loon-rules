@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "97ting.com",
+        "tingmall.com",
+        "ultimatemusic.cn"
+      ]
+    }
+  ]
+}

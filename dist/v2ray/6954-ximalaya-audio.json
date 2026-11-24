@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:ximalaya.com",
+          "domain:xmcdn.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

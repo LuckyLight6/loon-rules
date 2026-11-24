@@ -4,8 +4,8 @@
 # description: 未由专项认领的国内域名补充
 # boundary: 只补前面专项没有完整覆盖的域名；保留必要父域，不把内网管理名或已识别的国际入口归为国内
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T04:48:27Z
-# rule-count: 12292
+# updated-at: 2026-11-24T17:50:37Z
+# rule-count: 12278
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -5869,8 +5869,6 @@ DOMAIN-SUFFIX,kewucool.com
 DOMAIN-SUFFIX,kf5.com
 DOMAIN-SUFFIX,kfb126.com
 DOMAIN-SUFFIX,kfb163.com
-DOMAIN-SUFFIX,kgimg.com
-DOMAIN-SUFFIX,kglink.cn
 DOMAIN-SUFFIX,kgrestrg.com
 DOMAIN-SUFFIX,khfw.net.cn
 DOMAIN-SUFFIX,khfwedu.cn
@@ -5921,8 +5919,6 @@ DOMAIN-SUFFIX,kong.so
 DOMAIN-SUFFIX,kongfz.com
 DOMAIN-SUFFIX,konlan.org
 DOMAIN-SUFFIX,koolearn.com
-DOMAIN-SUFFIX,koowo.cn
-DOMAIN-SUFFIX,koowo.com
 DOMAIN-SUFFIX,korqqr1l13.com
 DOMAIN-SUFFIX,kortatb.com
 DOMAIN-SUFFIX,kotaqkew.com
@@ -5980,7 +5976,6 @@ DOMAIN-SUFFIX,ksyunv7.com
 DOMAIN-SUFFIX,ksyunwaf.com
 DOMAIN-SUFFIX,kting.info
 DOMAIN-SUFFIX,ktovztie.com
-DOMAIN-SUFFIX,ktv.com
 DOMAIN-SUFFIX,ku6.cn
 DOMAIN-SUFFIX,ku6.com
 DOMAIN-SUFFIX,ku6.com.cn
@@ -6036,8 +6031,6 @@ DOMAIN-SUFFIX,kubesphere.com.cn
 DOMAIN-SUFFIX,kubiji.net
 DOMAIN-SUFFIX,kuche.com
 DOMAIN-SUFFIX,kufm.cn
-DOMAIN-SUFFIX,kugoo.com
-DOMAIN-SUFFIX,kugouipv6.com
 DOMAIN-SUFFIX,kuhimalayandp.com
 DOMAIN-SUFFIX,kuhu168.com
 DOMAIN-SUFFIX,kuiniuca.com
@@ -6070,7 +6063,6 @@ DOMAIN-SUFFIX,kunlunta.com
 DOMAIN-SUFFIX,kunlunvi.com
 DOMAIN-SUFFIX,kunlunwe.com
 DOMAIN-SUFFIX,kuqin.com
-DOMAIN-SUFFIX,kuwo.cn
 DOMAIN-SUFFIX,kuxiaomiao.cn
 DOMAIN-SUFFIX,kuxiaomiao.com
 DOMAIN-SUFFIX,kuxiaomiao.com.cn
@@ -6383,7 +6375,6 @@ DOMAIN-SUFFIX,lppzimg.com
 DOMAIN-SUFFIX,lqdsw.com
 DOMAIN-SUFFIX,lrcgc.com
 DOMAIN-SUFFIX,lrcku.com
-DOMAIN-SUFFIX,lrts.me
 DOMAIN-SUFFIX,lrxsw.org
 DOMAIN-SUFFIX,lsgenius.com
 DOMAIN-SUFFIX,lssdexternal.com
@@ -6930,7 +6921,6 @@ DOMAIN-SUFFIX,mtadvert.com
 DOMAIN-SUFFIX,mtfamily.cn
 DOMAIN-SUFFIX,mtgmcim.com
 DOMAIN-SUFFIX,mti100.com
-DOMAIN-SUFFIX,mting.info
 DOMAIN-SUFFIX,mtmyg.com
 DOMAIN-SUFFIX,mtshare.cn
 DOMAIN-SUFFIX,mtw.so
@@ -9586,7 +9576,6 @@ DOMAIN-SUFFIX,tencentmfa.com
 DOMAIN-SUFFIX,tencentmfa.com.cn
 DOMAIN-SUFFIX,tencentmind.com
 DOMAIN-SUFFIX,tencentmovie.com
-DOMAIN-SUFFIX,tencentmusic.com
 DOMAIN-SUFFIX,tencentntp.cn
 DOMAIN-SUFFIX,tencentntp.com.cn
 DOMAIN-SUFFIX,tencentoa.com
@@ -10958,7 +10947,6 @@ DOMAIN-SUFFIX,wswebpic.info
 DOMAIN-SUFFIX,wswebpic.org
 DOMAIN-SUFFIX,wsxsdf.com
 DOMAIN-SUFFIX,wtg7ew8cvzxbk.com
-DOMAIN-SUFFIX,wting.info
 DOMAIN-SUFFIX,wtturl.cn
 DOMAIN-SUFFIX,wtxcdn.com
 DOMAIN-SUFFIX,wubashangban.com
@@ -11229,7 +11217,6 @@ DOMAIN-SUFFIX,xijingjianzhan7.com
 DOMAIN-SUFFIX,xijingjianzhan8.com
 DOMAIN-SUFFIX,xijingjianzhan9.com
 DOMAIN-SUFFIX,xima.tv
-DOMAIN-SUFFIX,ximalaya.com
 DOMAIN-SUFFIX,ximalaya.fm
 DOMAIN-SUFFIX,ximalaya.tv
 DOMAIN-SUFFIX,ximalayadata.com
@@ -11319,7 +11306,6 @@ DOMAIN-SUFFIX,xlpan.com
 DOMAIN-SUFFIX,xlsdn.cn
 DOMAIN-SUFFIX,xlsdn.com
 DOMAIN-SUFFIX,xlyouxi.net
-DOMAIN-SUFFIX,xmcdn.com
 DOMAIN-SUFFIX,xmgouemc.com
 DOMAIN-SUFFIX,xmmtu.com
 DOMAIN-SUFFIX,xmq123.cn

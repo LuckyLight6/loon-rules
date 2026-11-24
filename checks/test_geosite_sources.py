@@ -38,6 +38,101 @@ class GeositeSources(PublicSourceExamples):
         with self.assertRaises(Invalid):
             extract_rows({'format': 'geosite-domain-list'}, 'product.example\nkeyword:product')
 
+    def test_named_product_blocks_follow_new_domains_without_reading_the_next_business(self):
+        recipe = {**self.recipe(), 'include-comment-blocks': {
+            'Audio product': '该块由上游明确标明产品用途'}}
+        body = ('company.example\n\n# Audio product\naudio.example\n'
+                'full:media.provider.example\n\n# Other product\nother.example')
+        expected = {'DOMAIN-SUFFIX,audio.example', 'DOMAIN,media.provider.example'}
+        self.assertEqual(extract_rows(recipe, body), expected)
+        changed = body.replace('audio.example', 'audio.example\nnew-audio-service.example')
+        self.assertEqual(extract_rows(recipe, changed), expected | {'DOMAIN-SUFFIX,new-audio-service.example'})
+        for changed in (body.replace('# Audio product', '# Renamed'),
+                        body + '\n# Audio product\nsecond.example',
+                        body.replace('full:media.provider.example', 'include:unclassified')):
+            with self.subTest(changed=changed), self.assertRaises(Invalid):
+                extract_rows(recipe, changed)
+        with self.assertRaises(Invalid):
+            extract_rows({**recipe, 'include-comment-blocks': {'Audio product': ''}}, body)
+
+    def test_selected_blocks_require_an_independent_unfiltered_inventory(self):
+        from loon_rules.generation import pipeline
+        config = self.config()
+        child = config['entries'][0]
+        child['extract'][0]['include-comment-blocks'] = {'Child': '指定产品块'}
+        config['source-inventories'][0]['recipe']['include-comment-blocks'] = {'Child': '指定产品块'}
+        with self.assertRaisesRegex(Invalid, '筛选前|未筛选|整份'):
+            pipeline.validate_declarations(config)
+        full = copy.deepcopy(config['source-inventories'][0])
+        full['id'] = 'unfiltered-child-source'
+        del full['recipe']['include-comment-blocks']
+        config['source-inventories'].append(full)
+        pipeline.validate_declarations(config)
+
+    def test_product_block_growth_reaches_bundles_and_exports_without_hiding_the_unfiltered_source(self):
+        import json
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from checks.source_fixtures import prepare_workspace
+        from loon_rules.generation import pipeline
+        from loon_rules.exports import publish
+
+        source = 'https://publisher.example/data/company'
+        whole = {'format': 'geosite-domain-list'}
+        selected = {**whole, 'include-comment-blocks': {'Product': '上游明确的产品块'}}
+        fine = {'id': 'product', 'priority': 20, 'mode': 'compiled', 'section': 'products',
+                'description': '独立产品', 'boundary': '上游用途块', 'sources': [source],
+                'extract': [{**selected, 'source': source}]}
+        common = {'id': 'company', 'priority': 30, 'mode': 'compiled', 'section': 'products',
+                  'description': '厂商共用服务', 'boundary': '完整来源扣除前面已识别的产品',
+                  'sources': [source], 'extract': [{**whole, 'source': source}], 'domain-remainder': True}
+        combined = {'id': 'products-all', 'priority': 10, 'mode': 'view', 'section': 'products',
+                    'description': '合集', 'boundary': '两表的替代选择', 'members': ['product', 'company']}
+        config = {'schema-version': 2, 'entries': [combined, fine, common],
+                  'sections': [{'id': 'products', 'title': '产品'}], 'shared-negatives': [],
+                  'critical': {'product.example': ['product'], 'company.example': ['company']},
+                  'recommended-views': ['products-all'], 'source-inventories': [
+                      {'id': 'whole-source', 'source': source, 'recipe': whole, 'owners': ['product', 'company']},
+                      {'id': 'product-block', 'source': source, 'recipe': selected, 'owners': ['product']}]}
+        inputs = {source: 'company.example\n\n# Product\nproduct.example'}
+        with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
+            root = Path(tmp)
+            (root / 'rules').mkdir()
+            entries = pipeline.validate_declarations(config)
+            (root / 'config/catalog.json').write_text(json.dumps(config))
+            (root / 'config/endpoint-contracts.json').write_text('[]')
+            (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
+            for key, entry in entries.items():
+                rows = ['DOMAIN-SUFFIX,product.example'] if key == 'product' else ['DOMAIN-SUFFIX,company.example']
+                if key == 'products-all':
+                    rows.append('DOMAIN-SUFFIX,product.example')
+                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                    pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
+            with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
+                pipeline.run()
+                inputs[source] += '\nnew-service.example\n\n# Shared\nnew-company.example'
+                pipeline.run()
+                pipeline.run()
+                publish(root)
+                self.assertEqual(pipeline.run(offline=True), 0)
+                self.assertIn('DOMAIN-SUFFIX,new-service.example',
+                              (root / 'rules/020-product.lsr').read_text())
+                self.assertNotIn('new-company.example', (root / 'rules/020-product.lsr').read_text())
+                for path in ('rules/010-products-all.lsr', 'rules/010-products-all.list',
+                             'dist/sing-box/010-products-all.json'):
+                    self.assertIn('new-service.example', (root / path).read_text())
+                    self.assertIn('new-company.example', (root / path).read_text())
+                before = {path: path.read_bytes() for folder in ('rules', 'dist', 'data')
+                          for path in (root / folder).rglob('*') if path.is_file()}
+                inputs[source] = inputs[source].replace('# Product', '# Unverified role')
+                with self.assertRaises(Invalid):
+                    pipeline.run()
+                self.assertTrue(all(path.read_bytes() == body for path, body in before.items()))
+
+
     def test_unused_notes_apply_only_to_the_adjacent_block_and_are_not_a_withdrawal_signal(self):
         recipe = {**self.recipe(), 'excluded-comment-blocks': {
             'Unused': '上游未使用的候选不自动新增，已有来源支持的入口仍保留'}}

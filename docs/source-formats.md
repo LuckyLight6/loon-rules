@@ -7,7 +7,7 @@
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
 | 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3010、Cargo 3080、PyPI 3060、npm 3040 |
-| SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 只读取指定函数直接返回的字面 HTTPS；`code-api-endpoints` 可读取指定源码字段，不运行下载的源码 | Claude 1010、xAI 1040、Firebase 消息 4585 等 |
+| SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 只读取指定函数直接返回的字面 HTTPS；`qt-host-predicate` 读取指定 Qt URL 主机判断；`code-api-endpoints` 可读取指定源码字段，不运行下载的源码 | Claude 1010、xAI 1040、Telegram 3310、Firebase 消息 4585 等 |
 | 服务域名列与 CSP | `domain-column-table` 核对列头后读取指定列，`value-format: url` 从 HTTPS／WSS URL 取精确主机；`csp-origins` 按章节、指令和品牌取源 | Datadog 3140、Docker 3075 的完整用途表、Intercom 4360 |
 | Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2090 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
@@ -38,7 +38,7 @@
 
 `protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。用途字段还要通过共享主机与产品归属检查。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
 
-`product-role-links` 从指定用途的链接取主机，公开跟踪参数不进入规则。子域保持精确匹配；链接指向共享平台时，不能因路径属于某个产品就认领整个主机。Google 4590 从官网的 News、Blog 和 Press resources 链接跟随资讯入口。
+`product-role-links` 从指定用途的链接取主机，公开跟踪参数不进入规则。相对链接按声明的来源 URL 补全，没有来源地址时不能猜测目标；HTTP、脚本动作和带凭据的链接仍不采用。子域保持精确匹配；链接指向共享平台时，不能因路径属于某个产品就认领整个主机。Google 4590 从官网的 News、Blog 和 Press resources 链接跟随资讯入口。
 
 已核实的首方网站发生跳转时，`site-identity.include-source-alias` 可以保留请求最先访问的注册域。它要求品牌与 Open Graph URL 一致，最终身份位于 `canonical-parents` 声明的官方命名空间；canonical 存在时还要与 Open Graph 一致。来源必须是 HTTPS 根入口，不能是业务子域、共享托管租户或带凭据、参数的 URL。EA 4160 用此方式识别 EA Sports 网站入口，不靠手写域名规则补跳转。
 
@@ -97,11 +97,17 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 
 Telegram 3310 同时读取官方 CIDR、官方列明的域名范围和注册组织的当前 ASN 集合。域名范围新增项会进入细分表及通讯合集；官方漏洞奖励范围并非全部客户端端点清单，因此不据此撤回其他仍有来源的域名。组织记录出现新 ASN 时自动生成，不再维护一串 ASN 编号；组织身份不符、列表截断或成员损坏时保留已发布版本。ASN 的实际匹配仍依赖客户端的 ASN 数据
 
+评论工具从官方产品链接读取；Telegraph 内容主机从官方客户端的指定 URL 判断函数读取。`qt-host-predicate` 只接受规范化主机后的精确比较并集，生成 `DOMAIN`；判断改成路径、动态值或其他条件时停止更新。它不扫描同一文件的通用链接白名单，因此不会把其中的 Fragment 等外部服务认作消息端点。TON 网站 3680、TON Center API 3690 和 Fragment 3700 按各自官方站点身份维护，归入加密资产分类。
+
 ## 原生 geosite 清单怎样分配
 
 `geosite-domain-list` 读取[上游定义的规则语法](https://github.com/v2fly/domain-list-community/blob/master/README.md)，不把评论中的网站名当成规则。裸域名和 `domain:` 保留后缀含义，`full:` 保留精确匹配；可用 `subdomains-as-hosts` 将具体服务器进一步收窄。属性须在 `attributes` 说明用途，不能把 `@ads` 理解为绕过本仓的广告策略。当前读取器不自动执行带属性的 `include:` 筛选，遇到这种输入会停止更新。
 
 `include:child` 表示引用另一个分类，不代表这些域名都属于当前产品。用 `delegated-includes` 指明子分类对应的产品，目标产品须读取同一目录中的实际子文件，并有独立完整性检查。缺少目标来源、出现未处理的引用或循环引用时，不发布部分结果。关键词和正则只有在 `omit-types` 写明原因后才能省略；未识别的类型不能靠这项声明跳过。
+
+上游用注释明确标出产品时，`include-comment-blocks` 可以读取该注释紧邻的域名块，遇到空行或新注释就结束。块内新增域名会跟随产品更新，不必再维护根域白名单；标题缺失、重复或格式变化时停止更新。懒人听书 6956、爱听卓乐 6958 使用这种方式，同时核对腾讯音乐官网的产品链接。选择产品块还必须配套筛选前整份来源的归属检查，不能只证明选出的几行有去处。
+
+腾讯音乐集团表 6965 读取完整集团清单和官网产品目录，扣除前面已经识别的具体产品。酷狗 6950 按完整客户端与关联服务范围维护，包含音乐、直播及专用素材；共用域无法按音频和直播内容拆开，因此不把它描述成纯音乐资源表。酷我、喜马拉雅和全民 K 歌仍保留各自细分，并进入国内影音合集。
 
 同一份清单混入独立平台时，`delegated-scopes` 说明范围、目标产品和用途来源。生成器不会只从当前组删掉这一项：完整性检查还会核对目标组是否承接了整个范围，以及实际第一条命中是否正确。Discord 的 `discordsays.com` 从官方说明确认是 Activities 第三方应用代理，因此由 8110 处理，3320 继续处理通讯、语音与自营入口。
 

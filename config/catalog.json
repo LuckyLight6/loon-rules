@@ -374,7 +374,10 @@
         "kraken-exchange",
         "bybit-exchange",
         "kucoin-exchange",
-        "trust-wallet"
+        "trust-wallet",
+        "ton-foundation-sites",
+        "toncenter-blockchain-api",
+        "fragment-digital-assets"
       ],
       "subheadings": {
         "binance-platform": "海外加密资产服务 · 产品细分"
@@ -739,7 +742,7 @@
         {
           "id": "mainland-audio",
           "start": 6940,
-          "title": "音乐平台",
+          "title": "音乐、听书与互动平台",
           "section": "media",
           "policies": [
             "domestic"
@@ -761,8 +764,14 @@
         "iqiyi-mainland",
         "youku-video",
         "qq-music",
+        "wesing-mainland-karaoke",
         "kugou-music",
+        "kuwo-audio",
+        "ximalaya-audio",
+        "lazy-audio-books",
+        "ultimate-music-services",
         "netease-music",
+        "tencent-music-shared-services",
         "douyin-mainland-video",
         "kuaishou-video",
         "douyu-live",
@@ -770,7 +779,7 @@
       ],
       "subheadings": {
         "bilibili-mainland-video": "视频平台",
-        "qq-music": "音乐平台",
+        "qq-music": "音乐、听书与互动平台",
         "douyin-mainland-video": "短视频与直播平台"
       }
     },
@@ -7543,14 +7552,16 @@
       "id": "telegram-messaging",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "Telegram 登录、消息、文件与服务器地址",
-      "boundary": "登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册组织当前持有的 Telegram ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台",
+      "description": "Telegram 通讯、文件与官方关联工具",
+      "boundary": "消息、文件、评论工具与官方内容主机；不把外部客户端、通用链接白名单或 TON、Fragment 等其他产品并入；官方 CIDR 与注册组织持有的 ASN 只匹配已有目标 IP，使用 no-resolve",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr",
         "https://core.telegram.org/resources/cidr.txt",
         "https://core.telegram.org/bug-bounty",
         "https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE",
-        "https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE"
+        "https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE",
+        "https://telegram.org/blog/silent-messages-slow-mode",
+        "https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/core/click_handler_types.cpp"
       ],
       "projection": [
         {
@@ -7594,6 +7605,20 @@
           "format": "rdap-entity-autnums",
           "registrant-id": "ORG-TMI5-RIPE",
           "registrant-name": "Telegram Messenger Inc"
+        },
+        {
+          "source": "https://telegram.org/blog/silent-messages-slow-mode",
+          "format": "product-role-links",
+          "labels": [
+            "Comments.App"
+          ],
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/core/click_handler_types.cpp",
+          "format": "qt-host-predicate",
+          "function": "RequiresConfirmationAfterIvFallback",
+          "protect-from-reject": true
         }
       ]
     },
@@ -12094,7 +12119,8 @@
       "description": "QQ 音乐",
       "boundary": "只收音乐专用主机；不接管 QQ、微信或整个腾讯平台",
       "sources": [
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list"
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list",
+        "https://www.tencentmusic.com/en-us/"
       ],
       "policy-hint": "domestic",
       "projection": [
@@ -12105,41 +12131,60 @@
             "y.qq.com",
             "music.qq.com",
             "qqmusic.com"
-          ]
+          ],
+          "require-domain-closure": true
         }
       ],
       "product-probes": [
         "y.qq.com"
       ],
       "selection": "detailed",
-      "routing-group": "mainland-audio"
+      "routing-group": "mainland-audio",
+      "extract": [
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "QQ Music"
+          ],
+          "protect-from-reject": true
+        }
+      ]
     },
     {
       "id": "kugou-music",
       "priority": 6950,
       "section": "media",
       "mode": "compiled",
-      "description": "酷狗音乐",
-      "boundary": "酷狗产品和专用素材，与 QQ 音乐和通用腾讯服务分开",
+      "description": "酷狗音乐、直播与关联客户端",
+      "boundary": "按完整酷狗产品清单识别客户端、音乐、直播、专用素材与相关服务；共用域无法按音频和直播内容拆开，不接管整个腾讯平台",
       "sources": [
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list"
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kugou",
+        "https://www.tencentmusic.com/en-us/"
       ],
       "policy-hint": "domestic",
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list",
-          "domain-lines-only": true,
-          "roots": [
-            "kugou.com",
-            "kugou.net"
-          ]
-        }
-      ],
       "product-probes": [
         "www.kugou.com"
       ],
       "selection": "detailed",
-      "routing-group": "mainland-audio"
+      "routing-group": "mainland-audio",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kugou",
+          "format": "geosite-domain-list",
+          "attributes": {
+            "ads": "上游广告用途标记不替代独立拦截策略"
+          }
+        },
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "Kugou Music"
+          ],
+          "protect-from-reject": true
+        }
+      ]
     },
     {
       "id": "netease-music",
@@ -14243,6 +14288,331 @@
       "separates": [
         "discord-messaging-and-voice"
       ]
+    },
+    {
+      "id": "wesing-mainland-karaoke",
+      "priority": 6945,
+      "section": "media",
+      "routing-group": "mainland-audio",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "全民 K 歌国内入口",
+      "boundary": "从官方产品链接核对全民 K 歌入口，识别 kg.qq.com 专用范围；不把其他 WeSing 国际服务或全部 QQ 域名归入国内",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list",
+        "https://www.tencentmusic.com/en-us/"
+      ],
+      "extract": [
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "WeSing"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list",
+          "roots": [
+            "kg.qq.com"
+          ],
+          "require-domain-closure": true
+        }
+      ]
+    },
+    {
+      "id": "kuwo-audio",
+      "priority": 6952,
+      "section": "media",
+      "routing-group": "mainland-audio",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "酷我音乐与专用服务",
+      "boundary": "跟随完整酷我产品清单，保留品牌别名及官方入口；不接管共享腾讯平台",
+      "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kuwo",
+        "https://www.tencentmusic.com/en-us/"
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kuwo",
+          "format": "geosite-domain-list"
+        },
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "Kuwo Music"
+          ],
+          "protect-from-reject": true
+        }
+      ]
+    },
+    {
+      "id": "ximalaya-audio",
+      "priority": 6954,
+      "section": "media",
+      "routing-group": "mainland-audio",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "喜马拉雅音频与内容交付",
+      "boundary": "跟随完整产品清单识别喜马拉雅与专用素材；不将 Himalaya 等不同产品按名称相似合并",
+      "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ximalaya"
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ximalaya",
+          "format": "geosite-domain-list",
+          "attributes": {
+            "ads": "上游广告用途标记不替代独立拦截策略"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lazy-audio-books",
+      "priority": 6956,
+      "section": "media",
+      "routing-group": "mainland-audio",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "懒人听书与长音频",
+      "boundary": "按上游明确的产品块读取完整范围，并独立核对官方产品入口；不把集团其他产品并入本表",
+      "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+        "https://www.tencentmusic.com/en-us/"
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+          "format": "geosite-domain-list",
+          "attributes": {
+            "ads": "上游广告用途标记不替代独立拦截策略",
+            "telemetry": "上游遥测用途标记不自动代表应拦截"
+          },
+          "delegated-includes": {
+            "kugou": {
+              "owner": "kugou-music",
+              "reason": "上游独立产品分类分别维护"
+            },
+            "kuwo": {
+              "owner": "kuwo-audio",
+              "reason": "上游独立产品分类分别维护"
+            },
+            "ximalaya": {
+              "owner": "ximalaya-audio",
+              "reason": "上游独立产品分类分别维护"
+            }
+          },
+          "include-comment-blocks": {
+            "懒人听书": "上游明确命名的产品块，域名变化随块更新"
+          }
+        },
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "Lazy Audio"
+          ],
+          "protect-from-reject": true
+        }
+      ]
+    },
+    {
+      "id": "ultimate-music-services",
+      "priority": 6958,
+      "section": "media",
+      "routing-group": "mainland-audio",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "爱听卓乐商用音乐服务",
+      "boundary": "按上游明确的产品块读取完整范围，并独立核对官方产品入口；不把集团其他产品并入本表",
+      "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+        "https://www.tencentmusic.com/en-us/"
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+          "format": "geosite-domain-list",
+          "attributes": {
+            "ads": "上游广告用途标记不替代独立拦截策略",
+            "telemetry": "上游遥测用途标记不自动代表应拦截"
+          },
+          "delegated-includes": {
+            "kugou": {
+              "owner": "kugou-music",
+              "reason": "上游独立产品分类分别维护"
+            },
+            "kuwo": {
+              "owner": "kuwo-audio",
+              "reason": "上游独立产品分类分别维护"
+            },
+            "ximalaya": {
+              "owner": "ximalaya-audio",
+              "reason": "上游独立产品分类分别维护"
+            }
+          },
+          "include-comment-blocks": {
+            "爱听卓乐": "上游明确命名的产品块，域名变化随块更新"
+          }
+        },
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "Ultimate Music"
+          ],
+          "protect-from-reject": true
+        }
+      ]
+    },
+    {
+      "id": "tencent-music-shared-services",
+      "priority": 6965,
+      "section": "media",
+      "routing-group": "mainland-audio",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "domestic",
+      "description": "腾讯音乐集团、目录产品与共用服务",
+      "boundary": "完整集团清单及官网产品目录扣除前面已识别的具体产品；保留官网、曲谱等目录入口与共用连接，不包含整个腾讯网络",
+      "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+        "https://www.tencentmusic.com/en-us/"
+      ],
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+          "format": "geosite-domain-list",
+          "attributes": {
+            "ads": "上游广告用途标记不替代独立拦截策略",
+            "telemetry": "上游遥测用途标记不自动代表应拦截"
+          },
+          "delegated-includes": {
+            "kugou": {
+              "owner": "kugou-music",
+              "reason": "上游独立产品分类分别维护"
+            },
+            "kuwo": {
+              "owner": "kuwo-audio",
+              "reason": "上游独立产品分类分别维护"
+            },
+            "ximalaya": {
+              "owner": "ximalaya-audio",
+              "reason": "上游独立产品分类分别维护"
+            }
+          }
+        },
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "Tencent Music",
+          "brand-match": "word"
+        },
+        {
+          "source": "https://www.tencentmusic.com/en-us/",
+          "format": "product-role-links",
+          "labels": [
+            "To Explore",
+            "Tencent Musician"
+          ]
+        }
+      ],
+      "domain-remainder": true
+    },
+    {
+      "id": "ton-foundation-sites",
+      "priority": 3680,
+      "mode": "compiled",
+      "selection": "detailed",
+      "section": "crypto",
+      "routing-group": "overseas-crypto",
+      "policy-hint": "global",
+      "description": "TON 官方网站与开发资料",
+      "boundary": "识别 TON 自营注册域中的网站和开发资料；第三方 RPC、钱包、节点和 Telegram 消息不并入",
+      "sources": [
+        "https://ton.org/"
+      ],
+      "extract": [
+        {
+          "source": "https://ton.org/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "TON"
+        }
+      ],
+      "product-probes": [
+        "docs.ton.org"
+      ],
+      "product-negatives": [
+        "api.telegram.org"
+      ]
+    },
+    {
+      "id": "toncenter-blockchain-api",
+      "priority": 3690,
+      "mode": "compiled",
+      "selection": "detailed",
+      "section": "crypto",
+      "routing-group": "overseas-crypto",
+      "policy-hint": "global",
+      "description": "TON Center 区块链 API",
+      "boundary": "识别 TON Center 自营 API、主网与测试网入口；其他 RPC 提供商和 Telegram 消息分别匹配",
+      "sources": [
+        "https://toncenter.com/"
+      ],
+      "extract": [
+        {
+          "source": "https://toncenter.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "TON Center"
+        }
+      ],
+      "product-probes": [
+        "testnet.toncenter.com"
+      ],
+      "product-negatives": [
+        "api.telegram.org"
+      ]
+    },
+    {
+      "id": "fragment-digital-assets",
+      "priority": 3700,
+      "mode": "compiled",
+      "selection": "detailed",
+      "section": "crypto",
+      "routing-group": "overseas-crypto",
+      "policy-hint": "global",
+      "description": "Fragment 用户名与数字资产服务",
+      "boundary": "识别 Fragment 自营网站及服务；Telegram 登录和钱包连接按各自服务匹配，不视为 Telegram 消息流量",
+      "sources": [
+        "https://fragment.com/"
+      ],
+      "extract": [
+        {
+          "source": "https://fragment.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "Fragment Auctions"
+        }
+      ],
+      "product-probes": [
+        "fragment.com"
+      ],
+      "product-negatives": [
+        "api.telegram.org"
+      ]
     }
   ],
   "detailed": [
@@ -14422,6 +14792,9 @@
     "bybit-exchange",
     "kucoin-exchange",
     "trust-wallet",
+    "ton-foundation-sites",
+    "toncenter-blockchain-api",
+    "fragment-digital-assets",
     "hbo-streaming",
     "hulu-streaming",
     "iqiyi-international",
@@ -14486,8 +14859,14 @@
     "iqiyi-mainland",
     "youku-video",
     "qq-music",
+    "wesing-mainland-karaoke",
     "kugou-music",
+    "kuwo-audio",
+    "ximalaya-audio",
+    "lazy-audio-books",
+    "ultimate-music-services",
     "netease-music",
+    "tencent-music-shared-services",
     "kuaishou-video",
     "douyu-live",
     "huya-live",
@@ -17171,6 +17550,57 @@
     ],
     "12345678.discordsays.com": [
       "discord-activities-proxy"
+    ],
+    "kg.qq.com": [
+      "wesing-mainland-karaoke"
+    ],
+    "kgimg.com": [
+      "kugou-music"
+    ],
+    "kugouaudio.com": [
+      "kugou-music"
+    ],
+    "kugouliveshow.com": [
+      "kugou-music"
+    ],
+    "www.kuwo.cn": [
+      "kuwo-audio"
+    ],
+    "xmcdn.com": [
+      "ximalaya-audio"
+    ],
+    "lrts.me": [
+      "lazy-audio-books"
+    ],
+    "wting.info": [
+      "lazy-audio-books"
+    ],
+    "97ting.com": [
+      "ultimate-music-services"
+    ],
+    "y.tencentmusic.com": [
+      "tencent-music-shared-services"
+    ],
+    "quyimai.qq.com": [
+      "tencent-music-shared-services"
+    ],
+    "docs.ton.org": [
+      "ton-foundation-sites"
+    ],
+    "testnet.toncenter.com": [
+      "toncenter-blockchain-api"
+    ],
+    "fragment.com": [
+      "fragment-digital-assets"
+    ],
+    "comments.app": [
+      "telegram-messaging"
+    ],
+    "graph.org": [
+      "telegram-messaging"
+    ],
+    "te.legra.ph": [
+      "telegram-messaging"
     ]
   },
   "shared-negatives": [
@@ -17665,8 +18095,14 @@
         6920,
         6930,
         6940,
+        6945,
         6950,
+        6952,
+        6954,
+        6956,
+        6958,
         6960,
+        6965,
         6970,
         6980,
         6990,
@@ -17750,7 +18186,10 @@
         3640,
         3650,
         3660,
-        3670
+        3670,
+        3680,
+        3690,
+        3700
       ]
     },
     {
@@ -20225,6 +20664,313 @@
       "owners": [
         "discord-activities-proxy"
       ]
+    },
+    {
+      "id": "kugou-music-native-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kugou",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略"
+        }
+      },
+      "owners": [
+        "kugou-music"
+      ]
+    },
+    {
+      "id": "kuwo-audio-native-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kuwo",
+      "recipe": {
+        "format": "geosite-domain-list"
+      },
+      "owners": [
+        "kuwo-audio"
+      ]
+    },
+    {
+      "id": "ximalaya-audio-native-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ximalaya",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略"
+        }
+      },
+      "owners": [
+        "ximalaya-audio"
+      ]
+    },
+    {
+      "id": "lazy-audio-books-native-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略",
+          "telemetry": "上游遥测用途标记不自动代表应拦截"
+        },
+        "delegated-includes": {
+          "kugou": {
+            "owner": "kugou-music",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "kuwo": {
+            "owner": "kuwo-audio",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "ximalaya": {
+            "owner": "ximalaya-audio",
+            "reason": "上游独立产品分类分别维护"
+          }
+        },
+        "include-comment-blocks": {
+          "懒人听书": "上游明确命名的产品块，域名变化随块更新"
+        }
+      },
+      "owners": [
+        "lazy-audio-books"
+      ]
+    },
+    {
+      "id": "ultimate-music-services-native-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略",
+          "telemetry": "上游遥测用途标记不自动代表应拦截"
+        },
+        "delegated-includes": {
+          "kugou": {
+            "owner": "kugou-music",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "kuwo": {
+            "owner": "kuwo-audio",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "ximalaya": {
+            "owner": "ximalaya-audio",
+            "reason": "上游独立产品分类分别维护"
+          }
+        },
+        "include-comment-blocks": {
+          "爱听卓乐": "上游明确命名的产品块，域名变化随块更新"
+        }
+      },
+      "owners": [
+        "ultimate-music-services"
+      ]
+    },
+    {
+      "id": "tencent-music-shared-services-native-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略",
+          "telemetry": "上游遥测用途标记不自动代表应拦截"
+        },
+        "delegated-includes": {
+          "kugou": {
+            "owner": "kugou-music",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "kuwo": {
+            "owner": "kuwo-audio",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "ximalaya": {
+            "owner": "ximalaya-audio",
+            "reason": "上游独立产品分类分别维护"
+          }
+        }
+      },
+      "owners": [
+        "qq-music",
+        "kugou-music",
+        "wesing-mainland-karaoke",
+        "kuwo-audio",
+        "ximalaya-audio",
+        "lazy-audio-books",
+        "ultimate-music-services",
+        "tencent-music-shared-services"
+      ]
+    },
+    {
+      "id": "tencent-music-full-classical-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list",
+      "domain-lines-only": true,
+      "owners": [
+        "qq-music",
+        "kugou-music",
+        "wesing-mainland-karaoke",
+        "kuwo-audio",
+        "ximalaya-audio",
+        "lazy-audio-books",
+        "ultimate-music-services",
+        "tencent-music-shared-services"
+      ]
+    },
+    {
+      "id": "qq-music-official-entry",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "QQ Music"
+        ]
+      },
+      "owners": [
+        "qq-music"
+      ]
+    },
+    {
+      "id": "wesing-mainland-karaoke-official-entry",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "WeSing"
+        ]
+      },
+      "owners": [
+        "wesing-mainland-karaoke"
+      ]
+    },
+    {
+      "id": "kuwo-audio-official-entry",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "Kuwo Music"
+        ]
+      },
+      "owners": [
+        "kuwo-audio"
+      ]
+    },
+    {
+      "id": "lazy-audio-books-official-entry",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "Lazy Audio"
+        ]
+      },
+      "owners": [
+        "lazy-audio-books"
+      ]
+    },
+    {
+      "id": "ultimate-music-services-official-entry",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "Ultimate Music"
+        ]
+      },
+      "owners": [
+        "ultimate-music-services"
+      ]
+    },
+    {
+      "id": "kugou-music-official-entry",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "Kugou Music"
+        ]
+      },
+      "owners": [
+        "kugou-music"
+      ]
+    },
+    {
+      "id": "tencent-music-official-product-directory",
+      "source": "https://www.tencentmusic.com/en-us/",
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "To Explore",
+          "Tencent Musician"
+        ]
+      },
+      "owners": [
+        "qq-music",
+        "kugou-music",
+        "wesing-mainland-karaoke",
+        "kuwo-audio",
+        "ximalaya-audio",
+        "lazy-audio-books",
+        "ultimate-music-services",
+        "tencent-music-shared-services"
+      ]
+    },
+    {
+      "id": "telegram-comments-official-entry",
+      "source": "https://telegram.org/blog/silent-messages-slow-mode",
+      "owners": [
+        "telegram-messaging"
+      ],
+      "recipe": {
+        "format": "product-role-links",
+        "labels": [
+          "Comments.App"
+        ]
+      }
+    },
+    {
+      "id": "telegram-official-content-predicate",
+      "source": "https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/core/click_handler_types.cpp",
+      "owners": [
+        "telegram-messaging"
+      ],
+      "recipe": {
+        "format": "qt-host-predicate",
+        "function": "RequiresConfirmationAfterIvFallback"
+      }
+    },
+    {
+      "id": "ton-foundation-sites-official-site",
+      "source": "https://ton.org/",
+      "owners": [
+        "ton-foundation-sites"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand": "TON"
+      }
+    },
+    {
+      "id": "toncenter-blockchain-api-official-site",
+      "source": "https://toncenter.com/",
+      "owners": [
+        "toncenter-blockchain-api"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand": "TON Center"
+      }
+    },
+    {
+      "id": "fragment-digital-assets-official-site",
+      "source": "https://fragment.com/",
+      "owners": [
+        "fragment-digital-assets"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand": "Fragment Auctions"
+      }
     }
   ],
   "source-alias-policies": {
@@ -23395,9 +24141,39 @@
             ]
           },
           {
-            "name": "酷狗音乐",
+            "name": "酷狗音乐、直播与关联客户端",
             "rules": [
               "kugou-music"
+            ]
+          },
+          {
+            "name": "全民 K 歌国内入口",
+            "rules": [
+              "wesing-mainland-karaoke"
+            ]
+          },
+          {
+            "name": "酷我音乐与专用服务",
+            "rules": [
+              "kuwo-audio"
+            ]
+          },
+          {
+            "name": "懒人听书与长音频",
+            "rules": [
+              "lazy-audio-books"
+            ]
+          },
+          {
+            "name": "爱听卓乐商用音乐服务",
+            "rules": [
+              "ultimate-music-services"
+            ]
+          },
+          {
+            "name": "腾讯音乐集团、目录产品与共用服务",
+            "rules": [
+              "tencent-music-shared-services"
             ]
           }
         ]
@@ -23740,6 +24516,54 @@
             "name": "Bugsnag 错误监控与会话报告",
             "rules": [
               "bugsnag-error-monitoring"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ximalaya",
+        "name": "喜马拉雅",
+        "products": [
+          {
+            "name": "喜马拉雅音频与内容交付",
+            "rules": [
+              "ximalaya-audio"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ton-foundation-sites",
+        "name": "TON",
+        "products": [
+          {
+            "name": "TON 官方网站与开发资料",
+            "rules": [
+              "ton-foundation-sites"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "toncenter-blockchain-api",
+        "name": "TON Center",
+        "products": [
+          {
+            "name": "TON Center 区块链 API",
+            "rules": [
+              "toncenter-blockchain-api"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fragment-digital-assets",
+        "name": "Fragment Auctions",
+        "products": [
+          {
+            "name": "Fragment 用户名与数字资产服务",
+            "rules": [
+              "fragment-digital-assets"
             ]
           }
         ]

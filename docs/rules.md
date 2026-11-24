@@ -267,7 +267,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3310 | [telegram-messaging](../rules/3310-telegram-messaging.lsr) | Telegram 登录、消息、文件与服务器地址 | 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册组织当前持有的 Telegram ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3310-telegram-messaging.lsr) |
+| 3310 | [telegram-messaging](../rules/3310-telegram-messaging.lsr) | Telegram 通讯、文件与官方关联工具 | 消息、文件、评论工具与官方内容主机；不把外部客户端、通用链接白名单或 TON、Fragment 等其他产品并入；官方 CIDR 与注册组织持有的 ASN 只匹配已有目标 IP，使用 no-resolve | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3310-telegram-messaging.lsr) |
 | 3320 | [discord-messaging-and-voice](../rules/3320-discord-messaging-and-voice.lsr) | Discord 通讯、语音及自营服务 | 通讯、语音、附件、开发入口及相关自营服务；Activities 第三方应用代理另行匹配。未使用的候选别名不自动新增，其他来源仍支持的已有入口保留；共享云与客服平台只匹配专用主机 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3320-discord-messaging-and-voice.lsr) |
 | 3330 | [signal-messenger](../rules/3330-signal-messenger.lsr) | Signal 消息、通话、贴纸、群组与用户名链接 | 按官方网络说明生成当前客户端入口；不将第三方代理、公共中继或未确认的历史域名并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3330-signal-messenger.lsr) |
 | 3340 | [line-messenger](../rules/3340-line-messenger.lsr) | LINE | LINE 消息、专用内容与已核实的加好友短链；不把 LINE Mobile、游戏、购物、电视或整个 Naver 当成通信连接 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3340-line-messenger.lsr) |
@@ -313,7 +313,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3600 | [overseas-crypto-all](../rules/3600-overseas-crypto-all.lsr) | 海外加密资产服务合集 | **合集：替代 3610–3670。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3600-overseas-crypto-all.lsr) |
+| 3600 | [overseas-crypto-all](../rules/3600-overseas-crypto-all.lsr) | 海外加密资产服务合集 | **合集：替代 3610–3700。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3600-overseas-crypto-all.lsr) |
 
 ### 8.2 海外加密资产服务 · 产品细分
 
@@ -326,6 +326,9 @@
 | 3650 | [bybit-exchange](../rules/3650-bybit-exchange.lsr) | Bybit 交易平台 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3650-bybit-exchange.lsr) |
 | 3660 | [kucoin-exchange](../rules/3660-kucoin-exchange.lsr) | KuCoin 交易平台 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3660-kucoin-exchange.lsr) |
 | 3670 | [trust-wallet](../rules/3670-trust-wallet.lsr) | Trust Wallet | 钱包自己的服务；第三方 DApp 与各条链的公共 RPC 不属于钱包 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3670-trust-wallet.lsr) |
+| 3680 | [ton-foundation-sites](../rules/3680-ton-foundation-sites.lsr) | TON 官方网站与开发资料 | 识别 TON 自营注册域中的网站和开发资料；第三方 RPC、钱包、节点和 Telegram 消息不并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3680-ton-foundation-sites.lsr) |
+| 3690 | [toncenter-blockchain-api](../rules/3690-toncenter-blockchain-api.lsr) | TON Center 区块链 API | 识别 TON Center 自营 API、主网与测试网入口；其他 RPC 提供商和 Telegram 消息分别匹配 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3690-toncenter-blockchain-api.lsr) |
+| 3700 | [fragment-digital-assets](../rules/3700-fragment-digital-assets.lsr) | Fragment 用户名与数字资产服务 | 识别 Fragment 自营网站及服务；Telegram 登录和钱包连接按各自服务匹配，不视为 Telegram 消息流量 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3700-fragment-digital-assets.lsr) |
 
 ## 9 影音与内容（海外）
 
@@ -594,13 +597,19 @@
 | 6920 | [iqiyi-mainland](../rules/6920-iqiyi-mainland.lsr) | 爱奇艺国内版 | 国内版与专用素材；同时使用国际版规则时，国际专用子域先匹配；单用本表不能从 iqiyi.com 父域排除国际业务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6920-iqiyi-mainland.lsr) |
 | 6930 | [youku-video](../rules/6930-youku-video.lsr) | 优酷国内站 | 只认国内站及专用素材，不收国际站、整个阿里 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6930-youku-video.lsr) |
 
-### 20.3 音乐平台
+### 20.3 音乐、听书与互动平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
 | 6940 | [qq-music](../rules/6940-qq-music.lsr) | QQ 音乐 | 只收音乐专用主机；不接管 QQ、微信或整个腾讯平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6940-qq-music.lsr) |
-| 6950 | [kugou-music](../rules/6950-kugou-music.lsr) | 酷狗音乐 | 酷狗产品和专用素材，与 QQ 音乐和通用腾讯服务分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6950-kugou-music.lsr) |
+| 6945 | [wesing-mainland-karaoke](../rules/6945-wesing-mainland-karaoke.lsr) | 全民 K 歌国内入口 | 从官方产品链接核对全民 K 歌入口，识别 kg.qq.com 专用范围；不把其他 WeSing 国际服务或全部 QQ 域名归入国内 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6945-wesing-mainland-karaoke.lsr) |
+| 6950 | [kugou-music](../rules/6950-kugou-music.lsr) | 酷狗音乐、直播与关联客户端 | 按完整酷狗产品清单识别客户端、音乐、直播、专用素材与相关服务；共用域无法按音频和直播内容拆开，不接管整个腾讯平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6950-kugou-music.lsr) |
+| 6952 | [kuwo-audio](../rules/6952-kuwo-audio.lsr) | 酷我音乐与专用服务 | 跟随完整酷我产品清单，保留品牌别名及官方入口；不接管共享腾讯平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6952-kuwo-audio.lsr) |
+| 6954 | [ximalaya-audio](../rules/6954-ximalaya-audio.lsr) | 喜马拉雅音频与内容交付 | 跟随完整产品清单识别喜马拉雅与专用素材；不将 Himalaya 等不同产品按名称相似合并 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6954-ximalaya-audio.lsr) |
+| 6956 | [lazy-audio-books](../rules/6956-lazy-audio-books.lsr) | 懒人听书与长音频 | 按上游明确的产品块读取完整范围，并独立核对官方产品入口；不把集团其他产品并入本表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6956-lazy-audio-books.lsr) |
+| 6958 | [ultimate-music-services](../rules/6958-ultimate-music-services.lsr) | 爱听卓乐商用音乐服务 | 按上游明确的产品块读取完整范围，并独立核对官方产品入口；不把集团其他产品并入本表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6958-ultimate-music-services.lsr) |
 | 6960 | [netease-music](../rules/6960-netease-music.lsr) | 网易云音乐 | 识别音乐 API、音频与专用内容主机；网易通用云、其他产品和上游大段 IP 不并入音乐表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6960-netease-music.lsr) |
+| 6965 | [tencent-music-shared-services](../rules/6965-tencent-music-shared-services.lsr) | 腾讯音乐集团、目录产品与共用服务 | 完整集团清单及官网产品目录扣除前面已识别的具体产品；保留官网、曲谱等目录入口与共用连接，不包含整个腾讯网络 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6965-tencent-music-shared-services.lsr) |
 
 ### 20.4 短视频与直播平台
 

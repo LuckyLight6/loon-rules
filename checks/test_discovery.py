@@ -159,6 +159,20 @@ class OfficialRoleDiscovery(PublicSourceExamples):
         with self.assertRaises(Invalid):
             extract_rows(recipe,document('https://shared.example/?utm_source=company'),shared_hosts=['shared.example'])
 
+    def test_relative_product_directory_links_resolve_only_against_the_declared_source(self):
+        from loon_rules.sources.inputs import extract_rows
+        recipe = {'format': 'product-role-links', 'labels': ['Explore'],
+                  'source': 'https://www.company.example/products/'}
+        text = ('<a href="/business/music.html">Explore</a>'
+                '<a href="https://api.other-provider.example/">Explore</a>')
+        self.assertEqual(extract_rows(recipe, text),
+                         {'DOMAIN,www.company.example', 'DOMAIN,api.other-provider.example'})
+        with self.assertRaises(Invalid):
+            extract_rows({key: value for key, value in recipe.items() if key != 'source'}, text)
+        for target in ('http://unsafe.example', 'javascript:openProduct()', 'https://user@unsafe.example'):
+            with self.subTest(target=target), self.assertRaises(Invalid):
+                extract_rows(recipe, '<a href="' + target + '">Explore</a>')
+
     def test_site_identity_requires_agreement_between_canonical_and_open_graph(self):
         from loon_rules.sources.inputs import extract_rows
         recipe={'format':'site-identity','brand':'Product'}

@@ -45,6 +45,7 @@ READERS = {
     'purpose-host-table': tables.parse_purpose_host_table,
     'purpose-url-table': tables.purpose_url_table,
     'python-sdk-endpoints': api.parse_python_sdk_endpoints,
+    'qt-host-predicate': api.qt_host_predicate,
     'region-endpoint-table': regions.extract,
     'rdap-autnum': networks.rdap_autnum,
     'rdap-entity-autnums': networks.rdap_entity_autnums,
@@ -75,7 +76,7 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts')
+    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts', 'qt-host-predicate')
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

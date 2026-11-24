@@ -2,7 +2,7 @@
 from html.parser import HTMLParser
 import json
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid, valid_host
 from .common import within, LabelledLists, PurposeFragments, product_host, https_product_host, HeadingSectionText, public_domain_pattern
@@ -153,7 +153,8 @@ def parse_product_domain_statements(recipe, text):
 def parse_product_role_links(recipe, text):
     guide = PurposeFragments()
     guide.feed(text)
-    result = {https_product_host(url) for url, label in guide.links if label in recipe['labels']}
+    result = {https_product_host(urljoin(recipe.get('source', ''), url))
+              for url, label in guide.links if label in recipe['labels']}
     if not result:
         raise Invalid('官方资料缺少指定用途的产品入口')
     return result

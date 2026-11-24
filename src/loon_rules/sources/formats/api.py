@@ -52,6 +52,51 @@ def c_function_url(recipe, text):
     return {'DOMAIN,' + domain_scope.public_host(url.hostname)}
 
 
+def qt_host_predicate(recipe, text):
+    """Read a direct OR of exact host comparisons from one QUrl predicate."""
+    function = recipe.get('function', '')
+    if not re.fullmatch(r'[A-Za-z_]\w*', function):
+        raise Invalid('Qt 主机来源缺少明确的用途函数')
+    tokens = literal_code_tokens(text)
+    signature = ['(', 'const', 'QUrl', '&', 'url', ')', '{']
+    bodies = []
+    for index, token in enumerate(tokens):
+        if index == 0 or token != function or tokens[index - 1] != 'bool':
+            continue
+        tail = tokens[index + 1:]
+        if tail[:len(signature)] != signature:
+            raise Invalid('Qt 主机函数的 URL 参数或结构变化')
+        try:
+            end = tail.index('}', len(signature))
+        except ValueError as error:
+            raise Invalid('Qt 主机函数不完整') from error
+        bodies.append(tail[len(signature):end])
+    if len(bodies) != 1:
+        raise Invalid('Qt 主机用途函数缺失或重复')
+    body = bodies[0]
+    prefix = literal_code_tokens('const auto host = url.host().toLower(); return')
+    if body[:len(prefix)] != prefix or body[-1:] != [';']:
+        raise Invalid('Qt 主机函数不再直接判断规范化主机')
+    expression = body[len(prefix):-1]
+    result = set()
+    while expression:
+        clause = expression[:8]
+        if (len(clause) != 8 or clause[:5] != ['(', 'host', '=', '=', 'u']
+                or clause[6:] != ['_q', ')']
+                or not re.fullmatch(r'"[A-Za-z0-9][A-Za-z0-9.-]*"', clause[5])):
+            raise Invalid('Qt 主机用途不再是精确域名比较')
+        result.add('DOMAIN,' + domain_scope.public_host(clause[5][1:-1]))
+        expression = expression[8:]
+        if not expression:
+            break
+        if expression[:2] != ['|', '|'] or len(expression) == 2:
+            raise Invalid('Qt 主机用途不再是直接的域名并集')
+        expression = expression[2:]
+    if not result:
+        raise Invalid('Qt 主机用途函数没有域名')
+    return result
+
+
 def go_host_switch(recipe,text):
     """Read literal host cases that return one named service's trust policy."""
     function=recipe.get('function','');callee=recipe.get('return-call','')

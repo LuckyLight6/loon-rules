@@ -37,7 +37,10 @@
           "domain:bybitglobal.com",
           "domain:kucoin.com",
           "domain:kucoin.plus",
-          "domain:trustwallet.com"
+          "domain:trustwallet.com",
+          "domain:ton.org",
+          "domain:toncenter.com",
+          "domain:fragment.com"
         ],
         "outboundTag": "PROXY"
       }

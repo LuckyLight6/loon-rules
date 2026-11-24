@@ -10,7 +10,7 @@ from loon_rules import domains
 FORMAT = 'geosite-domain-list'
 IDENTIFIER = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*\Z')
 SCOPE_OPTIONS = ('subdomains-as-hosts', 'attributes', 'omit-types', 'delegated-includes',
-                 'excluded-comment-blocks', 'delegated-scopes')
+                 'excluded-comment-blocks', 'delegated-scopes', 'include-comment-blocks')
 
 
 def scope_options(recipe):
@@ -24,6 +24,7 @@ def policies(recipe):
     delegated = recipe.get('delegated-includes', {})
     blocks = recipe.get('excluded-comment-blocks', {})
     assigned = recipe.get('delegated-scopes', {})
+    selected = recipe.get('include-comment-blocks', {})
     for names in (attributes, omitted):
         if (not isinstance(names, dict)
                 or any(not isinstance(name, str) or not IDENTIFIER.fullmatch(name)
@@ -40,11 +41,14 @@ def policies(recipe):
                    or not isinstance(target['reason'], str) or not target['reason'].strip()
                    for name, target in delegated.items())):
         raise Invalid('上游子分类缺少明确的产品归属和说明')
-    if (not isinstance(blocks, dict)
-            or any(not isinstance(name, str) or not name.strip() or '\n' in name
-                   or not isinstance(reason, str) or not reason.strip()
-                   for name, reason in blocks.items())):
-        raise Invalid('上游候选块缺少用途说明')
+    for labels in (blocks, selected):
+        if (not isinstance(labels, dict)
+                or any(not isinstance(name, str) or not name.strip() or '\n' in name
+                       or not isinstance(reason, str) or not reason.strip()
+                       for name, reason in labels.items())):
+            raise Invalid('上游产品块缺少用途说明')
+    if set(blocks) & set(selected):
+        raise Invalid('同一上游产品块不能同时采用和排除')
     if not isinstance(assigned, dict):
         raise Invalid('上游共享范围的产品分配无效')
     for row, target in assigned.items():
@@ -61,25 +65,31 @@ def policies(recipe):
         if (source.scheme != 'https' or not source.hostname or source.username is not None
                 or source.query or source.fragment):
             raise Invalid('共享范围的用途依据必须是公开 HTTPS 资料')
-    return attributes, omitted, delegated, blocks, assigned
+    return attributes, omitted, delegated, blocks, assigned, selected
 
 
 def parse(recipe, text):
-    attributes, omitted, delegated, blocks, assigned = policies(recipe)
+    attributes, omitted, delegated, blocks, assigned, selected = policies(recipe)
     rows = set()
     includes = set()
     excluded = Counter()
     excluded_blocks = Counter()
     seen_blocks = set()
+    selected_blocks = set()
+    unselected = set()
     block = None
     for number, raw in enumerate(text.splitlines(), 1):
         if raw.strip().startswith('#'):
             label = raw.strip().removeprefix('#').strip()
-            block = label if label in blocks else None
-            if block:
+            block = label if label in blocks or label in selected else None
+            if block in blocks:
                 if block in seen_blocks:
                     raise Invalid('上游候选块重复：' + block)
                 seen_blocks.add(block)
+            if block in selected:
+                if block in selected_blocks:
+                    raise Invalid('上游产品块重复：' + block)
+                selected_blocks.add(block)
             continue
         line = raw.partition('#')[0].strip().lstrip('\ufeff').strip()
         if not line:
@@ -103,8 +113,10 @@ def parse(recipe, text):
             row = read_rules(('DOMAIN,' if kind == 'full' else 'DOMAIN-SUFFIX,') + host)[0]
             if row.count(',') != 1:
                 raise Invalid('上游域名含有未认可的规则参数')
-            if block is not None:
+            if block in blocks:
                 excluded_blocks[block] += 1
+            elif selected and block not in selected:
+                unselected.add(row)
             else:
                 rows.add(row)
         else:
@@ -113,6 +125,9 @@ def parse(recipe, text):
         raise Invalid('已声明的上游子分类引用不再完整')
     if seen_blocks != set(blocks):
         raise Invalid('已声明的上游候选块不再完整')
+    if selected_blocks != set(selected):
+        raise Invalid('已声明的上游产品块不再完整')
+    unselected -= rows
     if not set(assigned) <= rows:
         raise Invalid('已分配的共享范围不再由当前来源完整列出')
     assignments = {}
@@ -126,7 +141,8 @@ def parse(recipe, text):
     if not rows:
         raise Invalid('上游产品分类没有直接的域名范围')
     return {'rows': sorted(rows), 'includes': sorted(includes), 'omitted-types': dict(excluded),
-            'omitted-comment-blocks': dict(excluded_blocks), 'delegated-scopes': assignments}
+            'omitted-comment-blocks': dict(excluded_blocks), 'delegated-scopes': assignments,
+            'unselected-domain-scopes': len(unselected)}
 
 
 def validate_references(entries):
@@ -134,7 +150,7 @@ def validate_references(entries):
                for recipe in entry.get('extract', ()) if recipe.get('format') == FORMAT}
     graph = {}
     for identity, recipe in recipes.items():
-        _, _, delegated, _, assigned = policies(recipe)
+        _, _, delegated, _, assigned, _ = policies(recipe)
         source = urlsplit(recipe['source'])
         if (source.scheme != 'https' or not source.hostname or source.username is not None
                 or source.query or source.fragment or not source.path.rsplit('/', 1)[-1]):

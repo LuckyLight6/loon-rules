@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 191 个厂商或项目、328 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 195 个厂商或项目、337 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -13,7 +13,7 @@
 | 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 24 |
 | 海外通讯与社交合集 | [3300 海外通讯与社交合集](../rules/3300-overseas-social-all.lsr) | 18 |
 | 海外支付合集 | [3500 海外支付合集](../rules/3500-overseas-payments-all.lsr) | 8 |
-| 海外加密资产服务合集 | [3600 海外加密资产服务合集](../rules/3600-overseas-crypto-all.lsr) | 7 |
+| 海外加密资产服务合集 | [3600 海外加密资产服务合集](../rules/3600-overseas-crypto-all.lsr) | 10 |
 | 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 15 |
 | 海外游戏合集 | [4100 海外游戏合集](../rules/4100-overseas-games-all.lsr) | 9 |
 | 海外办公、邮件与协作合集 | [4300 海外办公、邮件与协作合集](../rules/4300-overseas-productivity-all.lsr) | 6 |
@@ -22,7 +22,7 @@
 | 国内开发合集 | [6300 国内开发合集](../rules/6300-mainland-development-all.lsr) | 5 |
 | 国内通讯与社交合集 | [6500 国内通讯与社交合集](../rules/6500-mainland-social-all.lsr) | 7 |
 | 国内支付合集 | [6700 国内支付合集](../rules/6700-mainland-payments-all.lsr) | 3 |
-| 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/6900-mainland-media-all.lsr) | 10 |
+| 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/6900-mainland-media-all.lsr) | 16 |
 | 国内游戏合集 | [7200 国内游戏合集](../rules/7200-mainland-games-all.lsr) | 3 |
 | 国内购物、生活与办公合集 | [7400 国内购物、生活与办公合集](../rules/7400-mainland-daily-services-all.lsr) | 8 |
 | 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 11 |
@@ -813,7 +813,7 @@
 
 | 产品或服务 | 对应规则 |
 |---|---|
-| Telegram 登录、消息、文件与服务器地址 | [3310 Telegram 登录、消息、文件与服务器地址](../rules/3310-telegram-messaging.lsr) |
+| Telegram 登录、消息、文件与服务器地址 | [3310 Telegram 通讯、文件与官方关联工具](../rules/3310-telegram-messaging.lsr) |
 
 ## Discord
 
@@ -927,6 +927,24 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Trust Wallet | [3670 Trust Wallet](../rules/3670-trust-wallet.lsr) |
+
+## TON
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| TON 官方网站与开发资料 | [3680 TON 官方网站与开发资料](../rules/3680-ton-foundation-sites.lsr) |
+
+## TON Center
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| TON Center 区块链 API | [3690 TON Center 区块链 API](../rules/3690-toncenter-blockchain-api.lsr) |
+
+## Fragment Auctions
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Fragment 用户名与数字资产服务 | [3700 Fragment 用户名与数字资产服务](../rules/3700-fragment-digital-assets.lsr) |
 
 ## HBO Max
 
@@ -1226,7 +1244,18 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | QQ 音乐 | [6940 QQ 音乐](../rules/6940-qq-music.lsr) |
-| 酷狗音乐 | [6950 酷狗音乐](../rules/6950-kugou-music.lsr) |
+| 全民 K 歌国内入口 | [6945 全民 K 歌国内入口](../rules/6945-wesing-mainland-karaoke.lsr) |
+| 酷狗音乐、直播与关联客户端 | [6950 酷狗音乐、直播与关联客户端](../rules/6950-kugou-music.lsr) |
+| 酷我音乐与专用服务 | [6952 酷我音乐与专用服务](../rules/6952-kuwo-audio.lsr) |
+| 懒人听书与长音频 | [6956 懒人听书与长音频](../rules/6956-lazy-audio-books.lsr) |
+| 爱听卓乐商用音乐服务 | [6958 爱听卓乐商用音乐服务](../rules/6958-ultimate-music-services.lsr) |
+| 腾讯音乐集团、目录产品与共用服务 | [6965 腾讯音乐集团、目录产品与共用服务](../rules/6965-tencent-music-shared-services.lsr) |
+
+## 喜马拉雅
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| 喜马拉雅音频与内容交付 | [6954 喜马拉雅音频与内容交付](../rules/6954-ximalaya-audio.lsr) |
 
 ## 快手
 

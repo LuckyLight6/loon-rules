@@ -18,17 +18,23 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
     try:
         text=downloaded[spec['source']]
         if spec.get('recipe'):
+            recipe = dict(spec['recipe'])
+            if recipe.get('source', spec['source']) != spec['source']:
+                raise rules.Invalid('来源清单的读取器不能改换资料身份')
+            recipe['source'] = spec['source']
             if spec['recipe'].get('format') == geosite.FORMAT:
                 record = geosite.parse(spec['recipe'], text)
                 other_lines = (len(record['includes']) + sum(record['omitted-types'].values())
-                               + sum(record['omitted-comment-blocks'].values()))
+                               + sum(record['omitted-comment-blocks'].values())
+                               + record['unselected-domain-scopes'])
                 source_details = {'delegated-includes': record['includes'],
                                   'omitted-rule-types': record['omitted-types'],
                                   'omitted-comment-blocks': record['omitted-comment-blocks'],
+                                  'unselected-domain-scopes': record['unselected-domain-scopes'],
                                   'delegated-domain-scopes': record['delegated-scopes'],
                                   'reading-policy': geosite.scope_options(spec['recipe'])}
                 delegated_domains=record['delegated-scopes']
-            rows=sorted(extract_rows(spec['recipe'],text))
+            rows=sorted(extract_rows(recipe,text))
             rows.extend(delegated_domains)
         elif spec.get('domain-lines-only'):
             rows,other_lines=domain_lines(text)
@@ -75,6 +81,7 @@ def verify_inventories(specs, report, *, data=None, order=None):
             omitted=state.get('omitted-rule-types')
             delegated=state.get('delegated-includes')
             blocks=state.get('omitted-comment-blocks')
+            unselected=state.get('unselected-domain-scopes',0)
             excluded_blocks=set(spec['recipe'].get('excluded-comment-blocks',{}))
             if (not isinstance(omitted,dict)
                     or not set(omitted)<=set(spec['recipe'].get('omit-types',{}))
@@ -82,8 +89,10 @@ def verify_inventories(specs, report, *, data=None, order=None):
                     or delegated!=sorted(spec['recipe'].get('delegated-includes',{}))
                     or not isinstance(blocks,dict) or not set(blocks)<=excluded_blocks
                     or any(type(count) is not int or count<=0 for count in blocks.values())
+                    or type(unselected) is not int or unselected<0
+                    or unselected and not spec['recipe'].get('include-comment-blocks')
                     or state.get('reading-policy')!=geosite.scope_options(spec['recipe'])
-                    or state['other-rules']!=len(delegated)+sum(omitted.values())+sum(blocks.values())):
+                    or state['other-rules']!=len(delegated)+sum(omitted.values())+sum(blocks.values())+unselected):
                 raise rules.Invalid('上游分类的省略类型或子分类记录不完整：'+name)
             delegated_domains=state.get('delegated-domain-scopes')
             assignments=spec['recipe'].get('delegated-scopes',{})

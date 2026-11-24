@@ -78,6 +78,21 @@ class ServiceCoverageGate(unittest.TestCase):
             with self.subTest(failed=failed), self.assertRaises(Invalid):
                 reporting.verify_inventories(specs, {'vendor': failed})
 
+    def test_inventory_readers_receive_the_actual_source_and_cannot_change_its_identity(self):
+        source = 'https://www.example.com/products/'
+        recipe = {'format': 'site-identity', 'scope': 'source-root', 'brand': 'Company'}
+        spec = {'id': 'company-site', 'source': source, 'owners': ['company'], 'recipe': recipe}
+        body = ('<meta property="og:site_name" content="Company">'
+                '<link rel="canonical" href="https://www.example.com/products/">')
+        report = reporting.audit_inventory(spec, {source: body},
+                                           {'company': ['DOMAIN-SUFFIX,example.com']})
+        self.assertEqual(report['state'], 'current')
+        spec['recipe'] = {**recipe, 'source': 'https://different.example.net/'}
+        report = reporting.audit_inventory(spec, {source: body},
+                                           {'company': ['DOMAIN-SUFFIX,example.com']})
+        self.assertEqual(report['state'], 'invalid')
+
+
     def test_one_company_source_can_feed_a_product_and_a_late_shared_table(self):
         source='https://publisher.example/company.list'
         entries={'other':{'priority':10,'mode':'compiled'},

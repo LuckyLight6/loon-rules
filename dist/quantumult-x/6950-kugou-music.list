@@ -1,15 +1,30 @@
 # name: kugou-music
 # priority: 6950
 # section: media
-# description: 酷狗音乐
-# boundary: 酷狗产品和专用素材，与 QQ 音乐和通用腾讯服务分开
+# description: 酷狗音乐、直播与关联客户端
+# boundary: 按完整酷狗产品清单识别客户端、音乐、直播、专用素材与相关服务；共用域无法按音频和直播内容拆开，不接管整个腾讯平台
 # created-at: 2026-11-20T06:40:36Z
-# updated-at: 2026-11-20T06:40:36Z
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list
-# canonical-rule-count: 2
-# rule-count: 2
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kugou
+# source: https://www.tencentmusic.com/en-us/
+# canonical-rule-count: 16
+# rule-count: 16
 # format: quantumult-x
 # canonical: rules/6950-kugou-music.lsr
 
 host-suffix,kugou.com,proxy
 host-suffix,kugou.net,proxy
+host-suffix,fanxingliveshow.com,proxy
+host-suffix,kgimg.com,proxy
+host-suffix,kglink.cn,proxy
+host-suffix,ktv.com,proxy
+host-suffix,kugoo.com,proxy
+host-suffix,kugouaudio.com,proxy
+host-suffix,kugouipv6.com,proxy
+host-suffix,kugoukid.com,proxy
+host-suffix,kugouliveshow.com,proxy
+host-suffix,kugouringtone.com,proxy
+host-suffix,kugousenior.com,proxy
+host-suffix,kugoustore.com,proxy
+host-suffix,kugouvoice.com,proxy
+host-suffix,kugouyouth.com,proxy

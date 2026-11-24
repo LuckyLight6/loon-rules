@@ -4,7 +4,7 @@
 # description: 海外加密资产服务合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-24T17:50:37Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/binance.list
 # source: https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/rest-api.md
 # source: https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/web-socket-streams.md
@@ -15,8 +15,11 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list
-# canonical-rule-count: 34
-# rule-count: 34
+# source: https://ton.org/
+# source: https://toncenter.com/
+# source: https://fragment.com/
+# canonical-rule-count: 37
+# rule-count: 37
 # format: surge-compatible
 # canonical: rules/3600-overseas-crypto-all.lsr
 
@@ -54,3 +57,6 @@ DOMAIN-SUFFIX,bybitglobal.com
 DOMAIN-SUFFIX,kucoin.com
 DOMAIN-SUFFIX,kucoin.plus
 DOMAIN-SUFFIX,trustwallet.com
+DOMAIN-SUFFIX,ton.org
+DOMAIN-SUFFIX,toncenter.com
+DOMAIN-SUFFIX,fragment.com

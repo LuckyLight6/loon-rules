@@ -1,0 +1,15 @@
+# name: ximalaya-audio
+# priority: 6954
+# section: media
+# description: 喜马拉雅音频与内容交付
+# boundary: 跟随完整产品清单识别喜马拉雅与专用素材；不将 Himalaya 等不同产品按名称相似合并
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ximalaya
+# canonical-rule-count: 2
+# rule-count: 2
+# format: surge-compatible
+# canonical: rules/6954-ximalaya-audio.lsr
+
+DOMAIN-SUFFIX,ximalaya.com
+DOMAIN-SUFFIX,xmcdn.com

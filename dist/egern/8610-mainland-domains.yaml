@@ -4,14 +4,14 @@
 # description: 未由专项认领的国内域名补充
 # boundary: 只补前面专项没有完整覆盖的域名；保留必要父域，不把内网管理名或已识别的国际入口归为国内
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T17:50:37Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
 # source: https://service.mercurycom.com.cn/article-86.html
 # source: https://hima.auto/privacy/privacy-policy/
-# canonical-rule-count: 12292
-# rule-count: 12292
+# canonical-rule-count: 12278
+# rule-count: 12278
 # format: egern
 # canonical: rules/8610-mainland-domains.lsr
 
@@ -5876,8 +5876,6 @@ domain_suffix_set:
   - "kf5.com"
   - "kfb126.com"
   - "kfb163.com"
-  - "kgimg.com"
-  - "kglink.cn"
   - "kgrestrg.com"
   - "khfw.net.cn"
   - "khfwedu.cn"
@@ -5928,8 +5926,6 @@ domain_suffix_set:
   - "kongfz.com"
   - "konlan.org"
   - "koolearn.com"
-  - "koowo.cn"
-  - "koowo.com"
   - "korqqr1l13.com"
   - "kortatb.com"
   - "kotaqkew.com"
@@ -5987,7 +5983,6 @@ domain_suffix_set:
   - "ksyunwaf.com"
   - "kting.info"
   - "ktovztie.com"
-  - "ktv.com"
   - "ku6.cn"
   - "ku6.com"
   - "ku6.com.cn"
@@ -6043,8 +6038,6 @@ domain_suffix_set:
   - "kubiji.net"
   - "kuche.com"
   - "kufm.cn"
-  - "kugoo.com"
-  - "kugouipv6.com"
   - "kuhimalayandp.com"
   - "kuhu168.com"
   - "kuiniuca.com"
@@ -6077,7 +6070,6 @@ domain_suffix_set:
   - "kunlunvi.com"
   - "kunlunwe.com"
   - "kuqin.com"
-  - "kuwo.cn"
   - "kuxiaomiao.cn"
   - "kuxiaomiao.com"
   - "kuxiaomiao.com.cn"
@@ -6390,7 +6382,6 @@ domain_suffix_set:
   - "lqdsw.com"
   - "lrcgc.com"
   - "lrcku.com"
-  - "lrts.me"
   - "lrxsw.org"
   - "lsgenius.com"
   - "lssdexternal.com"
@@ -6937,7 +6928,6 @@ domain_suffix_set:
   - "mtfamily.cn"
   - "mtgmcim.com"
   - "mti100.com"
-  - "mting.info"
   - "mtmyg.com"
   - "mtshare.cn"
   - "mtw.so"
@@ -9593,7 +9583,6 @@ domain_suffix_set:
   - "tencentmfa.com.cn"
   - "tencentmind.com"
   - "tencentmovie.com"
-  - "tencentmusic.com"
   - "tencentntp.cn"
   - "tencentntp.com.cn"
   - "tencentoa.com"
@@ -10965,7 +10954,6 @@ domain_suffix_set:
   - "wswebpic.org"
   - "wsxsdf.com"
   - "wtg7ew8cvzxbk.com"
-  - "wting.info"
   - "wtturl.cn"
   - "wtxcdn.com"
   - "wubashangban.com"
@@ -11236,7 +11224,6 @@ domain_suffix_set:
   - "xijingjianzhan8.com"
   - "xijingjianzhan9.com"
   - "xima.tv"
-  - "ximalaya.com"
   - "ximalaya.fm"
   - "ximalaya.tv"
   - "ximalayadata.com"
@@ -11326,7 +11313,6 @@ domain_suffix_set:
   - "xlsdn.cn"
   - "xlsdn.com"
   - "xlyouxi.net"
-  - "xmcdn.com"
   - "xmgouemc.com"
   - "xmmtu.com"
   - "xmq123.cn"

@@ -1,0 +1,13 @@
+# name: tencent-music-shared-services
+# priority: 6965
+# section: media
+# description: 腾讯音乐集团、目录产品与共用服务
+# boundary: 完整集团清单及官网产品目录扣除前面已识别的具体产品；保留官网、曲谱等目录入口与共用连接，不包含整个腾讯网络
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# rule-count: 2
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme
+# source: https://www.tencentmusic.com/en-us/
+
+DOMAIN-SUFFIX,tencentmusic.com
+DOMAIN,quyimai.qq.com

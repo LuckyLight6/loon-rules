@@ -173,7 +173,7 @@
 | 3220 | auth0-identity-platform | Auth0 身份认证与共享登录平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3220-auth0-identity-platform.list) |
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3230-bugsnag-error-monitoring.list) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | Surfboard 官方规则类型未列出 IP-ASN |
-| 3310 | telegram-messaging | Telegram 登录、消息、文件与服务器地址 | Surfboard 官方规则类型未列出 IP-ASN |
+| 3310 | telegram-messaging | Telegram 通讯、文件与官方关联工具 | Surfboard 官方规则类型未列出 IP-ASN |
 | 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3320-discord-messaging-and-voice.list) |
 | 3330 | signal-messenger | Signal 消息、通话、贴纸、群组与用户名链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3330-signal-messenger.list) |
 | 3340 | line-messenger | LINE | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3340-line-messenger.list) |
@@ -208,6 +208,9 @@
 | 3650 | bybit-exchange | Bybit 交易平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3650-bybit-exchange.list) |
 | 3660 | kucoin-exchange | KuCoin 交易平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3660-kucoin-exchange.list) |
 | 3670 | trust-wallet | Trust Wallet | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3670-trust-wallet.list) |
+| 3680 | ton-foundation-sites | TON 官方网站与开发资料 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3680-ton-foundation-sites.list) |
+| 3690 | toncenter-blockchain-api | TON Center 区块链 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3690-toncenter-blockchain-api.list) |
+| 3700 | fragment-digital-assets | Fragment 用户名与数字资产服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3700-fragment-digital-assets.list) |
 | 3800 | overseas-media-all | 海外影音与内容合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3800-overseas-media-all.list) |
 | 3810 | hbo-streaming | HBO Max | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3810-hbo-streaming.list) |
 | 3820 | netflix-video-and-delivery | Netflix 播放、设备 API 和内容分发 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3820-netflix-video-and-delivery.list) |
@@ -317,8 +320,14 @@
 | 6920 | iqiyi-mainland | 爱奇艺国内版 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6920-iqiyi-mainland.list) |
 | 6930 | youku-video | 优酷国内站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6930-youku-video.list) |
 | 6940 | qq-music | QQ 音乐 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6940-qq-music.list) |
-| 6950 | kugou-music | 酷狗音乐 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6950-kugou-music.list) |
+| 6945 | wesing-mainland-karaoke | 全民 K 歌国内入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6945-wesing-mainland-karaoke.list) |
+| 6950 | kugou-music | 酷狗音乐、直播与关联客户端 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6950-kugou-music.list) |
+| 6952 | kuwo-audio | 酷我音乐与专用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6952-kuwo-audio.list) |
+| 6954 | ximalaya-audio | 喜马拉雅音频与内容交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6954-ximalaya-audio.list) |
+| 6956 | lazy-audio-books | 懒人听书与长音频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6956-lazy-audio-books.list) |
+| 6958 | ultimate-music-services | 爱听卓乐商用音乐服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6958-ultimate-music-services.list) |
 | 6960 | netease-music | 网易云音乐 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6960-netease-music.list) |
+| 6965 | tencent-music-shared-services | 腾讯音乐集团、目录产品与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6965-tencent-music-shared-services.list) |
 | 6970 | douyin-mainland-video | 抖音中国版短视频、直播、图片与素材 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6970-douyin-mainland-video.list) |
 | 6980 | kuaishou-video | 快手 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6980-kuaishou-video.list) |
 | 6990 | douyu-live | 斗鱼直播 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/6990-douyu-live.list) |

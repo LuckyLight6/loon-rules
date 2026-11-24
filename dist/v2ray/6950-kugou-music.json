@@ -5,7 +5,21 @@
         "type": "field",
         "domains": [
           "domain:kugou.com",
-          "domain:kugou.net"
+          "domain:kugou.net",
+          "domain:fanxingliveshow.com",
+          "domain:kgimg.com",
+          "domain:kglink.cn",
+          "domain:ktv.com",
+          "domain:kugoo.com",
+          "domain:kugouaudio.com",
+          "domain:kugouipv6.com",
+          "domain:kugoukid.com",
+          "domain:kugouliveshow.com",
+          "domain:kugouringtone.com",
+          "domain:kugousenior.com",
+          "domain:kugoustore.com",
+          "domain:kugouvoice.com",
+          "domain:kugouyouth.com"
         ],
         "outboundTag": "PROXY"
       }

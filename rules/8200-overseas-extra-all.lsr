@@ -4,8 +4,8 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T16:40:58Z
-# rule-count: 18611
+# updated-at: 2026-11-24T17:50:37Z
+# rule-count: 18610
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -3724,7 +3724,6 @@ DOMAIN-SUFFIX,comicuniverse.org
 DOMAIN-SUFFIX,comixharem.com
 DOMAIN-SUFFIX,comixzilla.com
 DOMAIN-SUFFIX,commandarms.com
-DOMAIN-SUFFIX,comments.app
 DOMAIN-SUFFIX,commentshk.com
 DOMAIN-SUFFIX,communistcrimes.org
 DOMAIN-SUFFIX,communities.win

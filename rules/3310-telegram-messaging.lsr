@@ -1,16 +1,18 @@
 # name: telegram-messaging
 # priority: 3310
 # section: social
-# description: Telegram 登录、消息、文件与服务器地址
-# boundary: 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册组织当前持有的 Telegram ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台
+# description: Telegram 通讯、文件与官方关联工具
+# boundary: 消息、文件、评论工具与官方内容主机；不把外部客户端、通用链接白名单或 TON、Fragment 等其他产品并入；官方 CIDR 与注册组织持有的 ASN 只匹配已有目标 IP，使用 no-resolve
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-23T18:06:27Z
-# rule-count: 32
+# updated-at: 2026-11-24T17:50:37Z
+# rule-count: 35
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
 # source: https://core.telegram.org/bug-bounty
 # source: https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE
 # source: https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE
+# source: https://telegram.org/blog/silent-messages-slow-mode
+# source: https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/core/click_handler_types.cpp
 
 DOMAIN-SUFFIX,cdn-telegram.org
 DOMAIN-SUFFIX,t.me
@@ -44,3 +46,6 @@ IP-ASN,44907,no-resolve
 IP-ASN,59930,no-resolve
 IP-ASN,62014,no-resolve
 IP-ASN,62041,no-resolve
+DOMAIN-SUFFIX,comments.app
+DOMAIN,graph.org
+DOMAIN,te.legra.ph

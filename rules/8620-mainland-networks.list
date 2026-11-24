@@ -4,8 +4,8 @@
 # description: 可按 IPv4 / IPv6 网段判断的国内地址
 # boundary: 域名未命中时按目标地址查网段，排在 GeoIP 之前，不替代国内域名表。每轮整表与 APNIC 中国分配记录和运营商清单取共同支持的范围；证据不足的地址继续由后续规则判断，不据此认定所在地
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T14:17:53Z
-# rule-count: 6996
+# updated-at: 2026-11-24T17:50:37Z
+# rule-count: 6997
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
@@ -4767,6 +4767,7 @@ IP-CIDR6,2402:8260:c00::/38
 IP-CIDR6,2402:8300::/32
 IP-CIDR6,2402:8380::/32
 IP-CIDR6,2402:840::/32
+IP-CIDR6,2402:8420::/32
 IP-CIDR6,2402:85c0::/32
 IP-CIDR6,2402:8800::/32
 IP-CIDR6,2402:8840::/32

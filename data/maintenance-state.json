@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T17:02:45Z",
-  "inputs-read": 583,
-  "critical": 852,
-  "inputs-requested": 583,
+  "checked-at": "2026-11-24T17:50:37Z",
+  "inputs-read": 593,
+  "critical": 869,
+  "inputs-requested": 593,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -38,6 +38,20 @@
       "DOMAIN-SUFFIX,vscode-unpkg.net": "microsoft-vscode",
       "DOMAIN-SUFFIX,vscode-webview.net": "microsoft-vscode",
       "DOMAIN-SUFFIX,vscode.dev": "microsoft-vscode"
+    },
+    "tencent-music-shared-services": {
+      "DOMAIN-SUFFIX,97ting.com": "ultimate-music-services",
+      "DOMAIN-SUFFIX,kg.qq.com": "wesing-mainland-karaoke",
+      "DOMAIN-SUFFIX,lrts.me": "lazy-audio-books",
+      "DOMAIN-SUFFIX,mting.info": "lazy-audio-books",
+      "DOMAIN-SUFFIX,music.qq.com": "qq-music",
+      "DOMAIN-SUFFIX,qqmusic.com": "qq-music",
+      "DOMAIN-SUFFIX,tingmall.com": "ultimate-music-services",
+      "DOMAIN-SUFFIX,ultimatemusic.cn": "ultimate-music-services",
+      "DOMAIN-SUFFIX,wting.info": "lazy-audio-books",
+      "DOMAIN-SUFFIX,y.qq.com": "qq-music",
+      "DOMAIN,www.kugou.com": "kugou-music",
+      "DOMAIN,www.kuwo.cn": "kuwo-audio"
     },
     "adobe-shared-services": {
       "DOMAIN-SUFFIX,adbecrsl.com": "general-ad-and-tracking",
@@ -166,6 +180,20 @@
       "DOMAIN-SUFFIX,wpspdf.cn": "wps-office"
     },
     "mainland-domains": {
+      "DOMAIN-SUFFIX,kgimg.com": "kugou-music",
+      "DOMAIN-SUFFIX,kglink.cn": "kugou-music",
+      "DOMAIN-SUFFIX,koowo.cn": "kuwo-audio",
+      "DOMAIN-SUFFIX,koowo.com": "kuwo-audio",
+      "DOMAIN-SUFFIX,ktv.com": "kugou-music",
+      "DOMAIN-SUFFIX,kugoo.com": "kugou-music",
+      "DOMAIN-SUFFIX,kugouipv6.com": "kugou-music",
+      "DOMAIN-SUFFIX,kuwo.cn": "kuwo-audio",
+      "DOMAIN-SUFFIX,lrts.me": "lazy-audio-books",
+      "DOMAIN-SUFFIX,mting.info": "lazy-audio-books",
+      "DOMAIN-SUFFIX,tencentmusic.com": "tencent-music-shared-services",
+      "DOMAIN-SUFFIX,wting.info": "lazy-audio-books",
+      "DOMAIN-SUFFIX,ximalaya.com": "ximalaya-audio",
+      "DOMAIN-SUFFIX,xmcdn.com": "ximalaya-audio",
       "DOMAIN-SUFFIX,sina.cn": "sina-web-and-shared-services",
       "DOMAIN-SUFFIX,sina.com": "sina-web-and-shared-services",
       "DOMAIN-SUFFIX,sina.com.cn": "sina-web-and-shared-services",
@@ -816,7 +844,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 330,
+    "routine-tables": 339,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1083,6 +1111,9 @@
       "bybit-exchange",
       "kucoin-exchange",
       "trust-wallet",
+      "ton-foundation-sites",
+      "toncenter-blockchain-api",
+      "fragment-digital-assets",
       "hbo-streaming",
       "netflix-video-and-delivery",
       "disney-plus-streaming",
@@ -1176,8 +1207,14 @@
       "iqiyi-mainland",
       "youku-video",
       "qq-music",
+      "wesing-mainland-karaoke",
       "kugou-music",
+      "kuwo-audio",
+      "ximalaya-audio",
+      "lazy-audio-books",
+      "ultimate-music-services",
       "netease-music",
+      "tencent-music-shared-services",
       "douyin-mainland-video",
       "kuaishou-video",
       "douyu-live",
@@ -2507,8 +2544,8 @@
       "selected-scopes": 10,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 10,
-      "fallback-scopes": 10,
+      "product-scopes": 11,
+      "fallback-scopes": 9,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
@@ -2949,21 +2986,26 @@
       "other-products": {
         "wechat-shared-and-mainland": 6,
         "wechat-international-portal": 1,
+        "kuwo-audio": 3,
+        "kugou-music": 19,
+        "ultimate-music-services": 3,
+        "tencent-music-shared-services": 4,
         "coding-platform": 1,
         "wegame-mainland": 2,
         "qq-music": 5,
-        "kugou-music": 4
+        "lazy-audio-books": 3,
+        "ximalaya-audio": 5
       },
       "domain-scopes": 689,
       "selected-scopes": 61,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 54,
-      "fallback-scopes": 552,
+      "fallback-scopes": 531,
       "privacy-scopes": 4,
       "shared-scopes": 2,
       "declared-exclusions": 0,
-      "outside-selection": 58,
+      "outside-selection": 46,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -3366,6 +3408,7 @@
         "dingtalk-public": 2,
         "weibo-social": 3,
         "sina-shared-image-assets": 2,
+        "tencent-music-shared-services": 1,
         "aliyun-drive": 3,
         "mihoyo-mainland": 4,
         "coding-platform": 1,
@@ -3376,11 +3419,13 @@
         "huya-live": 2,
         "iqiyi-international": 1,
         "iqiyi-mainland": 4,
-        "kugou-music": 1,
+        "kugou-music": 2,
+        "lazy-audio-books": 1,
         "npmmirror-registry": 1,
         "sina-web-and-shared-services": 4,
         "youku-video": 3,
         "wegame-mainland": 1,
+        "ximalaya-audio": 1,
         "youdao-products": 2,
         "wechat-shared-and-mainland": 11,
         "tencent-shared-content-and-sdk": 2,
@@ -3393,7 +3438,7 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 35,
-      "fallback-scopes": 2409,
+      "fallback-scopes": 2405,
       "privacy-scopes": 16,
       "shared-scopes": 7,
       "declared-exclusions": 0,
@@ -4205,8 +4250,10 @@
         "gitee-hosting": 1,
         "huya-live": 2,
         "iqiyi-mainland": 4,
-        "kugou-music": 2,
+        "kugou-music": 7,
+        "kuwo-audio": 3,
         "lark-international": 2,
+        "lazy-audio-books": 3,
         "bytedance-international": 2,
         "kimi-mainland": 1,
         "apple-shared-store-assets": 1,
@@ -4217,11 +4264,13 @@
         "sina-shared-image-assets": 2,
         "youku-video": 3,
         "taobao-and-xianyu-shopping": 3,
+        "tencent-music-shared-services": 1,
         "tenpay-mainland-payments": 1,
         "wechat-international-portal": 3,
         "wegame-mainland": 2,
         "weibo-social": 4,
         "xiaohongshu-community": 2,
+        "ximalaya-audio": 2,
         "qq-music": 1,
         "youdao-products": 2,
         "zhihu-community": 2
@@ -4231,7 +4280,7 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 12696,
+      "fallback-scopes": 12682,
       "privacy-scopes": 25,
       "shared-scopes": 26,
       "declared-exclusions": 0,
@@ -4577,7 +4626,7 @@
       "state": "current",
       "products": [
         "qq-music",
-        "kugou-music"
+        "wesing-mainland-karaoke"
       ],
       "filters": {
         "qq-music": [
@@ -4587,30 +4636,37 @@
               "music.qq.com",
               "qqmusic.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ],
-        "kugou-music": [
+        "wesing-mainland-karaoke": [
           {
             "roots": [
-              "kugou.com",
-              "kugou.net"
+              "kg.qq.com"
             ],
-            "domain-lines-only": true
+            "require-domain-closure": true
           }
         ]
       },
-      "other-products": {},
+      "other-products": {
+        "kugou-music": 19,
+        "ximalaya-audio": 5,
+        "kuwo-audio": 3,
+        "lazy-audio-books": 3,
+        "ultimate-music-services": 3,
+        "tencent-music-shared-services": 4
+      },
       "domain-scopes": 45,
-      "selected-scopes": 11,
+      "selected-scopes": 8,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 11,
-      "fallback-scopes": 22,
+      "product-scopes": 8,
+      "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
-      "outside-selection": 12,
+      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -10367,7 +10423,16 @@
       6730,
       3580,
       8495,
-      8110
+      8110,
+      6945,
+      6952,
+      6954,
+      6956,
+      6958,
+      6965,
+      3680,
+      3690,
+      3700
     ],
     "已核清单": [
       210,
@@ -10542,8 +10607,8 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 0,
-      "unconfirmed-prefixes": 524,
+      "accepted-prefixes": 1,
+      "unconfirmed-prefixes": 525,
       "retired-prefixes": 0
     },
     "mainland-geoip": {
@@ -11387,6 +11452,7 @@
       "delegated-includes": [],
       "omitted-rule-types": {},
       "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
       "delegated-domain-scopes": {},
       "reading-policy": {
         "subdomains-as-hosts": true,
@@ -11396,7 +11462,8 @@
         "omit-types": {},
         "delegated-includes": {},
         "excluded-comment-blocks": {},
-        "delegated-scopes": {}
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
       }
     },
     "reddit-community-complete-source": {
@@ -11407,6 +11474,7 @@
       "delegated-includes": [],
       "omitted-rule-types": {},
       "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
       "delegated-domain-scopes": {},
       "reading-policy": {
         "subdomains-as-hosts": true,
@@ -11414,7 +11482,8 @@
         "omit-types": {},
         "delegated-includes": {},
         "excluded-comment-blocks": {},
-        "delegated-scopes": {}
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
       }
     },
     "slack-workspaces-complete-source": {
@@ -11425,6 +11494,7 @@
       "delegated-includes": [],
       "omitted-rule-types": {},
       "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
       "delegated-domain-scopes": {},
       "reading-policy": {
         "subdomains-as-hosts": true,
@@ -11432,7 +11502,8 @@
         "omit-types": {},
         "delegated-includes": {},
         "excluded-comment-blocks": {},
-        "delegated-scopes": {}
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
       }
     },
     "discord-messaging-and-voice-complete-source": {
@@ -11445,6 +11516,7 @@
       "omitted-comment-blocks": {
         "Unused": 2
       },
+      "unselected-domain-scopes": 0,
       "delegated-domain-scopes": {
         "DOMAIN-SUFFIX,discordsays.com": "discord-activities-proxy"
       },
@@ -11462,7 +11534,8 @@
             "source": "https://discord.com/security",
             "reason": "官方将该命名空间说明为 Activities 第三方应用代理，单独归平台服务"
           }
-        }
+        },
+        "include-comment-blocks": {}
       }
     },
     "spotify-official-content-linking": {
@@ -11472,6 +11545,272 @@
       "other-rules": 0
     },
     "discord-activities-official-platform": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "kugou-music-native-source": {
+      "state": "current",
+      "domain-scopes": 19,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": false,
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略"
+        },
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
+      }
+    },
+    "kuwo-audio-native-source": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": false,
+        "attributes": {},
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
+      }
+    },
+    "ximalaya-audio-native-source": {
+      "state": "current",
+      "domain-scopes": 5,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": false,
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略"
+        },
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
+      }
+    },
+    "lazy-audio-books-native-source": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 18,
+      "delegated-includes": [
+        "kugou",
+        "kuwo",
+        "ximalaya"
+      ],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 15,
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": false,
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略",
+          "telemetry": "上游遥测用途标记不自动代表应拦截"
+        },
+        "omit-types": {},
+        "delegated-includes": {
+          "kugou": {
+            "owner": "kugou-music",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "kuwo": {
+            "owner": "kuwo-audio",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "ximalaya": {
+            "owner": "ximalaya-audio",
+            "reason": "上游独立产品分类分别维护"
+          }
+        },
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {},
+        "include-comment-blocks": {
+          "懒人听书": "上游明确命名的产品块，域名变化随块更新"
+        }
+      }
+    },
+    "ultimate-music-services-native-source": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 18,
+      "delegated-includes": [
+        "kugou",
+        "kuwo",
+        "ximalaya"
+      ],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 15,
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": false,
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略",
+          "telemetry": "上游遥测用途标记不自动代表应拦截"
+        },
+        "omit-types": {},
+        "delegated-includes": {
+          "kugou": {
+            "owner": "kugou-music",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "kuwo": {
+            "owner": "kuwo-audio",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "ximalaya": {
+            "owner": "ximalaya-audio",
+            "reason": "上游独立产品分类分别维护"
+          }
+        },
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {},
+        "include-comment-blocks": {
+          "爱听卓乐": "上游明确命名的产品块，域名变化随块更新"
+        }
+      }
+    },
+    "tencent-music-shared-services-native-source": {
+      "state": "current",
+      "domain-scopes": 18,
+      "outside-scope": 0,
+      "other-rules": 3,
+      "delegated-includes": [
+        "kugou",
+        "kuwo",
+        "ximalaya"
+      ],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": false,
+        "attributes": {
+          "ads": "上游广告用途标记不替代独立拦截策略",
+          "telemetry": "上游遥测用途标记不自动代表应拦截"
+        },
+        "omit-types": {},
+        "delegated-includes": {
+          "kugou": {
+            "owner": "kugou-music",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "kuwo": {
+            "owner": "kuwo-audio",
+            "reason": "上游独立产品分类分别维护"
+          },
+          "ximalaya": {
+            "owner": "ximalaya-audio",
+            "reason": "上游独立产品分类分别维护"
+          }
+        },
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {},
+        "include-comment-blocks": {}
+      }
+    },
+    "tencent-music-full-classical-source": {
+      "state": "current",
+      "domain-scopes": 45,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "qq-music-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wesing-mainland-karaoke-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "kuwo-audio-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "lazy-audio-books-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "ultimate-music-services-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "kugou-music-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "tencent-music-official-product-directory": {
+      "state": "current",
+      "domain-scopes": 12,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "telegram-comments-official-entry": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "telegram-official-content-predicate": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "ton-foundation-sites-official-site": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "toncenter-blockchain-api-official-site": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "fragment-digital-assets-official-site": {
       "state": "current",
       "domain-scopes": 1,
       "outside-scope": 0,
@@ -11809,6 +12148,7 @@
     "cloudconfig.jetbrains.com",
     "code.visualstudio.com",
     "commandcode.ai",
+    "comments.app",
     "containers.pkg.github.com",
     "contest.com",
     "copilot-proxy.githubusercontent.com",
@@ -11848,6 +12188,7 @@
     "elevenlabs.io",
     "elevenlabsusercontent.com",
     "factory.com",
+    "fastest.y.qq.com",
     "fba.apple.com",
     "fcm.googleapis.com",
     "fcm.mtls.googleapis.com",
@@ -11882,6 +12223,7 @@
     "gmailpostmastertools.mtls.googleapis.com",
     "graph.microsoft.com",
     "graph.microsoft.us",
+    "graph.org",
     "grokipedia.com",
     "gs-loc-cn.apple.com",
     "gsa.apple.com",
@@ -11915,6 +12257,7 @@
     "iphonesubmissions.apple.com",
     "jira.com",
     "js.intercomcdn.com",
+    "kg.qq.com",
     "kilo.ai",
     "liblibai-web-static.liblib.cloud",
     "link.com",
@@ -12233,6 +12576,7 @@
     "swdownload.apple.com",
     "t.me",
     "tcr9i.chat.openai.com",
+    "te.legra.ph",
     "teamwork-graph.atlassian.com",
     "teamworkgraph.ai",
     "teamworkgraph.com",
@@ -12284,10 +12628,14 @@
     "www.ea.com",
     "www.intercom-reporting.com",
     "www.jetbrains.com",
+    "www.kugou.com",
+    "www.kuwo.cn",
+    "www.lrts.me",
     "www.notion-status.com",
     "www.teamwork-graph.atlassian.com",
     "www.teamworkgraph.ai",
     "www.teamworkgraph.com",
+    "www.ultimatemusic.cn",
     "xoom.com",
     "z.ai"
   ],
@@ -12326,7 +12674,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -12367,7 +12715,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "ollama-cloud": {
@@ -12398,7 +12746,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "stackit-model-services": {
@@ -12429,7 +12777,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "stepfun-international": {
@@ -12471,7 +12819,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "xiaomi-international": {
@@ -12514,7 +12862,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -12549,7 +12897,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -12599,7 +12947,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -12640,7 +12988,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -12872,7 +13220,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "npm-registry": {
@@ -12905,7 +13253,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -12949,7 +13297,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -12982,7 +13330,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -13035,7 +13383,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "braintree-payments": {
@@ -13062,7 +13410,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "notion-workspace": {
@@ -13088,7 +13436,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "google-account-authentication": {
@@ -13296,7 +13644,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -13322,7 +13670,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "google-play-services": {
@@ -13358,7 +13706,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "google-play-games": {
@@ -13386,7 +13734,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "kimi-mainland": {
@@ -13417,7 +13765,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -13448,7 +13796,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -13491,7 +13839,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -13530,7 +13878,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795539729,
+      "last-read": 1795542601,
       "state": "current"
     }
   },
@@ -13538,7 +13886,7 @@
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1304,
+  "business-domain-cases": 1321,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -13548,7 +13896,26 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "extended-ad-and-tracking"
+    "overseas-social-all",
+    "telegram-messaging",
+    "overseas-crypto-all",
+    "mainland-media-all",
+    "qq-music",
+    "kugou-music",
+    "overseas-extra-all",
+    "overseas-sites-extra",
+    "mainland-routing-all",
+    "mainland-domains",
+    "mainland-networks",
+    "wesing-mainland-karaoke",
+    "kuwo-audio",
+    "ximalaya-audio",
+    "lazy-audio-books",
+    "ultimate-music-services",
+    "tencent-music-shared-services",
+    "ton-foundation-sites",
+    "toncenter-blockchain-api",
+    "fragment-digital-assets"
   ],
   "scope-negatives": 150,
   "ip-cases": 44,
@@ -13606,7 +13973,7 @@
     "mainland-networks": {
       "intent": "allow-dns",
       "no-resolve": 0,
-      "resolve-for-match": 6996
+      "resolve-for-match": 6997
     },
     "mainland-geoip": {
       "intent": "allow-dns",
@@ -13781,8 +14148,8 @@
     "sift-fraud-prevention": 2,
     "auth0-identity-platform": 1,
     "bugsnag-error-monitoring": 1,
-    "overseas-social-all": 237,
-    "telegram-messaging": 32,
+    "overseas-social-all": 240,
+    "telegram-messaging": 35,
     "discord-messaging-and-voice": 26,
     "signal-messenger": 6,
     "line-messenger": 4,
@@ -13809,7 +14176,7 @@
     "xoom-transfers": 1,
     "wise-transfers": 2,
     "tenpay-global-payments": 1,
-    "overseas-crypto-all": 34,
+    "overseas-crypto-all": 37,
     "binance-platform": 6,
     "okx-platform": 6,
     "gemini-exchange": 1,
@@ -13817,6 +14184,9 @@
     "bybit-exchange": 16,
     "kucoin-exchange": 2,
     "trust-wallet": 1,
+    "ton-foundation-sites": 1,
+    "toncenter-blockchain-api": 1,
+    "fragment-digital-assets": 1,
     "overseas-media-all": 179,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
@@ -13921,13 +14291,19 @@
     "alipay-mainland-payments": 6,
     "unionpay-mainland": 2,
     "tenpay-mainland-payments": 1,
-    "mainland-media-all": 48,
+    "mainland-media-all": 76,
     "bilibili-mainland-video": 10,
     "iqiyi-mainland": 4,
     "youku-video": 4,
     "qq-music": 3,
-    "kugou-music": 2,
+    "wesing-mainland-karaoke": 1,
+    "kugou-music": 16,
+    "kuwo-audio": 3,
+    "ximalaya-audio": 2,
+    "lazy-audio-books": 3,
+    "ultimate-music-services": 3,
     "netease-music": 5,
+    "tencent-music-shared-services": 2,
     "douyin-mainland-video": 8,
     "kuaishou-video": 3,
     "douyu-live": 7,
@@ -13957,9 +14333,9 @@
     "cloudflare-shared-services": 52,
     "amazon-shared-services": 168,
     "discord-activities-proxy": 1,
-    "overseas-extra-all": 18611,
+    "overseas-extra-all": 18610,
     "overseas-media-extra": 145,
-    "overseas-sites-extra": 18480,
+    "overseas-sites-extra": 18479,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,
@@ -13972,9 +14348,9 @@
     "kingsoft-shared-services": 32,
     "sina-shared-image-assets": 2,
     "sina-web-and-shared-services": 7,
-    "mainland-routing-all": 19289,
-    "mainland-domains": 12292,
-    "mainland-networks": 6996,
+    "mainland-routing-all": 19276,
+    "mainland-domains": 12278,
+    "mainland-networks": 6997,
     "mainland-geoip": 1
   },
   "component-rules": {

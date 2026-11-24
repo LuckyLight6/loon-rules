@@ -1710,21 +1710,21 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 237,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/3300-overseas-social-all.lsr"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 32,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 35,
           "status": "available",
           "path": "rules/3310-telegram-messaging.lsr"
         },
@@ -1990,11 +1990,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "rules/3600-overseas-crypto-all.lsr"
         },
@@ -2067,6 +2067,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "rules/3670-trust-wallet.lsr"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3680-ton-foundation-sites.lsr"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3690-toncenter-blockchain-api.lsr"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3700-fragment-digital-assets.lsr"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -3110,11 +3140,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "rules/6900-mainland-media-all.lsr"
         },
@@ -3158,15 +3188,65 @@
           "status": "available",
           "path": "rules/6940-qq-music.lsr"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/6945-wesing-mainland-karaoke.lsr"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "rules/6950-kugou-music.lsr"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "rules/6952-kuwo-audio.lsr"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/6954-ximalaya-audio.lsr"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "rules/6956-lazy-audio-books.lsr"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "rules/6958-ultimate-music-services.lsr"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -3177,6 +3257,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "rules/6960-netease-music.lsr"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/6965-tencent-music-shared-services.lsr"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -3470,11 +3560,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.lsr"
         },
@@ -3490,11 +3580,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.lsr"
         },
@@ -3620,31 +3710,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "rules/8600-mainland-routing-all.lsr"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "rules/8610-mainland-domains.lsr"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "rules/8620-mainland-networks.lsr"
         },
@@ -3659,7 +3749,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 361,
+      "available": 370,
       "unsupported": 0
     },
     "surge": {
@@ -5326,21 +5416,21 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 237,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/3300-overseas-social-all.list"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 32,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 35,
           "status": "available",
           "path": "rules/3310-telegram-messaging.list"
         },
@@ -5606,11 +5696,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "rules/3600-overseas-crypto-all.list"
         },
@@ -5683,6 +5773,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "rules/3670-trust-wallet.list"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3680-ton-foundation-sites.list"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3690-toncenter-blockchain-api.list"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3700-fragment-digital-assets.list"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -6726,11 +6846,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "rules/6900-mainland-media-all.list"
         },
@@ -6774,15 +6894,65 @@
           "status": "available",
           "path": "rules/6940-qq-music.list"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/6945-wesing-mainland-karaoke.list"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "rules/6950-kugou-music.list"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "rules/6952-kuwo-audio.list"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/6954-ximalaya-audio.list"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "rules/6956-lazy-audio-books.list"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "rules/6958-ultimate-music-services.list"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -6793,6 +6963,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "rules/6960-netease-music.list"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/6965-tencent-music-shared-services.list"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -7086,11 +7266,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.list"
         },
@@ -7106,11 +7286,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.list"
         },
@@ -7236,31 +7416,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "rules/8600-mainland-routing-all.list"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "rules/8610-mainland-domains.list"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "rules/8620-mainland-networks.list"
         },
@@ -7275,7 +7455,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 361,
+      "available": 370,
       "unsupported": 0
     },
     "clash-classical": {
@@ -8942,21 +9122,21 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 237,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "dist/clash-classical/3300-overseas-social-all.yaml"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 32,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 35,
           "status": "available",
           "path": "dist/clash-classical/3310-telegram-messaging.yaml"
         },
@@ -9222,11 +9402,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/clash-classical/3600-overseas-crypto-all.yaml"
         },
@@ -9299,6 +9479,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/clash-classical/3670-trust-wallet.yaml"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/3680-ton-foundation-sites.yaml"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/3690-toncenter-blockchain-api.yaml"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/3700-fragment-digital-assets.yaml"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -10342,11 +10552,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/clash-classical/6900-mainland-media-all.yaml"
         },
@@ -10390,15 +10600,65 @@
           "status": "available",
           "path": "dist/clash-classical/6940-qq-music.yaml"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/6945-wesing-mainland-karaoke.yaml"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/clash-classical/6950-kugou-music.yaml"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/clash-classical/6952-kuwo-audio.yaml"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/clash-classical/6954-ximalaya-audio.yaml"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/clash-classical/6956-lazy-audio-books.yaml"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/clash-classical/6958-ultimate-music-services.yaml"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -10409,6 +10669,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/clash-classical/6960-netease-music.yaml"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/clash-classical/6965-tencent-music-shared-services.yaml"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -10702,11 +10972,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/clash-classical/8200-overseas-extra-all.yaml"
         },
@@ -10722,11 +10992,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/clash-classical/8220-overseas-sites-extra.yaml"
         },
@@ -10852,31 +11122,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "dist/clash-classical/8600-mainland-routing-all.yaml"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/clash-classical/8610-mainland-domains.yaml"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "dist/clash-classical/8620-mainland-networks.yaml"
         },
@@ -10891,7 +11161,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 361,
+      "available": 370,
       "unsupported": 0
     },
     "egern": {
@@ -12558,21 +12828,21 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 237,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "dist/egern/3300-overseas-social-all.yaml"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 32,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 35,
           "status": "available",
           "path": "dist/egern/3310-telegram-messaging.yaml"
         },
@@ -12838,11 +13108,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/egern/3600-overseas-crypto-all.yaml"
         },
@@ -12915,6 +13185,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/egern/3670-trust-wallet.yaml"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/3680-ton-foundation-sites.yaml"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/3690-toncenter-blockchain-api.yaml"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/3700-fragment-digital-assets.yaml"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -13958,11 +14258,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/egern/6900-mainland-media-all.yaml"
         },
@@ -14006,15 +14306,65 @@
           "status": "available",
           "path": "dist/egern/6940-qq-music.yaml"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/6945-wesing-mainland-karaoke.yaml"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/egern/6950-kugou-music.yaml"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/egern/6952-kuwo-audio.yaml"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/egern/6954-ximalaya-audio.yaml"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/egern/6956-lazy-audio-books.yaml"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/egern/6958-ultimate-music-services.yaml"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -14025,6 +14375,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/egern/6960-netease-music.yaml"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/egern/6965-tencent-music-shared-services.yaml"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -14318,11 +14678,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/egern/8200-overseas-extra-all.yaml"
         },
@@ -14338,11 +14698,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/egern/8220-overseas-sites-extra.yaml"
         },
@@ -14468,31 +14828,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "dist/egern/8600-mainland-routing-all.yaml"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/egern/8610-mainland-domains.yaml"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "dist/egern/8620-mainland-networks.yaml"
         },
@@ -14507,7 +14867,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 361,
+      "available": 370,
       "unsupported": 0
     },
     "surfboard": {
@@ -16172,19 +16532,19 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -16450,11 +16810,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/surge-compatible/3600-overseas-crypto-all.list"
         },
@@ -16527,6 +16887,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/surge-compatible/3670-trust-wallet.list"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3680-ton-foundation-sites.list"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3690-toncenter-blockchain-api.list"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3700-fragment-digital-assets.list"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -17570,11 +17960,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/surge-compatible/6900-mainland-media-all.list"
         },
@@ -17618,15 +18008,65 @@
           "status": "available",
           "path": "dist/surge-compatible/6940-qq-music.list"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/6945-wesing-mainland-karaoke.list"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/surge-compatible/6950-kugou-music.list"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/surge-compatible/6952-kuwo-audio.list"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/surge-compatible/6954-ximalaya-audio.list"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/surge-compatible/6956-lazy-audio-books.list"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/surge-compatible/6958-ultimate-music-services.list"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -17637,6 +18077,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/surge-compatible/6960-netease-music.list"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/surge-compatible/6965-tencent-music-shared-services.list"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -17930,11 +18380,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
@@ -17950,11 +18400,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -18080,31 +18530,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "dist/surge-compatible/8600-mainland-routing-all.list"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/surge-compatible/8610-mainland-domains.list"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "dist/surge-compatible/8620-mainland-networks.list"
         },
@@ -18119,7 +18569,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 357,
+      "available": 366,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -19786,21 +20236,21 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 237,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "dist/surge-compatible/3300-overseas-social-all.list"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 32,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 35,
           "status": "available",
           "path": "dist/surge-compatible/3310-telegram-messaging.list"
         },
@@ -20066,11 +20516,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/surge-compatible/3600-overseas-crypto-all.list"
         },
@@ -20143,6 +20593,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/surge-compatible/3670-trust-wallet.list"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3680-ton-foundation-sites.list"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3690-toncenter-blockchain-api.list"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3700-fragment-digital-assets.list"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -21186,11 +21666,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/surge-compatible/6900-mainland-media-all.list"
         },
@@ -21234,15 +21714,65 @@
           "status": "available",
           "path": "dist/surge-compatible/6940-qq-music.list"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/6945-wesing-mainland-karaoke.list"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/surge-compatible/6950-kugou-music.list"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/surge-compatible/6952-kuwo-audio.list"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/surge-compatible/6954-ximalaya-audio.list"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/surge-compatible/6956-lazy-audio-books.list"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/surge-compatible/6958-ultimate-music-services.list"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -21253,6 +21783,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/surge-compatible/6960-netease-music.list"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/surge-compatible/6965-tencent-music-shared-services.list"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -21546,11 +22086,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
@@ -21566,11 +22106,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -21696,31 +22236,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "dist/surge-compatible/8600-mainland-routing-all.list"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/surge-compatible/8610-mainland-domains.list"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "dist/surge-compatible/8620-mainland-networks.list"
         },
@@ -21735,7 +22275,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 361,
+      "available": 370,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -23393,19 +23933,19 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -23671,11 +24211,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/quantumult-x/3600-overseas-crypto-all.list"
         },
@@ -23748,6 +24288,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/quantumult-x/3670-trust-wallet.list"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/3680-ton-foundation-sites.list"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/3690-toncenter-blockchain-api.list"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/3700-fragment-digital-assets.list"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -24787,11 +25357,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/quantumult-x/6900-mainland-media-all.list"
         },
@@ -24835,15 +25405,65 @@
           "status": "available",
           "path": "dist/quantumult-x/6940-qq-music.list"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/6945-wesing-mainland-karaoke.list"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/quantumult-x/6950-kugou-music.list"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/quantumult-x/6952-kuwo-audio.list"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/quantumult-x/6954-ximalaya-audio.list"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/quantumult-x/6956-lazy-audio-books.list"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/quantumult-x/6958-ultimate-music-services.list"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -24854,6 +25474,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/quantumult-x/6960-netease-music.list"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/quantumult-x/6965-tencent-music-shared-services.list"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -25147,11 +25777,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/quantumult-x/8200-overseas-extra-all.list"
         },
@@ -25167,11 +25797,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/quantumult-x/8220-overseas-sites-extra.list"
         },
@@ -25297,31 +25927,31 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 19289,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 19276,
           "status": "available",
           "path": "dist/quantumult-x/8600-mainland-routing-all.list"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/quantumult-x/8610-mainland-domains.list"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6996,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 6997,
           "status": "available",
           "path": "dist/quantumult-x/8620-mainland-networks.list"
         },
@@ -25336,7 +25966,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 346,
+      "available": 355,
       "unsupported": 15
     },
     "sing-box": {
@@ -26994,19 +27624,19 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -27272,11 +27902,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/sing-box/3600-overseas-crypto-all.json"
         },
@@ -27349,6 +27979,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/sing-box/3670-trust-wallet.json"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/3680-ton-foundation-sites.json"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/3690-toncenter-blockchain-api.json"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/3700-fragment-digital-assets.json"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -28388,11 +29048,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/sing-box/6900-mainland-media-all.json"
         },
@@ -28436,15 +29096,65 @@
           "status": "available",
           "path": "dist/sing-box/6940-qq-music.json"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/6945-wesing-mainland-karaoke.json"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/sing-box/6950-kugou-music.json"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/sing-box/6952-kuwo-audio.json"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/sing-box/6954-ximalaya-audio.json"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/sing-box/6956-lazy-audio-books.json"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/sing-box/6958-ultimate-music-services.json"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -28455,6 +29165,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/sing-box/6960-netease-music.json"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/sing-box/6965-tencent-music-shared-services.json"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -28748,11 +29468,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/sing-box/8200-overseas-extra-all.json"
         },
@@ -28768,11 +29488,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/sing-box/8220-overseas-sites-extra.json"
         },
@@ -28898,29 +29618,29 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/sing-box/8610-mainland-domains.json"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -28934,7 +29654,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 343,
+      "available": 352,
       "unsupported": 18
     },
     "v2ray": {
@@ -30592,19 +31312,19 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 237,
+          "rule-count": 240,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
         "3310-telegram-messaging": {
           "source": "rules/3310-telegram-messaging.lsr",
-          "rule-count": 32,
-          "description": "Telegram 登录、消息、文件与服务器地址",
+          "rule-count": 35,
+          "description": "Telegram 通讯、文件与官方关联工具",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-23T18:06:27Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -30870,11 +31590,11 @@
         },
         "3600-overseas-crypto-all": {
           "source": "rules/3600-overseas-crypto-all.lsr",
-          "rule-count": 34,
+          "rule-count": 37,
           "description": "海外加密资产服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 34,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 37,
           "status": "available",
           "path": "dist/v2ray/3600-overseas-crypto-all.json"
         },
@@ -30947,6 +31667,36 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/v2ray/3670-trust-wallet.json"
+        },
+        "3680-ton-foundation-sites": {
+          "source": "rules/3680-ton-foundation-sites.lsr",
+          "rule-count": 1,
+          "description": "TON 官方网站与开发资料",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/3680-ton-foundation-sites.json"
+        },
+        "3690-toncenter-blockchain-api": {
+          "source": "rules/3690-toncenter-blockchain-api.lsr",
+          "rule-count": 1,
+          "description": "TON Center 区块链 API",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/3690-toncenter-blockchain-api.json"
+        },
+        "3700-fragment-digital-assets": {
+          "source": "rules/3700-fragment-digital-assets.lsr",
+          "rule-count": 1,
+          "description": "Fragment 用户名与数字资产服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/3700-fragment-digital-assets.json"
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
@@ -31986,11 +32736,11 @@
         },
         "6900-mainland-media-all": {
           "source": "rules/6900-mainland-media-all.lsr",
-          "rule-count": 48,
+          "rule-count": 76,
           "description": "国内影音与直播合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 48,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 76,
           "status": "available",
           "path": "dist/v2ray/6900-mainland-media-all.json"
         },
@@ -32034,15 +32784,65 @@
           "status": "available",
           "path": "dist/v2ray/6940-qq-music.json"
         },
+        "6945-wesing-mainland-karaoke": {
+          "source": "rules/6945-wesing-mainland-karaoke.lsr",
+          "rule-count": 1,
+          "description": "全民 K 歌国内入口",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/6945-wesing-mainland-karaoke.json"
+        },
         "6950-kugou-music": {
           "source": "rules/6950-kugou-music.lsr",
-          "rule-count": 2,
-          "description": "酷狗音乐",
+          "rule-count": 16,
+          "description": "酷狗音乐、直播与关联客户端",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 16,
           "status": "available",
           "path": "dist/v2ray/6950-kugou-music.json"
+        },
+        "6952-kuwo-audio": {
+          "source": "rules/6952-kuwo-audio.lsr",
+          "rule-count": 3,
+          "description": "酷我音乐与专用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/v2ray/6952-kuwo-audio.json"
+        },
+        "6954-ximalaya-audio": {
+          "source": "rules/6954-ximalaya-audio.lsr",
+          "rule-count": 2,
+          "description": "喜马拉雅音频与内容交付",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/v2ray/6954-ximalaya-audio.json"
+        },
+        "6956-lazy-audio-books": {
+          "source": "rules/6956-lazy-audio-books.lsr",
+          "rule-count": 3,
+          "description": "懒人听书与长音频",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/v2ray/6956-lazy-audio-books.json"
+        },
+        "6958-ultimate-music-services": {
+          "source": "rules/6958-ultimate-music-services.lsr",
+          "rule-count": 3,
+          "description": "爱听卓乐商用音乐服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 3,
+          "status": "available",
+          "path": "dist/v2ray/6958-ultimate-music-services.json"
         },
         "6960-netease-music": {
           "source": "rules/6960-netease-music.lsr",
@@ -32053,6 +32853,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/v2ray/6960-netease-music.json"
+        },
+        "6965-tencent-music-shared-services": {
+          "source": "rules/6965-tencent-music-shared-services.lsr",
+          "rule-count": 2,
+          "description": "腾讯音乐集团、目录产品与共用服务",
+          "created-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/v2ray/6965-tencent-music-shared-services.json"
         },
         "6970-douyin-mainland-video": {
           "source": "rules/6970-douyin-mainland-video.lsr",
@@ -32346,11 +33156,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18611,
+          "rule-count": 18610,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18611,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18610,
           "status": "available",
           "path": "dist/v2ray/8200-overseas-extra-all.json"
         },
@@ -32366,11 +33176,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18480,
+          "rule-count": 18479,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 18480,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 18479,
           "status": "available",
           "path": "dist/v2ray/8220-overseas-sites-extra.json"
         },
@@ -32496,29 +33306,29 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19289,
+          "rule-count": 19276,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
         "8610-mainland-domains": {
           "source": "rules/8610-mainland-domains.lsr",
-          "rule-count": 12292,
+          "rule-count": 12278,
           "description": "未由专项认领的国内域名补充",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 12292,
+          "updated-at": "2026-11-24T17:50:37Z",
+          "output-rule-count": 12278,
           "status": "available",
           "path": "dist/v2ray/8610-mainland-domains.json"
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6996,
+          "rule-count": 6997,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T17:50:37Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -32532,7 +33342,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 343,
+      "available": 352,
       "unsupported": 18
     }
   },

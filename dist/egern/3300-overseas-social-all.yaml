@@ -4,12 +4,14 @@
 # description: 海外通讯与社交合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T16:40:58Z
+# updated-at: 2026-11-24T17:50:37Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
 # source: https://core.telegram.org/bug-bounty
 # source: https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE
 # source: https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE
+# source: https://telegram.org/blog/silent-messages-slow-mode
+# source: https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/core/click_handler_types.cpp
 # source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord
 # source: https://discord.com/security
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
@@ -37,8 +39,8 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meta.list
-# canonical-rule-count: 237
-# rule-count: 237
+# canonical-rule-count: 240
+# rule-count: 240
 # format: egern
 # canonical: rules/3300-overseas-social-all.lsr
 
@@ -54,6 +56,7 @@ domain_suffix_set:
   - "telegram.space"
   - "telesco.pe"
   - "tg.dev"
+  - "comments.app"
   - "dis.gd"
   - "discord-activities.com"
   - "discord.co"
@@ -254,6 +257,8 @@ domain_suffix_set:
 domain_set:
   - "contest.com"
   - "quiz.directory"
+  - "graph.org"
+  - "te.legra.ph"
   - "discord-attachments-uploads-prd.storage.googleapis.com"
   - "hammerandchisel.ssl.zendesk.com"
   - "reddit.app.link"

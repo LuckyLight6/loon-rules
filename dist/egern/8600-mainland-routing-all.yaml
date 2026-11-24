@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T14:17:53Z
+# updated-at: 2026-11-24T17:50:37Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19289
-# rule-count: 19289
+# canonical-rule-count: 19276
+# rule-count: 19276
 # format: egern
 # canonical: rules/8600-mainland-routing-all.lsr
 
@@ -5880,8 +5880,6 @@ domain_suffix_set:
   - "kf5.com"
   - "kfb126.com"
   - "kfb163.com"
-  - "kgimg.com"
-  - "kglink.cn"
   - "kgrestrg.com"
   - "khfw.net.cn"
   - "khfwedu.cn"
@@ -5932,8 +5930,6 @@ domain_suffix_set:
   - "kongfz.com"
   - "konlan.org"
   - "koolearn.com"
-  - "koowo.cn"
-  - "koowo.com"
   - "korqqr1l13.com"
   - "kortatb.com"
   - "kotaqkew.com"
@@ -5991,7 +5987,6 @@ domain_suffix_set:
   - "ksyunwaf.com"
   - "kting.info"
   - "ktovztie.com"
-  - "ktv.com"
   - "ku6.cn"
   - "ku6.com"
   - "ku6.com.cn"
@@ -6047,8 +6042,6 @@ domain_suffix_set:
   - "kubiji.net"
   - "kuche.com"
   - "kufm.cn"
-  - "kugoo.com"
-  - "kugouipv6.com"
   - "kuhimalayandp.com"
   - "kuhu168.com"
   - "kuiniuca.com"
@@ -6081,7 +6074,6 @@ domain_suffix_set:
   - "kunlunvi.com"
   - "kunlunwe.com"
   - "kuqin.com"
-  - "kuwo.cn"
   - "kuxiaomiao.cn"
   - "kuxiaomiao.com"
   - "kuxiaomiao.com.cn"
@@ -6394,7 +6386,6 @@ domain_suffix_set:
   - "lqdsw.com"
   - "lrcgc.com"
   - "lrcku.com"
-  - "lrts.me"
   - "lrxsw.org"
   - "lsgenius.com"
   - "lssdexternal.com"
@@ -6941,7 +6932,6 @@ domain_suffix_set:
   - "mtfamily.cn"
   - "mtgmcim.com"
   - "mti100.com"
-  - "mting.info"
   - "mtmyg.com"
   - "mtshare.cn"
   - "mtw.so"
@@ -9597,7 +9587,6 @@ domain_suffix_set:
   - "tencentmfa.com.cn"
   - "tencentmind.com"
   - "tencentmovie.com"
-  - "tencentmusic.com"
   - "tencentntp.cn"
   - "tencentntp.com.cn"
   - "tencentoa.com"
@@ -10969,7 +10958,6 @@ domain_suffix_set:
   - "wswebpic.org"
   - "wsxsdf.com"
   - "wtg7ew8cvzxbk.com"
-  - "wting.info"
   - "wtturl.cn"
   - "wtxcdn.com"
   - "wubashangban.com"
@@ -11240,7 +11228,6 @@ domain_suffix_set:
   - "xijingjianzhan8.com"
   - "xijingjianzhan9.com"
   - "xima.tv"
-  - "ximalaya.com"
   - "ximalaya.fm"
   - "ximalaya.tv"
   - "ximalayadata.com"
@@ -11330,7 +11317,6 @@ domain_suffix_set:
   - "xlsdn.cn"
   - "xlsdn.com"
   - "xlyouxi.net"
-  - "xmcdn.com"
   - "xmgouemc.com"
   - "xmmtu.com"
   - "xmq123.cn"
@@ -17072,6 +17058,7 @@ ip_cidr6_set:
   - "2402:8300::/32"
   - "2402:8380::/32"
   - "2402:840::/32"
+  - "2402:8420::/32"
   - "2402:85c0::/32"
   - "2402:8800::/32"
   - "2402:8840::/32"

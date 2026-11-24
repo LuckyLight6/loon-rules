@@ -7,6 +7,7 @@
 # updated-at: 2026-11-20T06:40:36Z
 # rule-count: 3
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list
+# source: https://www.tencentmusic.com/en-us/
 
 DOMAIN-SUFFIX,qqmusic.com
 DOMAIN-SUFFIX,y.qq.com

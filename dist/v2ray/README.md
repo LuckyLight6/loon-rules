@@ -173,7 +173,7 @@
 | 3220 | auth0-identity-platform | Auth0 身份认证与共享登录平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3220-auth0-identity-platform.json) |
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3230-bugsnag-error-monitoring.json) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
-| 3310 | telegram-messaging | Telegram 登录、消息、文件与服务器地址 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
+| 3310 | telegram-messaging | Telegram 通讯、文件与官方关联工具 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3320-discord-messaging-and-voice.json) |
 | 3330 | signal-messenger | Signal 消息、通话、贴纸、群组与用户名链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3330-signal-messenger.json) |
 | 3340 | line-messenger | LINE | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3340-line-messenger.json) |
@@ -208,6 +208,9 @@
 | 3650 | bybit-exchange | Bybit 交易平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3650-bybit-exchange.json) |
 | 3660 | kucoin-exchange | KuCoin 交易平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3660-kucoin-exchange.json) |
 | 3670 | trust-wallet | Trust Wallet | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3670-trust-wallet.json) |
+| 3680 | ton-foundation-sites | TON 官方网站与开发资料 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3680-ton-foundation-sites.json) |
+| 3690 | toncenter-blockchain-api | TON Center 区块链 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3690-toncenter-blockchain-api.json) |
+| 3700 | fragment-digital-assets | Fragment 用户名与数字资产服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3700-fragment-digital-assets.json) |
 | 3800 | overseas-media-all | 海外影音与内容合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3800-overseas-media-all.json) |
 | 3810 | hbo-streaming | HBO Max | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3810-hbo-streaming.json) |
 | 3820 | netflix-video-and-delivery | Netflix 播放、设备 API 和内容分发 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3820-netflix-video-and-delivery.json) |
@@ -317,8 +320,14 @@
 | 6920 | iqiyi-mainland | 爱奇艺国内版 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6920-iqiyi-mainland.json) |
 | 6930 | youku-video | 优酷国内站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6930-youku-video.json) |
 | 6940 | qq-music | QQ 音乐 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6940-qq-music.json) |
-| 6950 | kugou-music | 酷狗音乐 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6950-kugou-music.json) |
+| 6945 | wesing-mainland-karaoke | 全民 K 歌国内入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6945-wesing-mainland-karaoke.json) |
+| 6950 | kugou-music | 酷狗音乐、直播与关联客户端 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6950-kugou-music.json) |
+| 6952 | kuwo-audio | 酷我音乐与专用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6952-kuwo-audio.json) |
+| 6954 | ximalaya-audio | 喜马拉雅音频与内容交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6954-ximalaya-audio.json) |
+| 6956 | lazy-audio-books | 懒人听书与长音频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6956-lazy-audio-books.json) |
+| 6958 | ultimate-music-services | 爱听卓乐商用音乐服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6958-ultimate-music-services.json) |
 | 6960 | netease-music | 网易云音乐 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6960-netease-music.json) |
+| 6965 | tencent-music-shared-services | 腾讯音乐集团、目录产品与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6965-tencent-music-shared-services.json) |
 | 6970 | douyin-mainland-video | 抖音中国版短视频、直播、图片与素材 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6970-douyin-mainland-video.json) |
 | 6980 | kuaishou-video | 快手 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6980-kuaishou-video.json) |
 | 6990 | douyu-live | 斗鱼直播 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/6990-douyu-live.json) |

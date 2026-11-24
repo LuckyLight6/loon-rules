@@ -1,0 +1,18 @@
+# name: lazy-audio-books
+# priority: 6956
+# section: media
+# description: 懒人听书与长音频
+# boundary: 按上游明确的产品块读取完整范围，并独立核对官方产品入口；不把集团其他产品并入本表
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme
+# source: https://www.tencentmusic.com/en-us/
+# canonical-rule-count: 3
+# rule-count: 3
+# format: clash-classical
+# canonical: rules/6956-lazy-audio-books.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,lrts.me"
+  - "DOMAIN-SUFFIX,mting.info"
+  - "DOMAIN-SUFFIX,wting.info"

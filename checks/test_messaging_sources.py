@@ -23,6 +23,15 @@ class MessagingSources(PublicSourceExamples):
                 '<ul><li>unrelated-client.example</li></ul>'),
         }
         for recipe in entry.get('extract', []):
+            if recipe['format'] == 'product-role-links':
+                inputs[recipe['source']] = ('<a href="https://comments-tool.example/">Comments.App</a>'
+                                            '<a href="https://other-product.example/">Other product</a>')
+            if recipe['format'] == 'qt-host-predicate':
+                inputs[recipe['source']] = (
+                    'QStringList Links() { return {u"fragment.com"_q}; }\n'
+                    'bool ' + recipe['function'] + '(const QUrl &url) {\n'
+                    'const auto host = url.host().toLower();\n'
+                    'return (host == u"article.example"_q) || (host == u"new-mirror.example"_q);\n}')
             if recipe['format'] != 'rdap-entity-autnums':
                 continue
             identity=recipe['registrant-id']
@@ -43,6 +52,13 @@ class MessagingSources(PublicSourceExamples):
         self.assertFalse(any('unrelated-client' in row for row in rows))
         bundle = merge_view({'members': [entry['id']]}, {entry['id']: rows})
         self.assertEqual(set(bundle), set(rows))
+
+    def test_content_predicate_and_comments_do_not_import_an_unrelated_link_allowlist(self):
+        entry = self.telegram()
+        rows = compile_entry(entry, self.inputs(entry))
+        self.assertIn('DOMAIN,new-mirror.example', rows)
+        self.assertIn('DOMAIN-SUFFIX,comments-tool.example', rows)
+        self.assertFalse(any('fragment.com' in row or 'other-product.example' in row for row in rows))
 
     def test_native_addresses_keep_no_resolve_and_registry_backed_asns(self):
         entry = self.telegram()
