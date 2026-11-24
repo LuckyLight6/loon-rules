@@ -436,7 +436,8 @@
           "full:cdn-qa.disneyaccount.com",
           "full:log.go.com",
           "full:login.disney.com",
-          "full:my.disney.com"
+          "full:my.disney.com",
+          "domain:github.io"
         ],
         "outboundTag": "PROXY"
       }

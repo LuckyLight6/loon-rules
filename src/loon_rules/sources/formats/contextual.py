@@ -54,7 +54,7 @@ def purpose_domain_table(recipe,text):
             for value in re.split(r'[,\s]+',cells[0].strip()):
                 if not value:continue
                 row=public_domain_pattern(value)
-                if row is None:continue
+                if row is None:raise Invalid('用途表格的已选域名属于未确认的共享平台范围')
                 if scope=='domain-and-subdomains':
                     base=value.removeprefix('*.')
                     if re.search(r'[*?\[\]]',base):raise Invalid('整域匹配约定不能用于租户或主机前缀通配符')

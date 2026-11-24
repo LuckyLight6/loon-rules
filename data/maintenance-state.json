@@ -1,7 +1,7 @@
 {
-  "checked-at": "2026-11-24T21:43:09Z",
+  "checked-at": "2026-11-24T22:29:23Z",
   "inputs-read": 599,
-  "critical": 888,
+  "critical": 889,
   "inputs-requested": 599,
   "profiles-checked": 167772160,
   "assigned-rules": {
@@ -844,7 +844,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 345,
+    "routine-tables": 346,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1247,6 +1247,7 @@
       "amazon-shared-services",
       "discord-activities-proxy",
       "disney-shared-services",
+      "github-pages-hosting",
       "netease-shared-services",
       "alibaba-shared-services",
       "tencent-shared-content-and-sdk",
@@ -2221,7 +2222,8 @@
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr": {
       "state": "current",
       "products": [
-        "github-code-and-packages"
+        "github-code-and-packages",
+        "github-pages-hosting"
       ],
       "filters": {
         "github-code-and-packages": [
@@ -2249,6 +2251,13 @@
               "copilot-telemetry-service.githubusercontent.com"
             ]
           }
+        ],
+        "github-pages-hosting": [
+          {
+            "roots": [
+              "github.io"
+            ]
+          }
         ]
       },
       "other-products": {
@@ -2256,7 +2265,7 @@
         "npm-registry": 2
       },
       "domain-scopes": 30,
-      "selected-scopes": 13,
+      "selected-scopes": 14,
       "narrowed-scopes": 2,
       "selected-uncovered": 0,
       "product-scopes": 9,
@@ -10550,7 +10559,8 @@
       3240,
       3250,
       3915,
-      3825
+      3825,
+      8130
     ],
     "已核清单": [
       210,
@@ -10770,9 +10780,9 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 17973,
-      "admitted-rules": 0,
-      "retired-rules": 1
+      "not-whole-host-consensus": 17980,
+      "admitted-rules": 356,
+      "retired-rules": 0
     }
   },
   "official-endpoints": {
@@ -12656,6 +12666,12 @@
       "domain-scopes": 1,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "github-web-packages-and-actions": {
+      "state": "current",
+      "domain-scopes": 212,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "security-program-history-version": 1,
@@ -13521,7 +13537,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -13562,7 +13578,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "ollama-cloud": {
@@ -13593,7 +13609,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "stackit-model-services": {
@@ -13624,7 +13640,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "stepfun-international": {
@@ -13666,7 +13682,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "xiaomi-international": {
@@ -13709,7 +13725,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13744,7 +13760,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13794,7 +13810,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13835,7 +13851,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -13850,6 +13866,13 @@
             "website",
             "packages",
             "actions"
+          ],
+          "platform-domains": [
+            "github.io",
+            "githubusercontent.com"
+          ],
+          "exclude-platforms": [
+            "github.io"
           ]
         }
       ],
@@ -14057,17 +14080,19 @@
         "DOMAIN,runnerproxsdc1.actions.githubusercontent.com",
         "DOMAIN,runnerproxweu1.actions.githubusercontent.com",
         "DOMAIN,tokenghub.actions.githubusercontent.com",
+        "DOMAIN-WILDCARD,*.actions.githubusercontent.com",
         "DOMAIN-WILDCARD,*.ghcr.io",
         "DOMAIN-WILDCARD,*.github.com",
         "DOMAIN-WILDCARD,*.github.dev",
         "DOMAIN-WILDCARD,*.githubapp.com",
         "DOMAIN-WILDCARD,*.githubassets.com",
+        "DOMAIN-WILDCARD,*.githubusercontent.com",
         "DOMAIN-WILDCARD,*.pkg.github.com"
       ],
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "npm-registry": {
@@ -14100,7 +14125,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14144,7 +14169,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14177,7 +14202,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14230,7 +14255,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "braintree-payments": {
@@ -14257,7 +14282,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "notion-workspace": {
@@ -14283,7 +14308,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14491,7 +14516,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14517,7 +14542,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "google-play-services": {
@@ -14553,7 +14578,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "google-play-games": {
@@ -14581,7 +14606,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "kimi-mainland": {
@@ -14612,7 +14637,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -14643,7 +14668,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -14686,7 +14711,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14725,7 +14750,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795556549,
+      "last-read": 1795559324,
       "state": "current"
     }
   },
@@ -14733,7 +14758,7 @@
   "expanded-domain-cases": 222,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1341,
+  "business-domain-cases": 1342,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -14743,12 +14768,12 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "overseas-media-all",
-    "netflix-video-and-delivery",
+    "github-code-and-packages",
     "extended-ad-and-tracking",
+    "global-platforms-all",
     "overseas-extra-all",
     "overseas-sites-extra",
-    "netflix-connection-tests"
+    "github-pages-hosting"
   ],
   "scope-negatives": 157,
   "ip-cases": 44,
@@ -14824,7 +14849,7 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "extended-ad-and-tracking": 43507,
+    "extended-ad-and-tracking": 43863,
     "ai-overseas-all": 682,
     "claude-connections": 24,
     "chatgpt-connections": 460,
@@ -15159,7 +15184,7 @@
     "youdao-products": 3,
     "aliyun-drive": 6,
     "wps-office": 13,
-    "global-platforms-all": 433,
+    "global-platforms-all": 434,
     "digitalocean-services": 6,
     "vultr-services": 1,
     "hetzner-services": 14,
@@ -15172,9 +15197,10 @@
     "amazon-shared-services": 168,
     "discord-activities-proxy": 1,
     "disney-shared-services": 4,
-    "overseas-extra-all": 18606,
+    "github-pages-hosting": 1,
+    "overseas-extra-all": 18605,
     "overseas-media-extra": 144,
-    "overseas-sites-extra": 18476,
+    "overseas-sites-extra": 18475,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,

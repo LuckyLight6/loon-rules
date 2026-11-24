@@ -10,7 +10,7 @@ from loon_rules.matching import merge_cases
 
 WAIT_SECONDS=20*3600
 MAX_GAP_SECONDS=3*86400
-INVENTORY_FIELDS={'service-domain-groups':('path','groups'),
+INVENTORY_FIELDS={'service-domain-groups':('path','groups','platform-domains','only-platforms','exclude-platforms'),
                   'json-service-urls':('paths','url-fields','identity','revision-path'),
                   'plist-service-fields':('host-paths','url-paths','identity','records','data-path'),
                   'section-code-domains':('sections',),
@@ -134,6 +134,8 @@ def verify_report(entries,data,report,*,shared_hosts=(),expanded_rows=None):
     if set(report)!=expected:raise Invalid('服务清单轮换报告与声明不一致')
     for key,state in report.items():
         observed=set(state['observed']);held=set(state['retained']);retired=set(state['retired'])
+        platforms = {host for recipe in recipes(entries[key])
+                     if recipe['format'] == 'service-domain-groups' for host in recipe.get('platform-domains', [])}
         if complete_expansion(entries[key]):
             actual=expanded_hosts(key,expanded_rows,shared_hosts)
             if not actual<=observed or not recipes(entries[key]) and actual!=observed:
@@ -164,7 +166,7 @@ def verify_report(entries,data,report,*,shared_hosts=(),expanded_rows=None):
             raise Invalid('当前服务清单不能混入文件版本依据：'+key)
         for row in observed|held|retired:
             kind,host,*flags=row.split(',')
-            if (flags or kind not in ('DOMAIN','DOMAIN-WILDCARD') or public_domain_pattern(host)!=row
+            if (flags or kind not in ('DOMAIN','DOMAIN-WILDCARD') or public_domain_pattern(host, platforms=platforms)!=row
                     or (row in held|retired and kind!='DOMAIN')):
                 raise Invalid('服务清单轮换包含无效范围：'+key)
         for row in observed|held:

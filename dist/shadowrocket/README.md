@@ -363,6 +363,7 @@
 | 8100 | amazon-shared-services | Amazon、AWS 与共用云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8100-amazon-shared-services.list) |
 | 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8110-discord-activities-proxy.list) |
 | 8120 | disney-shared-services | Disney 共用账户、登录组件与日志 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8120-disney-shared-services.list) |
+| 8130 | github-pages-hosting | GitHub Pages 默认网站托管 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8130-github-pages-hosting.list) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8200-overseas-extra-all.list) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8210-overseas-media-extra.list) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8220-overseas-sites-extra.list) |

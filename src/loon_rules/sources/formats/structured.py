@@ -8,7 +8,7 @@ from xml.parsers.expat import ExpatError
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
 from loon_rules.sources.pages import PageData
-from .common import public_domain_pattern
+from .common import public_domain_pattern, within
 
 
 def brand_domain_list(recipe, text):
@@ -64,19 +64,60 @@ def api_discovery(recipe, text):
     return result
 
 
+def service_platforms(recipe):
+    values = recipe.get('platform-domains', [])
+    if (not isinstance(values, list) or any(not isinstance(value, str) for value in values)
+            or len(values) != len(set(values))):
+        raise Invalid('平台域名范围必须是不重复的公开名称数组')
+    for value in values:
+        host = domain_scope.public_host(value)
+        if host != value or domain_scope.current().suffix(host) != (host, True):
+            raise Invalid('平台范围必须是已核实的私有托管后缀，不能认领公共注册后缀')
+    return set(values)
+
+
+def service_namespace_roots(recipe):
+    """Company service metadata can describe the provider's own registered domain."""
+    roots = service_platforms(recipe)
+    if recipe.get('source'):
+        host = service_url_host(recipe['source'])
+        suffixes = domain_scope.current()
+        if not suffixes.suffix(host)[1] and (root := suffixes.registrable(host)):
+            roots.add(root)
+    return roots
+
+
 def service_domain_groups(recipe,text):
     document=json.loads(text)
     for field in recipe['path']:
         if not isinstance(document,dict) or field not in document:
             raise Invalid('官方服务清单缺少域名字段')
         document=document[field]
+    platforms = service_platforms(recipe)
+    filters = {}
+    for field in ('only-platforms', 'exclude-platforms'):
+        values = recipe.get(field, [])
+        if (not isinstance(values, list) or any(not isinstance(value, str) for value in values)
+                or len(values) != len(set(values)) or set(values) - platforms):
+            raise Invalid('产品划分只能使用已核实的平台命名空间')
+        filters[field] = set(values)
+    if filters['only-platforms'] and filters['exclude-platforms']:
+        raise Invalid('平台产品不能同时声明只选和排除范围')
     result=set()
     for group in recipe['groups']:
         values=document.get(group) if isinstance(document,dict) else None
         if not isinstance(values,list) or not values:
             raise Invalid('官方服务清单缺少已选业务：'+group)
         for value in values:
-            if row:=public_domain_pattern(value):result.add(row)
+            row = public_domain_pattern(value, platforms=platforms)
+            if row is None:
+                raise Invalid('服务清单含未确认的平台范围，不能静默跳过')
+            result.add(row)
+    # Read and validate every selected service field before choosing a product.
+    if filters['only-platforms']:
+        result = {row for row in result if within(domain_scope.fixed_tail(row.split(',')[1]), filters['only-platforms'])}
+    if filters['exclude-platforms']:
+        result = {row for row in result if not within(domain_scope.fixed_tail(row.split(',')[1]), filters['exclude-platforms'])}
     if not result:raise Invalid('官方服务清单没有可归属的域名')
     return result
 
@@ -109,7 +150,7 @@ def document_body(recipe,text):
     return values[0]
 
 
-def json_service_urls(recipe,text,*,strict=False):
+def json_service_urls(recipe,text,*,strict=True):
     """Read explicit server or download fields, excluding links in other metadata."""
     document=json_record(recipe,text)
     paths=recipe.get('paths',())
@@ -127,7 +168,7 @@ def json_service_urls(recipe,text,*,strict=False):
     return result
 
 
-def json_url_fields(recipe, document, *, strict=False):
+def json_url_fields(recipe, document, *, strict=True):
     """Read named resource fields inside a declared document tree, not every URL."""
     specs = recipe.get('url-fields', [])
     if not isinstance(specs, list):
@@ -237,7 +278,10 @@ def plist_service_fields(recipe,text):
                 else:
                     if not isinstance(value,str) or value!=value.strip():raise Invalid('服务主机字段不是有效字符串')
                     host=domain_scope.public_host(value)
-                if row:=public_domain_pattern(host):result.add(row)
+                row = public_domain_pattern(host)
+                if row is None:
+                    raise Invalid('服务 plist 的已选主机属于未确认的共享平台范围')
+                result.add(row)
     if 'records' in recipe:
         result.update(plist_record_urls(document,recipe['records']));selected=True
     if not selected or not result:raise Invalid('服务 plist 没有可独立归属的公开主机')

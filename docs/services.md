@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 196 个厂商或项目、343 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 196 个厂商或项目、344 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -25,7 +25,7 @@
 | 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/6900-mainland-media-all.lsr) | 16 |
 | 国内游戏合集 | [7200 国内游戏合集](../rules/7200-mainland-games-all.lsr) | 3 |
 | 国内购物、生活与办公合集 | [7400 国内购物、生活与办公合集](../rules/7400-mainland-daily-services-all.lsr) | 8 |
-| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 12 |
+| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 13 |
 | 国内厂商共用服务合集 | [8400 国内厂商共用服务合集](../rules/8400-mainland-platforms-all.lsr) | 11 |
 
 ## Tailscale
@@ -109,6 +109,7 @@
 | Xbox Live 已知登录与服务端点 | [4810 Xbox Live 已知登录与服务端点](../rules/4810-microsoft-xbox-services.lsr) |
 | Microsoft 通用客户端和共享服务兜底 | [4820 Microsoft 通用客户端和共享服务兜底](../rules/4820-microsoft-platform-services.lsr) |
 | Azure 中国区登录与控制端点 | [4980 Microsoft Azure 中国区登录与控制端点](../rules/4980-microsoft-china-cloud-controls.lsr) |
+| GitHub Pages 默认网站托管 | [8130 GitHub Pages 默认网站托管](../rules/8130-github-pages-hosting.lsr) |
 
 ## Meta
 

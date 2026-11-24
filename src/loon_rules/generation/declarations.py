@@ -130,6 +130,11 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') == 'service-domain-groups' and recipe.get('platform-domains'):
+                whole = {field: recipe[field] for field in ('format', 'path', 'groups', 'platform-domains')}
+                if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                           and spec.get('recipe') == whole for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('平台产品划分缺少筛选前完整服务字段的归属核对：' + e['id'])
             if recipe.get('format') == security_programs.FORMAT:
                 inventories = [spec for spec in config.get('source-inventories', ())
                                if spec['source'] == recipe['source'] and e['id'] in spec['owners']

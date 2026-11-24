@@ -10,7 +10,7 @@ from loon_rules.sources.inputs import extract_rows
 class DeveloperServiceSources(PublicSourceExamples):
     def test_domain_groups_follow_the_selected_services_and_ignore_ip_fields(self):
         recipe={'format':'service-domain-groups','path':['domains'],'groups':['website','packages']}
-        doc={'domains':{'website':['*.vendor.example','*.github.io'],
+        doc={'domains':{'website':['*.vendor.example'],
                         'packages':['new-api.other.example','artifacts.github.io'],
                         'other':['wrong.example']},'packages':['192.0.2.0/24']}
         self.assertEqual(extract_rows(recipe,json.dumps(doc)),{

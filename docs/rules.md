@@ -231,7 +231,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3010 | [github-code-and-packages](../rules/3010-github-code-and-packages.lsr) | GitHub 代码托管、API、Actions 与容器镜像 | 代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符；Copilot 接口先由专项匹配，npm 公共仓库另有专表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3010-github-code-and-packages.lsr) |
+| 3010 | [github-code-and-packages](../rules/3010-github-code-and-packages.lsr) | GitHub 代码托管、API、Actions 与容器镜像 | 代码、API、Actions、容器与软件包；官方 Meta 清单按服务字段补入，原始内容命名空间按 GitHub 平台处理；Pages 网站托管单列，Copilot 先由 AI 专项匹配，npm 公共仓库另有专表，不接管相邻的 IP 或其他云平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3010-github-code-and-packages.lsr) |
 | 3020 | [gitlab-hosting](../rules/3020-gitlab-hosting.lsr) | GitLab.com | 仅 GitLab 公共托管平台；不接管自建 GitLab 或用户 Pages | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3020-gitlab-hosting.lsr) |
 | 3030 | [bitbucket-hosting](../rules/3030-bitbucket-hosting.lsr) | Atlassian Bitbucket | 代码托管与公共 API，不收整个 Atlassian、Jira 或用户站 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3030-bitbucket-hosting.lsr) |
 | 3040 | [npm-registry](../rules/3040-npm-registry.lsr) | npm 软件包 | 官方注册表和产品站；国内镜像单列 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3040-npm-registry.lsr) |
@@ -678,7 +678,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 8000 | [global-platforms-all](../rules/8000-global-platforms-all.lsr) | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8120。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8000-global-platforms-all.lsr) |
+| 8000 | [global-platforms-all](../rules/8000-global-platforms-all.lsr) | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8130。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8000-global-platforms-all.lsr) |
 
 ### 23.2 厂商与云平台细分
 
@@ -696,6 +696,7 @@
 | 8100 | [amazon-shared-services](../rules/8100-amazon-shared-services.lsr) | Amazon、AWS 与共用云平台 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8100-amazon-shared-services.lsr) |
 | 8110 | [discord-activities-proxy](../rules/8110-discord-activities-proxy.lsr) | Discord Activities 与第三方应用代理 | 从 Discord 官方代理用途说明读取平台命名空间；其中可以承载第三方应用和游戏，不归为聊天、语音或第三方应用自身的全部服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8110-discord-activities-proxy.lsr) |
 | 8120 | [disney-shared-services](../rules/8120-disney-shared-services.lsr) | Disney 共用账户、登录组件与日志 | MyDisney 账户管理及当前公开 SDK 的生产登录、组件和日志主机，供多个 Disney 产品共用；保持精确匹配，不接管整个 disney.com 或 go.com | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8120-disney-shared-services.lsr) |
+| 8130 | [github-pages-hosting](../rules/8130-github-pages-hosting.lsr) | GitHub Pages 默认网站托管 | 默认 github.io 托管命名空间；具体产品的专用租户主机先匹配，本组处理其余平台请求。Pages 管理和产品介绍仍使用 GitHub 网站，自定义域名按其实际产品处理，不从共享 IP 反推归属 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8130-github-pages-hosting.lsr) |
 
 ## 24 海外补充
 

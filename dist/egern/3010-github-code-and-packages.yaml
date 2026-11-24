@@ -2,7 +2,7 @@
 # priority: 3010
 # section: development
 # description: GitHub 代码托管、API、Actions 与容器镜像
-# boundary: 代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符；Copilot 接口先由专项匹配，npm 公共仓库另有专表
+# boundary: 代码、API、Actions、容器与软件包；官方 Meta 清单按服务字段补入，原始内容命名空间按 GitHub 平台处理；Pages 网站托管单列，Copilot 先由 AI 专项匹配，npm 公共仓库另有专表，不接管相邻的 IP 或其他云平台
 # created-at: 2026-11-19T09:33:57Z
 # updated-at: 2026-11-20T20:04:44Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr

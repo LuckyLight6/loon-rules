@@ -91,8 +91,8 @@ class PlistSources(PublicSourceExamples):
             document=self.document();document['accountURL']=url
             with self.subTest(url=url),self.assertRaises(Invalid):extract_rows(self.recipe(),self.encode(document))
         document=self.document();document['services']['shared']='storage.shared.example'
-        self.assertNotIn('DOMAIN,storage.shared.example',extract_rows(self.recipe(),self.encode(document),
-                        shared_hosts=['storage.shared.example']))
+        with self.assertRaises(Invalid):
+            extract_rows(self.recipe(),self.encode(document),shared_hosts=['storage.shared.example'])
 
     def test_duplicate_keys_invalid_paths_and_external_entities_fail_before_adoption(self):
         document=self.encode(self.document())

@@ -11,7 +11,7 @@ def within(host, roots):
     return any((host == root or host.endswith('.' + root) for root in roots))
 
 
-def public_domain_pattern(value):
+def public_domain_pattern(value, *, platforms=()):
     if not isinstance(value,str):raise Invalid('服务域名字段不是字符串')
     try:value=value.removesuffix('.').encode('idna').decode('ascii').casefold()
     except UnicodeError as exc:raise Invalid('服务域名编码无效') from exc
@@ -19,7 +19,7 @@ def public_domain_pattern(value):
     row=read_rules(('DOMAIN-WILDCARD,' if pattern else 'DOMAIN,')+value)[0]
     tail=domain_scope.public_host(domain_scope.fixed_tail(value))
     suffix,private=domain_scope.current().suffix(tail)
-    if private and (pattern or tail==suffix):
+    if private and (pattern or tail==suffix) and not within(tail, platforms):
         return None  # A private hosting pattern can cross tenants even below a regional label.
     return row
 

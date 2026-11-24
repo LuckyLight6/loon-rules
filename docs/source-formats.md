@@ -6,7 +6,7 @@
 
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
-| 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3010、Cargo 3080、PyPI 3060、npm 3040 |
+| 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 开发平台 3010、GitHub Pages 托管 8130、Cargo 3080、PyPI 3060、npm 3040 |
 | 页面内的公开服务配置 | `next-service-urls` 核对唯一的页面 JSON 与产品身份，再用 `paths` 读取业务 URL；`url-fields` 只在指定正文范围读取所列资源字段 | Disney+ 3830 读取生产 API、默认内容服务和图片；内部与预览配置不参与 |
 | SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 读取指定函数的字面 HTTPS；`qt-host-predicate` 读取 Qt 主机判断；`code-api-endpoints` 读取指定源码字段；`literal-object-urls` 从 JavaScript 语法树读取指定环境的完整 URL 对象 | Claude 1010、xAI 1040、Telegram 3310、Firebase 消息 4585、Disney 共用服务 8120 等 |
 | 服务域名列与 CSP | `domain-column-table` 核对列头后读取指定列，`value-format: url` 从 HTTPS／WSS URL 取精确主机；`csp-origins` 按章节、指令和品牌取源 | Datadog 3140、Docker 3075 的完整用途表、Intercom 4360 |
@@ -25,7 +25,7 @@
 | 原生 geosite 产品清单 | `geosite-domain-list` 读取裸域名、`domain:` 与 `full:`，核对属性、子分类引用和共享范围的归属；不使用固定根域白名单代替整份来源 | Spotify 3910、Reddit 3380、Slack 3370、Discord 3320 |
 | 官网资源元数据 | `site-resource-hosts` 先用 `identity` 核对站点，再从 `properties` 指定的 Open Graph 图片、音频或视频 URL 取精确主机 | 3880 的独立完整性检查核对官网实际引用的素材；不扫描页面全部链接、广告或脚本 |
 
-例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
+例如 GitHub 开发平台读取网站、软件包和 Actions 域名，把 Pages 托管范围交给单独的 8130：
 
 ```json
 {
@@ -33,9 +33,17 @@
   "format": "service-domain-groups",
   "path": ["domains"],
   "groups": ["website", "packages", "actions"],
+  "platform-domains": ["github.io", "githubusercontent.com"],
+  "exclude-platforms": ["github.io"],
   "protect-from-reject": true
 }
 ```
+
+官方公司服务清单可以描述来源自身的注册域。`platform-domains` 另行声明已核实由该供应商提供的平台命名空间，须属于公共后缀表中的私有托管部分。GitHub 官方资料明确区分 Pages 网站托管和开发平台：8130 用 `only-platforms` 选择 Pages，3010 用 `exclude-platforms` 留下代码、原始内容和 Actions 等范围。两个组都要配套筛选前完整服务字段的 `source-inventories`；读取器先检查全部所选字段，再划分产品，新平台范围不能因不符合筛选条件而被忽略。相邻的 IP 字段不是这些域名字段的一部分。
+
+Pages 的默认域名可供不同产品托管网站，因此 8130 放在全球平台共用层，具体产品的专用租户主机先匹配。Pages 的管理与产品介绍仍使用 GitHub 网站；自定义域名不能仅凭解析到 Pages 的 IP 就改归托管平台。
+
+JSON、plist 和用途表格中选定的网络字段都须处理完整。混入无法归属的托管通配范围或共用主机时，停止更新；不能只保留其他有效值就算读取成功。新出现的专用主机仍按来源用途补入，不要求先写进根域白名单。
 
 `protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。用途字段还要通过共享主机与产品归属检查。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
 

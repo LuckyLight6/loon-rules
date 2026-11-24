@@ -140,11 +140,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "rules/0240-extended-ad-and-tracking.lsr"
         },
@@ -3490,11 +3490,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/8000-global-platforms-all.lsr"
         },
@@ -3618,13 +3618,23 @@
           "status": "available",
           "path": "rules/8120-disney-shared-services.lsr"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/8130-github-pages-hosting.lsr"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.lsr"
         },
@@ -3640,11 +3650,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.lsr"
         },
@@ -3809,7 +3819,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 376,
+      "available": 377,
       "unsupported": 0
     },
     "surge": {
@@ -3906,11 +3916,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "rules/0240-extended-ad-and-tracking.list"
         },
@@ -7256,11 +7266,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/8000-global-platforms-all.list"
         },
@@ -7384,13 +7394,23 @@
           "status": "available",
           "path": "rules/8120-disney-shared-services.list"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/8130-github-pages-hosting.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.list"
         },
@@ -7406,11 +7426,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.list"
         },
@@ -7575,7 +7595,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 376,
+      "available": 377,
       "unsupported": 0
     },
     "clash-classical": {
@@ -7672,11 +7692,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/clash-classical/0240-extended-ad-and-tracking.yaml"
         },
@@ -11022,11 +11042,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/clash-classical/8000-global-platforms-all.yaml"
         },
@@ -11150,13 +11170,23 @@
           "status": "available",
           "path": "dist/clash-classical/8120-disney-shared-services.yaml"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/8130-github-pages-hosting.yaml"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/clash-classical/8200-overseas-extra-all.yaml"
         },
@@ -11172,11 +11202,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/clash-classical/8220-overseas-sites-extra.yaml"
         },
@@ -11341,7 +11371,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 376,
+      "available": 377,
       "unsupported": 0
     },
     "egern": {
@@ -11438,11 +11468,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/egern/0240-extended-ad-and-tracking.yaml"
         },
@@ -14788,11 +14818,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/egern/8000-global-platforms-all.yaml"
         },
@@ -14916,13 +14946,23 @@
           "status": "available",
           "path": "dist/egern/8120-disney-shared-services.yaml"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/8130-github-pages-hosting.yaml"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/egern/8200-overseas-extra-all.yaml"
         },
@@ -14938,11 +14978,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/egern/8220-overseas-sites-extra.yaml"
         },
@@ -15107,7 +15147,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 376,
+      "available": 377,
       "unsupported": 0
     },
     "surfboard": {
@@ -15204,11 +15244,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
@@ -18550,11 +18590,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
         },
@@ -18678,13 +18718,23 @@
           "status": "available",
           "path": "dist/surge-compatible/8120-disney-shared-services.list"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/8130-github-pages-hosting.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
@@ -18700,11 +18750,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -18869,7 +18919,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 372,
+      "available": 373,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -18966,11 +19016,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
@@ -22316,11 +22366,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
         },
@@ -22444,13 +22494,23 @@
           "status": "available",
           "path": "dist/surge-compatible/8120-disney-shared-services.list"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/8130-github-pages-hosting.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
@@ -22466,11 +22526,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -22635,7 +22695,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 376,
+      "available": 377,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -22728,11 +22788,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/quantumult-x/0240-extended-ad-and-tracking.list"
         },
@@ -26067,11 +26127,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/quantumult-x/8000-global-platforms-all.list"
         },
@@ -26195,13 +26255,23 @@
           "status": "available",
           "path": "dist/quantumult-x/8120-disney-shared-services.list"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/8130-github-pages-hosting.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/quantumult-x/8200-overseas-extra-all.list"
         },
@@ -26217,11 +26287,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/quantumult-x/8220-overseas-sites-extra.list"
         },
@@ -26386,7 +26456,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 361,
+      "available": 362,
       "unsupported": 15
     },
     "sing-box": {
@@ -26479,11 +26549,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/sing-box/0240-extended-ad-and-tracking.json"
         },
@@ -29818,11 +29888,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/sing-box/8000-global-platforms-all.json"
         },
@@ -29946,13 +30016,23 @@
           "status": "available",
           "path": "dist/sing-box/8120-disney-shared-services.json"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/8130-github-pages-hosting.json"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/sing-box/8200-overseas-extra-all.json"
         },
@@ -29968,11 +30048,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/sing-box/8220-overseas-sites-extra.json"
         },
@@ -30134,7 +30214,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 358,
+      "available": 359,
       "unsupported": 18
     },
     "v2ray": {
@@ -30227,11 +30307,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43507,
+          "rule-count": 43863,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 43507,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 43863,
           "status": "available",
           "path": "dist/v2ray/0240-extended-ad-and-tracking.json"
         },
@@ -33566,11 +33646,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 433,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T19:20:04Z",
-          "output-rule-count": 433,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "dist/v2ray/8000-global-platforms-all.json"
         },
@@ -33694,13 +33774,23 @@
           "status": "available",
           "path": "dist/v2ray/8120-disney-shared-services.json"
         },
+        "8130-github-pages-hosting": {
+          "source": "rules/8130-github-pages-hosting.lsr",
+          "rule-count": 1,
+          "description": "GitHub Pages 默认网站托管",
+          "created-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/8130-github-pages-hosting.json"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18606,
+          "rule-count": 18605,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18606,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18605,
           "status": "available",
           "path": "dist/v2ray/8200-overseas-extra-all.json"
         },
@@ -33716,11 +33806,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18476,
+          "rule-count": 18475,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 18476,
+          "updated-at": "2026-11-24T22:29:23Z",
+          "output-rule-count": 18475,
           "status": "available",
           "path": "dist/v2ray/8220-overseas-sites-extra.json"
         },
@@ -33882,7 +33972,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 358,
+      "available": 359,
       "unsupported": 18
     }
   },

@@ -363,6 +363,7 @@
 | 8100 | amazon-shared-services | Amazon、AWS 与共用云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8100-amazon-shared-services.json) |
 | 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8110-discord-activities-proxy.json) |
 | 8120 | disney-shared-services | Disney 共用账户、登录组件与日志 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8120-disney-shared-services.json) |
+| 8130 | github-pages-hosting | GitHub Pages 默认网站托管 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8130-github-pages-hosting.json) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8200-overseas-extra-all.json) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8210-overseas-media-extra.json) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8220-overseas-sites-extra.json) |

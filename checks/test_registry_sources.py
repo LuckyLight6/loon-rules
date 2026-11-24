@@ -46,8 +46,8 @@ class RegistrySources(PublicSourceExamples):
 
     def test_shared_storage_request_hosts_cannot_become_package_rules_from_a_file_path(self):
         doc=self.document();doc['urls'].append({'url':'https://storage.googleapis.com/vendor/file.whl'})
-        self.assertEqual(extract_rows(self.recipe(),json.dumps(doc),shared_hosts=['storage.googleapis.com']),
-                         {'DOMAIN,files.vendor.example'})
+        with self.assertRaises(Invalid):
+            extract_rows(self.recipe(),json.dumps(doc),shared_hosts=['storage.googleapis.com'])
 
     def test_url_inventory_rotations_keep_the_same_observation_and_dynamic_case_contract(self):
         from loon_rules.generation import inventories as inv
@@ -125,9 +125,15 @@ class RegistrySources(PublicSourceExamples):
             with patch.object(lib.transport,'download',side_effect=documents.__getitem__):
                 lib.run()
                 doc=self.document();doc['urls'].append({'url':'https://new-cdn.other.example/tool.zip'})
-                doc['urls'].append({'url':'https://storage.shared.example/vendor/tool.zip'})
                 documents[self.recipe()['source']]=json.dumps(doc)
                 lib.run();lib.run()
+                before={p:p.read_bytes() for folder in ('rules','data')
+                        for p in (root/folder).rglob('*') if p.is_file()}
+                doc['urls'].append({'url':'https://storage.shared.example/vendor/tool.zip'})
+                documents[self.recipe()['source']]=json.dumps(doc)
+                with self.assertRaises(Invalid):lib.run()
+                self.assertEqual(before,{p:p.read_bytes() for folder in ('rules','data')
+                                         for p in (root/folder).rglob('*') if p.is_file()})
             self.assertIn('DOMAIN,new-cdn.other.example',lib.rules.read_rules(output.read_text()))
             self.assertNotIn('DOMAIN,storage.shared.example',lib.rules.read_rules(output.read_text()))
             report=json.loads((root/'data/maintenance-state.json').read_text())

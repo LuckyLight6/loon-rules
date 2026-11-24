@@ -895,7 +895,8 @@
         "cloudflare-shared-services",
         "amazon-shared-services",
         "discord-activities-proxy",
-        "disney-shared-services"
+        "disney-shared-services",
+        "github-pages-hosting"
       ],
       "subheadings": {
         "digitalocean-services": "厂商与云平台细分"
@@ -6954,7 +6955,7 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "GitHub 代码托管、API、Actions 与容器镜像",
-      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单补入专用资产主机，不采用其 IP 范围或跨租户托管通配符；Copilot 接口先由专项匹配，npm 公共仓库另有专表",
+      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单按服务字段补入，原始内容命名空间按 GitHub 平台处理；Pages 网站托管单列，Copilot 先由 AI 专项匹配，npm 公共仓库另有专表，不接管相邻的 IP 或其他云平台",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr",
         "https://api.github.com/meta"
@@ -7003,7 +7004,14 @@
             "packages",
             "actions"
           ],
-          "protect-from-reject": true
+          "protect-from-reject": true,
+          "platform-domains": [
+            "github.io",
+            "githubusercontent.com"
+          ],
+          "exclude-platforms": [
+            "github.io"
+          ]
         }
       ],
       "inventory-refresh": true,
@@ -15073,6 +15081,64 @@
         "s3.amazonaws.com",
         "www.speedtest.net"
       ]
+    },
+    {
+      "id": "github-pages-hosting",
+      "priority": 8130,
+      "section": "vendors",
+      "routing-group": "global-platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "GitHub Pages 默认网站托管",
+      "boundary": "默认 github.io 托管命名空间；具体产品的专用租户主机先匹配，本组处理其余平台请求。Pages 管理和产品介绍仍使用 GitHub 网站，自定义域名按其实际产品处理，不从共享 IP 反推归属",
+      "sources": [
+        "https://api.github.com/meta",
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr",
+        "https://pages.github.com/",
+        "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages"
+      ],
+      "allowed-shared": [
+        "github.io"
+      ],
+      "extract": [
+        {
+          "format": "service-domain-groups",
+          "path": [
+            "domains"
+          ],
+          "groups": [
+            "website",
+            "packages",
+            "actions"
+          ],
+          "platform-domains": [
+            "github.io",
+            "githubusercontent.com"
+          ],
+          "source": "https://api.github.com/meta",
+          "only-platforms": [
+            "github.io"
+          ]
+        }
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr",
+          "roots": [
+            "github.io"
+          ]
+        }
+      ],
+      "product-probes": [
+        "github.io"
+      ],
+      "product-negatives": [
+        "raw.githubusercontent.com",
+        "api.github.com",
+        "storage.googleapis.com",
+        "githubcopilot.com"
+      ]
     }
   ],
   "detailed": [
@@ -15345,6 +15411,7 @@
     "wps-office",
     "discord-activities-proxy",
     "disney-shared-services",
+    "github-pages-hosting",
     "tencent-shared-content-and-sdk",
     "sina-shared-image-assets",
     "sina-web-and-shared-services"
@@ -18124,6 +18191,9 @@
     ],
     "api.fast.com": [
       "netflix-connection-tests"
+    ],
+    "github.io": [
+      "github-pages-hosting"
     ]
   },
   "shared-negatives": [
@@ -18759,6 +18829,7 @@
         8100,
         8110,
         8120,
+        8130,
         8400,
         8410,
         8420,
@@ -21944,6 +22015,29 @@
           "connection directly to Netflix"
         ]
       }
+    },
+    {
+      "id": "github-web-packages-and-actions",
+      "source": "https://api.github.com/meta",
+      "owners": [
+        "github-code-and-packages",
+        "github-pages-hosting"
+      ],
+      "recipe": {
+        "format": "service-domain-groups",
+        "path": [
+          "domains"
+        ],
+        "groups": [
+          "website",
+          "packages",
+          "actions"
+        ],
+        "platform-domains": [
+          "github.io",
+          "githubusercontent.com"
+        ]
+      }
     }
   ],
   "source-alias-policies": {
@@ -22519,6 +22613,12 @@
             "name": "GitHub 代码托管、API、Actions 与容器镜像",
             "rules": [
               "github-code-and-packages"
+            ]
+          },
+          {
+            "name": "GitHub Pages 默认网站托管",
+            "rules": [
+              "github-pages-hosting"
             ]
           },
           {
