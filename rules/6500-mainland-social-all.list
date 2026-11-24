@@ -1,0 +1,86 @@
+# name: mainland-social-all
+# priority: 6500
+# section: social
+# description: 国内通讯与社交合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-24T04:48:27Z
+# rule-count: 70
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/dingtalk.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douban.list
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/XiaoHongShu/XiaoHongShu.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zhihu.list
+
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
+DOMAIN,vweixinf.tc.qq.com
+DOMAIN,weixin110.qq.com
+DOMAIN-SUFFIX,servicewechat.com
+DOMAIN-SUFFIX,vweixinthumb.tc.qq.com
+DOMAIN-SUFFIX,weixin.com
+DOMAIN-SUFFIX,weixin.qq.com
+DOMAIN-SUFFIX,weixinbridge.com
+DOMAIN-SUFFIX,weixinsxy.com
+DOMAIN-SUFFIX,wx.gtimg.com
+DOMAIN-SUFFIX,wx.qq.com
+DOMAIN-SUFFIX,wxapp.tc.qq.com
+DOMAIN-SUFFIX,wxs.qq.com
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,dingtalkapps.com
+DOMAIN-SUFFIX,dingtalkcloud.com
+DOMAIN-SUFFIX,anycross.com
+DOMAIN-SUFFIX,blmpb.com
+DOMAIN-SUFFIX,bytedancehermestest.com
+DOMAIN-SUFFIX,falconsending.com
+DOMAIN-SUFFIX,fei-shu.cn
+DOMAIN-SUFFIX,feishu-3rd-party-services.com
+DOMAIN-SUFFIX,feishu-boe.net
+DOMAIN-SUFFIX,feishu-customer.cn
+DOMAIN-SUFFIX,feishu-pre.cn
+DOMAIN-SUFFIX,feishu-pre.net
+DOMAIN-SUFFIX,feishu-psc.cn
+DOMAIN-SUFFIX,feishu-staging.cn
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,feishu.net
+DOMAIN-SUFFIX,feishuapp-cdn.net
+DOMAIN-SUFFIX,feishuapp.cn
+DOMAIN-SUFFIX,feishuapp.com
+DOMAIN-SUFFIX,feishucdn.com
+DOMAIN-SUFFIX,feishudoc.cn
+DOMAIN-SUFFIX,feishudoc.com
+DOMAIN-SUFFIX,feishuhuiyi.cn
+DOMAIN-SUFFIX,feishuhuiyi.com
+DOMAIN-SUFFIX,feishuimg-boe.com
+DOMAIN-SUFFIX,feishuimg-pre.com
+DOMAIN-SUFFIX,feishuimg.com
+DOMAIN-SUFFIX,feishukacdn.com
+DOMAIN-SUFFIX,feishumeetings.cn
+DOMAIN-SUFFIX,feishumeetings.com
+DOMAIN-SUFFIX,feishuoffice.cn
+DOMAIN-SUFFIX,feishuoffice.com
+DOMAIN-SUFFIX,feishuopenplatformrecord.com
+DOMAIN-SUFFIX,feishupkg.com
+DOMAIN-SUFFIX,feishustatus.cn
+DOMAIN-SUFFIX,feishuvc.cn
+DOMAIN-SUFFIX,feishuvc.com
+DOMAIN-SUFFIX,getfeishu.cn
+DOMAIN-SUFFIX,getfeishu.com
+DOMAIN-SUFFIX,getsays.cn
+DOMAIN-SUFFIX,getsays.com
+DOMAIN-SUFFIX,lackvc.cn
+DOMAIN-SUFFIX,securityfeishu.cn
+DOMAIN-SUFFIX,securityfs.cn
+DOMAIN-SUFFIX,statusfeishu.cn
+DOMAIN-SUFFIX,weibo.cn
+DOMAIN-SUFFIX,weibo.com
+DOMAIN-SUFFIX,weibocdn.com
+DOMAIN-SUFFIX,weibo.com.cn
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,doubanio.com
+DOMAIN-SUFFIX,xhscdn.com
+DOMAIN-SUFFIX,xhscdn.net
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,zhihu.com
+DOMAIN-SUFFIX,zhimg.com

@@ -4,7 +4,7 @@
 # description: 国内通讯与社交合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/dingtalk.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list
@@ -12,22 +12,16 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douban.list
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/XiaoHongShu/XiaoHongShu.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zhihu.list
-# canonical-rule-count: 76
-# rule-count: 76
+# canonical-rule-count: 70
+# rule-count: 70
 # format: clash-classical
 # canonical: rules/6500-mainland-social-all.lsr
 
 payload:
   - "DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net"
-  - "DOMAIN,btrace.qq.com"
-  - "DOMAIN,dldir1.qq.com"
   - "DOMAIN,vweixinf.tc.qq.com"
   - "DOMAIN,weixin110.qq.com"
-  - "DOMAIN,wup.imtt.qq.com"
-  - "DOMAIN-SUFFIX,qlogo.cn"
-  - "DOMAIN-SUFFIX,qpic.cn"
   - "DOMAIN-SUFFIX,servicewechat.com"
-  - "DOMAIN-SUFFIX,tenpay.com"
   - "DOMAIN-SUFFIX,vweixinthumb.tc.qq.com"
   - "DOMAIN-SUFFIX,weixin.com"
   - "DOMAIN-SUFFIX,weixin.qq.com"

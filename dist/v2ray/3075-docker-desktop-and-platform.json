@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:compose-spec.io",
+          "domain:docker.com",
+          "full:dhi.io",
+          "full:docker-pinata-support.s3.amazonaws.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

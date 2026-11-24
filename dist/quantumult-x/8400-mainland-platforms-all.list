@@ -4,18 +4,21 @@
 # description: 国内厂商共用服务合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list
+# source: https://wiki.connect.qq.com/get_user_info
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/baidu.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huawei.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list
-# canonical-rule-count: 519
-# rule-count: 519
+# source: https://www.sina.com.cn/
+# canonical-rule-count: 528
+# rule-count: 528
 # format: quantumult-x
 # canonical: rules/8400-mainland-platforms-all.lsr
 
@@ -62,6 +65,8 @@ host-suffix,alibaba.com,proxy
 host-suffix,alibabadns.com,proxy
 host-suffix,alicdn.com,proxy
 host-suffix,aliyun.com,proxy
+host-suffix,qlogo.cn,proxy
+host-suffix,qpic.cn,proxy
 host-suffix,foxmail.com,proxy
 host-suffix,gtimg.com,proxy
 host-suffix,qq.com,proxy
@@ -538,3 +543,10 @@ host-suffix,cbjq.com,proxy
 host-suffix,testplus.cn,proxy
 host-suffix,sinaimg.cn,proxy
 host-suffix,sinaimg.com,proxy
+host-suffix,sinajs.cn,proxy
+host-suffix,sina.cn,proxy
+host-suffix,sina.com,proxy
+host-suffix,sina.net,proxy
+host-suffix,sinaedge.com,proxy
+host-suffix,sinajs.com,proxy
+host-suffix,sina.com.cn,proxy

@@ -1,0 +1,79 @@
+# name: mainland-daily-services-all
+# priority: 7400
+# section: lifestyle
+# description: 国内购物、生活与办公合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-22T17:48:09Z
+# rule-count: 63
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list
+
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tmall.com
+DOMAIN-SUFFIX,idlefish.com
+DOMAIN-SUFFIX,goofish.com
+DOMAIN-SUFFIX,taobaocdn.com
+DOMAIN-SUFFIX,360buy.com
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,jd.com.cn
+DOMAIN-SUFFIX,12306.cn
+DOMAIN-SUFFIX,51ping.com
+DOMAIN-SUFFIX,baobaoaichi.cn
+DOMAIN-SUFFIX,dianping.com
+DOMAIN-SUFFIX,dpfile.com
+DOMAIN-SUFFIX,maoyan.com
+DOMAIN-SUFFIX,meituan.com
+DOMAIN-SUFFIX,meituan.net
+DOMAIN-SUFFIX,mtyun.com
+DOMAIN-SUFFIX,neixin.cn
+DOMAIN-SUFFIX,sankuai.com
+DOMAIN-SUFFIX,100.me
+DOMAIN-SUFFIX,ddcorp.net
+DOMAIN-SUFFIX,ddfresh.net
+DOMAIN-SUFFIX,ddimg.mobi
+DOMAIN-SUFFIX,ddmaicai.net
+DOMAIN-SUFFIX,ddmc.mobi
+DOMAIN-SUFFIX,dduser.mobi
+DOMAIN-SUFFIX,ddxq.mobi
+DOMAIN-SUFFIX,imaicai.mobi
+DOMAIN-SUFFIX,didi.cn
+DOMAIN-SUFFIX,didialift.com
+DOMAIN-SUFFIX,didichuxing.com
+DOMAIN-SUFFIX,didistatic.com
+DOMAIN-SUFFIX,udache.com
+DOMAIN-SUFFIX,xiaojukeji.com
+DOMAIN-SUFFIX,diditaxi.com.cn
+DOMAIN-SUFFIX,hongyibo.com.cn
+DOMAIN-SUFFIX,didi-food.com
+DOMAIN-SUFFIX,didiaustralia.blog
+DOMAIN-SUFFIX,didiglobal.com
+DOMAIN-SUFFIX,didimobility.co.jp
+DOMAIN-SUFFIX,ydshengxue.com
+DOMAIN-SUFFIX,ydstatic.com
+DOMAIN-SUFFIX,youdao.com
+DOMAIN-SUFFIX,alicloudccp.com
+DOMAIN-SUFFIX,alipan.com
+DOMAIN-SUFFIX,aliyundrive.cloud
+DOMAIN-SUFFIX,aliyundrive.com
+DOMAIN-SUFFIX,aliyundrive.net
+DOMAIN-SUFFIX,yunpan.aliyun.com
+DOMAIN-SUFFIX,wps.cn
+DOMAIN-SUFFIX,wps.com
+DOMAIN-SUFFIX,wpscdn.cn
+DOMAIN-SUFFIX,wpscdn.com
+DOMAIN-SUFFIX,qwps.cn
+DOMAIN-SUFFIX,kimxz.com
+DOMAIN-SUFFIX,51dzt.com
+DOMAIN-SUFFIX,iciba.com
+DOMAIN-SUFFIX,docer.com
+DOMAIN-SUFFIX,kdocs.cn
+DOMAIN-SUFFIX,wpsmail.net
+DOMAIN-SUFFIX,papocket.com
+DOMAIN-SUFFIX,wpspdf.cn

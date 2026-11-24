@@ -6,7 +6,8 @@
         "domains": [
           "domain:line-apps.com",
           "domain:line-scdn.net",
-          "domain:line.me"
+          "domain:line.me",
+          "domain:lin.ee"
         ],
         "outboundTag": "PROXY"
       }

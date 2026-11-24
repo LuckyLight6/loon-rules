@@ -4,8 +4,8 @@
 # description: 未由专项认领的国内域名补充
 # boundary: 只补前面专项没有完整覆盖的域名；保留必要父域，不把内网管理名或已识别的国际入口归为国内
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-22T18:51:30Z
-# rule-count: 12298
+# updated-at: 2026-11-24T04:48:27Z
+# rule-count: 12292
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -8614,10 +8614,6 @@ DOMAIN-SUFFIX,silvertek.cn
 DOMAIN-SUFFIX,simadata.cn
 DOMAIN-SUFFIX,simei8.com
 DOMAIN-SUFFIX,simuwang.com
-DOMAIN-SUFFIX,sina.cn
-DOMAIN-SUFFIX,sina.com
-DOMAIN-SUFFIX,sina.com.cn
-DOMAIN-SUFFIX,sina.net
 DOMAIN-SUFFIX,sinaapp.com
 DOMAIN-SUFFIX,sinacdn.com
 DOMAIN-SUFFIX,sinacloud.cn
@@ -8629,9 +8625,7 @@ DOMAIN-SUFFIX,sinadaxue.cn
 DOMAIN-SUFFIX,sinadaxue.com
 DOMAIN-SUFFIX,sinadaxue.com.cn
 DOMAIN-SUFFIX,sinaedge.cn
-DOMAIN-SUFFIX,sinaedge.com
 DOMAIN-SUFFIX,sinaimg.com.cn
-DOMAIN-SUFFIX,sinajs.cn
 DOMAIN-SUFFIX,sinanet.com
 DOMAIN-SUFFIX,sinanode.com
 DOMAIN-SUFFIX,sinas3.com

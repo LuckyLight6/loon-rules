@@ -46,6 +46,8 @@
         "alibabadns.com",
         "alicdn.com",
         "aliyun.com",
+        "qlogo.cn",
+        "qpic.cn",
         "foxmail.com",
         "gtimg.com",
         "qq.com",
@@ -521,7 +523,14 @@
         "cbjq.com",
         "testplus.cn",
         "sinaimg.cn",
-        "sinaimg.com"
+        "sinaimg.com",
+        "sinajs.cn",
+        "sina.cn",
+        "sina.com",
+        "sina.net",
+        "sinaedge.com",
+        "sinajs.com",
+        "sina.com.cn"
       ]
     }
   ]

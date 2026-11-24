@@ -1,0 +1,13 @@
+# name: xiaomi-mainland-and-shared
+# priority: 6170
+# section: ai
+# description: 小米 MiMo · 国内计划与共用 API
+# boundary: MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在国际版规则中
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# rule-count: 2
+# source: https://models.dev/api.json
+# source: https://platform.xiaomimimo.com/
+
+DOMAIN,api.xiaomimimo.com
+DOMAIN,token-plan-cn.xiaomimimo.com

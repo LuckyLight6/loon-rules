@@ -23,6 +23,8 @@
         "pypi.org",
         "docker.io",
         "dockerstatic.com",
+        "compose-spec.io",
+        "docker.com",
         "rust-lang.org",
         "rustup.rs",
         "crates.io",
@@ -55,7 +57,9 @@
         "withpersona.com",
         "yoti.com",
         "sift.com",
-        "siftscience.com"
+        "siftscience.com",
+        "auth0.com",
+        "bugsnag.com"
       ],
       "domain": [
         "github-avatars.oss-cn-hongkong.aliyuncs.com",
@@ -208,10 +212,8 @@
         "repo.maven.apache.org",
         "files.pythonhosted.org",
         "docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com",
-        "production.cloudfront.docker.com",
-        "auth.docker.com",
-        "hub.docker.com",
-        "login.docker.com",
+        "dhi.io",
+        "docker-pinata-support.s3.amazonaws.com",
         "images.workoscdn.com",
         "workos.imgix.net",
         "api.statsig.com",

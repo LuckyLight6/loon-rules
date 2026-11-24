@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 189 个厂商或项目、320 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 191 个厂商或项目、327 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -10,9 +10,9 @@
 |---|---|---:|
 | 海外 AI 合集 | [1000 海外 AI 合集](../rules/1000-ai-overseas-all.lsr) | 79 |
 | 国产 AI 国际版合集 | [1800 国产 AI 国际版合集](../rules/1800-ai-cn-international-all.lsr) | 12 |
-| 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 21 |
+| 海外开发合集 | [3000 海外开发合集](../rules/3000-overseas-development-all.lsr) | 24 |
 | 海外通讯与社交合集 | [3300 海外通讯与社交合集](../rules/3300-overseas-social-all.lsr) | 18 |
-| 海外支付合集 | [3500 海外支付合集](../rules/3500-overseas-payments-all.lsr) | 7 |
+| 海外支付合集 | [3500 海外支付合集](../rules/3500-overseas-payments-all.lsr) | 8 |
 | 海外加密资产服务合集 | [3600 海外加密资产服务合集](../rules/3600-overseas-crypto-all.lsr) | 7 |
 | 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 15 |
 | 海外游戏合集 | [4100 海外游戏合集](../rules/4100-overseas-games-all.lsr) | 9 |
@@ -21,12 +21,12 @@
 | 国产 AI 国内版与共用入口合集 | [6000 国产 AI 国内版与共用入口合集](../rules/6000-ai-cn-all.lsr) | 17 |
 | 国内开发合集 | [6300 国内开发合集](../rules/6300-mainland-development-all.lsr) | 5 |
 | 国内通讯与社交合集 | [6500 国内通讯与社交合集](../rules/6500-mainland-social-all.lsr) | 7 |
-| 国内支付合集 | [6700 国内支付合集](../rules/6700-mainland-payments-all.lsr) | 2 |
+| 国内支付合集 | [6700 国内支付合集](../rules/6700-mainland-payments-all.lsr) | 3 |
 | 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/6900-mainland-media-all.lsr) | 10 |
 | 国内游戏合集 | [7200 国内游戏合集](../rules/7200-mainland-games-all.lsr) | 3 |
 | 国内购物、生活与办公合集 | [7400 国内购物、生活与办公合集](../rules/7400-mainland-daily-services-all.lsr) | 8 |
 | 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 10 |
-| 国内厂商共用服务合集 | [8400 国内厂商共用服务合集](../rules/8400-mainland-platforms-all.lsr) | 9 |
+| 国内厂商共用服务合集 | [8400 国内厂商共用服务合集](../rules/8400-mainland-platforms-all.lsr) | 11 |
 
 ## Tailscale
 
@@ -606,10 +606,13 @@
 |---|---|
 | 腾讯混元、元宝与 TokenHub · 国际入口 | [1870 腾讯混元、元宝与 TokenHub · 国际入口](../rules/1870-tencent-international.lsr) |
 | WeChat 国际网站、支付与部分 App 连接 | [3360 WeChat 国际网站、支付与部分 App 连接](../rules/3360-wechat-international-portal.lsr) |
+| TenPay Global 跨境支付与商户平台 | [3580 TenPay Global 跨境支付与商户平台](../rules/3580-tenpay-global-payments.lsr) |
 | 腾讯混元、元宝与 TokenHub · 国内入口 | [6070 腾讯混元、元宝与 TokenHub · 国内入口](../rules/6070-tencent-mainland.lsr) |
 | 腾讯 CODING | [6320 腾讯 CODING](../rules/6320-coding-platform.lsr) |
-| 微信国内及两版共用登录、消息与支付 | [6510 微信国内及两版共用登录、消息与支付](../rules/6510-wechat-shared-and-mainland.lsr) |
+| 微信国内及两版共用登录、消息与支付 | [6510 微信国内与两版共用登录、消息和 App 服务](../rules/6510-wechat-shared-and-mainland.lsr) |
+| 财付通与 QQ 钱包共用支付 | [6730 财付通与 QQ 钱包共用支付](../rules/6730-tenpay-mainland-payments.lsr) |
 | 腾讯 WeGame 国内平台 | [7230 腾讯 WeGame 国内平台](../rules/7230-wegame-mainland.lsr) |
+| 腾讯共用图片、头像、下载与 SDK | [8425 腾讯共用图片、头像、下载与 SDK](../rules/8425-tencent-shared-content-and-sdk.lsr) |
 | QQ、邮箱与腾讯共用账户 | [8430 腾讯 QQ、邮箱、网站与共用服务](../rules/8430-tencent-shared-services.lsr) |
 | 腾讯网站与共用平台 | [8430 腾讯 QQ、邮箱、网站与共用服务](../rules/8430-tencent-shared-services.lsr) |
 
@@ -714,6 +717,7 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Docker Hub | [3070 Docker Hub](../rules/3070-docker-hub.lsr) |
+| Docker Desktop、Scout、Offload、Hardened Images 与平台服务 | [3075 Docker Desktop、Scout、Offload、Hardened Images 与平台服务](../rules/3075-docker-desktop-and-platform.lsr) |
 
 ## Rust 项目与包生态
 
@@ -792,6 +796,18 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Sift 反欺诈、设备与风险 API | [3210 Sift 反欺诈、设备与风险 API](../rules/3210-sift-fraud-prevention.lsr) |
+
+## Okta
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Auth0 身份认证与共享登录平台 | [3220 Auth0 身份认证与共享登录平台](../rules/3220-auth0-identity-platform.lsr) |
+
+## SmartBear
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Bugsnag 错误监控与会话报告 | [3230 Bugsnag 错误监控与会话报告](../rules/3230-bugsnag-error-monitoring.lsr) |
 
 ## Telegram
 
@@ -1166,6 +1182,7 @@
 |---|---|
 | 微博 | [6540 微博](../rules/6540-weibo-social.lsr) |
 | 新浪与微博共用图片 | [8490 新浪与微博共用图片](../rules/8490-sina-shared-image-assets.lsr) |
+| 新浪网站、新闻、邮箱与网页服务 | [8495 新浪网站、新闻、邮箱与网页服务](../rules/8495-sina-web-and-shared-services.lsr) |
 
 ## 豆瓣
 

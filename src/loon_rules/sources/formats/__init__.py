@@ -45,6 +45,7 @@ READERS = {
     'python-sdk-endpoints': api.parse_python_sdk_endpoints,
     'region-endpoint-table': regions.extract,
     'rdap-autnum': networks.rdap_autnum,
+    'rdap-entity-autnums': networks.rdap_entity_autnums,
     'section-network-blocks': networks.section_network_blocks,
     'rules': feeds.parse_rules,
     'sdk-client-endpoints': api.parse_sdk_client_endpoints,

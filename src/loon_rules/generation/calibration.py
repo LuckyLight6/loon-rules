@@ -1,6 +1,6 @@
 """Approve region and advertising changes using evidence with the same matching scope."""
 from bisect import bisect_right
-from ipaddress import IPv4Address, IPv6Address, ip_network, summarize_address_range
+from ipaddress import IPv4Address, IPv6Address, ip_address, ip_network, summarize_address_range
 import re
 
 from loon_rules.rules import Invalid
@@ -90,25 +90,39 @@ def networks(old,source,registry,routes):
     return (out if changed else old),counts
 
 
-def confirmed_ads(rows,sources):
-    agree=None; exceptions=set()
+def confirmed_ads(rows,sources,*,reviewed=()):
+    agree=None; exceptions=set();unconditional=set()
     for text in sources:
         whole=set()
         for line in text.splitlines():
             if (m:=re.fullmatch(r'\|\|([a-z0-9.-]+)\^',line)): whole.add(m[1])
             elif (m:=re.match(r'@@(?:\|\||\|https?://)([a-z0-9.-]+)(?=[/\^$|:]|$)',line)):
                 exceptions.add(m[1])
+                if re.fullmatch(r'@@\|\|[a-z0-9.-]+\^',line):unconditional.add(m[1])
         if not whole: raise Invalid('广告核对源不含整域规则')
         agree=whole if agree is None else agree & whole
     def parents(host):
         parts=host.split('.')
         return ('.'.join(parts[i:]) for i in range(len(parts)))
     ancestors={p for h in exceptions for p in parents(h)}
+    baseline_ancestors={p for h in unconditional for p in parents(h)}
+    addresses=[]
+    for host in unconditional:
+        try:addresses.append(ip_address(host))
+        except ValueError:pass
+    baseline=set(reviewed)
     confirmed=[]
-    for row in rows:
+    for row in dict.fromkeys([*rows,*reviewed]):
         kind,host,*flags=row.split(',')
-        if kind not in ('DOMAIN','DOMAIN-SUFFIX') or flags or host not in agree: continue
-        if any(p in exceptions for p in parents(host)) or (kind=='DOMAIN-SUFFIX' and host in ancestors):continue
+        if kind in ('IP-CIDR','IP-CIDR6'):
+            if row in baseline and not any(address in ip_network(host) for address in addresses):
+                confirmed.append(row)
+            continue
+        if kind not in ('DOMAIN','DOMAIN-SUFFIX') or flags or (host not in agree and row not in baseline):continue
+        # Contextual page exceptions cannot globally unblock a reviewed DNS rule.
+        allowed=unconditional if row in baseline else exceptions
+        upper=baseline_ancestors if row in baseline else ancestors
+        if any(p in allowed for p in parents(host)) or (kind=='DOMAIN-SUFFIX' and host in upper):continue
         confirmed.append(row)
     return confirmed
 
@@ -132,7 +146,7 @@ def withdrawals(last, current, previous, revision, now):
         if any('.'.join(parts[k:]) in suffix for k in range(1,len(parts))):continue
         if kind=='domain-suffix' and host in ancestors:continue
         gone.append(i)
-    if not gone or len(gone)*20>len(last):return last,{}
+    if not gone or len(gone)>max(1,len(last)//20):return last,{}
     eligible=(previous.get('body')==revision and 0<=now-previous.get('last-read',-1)<=3*86400)
     first=previous.get('first',{}) if eligible else {}
     since={str(i):first.get(str(i),now) for i in gone}

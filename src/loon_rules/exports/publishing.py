@@ -8,7 +8,8 @@ from .formats import Unsupported, convert, yaml_text
 
 BASE = 'https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/'
 FORMATS = {
-    'surge': ('lsr', 'Loon / Surge'),
+    'loon': ('lsr', 'Loon'),
+    'surge': ('list', 'Surge'),
     'clash-classical': ('yaml', 'Mihomo / Stash'),
     'egern': ('yaml', 'Egern'),
     'surfboard': ('list', 'Surfboard'),
@@ -19,7 +20,7 @@ FORMATS = {
 }
 OUTPUT_FOLDERS = {'surfboard': 'surge-compatible', 'shadowrocket': 'surge-compatible'}
 CLIENTS = {
-    'loon': {'format': 'surge', 'entry': 'remote-rule'},
+    'loon': {'format': 'loon', 'entry': 'remote-rule'},
     'surge': {'format': 'surge', 'entry': 'rule-set'},
     'mihomo': {'format': 'clash-classical', 'entry': 'rule-provider'},
     'stash': {'format': 'clash-classical', 'entry': 'rule-provider'},
@@ -71,8 +72,11 @@ def build(root):
                 status = str(error)
             else:
                 item['output-rule-count'] = condition_count(converted)
-                if target == 'surge':
+                if target == 'loon':
                     output = path.relative_to(root).as_posix()
+                elif target == 'surge':
+                    output = path.with_suffix('.list').relative_to(root).as_posix()
+                    expected[output] = text
                 else:
                     folder = OUTPUT_FOLDERS.get(target, target)
                     output = f'dist/{folder}/{name}.{extension}'
@@ -114,6 +118,7 @@ def publish(root, *, check=False):
     present = {p.relative_to(root).as_posix() for target, (extension, _) in FORMATS.items()
                for folder in {target, OUTPUT_FOLDERS.get(target, target)}
                for pattern in ('*.' + extension, 'README.md') for p in (root / 'dist' / folder).glob(pattern)}
+    present.update(p.relative_to(root).as_posix() for p in (root / 'rules').glob('*.list'))
     if manifest_path.is_file():
         present.add('dist/manifest.json')
     stale = present - expected.keys()

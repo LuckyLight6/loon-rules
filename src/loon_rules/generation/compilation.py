@@ -136,10 +136,14 @@ def verify_shared_service_transfers(entries,data,transfers):
                 raise rules.Invalid('共享用途报告的目标归属未覆盖正文：'+key)
 
 
-def guard_coverage(name, previous, candidate, *, official_networks=False, excluded_hosts=(), reassigned=()):
+def guard_coverage(name, previous, candidate, *, official_networks=False, official_autnums=False, excluded_hosts=(), reassigned=()):
     waived={'DOMAIN,'+host for host in excluded_hosts}
     previous=[row for row in previous if row not in waived
               and not any(covers(target,row) for target in reassigned)]
+    if official_autnums:
+        if not any(row.startswith('IP-ASN,') for row in candidate):
+            raise rules.Invalid(name+' 的注册组织没有可用 ASN，保留上一版')
+        previous=[row for row in previous if not row.startswith('IP-ASN,')]
     if official_networks:
         # A complete vendor list can retire addresses. Count actual address space,
         # not CIDR lines: splitting one prefix in two is not growth or removal.

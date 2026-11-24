@@ -1,0 +1,19 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:sinajs.cn",
+          "domain:sina.cn",
+          "domain:sina.com",
+          "domain:sina.net",
+          "domain:sinaedge.com",
+          "domain:sinajs.com",
+          "domain:sina.com.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

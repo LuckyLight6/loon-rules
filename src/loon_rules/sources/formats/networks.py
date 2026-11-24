@@ -7,6 +7,47 @@ from loon_rules.rules import Invalid, valid_host
 from .common import within, LabelledLists, HeadingSectionText
 
 
+def rdap_entity_autnums(recipe, text):
+    identity = recipe.get('registrant-id')
+    name = recipe.get('registrant-name')
+    if not isinstance(identity, str) or not identity.strip() or not isinstance(name, str) or not name.strip():
+        raise Invalid('ASN 组织来源缺少注册身份')
+    try:
+        record = json.loads(text)
+    except ValueError as error:
+        raise Invalid('ASN 组织记录不是有效 JSON') from error
+    if not isinstance(record, dict) or record.get('objectClassName') != 'entity' or record.get('handle') != identity:
+        raise Invalid('ASN 组织记录身份与声明不符')
+    card = record.get('vcardArray')
+    if not isinstance(card, list) or len(card) != 2 or card[0] != 'vcard' or not isinstance(card[1], list):
+        raise Invalid('ASN 组织记录缺少注册名称')
+    names = [field[3] for field in card[1] if isinstance(field, list) and len(field) == 4
+             and field[0] == 'fn' and isinstance(field[3], str)]
+    if len(names) != 1 or ' '.join(names[0].split()).casefold() != ' '.join(name.split()).casefold():
+        raise Invalid('ASN 组织注册名称与声明不符')
+    notices = json.dumps(record.get('notices', []), ensure_ascii=False).casefold()
+    if 'truncat' in notices or any(link.get('rel') == 'next' for link in record.get('links', []) if isinstance(link, dict)):
+        raise Invalid('ASN 组织记录不完整，不能按部分结果更新')
+    autnums = record.get('autnums')
+    if not isinstance(autnums, list) or not autnums:
+        raise Invalid('ASN 组织记录缺少完整的自治系统列表')
+    result = set()
+    for item in autnums:
+        if not isinstance(item, dict):
+            raise Invalid('ASN 组织记录含有无效成员')
+        number = item.get('startAutnum')
+        if (type(number) is not int or not 1 <= number < 4294967295
+                or number == 23456 or 64512 <= number <= 65535 or number >= 4200000000
+                or type(item.get('endAutnum')) is not int or item['endAutnum'] != number or item.get('objectClassName') != 'autnum'
+                or item.get('handle') != 'AS'+str(number) or item.get('status') != ['active']):
+            raise Invalid('ASN 组织列表含有范围、保留编号或非活动记录')
+        row = 'IP-ASN,'+str(number)+',no-resolve'
+        if row in result:
+            raise Invalid('ASN 组织列表包含重复成员')
+        result.add(row)
+    return result
+
+
 def rdap_autnum(recipe, text):
     asn = recipe.get('asn')
     owners = recipe.get('registrant-ids')

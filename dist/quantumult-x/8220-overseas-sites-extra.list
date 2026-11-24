@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18503
-# rule-count: 18503
+# canonical-rule-count: 18499
+# rule-count: 18499
 # format: quantumult-x
 # canonical: rules/8220-overseas-sites-extra.lsr
 
@@ -19,7 +19,6 @@ host,api.avax.network,proxy
 host,api.sprig.com,proxy
 host,community.oneplus.com,proxy
 host,http-inputs-notion.splunkcloud.com,proxy
-host,sessions.bugsnag.com,proxy
 host,store.ui.com.cn,proxy
 host-suffix,000webhost.com,proxy
 host-suffix,01.org,proxy
@@ -3612,7 +3611,6 @@ host-suffix,comodoca4.com,proxy
 host-suffix,comparitech.com,proxy
 host-suffix,compileheart.com,proxy
 host-suffix,componentkit.org,proxy
-host-suffix,compose-spec.io,proxy
 host-suffix,compound.finance,proxy
 host-suffix,compress.to,proxy
 host-suffix,compuserve.com,proxy
@@ -4276,7 +4274,6 @@ host-suffix,dnyuz.com,proxy
 host-suffix,dobbyporn.com,proxy
 host-suffix,doc.new,proxy
 host-suffix,doceapower.com,proxy
-host-suffix,docker.com,proxy
 host-suffix,dockerhub.com,proxy
 host-suffix,dockerizer.com,proxy
 host-suffix,dockerstatus.com,proxy
@@ -9361,7 +9358,6 @@ host-suffix,limeteensex.com,proxy
 host-suffix,limetorrents.lol,proxy
 host-suffix,limi.net,proxy
 host-suffix,limiao.net,proxy
-host-suffix,lin.ee,proxy
 host-suffix,line-apps-beta.com,proxy
 host-suffix,line-apps-rc.com,proxy
 host-suffix,line-beta.me,proxy

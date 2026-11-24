@@ -1,0 +1,11 @@
+# name: yoti-identity-verification
+# priority: 3200
+# section: development
+# description: Yoti 数字身份与年龄验证
+# boundary: Yoti 已确认的自有站点与子域；客户网站和未证实的相似域名不并入
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# rule-count: 1
+# source: https://www.yoti.com/
+
+DOMAIN-SUFFIX,yoti.com

@@ -1,0 +1,15 @@
+# name: docker-desktop-and-platform
+# priority: 3075
+# section: development
+# description: Docker Desktop、Scout、Offload、Hardened Images 与平台服务
+# boundary: 官方用途表自动补入更新、API、诊断与平台主机；Hub 入口由前表处理，Auth0 和 Bugsnag 按共享供应商处理，不扩大 AWS 或 Cloudflare
+# created-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T04:48:27Z
+# rule-count: 4
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/docker.list
+# source: https://docs.docker.com/desktop/enterprise/allow-list/
+
+DOMAIN-SUFFIX,compose-spec.io
+DOMAIN-SUFFIX,docker.com
+DOMAIN,dhi.io
+DOMAIN,docker-pinata-support.s3.amazonaws.com

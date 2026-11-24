@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18503
-# rule-count: 18503
+# canonical-rule-count: 18499
+# rule-count: 18499
 # format: surge-compatible
 # canonical: rules/8220-overseas-sites-extra.lsr
 
@@ -19,7 +19,6 @@ DOMAIN,api.avax.network
 DOMAIN,api.sprig.com
 DOMAIN,community.oneplus.com
 DOMAIN,http-inputs-notion.splunkcloud.com
-DOMAIN,sessions.bugsnag.com
 DOMAIN,store.ui.com.cn
 DOMAIN-SUFFIX,000webhost.com
 DOMAIN-SUFFIX,01.org
@@ -3612,7 +3611,6 @@ DOMAIN-SUFFIX,comodoca4.com
 DOMAIN-SUFFIX,comparitech.com
 DOMAIN-SUFFIX,compileheart.com
 DOMAIN-SUFFIX,componentkit.org
-DOMAIN-SUFFIX,compose-spec.io
 DOMAIN-SUFFIX,compound.finance
 DOMAIN-SUFFIX,compress.to
 DOMAIN-SUFFIX,compuserve.com
@@ -4276,7 +4274,6 @@ DOMAIN-SUFFIX,dnyuz.com
 DOMAIN-SUFFIX,dobbyporn.com
 DOMAIN-SUFFIX,doc.new
 DOMAIN-SUFFIX,doceapower.com
-DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,dockerhub.com
 DOMAIN-SUFFIX,dockerizer.com
 DOMAIN-SUFFIX,dockerstatus.com
@@ -9361,7 +9358,6 @@ DOMAIN-SUFFIX,limeteensex.com
 DOMAIN-SUFFIX,limetorrents.lol
 DOMAIN-SUFFIX,limi.net
 DOMAIN-SUFFIX,limiao.net
-DOMAIN-SUFFIX,lin.ee
 DOMAIN-SUFFIX,line-apps-beta.com
 DOMAIN-SUFFIX,line-apps-rc.com
 DOMAIN-SUFFIX,line-beta.me

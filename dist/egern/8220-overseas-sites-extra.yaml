@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18503
-# rule-count: 18503
+# canonical-rule-count: 18499
+# rule-count: 18499
 # format: egern
 # canonical: rules/8220-overseas-sites-extra.lsr
 
@@ -20,7 +20,6 @@ domain_set:
   - "api.sprig.com"
   - "community.oneplus.com"
   - "http-inputs-notion.splunkcloud.com"
-  - "sessions.bugsnag.com"
   - "store.ui.com.cn"
 domain_suffix_set:
   - "000webhost.com"
@@ -3614,7 +3613,6 @@ domain_suffix_set:
   - "comparitech.com"
   - "compileheart.com"
   - "componentkit.org"
-  - "compose-spec.io"
   - "compound.finance"
   - "compress.to"
   - "compuserve.com"
@@ -4278,7 +4276,6 @@ domain_suffix_set:
   - "dobbyporn.com"
   - "doc.new"
   - "doceapower.com"
-  - "docker.com"
   - "dockerhub.com"
   - "dockerizer.com"
   - "dockerstatus.com"
@@ -9363,7 +9360,6 @@ domain_suffix_set:
   - "limetorrents.lol"
   - "limi.net"
   - "limiao.net"
-  - "lin.ee"
   - "line-apps-beta.com"
   - "line-apps-rc.com"
   - "line-beta.me"

@@ -36,11 +36,39 @@ class SourceAliases(unittest.TestCase):
             {'feed':'DOMAIN,packages.vendor.example.cdn.example'})
         self.assertNotIn('DOMAIN,packages.vendor.example.cdn.example',data['system'])
 
+    def test_source_listed_transport_prefix_follows_service_names_without_fixed_aliases(self):
+        policy=self.cfg['source-alias-policies']['vendor']
+        policy['parents']={'vendor.example':['vendor.example']}
+        policy['label-modifiers']=[]
+        policy['label-prefixes']=['stream']
+        data={'download':['DOMAIN,packages.vendor.example'],
+              'certificate':['DOMAIN,status.vendor.example'],'system':['DOMAIN,device.vendor.example']}
+        feed=('DOMAIN,stream-packages.vendor.example\nDOMAIN,stream-status.vendor.example\n'
+              'DOMAIN,stream-unknown.vendor.example\nDOMAIN,packages-stream.vendor.example')
+        lib.apply_source_aliases(self.cfg,self.entries,data,{'feed':feed})
+        self.assertIn('DOMAIN,stream-packages.vendor.example',data['download'])
+        self.assertIn('DOMAIN,stream-status.vendor.example',data['certificate'])
+        self.assertFalse(any('unknown' in row or 'packages-stream' in row for rows in data.values() for row in rows))
+        data['download']=['DOMAIN,new-service.vendor.example']
+        lib.apply_source_aliases(self.cfg,self.entries,data,{'feed':'DOMAIN,stream-new-service.vendor.example'})
+        self.assertIn('DOMAIN,stream-new-service.vendor.example',data['download'])
+
     def test_coverage_guard_only_accepts_a_proven_transfer(self):
         before=['DOMAIN,wrongly.owned.example'];candidate=['DOMAIN,keep.example']
         lib.guard_coverage('old',before,candidate,reassigned=['DOMAIN,wrongly.owned.example'])
         with self.assertRaises(Invalid):
             lib.guard_coverage('old',before,candidate,reassigned=['DOMAIN,unrelated.example'])
+
+    def test_complete_operator_registry_can_retire_asns_without_weakening_domain_coverage(self):
+        before = ['DOMAIN,api.vendor.example', 'IP-ASN,399358,no-resolve']
+        candidate = ['DOMAIN,api.vendor.example', 'IP-ASN,399359,no-resolve']
+        lib.guard_coverage('service', before, candidate, official_autnums=True)
+        with self.assertRaises(Invalid):
+            lib.guard_coverage('service', before, candidate)
+        with self.assertRaises(Invalid):
+            lib.guard_coverage('service', before, candidate[1:], official_autnums=True)
+        with self.assertRaises(Invalid):
+            lib.guard_coverage('service', before, candidate[:1], official_autnums=True)
 
 
 class OfficialRoleDiscovery(PublicSourceExamples):

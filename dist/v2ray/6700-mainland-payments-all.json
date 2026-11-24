@@ -11,7 +11,8 @@
           "domain:alipayeshop.com",
           "domain:alipayobjects.com",
           "domain:95516.com",
-          "domain:chinaunionpay.com.cn"
+          "domain:chinaunionpay.com.cn",
+          "domain:tenpay.com"
         ],
         "outboundTag": "PROXY"
       }

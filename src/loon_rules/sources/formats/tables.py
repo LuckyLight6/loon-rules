@@ -12,8 +12,10 @@ def domain_column_table(recipe, text):
     headers = recipe['headers']
     column = recipe['column']
     scope = recipe.get('domain-scope', 'listed')
+    value_format = recipe.get('value-format', 'domain')
     if (not isinstance(headers, list) or not headers or len(set(headers)) != len(headers)
-            or column not in headers or scope not in ('listed', 'domain-and-subdomains')):
+            or column not in headers or scope not in ('listed', 'domain-and-subdomains')
+            or value_format not in ('domain', 'url') or value_format == 'url' and scope != 'listed'):
         raise Invalid('域名表缺少明确的列和匹配范围')
     table = HostTables()
     table.feed(text)
@@ -27,6 +29,12 @@ def domain_column_table(recipe, text):
         if len(cells) != len(headers):
             raise Invalid('域名表的列数发生变化')
         value = cells[headers.index(column)].strip()
+        if value_format == 'url':
+            url = urlsplit(value)
+            if (url.scheme not in ('https', 'wss') or not url.hostname or url.username is not None
+                    or url.query or url.fragment):
+                raise Invalid('域名表的 URL 列不是公开 HTTPS 或 WSS 连接')
+            value = url.hostname
         row = public_domain_pattern(value)
         if row is None:
             continue

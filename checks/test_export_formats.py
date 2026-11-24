@@ -154,8 +154,18 @@ class ExportFormats(unittest.TestCase):
             manifest = json.loads((root / 'dist/manifest.json').read_text())
             self.assertEqual(manifest['clients']['stash']['format'], 'clash-classical')
             self.assertEqual(manifest['clients']['mihomo']['format'], 'clash-classical')
-            self.assertEqual(manifest['formats']['surge']['rules']['1010-product']['path'],
+            self.assertEqual(manifest['clients']['loon']['format'], 'loon')
+            self.assertEqual(manifest['formats']['loon']['rules']['1010-product']['path'],
                              'rules/1010-product.lsr')
+            self.assertEqual(manifest['formats']['surge']['rules']['1010-product']['path'],
+                             'rules/1010-product.list')
+            subscription = root / 'rules/1010-product.list'
+            self.assertEqual(subscription.read_bytes(), canonical.read_bytes())
+            subscription.write_text('DOMAIN,stale.product.example\n')
+            with self.assertRaisesRegex(Invalid, '客户端'):
+                formats.publish(root, check=True)
+            formats.publish(root)
+            self.assertEqual(subscription.read_bytes(), canonical.read_bytes())
 
     def test_becoming_incompatible_stops_publication_and_keeps_the_working_subscription(self):
         formats = self.exports()

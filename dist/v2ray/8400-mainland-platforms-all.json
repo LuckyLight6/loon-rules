@@ -47,6 +47,8 @@
           "domain:alibabadns.com",
           "domain:alicdn.com",
           "domain:aliyun.com",
+          "domain:qlogo.cn",
+          "domain:qpic.cn",
           "domain:foxmail.com",
           "domain:gtimg.com",
           "domain:qq.com",
@@ -522,7 +524,14 @@
           "domain:cbjq.com",
           "domain:testplus.cn",
           "domain:sinaimg.cn",
-          "domain:sinaimg.com"
+          "domain:sinaimg.com",
+          "domain:sinajs.cn",
+          "domain:sina.cn",
+          "domain:sina.com",
+          "domain:sina.net",
+          "domain:sinaedge.com",
+          "domain:sinajs.com",
+          "domain:sina.com.cn"
         ],
         "outboundTag": "PROXY"
       }

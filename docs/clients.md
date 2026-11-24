@@ -4,8 +4,8 @@
 
 | 客户端 | 格式与下载目录 | 本版范围 |
 |---|---|---|
-| Loon | [原有 `.lsr`](../dist/surge/README.md) | 完整保留现有语法与逐条 IP 参数 |
-| Surge | [同一份 `.lsr`](../dist/surge/README.md) | 直接使用无策略规则集，无需再维护一份文本 |
+| Loon | [原有 `.lsr`](../dist/loon/README.md) | 完整保留现有语法与逐条 IP 参数 |
+| Surge | [`.list`](../dist/surge/README.md) | 直接使用无策略规则集，无需再维护一份文本 |
 | Mihomo、Stash | [Classical YAML](../dist/clash-classical/README.md) | 保留域名、IPv4、IPv6、ASN、GeoIP 和 `no-resolve`；通配符转为等价正则 |
 | Egern | [原生 YAML](../dist/egern/README.md) | 使用原生集合字段；混合 IP 解析用途分 OR 分支表达 |
 | Shadowrocket | [兼容文本](../dist/shadowrocket/README.md) | 输出兼容规则集；尚未在 Shadowrocket App 实测 |
@@ -16,7 +16,7 @@
 
 每个下载目录逐项列出“订阅”或无法转换的原因。[机器可读清单](../dist/manifest.json)同时记录原文件、更新时间、原规则数、转换后规则数和兼容状态。JSON 文件不能带规则头注释，元数据放在这份清单中
 
-Loon / Surge 共用原文件，Mihomo / Stash 共用 Classical 文件，Shadowrocket / Surfboard 共用可适用的兼容文本。没有分别维护十份域名名单。`-all` 仍由同一批细分成员生成，合集与成员二选一
+Loon 使用 `.lsr`，Surge 使用正文相同的 `.list`；两者自动同步。Mihomo / Stash 共用 Classical 文件，Shadowrocket / Surfboard 共用可适用的兼容文本。没有分别维护十份域名名单。`-all` 仍由同一批细分成员生成，合集与成员二选一
 
 ## Loon、Surge、Shadowrocket 和 Surfboard
 
@@ -31,7 +31,7 @@ Surge 在 `[Rule]` 使用同一份无策略规则集：
 
 ```ini
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1030-gemini-connections.lsr,PROXY
+RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1030-gemini-connections.list,PROXY
 ```
 
 Shadowrocket、Surfboard 使用兼容文本：

@@ -1,0 +1,17 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:btrace.qq.com",
+          "full:dldir1.qq.com",
+          "full:wup.imtt.qq.com",
+          "domain:qlogo.cn",
+          "domain:qpic.cn"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-23T18:06:27Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19313
-# rule-count: 19313
+# canonical-rule-count: 19307
+# rule-count: 19307
 # format: clash-classical
 # canonical: rules/8600-mainland-routing-all.lsr
 
@@ -8622,10 +8622,6 @@ payload:
   - "DOMAIN-SUFFIX,simadata.cn"
   - "DOMAIN-SUFFIX,simei8.com"
   - "DOMAIN-SUFFIX,simuwang.com"
-  - "DOMAIN-SUFFIX,sina.cn"
-  - "DOMAIN-SUFFIX,sina.com"
-  - "DOMAIN-SUFFIX,sina.com.cn"
-  - "DOMAIN-SUFFIX,sina.net"
   - "DOMAIN-SUFFIX,sinaapp.com"
   - "DOMAIN-SUFFIX,sinacdn.com"
   - "DOMAIN-SUFFIX,sinacloud.cn"
@@ -8637,9 +8633,7 @@ payload:
   - "DOMAIN-SUFFIX,sinadaxue.com"
   - "DOMAIN-SUFFIX,sinadaxue.com.cn"
   - "DOMAIN-SUFFIX,sinaedge.cn"
-  - "DOMAIN-SUFFIX,sinaedge.com"
   - "DOMAIN-SUFFIX,sinaimg.com.cn"
-  - "DOMAIN-SUFFIX,sinajs.cn"
   - "DOMAIN-SUFFIX,sinanet.com"
   - "DOMAIN-SUFFIX,sinanode.com"
   - "DOMAIN-SUFFIX,sinas3.com"

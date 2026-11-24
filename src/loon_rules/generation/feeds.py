@@ -101,12 +101,23 @@ def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(),
                 return last,{'state':'invalid'}
             return result,{'state':'current',**stats}
         sources=['\n'.join(downloaded[u] for u in spec['filter-lists']),downloaded[spec['dns-list']]]
-        result=calibration.confirmed_ads(now,sources)
+        reviewed=[]
+        candidates=now
+        if spec.get('retain-published'):
+            reviewed=[row for row in last if not uncovered_count([row],now)]
+            candidates=[*now,*last]
+        result=calibration.confirmed_ads(candidates,sources,reviewed=reviewed)
+        retained={}
+        if spec.get('retain-published'):
+            retained={'retained-published-rules':len(set(last)&set(result)),
+                      'unconfirmed-address-rules':sum(row.startswith(('IP-CIDR,','IP-CIDR6,'))
+                          and uncovered_count([row],last)>0 for row in now)}
+        result=compact(result)
         lost=uncovered_count(last,result); gain=uncovered_count(result,last)
         if not result or (not adopt_ads and 20*max(gain,lost)>len(last)):
-            return last,{'state':'review','new-matches':gain,'missing-rules':lost}
-        return stable_order(result,last),{'state':'current','not-whole-host-consensus':len(now)-len(result),
-                                          'admitted-rules':gain,'retired-rules':lost}
+            return last,{'state':'review','new-matches':gain,'missing-rules':lost,**retained}
+        return stable_order(result,last),{'state':'current','not-whole-host-consensus':uncovered_count(now,result),
+                                          'admitted-rules':gain,'retired-rules':lost,**retained}
     if entry.get('confirm-additions-with'):
         def index(rows):
             exact=set(rows); suffix={r.split(',')[1] for r in exact if r.startswith('DOMAIN-SUFFIX,')}

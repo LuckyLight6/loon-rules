@@ -54,7 +54,8 @@
           "domain:opal.google",
           "domain:ai.studio",
           "full:webchannel-robinfrontend-pa.googleapis.com",
-          "full:geminiweb-pa.googleapis.com"
+          "full:geminiweb-pa.googleapis.com",
+          "domain:gemma.ai"
         ],
         "outboundTag": "PROXY"
       }

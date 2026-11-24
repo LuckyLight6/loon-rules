@@ -17,7 +17,8 @@
         "venmo.com",
         "xoom.com",
         "transferwise.com",
-        "wise.com"
+        "wise.com",
+        "tenpayglobal.com"
       ],
       "domain": [
         "payments.braintree-api.com",

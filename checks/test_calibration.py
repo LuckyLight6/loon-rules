@@ -3,6 +3,44 @@ from loon_rules.generation import calibration as cal
 from loon_rules.rules import Invalid
 
 class Calibration(unittest.TestCase):
+    def test_reviewed_ad_baseline_keeps_live_scopes_and_only_adds_corroborated_domains(self):
+        from loon_rules.generation.feeds import refresh_reviewed_feed
+        entry={'id':'ads','sources':['feed','filter','dns'],'feed-sources':['feed'],
+               'kinds':['DOMAIN','DOMAIN-SUFFIX','IP-CIDR'],'flags':['no-resolve'],
+               'policy-hint':'reject','ip-match':'target-ip',
+               'calibration':{'method':'domain-ad-consensus','filter-lists':['filter'],
+                              'dns-list':'dns','retain-published':True}}
+        old=['DOMAIN-SUFFIX,reviewed.example','DOMAIN-SUFFIX,withdrawn.example','IP-CIDR,8.8.8.8/32,no-resolve']
+        candidate=[old[0],old[2],'DOMAIN-SUFFIX,new-ad.example','DOMAIN-SUFFIX,unconfirmed.example',
+                   'IP-CIDR,1.1.1.1/32,no-resolve']
+        inputs={'feed':'\n'.join(candidate),'filter':'||new-ad.example^','dns':'||new-ad.example^'}
+        result,stats=refresh_reviewed_feed(entry,old,inputs,adopt_ads=True)
+        self.assertEqual(set(result),{old[0],old[2],'DOMAIN-SUFFIX,new-ad.example'})
+        self.assertEqual(stats['unconfirmed-address-rules'],1)
+        self.assertEqual(stats['retained-published-rules'],2)
+        protected,_=refresh_reviewed_feed(entry,old,inputs,adopt_ads=True,protected=['new-ad.example'])
+        self.assertNotIn('DOMAIN-SUFFIX,new-ad.example',protected)
+        corroborated={name:(text+'\n||withdrawn.example^' if name in ('filter','dns') else text)
+                      for name,text in inputs.items()}
+        result,_=refresh_reviewed_feed(entry,old,corroborated,adopt_ads=True)
+        self.assertEqual(set(result),{*old,'DOMAIN-SUFFIX,new-ad.example'})
+        contextual={**inputs,'filter':inputs['filter']+'\n@@||reviewed.example/click$popup,domain=shop.example\n@@||new-ad.example/click$popup'}
+        result,_=refresh_reviewed_feed(entry,old,contextual,adopt_ads=True)
+        self.assertEqual(set(result),{old[0],old[2]})
+        inputs['dns'] += '\n@@||login.reviewed.example^\n@@||8.8.8.8^'
+        excepted,_=refresh_reviewed_feed(entry,old,inputs,adopt_ads=True)
+        self.assertEqual(excepted,['DOMAIN-SUFFIX,new-ad.example'])
+
+    def test_a_small_service_can_retire_one_endpoint_after_two_spaced_observations(self):
+        before=['DOMAIN,retired.example','DOMAIN,current.example','DOMAIN,api.example']
+        current=before[1:]
+        observed,state=cal.withdrawals(before,current,{},'v1',0)
+        self.assertEqual(observed,before)
+        self.assertTrue(state)
+        self.assertEqual(cal.withdrawals(before,current,state,'v1',3600)[0],before)
+        self.assertEqual(cal.withdrawals(before,current,state,'v1',20*3600)[0],current)
+        self.assertEqual(cal.withdrawals(before,current[1:],state,'v1',20*3600)[0],before)
+
     def test_new_address_space_needs_both_evidence_sources(self):
         old=['IP-CIDR,8.2.0.0/16','IP-CIDR6,2400:1000::/32']
         new=old+['IP-CIDR,8.3.0.0/24']

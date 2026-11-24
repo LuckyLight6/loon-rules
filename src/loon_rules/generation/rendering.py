@@ -125,6 +125,10 @@ def render_review(status,entries):
                 lines+=['',f"{priority_label(entries[key])} 来源中有明确主机已由 {assigned} 处理，因此不重复收录。"]
     if projected:=status.get('projection-coverage'):
         total=lambda field:sum(state[field] for state in projected.values())
+        other_types={}
+        for state in projected.values():
+            for kind,count in state.get('other-rule-types',{}).items():
+                other_types[kind]=other_types.get(kind,0)+count
         lines+=['','## 产品来源有没有漏查？','',
                 f"当前常规产品使用 {len(projected)} 份筛选来源，程序逐份检查筛选前的域名范围，共 {total('domain-scopes')} 项；"
                 f"其中 {total('selected-scopes')} 项符合当前产品筛选，{total('selected-uncovered')} 项缺少承接或被兜底抢先匹配。",
@@ -133,6 +137,7 @@ def render_review(status,entries):
                 f"{total('shared-scopes')} 项属于共享范围，{total('declared-exclusions')} 项已有明确排除理由。"
                 f"还有 {total('outside-selection')} 项不在当前选择或其他规则的完整覆盖内，不能把它们全部当作漏收或全部自动采用。",
                 '域名后缀按完整范围核对，不能用根域命中代替所有子域都已覆盖。按精确名称收窄的项只核对该主机；逐项计数、筛选条件和其他产品归属见 data/maintenance-state.json 的 projection-coverage。筛选外名称不写进公共报告。','',
+                '来源中的其他规则类型：'+('、'.join(f'{kind} {count} 条' for kind,count in sorted(other_types.items())) or '无')+'。类型和数量单独记录，IP 用途、ASN 运营者与进程适用设备另行核对。','',
                 '| 来源 | 当前产品 | 符合筛选 / 来源范围 | 其他产品 | 筛选外未覆盖 |','|---|---|---:|---:|---:|']
         for source,state in projected.items():
             products='、'.join(f"[{priority_label(entries[key])}](../rules/{rule_filename(entries[key])})" for key in state['products'])

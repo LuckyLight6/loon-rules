@@ -8,13 +8,17 @@ from loon_rules.matching import RuleIndex
 
 def alias_patterns(host,policy):
     patterns=[]
-    modifiers='|'.join(re.escape(s) for s in policy['label-modifiers'])
+    modifiers='|'.join(re.escape(s) for s in policy.get('label-modifiers',()))
+    prefixes='|'.join(re.escape(s) for s in policy.get('label-prefixes',()))
     for parent,aliases in policy['parents'].items():
         for suffix in [parent,*aliases]:
             if not host.endswith('.'+suffix):continue
             stem=host[:-len(suffix)-1]
-            patterns.append(re.compile(re.escape(stem)+r'(?:-(?:'+modifiers+r'))?\.(?:'+
-                                       '|'.join(re.escape(s) for s in aliases)+r')\Z'))
+            destinations=r'\.(?:'+'|'.join(re.escape(s) for s in aliases)+r')\Z'
+            suffix=r'(?:-(?:'+modifiers+r'))?' if modifiers else ''
+            patterns.append(re.compile(re.escape(stem)+suffix+destinations))
+            if prefixes:
+                patterns.append(re.compile(r'(?:'+prefixes+r')-'+re.escape(stem)+destinations))
     return patterns
 
 

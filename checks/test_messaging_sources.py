@@ -23,16 +23,15 @@ class MessagingSources(PublicSourceExamples):
                 '<ul><li>unrelated-client.example</li></ul>'),
         }
         for recipe in entry.get('extract', []):
-            if recipe['format'] != 'rdap-autnum':
+            if recipe['format'] != 'rdap-entity-autnums':
                 continue
-            asn = recipe['asn']
+            identity=recipe['registrant-id']
+            numbers={'ORG-TMI4-RIPE':[44907,59930,62014,62041], 'ORG-TMI5-RIPE':[211157]}[identity]
             inputs[recipe['source']] = json.dumps({
-                'objectClassName': 'autnum', 'handle': 'AS' + str(asn),
-                'startAutnum': asn, 'endAutnum': asn,
-                'entities': [{
-                    'handle': recipe['registrant-ids'][0], 'roles': ['registrant'],
-                    'vcardArray': ['vcard', [['fn', {}, 'text', recipe['registrant-name']]]],
-                }],
+                'objectClassName':'entity','handle':identity,
+                'vcardArray':['vcard',[['fn',{},'text',recipe['registrant-name']]]],
+                'autnums':[{'objectClassName':'autnum','handle':'AS'+str(asn),
+                            'startAutnum':asn,'endAutnum':asn,'status':['active']} for asn in numbers],
             })
         return inputs
 

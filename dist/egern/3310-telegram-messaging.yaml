@@ -2,17 +2,14 @@
 # priority: 3310
 # section: social
 # description: Telegram 登录、消息、文件与服务器地址
-# boundary: 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册持有人仍为 Telegram 的 ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台
+# boundary: 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册组织当前持有的 Telegram ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台
 # created-at: 2026-11-19T09:33:57Z
 # updated-at: 2026-11-23T18:06:27Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
 # source: https://core.telegram.org/bug-bounty
-# source: https://rdap.db.ripe.net/autnum/211157
-# source: https://rdap.db.ripe.net/autnum/44907
-# source: https://rdap.db.ripe.net/autnum/59930
-# source: https://rdap.db.ripe.net/autnum/62014
-# source: https://rdap.db.ripe.net/autnum/62041
+# source: https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE
+# source: https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE
 # canonical-rule-count: 32
 # rule-count: 32
 # format: egern

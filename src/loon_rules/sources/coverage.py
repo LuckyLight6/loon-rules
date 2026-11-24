@@ -2,7 +2,7 @@
 from collections import defaultdict
 
 from loon_rules import domains as domain_scope
-from loon_rules.rules import Invalid, read_rules
+from loon_rules.rules import Invalid, read_rules, TYPES
 from loon_rules.matching import RuleIndex
 
 
@@ -11,7 +11,8 @@ COUNTS=('domain-scopes','selected-scopes','narrowed-scopes','selected-uncovered'
         'product-scopes','fallback-scopes','privacy-scopes','shared-scopes',
         'declared-exclusions','outside-selection','other-lines')
 PROJECTION_FIELDS=('roots','exact','exclude','all-domains','domain-lines-only','parent-domains-source','brand-label','prefix-label')
-FIELDS={'state','products','filters','other-products',*COUNTS}
+OTHER_TYPES=(TYPES-set(DOMAIN_TYPES))|{'domain-options','unsupported'}
+FIELDS={'state','products','filters','other-products','other-rule-types',*COUNTS}
 
 
 def same_business_family(first, second):
@@ -56,6 +57,23 @@ def domain_lines(text):
     return [row for row in rows if row.count(',')==1],len(lines)-len(source)+sum(row.count(',')!=1 for row in rows)
 
 
+def other_rule_types(text):
+    counts=defaultdict(int)
+    options=set()
+    for line in text.splitlines():
+        line=line.strip().lstrip('\ufeff').strip()
+        if not line or line.startswith(('#',';','//')):continue
+        kind=line.partition(',')[0].strip()
+        if kind in DOMAIN_TYPES:
+            row=read_rules(line)[0]
+            if row.count(',')!=1:options.add(row)
+            continue
+        if kind in TYPES:read_rules(line)
+        counts[kind if kind in TYPES else 'unsupported']+=1
+    if options:counts['domain-options']=len(options)
+    return dict(counts)
+
+
 def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hosts=(),exemptions=None):
     order=list(order);declared=groups(entries,order)
     domains={key:[row for row in data[key] if row.split(',')[0] in DOMAIN_TYPES or row.startswith('DOMAIN-KEYWORD,')]
@@ -67,9 +85,11 @@ def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hos
                'other-products':{},**dict.fromkeys(COUNTS,0)}
         if source not in downloaded:
             raise Invalid('产品来源覆盖检查缺少已声明输入：'+source)
-        try:rows,other=domain_lines(downloaded[source])
+        try:
+            rows,other=domain_lines(downloaded[source])
+            state['other-rule-types']=other_rule_types(downloaded[source])
         except Invalid as exc:
-            raise Invalid('产品来源的域名规则格式变化，不能确认完整覆盖：'+source) from exc
+            raise Invalid('产品来源的规则格式变化，不能确认完整覆盖：'+source) from exc
         state['domain-scopes']=len(rows);state['other-lines']=other
         kept=set().union(*(selected.get(key,{}).get(source,set()) for key in products))
         product_bits=sum(index.bits[key] for key in products)
@@ -113,8 +133,12 @@ def verify_report(entries,report,*,order=None):
     expected=groups(entries,order)
     if set(report)!=set(expected):raise Invalid('产品来源覆盖报告与当前筛选来源不一致')
     for source,state in report.items():
+        types=state.get('other-rule-types',{})
         if (set(state)!=FIELDS or state['products']!=expected[source] or state['filters']!=filters(entries,source,expected[source])
                 or state['state']!='current'
+                or not isinstance(types,dict) or not set(types)<=OTHER_TYPES
+                or any(type(count) is not int or count<=0 for count in types.values())
+                or sum(types.values())!=state['other-lines']
                 or any(type(state[field]) is not int or state[field]<0 for field in COUNTS)
                 or not isinstance(state['other-products'],dict)
                 or any(key not in entries or key in state['products'] or type(count) is not int or count<=0

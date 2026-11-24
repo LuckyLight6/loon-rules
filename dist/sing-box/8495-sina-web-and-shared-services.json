@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "sinajs.cn",
+        "sina.cn",
+        "sina.com",
+        "sina.net",
+        "sinaedge.com",
+        "sinajs.com",
+        "sina.com.cn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# name: sentry-error-monitoring
+# priority: 3150
+# section: development
+# description: Sentry 错误监控、API 与 SDK
+# boundary: Sentry 共享平台、地区 API 和 SDK 素材；不把整个平台认作任一接入应用
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# rule-count: 4
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list
+
+DOMAIN-SUFFIX,getsentry.com
+DOMAIN-SUFFIX,sentry.dev
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,sentry-cdn.com

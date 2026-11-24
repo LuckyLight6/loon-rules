@@ -71,6 +71,17 @@ class ProjectionCoverage(PublicSourceExamples):
         state=self.audit(entries,text,data,selected)
         self.assertTrue(state)
 
+    def test_non_domain_source_types_are_visible_and_malformed_networks_stop_the_audit(self):
+        _,entries,text,data,selected=self.fixture()
+        text += '\nIP-CIDR,8.8.8.0/24,no-resolve\nIP-CIDR6,2606:4700::/32,no-resolve'
+        text += '\nIP-ASN,399358,no-resolve\nPROCESS-PATH,/Applications/Example.app'
+        state=next(iter(self.audit(entries,text,data,selected).values()))
+        self.assertEqual(state['other-rule-types'], {
+            'PROCESS-NAME':1,'IP-CIDR':1,'IP-CIDR6':1,'IP-ASN':1,'unsupported':1})
+        for row in ('IP-CIDR,not-a-network','IP-ASN,not-an-asn','IP-CIDR6,8.8.8.0/24'):
+            with self.subTest(row=row), self.assertRaises(Invalid):
+                self.audit(entries,text+'\n'+row,data,selected)
+
     def test_publisher_subdomains_require_whole_scope_coverage_not_an_apex_probe(self):
         _,entries,text,data,selected=self.fixture()
         data['other']=['DOMAIN,friend.example']

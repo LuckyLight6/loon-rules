@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "compose-spec.io",
+        "docker.com"
+      ],
+      "domain": [
+        "dhi.io",
+        "docker-pinata-support.s3.amazonaws.com"
+      ]
+    }
+  ]
+}

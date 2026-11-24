@@ -36,8 +36,11 @@ def validate(config, entries):
     for name, policy in policies.items():
         parents = policy.get('parents', {})
         modifiers = policy.get('label-modifiers', [])
-        if (not parents or not modifiers
-                or any(not FAMILY.fullmatch(value) for value in modifiers)):
+        prefixes = policy.get('label-prefixes', [])
+        if (not parents or not modifiers and not prefixes
+                or not isinstance(modifiers,list) or not isinstance(prefixes,list)
+                or any(not isinstance(value,str) or not FAMILY.fullmatch(value) for value in [*modifiers,*prefixes])
+                or len(prefixes)!=len(set(prefixes))):
             raise Invalid('别名策略缺少服务范围或标签：' + name)
         for parent, aliases in parents.items():
             if not valid_host(parent) or not aliases or any(not valid_host(a) for a in aliases):

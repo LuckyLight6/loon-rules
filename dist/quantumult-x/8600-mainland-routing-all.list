@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-23T18:06:27Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19313
-# rule-count: 19313
+# canonical-rule-count: 19307
+# rule-count: 19307
 # format: quantumult-x
 # canonical: rules/8600-mainland-routing-all.lsr
 
@@ -8621,10 +8621,6 @@ host-suffix,silvertek.cn,proxy
 host-suffix,simadata.cn,proxy
 host-suffix,simei8.com,proxy
 host-suffix,simuwang.com,proxy
-host-suffix,sina.cn,proxy
-host-suffix,sina.com,proxy
-host-suffix,sina.com.cn,proxy
-host-suffix,sina.net,proxy
 host-suffix,sinaapp.com,proxy
 host-suffix,sinacdn.com,proxy
 host-suffix,sinacloud.cn,proxy
@@ -8636,9 +8632,7 @@ host-suffix,sinadaxue.cn,proxy
 host-suffix,sinadaxue.com,proxy
 host-suffix,sinadaxue.com.cn,proxy
 host-suffix,sinaedge.cn,proxy
-host-suffix,sinaedge.com,proxy
 host-suffix,sinaimg.com.cn,proxy
-host-suffix,sinajs.cn,proxy
 host-suffix,sinanet.com,proxy
 host-suffix,sinanode.com,proxy
 host-suffix,sinas3.com,proxy

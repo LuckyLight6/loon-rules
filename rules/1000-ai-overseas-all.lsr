@@ -4,20 +4,21 @@
 # description: 海外 AI 合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-23T18:06:27Z
-# rule-count: 639
+# updated-at: 2026-11-24T04:48:27Z
+# rule-count: 644
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list
 # source: https://platform.claude.com/docs/en/api/ip-addresses
-# source: https://rdap.arin.net/registry/autnum/399358
 # source: https://academy.claude.com/products/platform
+# source: https://rdap.arin.net/registry/entity/AP-2440
 # source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
 # source: https://openai.com/chatgpt-voice.json
 # source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
 # source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto
+# source: https://ai.google.dev/gemma/docs
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
 # source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://cursor.com/help/troubleshooting/sign-in-domains
@@ -183,6 +184,10 @@ DOMAIN-SUFFIX,claude.dev
 DOMAIN-SUFFIX,claude.new
 DOMAIN-SUFFIX,claude.site
 DOMAIN-SUFFIX,claudeacademy.com
+IP-ASN,400243,no-resolve
+IP-ASN,401551,no-resolve
+IP-ASN,4167,no-resolve
+IP-ASN,60808,no-resolve
 DOMAIN,openaiassets.blob.core.windows.net
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,oaistatsig.com
@@ -661,6 +666,7 @@ DOMAIN-SUFFIX,opal.google
 DOMAIN-SUFFIX,ai.studio
 DOMAIN,webchannel-robinfrontend-pa.googleapis.com
 DOMAIN,geminiweb-pa.googleapis.com
+DOMAIN-SUFFIX,gemma.ai
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,grok.x.com
 DOMAIN-SUFFIX,x.ai

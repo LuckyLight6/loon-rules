@@ -1,7 +1,7 @@
 {
-  "checked-at": "2026-11-23T19:28:52Z",
+  "checked-at": "2026-11-24T05:14:03Z",
   "inputs-read": 570,
-  "critical": 810,
+  "critical": 828,
   "inputs-requested": 570,
   "profiles-checked": 167772160,
   "assigned-rules": {
@@ -141,8 +141,8 @@
       "DOMAIN-SUFFIX,alipayobjects.com": "alipay-mainland-payments"
     },
     "tencent-shared-services": {
-      "DOMAIN-SUFFIX,qlogo.cn": "wechat-shared-and-mainland",
-      "DOMAIN-SUFFIX,qpic.cn": "wechat-shared-and-mainland"
+      "DOMAIN-SUFFIX,qlogo.cn": "tencent-shared-content-and-sdk",
+      "DOMAIN-SUFFIX,qpic.cn": "tencent-shared-content-and-sdk"
     },
     "baidu-shared-services": {
       "DOMAIN-SUFFIX,duapps.com": "general-ad-and-tracking"
@@ -166,6 +166,12 @@
       "DOMAIN-SUFFIX,wpspdf.cn": "wps-office"
     },
     "mainland-domains": {
+      "DOMAIN-SUFFIX,sina.cn": "sina-web-and-shared-services",
+      "DOMAIN-SUFFIX,sina.com": "sina-web-and-shared-services",
+      "DOMAIN-SUFFIX,sina.com.cn": "sina-web-and-shared-services",
+      "DOMAIN-SUFFIX,sina.net": "sina-web-and-shared-services",
+      "DOMAIN-SUFFIX,sinaedge.com": "sina-web-and-shared-services",
+      "DOMAIN-SUFFIX,sinajs.cn": "sina-web-and-shared-services",
       "DOMAIN-SUFFIX,futu5.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,futunn.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,itigerup.com": "overseas-sites-extra",
@@ -609,8 +615,8 @@
       "DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,qiyi.com": "iqiyi-mainland",
       "DOMAIN-SUFFIX,qiyipic.com": "iqiyi-mainland",
-      "DOMAIN-SUFFIX,qlogo.cn": "wechat-shared-and-mainland",
-      "DOMAIN-SUFFIX,qpic.cn": "wechat-shared-and-mainland",
+      "DOMAIN-SUFFIX,qlogo.cn": "tencent-shared-content-and-sdk",
+      "DOMAIN-SUFFIX,qpic.cn": "tencent-shared-content-and-sdk",
       "DOMAIN-SUFFIX,rtbasia.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,servicewechat.com": "wechat-shared-and-mainland",
       "DOMAIN-SUFFIX,sinaimg.cn": "sina-shared-image-assets",
@@ -621,7 +627,7 @@
       "DOMAIN-SUFFIX,tanx.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,taobao.com": "taobao-and-xianyu-shopping",
       "DOMAIN-SUFFIX,taobaocdn.com": "taobao-and-xianyu-shopping",
-      "DOMAIN-SUFFIX,tenpay.com": "wechat-shared-and-mainland",
+      "DOMAIN-SUFFIX,tenpay.com": "tenpay-mainland-payments",
       "DOMAIN-SUFFIX,tik-tokapi.com": "tiktok-international-video",
       "DOMAIN-SUFFIX,tiktok.com": "tiktok-international-video",
       "DOMAIN-SUFFIX,tiktokcdn-us.com": "tiktok-international-video",
@@ -658,6 +664,12 @@
       "DOMAIN-SUFFIX,zhiziyun.com": "general-ad-and-tracking"
     },
     "extended-ad-and-tracking": {
+      "DOMAIN-SUFFIX,phuolhogmxin.com": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,profitablecpmratenetwork.com": "general-ad-and-tracking",
+      "DOMAIN,tracker.ai.xiaomi.com": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,adbfkaoxvm.in": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,axkozwhiqah.in": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,ovgadhtcyvak.in": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,events.bsky.app": "bluesky-social",
       "DOMAIN,bee.tc.easebar.com": "netease-international-games",
       "DOMAIN-SUFFIX,t2.hulu.com": "hulu-streaming",
@@ -665,7 +677,7 @@
       "DOMAIN-SUFFIX,metric.huya.com": "huya-live",
       "DOMAIN-SUFFIX,statwup.huya.com": "huya-live",
       "DOMAIN-SUFFIX,ylog.huya.com": "huya-live",
-      "DOMAIN,analytics.pointdrive.linkedin.com": "linkedin-network",
+      "DOMAIN,analytics.pointdrive.linkedin.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,analytics.livestream.com": "vimeo-video",
       "DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com": "samsung-mainland",
       "DOMAIN-SUFFIX,telemetry.soundcloud.com": "soundcloud-audio",
@@ -742,8 +754,8 @@
       "DOMAIN-SUFFIX,abs.proxistore.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,pubmine.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,gdt.qq.com": "general-ad-and-tracking",
-      "DOMAIN,monitor.music.qq.com": "qq-music",
-      "DOMAIN,stat.y.qq.com": "qq-music",
+      "DOMAIN,monitor.music.qq.com": "general-ad-and-tracking",
+      "DOMAIN,stat.y.qq.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,realsrv.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,events.redditmedia.com": "reddit-community",
       "DOMAIN-SUFFIX,retargeter.com": "general-ad-and-tracking",
@@ -846,7 +858,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 322,
+    "routine-tables": 329,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1063,6 +1075,7 @@
       "maven-central",
       "pypi-packages",
       "docker-hub",
+      "docker-desktop-and-platform",
       "rust-cargo",
       "go-modules",
       "jetbrains-ides",
@@ -1077,6 +1090,8 @@
       "persona-identity-verification",
       "yoti-identity-verification",
       "sift-fraud-prevention",
+      "auth0-identity-platform",
+      "bugsnag-error-monitoring",
       "telegram-messaging",
       "discord-messaging-and-voice",
       "signal-messenger",
@@ -1102,6 +1117,7 @@
       "venmo-payments",
       "xoom-transfers",
       "wise-transfers",
+      "tenpay-global-payments",
       "binance-platform",
       "okx-platform",
       "gemini-exchange",
@@ -1197,6 +1213,7 @@
       "zhihu-community",
       "alipay-mainland-payments",
       "unionpay-mainland",
+      "tenpay-mainland-payments",
       "bilibili-mainland-video",
       "iqiyi-mainland",
       "youku-video",
@@ -1230,13 +1247,15 @@
       "amazon-shared-services",
       "netease-shared-services",
       "alibaba-shared-services",
+      "tencent-shared-content-and-sdk",
       "tencent-shared-services",
       "bytedance-shared-services",
       "baidu-shared-services",
       "huawei-shared-services",
       "xiaomi-shared-services",
       "kingsoft-shared-services",
-      "sina-shared-image-assets"
+      "sina-shared-image-assets",
+      "sina-web-and-shared-services"
     ],
     "official-checks": {
       "network-sign-in-and-probes": 2,
@@ -1269,7 +1288,6 @@
       "ip-egress-checks": 17,
       "claude-connections": 4,
       "chatgpt-connections": 8,
-      "gemini-connections": 36,
       "github-copilot-connections": 3,
       "together-model-services": 1,
       "apple-video-and-fitness": 3,
@@ -1304,10 +1322,11 @@
       "microsoft-files-and-sharepoint": 4,
       "microsoft-vscode": 1,
       "tuna-mirrors": 2,
-      "wechat-shared-and-mainland": 6,
+      "wechat-shared-and-mainland": 3,
       "youku-video": 1,
       "netease-music": 1,
-      "steam-mainland-downloads": 5
+      "steam-mainland-downloads": 5,
+      "tencent-shared-content-and-sdk": 3
     },
     "automatic-discovery": [
       "claude-connections",
@@ -1367,7 +1386,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 1,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list": {
       "state": "current",
@@ -1406,7 +1426,8 @@
       "shared-scopes": 10,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list": {
       "state": "current",
@@ -1446,7 +1467,12 @@
       "shared-scopes": 2,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 4
+      "other-lines": 4,
+      "other-rule-types": {
+        "IP-CIDR": 2,
+        "IP-CIDR6": 1,
+        "IP-ASN": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list": {
       "state": "current",
@@ -1480,13 +1506,13 @@
       "shared-scopes": 2,
       "declared-exclusions": 0,
       "outside-selection": 6,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr": {
       "state": "current",
       "products": [
         "chatgpt-connections",
-        "gemini-connections",
         "ai-com-agents"
       ],
       "filters": {
@@ -1514,65 +1540,6 @@
             ]
           }
         ],
-        "gemini-connections": [
-          {
-            "roots": [
-              "deepmind.com",
-              "aistudio.google.com",
-              "bard.google.com",
-              "flow.google.com",
-              "gemini.google.com",
-              "jules.google.com",
-              "labs.google.com",
-              "makersuite.google.com",
-              "notebook.google.com",
-              "notebooklm.google.com",
-              "opal.google.com",
-              "aicode.googleapis.com",
-              "aida.googleapis.com",
-              "aisandbox-pa.googleapis.com",
-              "geller-pa.googleapis.com",
-              "generativelanguage.googleapis.com",
-              "labstailwind.pa.googleapis.com",
-              "proactivebackend-pa.googleapis.com",
-              "robinfrontend-pa.googleapis.com",
-              "gemini.gstatic.com",
-              "stitch.withgoogle.com",
-              "antigravity-unleash.goog",
-              "antigravity.google",
-              "deepmind.google",
-              "flow.google",
-              "gemini.google",
-              "generativeai.google",
-              "jules.google",
-              "labs.google",
-              "notebook.google",
-              "notebooklm.google",
-              "opal.google",
-              "ai.studio"
-            ],
-            "exact": [
-              "appsgenaiserver-pa.clients.google.com",
-              "geminiweb-pa.clients.google.com",
-              "alkalicore-pa.clients6.google.com",
-              "alkalimakersuite-pa.clients6.google.com",
-              "appsgenaiserver-pa.clients6.google.com",
-              "geminiweb-pa.clients6.google.com",
-              "webchannel-alkalimakersuite-pa.clients6.google.com",
-              "antigravity.googleapis.com",
-              "antigravity-pa.googleapis.com",
-              "appsgenaiserver-pa.googleapis.com",
-              "cloudaicompanion.googleapis.com",
-              "cloudcode-pa.googleapis.com",
-              "daily-cloudcode-pa.googleapis.com",
-              "notebooklm.googleapis.com",
-              "notebooklm-pa.googleapis.com",
-              "ai.google.dev",
-              "webchannel-robinfrontend-pa.googleapis.com",
-              "geminiweb-pa.googleapis.com"
-            ]
-          }
-        ],
         "ai-com-agents": [
           {
             "roots": [
@@ -1582,6 +1549,7 @@
         ]
       },
       "other-products": {
+        "gemini-connections": 17,
         "xai-connections": 2,
         "muse-agent": 1,
         "perplexity-search-and-api": 1,
@@ -1590,16 +1558,17 @@
         "claude-connections": 4
       },
       "domain-scopes": 45,
-      "selected-scopes": 34,
+      "selected-scopes": 16,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 32,
+      "product-scopes": 15,
       "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 3,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://rules.xkww3n.cyou/classical/google-deepmind.txt": {
       "state": "current",
@@ -1609,76 +1578,24 @@
       "filters": {
         "gemini-connections": [
           {
-            "roots": [
-              "deepmind.com",
-              "aistudio.google.com",
-              "bard.google.com",
-              "flow.google.com",
-              "gemini.google.com",
-              "jules.google.com",
-              "labs.google.com",
-              "makersuite.google.com",
-              "notebook.google.com",
-              "notebooklm.google.com",
-              "opal.google.com",
-              "aicode.googleapis.com",
-              "aida.googleapis.com",
-              "aisandbox-pa.googleapis.com",
-              "geller-pa.googleapis.com",
-              "generativelanguage.googleapis.com",
-              "labstailwind.pa.googleapis.com",
-              "proactivebackend-pa.googleapis.com",
-              "robinfrontend-pa.googleapis.com",
-              "gemini.gstatic.com",
-              "stitch.withgoogle.com",
-              "antigravity-unleash.goog",
-              "antigravity.google",
-              "deepmind.google",
-              "flow.google",
-              "gemini.google",
-              "generativeai.google",
-              "jules.google",
-              "labs.google",
-              "notebook.google",
-              "notebooklm.google",
-              "opal.google",
-              "ai.studio"
-            ],
-            "exact": [
-              "appsgenaiserver-pa.clients.google.com",
-              "geminiweb-pa.clients.google.com",
-              "alkalicore-pa.clients6.google.com",
-              "alkalimakersuite-pa.clients6.google.com",
-              "appsgenaiserver-pa.clients6.google.com",
-              "geminiweb-pa.clients6.google.com",
-              "webchannel-alkalimakersuite-pa.clients6.google.com",
-              "antigravity.googleapis.com",
-              "antigravity-pa.googleapis.com",
-              "appsgenaiserver-pa.googleapis.com",
-              "cloudaicompanion.googleapis.com",
-              "cloudcode-pa.googleapis.com",
-              "daily-cloudcode-pa.googleapis.com",
-              "notebooklm.googleapis.com",
-              "notebooklm-pa.googleapis.com",
-              "ai.google.dev",
-              "webchannel-robinfrontend-pa.googleapis.com",
-              "geminiweb-pa.googleapis.com"
-            ]
+            "all-domains": true,
+            "domain-lines-only": true
           }
         ]
       },
       "other-products": {},
-      "domain-scopes": 49,
-      "selected-scopes": 49,
+      "domain-scopes": 50,
+      "selected-scopes": 50,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 39,
+      "product-scopes": 40,
       "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 10,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list": {
       "state": "current",
@@ -1711,7 +1628,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meta.list": {
       "state": "current",
@@ -1779,7 +1697,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 2,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains-ai.list": {
       "state": "current",
@@ -1807,7 +1726,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list": {
       "state": "current",
@@ -1850,6 +1770,7 @@
         "cursor-editor-and-api": 2,
         "discord-messaging-and-voice": 6,
         "disney-plus-streaming": 3,
+        "docker-desktop-and-platform": 1,
         "docker-hub": 1,
         "duck-ai-chat": 1,
         "figma-design": 1,
@@ -1872,7 +1793,7 @@
         "kraken-exchange": 1,
         "kucoin-exchange": 1,
         "leonardo-image-tools": 1,
-        "line-messenger": 3,
+        "line-messenger": 4,
         "linkedin-network": 1,
         "microsoft-files-and-sharepoint": 5,
         "vimeo-video": 3,
@@ -1910,12 +1831,18 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 1,
-      "fallback-scopes": 7397,
+      "fallback-scopes": 7395,
       "privacy-scopes": 9,
       "shared-scopes": 197,
       "declared-exclusions": 0,
       "outside-selection": 6,
-      "other-lines": 116
+      "other-lines": 116,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 32,
+        "IP-CIDR": 80,
+        "IP-CIDR6": 3,
+        "USER-AGENT": 1
+      }
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list": {
       "state": "current",
@@ -1943,7 +1870,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list": {
       "state": "current",
@@ -1971,7 +1899,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list": {
       "state": "current",
@@ -1998,7 +1927,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list": {
       "state": "current",
@@ -2025,7 +1955,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list": {
       "state": "current",
@@ -2054,7 +1985,8 @@
       "shared-scopes": 2,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/augment-code.list": {
       "state": "current",
@@ -2081,7 +2013,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 3
+      "other-lines": 3,
+      "other-rule-types": {
+        "PROCESS-NAME": 3
+      }
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list": {
       "state": "current",
@@ -2109,7 +2044,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 2,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list": {
       "state": "current",
@@ -2136,7 +2072,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list": {
       "state": "current",
@@ -2163,7 +2100,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list": {
       "state": "current",
@@ -2190,7 +2128,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list": {
       "state": "current",
@@ -2217,7 +2156,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list": {
       "state": "current",
@@ -2244,7 +2184,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list": {
       "state": "current",
@@ -2271,7 +2212,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list": {
       "state": "current",
@@ -2298,7 +2240,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list": {
       "state": "current",
@@ -2325,7 +2268,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list": {
       "state": "current",
@@ -2353,7 +2297,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list": {
       "state": "current",
@@ -2380,7 +2325,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list": {
       "state": "current",
@@ -2407,7 +2353,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list": {
       "state": "current",
@@ -2434,7 +2381,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list": {
       "state": "current",
@@ -2461,7 +2409,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list": {
       "state": "current",
@@ -2489,7 +2438,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list": {
       "state": "current",
@@ -2516,7 +2466,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list": {
       "state": "current",
@@ -2543,7 +2494,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list": {
       "state": "current",
@@ -2570,7 +2522,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list": {
       "state": "current",
@@ -2597,7 +2550,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list": {
       "state": "current",
@@ -2624,7 +2578,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list": {
       "state": "current",
@@ -2651,7 +2606,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list": {
       "state": "current",
@@ -2678,7 +2634,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list": {
       "state": "current",
@@ -2705,7 +2662,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list": {
       "state": "current",
@@ -2732,7 +2690,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list": {
       "state": "current",
@@ -2759,7 +2718,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list": {
       "state": "current",
@@ -2786,7 +2746,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list": {
       "state": "current",
@@ -2814,7 +2775,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list": {
       "state": "current",
@@ -2841,7 +2803,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list": {
       "state": "current",
@@ -2868,7 +2831,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list": {
       "state": "current",
@@ -2895,7 +2859,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list": {
       "state": "current",
@@ -2923,7 +2888,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list": {
       "state": "current",
@@ -2951,7 +2917,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list": {
       "state": "current",
@@ -2978,7 +2945,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr": {
       "state": "current",
@@ -3107,7 +3075,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list": {
       "state": "current",
@@ -3141,7 +3110,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list": {
       "state": "current",
@@ -3170,7 +3140,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list": {
       "state": "current",
@@ -3197,7 +3168,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list": {
       "state": "current",
@@ -3224,7 +3196,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr": {
       "state": "current",
@@ -3287,7 +3260,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 2
+      "other-lines": 2,
+      "other-rule-types": {
+        "USER-AGENT": 2
+      }
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/TestFlight.lsr": {
       "state": "current",
@@ -3317,7 +3293,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1
+      }
     },
     "https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr": {
       "state": "current",
@@ -3347,7 +3326,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://rules.xkww3n.cyou/classical/apple-music.txt": {
       "state": "current",
@@ -3391,7 +3371,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 1,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf": {
       "state": "current",
@@ -3423,7 +3404,11 @@
       "shared-scopes": 3,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 9
+      "other-lines": 9,
+      "other-rule-types": {
+        "IP-CIDR": 1,
+        "PROCESS-NAME": 8
+      }
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr": {
       "state": "current",
@@ -3472,7 +3457,10 @@
       "shared-scopes": 6,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list": {
       "state": "current",
@@ -3505,7 +3493,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list": {
       "state": "current",
@@ -3553,7 +3542,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/npmjs.list": {
       "state": "current",
@@ -3582,12 +3572,14 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/docker.list": {
       "state": "current",
       "products": [
-        "docker-hub"
+        "docker-hub",
+        "docker-desktop-and-platform"
       ],
       "filters": {
         "docker-hub": [
@@ -3603,20 +3595,30 @@
             ],
             "domain-lines-only": true
           }
+        ],
+        "docker-desktop-and-platform": [
+          {
+            "roots": [
+              "docker.com",
+              "compose-spec.io"
+            ],
+            "domain-lines-only": true
+          }
         ]
       },
       "other-products": {},
       "domain-scopes": 6,
-      "selected-scopes": 3,
+      "selected-scopes": 5,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 3,
-      "fallback-scopes": 3,
+      "product-scopes": 6,
+      "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list": {
       "state": "current",
@@ -3647,7 +3649,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/golang.list": {
       "state": "current",
@@ -3676,7 +3679,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains.list": {
       "state": "current",
@@ -3706,7 +3710,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 10,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list": {
       "state": "current",
@@ -3737,7 +3742,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hcaptcha.list": {
       "state": "current",
@@ -3766,7 +3772,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 1,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr": {
       "state": "current",
@@ -3802,7 +3809,13 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 4,
-      "other-lines": 24
+      "other-lines": 24,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 2,
+        "IP-CIDR": 12,
+        "IP-CIDR6": 5,
+        "IP-ASN": 5
+      }
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr": {
       "state": "current",
@@ -3845,7 +3858,10 @@
       "shared-scopes": 2,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/line.list": {
       "state": "current",
@@ -3858,7 +3874,8 @@
             "roots": [
               "line.me",
               "line-apps.com",
-              "line-scdn.net"
+              "line-scdn.net",
+              "lin.ee"
             ],
             "domain-lines-only": true
           }
@@ -3866,16 +3883,17 @@
       },
       "other-products": {},
       "domain-scopes": 20,
-      "selected-scopes": 3,
+      "selected-scopes": 4,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 3,
-      "fallback-scopes": 17,
+      "product-scopes": 4,
+      "fallback-scopes": 16,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr": {
       "state": "current",
@@ -3912,13 +3930,19 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 7
+      "other-lines": 7,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 6
+      }
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list": {
       "state": "current",
       "products": [
         "wechat-international-portal",
-        "wechat-shared-and-mainland"
+        "wechat-shared-and-mainland",
+        "tenpay-mainland-payments",
+        "tencent-shared-content-and-sdk"
       ],
       "filters": {
         "wechat-international-portal": [
@@ -3940,22 +3964,38 @@
               "wxs.qq.com",
               "servicewechat.com",
               "wx.gtimg.com",
-              "tenpay.com",
               "weixinbridge.com",
-              "qpic.cn",
-              "qlogo.cn",
               "weixinsxy.com",
               "vweixinthumb.tc.qq.com",
               "wxapp.tc.qq.com"
             ],
             "exact": [
               "apd-pcdnwxlogin.teg.tencent-cloud.net",
+              "vweixinf.tc.qq.com",
+              "weixin110.qq.com"
+            ]
+          }
+        ],
+        "tenpay-mainland-payments": [
+          {
+            "roots": [
+              "tenpay.com"
+            ],
+            "domain-lines-only": true
+          }
+        ],
+        "tencent-shared-content-and-sdk": [
+          {
+            "roots": [
+              "qpic.cn",
+              "qlogo.cn"
+            ],
+            "exact": [
               "btrace.qq.com",
               "dldir1.qq.com",
-              "vweixinf.tc.qq.com",
-              "weixin110.qq.com",
               "wup.imtt.qq.com"
-            ]
+            ],
+            "domain-lines-only": true
           }
         ]
       },
@@ -3970,7 +4010,11 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 1,
-      "other-lines": 3
+      "other-lines": 3,
+      "other-rule-types": {
+        "USER-AGENT": 2,
+        "IP-ASN": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list": {
       "state": "current",
@@ -4003,7 +4047,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 5,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list": {
       "state": "current",
@@ -4034,7 +4079,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 4,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list": {
       "state": "current",
@@ -4067,7 +4113,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Instagram.list": {
       "state": "current",
@@ -4097,7 +4144,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list": {
       "state": "current",
@@ -4127,7 +4177,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list": {
       "state": "current",
@@ -4153,7 +4204,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list": {
       "state": "current",
@@ -4179,7 +4231,8 @@
       "shared-scopes": 2,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list": {
       "state": "current",
@@ -4205,7 +4258,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list": {
       "state": "current",
@@ -4231,7 +4285,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list": {
       "state": "current",
@@ -4257,7 +4312,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list": {
       "state": "current",
@@ -4283,7 +4339,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list": {
       "state": "current",
@@ -4309,7 +4366,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/PayPal.lsr": {
       "state": "current",
@@ -4352,7 +4410,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 1,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/stripe.list": {
       "state": "current",
@@ -4384,7 +4443,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 4,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list": {
       "state": "current",
@@ -4410,7 +4470,79 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list": {
+      "state": "current",
+      "products": [
+        "tenpay-global-payments",
+        "tenpay-mainland-payments",
+        "tencent-shared-content-and-sdk",
+        "tencent-shared-services"
+      ],
+      "filters": {
+        "tenpay-global-payments": [
+          {
+            "roots": [
+              "tenpayglobal.com"
+            ],
+            "domain-lines-only": true
+          }
+        ],
+        "tenpay-mainland-payments": [
+          {
+            "roots": [
+              "tenpay.com"
+            ],
+            "domain-lines-only": true
+          }
+        ],
+        "tencent-shared-content-and-sdk": [
+          {
+            "roots": [
+              "qpic.cn",
+              "qlogo.cn"
+            ],
+            "domain-lines-only": true
+          }
+        ],
+        "tencent-shared-services": [
+          {
+            "roots": [
+              "qq.com",
+              "tencent.com",
+              "gtimg.com",
+              "qpic.cn",
+              "qlogo.cn",
+              "qqmail.com",
+              "foxmail.com",
+              "qzone.com"
+            ],
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "wechat-shared-and-mainland": 6,
+        "wechat-international-portal": 1,
+        "coding-platform": 1,
+        "wegame-mainland": 2,
+        "qq-music": 5,
+        "kugou-music": 4
+      },
+      "domain-scopes": 689,
+      "selected-scopes": 61,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 54,
+      "fallback-scopes": 552,
+      "privacy-scopes": 4,
+      "shared-scopes": 2,
+      "declared-exclusions": 0,
+      "outside-selection": 58,
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/binance.list": {
       "state": "current",
@@ -4441,7 +4573,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 32,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/okx.list": {
       "state": "current",
@@ -4476,7 +4609,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 3,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list": {
       "state": "current",
@@ -4502,7 +4636,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list": {
       "state": "current",
@@ -4528,7 +4663,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list": {
       "state": "current",
@@ -4554,7 +4690,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list": {
       "state": "current",
@@ -4582,7 +4719,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list": {
       "state": "current",
@@ -4618,7 +4756,8 @@
       "shared-scopes": 3,
       "declared-exclusions": 0,
       "outside-selection": 45,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list": {
       "state": "current",
@@ -4655,7 +4794,13 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 15,
-      "other-lines": 470
+      "other-lines": 470,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 4,
+        "IP-CIDR": 266,
+        "IP-CIDR6": 199,
+        "USER-AGENT": 1
+      }
     },
     "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list": {
       "state": "current",
@@ -4688,7 +4833,8 @@
       "shared-scopes": 3,
       "declared-exclusions": 0,
       "outside-selection": 169,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AmazonPrimeVideo/AmazonPrimeVideo.list": {
       "state": "current",
@@ -4729,7 +4875,11 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 3
+      "other-lines": 3,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1,
+        "USER-AGENT": 2
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list": {
       "state": "current",
@@ -4755,7 +4905,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list": {
       "state": "current",
@@ -4795,7 +4946,10 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1
+      }
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list": {
       "state": "current",
@@ -4837,7 +4991,11 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 2,
-      "other-lines": 3
+      "other-lines": 3,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 2,
+        "USER-AGENT": 1
+      }
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr": {
       "state": "current",
@@ -4936,10 +5094,13 @@
         "iqiyi-mainland": 4,
         "kugou-music": 1,
         "npmmirror-registry": 1,
+        "sina-web-and-shared-services": 4,
         "youku-video": 3,
         "wegame-mainland": 1,
         "youdao-products": 2,
-        "wechat-shared-and-mainland": 14,
+        "wechat-shared-and-mainland": 11,
+        "tencent-shared-content-and-sdk": 2,
+        "tenpay-mainland-payments": 1,
         "wechat-international-portal": 4,
         "xiaohongshu-community": 3
       },
@@ -4948,12 +5109,18 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 31,
-      "fallback-scopes": 2414,
+      "fallback-scopes": 2411,
       "privacy-scopes": 16,
       "shared-scopes": 7,
       "declared-exclusions": 0,
-      "outside-selection": 613,
-      "other-lines": 69
+      "outside-selection": 612,
+      "other-lines": 69,
+      "other-rule-types": {
+        "USER-AGENT": 6,
+        "IP-ASN": 1,
+        "IP-CIDR": 61,
+        "IP-CIDR6": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list": {
       "state": "current",
@@ -4980,7 +5147,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list": {
       "state": "current",
@@ -5029,7 +5197,11 @@
       "shared-scopes": 6,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 63
+      "other-lines": 63,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 14,
+        "USER-AGENT": 49
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vimeo.list": {
       "state": "current",
@@ -5055,7 +5227,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "unsupported": 1
+      }
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list": {
       "state": "current",
@@ -5088,7 +5263,12 @@
       "shared-scopes": 3,
       "declared-exclusions": 0,
       "outside-selection": 5,
-      "other-lines": 4
+      "other-lines": 4,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1,
+        "USER-AGENT": 1,
+        "IP-CIDR": 2
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list": {
       "state": "current",
@@ -5114,7 +5294,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list": {
       "state": "current",
@@ -5147,7 +5328,12 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 13
+      "other-lines": 13,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 11,
+        "IP-CIDR6": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bbc.list": {
       "state": "current",
@@ -5177,7 +5363,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 23,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr": {
       "state": "current",
@@ -5243,7 +5430,11 @@
       "shared-scopes": 11,
       "declared-exclusions": 0,
       "outside-selection": 20,
-      "other-lines": 15
+      "other-lines": 15,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 3,
+        "IP-CIDR": 12
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/playstation.list": {
       "state": "current",
@@ -5273,7 +5464,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nintendo.list": {
       "state": "current",
@@ -5303,7 +5495,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 114,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/mihoyo.list": {
       "state": "current",
@@ -5346,7 +5539,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 3,
-      "other-lines": 1
+      "other-lines": 1,
+      "other-rule-types": {
+        "unsupported": 1
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ea.list": {
       "state": "current",
@@ -5379,7 +5575,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 157,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ubisoft.list": {
       "state": "current",
@@ -5409,7 +5606,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 24,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/blizzard.list": {
       "state": "current",
@@ -5438,7 +5636,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 23,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list": {
       "state": "current",
@@ -5464,7 +5663,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list": {
       "state": "current",
@@ -5495,7 +5695,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 1,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list": {
       "state": "current",
@@ -5523,7 +5724,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list": {
       "state": "current",
@@ -5549,7 +5751,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list": {
       "state": "current",
@@ -5580,7 +5783,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list": {
       "state": "current",
@@ -5615,7 +5819,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list": {
       "state": "current",
@@ -5641,7 +5846,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr": {
       "state": "current",
@@ -5701,7 +5907,11 @@
       "shared-scopes": 12,
       "declared-exclusions": 0,
       "outside-selection": 37,
-      "other-lines": 7
+      "other-lines": 7,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 5,
+        "IP-CIDR": 2
+      }
     },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/OneDrive.lsr": {
       "state": "current",
@@ -5743,7 +5953,10 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 3
+      "other-lines": 3,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 3
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list": {
       "state": "current",
@@ -5796,7 +6009,10 @@
       "shared-scopes": 29,
       "declared-exclusions": 0,
       "outside-selection": 82,
-      "other-lines": 3
+      "other-lines": 3,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 3
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list": {
       "state": "current",
@@ -5822,7 +6038,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list": {
       "state": "current",
@@ -5848,7 +6065,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list": {
       "state": "current",
@@ -5874,7 +6092,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list": {
       "state": "current",
@@ -5900,7 +6119,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list": {
       "state": "current",
@@ -5926,7 +6146,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list": {
       "state": "current",
@@ -5952,7 +6173,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list": {
       "state": "current",
@@ -5978,7 +6200,10 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 2
+      "other-lines": 2,
+      "other-rule-types": {
+        "unsupported": 2
+      }
     },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/baidu-ai.list": {
       "state": "current",
@@ -6006,7 +6231,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitee.list": {
       "state": "current",
@@ -6034,7 +6260,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/coding.list": {
       "state": "current",
@@ -6062,7 +6289,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list": {
       "state": "current",
@@ -6129,10 +6357,13 @@
         "kimi-mainland": 1,
         "apple-shared-store-assets": 1,
         "npmmirror-registry": 1,
-        "wechat-shared-and-mainland": 7,
+        "tencent-shared-content-and-sdk": 2,
+        "wechat-shared-and-mainland": 4,
+        "sina-web-and-shared-services": 6,
         "sina-shared-image-assets": 2,
         "youku-video": 3,
         "taobao-and-xianyu-shopping": 3,
+        "tenpay-mainland-payments": 1,
         "wechat-international-portal": 3,
         "wegame-mainland": 2,
         "weibo-social": 4,
@@ -6146,12 +6377,18 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 12702,
+      "fallback-scopes": 12696,
       "privacy-scopes": 25,
       "shared-scopes": 26,
       "declared-exclusions": 0,
       "outside-selection": 2,
-      "other-lines": 340
+      "other-lines": 340,
+      "other-rule-types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 320,
+        "IP-CIDR6": 9,
+        "USER-AGENT": 10
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/alibaba.list": {
       "state": "current",
@@ -6200,7 +6437,8 @@
       "shared-scopes": 5,
       "declared-exclusions": 0,
       "outside-selection": 95,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/dingtalk.list": {
       "state": "current",
@@ -6230,7 +6468,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 2,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list": {
       "state": "current",
@@ -6256,13 +6495,15 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list": {
       "state": "current",
       "products": [
         "weibo-social",
-        "sina-shared-image-assets"
+        "sina-shared-image-assets",
+        "sina-web-and-shared-services"
       ],
       "filters": {
         "weibo-social": [
@@ -6284,20 +6525,35 @@
             ],
             "domain-lines-only": true
           }
+        ],
+        "sina-web-and-shared-services": [
+          {
+            "roots": [
+              "sina.cn",
+              "sina.com",
+              "sina.com.cn",
+              "sina.net",
+              "sinajs.cn",
+              "sinajs.com",
+              "sinaedge.com"
+            ],
+            "domain-lines-only": true
+          }
         ]
       },
       "other-products": {},
       "domain-scopes": 58,
-      "selected-scopes": 18,
+      "selected-scopes": 44,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 17,
-      "fallback-scopes": 29,
+      "product-scopes": 39,
+      "fallback-scopes": 8,
       "privacy-scopes": 5,
       "shared-scopes": 4,
       "declared-exclusions": 0,
-      "outside-selection": 3,
-      "other-lines": 0
+      "outside-selection": 2,
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douban.list": {
       "state": "current",
@@ -6326,7 +6582,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/XiaoHongShu/XiaoHongShu.list": {
       "state": "current",
@@ -6355,7 +6612,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zhihu.list": {
       "state": "current",
@@ -6384,7 +6642,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 1,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AliPay/AliPay.list": {
       "state": "current",
@@ -6416,7 +6675,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi.list": {
       "state": "current",
@@ -6449,7 +6709,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/youku.list": {
       "state": "current",
@@ -6482,7 +6743,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 3,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-tme.list": {
       "state": "current",
@@ -6522,7 +6784,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 12,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/NetEaseMusic/NetEaseMusic.list": {
       "state": "current",
@@ -6556,7 +6819,11 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 20
+      "other-lines": 20,
+      "other-rule-types": {
+        "USER-AGENT": 2,
+        "IP-CIDR": 18
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kuaishou.list": {
       "state": "current",
@@ -6587,7 +6854,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 11,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list": {
       "state": "current",
@@ -6613,7 +6881,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list": {
       "state": "current",
@@ -6639,7 +6908,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-games.list": {
       "state": "current",
@@ -6668,7 +6938,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 14,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list": {
       "state": "current",
@@ -6694,7 +6965,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list": {
       "state": "current",
@@ -6720,7 +6992,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list": {
       "state": "current",
@@ -6760,7 +7033,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list": {
       "state": "current",
@@ -6786,7 +7060,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list": {
       "state": "current",
@@ -6812,7 +7087,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/digitalocean.list": {
       "state": "current",
@@ -6838,7 +7114,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vultr.list": {
       "state": "current",
@@ -6864,7 +7141,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hetzner.list": {
       "state": "current",
@@ -6890,7 +7168,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/vercel.list": {
       "state": "current",
@@ -6916,7 +7195,8 @@
       "shared-scopes": 3,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netlify.list": {
       "state": "current",
@@ -6942,7 +7222,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/heroku.list": {
       "state": "current",
@@ -6968,7 +7249,8 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/oracle.list": {
       "state": "current",
@@ -6998,7 +7280,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 2,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list": {
       "state": "current",
@@ -7029,7 +7312,8 @@
       "shared-scopes": 2,
       "declared-exclusions": 1,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon.list": {
       "state": "current",
@@ -7068,49 +7352,10 @@
       "shared-scopes": 6,
       "declared-exclusions": 8,
       "outside-selection": 0,
-      "other-lines": 3
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list": {
-      "state": "current",
-      "products": [
-        "tencent-shared-services"
-      ],
-      "filters": {
-        "tencent-shared-services": [
-          {
-            "roots": [
-              "qq.com",
-              "tencent.com",
-              "gtimg.com",
-              "qpic.cn",
-              "qlogo.cn",
-              "qqmail.com",
-              "foxmail.com",
-              "qzone.com"
-            ],
-            "domain-lines-only": true
-          }
-        ]
-      },
-      "other-products": {
-        "wechat-shared-and-mainland": 9,
-        "wechat-international-portal": 1,
-        "coding-platform": 1,
-        "wegame-mainland": 2,
-        "qq-music": 5,
-        "kugou-music": 4
-      },
-      "domain-scopes": 689,
-      "selected-scopes": 59,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 50,
-      "fallback-scopes": 552,
-      "privacy-scopes": 4,
-      "shared-scopes": 2,
-      "declared-exclusions": 0,
-      "outside-selection": 59,
-      "other-lines": 0
+      "other-lines": 3,
+      "other-rule-types": {
+        "unsupported": 3
+      }
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance.list": {
       "state": "current",
@@ -7150,7 +7395,8 @@
       "shared-scopes": 6,
       "declared-exclusions": 0,
       "outside-selection": 560,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/baidu.list": {
       "state": "current",
@@ -7179,7 +7425,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 1,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huawei.list": {
       "state": "current",
@@ -7205,7 +7452,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list": {
       "state": "current",
@@ -7236,7 +7484,8 @@
       "shared-scopes": 0,
       "declared-exclusions": 1,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list": {
       "state": "current",
@@ -7264,11 +7513,16 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
-      "other-lines": 0
+      "other-lines": 0,
+      "other-rule-types": {}
     }
   },
   "projection-reassignments": {},
   "source-aliases": {
+    "gemini-connections": [
+      "DOMAIN,webchannel-robinfrontend-pa.googleapis.com",
+      "DOMAIN,geminiweb-pa.googleapis.com"
+    ],
     "apple-app-package-downloads": [
       "DOMAIN,iosapps.itunes.g.aaplimg.com"
     ],
@@ -7336,9 +7590,9 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,swcdn.apple.com.edgesuite.net",
       "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,swcdn.apple.com.edgesuite.net",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
     ],
     "apple-developer-downloads": [
@@ -7397,12 +7651,6 @@
         ],
         "state": "current"
       },
-      "DOMAIN,swcdn.apple.com.edgesuite.net": {
-        "canonical-hosts": [
-          "swcdn.apple.com"
-        ],
-        "state": "current"
-      },
       "DOMAIN,swcdn.g.aaplimg.com": {
         "canonical-hosts": [
           "swcdn.apple.com"
@@ -7426,6 +7674,12 @@
           "updates.cdn-apple.com"
         ],
         "state": "current"
+      },
+      "DOMAIN,swcdn.apple.com.edgesuite.net": {
+        "canonical-hosts": [
+          "swcdn.apple.com"
+        ],
+        "state": "historical"
       },
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net": {
         "canonical-hosts": [
@@ -8136,7 +8390,7 @@
   "cname-discovery": {
     "hosts-requested": 9,
     "hosts-read": 9,
-    "http-requests": 38,
+    "http-requests": 36,
     "unavailable-hosts": 0,
     "unavailable-lookups": 0,
     "partial-lookups": 0,
@@ -8160,7 +8414,7 @@
       "method": "ios-client-config",
       "directory": "https://gdmf.apple.com/v2/pmv",
       "configuration": "https://configuration.ls.apple.com/config/defaults",
-      "as-of": "2026-11-23",
+      "as-of": "2026-11-24",
       "selection": {
         "source": "https://gdmf.apple.com/v2/pmv",
         "config-source": "https://configuration.ls.apple.com/config/defaults",
@@ -8206,7 +8460,7 @@
         {
           "version": "12.5.8",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad4,1",
             "iPad4,2",
@@ -8227,7 +8481,7 @@
         {
           "version": "15.8.8",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad5,1",
             "iPad5,2",
@@ -8246,7 +8500,7 @@
         {
           "version": "16.7.16",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad6,11",
             "iPad6,12",
@@ -8265,7 +8519,7 @@
         {
           "version": "17.7.11",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad7,1",
             "iPad7,2",
@@ -8278,7 +8532,7 @@
         {
           "version": "18.7.12",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad7,11",
             "iPad7,12"
@@ -8287,7 +8541,7 @@
         {
           "version": "18.7.12",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad7,11",
             "iPad7,12",
@@ -8300,7 +8554,7 @@
         {
           "version": "26.7.3",
           "posted": "2026-11-09",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad12,1",
             "iPad12,2",
@@ -8388,7 +8642,7 @@
         {
           "version": "26.7.3",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad11,1",
             "iPad11,2",
@@ -8409,7 +8663,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad12,1",
             "iPad12,2",
@@ -8500,7 +8754,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPad19,1",
             "iPad19,2"
@@ -8509,7 +8763,7 @@
         {
           "version": "27.2.1",
           "posted": "2026-11-12",
-          "expires": "2027-02-21",
+          "expires": "2027-02-22",
           "devices": [
             "iPhone19,4"
           ]
@@ -12431,15 +12685,23 @@
       3200,
       3210,
       4360,
-      4585
+      4585,
+      3075,
+      3220,
+      3230,
+      8425,
+      6730,
+      3580,
+      8495
     ],
     "已核清单": [
       210,
       230,
       2310
     ],
-    "随来源缩小拦截": [
-      220
+    "整域拦截交叉核对": [
+      220,
+      7800
     ],
     "组合生成": [
       1000,
@@ -12531,9 +12793,6 @@
     "从产品页面的资源字段和请求示例读取入口": [
       6110
     ],
-    "整域拦截交叉核对": [
-      7800
-    ],
     "分配与路由交叉核对": [
       8620
     ],
@@ -12546,7 +12805,14 @@
       "state": "review",
       "new-matches": 0,
       "missing-rules": 1,
-      "official-exact-additions": 0
+      "official-exact-additions": 0,
+      "withdrawal-observation": {
+        "body": "2026-11-21T05:48:54Z",
+        "first": {
+          "6": 1795497201
+        },
+        "last-read": 1795497201
+      }
     },
     "cursor-editor-and-api": {
       "state": "current",
@@ -12640,16 +12906,19 @@
     "source-xkww3n-mainland": {
       "state": "current",
       "reserved-scopes": 4,
-      "unconfirmed-domains": 9
+      "unconfirmed-domains": 13
     },
     "general-ad-and-tracking": {
-      "state": "review",
-      "new-matches": 4857,
-      "missing-rules": 3683
+      "state": "current",
+      "not-whole-host-consensus": 4822,
+      "admitted-rules": 35,
+      "retired-rules": 3681,
+      "retained-published-rules": 2498,
+      "unconfirmed-address-rules": 13
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 19745,
+      "not-whole-host-consensus": 17972,
       "admitted-rules": 0,
       "retired-rules": 0
     }
@@ -12725,7 +12994,7 @@
     },
     "gemini-services": {
       "state": "current",
-      "domain-scopes": 49,
+      "domain-scopes": 50,
       "outside-scope": 0,
       "other-rules": 0
     },
@@ -13126,6 +13395,18 @@
       "domain-scopes": 12,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "docker-platform-source": {
+      "state": "current",
+      "domain-scopes": 6,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "docker-desktop-allowlist": {
+      "state": "current",
+      "domain-scopes": 18,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "functional-hosts": [
@@ -13330,6 +13611,7 @@
     "agentn.api5.cursor.sh",
     "agentn.global.api5.cursor.sh",
     "agentn.us.api5.cursor.sh",
+    "ai-backend-service.docker.com",
     "albert.apple.com",
     "amp-api-edge.music.apple.com",
     "amp-api-preview.music.apple.com",
@@ -13360,6 +13642,8 @@
     "api.cohere.com",
     "api.commandcode.ai",
     "api.devin.ai",
+    "api.docker.com",
+    "api.dso.docker.com",
     "api.elevenlabs.io",
     "api.endpoints.huggingface.cloud",
     "api.eu.intercom.io",
@@ -13376,10 +13660,12 @@
     "api.mistral.ai",
     "api.notion.com",
     "api.novita.ai",
+    "api.offload.docker.com",
     "api.openai-compat.model-serving.eu01.onstackit.cloud",
     "api.perplexity.ai",
     "api.poe.com",
     "api.sandbox.braintreegateway.com",
+    "api.sandboxes-cloud.docker.com",
     "api.sg.residency.elevenlabs.io",
     "api.siliconflow.cn",
     "api.siliconflow.com",
@@ -13473,6 +13759,9 @@
     "datasets-server.huggingface.co",
     "deepinfra.com",
     "desktop.chat.openai.com",
+    "desktop.docker.com",
+    "dhi.io",
+    "docker-pinata-support.s3.amazonaws.com",
     "docker-proxy.pkg.github.com",
     "docker.pkg.github.com",
     "download-cdn.jetbrains.com",
@@ -13507,6 +13796,8 @@
     "gamesmanagement.googleapis.com",
     "gamesmanagement.mtls.googleapis.com",
     "gemini.com",
+    "geminiweb-pa.googleapis.com",
+    "gemma.ai",
     "generativelanguage.googleapis.com",
     "ghcr.io",
     "gifs.intercomcdn.com",
@@ -13816,6 +14107,7 @@
     "quiz.directory",
     "registry-1.docker.io",
     "registry.npmjs.org",
+    "registry.scout.docker.com",
     "release-assets.githubusercontent.com",
     "repo42.cursor.sh",
     "rubygems.pkg.github.com",
@@ -13897,6 +14189,7 @@
     "vscode.dev",
     "vscode.download.prss.microsoft.com",
     "vsmarketplacebadges.dev",
+    "webchannel-robinfrontend-pa.googleapis.com",
     "widget.intercom.io",
     "workos.imgix.net",
     "workspace.turns.goog",
@@ -13952,7 +14245,7 @@
       "first-absent": {
         "DOMAIN,accounts.spacex.ai": 1795457140
       },
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "observing"
     },
     "jetbrains-ai": {
@@ -13993,7 +14286,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "ollama-cloud": {
@@ -14024,7 +14317,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "stackit-model-services": {
@@ -14055,7 +14348,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "stepfun-international": {
@@ -14097,7 +14390,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "xiaomi-international": {
@@ -14140,7 +14433,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -14175,7 +14468,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -14225,7 +14518,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -14266,7 +14559,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14498,7 +14791,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "npm-registry": {
@@ -14531,7 +14824,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14575,7 +14868,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14608,7 +14901,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14661,7 +14954,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "braintree-payments": {
@@ -14688,7 +14981,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "notion-workspace": {
@@ -14714,7 +15007,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14922,7 +15215,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14948,7 +15241,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "google-play-services": {
@@ -14984,7 +15277,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "google-play-games": {
@@ -15012,7 +15305,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "kimi-mainland": {
@@ -15043,7 +15336,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -15074,7 +15367,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -15117,7 +15410,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -15156,7 +15449,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795462085,
+      "last-read": 1795497201,
       "state": "current"
     }
   },
@@ -15164,7 +15457,7 @@
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1263,
+  "business-domain-cases": 1281,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -15174,30 +15467,10 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "grokipedia-encyclopedia",
-    "muse-agent",
-    "ai-com-agents",
-    "jetbrains-ai",
-    "apple-all",
-    "apple-private-relay-connections",
-    "apple-direct-all",
-    "apple-find-my",
-    "apple-music-and-radio",
-    "apple-update-control",
-    "apple-update-downloads",
-    "apple-shared-store-assets",
-    "apple-system-connectivity",
-    "github-code-and-packages",
-    "x-social-and-media",
-    "wechat-international-portal",
-    "iqiyi-international",
-    "steam-international-platform",
-    "microsoft-vscode",
-    "xiaomi-mainland-and-shared",
-    "iqiyi-mainland",
-    "steam-mainland-downloads"
+    "general-ad-and-tracking",
+    "extended-ad-and-tracking"
   ],
-  "scope-negatives": 143,
+  "scope-negatives": 149,
   "ip-cases": 44,
   "ip-matching": {
     "local-links-and-addresses": {
@@ -15222,7 +15495,7 @@
     },
     "claude-connections": {
       "intent": "target-ip",
-      "no-resolve": 4,
+      "no-resolve": 8,
       "resolve-for-match": 0
     },
     "chatgpt-connections": {
@@ -15269,12 +15542,12 @@
     "ip-egress-checks": 22,
     "cloudflare-public-dns": 6,
     "apple-and-ai-privacy-exceptions": 3,
-    "general-ad-and-tracking": 6179,
+    "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "ai-overseas-all": 639,
-    "claude-connections": 20,
+    "ai-overseas-all": 644,
+    "claude-connections": 24,
     "chatgpt-connections": 427,
-    "gemini-connections": 51,
+    "gemini-connections": 52,
     "xai-connections": 7,
     "grokipedia-encyclopedia": 1,
     "github-copilot-connections": 15,
@@ -15402,7 +15675,7 @@
     "apple-device-registration": 2,
     "apple-feedback-and-diagnostics": 16,
     "apple-other-services": 6,
-    "overseas-development-all": 222,
+    "overseas-development-all": 224,
     "github-code-and-packages": 157,
     "gitlab-hosting": 4,
     "bitbucket-hosting": 1,
@@ -15410,6 +15683,7 @@
     "maven-central": 1,
     "pypi-packages": 2,
     "docker-hub": 7,
+    "docker-desktop-and-platform": 4,
     "rust-cargo": 4,
     "go-modules": 2,
     "jetbrains-ides": 1,
@@ -15424,11 +15698,13 @@
     "persona-identity-verification": 1,
     "yoti-identity-verification": 1,
     "sift-fraud-prevention": 2,
-    "overseas-social-all": 212,
+    "auth0-identity-platform": 1,
+    "bugsnag-error-monitoring": 1,
+    "overseas-social-all": 213,
     "telegram-messaging": 32,
     "discord-messaging-and-voice": 15,
     "signal-messenger": 6,
-    "line-messenger": 3,
+    "line-messenger": 4,
     "x-social-and-media": 8,
     "wechat-international-portal": 4,
     "slack-workspaces": 6,
@@ -15443,7 +15719,7 @@
     "xiaomi-international-services": 2,
     "linkedin-network": 12,
     "meta-shared-services": 19,
-    "overseas-payments-all": 17,
+    "overseas-payments-all": 18,
     "paypal-payments": 5,
     "stripe-payments": 3,
     "link-payments": 1,
@@ -15451,6 +15727,7 @@
     "venmo-payments": 1,
     "xoom-transfers": 1,
     "wise-transfers": 2,
+    "tenpay-global-payments": 1,
     "overseas-crypto-all": 34,
     "binance-platform": 6,
     "okx-platform": 6,
@@ -15551,17 +15828,18 @@
     "gitcode-hosting": 1,
     "npmmirror-registry": 1,
     "tuna-mirrors": 2,
-    "mainland-social-all": 76,
-    "wechat-shared-and-mainland": 19,
+    "mainland-social-all": 70,
+    "wechat-shared-and-mainland": 13,
     "dingtalk-public": 3,
     "feishu-mainland": 43,
     "weibo-social": 4,
     "douban-community": 2,
     "xiaohongshu-community": 3,
     "zhihu-community": 2,
-    "mainland-payments-all": 8,
+    "mainland-payments-all": 9,
     "alipay-mainland-payments": 6,
     "unionpay-mainland": 2,
+    "tenpay-mainland-payments": 1,
     "mainland-media-all": 48,
     "bilibili-mainland-video": 10,
     "iqiyi-mainland": 4,
@@ -15586,7 +15864,7 @@
     "youdao-products": 3,
     "aliyun-drive": 6,
     "wps-office": 13,
-    "extended-ad-and-tracking": 43047,
+    "extended-ad-and-tracking": 43466,
     "global-platforms-all": 428,
     "digitalocean-services": 6,
     "vultr-services": 1,
@@ -15598,12 +15876,13 @@
     "adobe-shared-services": 124,
     "cloudflare-shared-services": 52,
     "amazon-shared-services": 168,
-    "overseas-extra-all": 18644,
+    "overseas-extra-all": 18640,
     "overseas-media-extra": 155,
-    "overseas-sites-extra": 18503,
-    "mainland-platforms-all": 519,
+    "overseas-sites-extra": 18499,
+    "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,
+    "tencent-shared-content-and-sdk": 5,
     "tencent-shared-services": 6,
     "bytedance-shared-services": 6,
     "baidu-shared-services": 80,
@@ -15611,8 +15890,9 @@
     "xiaomi-shared-services": 48,
     "kingsoft-shared-services": 32,
     "sina-shared-image-assets": 2,
-    "mainland-routing-all": 19313,
-    "mainland-domains": 12298,
+    "sina-web-and-shared-services": 7,
+    "mainland-routing-all": 19307,
+    "mainland-domains": 12292,
     "mainland-networks": 7014,
     "mainland-geoip": 1
   },

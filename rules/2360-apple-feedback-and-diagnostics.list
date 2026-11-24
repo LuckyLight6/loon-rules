@@ -1,0 +1,33 @@
+# name: apple-feedback-and-diagnostics
+# priority: 2360
+# section: apple
+# description: Feedback Assistant、错误报告与自愿诊断上传
+# boundary: 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# rule-count: 16
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# source: https://support.apple.com/en-us/101555
+# source: https://beta.apple.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+
+DOMAIN,radarsubmissions.apple.com
+DOMAIN,iphonesubmissions.apple.com
+DOMAIN,cssubmissions.apple.com
+DOMAIN,fba.apple.com
+DOMAIN,iphonesubmissions-cdn.apple.com.akadns.net
+DOMAIN,iphonesubmissions-cdn.origin-apple.com.akadns.net
+DOMAIN,iphonesubmissions-lb.apple.com.akadns.net
+DOMAIN,iphonesubmissions.apple.com.akadns.net
+DOMAIN,iphonesubmissions.apple.com.mwcname.com
+DOMAIN,iphonesubmissions.g.aaplimg.com
+DOMAIN,radarsubmissions-cdn.apple.com.akadns.net
+DOMAIN,radarsubmissions-cdn.origin-apple.com.akadns.net
+DOMAIN,radarsubmissions-lb.apple.com.akadns.net
+DOMAIN,radarsubmissions.apple.com.akadns.net
+DOMAIN,radarsubmissions.apple.com.mwcname.com
+DOMAIN,radarsubmissions.g.aaplimg.com

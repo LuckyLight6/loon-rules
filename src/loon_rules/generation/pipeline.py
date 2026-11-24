@@ -245,6 +245,7 @@ def run(check=False, offline=False, adopt_ads=False):
             retired=set(inventory_status.get(k,{}).get('retired',()))
             guard_coverage(k, [row for row in previous if row not in retired], candidate,
                 reassigned=transferred,
+                official_autnums=any(r['format']=='rdap-entity-autnums' for r in e.get('extract',())),
                 excluded_hosts=[host for host,owners in config.get('scope-negatives',{}).items() if k in owners],
                 official_networks=bool(e.get('cidr-source')
                 or any(r['format'] in ('labelled-networks','ip-prefix-json','section-media-networks','section-network-blocks','endpoint-network-sets','service-address-table')

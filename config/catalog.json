@@ -258,6 +258,7 @@
         "maven-central",
         "pypi-packages",
         "docker-hub",
+        "docker-desktop-and-platform",
         "rust-cargo",
         "go-modules",
         "jetbrains-ides",
@@ -271,7 +272,9 @@
         "hcaptcha-verification",
         "persona-identity-verification",
         "yoti-identity-verification",
-        "sift-fraud-prevention"
+        "sift-fraud-prevention",
+        "auth0-identity-platform",
+        "bugsnag-error-monitoring"
       ],
       "subheadings": {
         "github-code-and-packages": "海外开发 · 产品细分"
@@ -332,7 +335,8 @@
         "braintree-payments",
         "venmo-payments",
         "xoom-transfers",
-        "wise-transfers"
+        "wise-transfers",
+        "tenpay-global-payments"
       ],
       "subheadings": {
         "paypal-payments": "海外支付 · 产品细分"
@@ -693,7 +697,8 @@
       "ids": [
         "mainland-payments-all",
         "alipay-mainland-payments",
-        "unionpay-mainland"
+        "unionpay-mainland",
+        "tenpay-mainland-payments"
       ],
       "subheadings": {
         "alipay-mainland-payments": "国内支付 · 产品细分"
@@ -926,13 +931,15 @@
         "mainland-platforms-all",
         "netease-shared-services",
         "alibaba-shared-services",
+        "tencent-shared-content-and-sdk",
         "tencent-shared-services",
         "bytedance-shared-services",
         "baidu-shared-services",
         "huawei-shared-services",
         "xiaomi-shared-services",
         "kingsoft-shared-services",
-        "sina-shared-image-assets"
+        "sina-shared-image-assets",
+        "sina-web-and-shared-services"
       ],
       "subheadings": {
         "netease-shared-services": "厂商共用范围细分"
@@ -1381,9 +1388,12 @@
       "mode": "managed",
       "policy-hint": "reject",
       "description": "Repcz 广告与追踪拦截",
-      "boundary": "窄于大合集；与其他广告表作为同类选择",
+      "boundary": "新增广告域名须有过滤表与 DNS 表共同支持；保留仍获原来源支持的已审范围，保护业务必需入口；未经交叉确认的新 IP 不自动加入",
       "sources": [
-        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Reject.list"
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Reject.list",
+        "https://easylist.to/easylist/easylist.txt",
+        "https://easylist.to/easylist/easyprivacy.txt",
+        "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
       ],
       "kinds": [
         "DOMAIN",
@@ -1405,8 +1415,19 @@
         "IP-CIDR"
       ],
       "ip-match": "target-ip",
-      "reconcile": "ad-withdrawals",
-      "routing-group": "standard-privacy"
+      "routing-group": "standard-privacy",
+      "feed-sources": [
+        "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Reject.list"
+      ],
+      "calibration": {
+        "method": "domain-ad-consensus",
+        "filter-lists": [
+          "https://easylist.to/easylist/easylist.txt",
+          "https://easylist.to/easylist/easyprivacy.txt"
+        ],
+        "dns-list": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
+        "retain-published": true
+      }
     },
     {
       "id": "privacy-public-stun-endpoints",
@@ -1448,15 +1469,15 @@
       "mode": "compiled",
       "policy-hint": "claude",
       "description": "Claude 登录、API、MCP、更新、附件和 Artifact",
-      "boundary": "Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和仍登记为 Anthropic 的 ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude",
+      "boundary": "Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和注册组织当前持有的 Anthropic ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude",
       "sources": [
         "https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list",
         "https://code.claude.com/docs/en/network-config#network-access-requirements",
         "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list",
         "https://platform.claude.com/docs/en/api/ip-addresses",
-        "https://rdap.arin.net/registry/autnum/399358",
-        "https://academy.claude.com/products/platform"
+        "https://academy.claude.com/products/platform",
+        "https://rdap.arin.net/registry/entity/AP-2440"
       ],
       "license": "MIT",
       "notice": "erwanjun--surge-claude-rules.txt",
@@ -1546,15 +1567,6 @@
           }
         },
         {
-          "source": "https://rdap.arin.net/registry/autnum/399358",
-          "format": "rdap-autnum",
-          "asn": 399358,
-          "registrant-ids": [
-            "AP-2440"
-          ],
-          "registrant-name": "Anthropic, PBC"
-        },
-        {
           "source": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py",
           "format": "python-sdk-endpoints",
           "classes": [
@@ -1565,6 +1577,12 @@
             "base_url"
           ],
           "protect-from-reject": true
+        },
+        {
+          "source": "https://rdap.arin.net/registry/entity/AP-2440",
+          "format": "rdap-entity-autnums",
+          "registrant-id": "AP-2440",
+          "registrant-name": "Anthropic, PBC"
         }
       ],
       "feed-sources": [
@@ -1661,11 +1679,12 @@
       "mode": "compiled",
       "policy-hint": "gemini",
       "description": "Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel",
-      "boundary": "通用 Google 登录、下载、存储与 API 不在此组",
+      "boundary": "Google AI 自有入口跟随已核实的专用来源、官方 API 与文档身份更新；通用 Google 登录、下载、存储与 API 仍分开",
       "sources": [
         "https://rules.xkww3n.cyou/classical/google-deepmind.txt",
-        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
-        "https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto"
+        "https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto",
+        "https://ai.google.dev/gemma/docs",
+        "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr"
       ],
       "priority": 1030,
       "section": "ai",
@@ -1673,119 +1692,8 @@
       "projection": [
         {
           "source": "https://rules.xkww3n.cyou/classical/google-deepmind.txt",
-          "roots": [
-            "deepmind.com",
-            "aistudio.google.com",
-            "bard.google.com",
-            "flow.google.com",
-            "gemini.google.com",
-            "jules.google.com",
-            "labs.google.com",
-            "makersuite.google.com",
-            "notebook.google.com",
-            "notebooklm.google.com",
-            "opal.google.com",
-            "aicode.googleapis.com",
-            "aida.googleapis.com",
-            "aisandbox-pa.googleapis.com",
-            "geller-pa.googleapis.com",
-            "generativelanguage.googleapis.com",
-            "labstailwind.pa.googleapis.com",
-            "proactivebackend-pa.googleapis.com",
-            "robinfrontend-pa.googleapis.com",
-            "gemini.gstatic.com",
-            "stitch.withgoogle.com",
-            "antigravity-unleash.goog",
-            "antigravity.google",
-            "deepmind.google",
-            "flow.google",
-            "gemini.google",
-            "generativeai.google",
-            "jules.google",
-            "labs.google",
-            "notebook.google",
-            "notebooklm.google",
-            "opal.google",
-            "ai.studio"
-          ],
-          "exact": [
-            "appsgenaiserver-pa.clients.google.com",
-            "geminiweb-pa.clients.google.com",
-            "alkalicore-pa.clients6.google.com",
-            "alkalimakersuite-pa.clients6.google.com",
-            "appsgenaiserver-pa.clients6.google.com",
-            "geminiweb-pa.clients6.google.com",
-            "webchannel-alkalimakersuite-pa.clients6.google.com",
-            "antigravity.googleapis.com",
-            "antigravity-pa.googleapis.com",
-            "appsgenaiserver-pa.googleapis.com",
-            "cloudaicompanion.googleapis.com",
-            "cloudcode-pa.googleapis.com",
-            "daily-cloudcode-pa.googleapis.com",
-            "notebooklm.googleapis.com",
-            "notebooklm-pa.googleapis.com",
-            "ai.google.dev",
-            "webchannel-robinfrontend-pa.googleapis.com",
-            "geminiweb-pa.googleapis.com"
-          ]
-        },
-        {
-          "source": "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
-          "roots": [
-            "deepmind.com",
-            "aistudio.google.com",
-            "bard.google.com",
-            "flow.google.com",
-            "gemini.google.com",
-            "jules.google.com",
-            "labs.google.com",
-            "makersuite.google.com",
-            "notebook.google.com",
-            "notebooklm.google.com",
-            "opal.google.com",
-            "aicode.googleapis.com",
-            "aida.googleapis.com",
-            "aisandbox-pa.googleapis.com",
-            "geller-pa.googleapis.com",
-            "generativelanguage.googleapis.com",
-            "labstailwind.pa.googleapis.com",
-            "proactivebackend-pa.googleapis.com",
-            "robinfrontend-pa.googleapis.com",
-            "gemini.gstatic.com",
-            "stitch.withgoogle.com",
-            "antigravity-unleash.goog",
-            "antigravity.google",
-            "deepmind.google",
-            "flow.google",
-            "gemini.google",
-            "generativeai.google",
-            "jules.google",
-            "labs.google",
-            "notebook.google",
-            "notebooklm.google",
-            "opal.google",
-            "ai.studio"
-          ],
-          "exact": [
-            "appsgenaiserver-pa.clients.google.com",
-            "geminiweb-pa.clients.google.com",
-            "alkalicore-pa.clients6.google.com",
-            "alkalimakersuite-pa.clients6.google.com",
-            "appsgenaiserver-pa.clients6.google.com",
-            "geminiweb-pa.clients6.google.com",
-            "webchannel-alkalimakersuite-pa.clients6.google.com",
-            "antigravity.googleapis.com",
-            "antigravity-pa.googleapis.com",
-            "appsgenaiserver-pa.googleapis.com",
-            "cloudaicompanion.googleapis.com",
-            "cloudcode-pa.googleapis.com",
-            "daily-cloudcode-pa.googleapis.com",
-            "notebooklm.googleapis.com",
-            "notebooklm-pa.googleapis.com",
-            "ai.google.dev",
-            "webchannel-robinfrontend-pa.googleapis.com",
-            "geminiweb-pa.googleapis.com"
-          ]
+          "domain-lines-only": true,
+          "all-domains": true
         }
       ],
       "extract": [
@@ -1797,10 +1705,23 @@
             "googleapis.com"
           ],
           "protect-from-reject": true
+        },
+        {
+          "source": "https://ai.google.dev/gemma/docs",
+          "format": "site-identity",
+          "brand": "Gemma Docs",
+          "protect-from-reject": true
         }
       ],
       "selection": "detailed",
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "aliases": {
+        "policy": "google-ai-transports",
+        "sources": [
+          "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr"
+        ],
+        "protect-from-reject": true
+      }
     },
     {
       "id": "xai-connections",
@@ -7676,16 +7597,13 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Telegram 登录、消息、文件与服务器地址",
-      "boundary": "登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册持有人仍为 Telegram 的 ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台",
+      "boundary": "登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册组织当前持有的 Telegram ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr",
         "https://core.telegram.org/resources/cidr.txt",
         "https://core.telegram.org/bug-bounty",
-        "https://rdap.db.ripe.net/autnum/211157",
-        "https://rdap.db.ripe.net/autnum/44907",
-        "https://rdap.db.ripe.net/autnum/59930",
-        "https://rdap.db.ripe.net/autnum/62014",
-        "https://rdap.db.ripe.net/autnum/62041"
+        "https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE",
+        "https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE"
       ],
       "projection": [
         {
@@ -7719,48 +7637,15 @@
           "protect-from-reject": true
         },
         {
-          "source": "https://rdap.db.ripe.net/autnum/211157",
-          "format": "rdap-autnum",
-          "asn": 211157,
-          "registrant-ids": [
-            "ORG-TMI5-RIPE"
-          ],
+          "source": "https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE",
+          "format": "rdap-entity-autnums",
+          "registrant-id": "ORG-TMI4-RIPE",
           "registrant-name": "Telegram Messenger Inc"
         },
         {
-          "source": "https://rdap.db.ripe.net/autnum/44907",
-          "format": "rdap-autnum",
-          "asn": 44907,
-          "registrant-ids": [
-            "ORG-TMI4-RIPE"
-          ],
-          "registrant-name": "Telegram Messenger Inc"
-        },
-        {
-          "source": "https://rdap.db.ripe.net/autnum/59930",
-          "format": "rdap-autnum",
-          "asn": 59930,
-          "registrant-ids": [
-            "ORG-TMI4-RIPE"
-          ],
-          "registrant-name": "Telegram Messenger Inc"
-        },
-        {
-          "source": "https://rdap.db.ripe.net/autnum/62014",
-          "format": "rdap-autnum",
-          "asn": 62014,
-          "registrant-ids": [
-            "ORG-TMI4-RIPE"
-          ],
-          "registrant-name": "Telegram Messenger Inc"
-        },
-        {
-          "source": "https://rdap.db.ripe.net/autnum/62041",
-          "format": "rdap-autnum",
-          "asn": 62041,
-          "registrant-ids": [
-            "ORG-TMI4-RIPE"
-          ],
+          "source": "https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE",
+          "format": "rdap-entity-autnums",
+          "registrant-id": "ORG-TMI5-RIPE",
           "registrant-name": "Telegram Messenger Inc"
         }
       ]
@@ -7843,9 +7728,10 @@
       "section": "social",
       "mode": "compiled",
       "description": "LINE",
-      "boundary": "只收 LINE 产品入口和专用素材；不把 Naver 或其他应用整域纳入",
+      "boundary": "LINE 消息、专用内容与已核实的加好友短链；不把 LINE Mobile、游戏、购物、电视或整个 Naver 当成通信连接",
       "sources": [
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/line.list"
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/line.list",
+        "https://developers.line.biz/en/docs/messaging-api/try-rich-menu/"
       ],
       "policy-hint": "global",
       "projection": [
@@ -7855,12 +7741,14 @@
           "roots": [
             "line.me",
             "line-apps.com",
-            "line-scdn.net"
+            "line-scdn.net",
+            "lin.ee"
           ]
         }
       ],
       "product-probes": [
-        "line.me"
+        "line.me",
+        "lin.ee"
       ],
       "selection": "detailed",
       "routing-group": "overseas-social"
@@ -11831,8 +11719,8 @@
       "id": "wechat-shared-and-mainland",
       "mode": "compiled",
       "policy-hint": "domestic",
-      "description": "微信国内及两版共用登录、消息与支付",
-      "boundary": "限定微信专用域及明确 qq.com、腾讯云主机，不将腾讯 ASN 或整个 QQ 判作微信",
+      "description": "微信国内与两版共用登录、消息和 App 服务",
+      "boundary": "微信自有登录、消息、小程序与专用资源；腾讯共用图片、头像、SDK 和独立财付通域另分，不接管腾讯 ASN 或整个 QQ",
       "sources": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list"
       ],
@@ -11846,21 +11734,15 @@
             "wxs.qq.com",
             "servicewechat.com",
             "wx.gtimg.com",
-            "tenpay.com",
             "weixinbridge.com",
-            "qpic.cn",
-            "qlogo.cn",
             "weixinsxy.com",
             "vweixinthumb.tc.qq.com",
             "wxapp.tc.qq.com"
           ],
           "exact": [
             "apd-pcdnwxlogin.teg.tencent-cloud.net",
-            "btrace.qq.com",
-            "dldir1.qq.com",
             "vweixinf.tc.qq.com",
-            "weixin110.qq.com",
-            "wup.imtt.qq.com"
+            "weixin110.qq.com"
           ]
         }
       ],
@@ -14068,6 +13950,288 @@
           "protect-from-reject": true
         }
       ]
+    },
+    {
+      "id": "docker-desktop-and-platform",
+      "priority": 3075,
+      "section": "development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "Docker Desktop、Scout、Offload、Hardened Images 与平台服务",
+      "boundary": "官方用途表自动补入更新、API、诊断与平台主机；Hub 入口由前表处理，Auth0 和 Bugsnag 按共享供应商处理，不扩大 AWS 或 Cloudflare",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/docker.list",
+        "https://docs.docker.com/desktop/enterprise/allow-list/"
+      ],
+      "policy-hint": "global",
+      "routing-group": "overseas-development",
+      "domain-remainder": true,
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/docker.list",
+          "domain-lines-only": true,
+          "roots": [
+            "docker.com",
+            "compose-spec.io"
+          ]
+        }
+      ],
+      "extract": [
+        {
+          "source": "https://docs.docker.com/desktop/enterprise/allow-list/",
+          "format": "purpose-url-table",
+          "section": "domain-urls-to-allow",
+          "headers": [
+            "Domains",
+            "Description"
+          ],
+          "purpose-prefixes": [
+            "Update",
+            "Troubleshooting",
+            "Docker Scout",
+            "New API",
+            "Docker Offload",
+            "Docker Hardened Images",
+            "Gordon"
+          ],
+          "required-prefixes": [
+            "Update",
+            "Docker Scout",
+            "Docker Hardened Images"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "desktop.docker.com",
+        "api.dso.docker.com",
+        "api.offload.docker.com",
+        "dhi.io",
+        "docker-pinata-support.s3.amazonaws.com"
+      ],
+      "product-negatives": [
+        "cdn.auth0.com",
+        "notify.bugsnag.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "auth0-identity-platform",
+      "priority": 3220,
+      "section": "development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "Auth0 身份认证与共享登录平台",
+      "boundary": "供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用",
+      "sources": [
+        "https://auth0.com/"
+      ],
+      "policy-hint": "global",
+      "routing-group": "overseas-development",
+      "domain-remainder": true,
+      "extract": [
+        {
+          "source": "https://auth0.com/",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "auth0.com"
+          ]
+        }
+      ],
+      "product-probes": [
+        "cdn.auth0.com"
+      ],
+      "allowed-shared": [
+        "auth0.com"
+      ]
+    },
+    {
+      "id": "bugsnag-error-monitoring",
+      "priority": 3230,
+      "section": "development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "Bugsnag 错误监控与会话报告",
+      "boundary": "供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用",
+      "sources": [
+        "https://docs.bugsnag.com/platforms/javascript/configuration-options/"
+      ],
+      "policy-hint": "global",
+      "routing-group": "overseas-development",
+      "domain-remainder": true,
+      "extract": [
+        {
+          "source": "https://docs.bugsnag.com/platforms/javascript/configuration-options/",
+          "format": "https-hosts",
+          "workspace-roots": [
+            "bugsnag.com"
+          ]
+        }
+      ],
+      "product-probes": [
+        "notify.bugsnag.com"
+      ],
+      "allowed-shared": []
+    },
+    {
+      "id": "tencent-shared-content-and-sdk",
+      "priority": 8425,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "腾讯共用图片、头像、下载与 SDK",
+      "boundary": "微信、QQ 等产品共用的资源与 SDK 范围，不作为微信专用；专用 App 主机仍由前面的产品规则处理",
+      "sources": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+        "https://wiki.connect.qq.com/get_user_info"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list",
+          "domain-lines-only": true,
+          "roots": [
+            "qpic.cn",
+            "qlogo.cn"
+          ],
+          "exact": [
+            "btrace.qq.com",
+            "dldir1.qq.com",
+            "wup.imtt.qq.com"
+          ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+          "domain-lines-only": true,
+          "roots": [
+            "qpic.cn",
+            "qlogo.cn"
+          ]
+        }
+      ],
+      "policy-hint": "domestic",
+      "routing-group": "mainland-platforms",
+      "separates": [
+        "wechat-shared-and-mainland"
+      ],
+      "product-probes": [
+        "qpic.cn",
+        "qlogo.cn",
+        "btrace.qq.com",
+        "dldir1.qq.com",
+        "wup.imtt.qq.com"
+      ]
+    },
+    {
+      "id": "tenpay-mainland-payments",
+      "priority": 6730,
+      "section": "payments",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "财付通与 QQ 钱包共用支付",
+      "boundary": "独立财付通域下的账户、支付、QQ 钱包与共用资源；微信专域下的支付接入仍由微信表处理；TenPay Global 独立分类",
+      "sources": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+        "https://www.tenpay.com/v3/helpcenter/low/privacy.shtml"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list",
+          "domain-lines-only": true,
+          "roots": [
+            "tenpay.com"
+          ]
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+          "domain-lines-only": true,
+          "roots": [
+            "tenpay.com"
+          ]
+        }
+      ],
+      "policy-hint": "domestic",
+      "routing-group": "mainland-payments",
+      "separates": [
+        "wechat-shared-and-mainland"
+      ],
+      "product-probes": [
+        "www.tenpay.com"
+      ],
+      "product-negatives": [
+        "www.tenpayglobal.com"
+      ]
+    },
+    {
+      "id": "tenpay-global-payments",
+      "priority": 3580,
+      "section": "payments",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "TenPay Global 跨境支付与商户平台",
+      "boundary": "腾讯跨境支付品牌自有域，与财付通国内服务分别管理，不将整个微信或腾讯云归入跨境支付",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+        "https://www.tenpayglobal.com/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list",
+          "domain-lines-only": true,
+          "roots": [
+            "tenpayglobal.com"
+          ]
+        }
+      ],
+      "policy-hint": "global",
+      "routing-group": "overseas-payments",
+      "product-probes": [
+        "www.tenpayglobal.com"
+      ],
+      "product-negatives": [
+        "www.tenpay.com",
+        "weixin.qq.com"
+      ]
+    },
+    {
+      "id": "sina-web-and-shared-services",
+      "priority": 8495,
+      "section": "vendors",
+      "mode": "compiled",
+      "selection": "detailed",
+      "description": "新浪网站、新闻、邮箱与网页服务",
+      "boundary": "新浪网站与共用网页范围；微博、AI 和共用图片按前表分别处理，不把整个新浪云租户平台当新闻网站",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list",
+        "https://www.sina.com.cn/"
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list",
+          "domain-lines-only": true,
+          "roots": [
+            "sina.cn",
+            "sina.com",
+            "sina.com.cn",
+            "sina.net",
+            "sinajs.cn",
+            "sinajs.com",
+            "sinaedge.com"
+          ]
+        }
+      ],
+      "policy-hint": "domestic",
+      "routing-group": "mainland-platforms",
+      "domain-remainder": true,
+      "product-probes": [
+        "www.sina.com.cn",
+        "news.sina.com.cn",
+        "mail.sina.com"
+      ],
+      "product-negatives": [
+        "tenant.sinaapp.com"
+      ]
     }
   ],
   "detailed": [
@@ -14203,6 +14367,7 @@
     "maven-central",
     "pypi-packages",
     "docker-hub",
+    "docker-desktop-and-platform",
     "rust-cargo",
     "go-modules",
     "jetbrains-ides",
@@ -14217,6 +14382,8 @@
     "persona-identity-verification",
     "yoti-identity-verification",
     "sift-fraud-prevention",
+    "auth0-identity-platform",
+    "bugsnag-error-monitoring",
     "signal-messenger",
     "line-messenger",
     "slack-workspaces",
@@ -14236,6 +14403,7 @@
     "venmo-payments",
     "xoom-transfers",
     "wise-transfers",
+    "tenpay-global-payments",
     "binance-platform",
     "okx-platform",
     "gemini-exchange",
@@ -14303,6 +14471,7 @@
     "douban-community",
     "zhihu-community",
     "unionpay-mainland",
+    "tenpay-mainland-payments",
     "iqiyi-mainland",
     "youku-video",
     "qq-music",
@@ -14319,7 +14488,9 @@
     "youdao-products",
     "aliyun-drive",
     "wps-office",
-    "sina-shared-image-assets"
+    "tencent-shared-content-and-sdk",
+    "sina-shared-image-assets",
+    "sina-web-and-shared-services"
   ],
   "general": [
     "local-links-and-addresses",
@@ -15700,7 +15871,7 @@
       "baidu-shared-services"
     ],
     "www.sina.com.cn": [
-      "mainland-domains"
+      "sina-web-and-shared-services"
     ],
     "www1.miwifi.com": [
       "mainland-domains"
@@ -16862,6 +17033,60 @@
     ],
     "alt1-mtalk.google.com": [
       "google-firebase-messaging"
+    ],
+    "desktop.docker.com": [
+      "docker-desktop-and-platform"
+    ],
+    "api.dso.docker.com": [
+      "docker-desktop-and-platform"
+    ],
+    "api.offload.docker.com": [
+      "docker-desktop-and-platform"
+    ],
+    "dhi.io": [
+      "docker-desktop-and-platform"
+    ],
+    "docker-pinata-support.s3.amazonaws.com": [
+      "docker-desktop-and-platform"
+    ],
+    "cdn.auth0.com": [
+      "auth0-identity-platform"
+    ],
+    "notify.bugsnag.com": [
+      "bugsnag-error-monitoring"
+    ],
+    "lin.ee": [
+      "line-messenger"
+    ],
+    "qpic.cn": [
+      "tencent-shared-content-and-sdk"
+    ],
+    "qlogo.cn": [
+      "tencent-shared-content-and-sdk"
+    ],
+    "btrace.qq.com": [
+      "tencent-shared-content-and-sdk"
+    ],
+    "dldir1.qq.com": [
+      "tencent-shared-content-and-sdk"
+    ],
+    "wup.imtt.qq.com": [
+      "tencent-shared-content-and-sdk"
+    ],
+    "www.tenpay.com": [
+      "tenpay-mainland-payments"
+    ],
+    "www.tenpayglobal.com": [
+      "tenpay-global-payments"
+    ],
+    "news.sina.com.cn": [
+      "sina-web-and-shared-services"
+    ],
+    "mail.sina.com": [
+      "sina-web-and-shared-services"
+    ],
+    "gemma.ai": [
+      "gemini-connections"
     ]
   },
   "shared-negatives": [
@@ -17306,6 +17531,7 @@
         3050,
         3060,
         3070,
+        3075,
         3080,
         3090,
         3100,
@@ -17320,6 +17546,8 @@
         3190,
         3200,
         3210,
+        3220,
+        3230,
         6300,
         6310,
         6320,
@@ -17481,13 +17709,15 @@
         8400,
         8410,
         8420,
+        8425,
         8430,
         8440,
         8450,
         8460,
         8470,
         8480,
-        8490
+        8490,
+        8495
       ]
     },
     {
@@ -17502,9 +17732,11 @@
         3550,
         3560,
         3570,
+        3580,
         6700,
         6710,
-        6720
+        6720,
+        6730
       ]
     },
     {
@@ -17890,7 +18122,8 @@
       "google-gmail-mail",
       "google-meet-meetings",
       "google-software-downloads",
-      "google-play-services"
+      "google-play-services",
+      "docker-desktop-and-platform"
     ],
     "capcut.com": [
       "tiktok-international-video",
@@ -18472,6 +18705,24 @@
       "achat-followers-instagram.com",
       "theinstagramhack.com",
       "buyingfacebooklikes.com"
+    ],
+    "cdn.auth0.com": [
+      "docker-desktop-and-platform"
+    ],
+    "notify.bugsnag.com": [
+      "docker-desktop-and-platform"
+    ],
+    "www.tenpayglobal.com": [
+      "tenpay-mainland-payments"
+    ],
+    "www.tenpay.com": [
+      "tenpay-global-payments"
+    ],
+    "weixin.qq.com": [
+      "tenpay-global-payments"
+    ],
+    "tenant.sinaapp.com": [
+      "sina-web-and-shared-services"
     ]
   },
   "recommended-views": [
@@ -19223,6 +19474,35 @@
       "owners": [
         "google-firebase-messaging"
       ]
+    },
+    {
+      "id": "docker-platform-source",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/docker.list",
+      "domain-lines-only": true,
+      "owners": [
+        "docker-hub",
+        "docker-desktop-and-platform"
+      ]
+    },
+    {
+      "id": "docker-desktop-allowlist",
+      "source": "https://docs.docker.com/desktop/enterprise/allow-list/",
+      "recipe": {
+        "format": "domain-column-table",
+        "section": "domain-urls-to-allow",
+        "headers": [
+          "Domains",
+          "Description"
+        ],
+        "column": "Domains",
+        "value-format": "url"
+      },
+      "owners": [
+        "docker-hub",
+        "docker-desktop-and-platform",
+        "auth0-identity-platform",
+        "bugsnag-error-monitoring"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -19261,6 +19541,27 @@
           "trafficmanager.net"
         ]
       }
+    },
+    "google-ai-transports": {
+      "parents": {
+        "googleapis.com": [
+          "googleapis.com"
+        ],
+        "clients.google.com": [
+          "clients.google.com",
+          "clients6.google.com",
+          "googleapis.com"
+        ],
+        "clients6.google.com": [
+          "clients.google.com",
+          "clients6.google.com",
+          "googleapis.com"
+        ]
+      },
+      "label-modifiers": [],
+      "label-prefixes": [
+        "webchannel"
+      ]
     }
   },
   "public-suffix-source": "https://publicsuffix.org/list/public_suffix_list.dat",
@@ -20546,6 +20847,24 @@
             "rules": [
               "tencent-shared-services"
             ]
+          },
+          {
+            "name": "腾讯共用图片、头像、下载与 SDK",
+            "rules": [
+              "tencent-shared-content-and-sdk"
+            ]
+          },
+          {
+            "name": "财付通与 QQ 钱包共用支付",
+            "rules": [
+              "tenpay-mainland-payments"
+            ]
+          },
+          {
+            "name": "TenPay Global 跨境支付与商户平台",
+            "rules": [
+              "tenpay-global-payments"
+            ]
           }
         ]
       },
@@ -21367,6 +21686,12 @@
             "name": "Docker Hub",
             "rules": [
               "docker-hub"
+            ]
+          },
+          {
+            "name": "Docker Desktop、Scout、Offload、Hardened Images 与平台服务",
+            "rules": [
+              "docker-desktop-and-platform"
             ]
           }
         ]
@@ -22286,6 +22611,12 @@
             "rules": [
               "sina-shared-image-assets"
             ]
+          },
+          {
+            "name": "新浪网站、新闻、邮箱与网页服务",
+            "rules": [
+              "sina-web-and-shared-services"
+            ]
           }
         ]
       },
@@ -22657,6 +22988,30 @@
             "name": "Intercom 客服、会话、附件与实时通信",
             "rules": [
               "intercom-customer-support"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "okta",
+        "name": "Okta",
+        "products": [
+          {
+            "name": "Auth0 身份认证与共享登录平台",
+            "rules": [
+              "auth0-identity-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "smartbear",
+        "name": "SmartBear",
+        "products": [
+          {
+            "name": "Bugsnag 错误监控与会话报告",
+            "rules": [
+              "bugsnag-error-monitoring"
             ]
           }
         ]

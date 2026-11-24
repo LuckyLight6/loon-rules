@@ -4,7 +4,7 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -12,8 +12,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18644
-# rule-count: 18644
+# canonical-rule-count: 18640
+# rule-count: 18640
 # format: quantumult-x
 # canonical: rules/8200-overseas-extra-all.lsr
 
@@ -162,7 +162,6 @@ host,api.avax.network,proxy
 host,api.sprig.com,proxy
 host,community.oneplus.com,proxy
 host,http-inputs-notion.splunkcloud.com,proxy
-host,sessions.bugsnag.com,proxy
 host,store.ui.com.cn,proxy
 host-suffix,000webhost.com,proxy
 host-suffix,01.org,proxy
@@ -3755,7 +3754,6 @@ host-suffix,comodoca4.com,proxy
 host-suffix,comparitech.com,proxy
 host-suffix,compileheart.com,proxy
 host-suffix,componentkit.org,proxy
-host-suffix,compose-spec.io,proxy
 host-suffix,compound.finance,proxy
 host-suffix,compress.to,proxy
 host-suffix,compuserve.com,proxy
@@ -4419,7 +4417,6 @@ host-suffix,dnyuz.com,proxy
 host-suffix,dobbyporn.com,proxy
 host-suffix,doc.new,proxy
 host-suffix,doceapower.com,proxy
-host-suffix,docker.com,proxy
 host-suffix,dockerhub.com,proxy
 host-suffix,dockerizer.com,proxy
 host-suffix,dockerstatus.com,proxy
@@ -9504,7 +9501,6 @@ host-suffix,limeteensex.com,proxy
 host-suffix,limetorrents.lol,proxy
 host-suffix,limi.net,proxy
 host-suffix,limiao.net,proxy
-host-suffix,lin.ee,proxy
 host-suffix,line-apps-beta.com,proxy
 host-suffix,line-apps-rc.com,proxy
 host-suffix,line-beta.me,proxy

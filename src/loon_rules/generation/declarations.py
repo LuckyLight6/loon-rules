@@ -100,9 +100,17 @@ def validate_declarations(config):
                        or entries[k]['policy-hint'] not in ('ai-cn','domestic') for k in owners)):
                 raise rules.Invalid('新增国内域名须有独立国内业务依据：'+e['id'])
         if spec:=e.get('calibration'):
+            retain=spec.get('retain-published',False)
+            if type(retain) is not bool or retain and spec['method']!='domain-ad-consensus':
+                raise rules.Invalid('已审基线保留只适用于广告域名交叉核对：'+e['id'])
+            ad_types=set(source_policy.publication_kinds(e)) if retain else set(e['kinds'])
+            ad_allowed={'DOMAIN','DOMAIN-SUFFIX'}
+            if retain:ad_allowed.update(('IP-CIDR','IP-CIDR6'))
             if (e['mode']!='managed' or not set(calibration_urls(spec))<=set(e['sources'])
                     or not e.get('feed-sources') or ('reconcile' in e)
-                    or (spec['method']=='domain-ad-consensus' and (e.get('policy-hint')!='reject' or set(e['kinds'])!={'DOMAIN','DOMAIN-SUFFIX'}))
+                    or (spec['method']=='domain-ad-consensus' and (e.get('policy-hint')!='reject'
+                        or not {'DOMAIN','DOMAIN-SUFFIX'}<=ad_types
+                        or ad_types-ad_allowed))
                     or (spec['method']=='asn-allocation-consensus' and set(e['kinds'])!={'IP-ASN'})
                     or (spec['method']=='allocation-and-routing' and (e.get('ip-match')!='allow-dns' or set(e['kinds'])!={'IP-CIDR','IP-CIDR6'}))):
                 raise rules.Invalid('交叉核对与订阅用途不符：'+e['id'])

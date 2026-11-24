@@ -1,0 +1,18 @@
+# name: instagram-social
+# priority: 3390
+# section: social
+# description: Instagram
+# boundary: 跟随产品入口与内容域名来源；排除品牌拼写变体、买粉和周边站点，不使用 instagram 关键词；共用 Facebook CDN 由 Meta 表处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T18:41:16Z
+# rule-count: 7
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Instagram.list
+
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,ig.me
+DOMAIN-SUFFIX,igcdn.com
+DOMAIN-SUFFIX,igsonar.com
+DOMAIN-SUFFIX,igtv.com
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,instagr.am

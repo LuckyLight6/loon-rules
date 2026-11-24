@@ -20,7 +20,8 @@
           "domain:venmo.com",
           "domain:xoom.com",
           "domain:transferwise.com",
-          "domain:wise.com"
+          "domain:wise.com",
+          "domain:tenpayglobal.com"
         ],
         "outboundTag": "PROXY"
       }

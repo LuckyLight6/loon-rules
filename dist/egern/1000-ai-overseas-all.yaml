@@ -4,19 +4,20 @@
 # description: 海外 AI 合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-23T18:06:27Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list
 # source: https://platform.claude.com/docs/en/api/ip-addresses
-# source: https://rdap.arin.net/registry/autnum/399358
 # source: https://academy.claude.com/products/platform
+# source: https://rdap.arin.net/registry/entity/AP-2440
 # source: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
 # source: https://openai.com/chatgpt-voice.json
 # source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
 # source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto
+# source: https://ai.google.dev/gemma/docs
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
 # source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://cursor.com/help/troubleshooting/sign-in-domains
@@ -161,8 +162,8 @@
 # source: https://diabrowser.com/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list
 # source: https://openclaw.ai/
-# canonical-rule-count: 639
-# rule-count: 639
+# canonical-rule-count: 644
+# rule-count: 644
 # format: egern
 # canonical: rules/1000-ai-overseas-all.lsr
 
@@ -222,6 +223,7 @@ domain_suffix_set:
   - "notebooklm.google"
   - "opal.google"
   - "ai.studio"
+  - "gemma.ai"
   - "grok.com"
   - "grok.x.com"
   - "x.ai"
@@ -812,3 +814,7 @@ ip_cidr6_set:
   - "2607:6bc0::/48"
 asn_set:
   - "AS399358"
+  - "AS400243"
+  - "AS401551"
+  - "AS4167"
+  - "AS60808"

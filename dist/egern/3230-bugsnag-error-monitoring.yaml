@@ -1,0 +1,15 @@
+# name: bugsnag-error-monitoring
+# priority: 3230
+# section: development
+# description: Bugsnag 错误监控与会话报告
+# boundary: 供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用
+# created-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T04:48:27Z
+# source: https://docs.bugsnag.com/platforms/javascript/configuration-options/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/3230-bugsnag-error-monitoring.lsr
+
+domain_suffix_set:
+  - "bugsnag.com"

@@ -38,7 +38,7 @@ runs:
     - name: Commit validated outputs
       shell: bash
       run: |
-        git add -- ':(glob)rules/*.lsr' dist/ plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json
+        git add -- ':(glob)rules/*.lsr' ':(glob)rules/*.list' dist/ plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json
         if git diff --cached --quiet; then
           exit 0
         fi

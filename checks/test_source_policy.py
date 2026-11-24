@@ -19,6 +19,15 @@ class SourcePolicyChecks(unittest.TestCase):
         from loon_rules.sources.policy import validate
         validate(*self.fixture())
 
+    def test_transport_prefix_policy_needs_a_valid_label_without_enabling_suffix_modifiers(self):
+        from loon_rules.sources.policy import validate
+        cfg,entries=self.fixture();policy=cfg['source-alias-policies']['vendor']
+        policy['label-modifiers']=[];policy['label-prefixes']=['stream']
+        validate(cfg,entries)
+        for labels in ([],['.*'],['UPPER'],[''],['stream','stream'],[{}]):
+            with self.subTest(labels=labels), self.assertRaises(Invalid):
+                validate({**cfg,'source-alias-policies':{'vendor':{**policy,'label-prefixes':labels}}},entries)
+
     def test_reference_documents_are_not_parsed_as_community_rule_feeds(self):
         from loon_rules.generation.pipeline import refresh_reviewed_feed
         entry={'id':'service','mode':'managed','sources':['feed','sdk'],

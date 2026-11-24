@@ -2,13 +2,14 @@
 # priority: 1030
 # section: ai
 # description: Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel
-# boundary: 通用 Google 登录、下载、存储与 API 不在此组
+# boundary: Google AI 自有入口跟随已核实的专用来源、官方 API 与文档身份更新；通用 Google 登录、下载、存储与 API 仍分开
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-19T08:04:26Z
-# rule-count: 51
+# updated-at: 2026-11-24T04:48:27Z
+# rule-count: 52
 # source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
-# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
 # source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto
+# source: https://ai.google.dev/gemma/docs
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
 
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,aistudio.google.com
@@ -61,3 +62,4 @@ DOMAIN-SUFFIX,opal.google
 DOMAIN-SUFFIX,ai.studio
 DOMAIN,webchannel-robinfrontend-pa.googleapis.com
 DOMAIN,geminiweb-pa.googleapis.com
+DOMAIN-SUFFIX,gemma.ai

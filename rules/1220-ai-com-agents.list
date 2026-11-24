@@ -1,0 +1,12 @@
+# name: ai-com-agents
+# priority: 1220
+# section: ai
+# description: ai.com 的个人 AI 代理
+# boundary: ai.com 是独立服务，不归 ChatGPT 或 Claude；海外 AI 统一出口时可选择海外 AI 合集
+# created-at: 2026-11-20T02:24:31Z
+# updated-at: 2026-11-20T02:24:31Z
+# rule-count: 1
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr
+# source: https://ai.com/start
+
+DOMAIN-SUFFIX,ai.com

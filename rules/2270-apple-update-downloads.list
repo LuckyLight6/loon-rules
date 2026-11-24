@@ -1,0 +1,36 @@
+# name: apple-update-downloads
+# priority: 2270
+# section: apple
+# description: 系统更新包与恢复内容下载
+# boundary: 收系统恢复、更新包和运营商设置包及已核对的精确 DNS 别名。目录、激活和证书另管，不按整个 CDN 或地区推断
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-23T19:28:52Z
+# rule-count: 20
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://developers.google.com/speed/public-dns/docs/doh/json
+# source: https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/
+
+DOMAIN,appldnld.apple.com.mwcname.com
+DOMAIN-SUFFIX,appldnld.apple.com
+DOMAIN-SUFFIX,appldnld.apple.com.akadns.net
+DOMAIN-SUFFIX,appldnld.g.aaplimg.com
+DOMAIN-SUFFIX,oscdn.apple.com
+DOMAIN-SUFFIX,swcdn.apple.com
+DOMAIN-SUFFIX,swdownload.apple.com
+DOMAIN-SUFFIX,updates-http.cdn-apple.com
+DOMAIN-SUFFIX,updates.cdn-apple.com
+DOMAIN,appldnld.apple.com.edgesuite.net
+DOMAIN,swcdn.g.aaplimg.com
+DOMAIN,updates-http.cdn-apple.com.akadns.net
+DOMAIN,updates-http.g.aaplimg.com
+DOMAIN,appldnld-cdn.apple.com.akadns.net
+DOMAIN,appldnld-cdn.origin-apple.com.akadns.net
+DOMAIN-SUFFIX,appldnld-lb.apple.com.akadns.net
+DOMAIN,oscdn.origin-apple.com.akadns.net
+DOMAIN,updates.g.aaplimg.com
+DOMAIN,updates-http.cdn-apple.com.edgesuite.net
+DOMAIN,swcdn.apple.com.edgesuite.net

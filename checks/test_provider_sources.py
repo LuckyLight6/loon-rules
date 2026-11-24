@@ -5,6 +5,114 @@ from loon_rules.sources.inputs import extract_rows
 
 
 class ProviderSources(PublicSourceExamples):
+    def test_unlisted_endpoint_and_registry_change_reach_views_and_client_outputs(self):
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        import json
+        from checks.source_fixtures import prepare_workspace
+        from loon_rules.generation import pipeline as lib
+        from loon_rules.exports import publish
+        endpoint='https://docs.vendor.example/allowlist'
+        registry='https://rdap.example/entity/ORG-SERVICE'
+        recipe={'format':'domain-column-table','source':endpoint,'section':'endpoints',
+                'headers':['Domain','Purpose'],'column':'Domain','value-format':'url'}
+        service={'id':'service','priority':20,'mode':'compiled','section':'development',
+                 'description':'服务','boundary':'官方服务入口与自有网络','sources':[endpoint,registry],
+                 'ip-match':'target-ip','extract':[recipe,{
+                     'format':'rdap-entity-autnums','source':registry,
+                     'registrant-id':'ORG-SERVICE','registrant-name':'Service Operator'}]}
+        combined={'id':'services-all','priority':10,'mode':'view','section':'development',
+                  'description':'合集','boundary':'替代服务细分','members':['service']}
+        config={'schema-version':2,'entries':[combined,service],
+                'sections':[{'id':'development','title':'开发'}],
+                'critical':{'api.vendor.example':['service']},'shared-negatives':[],
+                'source-inventories':[{'id':'complete-allowlist','source':endpoint,
+                                       'recipe':recipe,'owners':['service']}]}
+        def document(extra=''):
+            return ('<h2 id="endpoints">Endpoints</h2><table><tr><td>Domain</td><td>Purpose</td></tr>'
+                    '<tr><td>https://api.vendor.example</td><td>API</td></tr>'+extra+'</table>')
+        record={'objectClassName':'entity','handle':'ORG-SERVICE',
+                'vcardArray':['vcard',[['fn',{},'text','Service Operator']]],
+                'autnums':[{'objectClassName':'autnum','handle':'AS399358',
+                            'startAutnum':399358,'endAutnum':399358,'status':['active']}]}
+        inputs={endpoint:document(),registry:json.dumps(record)}
+        with TemporaryDirectory() as tmp, patch.object(lib,'ROOT',prepare_workspace(tmp)), redirect_stdout(StringIO()):
+            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
+            (root/'config/catalog.json').write_text(json.dumps(config))
+            (root/'config/endpoint-contracts.json').write_text('[]')
+            (root/'docs/rules.md').write_text(lib.render_index(config,entries))
+            for entry in entries.values():
+                (root/'rules'/lib.rule_filename(entry)).write_text(lib.decorate(entry,
+                    ['DOMAIN,api.vendor.example','IP-ASN,399358,no-resolve'],None,'2026-11-20T00:00:00Z'))
+            with patch.object(lib.transport,'download',side_effect=inputs.__getitem__):
+                lib.run();publish(root)
+                inputs[endpoint]=document('<tr><td>https://files.unlisted-provider.example</td><td>New product</td></tr>')
+                record['autnums']=[{'objectClassName':'autnum','handle':'AS399359',
+                                   'startAutnum':399359,'endAutnum':399359,'status':['active']}]
+                inputs[registry]=json.dumps(record)
+                lib.run();publish(root);lib.run();publish(root,check=True)
+                for entry in (service,combined):
+                    path=root/'rules'/lib.rule_filename(entry)
+                    rows=lib.rules.read_rules(path.read_text())
+                    self.assertIn('DOMAIN,files.unlisted-provider.example',rows)
+                    self.assertIn('IP-ASN,399359,no-resolve',rows)
+                    self.assertNotIn('IP-ASN,399358,no-resolve',rows)
+                    self.assertEqual(path.read_bytes(),path.with_suffix('.list').read_bytes())
+                    yaml=(root/'dist/clash-classical'/path.with_suffix('.yaml').name).read_text()
+                    self.assertIn('files.unlisted-provider.example',yaml)
+                    self.assertIn('IP-ASN,399359,no-resolve',yaml)
+                before={p:p.read_bytes() for folder in ('rules','dist')
+                        for p in (root/folder).rglob('*') if p.is_file()}
+                record['vcardArray'][1][0][3]='Other Operator';inputs[registry]=json.dumps(record)
+                with self.assertRaises(Invalid):lib.run()
+                self.assertTrue(all(p.read_bytes()==body for p,body in before.items()))
+
+    def test_registry_organization_discovers_new_asns_without_a_fixed_number_list(self):
+        import json
+        recipe = {'format': 'rdap-entity-autnums', 'registrant-id': 'ORG-SERVICE',
+                  'registrant-name': 'Service Operator'}
+        def autnum(number):
+            return {'objectClassName': 'autnum', 'handle': 'AS'+str(number),
+                    'startAutnum': number, 'endAutnum': number, 'status': ['active']}
+        record = {'objectClassName': 'entity', 'handle': 'ORG-SERVICE',
+                  'vcardArray': ['vcard', [['fn', {}, 'text', 'Service Operator'],
+                                          ['kind', {}, 'text', 'org']]],
+                  'autnums': [autnum(399358)]}
+        self.assertEqual(extract_rows(recipe, json.dumps(record)), {'IP-ASN,399358,no-resolve'})
+        record['autnums'].append(autnum(399359))
+        self.assertEqual(extract_rows(recipe, json.dumps(record)), {
+            'IP-ASN,399358,no-resolve', 'IP-ASN,399359,no-resolve'})
+        import copy
+        for change in ('owner', 'identity', 'range', 'private', 'truncated', 'empty'):
+            bad = copy.deepcopy(record)
+            if change == 'owner': bad['vcardArray'][1][0][3] = 'Other Operator'
+            elif change == 'identity': bad['handle'] = 'ORG-OTHER'
+            elif change == 'range': bad['autnums'][1]['endAutnum'] += 1
+            elif change == 'private': bad['autnums'].append(autnum(64512))
+            elif change == 'truncated':
+                bad['notices'] = [{'title': 'Response truncated due to authorization'}]
+            else: bad['autnums'] = []
+            with self.subTest(change=change), self.assertRaises(Invalid):
+                extract_rows(recipe, json.dumps(bad))
+
+    def test_url_column_follows_new_hosts_and_purposes_without_root_filters(self):
+        recipe = {'format': 'domain-column-table', 'section': 'endpoints',
+                  'headers': ['Domain', 'Purpose'], 'column': 'Domain', 'value-format': 'url'}
+        def document(url='https://api.vendor.example', purpose='API'):
+            return ('<h2 id="endpoints">Endpoints</h2><table>'
+                    '<tr><td>Domain</td><td>Purpose</td></tr>'
+                    '<tr><td>'+url+'</td><td>'+purpose+'</td></tr></table>')
+        self.assertEqual(extract_rows(recipe, document()), {'DOMAIN,api.vendor.example'})
+        self.assertEqual(extract_rows(recipe, document('https://brand-new.example/v1','New product')),
+                         {'DOMAIN,brand-new.example'})
+        for value in ('https://127.0.0.1', 'https://example:example@api.vendor.example',
+                      'http://api.vendor.example', 'https://api.vendor.example?secret=value'):
+            with self.subTest(url=value), self.assertRaises(Invalid):
+                extract_rows(recipe, document(value))
+
     def test_existing_api_field_reader_can_follow_a_raw_sdk_constant_without_a_host_filter(self):
         recipe = {'format': 'code-api-endpoints', 'markup': 'source', 'api-fields': ['ENDPOINT']}
         body = ('// ENDPOINT = "https://comment.example";\n'

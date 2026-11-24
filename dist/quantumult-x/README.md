@@ -154,6 +154,7 @@
 | 3050 | maven-central | Maven Central | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3050-maven-central.list) |
 | 3060 | pypi-packages | PyPI 软件包 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3060-pypi-packages.list) |
 | 3070 | docker-hub | Docker Hub | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3070-docker-hub.list) |
+| 3075 | docker-desktop-and-platform | Docker Desktop、Scout、Offload、Hardened Images 与平台服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3075-docker-desktop-and-platform.list) |
 | 3080 | rust-cargo | Rust、Cargo 与 crates.io | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3080-rust-cargo.list) |
 | 3090 | go-modules | Go 模块与工具链 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3090-go-modules.list) |
 | 3100 | jetbrains-ides | JetBrains IDE、授权与插件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3100-jetbrains-ides.list) |
@@ -168,6 +169,8 @@
 | 3190 | persona-identity-verification | Persona 身份、企业与年龄验证 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3190-persona-identity-verification.list) |
 | 3200 | yoti-identity-verification | Yoti 数字身份与年龄验证 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3200-yoti-identity-verification.list) |
 | 3210 | sift-fraud-prevention | Sift 反欺诈、设备与风险 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3210-sift-fraud-prevention.list) |
+| 3220 | auth0-identity-platform | Auth0 身份认证与共享登录平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3220-auth0-identity-platform.list) |
+| 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3230-bugsnag-error-monitoring.list) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3310 | telegram-messaging | Telegram 登录、消息、文件与服务器地址 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3320 | discord-messaging-and-voice | Discord 消息、语音、活动和附件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3320-discord-messaging-and-voice.list) |
@@ -195,6 +198,7 @@
 | 3550 | venmo-payments | Venmo 支付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3550-venmo-payments.list) |
 | 3560 | xoom-transfers | Xoom 汇款 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3560-xoom-transfers.list) |
 | 3570 | wise-transfers | Wise 转账与账户服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3570-wise-transfers.list) |
+| 3580 | tenpay-global-payments | TenPay Global 跨境支付与商户平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3580-tenpay-global-payments.list) |
 | 3600 | overseas-crypto-all | 海外加密资产服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3600-overseas-crypto-all.list) |
 | 3610 | binance-platform | Binance 币安 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3610-binance-platform.list) |
 | 3620 | okx-platform | OKX 欧易 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3620-okx-platform.list) |
@@ -296,7 +300,7 @@
 | 6340 | npmmirror-registry | npmmirror 国内镜像 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6340-npmmirror-registry.list) |
 | 6350 | tuna-mirrors | 清华 TUNA 开源镜像 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6350-tuna-mirrors.list) |
 | 6500 | mainland-social-all | 国内通讯与社交合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6500-mainland-social-all.list) |
-| 6510 | wechat-shared-and-mainland | 微信国内及两版共用登录、消息与支付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6510-wechat-shared-and-mainland.list) |
+| 6510 | wechat-shared-and-mainland | 微信国内与两版共用登录、消息和 App 服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6510-wechat-shared-and-mainland.list) |
 | 6520 | dingtalk-public | 钉钉公共服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6520-dingtalk-public.list) |
 | 6530 | feishu-mainland | 飞书国内协作服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6530-feishu-mainland.list) |
 | 6540 | weibo-social | 微博 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6540-weibo-social.list) |
@@ -306,6 +310,7 @@
 | 6700 | mainland-payments-all | 国内支付合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6700-mainland-payments-all.list) |
 | 6710 | alipay-mainland-payments | 支付宝国内账户支付和静态资源 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6710-alipay-mainland-payments.list) |
 | 6720 | unionpay-mainland | 银联、云闪付国内服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6720-unionpay-mainland.list) |
+| 6730 | tenpay-mainland-payments | 财付通与 QQ 钱包共用支付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6730-tenpay-mainland-payments.list) |
 | 6900 | mainland-media-all | 国内影音与直播合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6900-mainland-media-all.list) |
 | 6910 | bilibili-mainland-video | 哔哩哔哩中国站视频与图片 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6910-bilibili-mainland-video.list) |
 | 6920 | iqiyi-mainland | 爱奇艺国内版 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/6920-iqiyi-mainland.list) |
@@ -348,6 +353,7 @@
 | 8400 | mainland-platforms-all | 国内厂商共用服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8400-mainland-platforms-all.list) |
 | 8410 | netease-shared-services | 网易邮件、游戏、新闻与其他共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8410-netease-shared-services.list) |
 | 8420 | alibaba-shared-services | 阿里巴巴与阿里云共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8420-alibaba-shared-services.list) |
+| 8425 | tencent-shared-content-and-sdk | 腾讯共用图片、头像、下载与 SDK | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8425-tencent-shared-content-and-sdk.list) |
 | 8430 | tencent-shared-services | 腾讯 QQ、邮箱、网站与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8430-tencent-shared-services.list) |
 | 8440 | bytedance-shared-services | 字节跳动国内与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8440-bytedance-shared-services.list) |
 | 8450 | baidu-shared-services | 百度搜索、网盘与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8450-baidu-shared-services.list) |
@@ -355,6 +361,7 @@
 | 8470 | xiaomi-shared-services | 小米账户、设备与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8470-xiaomi-shared-services.list) |
 | 8480 | kingsoft-shared-services | 金山与其他共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8480-kingsoft-shared-services.list) |
 | 8490 | sina-shared-image-assets | 新浪与微博共用图片 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8490-sina-shared-image-assets.list) |
+| 8495 | sina-web-and-shared-services | 新浪网站、新闻、邮箱与网页服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8495-sina-web-and-shared-services.list) |
 | 8600 | mainland-routing-all | 国内补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8600-mainland-routing-all.list) |
 | 8610 | mainland-domains | 未由专项认领的国内域名补充 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8610-mainland-domains.list) |
 | 8620 | mainland-networks | 可按 IPv4 / IPv6 网段判断的国内地址 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/8620-mainland-networks.list) |

@@ -22,7 +22,7 @@
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
 | 0210 | [apple-and-ai-privacy-exceptions](../rules/0210-apple-and-ai-privacy-exceptions.lsr) | Apple 广告与 OpenAI 广告像素的已核实拒绝项 | **可选。** 单独可选，不属于 Apple 或 AI 合集。只拦明确广告入口，不能以大后缀替代 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/0210-apple-and-ai-privacy-exceptions.lsr) |
-| 0220 | [general-ad-and-tracking](../rules/0220-general-ad-and-tracking.lsr) | Repcz 广告与追踪拦截 | 窄于大合集；与其他广告表作为同类选择 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/0220-general-ad-and-tracking.lsr) |
+| 0220 | [general-ad-and-tracking](../rules/0220-general-ad-and-tracking.lsr) | Repcz 广告与追踪拦截 | 新增广告域名须有过滤表与 DNS 表共同支持；保留仍获原来源支持的已审范围，保护业务必需入口；未经交叉确认的新 IP 不自动加入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/0220-general-ad-and-tracking.lsr) |
 | 0230 | [privacy-public-stun-endpoints](../rules/0230-privacy-public-stun-endpoints.lsr) | 已公开的 STUN 主机，供选择性阻断 | **可选。** 仅两个精确主机，不拦 webrtc.org 或所有 stun.*。启用可能影响语音和会议；不能代替 WebRTC 或 DNS 出口检查 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/0230-privacy-public-stun-endpoints.lsr) |
 
 ## 3 AI 服务（海外与国际版）
@@ -37,9 +37,9 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 1010 | [claude-connections](../rules/1010-claude-connections.lsr) | Anthropic：Claude、Claude Code 与 API（登录、附件、MCP 和更新） | Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和仍登记为 Anthropic 的 ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1010-claude-connections.lsr) |
+| 1010 | [claude-connections](../rules/1010-claude-connections.lsr) | Anthropic：Claude、Claude Code 与 API（登录、附件、MCP 和更新） | Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和注册组织当前持有的 Anthropic ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1010-claude-connections.lsr) |
 | 1020 | [chatgpt-connections](../rules/1020-chatgpt-connections.lsr) | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | 登录、对话和文件按专用域名，语音媒体按官方公开的单个服务器 IP；IP 不为匹配触发 DNS。不把 LiveKit、Stripe、Cloudflare、Azure 或 Google 的共享域和网段一并代理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1020-chatgpt-connections.lsr) |
-| 1030 | [gemini-connections](../rules/1030-gemini-connections.lsr) | Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel | 通用 Google 登录、下载、存储与 API 不在此组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1030-gemini-connections.lsr) |
+| 1030 | [gemini-connections](../rules/1030-gemini-connections.lsr) | Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel | Google AI 自有入口跟随已核实的专用来源、官方 API 与文档身份更新；通用 Google 登录、下载、存储与 API 仍分开 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1030-gemini-connections.lsr) |
 | 1040 | [xai-connections](../rules/1040-xai-connections.lsr) | xAI 账号、Grok 对话与模型 API | Grok、xAI API 及 Grok、Cursor、Grokipedia 共用账号；Cursor 编辑器、百科内容与 X 社交分别处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1040-xai-connections.lsr) |
 | 1050 | [grokipedia-encyclopedia](../rules/1050-grokipedia-encyclopedia.lsr) | Grokipedia AI 百科站点 | 百科页面与内容；共用账号登录由 xAI 账号规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1050-grokipedia-encyclopedia.lsr) |
 | 1060 | [github-copilot-connections](../rules/1060-github-copilot-connections.lsr) | GitHub Copilot：补全、对话、API 与专用附件 | Copilot 专用接口、实时连接、附件、报告与遥测；必需接口另按用途核对，共用认证归 GitHub 代码托管表。实验、通用模型目录与跨租户云通配符不纳入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1060-github-copilot-connections.lsr) |
@@ -216,7 +216,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3000 | [overseas-development-all](../rules/3000-overseas-development-all.lsr) | 海外开发合集 | **合集：替代 3010–3210。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3000-overseas-development-all.lsr) |
+| 3000 | [overseas-development-all](../rules/3000-overseas-development-all.lsr) | 海外开发合集 | **合集：替代 3010–3230。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3000-overseas-development-all.lsr) |
 
 ### 5.2 海外开发 · 产品细分
 
@@ -229,6 +229,7 @@
 | 3050 | [maven-central](../rules/3050-maven-central.lsr) | Maven Central | 只认默认依赖仓库，不把 apache.org 整域算作包下载 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3050-maven-central.lsr) |
 | 3060 | [pypi-packages](../rules/3060-pypi-packages.lsr) | PyPI 软件包 | 官方 Python 包索引、文档、上传与文件下载；不包揽 pythonhosted.org 上的项目网站 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3060-pypi-packages.lsr) |
 | 3070 | [docker-hub](../rules/3070-docker-hub.lsr) | Docker Hub | Docker Hub 登录、鉴权和镜像分发按官方用途筛选；不接管共享 Auth0、错误报告、Desktop 更新、Scout 或其他 Docker 产品 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3070-docker-hub.lsr) |
+| 3075 | [docker-desktop-and-platform](../rules/3075-docker-desktop-and-platform.lsr) | Docker Desktop、Scout、Offload、Hardened Images 与平台服务 | 官方用途表自动补入更新、API、诊断与平台主机；Hub 入口由前表处理，Auth0 和 Bugsnag 按共享供应商处理，不扩大 AWS 或 Cloudflare | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3075-docker-desktop-and-platform.lsr) |
 | 3080 | [rust-cargo](../rules/3080-rust-cargo.lsr) | Rust、Cargo 与 crates.io | 软件包、工具链和文档；不包括私有 Cargo 注册表 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3080-rust-cargo.lsr) |
 | 3090 | [go-modules](../rules/3090-go-modules.lsr) | Go 模块与工具链 | Go 项目、模块代理和校验服务；不扩到通用 Google APIs | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3090-go-modules.lsr) |
 | 3100 | [jetbrains-ides](../rules/3100-jetbrains-ides.lsr) | JetBrains IDE、授权与插件 | IDE、授权、插件市场与设置同步；官方用途表补全当前主机。AI 专用后端、中国区 AI API、Node.js 与 ACP 注册表分别匹配，不把整套依赖都归给 IDE | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3100-jetbrains-ides.lsr) |
@@ -243,6 +244,8 @@
 | 3190 | [persona-identity-verification](../rules/3190-persona-identity-verification.lsr) | Persona 身份、企业与年龄验证 | Persona 自有服务命名空间；官方嵌入文档确认范围，不把第三方商户或客户账号归给 Persona | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3190-persona-identity-verification.lsr) |
 | 3200 | [yoti-identity-verification](../rules/3200-yoti-identity-verification.lsr) | Yoti 数字身份与年龄验证 | Yoti 已确认的自有站点与子域；客户网站和未证实的相似域名不并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3200-yoti-identity-verification.lsr) |
 | 3210 | [sift-fraud-prevention](../rules/3210-sift-fraud-prevention.lsr) | Sift 反欺诈、设备与风险 API | Sift 自有站点、SDK 与旧品牌 API 命名空间；不接管使用风控服务的商户，不称为 Claude 自有认证 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3210-sift-fraud-prevention.lsr) |
+| 3220 | [auth0-identity-platform](../rules/3220-auth0-identity-platform.lsr) | Auth0 身份认证与共享登录平台 | 供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3220-auth0-identity-platform.lsr) |
+| 3230 | [bugsnag-error-monitoring](../rules/3230-bugsnag-error-monitoring.lsr) | Bugsnag 错误监控与会话报告 | 供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3230-bugsnag-error-monitoring.lsr) |
 
 ## 6 通讯与社交（海外）
 
@@ -256,10 +259,10 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3310 | [telegram-messaging](../rules/3310-telegram-messaging.lsr) | Telegram 登录、消息、文件与服务器地址 | 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册持有人仍为 Telegram 的 ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3310-telegram-messaging.lsr) |
+| 3310 | [telegram-messaging](../rules/3310-telegram-messaging.lsr) | Telegram 登录、消息、文件与服务器地址 | 登录、消息、文件和官方域名范围使用同一策略；官方 CIDR 与注册组织当前持有的 Telegram ASN 只匹配已有目标 IP，使用 no-resolve；不收第三方客户端、关键词或整个云平台 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3310-telegram-messaging.lsr) |
 | 3320 | [discord-messaging-and-voice](../rules/3320-discord-messaging-and-voice.lsr) | Discord 消息、语音、活动和附件 | 仅 Discord 专用域及精确附件存储主机；不给整个 Google Storage 或含 discord 的域名选路 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3320-discord-messaging-and-voice.lsr) |
 | 3330 | [signal-messenger](../rules/3330-signal-messenger.lsr) | Signal 消息、通话、贴纸、群组与用户名链接 | 按官方网络说明生成当前客户端入口；不将第三方代理、公共中继或未确认的历史域名并入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3330-signal-messenger.lsr) |
-| 3340 | [line-messenger](../rules/3340-line-messenger.lsr) | LINE | 只收 LINE 产品入口和专用素材；不把 Naver 或其他应用整域纳入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3340-line-messenger.lsr) |
+| 3340 | [line-messenger](../rules/3340-line-messenger.lsr) | LINE | LINE 消息、专用内容与已核实的加好友短链；不把 LINE Mobile、游戏、购物、电视或整个 Naver 当成通信连接 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3340-line-messenger.lsr) |
 | 3350 | [x-social-and-media](../rules/3350-x-social-and-media.lsr) | X / Twitter 社交与图像视频 | Grok 专用的 grok.x.com 先由 xAI 规则匹配；只接产品和短链，不使用 twitter 关键词或广泛网段 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3350-x-social-and-media.lsr) |
 | 3360 | [wechat-international-portal](../rules/3360-wechat-international-portal.lsr) | WeChat 国际网站、支付与部分 App 连接 | wechat.com 也承载部分 App 的消息连接；qq.com 下微信与 WeChat 共用的入口由微信国内及共用规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3360-wechat-international-portal.lsr) |
 | 3370 | [slack-workspaces](../rules/3370-slack-workspaces.lsr) | Slack | 工作区、消息、文件和素材；外部登录分别匹配。日志统计留给可选隐私规则，培训、演示和旧版跳转不当作当前客户端必需入口 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3370-slack-workspaces.lsr) |
@@ -281,7 +284,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3500 | [overseas-payments-all](../rules/3500-overseas-payments-all.lsr) | 海外支付合集 | **合集：替代 3510–3570。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3500-overseas-payments-all.lsr) |
+| 3500 | [overseas-payments-all](../rules/3500-overseas-payments-all.lsr) | 海外支付合集 | **合集：替代 3510–3580。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3500-overseas-payments-all.lsr) |
 
 ### 7.2 海外支付 · 产品细分
 
@@ -294,6 +297,7 @@
 | 3550 | [venmo-payments](../rules/3550-venmo-payments.lsr) | Venmo 支付 | 从官方产品站身份确认专用根域；PayPal、Braintree、其它钱包和商户网站各自匹配 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3550-venmo-payments.lsr) |
 | 3560 | [xoom-transfers](../rules/3560-xoom-transfers.lsr) | Xoom 汇款 | 从官方产品站身份确认专用根域；PayPal、Braintree、其它钱包和商户网站各自匹配 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3560-xoom-transfers.lsr) |
 | 3570 | [wise-transfers](../rules/3570-wise-transfers.lsr) | Wise 转账与账户服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3570-wise-transfers.lsr) |
+| 3580 | [tenpay-global-payments](../rules/3580-tenpay-global-payments.lsr) | TenPay Global 跨境支付与商户平台 | 腾讯跨境支付品牌自有域，与财付通国内服务分别管理，不将整个微信或腾讯云归入跨境支付 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3580-tenpay-global-payments.lsr) |
 
 ## 8 加密资产服务（海外）
 
@@ -542,7 +546,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 6510 | [wechat-shared-and-mainland](../rules/6510-wechat-shared-and-mainland.lsr) | 微信国内及两版共用登录、消息与支付 | 限定微信专用域及明确 qq.com、腾讯云主机，不将腾讯 ASN 或整个 QQ 判作微信 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6510-wechat-shared-and-mainland.lsr) |
+| 6510 | [wechat-shared-and-mainland](../rules/6510-wechat-shared-and-mainland.lsr) | 微信国内与两版共用登录、消息和 App 服务 | 微信自有登录、消息、小程序与专用资源；腾讯共用图片、头像、SDK 和独立财付通域另分，不接管腾讯 ASN 或整个 QQ | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6510-wechat-shared-and-mainland.lsr) |
 | 6520 | [dingtalk-public](../rules/6520-dingtalk-public.lsr) | 钉钉公共服务 | 只匹配公共钉钉域；自建单点登录、专网和第三方企业应用不在内 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6520-dingtalk-public.lsr) |
 | 6530 | [feishu-mainland](../rules/6530-feishu-mainland.lsr) | 飞书国内协作服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6530-feishu-mainland.lsr) |
 | 6540 | [weibo-social](../rules/6540-weibo-social.lsr) | 微博 | 微博自己的站点与分发域，包括同域地区子站；新浪与微博共用的图片域另列，不按页面语言判断出口 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6540-weibo-social.lsr) |
@@ -556,7 +560,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 6700 | [mainland-payments-all](../rules/6700-mainland-payments-all.lsr) | 国内支付合集 | **合集：替代 6710–6720。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6700-mainland-payments-all.lsr) |
+| 6700 | [mainland-payments-all](../rules/6700-mainland-payments-all.lsr) | 国内支付合集 | **合集：替代 6710–6730。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6700-mainland-payments-all.lsr) |
 
 ### 19.2 国内支付 · 产品细分
 
@@ -564,6 +568,7 @@
 |---:|---|---|---|---|
 | 6710 | [alipay-mainland-payments](../rules/6710-alipay-mainland-payments.lsr) | 支付宝国内账户支付和静态资源 | 不把 AlipayHK、Alipay+、第三方账户或整个阿里云归为国内支付宝 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6710-alipay-mainland-payments.lsr) |
 | 6720 | [unionpay-mainland](../rules/6720-unionpay-mainland.lsr) | 银联、云闪付国内服务 | 国内服务入口；不把银联国际站按国内支付匹配 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6720-unionpay-mainland.lsr) |
+| 6730 | [tenpay-mainland-payments](../rules/6730-tenpay-mainland-payments.lsr) | 财付通与 QQ 钱包共用支付 | 独立财付通域下的账户、支付、QQ 钱包与共用资源；微信专域下的支付接入仍由微信表处理；TenPay Global 独立分类 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/6730-tenpay-mainland-payments.lsr) |
 
 ## 20 影音与直播（国内）
 
@@ -695,7 +700,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 8400 | [mainland-platforms-all](../rules/8400-mainland-platforms-all.lsr) | 国内厂商共用服务合集 | **合集：替代 8410–8490。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8400-mainland-platforms-all.lsr) |
+| 8400 | [mainland-platforms-all](../rules/8400-mainland-platforms-all.lsr) | 国内厂商共用服务合集 | **合集：替代 8410–8495。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8400-mainland-platforms-all.lsr) |
 
 ### 26.2 厂商共用范围细分
 
@@ -703,6 +708,7 @@
 |---:|---|---|---|---|
 | 8410 | [netease-shared-services](../rules/8410-netease-shared-services.lsr) | 网易邮件、游戏、新闻与其他共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8410-netease-shared-services.lsr) |
 | 8420 | [alibaba-shared-services](../rules/8420-alibaba-shared-services.lsr) | 阿里巴巴与阿里云共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8420-alibaba-shared-services.lsr) |
+| 8425 | [tencent-shared-content-and-sdk](../rules/8425-tencent-shared-content-and-sdk.lsr) | 腾讯共用图片、头像、下载与 SDK | 微信、QQ 等产品共用的资源与 SDK 范围，不作为微信专用；专用 App 主机仍由前面的产品规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8425-tencent-shared-content-and-sdk.lsr) |
 | 8430 | [tencent-shared-services](../rules/8430-tencent-shared-services.lsr) | 腾讯 QQ、邮箱、网站与共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8430-tencent-shared-services.lsr) |
 | 8440 | [bytedance-shared-services](../rules/8440-bytedance-shared-services.lsr) | 字节跳动国内与共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8440-bytedance-shared-services.lsr) |
 | 8450 | [baidu-shared-services](../rules/8450-baidu-shared-services.lsr) | 百度搜索、网盘与共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8450-baidu-shared-services.lsr) |
@@ -710,6 +716,7 @@
 | 8470 | [xiaomi-shared-services](../rules/8470-xiaomi-shared-services.lsr) | 小米账户、设备与共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8470-xiaomi-shared-services.lsr) |
 | 8480 | [kingsoft-shared-services](../rules/8480-kingsoft-shared-services.lsr) | 金山与其他共用服务 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8480-kingsoft-shared-services.lsr) |
 | 8490 | [sina-shared-image-assets](../rules/8490-sina-shared-image-assets.lsr) | 新浪与微博共用图片 | 新浪新闻、微博等服务共用的图片域，不代表微博专用；图片域下的广告仍按前置拦截规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8490-sina-shared-image-assets.lsr) |
+| 8495 | [sina-web-and-shared-services](../rules/8495-sina-web-and-shared-services.lsr) | 新浪网站、新闻、邮箱与网页服务 | 新浪网站与共用网页范围；微博、AI 和共用图片按前表分别处理，不把整个新浪云租户平台当新闻网站 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8495-sina-web-and-shared-services.lsr) |
 
 ## 27 国内补充
 

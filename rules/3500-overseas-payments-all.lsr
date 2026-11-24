@@ -4,8 +4,8 @@
 # description: 海外支付合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-22T17:48:09Z
-# rule-count: 17
+# updated-at: 2026-11-24T04:48:27Z
+# rule-count: 18
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/PayPal.lsr
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/stripe.list
 # source: https://www.link.com/
@@ -15,6 +15,8 @@
 # source: https://venmo.com/
 # source: https://www.xoom.com/
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list
+# source: https://www.tenpayglobal.com/
 
 DOMAIN-SUFFIX,paypal.com
 DOMAIN-SUFFIX,paypalobjects.com
@@ -33,3 +35,4 @@ DOMAIN-SUFFIX,venmo.com
 DOMAIN-SUFFIX,xoom.com
 DOMAIN-SUFFIX,transferwise.com
 DOMAIN-SUFFIX,wise.com
+DOMAIN-SUFFIX,tenpayglobal.com

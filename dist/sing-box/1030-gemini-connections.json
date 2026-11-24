@@ -35,7 +35,8 @@
         "notebook.google",
         "notebooklm.google",
         "opal.google",
-        "ai.studio"
+        "ai.studio",
+        "gemma.ai"
       ],
       "domain": [
         "appsgenaiserver-pa.clients.google.com",

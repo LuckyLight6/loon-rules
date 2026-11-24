@@ -174,10 +174,10 @@
           "full:docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com",
           "domain:docker.io",
           "domain:dockerstatic.com",
-          "full:production.cloudfront.docker.com",
-          "full:auth.docker.com",
-          "full:hub.docker.com",
-          "full:login.docker.com",
+          "domain:compose-spec.io",
+          "domain:docker.com",
+          "full:dhi.io",
+          "full:docker-pinata-support.s3.amazonaws.com",
           "domain:rust-lang.org",
           "domain:rustup.rs",
           "domain:crates.io",
@@ -225,7 +225,9 @@
           "domain:withpersona.com",
           "domain:yoti.com",
           "domain:sift.com",
-          "domain:siftscience.com"
+          "domain:siftscience.com",
+          "domain:auth0.com",
+          "domain:bugsnag.com"
         ],
         "outboundTag": "PROXY"
       }

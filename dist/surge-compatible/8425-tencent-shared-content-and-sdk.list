@@ -1,0 +1,20 @@
+# name: tencent-shared-content-and-sdk
+# priority: 8425
+# section: vendors
+# description: 腾讯共用图片、头像、下载与 SDK
+# boundary: 微信、QQ 等产品共用的资源与 SDK 范围，不作为微信专用；专用 App 主机仍由前面的产品规则处理
+# created-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T04:48:27Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list
+# source: https://wiki.connect.qq.com/get_user_info
+# canonical-rule-count: 5
+# rule-count: 5
+# format: surge-compatible
+# canonical: rules/8425-tencent-shared-content-and-sdk.lsr
+
+DOMAIN,btrace.qq.com
+DOMAIN,dldir1.qq.com
+DOMAIN,wup.imtt.qq.com
+DOMAIN-SUFFIX,qlogo.cn
+DOMAIN-SUFFIX,qpic.cn

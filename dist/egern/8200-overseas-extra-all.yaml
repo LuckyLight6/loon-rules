@@ -4,7 +4,7 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T04:48:27Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -12,8 +12,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18644
-# rule-count: 18644
+# canonical-rule-count: 18640
+# rule-count: 18640
 # format: egern
 # canonical: rules/8200-overseas-extra-all.lsr
 
@@ -43,7 +43,6 @@ domain_set:
   - "api.sprig.com"
   - "community.oneplus.com"
   - "http-inputs-notion.splunkcloud.com"
-  - "sessions.bugsnag.com"
   - "store.ui.com.cn"
 domain_suffix_set:
   - "4gtv.tv"
@@ -3757,7 +3756,6 @@ domain_suffix_set:
   - "comparitech.com"
   - "compileheart.com"
   - "componentkit.org"
-  - "compose-spec.io"
   - "compound.finance"
   - "compress.to"
   - "compuserve.com"
@@ -4421,7 +4419,6 @@ domain_suffix_set:
   - "dobbyporn.com"
   - "doc.new"
   - "doceapower.com"
-  - "docker.com"
   - "dockerhub.com"
   - "dockerizer.com"
   - "dockerstatus.com"
@@ -9506,7 +9503,6 @@ domain_suffix_set:
   - "limetorrents.lol"
   - "limi.net"
   - "limiao.net"
-  - "lin.ee"
   - "line-apps-beta.com"
   - "line-apps-rc.com"
   - "line-beta.me"
