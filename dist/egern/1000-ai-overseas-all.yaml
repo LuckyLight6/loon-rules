@@ -4,7 +4,7 @@
 # description: 海外 AI 合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T14:17:53Z
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
@@ -162,8 +162,8 @@
 # source: https://diabrowser.com/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list
 # source: https://openclaw.ai/
-# canonical-rule-count: 644
-# rule-count: 644
+# canonical-rule-count: 643
+# rule-count: 643
 # format: egern
 # canonical: rules/1000-ai-overseas-all.lsr
 
@@ -357,7 +357,6 @@ domain_set:
   - "webchannel-robinfrontend-pa.googleapis.com"
   - "geminiweb-pa.googleapis.com"
   - "accounts.spacexsi.com"
-  - "accounts.spacex.ai"
   - "origin-tracker.githubusercontent.com"
   - "copilot-proxy.githubusercontent.com"
   - "copilot-workspace.githubnext.com"

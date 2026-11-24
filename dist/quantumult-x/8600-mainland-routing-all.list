@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T14:17:53Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19307
-# rule-count: 19307
+# canonical-rule-count: 19289
+# rule-count: 19289
 # format: quantumult-x
 # canonical: rules/8600-mainland-routing-all.lsr
 
@@ -14474,8 +14474,7 @@ ip-cidr,180.188.32.0/21,proxy
 ip-cidr,180.188.44.0/22,proxy
 ip-cidr,180.200.252.0/22,proxy
 ip-cidr,180.201.0.0/16,proxy
-ip-cidr,180.203.0.0/23,proxy
-ip-cidr,180.203.3.0/24,proxy
+ip-cidr,180.203.0.0/22,proxy
 ip-cidr,180.203.4.0/24,proxy
 ip-cidr,180.208.0.0/15,proxy
 ip-cidr,180.210.212.0/22,proxy
@@ -14968,10 +14967,7 @@ ip-cidr,210.72.0.0/17,proxy
 ip-cidr,210.72.128.0/18,proxy
 ip-cidr,210.72.192.0/19,proxy
 ip-cidr,210.72.224.0/20,proxy
-ip-cidr,210.72.240.0/23,proxy
-ip-cidr,210.72.243.0/24,proxy
-ip-cidr,210.72.245.0/24,proxy
-ip-cidr,210.72.246.0/24,proxy
+ip-cidr,210.72.240.0/21,proxy
 ip-cidr,210.73.0.0/18,proxy
 ip-cidr,210.73.128.0/18,proxy
 ip-cidr,210.73.192.0/22,proxy
@@ -15109,33 +15105,26 @@ ip-cidr,211.158.0.0/16,proxy
 ip-cidr,211.159.128.0/17,proxy
 ip-cidr,211.159.64.0/21,proxy
 ip-cidr,211.160.0.0/22,proxy
-ip-cidr,211.160.10.0/23,proxy
 ip-cidr,211.160.112.0/23,proxy
 ip-cidr,211.160.115.0/24,proxy
 ip-cidr,211.160.120.0/24,proxy
 ip-cidr,211.160.14.0/23,proxy
-ip-cidr,211.160.16.0/24,proxy
+ip-cidr,211.160.16.0/21,proxy
 ip-cidr,211.160.160.0/19,proxy
-ip-cidr,211.160.18.0/23,proxy
-ip-cidr,211.160.195.0/24,proxy
+ip-cidr,211.160.194.0/23,proxy
 ip-cidr,211.160.196.0/24,proxy
-ip-cidr,211.160.20.0/23,proxy
-ip-cidr,211.160.203.0/24,proxy
-ip-cidr,211.160.205.0/24,proxy
-ip-cidr,211.160.22.0/24,proxy
-ip-cidr,211.160.24.0/24,proxy
-ip-cidr,211.160.244.0/24,proxy
-ip-cidr,211.160.246.0/23,proxy
-ip-cidr,211.160.248.0/21,proxy
-ip-cidr,211.160.27.0/24,proxy
+ip-cidr,211.160.202.0/23,proxy
+ip-cidr,211.160.204.0/23,proxy
+ip-cidr,211.160.24.0/22,proxy
+ip-cidr,211.160.240.0/20,proxy
 ip-cidr,211.160.28.0/23,proxy
 ip-cidr,211.160.36.0/23,proxy
-ip-cidr,211.160.4.0/24,proxy
-ip-cidr,211.160.46.0/24,proxy
-ip-cidr,211.160.62.0/24,proxy
+ip-cidr,211.160.4.0/23,proxy
+ip-cidr,211.160.46.0/23,proxy
+ip-cidr,211.160.62.0/23,proxy
 ip-cidr,211.160.72.0/21,proxy
+ip-cidr,211.160.8.0/22,proxy
 ip-cidr,211.160.80.0/20,proxy
-ip-cidr,211.160.9.0/24,proxy
 ip-cidr,211.161.0.0/20,proxy
 ip-cidr,211.161.100.0/22,proxy
 ip-cidr,211.161.104.0/22,proxy
@@ -15208,9 +15197,7 @@ ip-cidr,211.98.0.0/16,proxy
 ip-cidr,211.99.128.0/18,proxy
 ip-cidr,211.99.16.0/23,proxy
 ip-cidr,211.99.192.0/19,proxy
-ip-cidr,211.99.25.0/24,proxy
-ip-cidr,211.99.26.0/24,proxy
-ip-cidr,211.99.28.0/22,proxy
+ip-cidr,211.99.24.0/21,proxy
 ip-cidr,211.99.64.0/18,proxy
 ip-cidr,211.99.8.0/21,proxy
 ip-cidr,212.129.128.0/17,proxy
@@ -15470,12 +15457,7 @@ ip-cidr,221.208.0.0/12,proxy
 ip-cidr,221.224.0.0/12,proxy
 ip-cidr,221.8.0.0/14,proxy
 ip-cidr,222.125.0.0/16,proxy
-ip-cidr,222.126.128.0/19,proxy
-ip-cidr,222.126.160.0/21,proxy
-ip-cidr,222.126.168.0/22,proxy
-ip-cidr,222.126.172.0/23,proxy
-ip-cidr,222.126.176.0/20,proxy
-ip-cidr,222.126.192.0/18,proxy
+ip-cidr,222.126.128.0/17,proxy
 ip-cidr,222.128.0.0/12,proxy
 ip-cidr,222.16.0.0/12,proxy
 ip-cidr,222.160.0.0/14,proxy

@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-24T05:14:03Z",
+  "checked-at": "2026-11-24T14:17:53Z",
   "inputs-read": 570,
   "critical": 828,
   "inputs-requested": 570,
@@ -71,10 +71,10 @@
       "DOMAIN-SUFFIX,cloudflarestoragegw.com": "cloudflare-mainland"
     },
     "amazon-shared-services": {
+      "DOMAIN-SUFFIX,pv-cdn.net": "prime-video-streaming",
+      "DOMAIN-SUFFIX,primevideo.com": "prime-video-streaming",
       "DOMAIN-SUFFIX,amazonvideo.com": "prime-video-streaming",
       "DOMAIN-SUFFIX,aiv-cdn.net": "prime-video-streaming",
-      "DOMAIN-SUFFIX,primevideo.com": "prime-video-streaming",
-      "DOMAIN-SUFFIX,pv-cdn.net": "prime-video-streaming",
       "DOMAIN-SUFFIX,aboutamazon.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,alexafund.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,alexafund.com.cn": "amazon-mainland",
@@ -99,8 +99,6 @@
       "DOMAIN-SUFFIX,z.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,amazon-adsystem.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,serving-sys.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,amazonprimevideo.cn": "amazon-mainland",
-      "DOMAIN-SUFFIX,amazonprimevideo.com.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,a2z.org.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,amazonaws.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,amazonaws.com.cn": "amazon-mainland",
@@ -129,7 +127,9 @@
       "DOMAIN-SUFFIX,amzndns-cn.net": "amazon-mainland",
       "DOMAIN-SUFFIX,kindle.cn": "amazon-mainland",
       "DOMAIN-SUFFIX,kindleoasis.cn": "amazon-mainland",
-      "DOMAIN-SUFFIX,kindleoasis.com.cn": "amazon-mainland"
+      "DOMAIN-SUFFIX,kindleoasis.com.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonprimevideo.cn": "amazon-mainland",
+      "DOMAIN-SUFFIX,amazonprimevideo.com.cn": "amazon-mainland"
     },
     "netease-shared-services": {
       "DOMAIN-SUFFIX,ydshengxue.com": "youdao-products",
@@ -1683,9 +1683,9 @@
       },
       "other-products": {
         "muse-agent": 1,
+        "instagram-social": 8,
         "threads-social": 2,
-        "whatsapp-messaging": 3,
-        "instagram-social": 8
+        "whatsapp-messaging": 3
       },
       "domain-scopes": 556,
       "selected-scopes": 26,
@@ -6422,10 +6422,10 @@
       },
       "other-products": {
         "youku-video": 23,
+        "aliyun-drive": 5,
         "alipay-mainland-payments": 4,
         "taobao-and-xianyu-shopping": 24,
-        "dingtalk-public": 3,
-        "aliyun-drive": 5
+        "dingtalk-public": 3
       },
       "domain-scopes": 467,
       "selected-scopes": 16,
@@ -7378,12 +7378,12 @@
         ]
       },
       "other-products": {
-        "bytedance-mainland": 2,
         "lark-international": 29,
-        "douyin-mainland-video": 8,
+        "bytedance-mainland": 2,
         "feishu-mainland": 43,
-        "tiktok-international-video": 12,
-        "bytedance-international": 7
+        "douyin-mainland-video": 8,
+        "bytedance-international": 7,
+        "tiktok-international-video": 12
       },
       "domain-scopes": 961,
       "selected-scopes": 14,
@@ -8399,8 +8399,8 @@
   "source-mirrors-used": {},
   "public-suffix-state": {
     "state": "current",
-    "source-version": "2026-11-23_11-59-57_UTC",
-    "active-version": "2026-11-23_11-59-57_UTC"
+    "source-version": "2026-11-23_15-54-01_UTC",
+    "active-version": "2026-11-23_15-54-01_UTC"
   },
   "shared-service-transfers": {
     "google-play-services": {
@@ -12388,7 +12388,7 @@
       "asset-prefix": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static",
       "documents": [
         {
-          "source": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static/_next/static/chunks/pages/apis/workflow-8d9d7b3e828e86b0.js",
+          "source": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static/_next/static/chunks/pages/apis/workflow-d944640d00334dab.js",
           "roles": {
             "接口请求：": [
               "DOMAIN,openapi.liblibai.cloud"
@@ -12802,17 +12802,8 @@
   },
   "reviewed-inputs": {
     "xai-connections": {
-      "state": "review",
-      "new-matches": 0,
-      "missing-rules": 1,
-      "official-exact-additions": 0,
-      "withdrawal-observation": {
-        "body": "2026-11-21T05:48:54Z",
-        "first": {
-          "6": 1795497201
-        },
-        "last-read": 1795497201
-      }
+      "state": "current",
+      "official-exact-additions": 0
     },
     "cursor-editor-and-api": {
       "state": "current",
@@ -12876,8 +12867,8 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 0,
-      "unconfirmed-prefixes": 527,
+      "accepted-prefixes": 20,
+      "unconfirmed-prefixes": 524,
       "retired-prefixes": 0
     },
     "mainland-geoip": {
@@ -12911,9 +12902,9 @@
     "general-ad-and-tracking": {
       "state": "current",
       "not-whole-host-consensus": 4822,
-      "admitted-rules": 35,
-      "retired-rules": 3681,
-      "retained-published-rules": 2498,
+      "admitted-rules": 0,
+      "retired-rules": 0,
+      "retained-published-rules": 2533,
       "unconfirmed-address-rules": 13
     },
     "extended-ad-and-tracking": {
@@ -13598,7 +13589,6 @@
     "accounts.google.tt",
     "accounts.google.vu",
     "accounts.google.ws",
-    "accounts.spacex.ai",
     "accounts.spacexsi.com",
     "adcdownload.apple.com.akadns.net",
     "adminportal42.cursor.sh",
@@ -14238,15 +14228,15 @@
         "DOMAIN,auth.grokipedia.com",
         "DOMAIN,auth.grokusercontent.com"
       ],
-      "retained": [
+      "retained": [],
+      "retired": [
         "DOMAIN,accounts.spacex.ai"
       ],
-      "retired": [],
       "first-absent": {
         "DOMAIN,accounts.spacex.ai": 1795457140
       },
-      "last-read": 1795497201,
-      "state": "observing"
+      "last-read": 1795529830,
+      "state": "current"
     },
     "jetbrains-ai": {
       "inputs": [
@@ -14286,7 +14276,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "ollama-cloud": {
@@ -14317,7 +14307,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "stackit-model-services": {
@@ -14348,7 +14338,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "stepfun-international": {
@@ -14390,7 +14380,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "xiaomi-international": {
@@ -14433,7 +14423,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -14468,7 +14458,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -14518,7 +14508,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -14559,7 +14549,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14791,7 +14781,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "npm-registry": {
@@ -14824,7 +14814,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14868,7 +14858,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14901,7 +14891,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14954,7 +14944,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "braintree-payments": {
@@ -14981,7 +14971,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "notion-workspace": {
@@ -15007,7 +14997,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "google-account-authentication": {
@@ -15215,7 +15205,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -15241,7 +15231,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "google-play-services": {
@@ -15277,7 +15267,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "google-play-games": {
@@ -15305,7 +15295,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "kimi-mainland": {
@@ -15336,7 +15326,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -15367,7 +15357,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -15410,7 +15400,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -15449,15 +15439,15 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795497201,
+      "last-read": 1795529830,
       "state": "current"
     }
   },
-  "inventory-domain-cases": 465,
+  "inventory-domain-cases": 464,
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1281,
+  "business-domain-cases": 1280,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -15467,8 +15457,10 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "general-ad-and-tracking",
-    "extended-ad-and-tracking"
+    "ai-overseas-all",
+    "xai-connections",
+    "mainland-routing-all",
+    "mainland-networks"
   ],
   "scope-negatives": 149,
   "ip-cases": 44,
@@ -15526,7 +15518,7 @@
     "mainland-networks": {
       "intent": "allow-dns",
       "no-resolve": 0,
-      "resolve-for-match": 7014
+      "resolve-for-match": 6996
     },
     "mainland-geoip": {
       "intent": "allow-dns",
@@ -15544,11 +15536,11 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "ai-overseas-all": 644,
+    "ai-overseas-all": 643,
     "claude-connections": 24,
     "chatgpt-connections": 427,
     "gemini-connections": 52,
-    "xai-connections": 7,
+    "xai-connections": 6,
     "grokipedia-encyclopedia": 1,
     "github-copilot-connections": 15,
     "microsoft-copilot-connections": 5,
@@ -15891,9 +15883,9 @@
     "kingsoft-shared-services": 32,
     "sina-shared-image-assets": 2,
     "sina-web-and-shared-services": 7,
-    "mainland-routing-all": 19307,
+    "mainland-routing-all": 19289,
     "mainland-domains": 12292,
-    "mainland-networks": 7014,
+    "mainland-networks": 6996,
     "mainland-geoip": 1
   },
   "component-rules": {

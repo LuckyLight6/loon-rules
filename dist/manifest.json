@@ -140,11 +140,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 644,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 643,
           "status": "available",
           "path": "rules/1000-ai-overseas-all.lsr"
         },
@@ -180,11 +180,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "rules/1040-xai-connections.lsr"
         },
@@ -3610,11 +3610,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "rules/8600-mainland-routing-all.lsr"
         },
@@ -3630,11 +3630,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "rules/8620-mainland-networks.lsr"
         },
@@ -3746,11 +3746,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 644,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 643,
           "status": "available",
           "path": "rules/1000-ai-overseas-all.list"
         },
@@ -3786,11 +3786,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "rules/1040-xai-connections.list"
         },
@@ -7216,11 +7216,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "rules/8600-mainland-routing-all.list"
         },
@@ -7236,11 +7236,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "rules/8620-mainland-networks.list"
         },
@@ -7352,11 +7352,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 644,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 643,
           "status": "available",
           "path": "dist/clash-classical/1000-ai-overseas-all.yaml"
         },
@@ -7392,11 +7392,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/clash-classical/1040-xai-connections.yaml"
         },
@@ -10822,11 +10822,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "dist/clash-classical/8600-mainland-routing-all.yaml"
         },
@@ -10842,11 +10842,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "dist/clash-classical/8620-mainland-networks.yaml"
         },
@@ -10958,11 +10958,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 644,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 643,
           "status": "available",
           "path": "dist/egern/1000-ai-overseas-all.yaml"
         },
@@ -10998,11 +10998,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/egern/1040-xai-connections.yaml"
         },
@@ -14428,11 +14428,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "dist/egern/8600-mainland-routing-all.yaml"
         },
@@ -14448,11 +14448,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "dist/egern/8620-mainland-networks.yaml"
         },
@@ -14564,10 +14564,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -14602,11 +14602,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/surge-compatible/1040-xai-connections.list"
         },
@@ -18030,11 +18030,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "dist/surge-compatible/8600-mainland-routing-all.list"
         },
@@ -18050,11 +18050,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "dist/surge-compatible/8620-mainland-networks.list"
         },
@@ -18166,11 +18166,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 644,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 643,
           "status": "available",
           "path": "dist/surge-compatible/1000-ai-overseas-all.list"
         },
@@ -18206,11 +18206,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/surge-compatible/1040-xai-connections.list"
         },
@@ -21636,11 +21636,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "dist/surge-compatible/8600-mainland-routing-all.list"
         },
@@ -21656,11 +21656,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "dist/surge-compatible/8620-mainland-networks.list"
         },
@@ -21768,10 +21768,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -21805,11 +21805,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/quantumult-x/1040-xai-connections.list"
         },
@@ -25227,11 +25227,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 19307,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 19289,
           "status": "available",
           "path": "dist/quantumult-x/8600-mainland-routing-all.list"
         },
@@ -25247,11 +25247,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
-          "output-rule-count": 7014,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6996,
           "status": "available",
           "path": "dist/quantumult-x/8620-mainland-networks.list"
         },
@@ -25359,10 +25359,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -25396,11 +25396,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/sing-box/1040-xai-connections.json"
         },
@@ -28818,10 +28818,10 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -28837,10 +28837,10 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -28947,10 +28947,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 644,
+          "rule-count": 643,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -28984,11 +28984,11 @@
         },
         "1040-xai-connections": {
           "source": "rules/1040-xai-connections.lsr",
-          "rule-count": 7,
+          "rule-count": 6,
           "description": "xAI 账号、Grok 对话与模型 API",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-21T05:48:54Z",
-          "output-rule-count": 7,
+          "updated-at": "2026-11-24T14:17:53Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/v2ray/1040-xai-connections.json"
         },
@@ -32406,10 +32406,10 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19307,
+          "rule-count": 19289,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -32425,10 +32425,10 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 7014,
+          "rule-count": 6996,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-23T18:06:27Z",
+          "updated-at": "2026-11-24T14:17:53Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },

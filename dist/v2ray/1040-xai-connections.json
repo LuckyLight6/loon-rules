@@ -9,8 +9,7 @@
           "domain:x.ai",
           "regexp:(?i)^.*\\.grokusercontent\\.com$",
           "full:accounts.spacexsi.com",
-          "full:auth.grokipedia.com",
-          "full:accounts.spacex.ai"
+          "full:auth.grokipedia.com"
         ],
         "outboundTag": "PROXY"
       }

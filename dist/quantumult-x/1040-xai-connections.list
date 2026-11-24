@@ -4,15 +4,15 @@
 # description: xAI 账号、Grok 对话与模型 API
 # boundary: Grok、xAI API 及 Grok、Cursor、Grokipedia 共用账号；Cursor 编辑器、百科内容与 X 社交分别处理
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-21T05:48:54Z
+# updated-at: 2026-11-24T14:17:53Z
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
 # source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://cursor.com/help/troubleshooting/sign-in-domains
 # source: https://cursor.com/docs/enterprise/network-configuration
 # source: https://docs.x.ai/x-subscription/sign-in
 # source: https://docs.x.ai/developers/faq/accounts
-# canonical-rule-count: 7
-# rule-count: 7
+# canonical-rule-count: 6
+# rule-count: 6
 # format: quantumult-x
 # canonical: rules/1040-xai-connections.lsr
 
@@ -22,4 +22,3 @@ host-suffix,x.ai,proxy
 host-wildcard,*.grokusercontent.com,proxy
 host,accounts.spacexsi.com,proxy
 host,auth.grokipedia.com,proxy
-host,accounts.spacex.ai,proxy

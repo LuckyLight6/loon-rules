@@ -4,8 +4,8 @@
 # description: xAI 账号、Grok 对话与模型 API
 # boundary: Grok、xAI API 及 Grok、Cursor、Grokipedia 共用账号；Cursor 编辑器、百科内容与 X 社交分别处理
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-21T05:48:54Z
-# rule-count: 7
+# updated-at: 2026-11-24T14:17:53Z
+# rule-count: 6
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
 # source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://cursor.com/help/troubleshooting/sign-in-domains
@@ -19,4 +19,3 @@ DOMAIN-SUFFIX,x.ai
 DOMAIN-WILDCARD,*.grokusercontent.com
 DOMAIN,accounts.spacexsi.com
 DOMAIN,auth.grokipedia.com
-DOMAIN,accounts.spacex.ai
