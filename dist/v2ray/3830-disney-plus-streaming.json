@@ -6,7 +6,10 @@
         "domains": [
           "domain:disney-plus.net",
           "domain:disneyplus.com",
-          "domain:dssott.com"
+          "domain:dssott.com",
+          "full:disney.api.edge.bamgrid.com",
+          "full:disney.content.edge.bamgrid.com",
+          "full:disney.images.edge.bamgrid.com"
         ],
         "outboundTag": "PROXY"
       }

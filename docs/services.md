@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 195 个厂商或项目、337 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 195 个厂商或项目、338 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -25,7 +25,7 @@
 | 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/6900-mainland-media-all.lsr) | 16 |
 | 国内游戏合集 | [7200 国内游戏合集](../rules/7200-mainland-games-all.lsr) | 3 |
 | 国内购物、生活与办公合集 | [7400 国内购物、生活与办公合集](../rules/7400-mainland-daily-services-all.lsr) | 8 |
-| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 11 |
+| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 12 |
 | 国内厂商共用服务合集 | [8400 国内厂商共用服务合集](../rules/8400-mainland-platforms-all.lsr) | 11 |
 
 ## Tailscale
@@ -958,11 +958,12 @@
 |---|---|
 | Netflix 播放、设备 API 和内容分发 | [3820 Netflix 播放、设备 API 和内容分发](../rules/3820-netflix-video-and-delivery.lsr) |
 
-## Disney+
+## Disney
 
 | 产品或服务 | 对应规则 |
 |---|---|
 | Disney+ 播放及其专用交付 | [3830 Disney+ 播放及其专用交付](../rules/3830-disney-plus-streaming.lsr) |
+| MyDisney 账户及跨产品登录组件 | [8120 Disney 共用账户、登录组件与日志](../rules/8120-disney-shared-services.lsr) |
 
 ## Amazon / AWS
 

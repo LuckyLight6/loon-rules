@@ -7,7 +7,8 @@
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
 | 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 3010、Cargo 3080、PyPI 3060、npm 3040 |
-| SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 只读取指定函数直接返回的字面 HTTPS；`qt-host-predicate` 读取指定 Qt URL 主机判断；`code-api-endpoints` 可读取指定源码字段，不运行下载的源码 | Claude 1010、xAI 1040、Telegram 3310、Firebase 消息 4585 等 |
+| 页面内的公开服务配置 | `next-service-urls` 核对唯一的页面 JSON 与产品身份，再用 `paths` 读取业务 URL；`url-fields` 只在指定正文范围读取所列资源字段 | Disney+ 3830 读取生产 API、默认内容服务和图片；内部与预览配置不参与 |
+| SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 读取指定函数的字面 HTTPS；`qt-host-predicate` 读取 Qt 主机判断；`code-api-endpoints` 读取指定源码字段；`literal-object-urls` 从 JavaScript 语法树读取指定环境的完整 URL 对象 | Claude 1010、xAI 1040、Telegram 3310、Firebase 消息 4585、Disney 共用服务 8120 等 |
 | 服务域名列与 CSP | `domain-column-table` 核对列头后读取指定列，`value-format: url` 从 HTTPS／WSS URL 取精确主机；`csp-origins` 按章节、指令和品牌取源 | Datadog 3140、Docker 3075 的完整用途表、Intercom 4360 |
 | Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2090 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
@@ -37,6 +38,8 @@
 ```
 
 `protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。用途字段还要通过共享主机与产品归属检查。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
+
+`next-service-urls` 只解析 `__NEXT_DATA__` 的 JSON，不执行页面脚本。`url-fields` 的每项声明包含 `path` 和 `fields`：在指定对象或列表中查找这些用途字段，字段至少出现一次，出现的值都必须是有效 URL。图片等公开资源可显式设置 `allow-query: true`，结果仍只保留精确主机。选中字段指向共用平台、页面数据缺失或重复、类型及产品身份变化时，停止更新；同一用途范围必须有独立 `source-inventories` 核对。这类局部页面配置不能单独启用 `inventory-refresh`，原入口消失时也不能据此认定整个服务已经停用它。
 
 `product-role-links` 从指定用途的链接取主机，公开跟踪参数不进入规则。相对链接按声明的来源 URL 补全，没有来源地址时不能猜测目标；HTTP、脚本动作和带凭据的链接仍不采用。子域保持精确匹配；链接指向共享平台时，不能因路径属于某个产品就认领整个主机。Google 4590 从官网的 News、Blog 和 Press resources 链接跟随资讯入口。
 
@@ -69,9 +72,14 @@
 | 地区主机模板 | `host-templates` 结合用途表、占位字段、端口与同一品牌的地区注册域清单 | 模板、品牌标签和注册域一致；共享租户不能当地区根域。Google 登录 4510 是实例 |
 | JSON 中的文章正文 | `json-document` 用 `body-path` 选正文、`identity` 核对文章，再嵌套现成读取器 | 外层来源身份保持一致。JetBrains 1230、3100、6260 按地区注释与用途分开 |
 | 前端页面的专用资源 | `next-page` 跟随页面数据明确声明的专用路由文件，再按用途读取字段和请求示例 | 页面身份、资源厂商范围与用途标签都匹配；不执行脚本，不扫描全部资源。Liblib 6110 是实例 |
+| 页面当前使用的 SDK | `next-sdk` 核对公开页面中的产品和环境标记，跟随指定字段的 SDK URL，再用 `literal-object-urls` 读取生产配置 | 脚本须属于已确认的资源命名空间；环境对象须唯一、字段齐全且都是静态 URL。语法、用途字段或类型变化时停止更新。8120 跟随 MyDisney 登录组件 |
 | 服务 CNAME 的独立租户 | `cname-tenants` 声明服务父域与 Public Suffix List 私有后缀 | 只有原服务链实际指向的完整租户名可生成精确规则；其他租户、子域和共享父域不能顺带采用 |
 
 API 目录中仍公开的旧版本也参加完整清单的并集。页面中的一个请求示例不代表全部服务，不能套用完整清单的撤回语义。
+
+JavaScript SDK 使用 Tree-sitter 解析完整语法树，区分真正的对象、注释、字符串、模板和正则表达式。`literal-object-urls` 只接受指定环境的一个字面对象，`fields` 必须与其 URL 用途字段完全一致；计算属性、函数调用、展开项、重复字段或未知新增字段都会停止更新。SDK 版本与主机由产品页面跟随，不固定生成文件名。8120 的生产配置使用 `prod` 对象；页面选择的脚本主机即使含有 `qa` 字样，也不能据此删掉实际载入入口。
+
+已核实的账户网站缺少 canonical 时，`site-identity.scope: source-host` 可用唯一、精确匹配的品牌元数据识别声明的来源主机；品牌字段可选 `og:site_name` 或 `og:title`。如果页面提供 canonical 或 Open Graph URL，它们必须与该主机一致。结果只是一条精确主机，不扩大为父域；MyDisney 账户管理页使用这种方式。
 
 ## 什么时候启用端点轮换
 

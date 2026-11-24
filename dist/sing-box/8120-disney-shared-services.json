@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "cdn-qa.disneyaccount.com",
+        "log.go.com",
+        "login.disney.com",
+        "my.disney.com"
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T17:50:37Z",
-  "inputs-read": 593,
-  "critical": 869,
-  "inputs-requested": 593,
+  "checked-at": "2026-11-24T19:23:01Z",
+  "inputs-read": 596,
+  "critical": 875,
+  "inputs-requested": 596,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -844,7 +844,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 339,
+    "routine-tables": 340,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1241,6 +1241,7 @@
       "cloudflare-shared-services",
       "amazon-shared-services",
       "discord-activities-proxy",
+      "disney-shared-services",
       "netease-shared-services",
       "alibaba-shared-services",
       "tencent-shared-content-and-sdk",
@@ -5322,8 +5323,8 @@
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
       "DOMAIN,updates-http.g.aaplimg.com",
       "DOMAIN,updates.g.aaplimg.com",
-      "DOMAIN,swcdn.apple.com.edgesuite.net",
-      "DOMAIN,updates-http.cdn-apple.com.edgesuite.net"
+      "DOMAIN,updates-http.cdn-apple.com.edgesuite.net",
+      "DOMAIN,swcdn.apple.com.edgesuite.net"
     ],
     "apple-developer-downloads": [
       "DOMAIN,adcdownload.apple.com.akadns.net"
@@ -5405,15 +5406,15 @@
         ],
         "state": "current"
       },
-      "DOMAIN,swcdn.apple.com.edgesuite.net": {
-        "canonical-hosts": [
-          "swcdn.apple.com"
-        ],
-        "state": "historical"
-      },
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net": {
         "canonical-hosts": [
           "updates-http.cdn-apple.com"
+        ],
+        "state": "historical"
+      },
+      "DOMAIN,swcdn.apple.com.edgesuite.net": {
+        "canonical-hosts": [
+          "swcdn.apple.com"
         ],
         "state": "historical"
       }
@@ -10136,6 +10137,111 @@
       ],
       "directory": "https://www.liblib.art/apis/workflow",
       "asset-row": "DOMAIN,liblibai-web-static.liblib.cloud"
+    },
+    "disney-shared-services": {
+      "method": "next-sdk",
+      "selection": {
+        "asset-roots": [
+          "disneyaccount.com"
+        ],
+        "config": {
+          "identity": [
+            {
+              "path": [
+                "page"
+              ],
+              "equals": "/[[...path]]"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "path",
+                "sdk",
+                "application",
+                "id"
+              ],
+              "equals": "disneyplus"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "path",
+                "sdk",
+                "environment"
+              ],
+              "equals": "prod"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "remoteAppConfig",
+                "dictionaryTenant"
+              ],
+              "equals": "disney"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "identitySDKConfig",
+                "enabled"
+              ],
+              "equals": true
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "identitySDKConfig",
+                "environment"
+              ],
+              "equals": "prod"
+            }
+          ],
+          "paths": [
+            [
+              "props",
+              "pageProps",
+              "identitySDKConfig",
+              "scriptUrl"
+            ]
+          ]
+        },
+        "document": {
+          "format": "literal-object-urls",
+          "object-key": "prod",
+          "fields": [
+            "authority",
+            "telemetryURL",
+            "orchestrationURL"
+          ]
+        },
+        "max-documents": 1
+      },
+      "documents": [
+        {
+          "source": "https://cdn-qa.disneyaccount.com/v5/sdk.js",
+          "roles": {
+            "authority": "DOMAIN,login.disney.com",
+            "telemetryURL": "DOMAIN,log.go.com",
+            "orchestrationURL": "DOMAIN,login.disney.com"
+          },
+          "asset-row": "DOMAIN,cdn-qa.disneyaccount.com",
+          "rows": [
+            "DOMAIN,cdn-qa.disneyaccount.com",
+            "DOMAIN,log.go.com",
+            "DOMAIN,login.disney.com"
+          ],
+          "shared-rows": []
+        }
+      ],
+      "directory": "https://www.disneyplus.com/"
     }
   },
   "maintenance": {
@@ -10538,6 +10644,9 @@
     ],
     "比较上游，保留已审范围": [
       8630
+    ],
+    "跟随产品页面的当前 SDK，读取生产配置": [
+      8120
     ]
   },
   "reviewed-inputs": {
@@ -10607,7 +10716,7 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 1,
+      "accepted-prefixes": 0,
       "unconfirmed-prefixes": 525,
       "retired-prefixes": 0
     },
@@ -11815,6 +11924,18 @@
       "domain-scopes": 1,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "disney-plus-official-config": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "mydisney-account-management": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "functional-hosts": [
@@ -12172,6 +12293,9 @@
     "desktop.chat.openai.com",
     "desktop.docker.com",
     "dhi.io",
+    "disney.api.edge.bamgrid.com",
+    "disney.content.edge.bamgrid.com",
+    "disney.images.edge.bamgrid.com",
     "docker-pinata-support.s3.amazonaws.com",
     "docker-proxy.pkg.github.com",
     "docker.pkg.github.com",
@@ -12281,6 +12405,7 @@
     "midjourney.com",
     "mpsghub.actions.githubusercontent.com",
     "muse.ai",
+    "my.disney.com",
     "myaccount.google.com",
     "nexus-australia-websocket.intercom.io",
     "nexus-europe-websocket.intercom.io",
@@ -12674,7 +12799,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -12715,7 +12840,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "ollama-cloud": {
@@ -12746,7 +12871,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "stackit-model-services": {
@@ -12777,7 +12902,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "stepfun-international": {
@@ -12819,7 +12944,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "xiaomi-international": {
@@ -12862,7 +12987,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -12897,7 +13022,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -12947,7 +13072,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -12988,7 +13113,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -13220,7 +13345,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "npm-registry": {
@@ -13253,7 +13378,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -13297,7 +13422,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -13330,7 +13455,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -13383,7 +13508,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "braintree-payments": {
@@ -13410,7 +13535,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "notion-workspace": {
@@ -13436,7 +13561,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "google-account-authentication": {
@@ -13644,7 +13769,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -13670,7 +13795,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "google-play-services": {
@@ -13706,7 +13831,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "google-play-games": {
@@ -13734,7 +13859,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "kimi-mainland": {
@@ -13765,7 +13890,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -13796,7 +13921,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -13839,7 +13964,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -13878,15 +14003,15 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795542601,
+      "last-read": 1795548146,
       "state": "current"
     }
   },
   "inventory-domain-cases": 464,
-  "expanded-domain-cases": 219,
+  "expanded-domain-cases": 222,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1321,
+  "business-domain-cases": 1328,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -13895,29 +14020,8 @@
     }
   },
   "shared-negatives": 19,
-  "changed": [
-    "overseas-social-all",
-    "telegram-messaging",
-    "overseas-crypto-all",
-    "mainland-media-all",
-    "qq-music",
-    "kugou-music",
-    "overseas-extra-all",
-    "overseas-sites-extra",
-    "mainland-routing-all",
-    "mainland-domains",
-    "mainland-networks",
-    "wesing-mainland-karaoke",
-    "kuwo-audio",
-    "ximalaya-audio",
-    "lazy-audio-books",
-    "ultimate-music-services",
-    "tencent-music-shared-services",
-    "ton-foundation-sites",
-    "toncenter-blockchain-api",
-    "fragment-digital-assets"
-  ],
-  "scope-negatives": 150,
+  "changed": [],
+  "scope-negatives": 157,
   "ip-cases": 44,
   "ip-matching": {
     "local-links-and-addresses": {
@@ -14187,10 +14291,10 @@
     "ton-foundation-sites": 1,
     "toncenter-blockchain-api": 1,
     "fragment-digital-assets": 1,
-    "overseas-media-all": 179,
+    "overseas-media-all": 182,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
-    "disney-plus-streaming": 3,
+    "disney-plus-streaming": 6,
     "prime-video-streaming": 11,
     "hulu-streaming": 48,
     "youtube-video-and-cdn": 12,
@@ -14321,7 +14425,7 @@
     "youdao-products": 3,
     "aliyun-drive": 6,
     "wps-office": 13,
-    "global-platforms-all": 429,
+    "global-platforms-all": 433,
     "digitalocean-services": 6,
     "vultr-services": 1,
     "hetzner-services": 14,
@@ -14333,6 +14437,7 @@
     "cloudflare-shared-services": 52,
     "amazon-shared-services": 168,
     "discord-activities-proxy": 1,
+    "disney-shared-services": 4,
     "overseas-extra-all": 18610,
     "overseas-media-extra": 145,
     "overseas-sites-extra": 18479,

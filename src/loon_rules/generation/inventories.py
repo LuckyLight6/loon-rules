@@ -11,7 +11,7 @@ from loon_rules.matching import merge_cases
 WAIT_SECONDS=20*3600
 MAX_GAP_SECONDS=3*86400
 INVENTORY_FIELDS={'service-domain-groups':('path','groups'),
-                  'json-service-urls':('paths','identity','revision-path'),
+                  'json-service-urls':('paths','url-fields','identity','revision-path'),
                   'plist-service-fields':('host-paths','url-paths','identity','records','data-path'),
                   'section-code-domains':('sections',),
                   'json-document':('body-path','identity','document'),

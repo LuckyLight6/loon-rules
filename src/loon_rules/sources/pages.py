@@ -49,7 +49,18 @@ class PageData(HTMLParser):
 
     def handle_endtag(self,tag):
         if tag=='script' and self.content is not None:
-            self.initial.append(json.loads(''.join(self.content)));self.content=None
+            def unique_fields(pairs):
+                result = {}
+                for name, value in pairs:
+                    if name in result:
+                        raise Invalid('产品页面数据包含重复字段')
+                    result[name] = value
+                return result
+            try:
+                self.initial.append(json.loads(''.join(self.content), object_pairs_hook=unique_fields))
+            except ValueError as error:
+                raise Invalid('产品页面数据不是有效 JSON') from error
+            self.content=None
 
 
 def document_matches(spec,prefix,source):

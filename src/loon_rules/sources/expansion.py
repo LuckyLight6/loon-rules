@@ -6,6 +6,7 @@ from urllib.parse import urlsplit
 
 from loon_rules import domains as domain_scope
 from loon_rules.sources import pages as source_pages
+from loon_rules.sources import sdk_pages as source_sdk_pages
 from loon_rules.sources import templates as source_templates
 from loon_rules.sources import profiles as source_profiles
 from loon_rules.sources import bags as source_bags
@@ -50,10 +51,10 @@ def validate(config, entries):
                 raise Invalid('客户端版本目录与配置来源未列入生成声明：'+key)
             source_profiles.validate(spec)
             continue
-        if spec.get('method')=='next-page':
+        if spec.get('method') in ('next-page', source_sdk_pages.METHOD):
             if entry['mode']!='compiled' or spec['source'] not in entry['sources']:
                 raise Invalid('产品页面来源未列入生成声明：'+key)
-            source_pages.validate(spec)
+            (source_sdk_pages if spec['method'] == source_sdk_pages.METHOD else source_pages).validate(spec)
             continue
         if spec.get('method')=='host-templates':
             if entry['mode']!='compiled' or not {spec['source'],spec['registry-source']}<=set(entry['sources']):
@@ -106,6 +107,8 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
             plans[key]=source_profiles.plan(spec,downloaded[spec['source']])
         elif spec.get('method')=='next-page':
             plans[key]=source_pages.plan(spec,downloaded[spec['source']])
+        elif spec.get('method')==source_sdk_pages.METHOD:
+            plans[key]=source_sdk_pages.plan(spec,downloaded[spec['source']])
         elif spec.get('method')=='host-templates':
             plans[key]=source_templates.plan(spec,downloaded[spec['source']])
         else:
@@ -135,6 +138,9 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
             continue
         if record.get('method')=='next-page':
             rows[key],report[key]=source_pages.read(entries[key]['expand'],record,inputs,shared_hosts)
+            continue
+        if record.get('method')==source_sdk_pages.METHOD:
+            rows[key],report[key]=source_sdk_pages.read(entries[key]['expand'],record,inputs,shared_hosts)
             continue
         if record.get('method')=='host-templates':
             rows[key],report[key]=source_templates.read(entries[key]['expand'],record,inputs,shared_hosts)
@@ -177,6 +183,10 @@ def verify_report(entries, data, report, *, shared_hosts=()):
             source_pages.verify(spec,record)
             for doc in docs:
                 verify_rows(key,doc['rows'],data)
+            continue
+        if spec.get('method')==source_sdk_pages.METHOD:
+            source_sdk_pages.verify(spec,record)
+            for doc in docs:verify_rows(key,doc['rows'],data)
             continue
         if spec.get('method')=='host-templates':
             source_templates.verify(spec,record)

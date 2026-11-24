@@ -6,6 +6,11 @@
         "disney-plus.net",
         "disneyplus.com",
         "dssott.com"
+      ],
+      "domain": [
+        "disney.api.edge.bamgrid.com",
+        "disney.content.edge.bamgrid.com",
+        "disney.images.edge.bamgrid.com"
       ]
     }
   ]

@@ -129,6 +129,13 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') == 'next-service-urls':
+                fields = ('paths', 'url-fields', 'identity')
+                if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                           and spec.get('recipe', {}).get('format') == recipe['format']
+                           and all(spec['recipe'].get(field) == recipe.get(field) for field in fields)
+                           for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('产品页面用途字段缺少同范围的完整归属核对：' + e['id'])
             if recipe.get('format') == 'qt-host-predicate':
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
                            and spec.get('recipe', {}).get('format') == 'qt-host-predicate'

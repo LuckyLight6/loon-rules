@@ -889,7 +889,8 @@
         "adobe-shared-services",
         "cloudflare-shared-services",
         "amazon-shared-services",
-        "discord-activities-proxy"
+        "discord-activities-proxy",
+        "disney-shared-services"
       ],
       "subheadings": {
         "digitalocean-services": "厂商与云平台细分"
@@ -8700,9 +8701,10 @@
       "mode": "compiled",
       "policy-hint": "global",
       "description": "Disney+ 播放及其专用交付",
-      "boundary": "不将迪士尼乐园、体育、Hulu 或整个共享 bamgrid 网关当 Disney+。可归属的主机按精确匹配",
+      "boundary": "播放、网页及专用分发域；官网公开配置按产品身份读取 API、内容与图片入口。迪士尼乐园、Hulu、内部服务器和共用资源另行归属",
       "sources": [
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list"
+        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list",
+        "https://www.disneyplus.com/"
       ],
       "projection": [
         {
@@ -8717,7 +8719,93 @@
       ],
       "priority": 3830,
       "section": "media",
-      "routing-group": "overseas-video"
+      "routing-group": "overseas-video",
+      "extract": [
+        {
+          "format": "next-service-urls",
+          "source": "https://www.disneyplus.com/",
+          "identity": [
+            {
+              "path": [
+                "page"
+              ],
+              "equals": "/[[...path]]"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "path",
+                "sdk",
+                "application",
+                "id"
+              ],
+              "equals": "disneyplus"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "path",
+                "sdk",
+                "environment"
+              ],
+              "equals": "prod"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "remoteAppConfig",
+                "dictionaryTenant"
+              ],
+              "equals": "disney"
+            }
+          ],
+          "paths": [
+            [
+              "props",
+              "pageProps",
+              "remoteConfig",
+              "path",
+              "orchestrationUrl"
+            ],
+            [
+              "props",
+              "pageProps",
+              "remoteConfig",
+              "path",
+              "dictionaryUrl"
+            ],
+            [
+              "props",
+              "pageProps",
+              "remoteConfig",
+              "path",
+              "nsx",
+              "contentApiHost",
+              "default"
+            ]
+          ],
+          "url-fields": [
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "stitchDocument"
+              ],
+              "fields": [
+                "imageUrl"
+              ],
+              "allow-query": true
+            }
+          ],
+          "protect-from-reject": true
+        }
+      ]
     },
     {
       "id": "prime-video-streaming",
@@ -14613,6 +14701,117 @@
       "product-negatives": [
         "api.telegram.org"
       ]
+    },
+    {
+      "id": "disney-shared-services",
+      "priority": 8120,
+      "section": "vendors",
+      "routing-group": "global-platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Disney 共用账户、登录组件与日志",
+      "boundary": "MyDisney 账户管理及当前公开 SDK 的生产登录、组件和日志主机，供多个 Disney 产品共用；保持精确匹配，不接管整个 disney.com 或 go.com",
+      "sources": [
+        "https://www.disneyplus.com/",
+        "https://my.disney.com/"
+      ],
+      "extract": [
+        {
+          "source": "https://my.disney.com/",
+          "format": "site-identity",
+          "scope": "source-host",
+          "brand-field": "og:title",
+          "brand": "MyDisney Account",
+          "protect-from-reject": true
+        }
+      ],
+      "expand": {
+        "method": "next-sdk",
+        "source": "https://www.disneyplus.com/",
+        "max-documents": 1,
+        "asset-roots": [
+          "disneyaccount.com"
+        ],
+        "config": {
+          "identity": [
+            {
+              "path": [
+                "page"
+              ],
+              "equals": "/[[...path]]"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "path",
+                "sdk",
+                "application",
+                "id"
+              ],
+              "equals": "disneyplus"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "path",
+                "sdk",
+                "environment"
+              ],
+              "equals": "prod"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "remoteConfig",
+                "remoteAppConfig",
+                "dictionaryTenant"
+              ],
+              "equals": "disney"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "identitySDKConfig",
+                "enabled"
+              ],
+              "equals": true
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "identitySDKConfig",
+                "environment"
+              ],
+              "equals": "prod"
+            }
+          ],
+          "paths": [
+            [
+              "props",
+              "pageProps",
+              "identitySDKConfig",
+              "scriptUrl"
+            ]
+          ]
+        },
+        "document": {
+          "format": "literal-object-urls",
+          "object-key": "prod",
+          "fields": [
+            "authority",
+            "telemetryURL",
+            "orchestrationURL"
+          ]
+        }
+      }
     }
   ],
   "detailed": [
@@ -14879,6 +15078,7 @@
     "aliyun-drive",
     "wps-office",
     "discord-activities-proxy",
+    "disney-shared-services",
     "tencent-shared-content-and-sdk",
     "sina-shared-image-assets",
     "sina-web-and-shared-services"
@@ -17601,6 +17801,24 @@
     ],
     "te.legra.ph": [
       "telegram-messaging"
+    ],
+    "disney.api.edge.bamgrid.com": [
+      "disney-plus-streaming"
+    ],
+    "disney.content.edge.bamgrid.com": [
+      "disney-plus-streaming"
+    ],
+    "disney.images.edge.bamgrid.com": [
+      "disney-plus-streaming"
+    ],
+    "my.disney.com": [
+      "disney-shared-services"
+    ],
+    "cdn-qa.disneyaccount.com": [
+      "disney-shared-services"
+    ],
+    "login.disney.com": [
+      "disney-shared-services"
     ]
   },
   "shared-negatives": [
@@ -18230,6 +18448,7 @@
         8090,
         8100,
         8110,
+        8120,
         8400,
         8410,
         8420,
@@ -19246,6 +19465,27 @@
     ],
     "12345678.discordsays.com": [
       "discord-messaging-and-voice"
+    ],
+    "hulu.api.edge.bamgrid.com": [
+      "disney-plus-streaming"
+    ],
+    "internal-edge.us-east-1.bamgrid.net": [
+      "disney-plus-streaming"
+    ],
+    "static-assets.bamgrid.com": [
+      "disney-plus-streaming"
+    ],
+    "cdn-qa.disneyaccount.com": [
+      "disney-plus-streaming"
+    ],
+    "login-qa.disney.com": [
+      "disney-shared-services"
+    ],
+    "preprod-login-disney.api.edge.bamgrid.com": [
+      "disney-shared-services"
+    ],
+    "feet-stg.segds.engsvc.go.com": [
+      "disney-shared-services"
     ]
   },
   "recommended-views": [
@@ -20971,6 +21211,112 @@
         "scope": "source-root",
         "brand": "Fragment Auctions"
       }
+    },
+    {
+      "id": "disney-plus-official-config",
+      "source": "https://www.disneyplus.com/",
+      "recipe": {
+        "format": "next-service-urls",
+        "source": "https://www.disneyplus.com/",
+        "identity": [
+          {
+            "path": [
+              "page"
+            ],
+            "equals": "/[[...path]]"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "remoteConfig",
+              "path",
+              "sdk",
+              "application",
+              "id"
+            ],
+            "equals": "disneyplus"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "remoteConfig",
+              "path",
+              "sdk",
+              "environment"
+            ],
+            "equals": "prod"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "remoteConfig",
+              "remoteAppConfig",
+              "dictionaryTenant"
+            ],
+            "equals": "disney"
+          }
+        ],
+        "paths": [
+          [
+            "props",
+            "pageProps",
+            "remoteConfig",
+            "path",
+            "orchestrationUrl"
+          ],
+          [
+            "props",
+            "pageProps",
+            "remoteConfig",
+            "path",
+            "dictionaryUrl"
+          ],
+          [
+            "props",
+            "pageProps",
+            "remoteConfig",
+            "path",
+            "nsx",
+            "contentApiHost",
+            "default"
+          ]
+        ],
+        "url-fields": [
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "stitchDocument"
+            ],
+            "fields": [
+              "imageUrl"
+            ],
+            "allow-query": true
+          }
+        ],
+        "protect-from-reject": true
+      },
+      "owners": [
+        "disney-plus-streaming"
+      ]
+    },
+    {
+      "id": "mydisney-account-management",
+      "source": "https://my.disney.com/",
+      "recipe": {
+        "source": "https://my.disney.com/",
+        "format": "site-identity",
+        "scope": "source-host",
+        "brand-field": "og:title",
+        "brand": "MyDisney Account",
+        "protect-from-reject": true
+      },
+      "owners": [
+        "disney-shared-services"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -23495,13 +23841,19 @@
         ]
       },
       {
-        "id": "disney-plus-streaming",
-        "name": "Disney+",
+        "id": "disney",
+        "name": "Disney",
         "products": [
           {
             "name": "Disney+ 播放及其专用交付",
             "rules": [
               "disney-plus-streaming"
+            ]
+          },
+          {
+            "name": "MyDisney 账户及跨产品登录组件",
+            "rules": [
+              "disney-shared-services"
             ]
           }
         ]

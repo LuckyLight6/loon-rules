@@ -344,7 +344,7 @@
 |---:|---|---|---|---|
 | 3810 | [hbo-streaming](../rules/3810-hbo-streaming.lsr) | HBO Max | 只收已核对的产品域；不推断账户订阅或播放地区 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3810-hbo-streaming.lsr) |
 | 3820 | [netflix-video-and-delivery](../rules/3820-netflix-video-and-delivery.lsr) | Netflix 播放、设备 API 和内容分发 | 保留 Netflix 服务域与 nflx* 中已确认的专用后缀；不接管 AWS 或来源不明的直播 IP | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3820-netflix-video-and-delivery.lsr) |
-| 3830 | [disney-plus-streaming](../rules/3830-disney-plus-streaming.lsr) | Disney+ 播放及其专用交付 | 不将迪士尼乐园、体育、Hulu 或整个共享 bamgrid 网关当 Disney+。可归属的主机按精确匹配 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3830-disney-plus-streaming.lsr) |
+| 3830 | [disney-plus-streaming](../rules/3830-disney-plus-streaming.lsr) | Disney+ 播放及其专用交付 | 播放、网页及专用分发域；官网公开配置按产品身份读取 API、内容与图片入口。迪士尼乐园、Hulu、内部服务器和共用资源另行归属 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3830-disney-plus-streaming.lsr) |
 | 3840 | [prime-video-streaming](../rules/3840-prime-video-streaming.lsr) | Prime Video 视频 API 和内容 | Amazon 零售、共享 CloudFront 父域和通用图片不纳入。本组只保已识别视频专用域和 CDN 别名 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3840-prime-video-streaming.lsr) |
 | 3850 | [hulu-streaming](../rules/3850-hulu-streaming.lsr) | Hulu 视频与交付 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3850-hulu-streaming.lsr) |
 | 3860 | [youtube-video-and-cdn](../rules/3860-youtube-video-and-cdn.lsr) | YouTube 视频、音乐、频道与专用 CDN | 保留 youtubei、googlevideo 和 YouTube 静态域；不收整个 gvt2、Google IP 或 youtube 关键词 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3860-youtube-video-and-cdn.lsr) |
@@ -673,7 +673,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 8000 | [global-platforms-all](../rules/8000-global-platforms-all.lsr) | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8110。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8000-global-platforms-all.lsr) |
+| 8000 | [global-platforms-all](../rules/8000-global-platforms-all.lsr) | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8120。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8000-global-platforms-all.lsr) |
 
 ### 23.2 厂商与云平台细分
 
@@ -690,6 +690,7 @@
 | 8090 | [cloudflare-shared-services](../rules/8090-cloudflare-shared-services.lsr) | Cloudflare 控制台、WARP、Tunnel 与共用平台 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8090-cloudflare-shared-services.lsr) |
 | 8100 | [amazon-shared-services](../rules/8100-amazon-shared-services.lsr) | Amazon、AWS 与共用云平台 | 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8100-amazon-shared-services.lsr) |
 | 8110 | [discord-activities-proxy](../rules/8110-discord-activities-proxy.lsr) | Discord Activities 与第三方应用代理 | 从 Discord 官方代理用途说明读取平台命名空间；其中可以承载第三方应用和游戏，不归为聊天、语音或第三方应用自身的全部服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8110-discord-activities-proxy.lsr) |
+| 8120 | [disney-shared-services](../rules/8120-disney-shared-services.lsr) | Disney 共用账户、登录组件与日志 | MyDisney 账户管理及当前公开 SDK 的生产登录、组件和日志主机，供多个 Disney 产品共用；保持精确匹配，不接管整个 disney.com 或 go.com | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/8120-disney-shared-services.lsr) |
 
 ## 24 海外补充
 

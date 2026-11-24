@@ -357,6 +357,7 @@
 | 8090 | cloudflare-shared-services | Cloudflare 控制台、WARP、Tunnel 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8090-cloudflare-shared-services.yaml) |
 | 8100 | amazon-shared-services | Amazon、AWS 与共用云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8100-amazon-shared-services.yaml) |
 | 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8110-discord-activities-proxy.yaml) |
+| 8120 | disney-shared-services | Disney 共用账户、登录组件与日志 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8120-disney-shared-services.yaml) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8200-overseas-extra-all.yaml) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8210-overseas-media-extra.yaml) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8220-overseas-sites-extra.yaml) |

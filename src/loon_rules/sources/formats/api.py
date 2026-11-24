@@ -1,5 +1,6 @@
 """Public-source readers: api. Read data without executing source code."""
 import ast
+import json
 import re
 import shlex
 from urllib.parse import urlsplit
@@ -14,6 +15,76 @@ def literal_code_tokens(text):
         text,
     )
     return [token for token in tokens if not token.startswith(('//', '/*'))]
+
+
+def literal_object_hosts(recipe, text):
+    key = recipe.get('object-key')
+    fields = recipe.get('fields')
+    if (not isinstance(key, str) or not re.fullmatch(r'[A-Za-z_]\w*', key)
+            or not isinstance(fields, list) or not fields
+            or any(not isinstance(field, str) or not re.fullmatch(r'[A-Za-z_]\w*', field) for field in fields)
+            or len(set(fields)) != len(fields)):
+        raise Invalid('SDK 对象缺少明确的环境与 URL 用途字段')
+    try:
+        from tree_sitter import Language, Parser
+        import tree_sitter_javascript
+    except ImportError as error:
+        raise Invalid('读取 JavaScript SDK 需要安装项目依赖：python3 -m pip install --editable .') from error
+    from .structured import service_url_host
+    from .common import public_domain_pattern
+    tree = Parser(Language(tree_sitter_javascript.language())).parse(text.encode('utf-8'))
+    if tree.root_node.has_error:
+        raise Invalid('SDK JavaScript 语法变化，不能按部分解析结果更新')
+
+    def string(node):
+        if node is None or node.type != 'string':
+            raise Invalid('SDK 环境 URL 不再是单个静态字面值')
+        value = node.text.decode('utf-8')
+        try:
+            return json.loads(value) if value.startswith('"') else ast.literal_eval(value)
+        except (ValueError, SyntaxError) as error:
+            raise Invalid('SDK 字符串不能按静态字面值读取') from error
+
+    def property_name(node):
+        if node.type == 'property_identifier':
+            return node.text.decode('utf-8')
+        if node.type == 'string':
+            return string(node)
+        return None
+
+    objects = []
+    pending = [tree.root_node]
+    while pending:
+        node = pending.pop()
+        if node.type == 'pair':
+            name = node.child_by_field_name('key')
+            value = node.child_by_field_name('value')
+            if property_name(name) == key and value.type == 'object':
+                objects.append(value)
+        pending.extend(node.named_children)
+    if len(objects) != 1 or objects[0].type != 'object':
+        raise Invalid('SDK 环境对象缺失或重复')
+    result = {}
+    for member in objects[0].named_children:
+        if member.type == 'comment':
+            continue
+        if member.type != 'pair':
+            raise Invalid('SDK 环境对象包含计算、展开或未确认的字段')
+        name = member.child_by_field_name('key')
+        field = property_name(name)
+        if field not in fields or field in result:
+            raise Invalid('SDK 环境对象的用途字段变化、重复或无法识别')
+        row = public_domain_pattern(service_url_host(string(member.child_by_field_name('value'))))
+        if row is None:
+            raise Invalid('SDK 环境 URL 指向无法独立归属的共用主机')
+        result[field] = row
+    if set(result) != set(fields):
+        raise Invalid('SDK 环境对象的用途字段不完整')
+    return result
+
+
+def literal_object_urls(recipe, text):
+    return set(literal_object_hosts(recipe, text).values())
 
 
 def c_function_url(recipe, text):

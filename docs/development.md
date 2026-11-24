@@ -6,7 +6,7 @@
 
 ## 在本地检查和生成
 
-需要 Python 3.10 或更新版本，联网更新还需要 `curl`。生成器没有第三方运行依赖；开发时在虚拟环境安装本仓包，源码布局使用 [`src/`](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)：
+需要 Python 3.10 或更新版本，联网更新还需要 `curl`。在虚拟环境安装本仓包，会一并安装读取 JavaScript SDK 所需的 Tree-sitter 解析器；它生成语法树，不执行 SDK。源码布局使用 [`src/`](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)：
 
 ```sh
 python3 -m venv .venv
@@ -35,7 +35,7 @@ python3 -B -m loon_rules --export
 python3 -B -m loon_rules --check-exports
 ```
 
-`--refresh` 联网读取来源并写入通过检查的结果；`--check` 执行来源和生成检查，不写文件；`--verify-files` 只检查本地文件。安装后也可运行 `loon-rules --verify-files`；普通安装从当前目录向上查找规则仓库，在仓库内或其子目录运行即可。源码方式始终处理命令所在的仓库，原有 `python3 -B maintain.py ...` 和 `python3 -B scoped_dns.py ...` 无需安装包也可直接运行。`--adopt-ad-scope` 用于维护者审阅常规或扩展广告的大幅变更后，一次性采用交叉核对范围，不在定时任务中使用。
+`--refresh` 联网读取来源并写入通过检查的结果；`--check` 执行来源和生成检查，不写文件；`--verify-files` 只检查本地文件。安装后也可运行 `loon-rules --verify-files`；普通安装从当前目录向上查找规则仓库，在仓库内或其子目录运行即可。源码方式始终处理命令所在的仓库，原有 `python3 -B maintain.py ...` 和 `python3 -B scoped_dns.py ...` 入口继续可用；离线检查无需安装包，联网维护和完整测试先按上面安装依赖。`--adopt-ad-scope` 用于维护者审阅常规或扩展广告的大幅变更后，一次性采用交叉核对范围，不在定时任务中使用。
 
 ## 工程结构
 

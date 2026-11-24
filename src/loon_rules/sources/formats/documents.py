@@ -221,6 +221,21 @@ def parse_site_identity(recipe, text):
     guide = PurposeFragments()
     guide.feed(text)
     scope=recipe.get('scope','canonical')
+    if scope == 'source-host':
+        field = recipe.get('brand-field', 'og:site_name')
+        if field not in ('og:site_name', 'og:title') or guide.metadata.get(field) != [recipe['brand']]:
+            raise Invalid('产品来源主机缺少唯一且匹配的品牌标识')
+        source = urlsplit(recipe.get('source', ''))
+        if (source.scheme != 'https' or not source.hostname or source.username is not None
+                or source.query or source.fragment or source.path not in ('', '/')
+                or source.port not in (None, 443)):
+            raise Invalid('产品来源主机必须是公开 HTTPS 根入口')
+        row = public_domain_pattern(source.hostname)
+        if row is None or len(guide.canonical) > 1 or len(guide.metadata.get('og:url', [])) > 1:
+            raise Invalid('产品来源主机不能认领共享平台或重复身份')
+        if any(https_product_host(url) != row for url in guide.canonical + guide.metadata.get('og:url', [])):
+            raise Invalid('产品来源主机与页面身份不一致')
+        return {row}
     if scope=='source-root':
         field=recipe.get('brand-field','og:site_name');match=recipe.get('brand-match','exact')
         if field not in ('og:site_name','og:title') or match not in ('exact','word'):

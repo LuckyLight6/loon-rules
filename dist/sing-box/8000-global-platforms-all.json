@@ -433,7 +433,11 @@
       ],
       "domain": [
         "adobeereg.com",
-        "ood.opsource.net"
+        "ood.opsource.net",
+        "cdn-qa.disneyaccount.com",
+        "log.go.com",
+        "login.disney.com",
+        "my.disney.com"
       ]
     }
   ]

@@ -2,12 +2,13 @@
 # priority: 3830
 # section: media
 # description: Disney+ 播放及其专用交付
-# boundary: 不将迪士尼乐园、体育、Hulu 或整个共享 bamgrid 网关当 Disney+。可归属的主机按精确匹配
+# boundary: 播放、网页及专用分发域；官网公开配置按产品身份读取 API、内容与图片入口。迪士尼乐园、Hulu、内部服务器和共用资源另行归属
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-24T18:52:07Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Disney.list
-# canonical-rule-count: 3
-# rule-count: 3
+# source: https://www.disneyplus.com/
+# canonical-rule-count: 6
+# rule-count: 6
 # format: egern
 # canonical: rules/3830-disney-plus-streaming.lsr
 
@@ -15,3 +16,7 @@ domain_suffix_set:
   - "disney-plus.net"
   - "disneyplus.com"
   - "dssott.com"
+domain_set:
+  - "disney.api.edge.bamgrid.com"
+  - "disney.content.edge.bamgrid.com"
+  - "disney.images.edge.bamgrid.com"

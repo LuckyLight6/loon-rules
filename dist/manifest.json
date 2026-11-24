@@ -2100,11 +2100,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "rules/3800-overseas-media-all.lsr"
         },
@@ -2130,11 +2130,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "rules/3830-disney-plus-streaming.lsr"
         },
@@ -3440,11 +3440,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "rules/8000-global-platforms-all.lsr"
         },
@@ -3557,6 +3557,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "rules/8110-discord-activities-proxy.lsr"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/8120-disney-shared-services.lsr"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -3749,7 +3759,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 370,
+      "available": 371,
       "unsupported": 0
     },
     "surge": {
@@ -5806,11 +5816,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "rules/3800-overseas-media-all.list"
         },
@@ -5836,11 +5846,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "rules/3830-disney-plus-streaming.list"
         },
@@ -7146,11 +7156,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "rules/8000-global-platforms-all.list"
         },
@@ -7263,6 +7273,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "rules/8110-discord-activities-proxy.list"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/8120-disney-shared-services.list"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -7455,7 +7475,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 370,
+      "available": 371,
       "unsupported": 0
     },
     "clash-classical": {
@@ -9512,11 +9532,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/clash-classical/3800-overseas-media-all.yaml"
         },
@@ -9542,11 +9562,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/clash-classical/3830-disney-plus-streaming.yaml"
         },
@@ -10852,11 +10872,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/clash-classical/8000-global-platforms-all.yaml"
         },
@@ -10969,6 +10989,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/clash-classical/8110-discord-activities-proxy.yaml"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/clash-classical/8120-disney-shared-services.yaml"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -11161,7 +11191,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 370,
+      "available": 371,
       "unsupported": 0
     },
     "egern": {
@@ -13218,11 +13248,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/egern/3800-overseas-media-all.yaml"
         },
@@ -13248,11 +13278,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/egern/3830-disney-plus-streaming.yaml"
         },
@@ -14558,11 +14588,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/egern/8000-global-platforms-all.yaml"
         },
@@ -14675,6 +14705,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/egern/8110-discord-activities-proxy.yaml"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/egern/8120-disney-shared-services.yaml"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -14867,7 +14907,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 370,
+      "available": 371,
       "unsupported": 0
     },
     "surfboard": {
@@ -16920,11 +16960,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -16950,11 +16990,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/surge-compatible/3830-disney-plus-streaming.list"
         },
@@ -18260,11 +18300,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
         },
@@ -18377,6 +18417,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/surge-compatible/8110-discord-activities-proxy.list"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/surge-compatible/8120-disney-shared-services.list"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -18569,7 +18619,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 366,
+      "available": 367,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -20626,11 +20676,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -20656,11 +20706,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/surge-compatible/3830-disney-plus-streaming.list"
         },
@@ -21966,11 +22016,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
         },
@@ -22083,6 +22133,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/surge-compatible/8110-discord-activities-proxy.list"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/surge-compatible/8120-disney-shared-services.list"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -22275,7 +22335,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 370,
+      "available": 371,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -24321,11 +24381,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/quantumult-x/3800-overseas-media-all.list"
         },
@@ -24351,11 +24411,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/quantumult-x/3830-disney-plus-streaming.list"
         },
@@ -25657,11 +25717,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/quantumult-x/8000-global-platforms-all.list"
         },
@@ -25774,6 +25834,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/quantumult-x/8110-discord-activities-proxy.list"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/quantumult-x/8120-disney-shared-services.list"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -25966,7 +26036,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 355,
+      "available": 356,
       "unsupported": 15
     },
     "sing-box": {
@@ -28012,11 +28082,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/sing-box/3800-overseas-media-all.json"
         },
@@ -28042,11 +28112,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/sing-box/3830-disney-plus-streaming.json"
         },
@@ -29348,11 +29418,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/sing-box/8000-global-platforms-all.json"
         },
@@ -29465,6 +29535,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/sing-box/8110-discord-activities-proxy.json"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/sing-box/8120-disney-shared-services.json"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -29654,7 +29734,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 352,
+      "available": 353,
       "unsupported": 18
     },
     "v2ray": {
@@ -31700,11 +31780,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 179,
+          "rule-count": 182,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 179,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 182,
           "status": "available",
           "path": "dist/v2ray/3800-overseas-media-all.json"
         },
@@ -31730,11 +31810,11 @@
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
-          "rule-count": 3,
+          "rule-count": 6,
           "description": "Disney+ 播放及其专用交付",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T18:52:07Z",
+          "output-rule-count": 6,
           "status": "available",
           "path": "dist/v2ray/3830-disney-plus-streaming.json"
         },
@@ -33036,11 +33116,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 429,
+          "rule-count": 433,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T16:40:58Z",
-          "output-rule-count": 429,
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 433,
           "status": "available",
           "path": "dist/v2ray/8000-global-platforms-all.json"
         },
@@ -33153,6 +33233,16 @@
           "output-rule-count": 1,
           "status": "available",
           "path": "dist/v2ray/8110-discord-activities-proxy.json"
+        },
+        "8120-disney-shared-services": {
+          "source": "rules/8120-disney-shared-services.lsr",
+          "rule-count": 4,
+          "description": "Disney 共用账户、登录组件与日志",
+          "created-at": "2026-11-24T19:20:04Z",
+          "updated-at": "2026-11-24T19:20:04Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "dist/v2ray/8120-disney-shared-services.json"
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
@@ -33342,7 +33432,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 352,
+      "available": 353,
       "unsupported": 18
     }
   },

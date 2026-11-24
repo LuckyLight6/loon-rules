@@ -31,10 +31,12 @@ READERS = {
     'json-service-urls': structured.json_service_urls,
     'labelled-networks': networks.parse_labelled_networks,
     'labelled-url-pairs': contextual.labelled_url_pairs,
+    'literal-object-urls': api.literal_object_urls,
     'mail-autoconfig': feeds.parse_mail_autoconfig,
     'markdown-purpose-endpoints': contextual.markdown_purpose_endpoints,
     'named-hosts': feeds.parse_named_hosts,
     'nested-purpose-domains': contextual.nested_purpose_domains,
+    'next-service-urls': structured.next_service_urls,
     'openid-discovery': feeds.parse_openid_discovery,
     'plist-service-fields': structured.plist_service_fields,
     'product-domain-statements': documents.parse_product_domain_statements,
@@ -76,7 +78,7 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts', 'qt-host-predicate')
+    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts', 'qt-host-predicate', 'next-service-urls', 'literal-object-urls')
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

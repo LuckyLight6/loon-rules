@@ -7,6 +7,7 @@ from xml.parsers.expat import ExpatError
 
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
+from loon_rules.sources.pages import PageData
 from .common import public_domain_pattern
 
 
@@ -108,18 +109,70 @@ def document_body(recipe,text):
     return values[0]
 
 
-def json_service_urls(recipe,text):
+def json_service_urls(recipe,text,*,strict=False):
     """Read explicit server or download fields, excluding links in other metadata."""
     document=json_record(recipe,text)
     paths=recipe.get('paths',())
-    if not paths or any(not path or any(not isinstance(p,str) or not p for p in path) for path in paths):
+    if (not paths and not recipe.get('url-fields')
+            or any(not path or any(not isinstance(p,str) or not p for p in path) for path in paths)):
         raise Invalid('服务元数据没有明确的 URL 字段路径')
     result=set()
     for path in paths:
         for value in json_values(document,path):
-            if row:=public_domain_pattern(service_url_host(value)):result.add(row)
+            row = public_domain_pattern(service_url_host(value))
+            if row: result.add(row)
+            elif strict: raise Invalid('产品用途字段指向无法独立归属的共用主机')
+    result.update(json_url_fields(recipe, document, strict=strict))
     if not result:raise Invalid('服务 URL 没有可独立归属的公开主机')
     return result
+
+
+def json_url_fields(recipe, document, *, strict=False):
+    """Read named resource fields inside a declared document tree, not every URL."""
+    specs = recipe.get('url-fields', [])
+    if not isinstance(specs, list):
+        raise Invalid('服务 URL 的用途字段清单不是数组')
+    result = set()
+    for spec in specs:
+        if (not isinstance(spec, dict) or set(spec) - {'path', 'fields', 'allow-query'}
+                or not {'path', 'fields'} <= set(spec)
+                or not isinstance(spec['path'], list) or not spec['path']
+                or any(not isinstance(part, str) or not part for part in spec['path'])
+                or not isinstance(spec['fields'], list) or not spec['fields']
+                or any(not isinstance(field, str) or not field or field == '*' for field in spec['fields'])
+                or len(set(spec['fields'])) != len(spec['fields'])
+                or type(spec.get('allow-query', False)) is not bool):
+            raise Invalid('服务 URL 缺少明确的正文范围或资源用途字段')
+        seen = set()
+        def visit(node):
+            if isinstance(node, dict):
+                for field, value in node.items():
+                    if field in spec['fields']:
+                        seen.add(field)
+                        row = public_domain_pattern(service_url_host(value, allow_query=spec.get('allow-query', False)))
+                        if row: result.add(row)
+                        elif strict: raise Invalid('产品资源字段指向无法独立归属的共用主机')
+                    else:
+                        visit(value)
+            elif isinstance(node, list):
+                for child in node:
+                    visit(child)
+        for node in json_values(document, spec['path']):
+            visit(node)
+        if seen != set(spec['fields']):
+            raise Invalid('服务 URL 正文缺少必需的资源用途字段')
+    return result
+
+
+def next_service_urls(recipe, text):
+    if not isinstance(recipe.get('identity'), list) or not recipe['identity']:
+        raise Invalid('产品页面数据缺少明确的产品身份条件')
+    page = PageData()
+    page.feed(text)
+    page.close()
+    if page.content is not None or len(page.initial) != 1:
+        raise Invalid('产品页面数据缺失、重复或不完整')
+    return json_service_urls(recipe, json.dumps(page.initial[0]), strict=True)
 
 
 def service_url_host(value, *, allow_query=False):
