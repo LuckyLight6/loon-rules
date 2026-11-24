@@ -217,6 +217,7 @@
 | 3800 | overseas-media-all | 海外影音与内容合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3800-overseas-media-all.list) |
 | 3810 | hbo-streaming | HBO Max | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3810-hbo-streaming.list) |
 | 3820 | netflix-video-and-delivery | Netflix 播放、设备 API 和内容分发 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3820-netflix-video-and-delivery.list) |
+| 3825 | netflix-connection-tests | Netflix FAST 连接检查与测速 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3825-netflix-connection-tests.list) |
 | 3830 | disney-plus-streaming | Disney+ 播放及其专用交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3830-disney-plus-streaming.list) |
 | 3840 | prime-video-streaming | Prime Video 视频 API 和内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3840-prime-video-streaming.list) |
 | 3850 | hulu-streaming | Hulu 视频与交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/3850-hulu-streaming.list) |

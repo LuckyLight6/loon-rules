@@ -11,6 +11,27 @@ from loon_rules.sources.formats.common import public_domain_pattern
 
 FORMAT = 'security-program-domains'
 NON_NETWORK_TYPES = {'SOURCE_CODE', 'DOWNLOADABLE_EXECUTABLES', 'APPLE_STORE_APP_ID', 'GOOGLE_PLAY_APP_ID'}
+READINGS = {'identifier', 'fenced-domains', 'no-network-target', 'negative-fence',
+            'non-network-type', 'out-of-scope', 'unselected'}
+HISTORY_VERSION_FIELD = 'security-program-history-version'
+
+
+def asset_identity(value):
+    if (not isinstance(value, str) or not value or value != value.strip() or len(value) > 2048
+            or any(ord(char) < 32 for char in value)):
+        raise Invalid('安全资产标识含空白、控制字符或长度异常')
+    if '://' in value:
+        try:
+            url = urlsplit(value)
+            if (url.scheme not in ('http', 'https') or not url.hostname or url.username is not None
+                    or url.query or url.fragment or url.port not in (None, 80, 443)):
+                raise Invalid('安全资产标识不是无凭据和查询参数的公开 URL')
+            host = domain_scope.public_host(url.hostname)
+        except ValueError as exc:
+            raise Invalid('安全资产 URL 标识格式无效') from exc
+        port = ':' + str(url.port) if url.port is not None else ''
+        return 'url:' + url.scheme + '://' + host + port + (url.path or '/')
+    return 'label:' + ' '.join(value.split()).casefold()
 
 
 def unique_fields(pairs):
@@ -56,6 +77,7 @@ def program(recipe, text):
             key = (asset['asset_type'], asset['asset_identifier'])
             if key in seen:
                 raise Invalid('安全资产项目含重复或相互矛盾的目标')
+            asset_identity(asset['asset_identifier'])
             seen.add(key)
     return targets
 
@@ -191,6 +213,7 @@ def parse(recipe, text):
     ignored = 0
     unselected = 0
     types = {}
+    schema = []
     for asset in assets:
         kind = asset['asset_type']
         types[kind] = types.get(kind, 0) + 1
@@ -200,15 +223,21 @@ def parse(recipe, text):
         if not chosen:
             if kind in non_network:
                 ignored += 1
+                reading = 'non-network-type'
             elif recipe.get('complete'):
                 raise Invalid('完整安全资产项目仍有未归属目标：' + kind + ' ' + asset['asset_identifier'])
             else:
                 unselected += 1
+                reading = 'unselected'
+            schema.append({'type': kind, 'identifier': asset['asset_identifier'],
+                           'scope': 'in_scope', 'reading': reading})
             continue
         index = chosen[0]
         selected[index] += 1
         rule = selectors[index]
         method = rule['read']
+        schema.append({'type': kind, 'identifier': asset['asset_identifier'],
+                       'scope': 'in_scope', 'reading': method})
         if method == 'identifier':
             result.add(identifier(asset))
         elif method in ('fenced-domains', 'negative-fence'):
@@ -241,10 +270,13 @@ def parse(recipe, text):
             ignored += 1
     if any(count == 0 for count in selected) or not result:
         raise Invalid('安全资产的已声明产品缺失或为空')
+    schema.extend({'type': asset['asset_type'], 'identifier': asset['asset_identifier'],
+                   'scope': 'out_of_scope', 'reading': 'out-of-scope'} for asset in targets['out_of_scope'])
+    schema.sort(key=lambda record: (record['scope'], record['type'], asset_identity(record['identifier'])))
     return {'rows': result, 'asset-types': dict(sorted(types.items())), 'assets': len(assets),
             'selected-assets': sum(selected), 'non-network-assets': ignored,
             'unselected-assets': unselected,
-            'out-of-scope-assets': len(targets['out_of_scope'])}
+            'out-of-scope-assets': len(targets['out_of_scope']), 'asset-schema': schema}
 
 
 def extract(recipe, text):
@@ -254,6 +286,8 @@ def extract(recipe, text):
 def audit(recipe, text):
     record = parse(recipe, text)
     del record['rows']
+    if not recipe.get('complete'):
+        del record['asset-schema']
     return {**record, 'reading-policy': {field: recipe[field] for field in
             ('program', 'assets', 'complete', 'non-network-types') if field in recipe}}
 
@@ -261,7 +295,8 @@ def audit(recipe, text):
 def verify(recipe, record):
     counts = ('assets', 'selected-assets', 'non-network-assets', 'unselected-assets', 'out-of-scope-assets')
     policy = {field: recipe[field] for field in ('program', 'assets', 'complete', 'non-network-types') if field in recipe}
-    if (not isinstance(record, dict) or set(record) != {*counts, 'asset-types', 'reading-policy'}
+    schema_fields = {'asset-schema'} if recipe.get('complete') else set()
+    if (not isinstance(record, dict) or set(record) != {*counts, 'asset-types', 'reading-policy', *schema_fields}
             or record['reading-policy'] != policy
             or any(type(record[field]) is not int or record[field] < 0 for field in counts)
             or not isinstance(record['asset-types'], dict)
@@ -273,3 +308,81 @@ def verify(recipe, record):
             or record['unselected-assets'] > record['assets']
             or recipe.get('complete') and record['unselected-assets']):
         raise Invalid('安全资产来源的完整范围、类型或读取依据不一致')
+    if recipe.get('complete'):
+        schema = record['asset-schema']
+        if not isinstance(schema, list) or not schema:
+            raise Invalid('完整安全资产来源缺少逐项类型与用途记录')
+        seen = set()
+        types = {}
+        selected = ignored = out_of_scope = 0
+        for asset in schema:
+            if (not isinstance(asset, dict) or set(asset) != {'type', 'identifier', 'scope', 'reading'}
+                    or not isinstance(asset['type'], str) or not asset['type'].strip()
+                    or asset['scope'] not in ('in_scope', 'out_of_scope')
+                    or not isinstance(asset['reading'], str) or asset['reading'] not in READINGS
+                    or asset['reading'] == 'unselected'
+                    or (asset['scope'] == 'out_of_scope') != (asset['reading'] == 'out-of-scope')):
+                raise Invalid('完整安全资产来源含未归属或无效的逐项记录')
+            identity = (asset['type'], asset_identity(asset['identifier']))
+            if identity in seen:
+                raise Invalid('安全资产逐项记录重复或范围冲突')
+            seen.add(identity)
+            if asset['scope'] == 'out_of_scope':
+                out_of_scope += 1
+                continue
+            kind = asset['type']
+            if (asset['reading'] == 'identifier' and kind not in {'URL', 'API', 'WILDCARD'}
+                    or asset['reading'] in {'fenced-domains', 'negative-fence', 'no-network-target'}
+                    and kind not in {'URL', 'OTHER'}):
+                raise Invalid('安全资产记录的类型与读取用途不符')
+            types[kind] = types.get(kind, 0) + 1
+            if asset['reading'] != 'non-network-type':
+                selected += 1
+            elif kind not in recipe.get('non-network-types', {}):
+                raise Invalid('安全资产的非网络类型没有处理依据')
+            if asset['reading'] in ('non-network-type', 'no-network-target', 'negative-fence'):
+                ignored += 1
+        if (types != record['asset-types'] or selected != record['selected-assets']
+                or ignored != record['non-network-assets'] or out_of_scope != record['out-of-scope-assets']):
+            raise Invalid('安全资产的逐项记录与类型、用途计数不符')
+
+
+def verify_history(specs, downloaded, previous):
+    """A second source retaining a hostname does not validate a changed input type."""
+    old_sources = previous.get('source-inventories', {})
+    for spec in specs:
+        recipe = spec.get('recipe', {})
+        if recipe.get('format') != FORMAT or not recipe.get('complete'):
+            continue
+        current = audit(recipe, downloaded[spec['source']])
+        verify(recipe, current)
+        current_types = {}
+        for asset in current['asset-schema']:
+            current_types.setdefault(asset_identity(asset['identifier']), set()).add(asset['type'])
+        for old_id, prior in old_sources.items():
+            record = prior.get('program-assets', {})
+            policy = record.get('reading-policy', {})
+            if old_id == spec['id'] and policy.get('program') and policy['program'] != recipe['program']:
+                raise Invalid('不能把安全资产项目的历史改作另一身份')
+            if not policy.get('complete') or policy.get('program') != recipe['program']:
+                continue
+            if (type(previous.get(HISTORY_VERSION_FIELD)) is not int
+                    or previous[HISTORY_VERSION_FIELD] != 1 or 'asset-schema' not in record):
+                raise Invalid('安全资产类型历史缺失或版本不符，保留上一版')
+            verify(policy, record)
+            old_types = {}
+            for asset in record['asset-schema']:
+                key = asset_identity(asset['identifier'])
+                old_types.setdefault(key, set()).add(asset['type'])
+                if asset['reading'] in ('identifier', 'fenced-domains') and key not in current_types:
+                    raise Invalid('完整安全资产来源缺少已确认的网络目标，保留上一版')
+            for key, before in old_types.items():
+                after = current_types.get(key, set())
+                if before - after and after - before:
+                    raise Invalid('安全资产类型发生变化，不能由其他来源的域名覆盖代替核对')
+
+
+def verify_state_version(specs, state):
+    if any(spec.get('recipe', {}).get('format') == FORMAT and spec['recipe'].get('complete') for spec in specs):
+        if type(state.get(HISTORY_VERSION_FIELD)) is not int or state[HISTORY_VERSION_FIELD] != 1:
+            raise Invalid('完整安全资产来源缺少类型历史版本')

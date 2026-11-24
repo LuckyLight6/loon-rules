@@ -399,7 +399,7 @@
         {
           "id": "overseas-video",
           "start": 3810,
-          "title": "视频平台",
+          "title": "视频平台与配套服务",
           "section": "media"
         },
         {
@@ -425,6 +425,7 @@
         "overseas-media-all",
         "hbo-streaming",
         "netflix-video-and-delivery",
+        "netflix-connection-tests",
         "disney-plus-streaming",
         "prime-video-streaming",
         "hulu-streaming",
@@ -441,7 +442,7 @@
         "bahamut-video-and-community"
       ],
       "subheadings": {
-        "hbo-streaming": "视频平台",
+        "hbo-streaming": "视频平台与配套服务",
         "spotify-audio": "音乐与音频平台",
         "twitch-live-video": "直播平台",
         "bbc-news-and-video": "新闻与内容社区"
@@ -8676,7 +8677,8 @@
       "description": "Netflix 播放、设备 API 和内容分发",
       "boundary": "保留 Netflix 服务域与 nflx* 中已确认的专用后缀；不接管 AWS 或来源不明的直播 IP",
       "sources": [
-        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list"
+        "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list",
+        "https://help.netflix.com/en/node/14424"
       ],
       "projection": [
         {
@@ -8698,7 +8700,15 @@
       ],
       "priority": 3820,
       "section": "media",
-      "routing-group": "overseas-video"
+      "routing-group": "overseas-video",
+      "product-probes": [
+        "www.netflix.com"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "s3.amazonaws.com",
+        "api.github.com"
+      ]
     },
     {
       "id": "disney-plus-streaming",
@@ -15028,6 +15038,41 @@
       ],
       "license": "MIT",
       "notice": "arkadiyt--bounty-targets-data.txt"
+    },
+    {
+      "id": "netflix-connection-tests",
+      "priority": 3825,
+      "section": "media",
+      "routing-group": "overseas-video",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Netflix FAST 连接检查与测速",
+      "boundary": "从 Netflix 官方连接说明读取专用测速网站；测试 Netflix 路径时与播放使用同一出口，其他测速、Google 云和 AWS 共用服务不归本组",
+      "sources": [
+        "https://help.netflix.com/en/node/14424"
+      ],
+      "extract": [
+        {
+          "source": "https://help.netflix.com/en/node/14424",
+          "format": "product-domain-statements",
+          "include-list-items": true,
+          "paragraph-contains": [
+            "connection directly to Netflix"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "fast.com",
+        "www.fast.com",
+        "api.fast.com"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "s3.amazonaws.com",
+        "www.speedtest.net"
+      ]
     }
   ],
   "detailed": [
@@ -15214,6 +15259,7 @@
     "toncenter-blockchain-api",
     "fragment-digital-assets",
     "hbo-streaming",
+    "netflix-connection-tests",
     "hulu-streaming",
     "iqiyi-international",
     "vimeo-video",
@@ -18069,6 +18115,15 @@
     ],
     "api.pdst.fm": [
       "spotify-advertising-and-analytics"
+    ],
+    "fast.com": [
+      "netflix-connection-tests"
+    ],
+    "www.fast.com": [
+      "netflix-connection-tests"
+    ],
+    "api.fast.com": [
+      "netflix-connection-tests"
     ]
   },
   "shared-negatives": [
@@ -18548,6 +18603,7 @@
         3800,
         3810,
         3820,
+        3825,
         3830,
         3840,
         3850,
@@ -21862,6 +21918,32 @@
       "owners": [
         "sonantic-voice-services"
       ]
+    },
+    {
+      "id": "netflix-official-network-addresses",
+      "source": "https://help.netflix.com/en/node/14424",
+      "owners": [
+        "netflix-video-and-delivery",
+        "netflix-connection-tests"
+      ],
+      "recipe": {
+        "format": "nested-purpose-domains",
+        "parent-contains": "Make sure your device is able to connect to these Netflix addresses:"
+      }
+    },
+    {
+      "id": "netflix-direct-measurement-service",
+      "source": "https://help.netflix.com/en/node/14424",
+      "owners": [
+        "netflix-connection-tests"
+      ],
+      "recipe": {
+        "format": "product-domain-statements",
+        "include-list-items": true,
+        "paragraph-contains": [
+          "connection directly to Netflix"
+        ]
+      }
     }
   ],
   "source-alias-policies": {
@@ -24381,6 +24463,12 @@
             "name": "Netflix 播放、设备 API 和内容分发",
             "rules": [
               "netflix-video-and-delivery"
+            ]
+          },
+          {
+            "name": "FAST.com 连接检查与测速",
+            "rules": [
+              "netflix-connection-tests"
             ]
           }
         ]

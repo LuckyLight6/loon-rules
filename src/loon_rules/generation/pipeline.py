@@ -1,5 +1,5 @@
 """Coordinate source collection, generation, verification and output writes."""
-from loon_rules.sources import transport, dns as source_dns, policy as source_policy, expansion as source_expansion, coverage as source_coverage, aliases as source_aliases
+from loon_rules.sources import transport, dns as source_dns, policy as source_policy, expansion as source_expansion, coverage as source_coverage, aliases as source_aliases, security_programs
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import json
@@ -79,6 +79,7 @@ def run(check=False, offline=False, adopt_ads=False):
             rules.verify_ip_options(entries[k],rules.ip_options(rows),complete=True)
     if offline:
         report=json.loads((ROOT/'data/maintenance-state.json').read_text())
+        security_programs.verify_state_version(config.get('source-inventories', ()), report)
         if report.get('ip-matching')!=ip_summary(file_entries,data):
             raise rules.Invalid('IP 用途报告与正文不一致')
         if report.get('subscription-audit')!=subscription_audit(config,entries,data):
@@ -178,6 +179,8 @@ def run(check=False, offline=False, adopt_ads=False):
             active_suffixes,suffix_state=domain_scope.select_list(downloaded[source],domain_scope.DATA.read_text() if domain_scope.DATA.exists() else '')
             domain_scope.use(active_suffixes)
         except ValueError as exc:raise rules.Invalid(str(exc)) from exc
+    security_programs.verify_history(config.get('source-inventories', ()), downloaded,
+                                     previous_state)
     expanded_rows,expansion_status,child_inputs=source_expansion.collect(entries,downloaded,transport.download,
         shared_hosts=shared_hosts)
     downloaded.update(child_inputs)
@@ -378,6 +381,7 @@ def run(check=False, offline=False, adopt_ads=False):
             'expanded-inputs':expansion_status,
             'maintenance':methods,'reviewed-inputs':source_status,
             'official-endpoints':contract_status,'source-inventories':inventories,
+            security_programs.HISTORY_VERSION_FIELD: 1,
             'functional-hosts':sorted(functional),'service-inventories':inventory_status,
             'inventory-domain-cases':inventory_cases,
             'expanded-domain-cases':expanded_cases,

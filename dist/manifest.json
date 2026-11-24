@@ -140,11 +140,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "rules/0240-extended-ad-and-tracking.lsr"
         },
@@ -2130,11 +2130,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "rules/3800-overseas-media-all.lsr"
         },
@@ -2157,6 +2157,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "rules/3820-netflix-video-and-delivery.lsr"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3825-netflix-connection-tests.lsr"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -3610,11 +3620,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.lsr"
         },
@@ -3630,11 +3640,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.lsr"
         },
@@ -3799,7 +3809,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 375,
+      "available": 376,
       "unsupported": 0
     },
     "surge": {
@@ -3896,11 +3906,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "rules/0240-extended-ad-and-tracking.list"
         },
@@ -5886,11 +5896,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "rules/3800-overseas-media-all.list"
         },
@@ -5913,6 +5923,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "rules/3820-netflix-video-and-delivery.list"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/3825-netflix-connection-tests.list"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -7366,11 +7386,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.list"
         },
@@ -7386,11 +7406,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.list"
         },
@@ -7555,7 +7575,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 375,
+      "available": 376,
       "unsupported": 0
     },
     "clash-classical": {
@@ -7652,11 +7672,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/clash-classical/0240-extended-ad-and-tracking.yaml"
         },
@@ -9642,11 +9662,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/clash-classical/3800-overseas-media-all.yaml"
         },
@@ -9669,6 +9689,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/clash-classical/3820-netflix-video-and-delivery.yaml"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/3825-netflix-connection-tests.yaml"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -11122,11 +11152,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/clash-classical/8200-overseas-extra-all.yaml"
         },
@@ -11142,11 +11172,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/clash-classical/8220-overseas-sites-extra.yaml"
         },
@@ -11311,7 +11341,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 375,
+      "available": 376,
       "unsupported": 0
     },
     "egern": {
@@ -11408,11 +11438,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/egern/0240-extended-ad-and-tracking.yaml"
         },
@@ -13398,11 +13428,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/egern/3800-overseas-media-all.yaml"
         },
@@ -13425,6 +13455,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/egern/3820-netflix-video-and-delivery.yaml"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/3825-netflix-connection-tests.yaml"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -14878,11 +14918,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/egern/8200-overseas-extra-all.yaml"
         },
@@ -14898,11 +14938,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/egern/8220-overseas-sites-extra.yaml"
         },
@@ -15067,7 +15107,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 375,
+      "available": 376,
       "unsupported": 0
     },
     "surfboard": {
@@ -15164,11 +15204,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
@@ -17150,11 +17190,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -17177,6 +17217,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/surge-compatible/3820-netflix-video-and-delivery.list"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3825-netflix-connection-tests.list"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -18630,11 +18680,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
@@ -18650,11 +18700,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -18819,7 +18869,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 371,
+      "available": 372,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -18916,11 +18966,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
@@ -20906,11 +20956,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -20933,6 +20983,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/surge-compatible/3820-netflix-video-and-delivery.list"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/3825-netflix-connection-tests.list"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -22386,11 +22446,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
@@ -22406,11 +22466,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -22575,7 +22635,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 375,
+      "available": 376,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -22668,11 +22728,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/quantumult-x/0240-extended-ad-and-tracking.list"
         },
@@ -24651,11 +24711,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/quantumult-x/3800-overseas-media-all.list"
         },
@@ -24678,6 +24738,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/quantumult-x/3820-netflix-video-and-delivery.list"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/3825-netflix-connection-tests.list"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -26127,11 +26197,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/quantumult-x/8200-overseas-extra-all.list"
         },
@@ -26147,11 +26217,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/quantumult-x/8220-overseas-sites-extra.list"
         },
@@ -26316,7 +26386,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 360,
+      "available": 361,
       "unsupported": 15
     },
     "sing-box": {
@@ -26409,11 +26479,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/sing-box/0240-extended-ad-and-tracking.json"
         },
@@ -28392,11 +28462,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/sing-box/3800-overseas-media-all.json"
         },
@@ -28419,6 +28489,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/sing-box/3820-netflix-video-and-delivery.json"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/3825-netflix-connection-tests.json"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -29868,11 +29948,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/sing-box/8200-overseas-extra-all.json"
         },
@@ -29888,11 +29968,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/sing-box/8220-overseas-sites-extra.json"
         },
@@ -30054,7 +30134,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 357,
+      "available": 358,
       "unsupported": 18
     },
     "v2ray": {
@@ -30147,11 +30227,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43508,
+          "rule-count": 43507,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:02:45Z",
-          "output-rule-count": 43508,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 43507,
           "status": "available",
           "path": "dist/v2ray/0240-extended-ad-and-tracking.json"
         },
@@ -32130,11 +32210,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 200,
+          "rule-count": 201,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 200,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 201,
           "status": "available",
           "path": "dist/v2ray/3800-overseas-media-all.json"
         },
@@ -32157,6 +32237,16 @@
           "output-rule-count": 11,
           "status": "available",
           "path": "dist/v2ray/3820-netflix-video-and-delivery.json"
+        },
+        "3825-netflix-connection-tests": {
+          "source": "rules/3825-netflix-connection-tests.lsr",
+          "rule-count": 1,
+          "description": "Netflix FAST 连接检查与测速",
+          "created-at": "2026-11-24T21:43:09Z",
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/3825-netflix-connection-tests.json"
         },
         "3830-disney-plus-streaming": {
           "source": "rules/3830-disney-plus-streaming.lsr",
@@ -33606,11 +33696,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18607,
+          "rule-count": 18606,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18607,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18606,
           "status": "available",
           "path": "dist/v2ray/8200-overseas-extra-all.json"
         },
@@ -33626,11 +33716,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18477,
+          "rule-count": 18476,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 18477,
+          "updated-at": "2026-11-24T21:43:09Z",
+          "output-rule-count": 18476,
           "status": "available",
           "path": "dist/v2ray/8220-overseas-sites-extra.json"
         },
@@ -33792,7 +33882,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 357,
+      "available": 358,
       "unsupported": 18
     }
   },

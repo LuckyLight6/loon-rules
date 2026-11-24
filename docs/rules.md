@@ -341,12 +341,13 @@
 |---:|---|---|---|---|
 | 3800 | [overseas-media-all](../rules/3800-overseas-media-all.lsr) | 海外影音与内容合集 | **合集：替代 3810–3950。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3800-overseas-media-all.lsr) |
 
-### 9.2 视频平台
+### 9.2 视频平台与配套服务
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
 | 3810 | [hbo-streaming](../rules/3810-hbo-streaming.lsr) | HBO Max | 只收已核对的产品域；不推断账户订阅或播放地区 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3810-hbo-streaming.lsr) |
 | 3820 | [netflix-video-and-delivery](../rules/3820-netflix-video-and-delivery.lsr) | Netflix 播放、设备 API 和内容分发 | 保留 Netflix 服务域与 nflx* 中已确认的专用后缀；不接管 AWS 或来源不明的直播 IP | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3820-netflix-video-and-delivery.lsr) |
+| 3825 | [netflix-connection-tests](../rules/3825-netflix-connection-tests.lsr) | Netflix FAST 连接检查与测速 | 从 Netflix 官方连接说明读取专用测速网站；测试 Netflix 路径时与播放使用同一出口，其他测速、Google 云和 AWS 共用服务不归本组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3825-netflix-connection-tests.lsr) |
 | 3830 | [disney-plus-streaming](../rules/3830-disney-plus-streaming.lsr) | Disney+ 播放及其专用交付 | 播放、网页及专用分发域；官网公开配置按产品身份读取 API、内容与图片入口。迪士尼乐园、Hulu、内部服务器和共用资源另行归属 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3830-disney-plus-streaming.lsr) |
 | 3840 | [prime-video-streaming](../rules/3840-prime-video-streaming.lsr) | Prime Video 视频 API 和内容 | Amazon 零售、共享 CloudFront 父域和通用图片不纳入。本组只保已识别视频专用域和 CDN 别名 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3840-prime-video-streaming.lsr) |
 | 3850 | [hulu-streaming](../rules/3850-hulu-streaming.lsr) | Hulu 视频与交付 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3850-hulu-streaming.lsr) |

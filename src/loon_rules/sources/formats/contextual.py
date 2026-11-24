@@ -110,7 +110,10 @@ def nested_purpose_domains(recipe,text):
                 values.extend(re.split(r'[,\s]+',''.join(child['text']).strip()))
         if not values:raise Invalid('网络说明缺少其下的主机字段')
         for value in values:
-            if row:=public_domain_pattern(value):result.add(row)
+            row = public_domain_pattern(value)
+            if row is None:
+                raise Invalid('网络主机清单含共享平台范围，不能静默跳过')
+            result.add(row)
     if not matched or not result:raise Invalid('网络说明缺少指定用途及其主机')
     return result
 

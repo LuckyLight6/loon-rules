@@ -7,6 +7,7 @@
 # updated-at: 2026-11-19T09:33:57Z
 # rule-count: 11
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
+# source: https://help.netflix.com/en/node/14424
 
 DOMAIN-SUFFIX,netflix.ca
 DOMAIN-SUFFIX,netflix.com

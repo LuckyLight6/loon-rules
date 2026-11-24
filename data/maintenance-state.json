@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T20:48:40Z",
-  "inputs-read": 598,
-  "critical": 885,
-  "inputs-requested": 598,
+  "checked-at": "2026-11-24T21:43:09Z",
+  "inputs-read": 599,
+  "critical": 888,
+  "inputs-requested": 599,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -844,7 +844,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 344,
+    "routine-tables": 345,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1119,6 +1119,7 @@
       "fragment-digital-assets",
       "hbo-streaming",
       "netflix-video-and-delivery",
+      "netflix-connection-tests",
       "disney-plus-streaming",
       "prime-video-streaming",
       "hulu-streaming",
@@ -3143,13 +3144,15 @@
           }
         ]
       },
-      "other-products": {},
+      "other-products": {
+        "netflix-connection-tests": 1
+      },
       "domain-scopes": 28,
       "selected-scopes": 11,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 10,
-      "fallback-scopes": 2,
+      "fallback-scopes": 1,
       "privacy-scopes": 0,
       "shared-scopes": 1,
       "declared-exclusions": 0,
@@ -10546,7 +10549,8 @@
       1185,
       3240,
       3250,
-      3915
+      3915,
+      3825
     ],
     "已核清单": [
       210,
@@ -10766,9 +10770,9 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 17972,
+      "not-whole-host-consensus": 17973,
       "admitted-rules": 0,
-      "retired-rules": 0
+      "retired-rules": 1
     }
   },
   "official-endpoints": {
@@ -11966,6 +11970,332 @@
         "non-network-assets": 26,
         "unselected-assets": 0,
         "out-of-scope-assets": 9,
+        "asset-schema": [
+          {
+            "type": "API",
+            "identifier": "api-partner.spotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "APPLE_STORE_APP_ID",
+            "identifier": "com.anchorfminc.Anchor",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "APPLE_STORE_APP_ID",
+            "identifier": "com.spotify.client",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "APPLE_STORE_APP_ID",
+            "identifier": "com.spotify.kids",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "APPLE_STORE_APP_ID",
+            "identifier": "com.spotify.s4a",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "DOWNLOADABLE_EXECUTABLES",
+            "identifier": "Save to Spotify CLI",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "DOWNLOADABLE_EXECUTABLES",
+            "identifier": "Spotify desktop application (Windows and Mac)",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "GOOGLE_PLAY_APP_ID",
+            "identifier": "com.spotify.kids",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "GOOGLE_PLAY_APP_ID",
+            "identifier": "com.spotify.music",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "GOOGLE_PLAY_APP_ID",
+            "identifier": "com.spotify.s4a",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "GOOGLE_PLAY_APP_ID",
+            "identifier": "com.spotify.tv.android",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "GOOGLE_PLAY_APP_ID",
+            "identifier": "fm.anchor.android",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Anchor",
+            "scope": "in_scope",
+            "reading": "fenced-domains"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Core Assets",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "DRM (Digital Rights Management) System",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "GHE",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Jira",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Megaphone",
+            "scope": "in_scope",
+            "reading": "negative-fence"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Non-Core Assets",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Okta",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Other Spotify websites",
+            "scope": "in_scope",
+            "reading": "fenced-domains"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Podsights",
+            "scope": "in_scope",
+            "reading": "fenced-domains"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Sonantic",
+            "scope": "in_scope",
+            "reading": "fenced-domains"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "VPN",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Wrapped",
+            "scope": "in_scope",
+            "reading": "no-network-target"
+          },
+          {
+            "type": "SOURCE_CODE",
+            "identifier": "Android SDK",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "SOURCE_CODE",
+            "identifier": "Core Backstage source code",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "SOURCE_CODE",
+            "identifier": "iOS SDK",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "SOURCE_CODE",
+            "identifier": "Spotify SDKs",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "SOURCE_CODE",
+            "identifier": "Web Playback SDK",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "SOURCE_CODE",
+            "identifier": "https://github.com/backstage/backstage",
+            "scope": "in_scope",
+            "reading": "non-network-type"
+          },
+          {
+            "type": "URL",
+            "identifier": "api.spotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "URL",
+            "identifier": "assets.spotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "URL",
+            "identifier": "backstage.io",
+            "scope": "in_scope",
+            "reading": "fenced-domains"
+          },
+          {
+            "type": "URL",
+            "identifier": "https://www.whosampled.com/",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.atspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.avecspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.byspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.enspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.forspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.fromspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.spotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.spotify.net",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.tospotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "WILDCARD",
+            "identifier": "*.withspotify.com",
+            "scope": "in_scope",
+            "reading": "identifier"
+          },
+          {
+            "type": "APPLE_STORE_APP_ID",
+            "identifier": "com.soundtrap.studioapp",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "GOOGLE_PLAY_APP_ID",
+            "identifier": "com.soundtrap.studioapp",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Confidence Domains",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Findaway",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Preact",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "Soundtrap",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "OTHER",
+            "identifier": "The Ringer",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "URL",
+            "identifier": "everynoise.com",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          },
+          {
+            "type": "URL",
+            "identifier": "example.com",
+            "scope": "out_of_scope",
+            "reading": "out-of-scope"
+          }
+        ],
         "reading-policy": {
           "program": {
             "handle": "spotify",
@@ -12314,8 +12644,21 @@
       "domain-scopes": 1,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "netflix-official-network-addresses": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "netflix-direct-measurement-service": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
+  "security-program-history-version": 1,
   "functional-hosts": [
     "account.jetbrains.com",
     "accounts.google.ad",
@@ -12690,6 +13033,7 @@
     "elevenlabs.io",
     "elevenlabsusercontent.com",
     "factory.com",
+    "fast.com",
     "fastest.y.qq.com",
     "fba.apple.com",
     "fcm.googleapis.com",
@@ -13177,7 +13521,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -13218,7 +13562,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "ollama-cloud": {
@@ -13249,7 +13593,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "stackit-model-services": {
@@ -13280,7 +13624,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "stepfun-international": {
@@ -13322,7 +13666,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "xiaomi-international": {
@@ -13365,7 +13709,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13400,7 +13744,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13450,7 +13794,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13491,7 +13835,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -13723,7 +14067,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "npm-registry": {
@@ -13756,7 +14100,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -13800,7 +14144,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -13833,7 +14177,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -13886,7 +14230,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "braintree-payments": {
@@ -13913,7 +14257,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "notion-workspace": {
@@ -13939,7 +14283,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14147,7 +14491,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14173,7 +14517,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "google-play-services": {
@@ -14209,7 +14553,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "google-play-games": {
@@ -14237,7 +14581,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "kimi-mainland": {
@@ -14268,7 +14612,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -14299,7 +14643,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -14342,7 +14686,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14381,7 +14725,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795553280,
+      "last-read": 1795556549,
       "state": "current"
     }
   },
@@ -14389,7 +14733,7 @@
   "expanded-domain-cases": 222,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1338,
+  "business-domain-cases": 1341,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -14398,7 +14742,14 @@
     }
   },
   "shared-negatives": 19,
-  "changed": [],
+  "changed": [
+    "overseas-media-all",
+    "netflix-video-and-delivery",
+    "extended-ad-and-tracking",
+    "overseas-extra-all",
+    "overseas-sites-extra",
+    "netflix-connection-tests"
+  ],
   "scope-negatives": 157,
   "ip-cases": 44,
   "ip-matching": {
@@ -14473,7 +14824,7 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "extended-ad-and-tracking": 43508,
+    "extended-ad-and-tracking": 43507,
     "ai-overseas-all": 682,
     "claude-connections": 24,
     "chatgpt-connections": 460,
@@ -14672,9 +15023,10 @@
     "ton-foundation-sites": 1,
     "toncenter-blockchain-api": 1,
     "fragment-digital-assets": 1,
-    "overseas-media-all": 200,
+    "overseas-media-all": 201,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
+    "netflix-connection-tests": 1,
     "disney-plus-streaming": 6,
     "prime-video-streaming": 11,
     "hulu-streaming": 48,
@@ -14820,9 +15172,9 @@
     "amazon-shared-services": 168,
     "discord-activities-proxy": 1,
     "disney-shared-services": 4,
-    "overseas-extra-all": 18607,
+    "overseas-extra-all": 18606,
     "overseas-media-extra": 144,
-    "overseas-sites-extra": 18477,
+    "overseas-sites-extra": 18476,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,

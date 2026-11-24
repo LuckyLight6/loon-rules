@@ -47,6 +47,14 @@ class CollaborationSources(PublicSourceExamples):
              'More at ordinary-links.example</li>')
         self.assertEqual(extract_rows(recipe,doc),{'DOMAIN,wss.vendor.example','DOMAIN-WILDCARD,*.new-socket.example'})
 
+    def test_nested_network_lists_do_not_silently_skip_shared_scopes(self):
+        recipe = {'format': 'nested-purpose-domains', 'parent-contains': 'support the connection'}
+        for host in ('github.io', '*.github.io', 'storage.shared.example'):
+            doc = ('<li>Please support the connection<ul><li>wss.vendor.example</li><li>'
+                   + host + '</li></ul></li>')
+            with self.subTest(host=host), self.assertRaises(Invalid):
+                extract_rows(recipe, doc, shared_hosts=['storage.shared.example'])
+
     def test_plain_domain_fields_after_a_declared_label_cannot_silently_include_prose(self):
         recipe={'format':'nested-purpose-domains','parent-contains':'Support this connection',
                 'value-after':'Required domains:'}
