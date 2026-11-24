@@ -6,11 +6,11 @@
         "notion-static.com",
         "notion.com",
         "notion.so",
-        "notionusercontent.com"
+        "notionusercontent.com",
+        "notion-status.com"
       ],
       "domain": [
-        "notion-custom.com",
-        "www.notion-status.com"
+        "notion-custom.com"
       ]
     }
   ]

@@ -250,7 +250,7 @@
 | 4570 | google-software-downloads | Google 软件和更新已知下载主机 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4570-google-software-downloads.json) |
 | 4580 | google-scholar | Google 学术搜索 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4580-google-scholar.json) |
 | 4585 | google-firebase-messaging | Google Firebase Cloud Messaging 推送与令牌注册 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4585-google-firebase-messaging.json) |
-| 4590 | google-platform-services | Google 搜索、安全浏览 API 和共享平台兜底 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4590-google-platform-services.json) |
+| 4590 | google-platform-services | Google 搜索、官方资讯、安全浏览 API 与共享平台兜底 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4590-google-platform-services.json) |
 | 4700 | microsoft-all | Microsoft 日常服务合集 | sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 4710 | microsoft-account-authentication | Microsoft 个人账户与 Entra 登录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4710-microsoft-account-authentication.json) |
 | 4720 | microsoft-outlook-mail | Outlook 与 Exchange Online 邮箱入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/4720-microsoft-outlook-mail.json) |

@@ -250,7 +250,7 @@
 | 4570 | google-software-downloads | Google 软件和更新已知下载主机 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4570-google-software-downloads.yaml) |
 | 4580 | google-scholar | Google 学术搜索 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4580-google-scholar.yaml) |
 | 4585 | google-firebase-messaging | Google Firebase Cloud Messaging 推送与令牌注册 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4585-google-firebase-messaging.yaml) |
-| 4590 | google-platform-services | Google 搜索、安全浏览 API 和共享平台兜底 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4590-google-platform-services.yaml) |
+| 4590 | google-platform-services | Google 搜索、官方资讯、安全浏览 API 与共享平台兜底 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4590-google-platform-services.yaml) |
 | 4700 | microsoft-all | Microsoft 日常服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4700-microsoft-all.yaml) |
 | 4710 | microsoft-account-authentication | Microsoft 个人账户与 Entra 登录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4710-microsoft-account-authentication.yaml) |
 | 4720 | microsoft-outlook-mail | Outlook 与 Exchange Online 邮箱入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/4720-microsoft-outlook-mail.yaml) |

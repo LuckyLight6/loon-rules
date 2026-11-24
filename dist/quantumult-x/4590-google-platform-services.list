@@ -1,15 +1,16 @@
 # name: google-platform-services
 # priority: 4590
 # section: google
-# description: Google 搜索、安全浏览 API 和共享平台兜底
-# boundary: 置于账号、Gmail、Meet、Drive、Play、下载、Gemini 和 YouTube 之后。安全浏览 API 读取官方服务字段；保留共享域，去掉通用关键词及共享 IP
+# description: Google 搜索、官方资讯、安全浏览 API 与共享平台兜底
+# boundary: 账号、邮件、会议、云盘、商店、下载、Gemini 和 YouTube 专项先匹配；官方资讯入口按页面用途读取，安全浏览读取服务字段，共用主机保留在平台层，不引入整段共享 IP
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-22T09:59:09Z
+# updated-at: 2026-11-24T08:00:02Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
 # source: https://www.google.com/supported_domains
 # source: https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest
-# canonical-rule-count: 220
-# rule-count: 220
+# source: https://about.google/
+# canonical-rule-count: 221
+# rule-count: 221
 # format: quantumult-x
 # canonical: rules/4590-google-platform-services.lsr
 
@@ -233,3 +234,4 @@ host-suffix,redirector.snap.gvt1.com,proxy
 host-suffix,withgoogle.com,proxy
 host-suffix,googleusercontent.com,proxy
 host-suffix,googleapis-cn.com,proxy
+host-suffix,blog.google,proxy

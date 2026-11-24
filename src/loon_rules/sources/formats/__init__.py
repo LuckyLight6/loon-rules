@@ -71,10 +71,14 @@ def extract_rows(recipe, text, *, shared_hosts=()):
     if form not in READERS:
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
-    if (form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
-                 'go-host-switch','c-function-url','csp-origins','domain-column-table')
+    source_alias=form=='site-identity' and recipe.get('include-source-alias')
+    if (source_alias or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
+                 'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')
             or form=='product-domain-statements' and recipe.get('code-only')):
+        before=result
         result=set(domain_scope.exclude_shared_scopes(result,shared_hosts))
+        if source_alias and result!=before:
+            raise Invalid('共享平台不能作为产品自有网站别名')
         if not result:raise Invalid('服务 URL 仅指向共用请求入口，不能按文件路径认领整个主机')
     return result

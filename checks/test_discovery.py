@@ -72,6 +72,25 @@ class SourceAliases(unittest.TestCase):
 
 
 class OfficialRoleDiscovery(PublicSourceExamples):
+    def test_projection_narrows_external_hosts_using_current_purpose_fields(self):
+        entry = {'id': 'product', 'projection': [{'source': 'feed', 'roots': ['vendor.example'],
+                  'exact-from-extract': True}], 'extract': [{'source': 'sdk',
+                  'format': 'python-sdk-endpoints', 'module-level': True, 'fields': ['API_URL']}]}
+        inputs = {'feed': 'DOMAIN-SUFFIX,vendor.example\nDOMAIN-SUFFIX,api.shared.example',
+                  'sdk': 'API_URL = "https://api.shared.example/v1"'}
+        selected = {}
+        rows = lib.compile_entry(entry, inputs, projection_rows=selected)
+        self.assertEqual(set(rows), {'DOMAIN-SUFFIX,vendor.example', 'DOMAIN,api.shared.example'})
+        self.assertIn('DOMAIN,api.shared.example', selected['feed'])
+        self.assertNotIn('DOMAIN-SUFFIX,api.shared.example', selected['feed'])
+        inputs = {name: body.replace('api.shared.example', 'runtime.new-region.example')
+                  for name, body in inputs.items()}
+        selected = {}
+        lib.compile_entry(entry, inputs, projection_rows=selected)
+        self.assertIn('DOMAIN,runtime.new-region.example', selected['feed'])
+        with self.assertRaises(Invalid):
+            lib.compile_entry(entry, inputs, shared_hosts=['runtime.new-region.example'])
+
     def test_excluding_a_shared_wildcard_keeps_specific_rows_before_compaction(self):
         entry={'id':'system','extract':[{'format':'host-table','source':'doc',
                'sections':['device'],'select':[{'all-exact':True},
@@ -127,12 +146,53 @@ class OfficialRoleDiscovery(PublicSourceExamples):
         self.assertEqual(extract_rows(recipe,text),{'DOMAIN-SUFFIX,newproduct.example'})
         with self.assertRaises(Invalid):extract_rows(recipe,text.replace('https://newproduct.example','http://newproduct.example'))
 
+    def test_official_role_links_follow_new_hosts_without_claiming_a_shared_platform(self):
+        from loon_rules.sources.inputs import extract_rows
+        recipe={'format':'product-role-links','labels':['Company Blog']}
+        def document(url):
+            return '<a href="'+url+'">Company Blog</a><a href="https://unrelated.example/">Other</a>'
+        url='https://news.unlisted-provider.example/?utm_source=company&amp;utm_campaign=footer'
+        self.assertEqual(extract_rows(recipe,document(url)),{'DOMAIN,news.unlisted-provider.example'})
+        for unsafe in ('https://user:example@news.unlisted-provider.example/?utm_source=company',
+                       'http://news.unlisted-provider.example/?utm_source=company'):
+            with self.subTest(url=unsafe),self.assertRaises(Invalid):extract_rows(recipe,document(unsafe))
+        with self.assertRaises(Invalid):
+            extract_rows(recipe,document('https://shared.example/?utm_source=company'),shared_hosts=['shared.example'])
+
     def test_site_identity_requires_agreement_between_canonical_and_open_graph(self):
         from loon_rules.sources.inputs import extract_rows
         recipe={'format':'site-identity','brand':'Product'}
         text='<meta property="og:site_name" content="Product"><meta property="og:url" content="https://newproduct.example/"><link rel="canonical" href="https://newproduct.example/">'
         self.assertEqual(extract_rows(recipe,text),{'DOMAIN-SUFFIX,newproduct.example'})
         with self.assertRaises(Invalid):extract_rows(recipe,text.replace('canonical" href="https://newproduct.example','canonical" href="https://other.example'))
+
+    def test_verified_website_alias_keeps_its_initial_root_when_the_official_site_redirects(self):
+        from loon_rules.sources.inputs import extract_rows
+        recipe={'format':'site-identity','brand':'Company Platform',
+                'source':'https://www.legacy-brand.example/',
+                'include-source-alias':True,'canonical-parents':['company.example']}
+        def document(host='www.company.example',brand='Company Platform'):
+            return ('<meta property="og:site_name" content="'+brand+'">'
+                    '<meta property="og:url" content="https://'+host+'/product">'
+                    '<link rel="canonical" href="https://'+host+'/product">')
+        self.assertEqual(extract_rows(recipe,document()),
+                         {'DOMAIN,www.company.example','DOMAIN-SUFFIX,legacy-brand.example'})
+        without_canonical=document().split('<link rel="canonical"')[0]
+        try:result=extract_rows(recipe,without_canonical)
+        except Invalid as error:self.fail('已核实别名应能读取品牌和官方页面 URL：'+str(error))
+        self.assertEqual(result,{'DOMAIN,www.company.example','DOMAIN-SUFFIX,legacy-brand.example'})
+        with self.assertRaises(Invalid):
+            extract_rows({'format':'site-identity','brand':'Company Platform'},without_canonical)
+        for unsafe in ('https://user:example@www.legacy-brand.example/',
+                       'https://tenant.legacy-brand.example/',
+                       'https://www.legacy-brand.example/private',
+                       'https://www.legacy-brand.example/?token=value'):
+            with self.subTest(source=unsafe),self.assertRaises(Invalid):
+                extract_rows({**recipe,'source':unsafe},document())
+        with self.assertRaises(Invalid):extract_rows(recipe,document('unrelated.example'))
+        with self.assertRaises(Invalid):extract_rows(recipe,document(brand='Unrelated'))
+        with self.assertRaises(Invalid):
+            extract_rows(recipe,document(),shared_hosts=['legacy-brand.example'])
 
 
 class ProductDomainScope(unittest.TestCase):

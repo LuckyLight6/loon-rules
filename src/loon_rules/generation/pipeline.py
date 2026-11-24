@@ -37,6 +37,7 @@ def run(check=False, offline=False, adopt_ads=False):
     contracts=json.loads((ROOT/'config/endpoint-contracts.json').read_text())
     catalog_schema.verify(config)
     entries=validate_declarations(config)
+    projection_owners=source_coverage.inventory_owners(config.get('source-inventories',()),entries)
     public={entry['id'] for entry in config['entries']}
     file_entries={key:entry for key,entry in entries.items() if key in public}
     components=set(entries)-public
@@ -75,7 +76,8 @@ def run(check=False, offline=False, adopt_ads=False):
             raise rules.Invalid('订阅去重报告与正文不一致')
         if report.get('maintenance-audit')!=maintenance_audit(file_entries,contracts):
             raise rules.Invalid('固定声明与维护方式报告不一致')
-        source_coverage.verify_report(entries,report.get('projection-coverage',{}),order=route_order(config,entries))
+        source_coverage.verify_report(entries,report.get('projection-coverage',{}),order=route_order(config,entries),
+            inventory_owners=projection_owners)
         verify_inventories(config.get('source-inventories',()),report.get('source-inventories',{}))
         source_coverage.verify_reassignments(entries,data,report.get('projection-reassignments',{}),order=route_order(config,entries))
         source_aliases.verify_evidence(entries,data,report.get('cname-alias-evidence',{}),
@@ -314,7 +316,7 @@ def run(check=False, offline=False, adopt_ads=False):
         negatives=config.get('scope-negatives',{}),order=route_order(config,entries))
     projection_coverage=source_coverage.audit(entries,data,downloaded,order=route_order(config,entries),
         selected=projection_inputs,shared_suffixes=SHARED_PARENT,shared_hosts=shared_hosts,
-        exemptions=source_coverage.declared_exclusions(config))
+        exemptions=source_coverage.declared_exclusions(config),inventory_owners=projection_owners)
     source_aliases.verify_evidence(entries,data,alias_evidence,config.get('source-alias-policies',{}),
         order=route_order(config,entries),aliases=aliases)
     now=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')

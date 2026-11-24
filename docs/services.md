@@ -74,7 +74,7 @@
 | Google 软件和更新已知下载主机 | [4570 Google 软件和更新已知下载主机](../rules/4570-google-software-downloads.lsr) |
 | Google 学术搜索 | [4580 Google 学术搜索](../rules/4580-google-scholar.lsr) |
 | Google Firebase Cloud Messaging 推送与令牌注册 | [4585 Google Firebase Cloud Messaging 推送与令牌注册](../rules/4585-google-firebase-messaging.lsr) |
-| Google 搜索、安全浏览 API 和共享平台兜底 | [4590 Google 搜索、安全浏览 API 和共享平台兜底](../rules/4590-google-platform-services.lsr) |
+| Google 搜索、官方资讯、安全浏览 API 与共享平台兜底 | [4590 Google 搜索、官方资讯、安全浏览 API 与共享平台兜底](../rules/4590-google-platform-services.lsr) |
 
 ## X / xAI
 

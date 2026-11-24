@@ -140,11 +140,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 643,
+          "updated-at": "2026-11-24T14:29:55Z",
+          "output-rule-count": 645,
           "status": "available",
           "path": "rules/1000-ai-overseas-all.lsr"
         },
@@ -670,11 +670,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/1530-kiro-code-assistant.lsr"
         },
@@ -2220,11 +2220,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "rules/4100-overseas-games-all.lsr"
         },
@@ -2260,11 +2260,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "rules/4140-nintendo-platform.lsr"
         },
@@ -2280,11 +2280,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "rules/4160-ea-games.lsr"
         },
@@ -2323,7 +2323,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "rules/4300-overseas-productivity-all.lsr"
@@ -2333,7 +2333,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "rules/4310-notion-workspace.lsr"
@@ -2390,11 +2390,11 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 233,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 234,
           "status": "available",
           "path": "rules/4500-google-all.lsr"
         },
@@ -2490,11 +2490,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "rules/4590-google-platform-services.lsr"
         },
@@ -3746,11 +3746,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 643,
+          "updated-at": "2026-11-24T14:29:55Z",
+          "output-rule-count": 645,
           "status": "available",
           "path": "rules/1000-ai-overseas-all.list"
         },
@@ -4276,11 +4276,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/1530-kiro-code-assistant.list"
         },
@@ -5826,11 +5826,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "rules/4100-overseas-games-all.list"
         },
@@ -5866,11 +5866,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "rules/4140-nintendo-platform.list"
         },
@@ -5886,11 +5886,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "rules/4160-ea-games.list"
         },
@@ -5929,7 +5929,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "rules/4300-overseas-productivity-all.list"
@@ -5939,7 +5939,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "rules/4310-notion-workspace.list"
@@ -5996,11 +5996,11 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 233,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 234,
           "status": "available",
           "path": "rules/4500-google-all.list"
         },
@@ -6096,11 +6096,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "rules/4590-google-platform-services.list"
         },
@@ -7352,11 +7352,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 643,
+          "updated-at": "2026-11-24T14:29:55Z",
+          "output-rule-count": 645,
           "status": "available",
           "path": "dist/clash-classical/1000-ai-overseas-all.yaml"
         },
@@ -7882,11 +7882,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/clash-classical/1530-kiro-code-assistant.yaml"
         },
@@ -9432,11 +9432,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/clash-classical/4100-overseas-games-all.yaml"
         },
@@ -9472,11 +9472,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/clash-classical/4140-nintendo-platform.yaml"
         },
@@ -9492,11 +9492,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/clash-classical/4160-ea-games.yaml"
         },
@@ -9535,7 +9535,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/clash-classical/4300-overseas-productivity-all.yaml"
@@ -9545,7 +9545,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/clash-classical/4310-notion-workspace.yaml"
@@ -9602,11 +9602,11 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 233,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 234,
           "status": "available",
           "path": "dist/clash-classical/4500-google-all.yaml"
         },
@@ -9702,11 +9702,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/clash-classical/4590-google-platform-services.yaml"
         },
@@ -10958,11 +10958,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 643,
+          "updated-at": "2026-11-24T14:29:55Z",
+          "output-rule-count": 645,
           "status": "available",
           "path": "dist/egern/1000-ai-overseas-all.yaml"
         },
@@ -11488,11 +11488,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/egern/1530-kiro-code-assistant.yaml"
         },
@@ -13038,11 +13038,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/egern/4100-overseas-games-all.yaml"
         },
@@ -13078,11 +13078,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/egern/4140-nintendo-platform.yaml"
         },
@@ -13098,11 +13098,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/egern/4160-ea-games.yaml"
         },
@@ -13141,7 +13141,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/egern/4300-overseas-productivity-all.yaml"
@@ -13151,7 +13151,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/egern/4310-notion-workspace.yaml"
@@ -13208,11 +13208,11 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 233,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 234,
           "status": "available",
           "path": "dist/egern/4500-google-all.yaml"
         },
@@ -13308,11 +13308,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/egern/4590-google-platform-services.yaml"
         },
@@ -14564,10 +14564,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T14:29:55Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -15092,11 +15092,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/surge-compatible/1530-kiro-code-assistant.list"
         },
@@ -16640,11 +16640,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/surge-compatible/4100-overseas-games-all.list"
         },
@@ -16680,11 +16680,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/surge-compatible/4140-nintendo-platform.list"
         },
@@ -16700,11 +16700,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/surge-compatible/4160-ea-games.list"
         },
@@ -16743,7 +16743,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/surge-compatible/4300-overseas-productivity-all.list"
@@ -16753,7 +16753,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/surge-compatible/4310-notion-workspace.list"
@@ -16810,11 +16810,11 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 233,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 234,
           "status": "available",
           "path": "dist/surge-compatible/4500-google-all.list"
         },
@@ -16910,11 +16910,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/surge-compatible/4590-google-platform-services.list"
         },
@@ -18166,11 +18166,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 643,
+          "updated-at": "2026-11-24T14:29:55Z",
+          "output-rule-count": 645,
           "status": "available",
           "path": "dist/surge-compatible/1000-ai-overseas-all.list"
         },
@@ -18696,11 +18696,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/surge-compatible/1530-kiro-code-assistant.list"
         },
@@ -20246,11 +20246,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/surge-compatible/4100-overseas-games-all.list"
         },
@@ -20286,11 +20286,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/surge-compatible/4140-nintendo-platform.list"
         },
@@ -20306,11 +20306,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/surge-compatible/4160-ea-games.list"
         },
@@ -20349,7 +20349,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/surge-compatible/4300-overseas-productivity-all.list"
@@ -20359,7 +20359,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/surge-compatible/4310-notion-workspace.list"
@@ -20416,11 +20416,11 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 233,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 234,
           "status": "available",
           "path": "dist/surge-compatible/4500-google-all.list"
         },
@@ -20516,11 +20516,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/surge-compatible/4590-google-platform-services.list"
         },
@@ -21768,10 +21768,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T14:29:55Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -22295,11 +22295,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/quantumult-x/1530-kiro-code-assistant.list"
         },
@@ -23841,11 +23841,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/quantumult-x/4100-overseas-games-all.list"
         },
@@ -23881,11 +23881,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/quantumult-x/4140-nintendo-platform.list"
         },
@@ -23901,11 +23901,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/quantumult-x/4160-ea-games.list"
         },
@@ -23944,7 +23944,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/quantumult-x/4300-overseas-productivity-all.list"
@@ -23954,7 +23954,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/quantumult-x/4310-notion-workspace.list"
@@ -24011,10 +24011,10 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
+          "updated-at": "2026-11-24T08:00:02Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -24109,11 +24109,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/quantumult-x/4590-google-platform-services.list"
         },
@@ -25359,10 +25359,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T14:29:55Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -25886,11 +25886,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/sing-box/1530-kiro-code-assistant.json"
         },
@@ -27432,11 +27432,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/sing-box/4100-overseas-games-all.json"
         },
@@ -27472,11 +27472,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/sing-box/4140-nintendo-platform.json"
         },
@@ -27492,11 +27492,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/sing-box/4160-ea-games.json"
         },
@@ -27535,7 +27535,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/sing-box/4300-overseas-productivity-all.json"
@@ -27545,7 +27545,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/sing-box/4310-notion-workspace.json"
@@ -27602,10 +27602,10 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
+          "updated-at": "2026-11-24T08:00:02Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -27700,11 +27700,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/sing-box/4590-google-platform-services.json"
         },
@@ -28947,10 +28947,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
-          "rule-count": 643,
+          "rule-count": 645,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T14:17:53Z",
+          "updated-at": "2026-11-24T14:29:55Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -29474,11 +29474,11 @@
         },
         "1530-kiro-code-assistant": {
           "source": "rules/1530-kiro-code-assistant.lsr",
-          "rule-count": 1,
+          "rule-count": 3,
           "description": "Kiro 编程助手",
           "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-21T12:39:08Z",
-          "output-rule-count": 1,
+          "updated-at": "2026-11-24T14:07:02Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "dist/v2ray/1530-kiro-code-assistant.json"
         },
@@ -31020,11 +31020,11 @@
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
-          "rule-count": 49,
+          "rule-count": 51,
           "description": "海外游戏合集",
           "created-at": "2026-11-22T13:34:15Z",
-          "updated-at": "2026-11-22T15:05:24Z",
-          "output-rule-count": 49,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 51,
           "status": "available",
           "path": "dist/v2ray/4100-overseas-games-all.json"
         },
@@ -31060,11 +31060,11 @@
         },
         "4140-nintendo-platform": {
           "source": "rules/4140-nintendo-platform.lsr",
-          "rule-count": 14,
+          "rule-count": 15,
           "description": "Nintendo 任天堂",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T07:49:17Z",
-          "output-rule-count": 14,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 15,
           "status": "available",
           "path": "dist/v2ray/4140-nintendo-platform.json"
         },
@@ -31080,11 +31080,11 @@
         },
         "4160-ea-games": {
           "source": "rules/4160-ea-games.lsr",
-          "rule-count": 4,
+          "rule-count": 5,
           "description": "EA 游戏平台",
           "created-at": "2026-11-20T06:40:36Z",
-          "updated-at": "2026-11-20T06:40:36Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 5,
           "status": "available",
           "path": "dist/v2ray/4160-ea-games.json"
         },
@@ -31123,7 +31123,7 @@
           "rule-count": 54,
           "description": "海外办公、邮件与协作合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-23T18:50:42Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 54,
           "status": "available",
           "path": "dist/v2ray/4300-overseas-productivity-all.json"
@@ -31133,7 +31133,7 @@
           "rule-count": 6,
           "description": "Notion",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T23:43:58Z",
+          "updated-at": "2026-11-24T14:07:02Z",
           "output-rule-count": 6,
           "status": "available",
           "path": "dist/v2ray/4310-notion-workspace.json"
@@ -31190,10 +31190,10 @@
         },
         "4500-google-all": {
           "source": "rules/4500-google-all.lsr",
-          "rule-count": 233,
+          "rule-count": 234,
           "description": "Google 日常服务合集",
           "created-at": "2026-11-19T12:26:59Z",
-          "updated-at": "2026-11-22T09:59:09Z",
+          "updated-at": "2026-11-24T08:00:02Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -31288,11 +31288,11 @@
         },
         "4590-google-platform-services": {
           "source": "rules/4590-google-platform-services.lsr",
-          "rule-count": 220,
-          "description": "Google 搜索、安全浏览 API 和共享平台兜底",
+          "rule-count": 221,
+          "description": "Google 搜索、官方资讯、安全浏览 API 与共享平台兜底",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-22T09:59:09Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-24T08:00:02Z",
+          "output-rule-count": 221,
           "status": "available",
           "path": "dist/v2ray/4590-google-platform-services.json"
         },

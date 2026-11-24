@@ -7,7 +7,8 @@
           "full:eaassets-a.akamaihd.net",
           "domain:ea.com",
           "domain:tnt-ea.com",
-          "domain:origin.com"
+          "domain:origin.com",
+          "domain:easports.com"
         ],
         "outboundTag": "PROXY"
       }

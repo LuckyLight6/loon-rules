@@ -18,6 +18,28 @@ from checks.source_fixtures import prepare_workspace
 
 
 class ServiceCoverageGate(unittest.TestCase):
+    def test_complete_source_checks_unselected_scopes_before_a_fallback_can_hide_them(self):
+        source='https://publisher.example/product.list'
+        entries={'privacy':{'priority':5,'mode':'compiled','policy-hint':'reject'},
+                 'product':{'priority':10,'mode':'compiled','projection':[{
+                    'source':source,'roots':['vendor.example'],'require-domain-closure':True}]},
+                 'other-product':{'priority':20,'mode':'compiled'},
+                 'fallback':{'priority':30,'mode':'compiled','fallback':True}}
+        selected={'product':{source:{'DOMAIN-SUFFIX,vendor.example'}}}
+        body='DOMAIN-SUFFIX,vendor.example\nDOMAIN,new.unlisted-provider.example'
+        data={'privacy':[],'product':['DOMAIN-SUFFIX,vendor.example'],'other-product':[],'fallback':[]}
+        for target in (None,'fallback','privacy'):
+            data['fallback']=[];data['privacy']=[]
+            if target:data[target]=['DOMAIN-SUFFIX,unlisted-provider.example']
+            with self.subTest(target=target),self.assertRaisesRegex(Invalid,'未处理|完整'):
+                coverage.audit(entries,data,{source:body},order=list(entries),selected=selected)
+        data['privacy']=[]
+        data['other-product']=['DOMAIN,new.unlisted-provider.example']
+        with self.assertRaisesRegex(Invalid,'归属|承接'):
+            coverage.audit(entries,data,{source:body},order=list(entries),selected=selected)
+        coverage.audit(entries,data,{source:body},order=list(entries),selected=selected,
+                       inventory_owners={source:{'other-product'}})
+
     def test_a_selected_service_scope_cannot_be_claimed_by_an_unrelated_product(self):
         source = 'https://publisher.example/product.list'
         entries = {

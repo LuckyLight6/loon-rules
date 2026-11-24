@@ -227,13 +227,37 @@ def parse_site_identity(recipe, text):
             raise Invalid('产品站点的来源与身份 URL 不属于同一注册域')
         return {'DOMAIN-SUFFIX,'+source}
     if scope!='canonical':raise Invalid('产品站点的归属范围无效')
-    if guide.metadata.get('og:site_name') != [recipe['brand']] or len(guide.canonical) != 1 or len(guide.metadata.get('og:url', [])) != 1:
+    include_alias=recipe.get('include-source-alias',False)
+    if type(include_alias) is not bool:
+        raise Invalid('来源别名开关必须为布尔值')
+    if (guide.metadata.get('og:site_name') != [recipe['brand']]
+            or len(guide.metadata.get('og:url', [])) != 1 or len(guide.canonical)>1
+            or not include_alias and not guide.canonical):
         raise Invalid('产品站点身份或入口数量变化')
-    canonical = https_product_host(guide.canonical[0])
     graph = https_product_host(guide.metadata['og:url'][0])
+    canonical = https_product_host(guide.canonical[0]) if guide.canonical else graph
     if canonical != graph:
         raise Invalid('产品站点的 canonical 与 Open Graph 不一致')
-    return {canonical}
+    result={canonical}
+    if include_alias:
+        parents=recipe.get('canonical-parents')
+        if (not isinstance(parents,list) or not parents
+                or any(not isinstance(parent,str) or not valid_host(parent)
+                       or domain_scope.current().registrable(parent) is None for parent in parents)):
+            raise Invalid('网站别名缺少已核实的官方命名空间')
+        identities=[urlsplit(value) for value in guide.canonical+guide.metadata['og:url']]
+        if any(not within(identity.hostname,parents) for identity in identities):
+            raise Invalid('网站别名的最终身份不属于已核实的官方命名空间')
+        source=urlsplit(recipe.get('source',''))
+        if (source.scheme!='https' or not source.hostname or source.username is not None
+                or source.query or source.fragment or source.path not in ('','/')):
+            raise Invalid('网站别名必须来自不带凭据和参数的 HTTPS 根入口')
+        host=domain_scope.public_host(source.hostname)
+        root=domain_scope.current().registrable(host)
+        if not root or domain_scope.current().suffix(host)[1] or host not in (root,'www.'+root):
+            raise Invalid('共享托管或业务子域不能扩大为网站别名根域')
+        result.add('DOMAIN-SUFFIX,'+root)
+    return result
 
 
 def section_code_domains(recipe,text):

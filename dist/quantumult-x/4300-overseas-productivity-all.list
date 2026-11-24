@@ -4,9 +4,10 @@
 # description: 海外办公、邮件与协作合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T14:07:02Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list
 # source: https://www.notion.com/help/allowlist-ip
+# source: https://notion-status.com/
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
 # source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
@@ -23,7 +24,7 @@ host-suffix,notion.com,proxy
 host-suffix,notion.so,proxy
 host-suffix,notionusercontent.com,proxy
 host,notion-custom.com,proxy
-host,www.notion-status.com,proxy
+host-suffix,notion-status.com,proxy
 host-suffix,figma.com,proxy
 host-suffix,trello.com,proxy
 host-suffix,trellocdn.com,proxy

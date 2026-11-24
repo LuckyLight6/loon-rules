@@ -10,7 +10,8 @@ DOMAIN_TYPES=('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD')
 COUNTS=('domain-scopes','selected-scopes','narrowed-scopes','selected-uncovered',
         'product-scopes','fallback-scopes','privacy-scopes','shared-scopes',
         'declared-exclusions','outside-selection','other-lines')
-PROJECTION_FIELDS=('roots','exact','exclude','all-domains','domain-lines-only','parent-domains-source','brand-label','prefix-label')
+PROJECTION_FIELDS=('roots','exact','exclude','all-domains','domain-lines-only','parent-domains-source',
+                   'brand-label','prefix-label','require-domain-closure','exact-from-extract')
 OTHER_TYPES=(TYPES-set(DOMAIN_TYPES))|{'domain-options','unsupported'}
 FIELDS={'state','products','filters','other-products','other-rule-types',*COUNTS}
 
@@ -38,6 +39,17 @@ def declared_exclusions(config):
     for spec in config.get('source-inventories',()):
         result[spec['source']].update(spec.get('shared',{}))
         result[spec['source']].update(spec.get('reviewed-outside',{}))
+    return dict(result)
+
+
+def inventory_owners(specs, entries):
+    """Use independently declared source purposes, including fine members of bundles."""
+    result = defaultdict(set)
+    for spec in specs:
+        owners = set(spec['owners']) | set(spec.get('other-owners', {}).values())
+        for owner in tuple(owners):
+            owners.update(entries[owner].get('members', ()))
+        result[spec['source']].update(owners)
     return dict(result)
 
 
@@ -74,7 +86,7 @@ def other_rule_types(text):
     return dict(counts)
 
 
-def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hosts=(),exemptions=None):
+def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hosts=(),exemptions=None,inventory_owners=None):
     order=list(order);declared=groups(entries,order)
     domains={key:[row for row in data[key] if row.split(',')[0] in DOMAIN_TYPES or row.startswith('DOMAIN-KEYWORD,')]
              for key in order}
@@ -125,12 +137,13 @@ def audit(entries,data,downloaded,*,order,selected,shared_suffixes=(),shared_hos
             else:state['other-products'][owner]=state['other-products'].get(owner,0)+1
         if state['selected-uncovered']:raise Invalid('产品来源中的已选范围被遗漏或被兜底抢先匹配：'+source)
         report[source]=state
-    verify_report(entries,report,order=order)
+    verify_report(entries,report,order=order,inventory_owners=inventory_owners)
     return report
 
 
-def verify_report(entries,report,*,order=None):
+def verify_report(entries,report,*,order=None,inventory_owners=None):
     expected=groups(entries,order)
+    inventory_owners=inventory_owners or {}
     if set(report)!=set(expected):raise Invalid('产品来源覆盖报告与当前筛选来源不一致')
     for source,state in report.items():
         types=state.get('other-rule-types',{})
@@ -150,6 +163,12 @@ def verify_report(entries,report,*,order=None):
         if (covered!=state['domain-scopes'] or state['selected-scopes']>state['domain-scopes']
                 or state['narrowed-scopes']>state['selected-scopes'] or state['selected-uncovered']):
             raise Invalid('产品来源覆盖计数不一致或已选范围没有完整覆盖')
+        closed=any(part.get('require-domain-closure') for key in expected[source]
+                   for part in entries[key].get('projection',()) if part['source']==source)
+        if closed and any(state[field] for field in ('outside-selection','fallback-scopes','privacy-scopes')):
+            raise Invalid('完整产品来源仍含未处理范围，不能由补充或拦截规则代替归属：'+source)
+        if closed and set(state['other-products'])-inventory_owners.get(source,set()):
+            raise Invalid('完整产品来源的范围由未声明归属的其他产品承接：'+source)
 
 
 def concrete(entry):

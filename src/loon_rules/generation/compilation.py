@@ -23,12 +23,26 @@ def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extr
         rows.extend(entry.get('dns_required', ()))
         rows.extend(row+',no-resolve' for row in entry.get('literal_ips', ()))
     rows.extend(rules.reverse_dns_rules(entry))
+    extracted = []
+    for recipe in entry.get('extract', ()):
+        found = extract_rows(recipe, downloaded[recipe['source']], shared_hosts=shared_hosts)
+        if not found:
+            raise rules.Invalid('来源没有符合用途的端点：'+entry['id']+' '+recipe['source'])
+        extracted.extend(sorted(found))
+    if any(part.get('exact-from-extract') for part in entry.get('projection', ())):
+        extracted = domain_scope.exclude_shared_scopes(extracted, shared_hosts)
     for part in entry.get('projection', ()):
         source=downloaded[part['source']]
         if part.get('domain-lines-only'):
             lines=(line.strip().lstrip('\ufeff').strip() for line in source.splitlines())
             source='\n'.join(line for line in lines if line.partition(',')[0].strip() in ('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD'))
         scope=dict(part)
+        if part.get('exact-from-extract'):
+            hosts = {row.split(',')[1] for row in extracted
+                     if row.startswith('DOMAIN,') and row.count(',') == 1}
+            if not hosts:
+                raise rules.Invalid('来源精确主机筛选缺少本轮用途字段：'+entry['id'])
+            scope['exact'] = sorted(set(scope.get('exact', ())) | hosts)
         if parent_source:=part.get('parent-domains-source'):
             parents={h.strip().removeprefix('.') for h in downloaded[parent_source].splitlines() if h.strip()}
             brand=part['brand-label'];label=part['prefix-label']
@@ -41,11 +55,7 @@ def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extr
             raise rules.Invalid('上游没有符合用途的域名：'+entry['id'])
         if projection_rows is not None:projection_rows.setdefault(part['source'],set()).update(found)
         rows.extend(found)
-    for recipe in entry.get('extract', ()):
-        found=extract_rows(recipe, downloaded[recipe['source']],shared_hosts=shared_hosts)
-        if not found:
-            raise rules.Invalid('来源没有符合用途的端点：'+entry['id']+' '+recipe['source'])
-        rows.extend(sorted(found))
+    rows.extend(extracted)
     if source:=entry.get('cidr-source'):
         nets=[ip_network(line.strip()) for line in downloaded[source].splitlines() if line.strip()]
         if not nets or any(n.prefixlen<(16 if n.version==4 else 24) or not n.is_global for n in nets):

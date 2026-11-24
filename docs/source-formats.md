@@ -19,6 +19,7 @@
 | 组织持有的 ASN 集合 | `rdap-entity-autnums` 核对注册组织 ID 与名称，读取当前活动 ASN 列表；成员增减自动跟随，生成 `no-resolve`，不预填 ASN 编号 | Telegram 3310、Anthropic 1010；适用于已确认的产品网络运营者，不能据共享云厂商的登记推断租户用途 |
 | 单个 ASN 注册记录 | `rdap-autnum` 核对指定 ASN、注册实体 ID 和组织名称；持有人不符时停止更新 | 只核对一个已知自治系统时使用，维护联系人不等于注册持有人 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
+| 同一业务的地区端点表 | `purpose-host-table` 可用 `purpose-prefixes` 选择同类用途、`value-format: domain` 读取主机列；`all-exact: true` 只生成精确主机 | Kiro 1530 跟随官方表中的模型服务地区，不收相邻的 AWS 共用登录与验证码 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
 
@@ -32,7 +33,11 @@
 }
 ```
 
-`protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。所有读取器使用相同的共享主机边界。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
+`protect-from-reject` 用于保护选中用途的明确主机，不放开整家共享平台。用途字段还要通过共享主机与产品归属检查。HTML 忽略脚本、样式、模板与隐藏内容；用途标签可以跨空排版容器，不能跨新说明或新标题。
+
+`product-role-links` 从指定用途的链接取主机，公开跟踪参数不进入规则。子域保持精确匹配；链接指向共享平台时，不能因路径属于某个产品就认领整个主机。Google 4590 从官网的 News、Blog 和 Press resources 链接跟随资讯入口。
+
+已核实的首方网站发生跳转时，`site-identity.include-source-alias` 可以保留请求最先访问的注册域。它要求品牌与 Open Graph URL 一致，最终身份位于 `canonical-parents` 声明的官方命名空间；canonical 存在时还要与 Open Graph 一致。来源必须是 HTTPS 根入口，不能是业务子域、共享托管租户或带凭据、参数的 URL。EA 4160 用此方式识别 EA Sports 网站入口，不靠手写域名规则补跳转。
 
 `purpose-domain-lists.select` 可用 `roots`、`exact` 从同一官方清单选出产品自有范围。完整清单仍由端点合同独立核对，筛选不能把未处理的新增项藏起来。OpenAI 1020 用这种方式区分自有服务与第三方共享依赖。
 
@@ -74,6 +79,10 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 同一用途表同时列出跨产品主机时，`check-sharing` 从该份提取声明计算共用关系，并核对后续承接。拆分归属时使用本轮完整范围证据，不添加域名迁移豁免。
 
 用途明确的独立产品、地区来源或后置厂商共用表，可以用 `projection.all-domains: true` 跟随已核对来源的全部域名，不能同时填写 `roots`、`exact`，并且必须在 `source-inventories` 声明同一来源的完整归属检查。Apple 2370 使用此方式，细分仍先匹配。整份品牌顶级域、用途未核实的第三方主机等排除须写明原因，不能把“来源里有”当作业务归属的充分依据。
+
+`projection.exact-from-extract: true` 用本轮用途字段生成精确筛选，不再另列同一批主机名。社区表把服务器写成后缀规则、官方用途表只证明这个主机时，结果保持 `DOMAIN`，不会扩大到它的子域。固定 `roots` 仍按声明处理；共享主机保护继续生效。Kiro 的地区 API，以及 OpenAI、Docker 部分已由用途资料证明的主机采用这种方式。
+
+确认来源描述的是完整产品范围后，设置 `require-domain-closure: true`。检查读取整份来源，发生在筛选前：未选范围也必须由正确产品完整承接，或有明确的共享、排除依据。落到补充、Reject 或无关产品都不能算通过；其他产品的承接须在独立来源清单中声明并通过首条命中检查。宽泛的地区合集和混有历史品牌的公司表仍按参考资料核对，不能为了消除待查数量开启整表收录。
 
 读取含其他客户端语法的资料时，`projection.domain-lines-only` 和 `source-inventories.domain-lines-only` 选择三种域名规则。`projection-coverage.other-rule-types` 另外列出 IPv4、IPv6、ASN、进程等类型及数量；已认可类型的地址或 ASN 格式错误也会停止更新。采用 IP 还要核对目的地址用途，采用 ASN 要核对运营者，进程规则要核对系统和客户端，类型统计不代替这些判断
 

@@ -4,11 +4,12 @@
 # description: Nintendo 任天堂
 # boundary: 核心平台与官网地区门户；排除大陆专用域、共享基础设施和无法核实归属的游戏域名
 # created-at: 2026-11-20T06:07:48Z
-# updated-at: 2026-11-20T07:49:17Z
+# updated-at: 2026-11-24T08:00:02Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nintendo.list
 # source: https://www.nintendo.com/regionselector/
-# canonical-rule-count: 14
-# rule-count: 14
+# source: https://www.nintendo.com/de-de/Rechtliche-Informationen/Webseiten-Datenschutzerklarung/Webseiten-Datenschutzerklarung-637785.html
+# canonical-rule-count: 15
+# rule-count: 15
 # format: quantumult-x
 # canonical: rules/4140-nintendo-platform.lsr
 
@@ -26,3 +27,4 @@ host-suffix,nintendo.pl,proxy
 host-suffix,nintendo.sa,proxy
 host-suffix,nintendo.se,proxy
 host-suffix,nintendo.sk,proxy
+host-suffix,nintendo.de,proxy

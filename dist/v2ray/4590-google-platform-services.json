@@ -223,7 +223,8 @@
           "domain:redirector.snap.gvt1.com",
           "domain:withgoogle.com",
           "domain:googleusercontent.com",
-          "domain:googleapis-cn.com"
+          "domain:googleapis-cn.com",
+          "domain:blog.google"
         ],
         "outboundTag": "PROXY"
       }

@@ -4,8 +4,8 @@
 # description: Google 日常服务合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T12:26:59Z
-# updated-at: 2026-11-22T09:59:09Z
-# rule-count: 233
+# updated-at: 2026-11-24T08:00:02Z
+# rule-count: 234
 # source: https://developers.google.com/identity/protocols/oauth2/web-server
 # source: https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings
 # source: https://support.google.com/work/android/answer/10513641
@@ -29,6 +29,7 @@
 # source: https://raw.githubusercontent.com/firebase/firebase-js-sdk/master/packages/messaging/src/util/constants.ts
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
 # source: https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest
+# source: https://about.google/
 
 DOMAIN,meet.turns.goog
 DOMAIN,workspace.turns.goog
@@ -263,3 +264,4 @@ DOMAIN-SUFFIX,redirector.snap.gvt1.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,googleapis-cn.com
+DOMAIN-SUFFIX,blog.google

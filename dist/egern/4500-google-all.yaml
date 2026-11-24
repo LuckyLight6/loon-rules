@@ -4,7 +4,7 @@
 # description: Google 日常服务合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T12:26:59Z
-# updated-at: 2026-11-22T09:59:09Z
+# updated-at: 2026-11-24T08:00:02Z
 # source: https://developers.google.com/identity/protocols/oauth2/web-server
 # source: https://knowledge.workspace.google.com/admin/drive/drive-and-sites-firewall-and-proxy-settings
 # source: https://support.google.com/work/android/answer/10513641
@@ -28,8 +28,9 @@
 # source: https://raw.githubusercontent.com/firebase/firebase-js-sdk/master/packages/messaging/src/util/constants.ts
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Google.lsr
 # source: https://www.googleapis.com/discovery/v1/apis/safebrowsing/v4/rest
-# canonical-rule-count: 233
-# rule-count: 233
+# source: https://about.google/
+# canonical-rule-count: 234
+# rule-count: 234
 # format: egern
 # canonical: rules/4500-google-all.lsr
 
@@ -263,6 +264,7 @@ domain_suffix_set:
   - "withgoogle.com"
   - "googleusercontent.com"
   - "googleapis-cn.com"
+  - "blog.google"
 ip_cidr_set:
   - "142.250.82.0/24"
   - "74.125.247.128/32"

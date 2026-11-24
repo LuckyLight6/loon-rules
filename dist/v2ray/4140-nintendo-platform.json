@@ -17,7 +17,8 @@
           "domain:nintendo.pl",
           "domain:nintendo.sa",
           "domain:nintendo.se",
-          "domain:nintendo.sk"
+          "domain:nintendo.sk",
+          "domain:nintendo.de"
         ],
         "outboundTag": "PROXY"
       }

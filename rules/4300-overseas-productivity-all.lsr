@@ -4,10 +4,11 @@
 # description: 海外办公、邮件与协作合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-24T14:07:02Z
 # rule-count: 54
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list
 # source: https://www.notion.com/help/allowlist-ip
+# source: https://notion-status.com/
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
 # source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
@@ -20,7 +21,7 @@ DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,notionusercontent.com
 DOMAIN,notion-custom.com
-DOMAIN,www.notion-status.com
+DOMAIN-SUFFIX,notion-status.com
 DOMAIN-SUFFIX,figma.com
 DOMAIN-SUFFIX,trello.com
 DOMAIN-SUFFIX,trellocdn.com

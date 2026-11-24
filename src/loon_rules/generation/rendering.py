@@ -125,6 +125,9 @@ def render_review(status,entries):
                 lines+=['',f"{priority_label(entries[key])} 来源中有明确主机已由 {assigned} 处理，因此不重复收录。"]
     if projected:=status.get('projection-coverage'):
         total=lambda field:sum(state[field] for state in projected.values())
+        closed_sources = {source for source, state in projected.items()
+                          if any(part.get('require-domain-closure')
+                                 for parts in state['filters'].values() for part in parts)}
         other_types={}
         for state in projected.values():
             for kind,count in state.get('other-rule-types',{}).items():
@@ -133,18 +136,21 @@ def render_review(status,entries):
                 f"当前常规产品使用 {len(projected)} 份筛选来源，程序逐份检查筛选前的域名范围，共 {total('domain-scopes')} 项；"
                 f"其中 {total('selected-scopes')} 项符合当前产品筛选，{total('selected-uncovered')} 项缺少承接或被兜底抢先匹配。",
                 '这些是按来源计算的范围数，同一个范围出现在两份来源里会分别计数，不是新增网站数。来源可正常解析，不代表整份内容都适合采用。',
+                f"其中 {len(closed_sources)} 份来源要求筛选前完整归属；新范围不能被筛选、补充、拦截或无关产品藏起来。"
+                f"其余 {len(projected)-len(closed_sources)} 份按已声明用途核对，筛选外范围继续列出，不能据此宣称全部产品端点已校准。",
                 f"其他范围分别由已有产品、补充表和隐私规则处理；其中 {total('privacy-scopes')} 项命中隐私规则，"
                 f"{total('shared-scopes')} 项属于共享范围，{total('declared-exclusions')} 项已有明确排除理由。"
                 f"还有 {total('outside-selection')} 项不在当前选择或其他规则的完整覆盖内，不能把它们全部当作漏收或全部自动采用。",
                 '域名后缀按完整范围核对，不能用根域命中代替所有子域都已覆盖。按精确名称收窄的项只核对该主机；逐项计数、筛选条件和其他产品归属见 data/maintenance-state.json 的 projection-coverage。筛选外名称不写进公共报告。','',
                 '来源中的其他规则类型：'+('、'.join(f'{kind} {count} 条' for kind,count in sorted(other_types.items())) or '无')+'。类型和数量单独记录，IP 用途、ASN 运营者与进程适用设备另行核对。','',
-                '| 来源 | 当前产品 | 符合筛选 / 来源范围 | 其他产品 | 筛选外未覆盖 |','|---|---|---:|---:|---:|']
+                '| 来源 | 当前产品 | 符合筛选 / 来源范围 | 其他产品 | 筛选外未覆盖 | 完整归属要求 |','|---|---|---:|---:|---:|---|']
         for source,state in projected.items():
             products='、'.join(f"[{priority_label(entries[key])}](../rules/{rule_filename(entries[key])})" for key in state['products'])
             label=source.rstrip('/').rsplit('/',1)[-1]
             counts=f"{state['selected-scopes']} / {state['domain-scopes']}" if state['state']=='current' else {'unavailable':'未读到','invalid':'格式变化'}[state['state']]
             lines.append(f"| [{label}]({source}) | {products} | {counts} | "+
-                         f"{sum(state['other-products'].values())} | {state['outside-selection']} |")
+                         f"{sum(state['other-products'].values())} | {state['outside-selection']} | "+
+                         ('强制' if source in closed_sources else '按既定用途')+' |')
     if transfers:=status.get('projection-reassignments'):
         lines+=['','## 哪些来源范围改了归属？','',
                 '只在同一来源的另一个独立产品表完整接住原范围时，允许从原表撤出。只接住根域、落入兜底或出现多个目标产品，都不能作为迁移依据；迁移记录只保存原来已发布的范围。','',

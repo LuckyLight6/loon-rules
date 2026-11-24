@@ -4,10 +4,11 @@
 # description: EA 游戏平台
 # boundary: EA 平台及已识别的专用素材；第三方游戏服务器不整段收录
 # created-at: 2026-11-20T06:40:36Z
-# updated-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-24T08:00:02Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/ea.list
-# canonical-rule-count: 4
-# rule-count: 4
+# source: https://www.easports.com/
+# canonical-rule-count: 5
+# rule-count: 5
 # format: quantumult-x
 # canonical: rules/4160-ea-games.lsr
 
@@ -15,3 +16,4 @@ host,eaassets-a.akamaihd.net,proxy
 host-suffix,ea.com,proxy
 host-suffix,tnt-ea.com,proxy
 host-suffix,origin.com,proxy
+host-suffix,easports.com,proxy

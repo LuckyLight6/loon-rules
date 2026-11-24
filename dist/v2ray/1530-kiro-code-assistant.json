@@ -4,7 +4,9 @@
       {
         "type": "field",
         "domains": [
-          "domain:kiro.dev"
+          "domain:kiro.dev",
+          "full:q.eu-central-1.amazonaws.com",
+          "full:q.us-east-1.amazonaws.com"
         ],
         "outboundTag": "PROXY"
       }

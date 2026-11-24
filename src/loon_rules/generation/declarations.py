@@ -132,12 +132,17 @@ def validate_declarations(config):
                     or recipe.get('format')!='exclusive-purpose-table' or recipe.get('part')=='shared'):
                 raise rules.Invalid('共享用途必须由产品的同一官方用途表核对：'+e['id'])
         for part in e.get('projection',()):
+            if 'require-domain-closure' in part and type(part['require-domain-closure']) is not bool:
+                raise rules.Invalid('来源完整性要求必须为布尔值：'+e['id'])
+            if 'exact-from-extract' in part and (type(part['exact-from-extract']) is not bool
+                    or part['exact-from-extract'] and (not e.get('extract') or part.get('all-domains'))):
+                raise rules.Invalid('动态精确筛选须有用途字段，不能用于整份域名来源：'+e['id'])
             if 'all-domains' in part and (type(part['all-domains']) is not bool or part['all-domains'] and (
                     part.get('roots') or part.get('exact')
                     or not any(spec['source']==part['source'] and e['id'] in spec['owners']
                                for spec in config.get('source-inventories',())))):
                 raise rules.Invalid('完整域名来源需要独立完整性检查，不能同时局部筛选：'+e['id'])
-            if part['source'] not in e['sources'] or not (part.get('roots') or part.get('exact') or part.get('all-domains')):
+            if part['source'] not in e['sources'] or not (part.get('roots') or part.get('exact') or part.get('all-domains') or part.get('exact-from-extract')):
                 raise rules.Invalid('筛选缺少来源或服务边界：'+e['id'])
             if part.get('parent-domains-source') and (part['parent-domains-source'] not in e['sources']
                     or not part.get('brand-label') or not part.get('prefix-label')):

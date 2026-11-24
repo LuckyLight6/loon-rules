@@ -5,6 +5,29 @@ from loon_rules.sources.inputs import extract_rows
 
 
 class ProviderSources(PublicSourceExamples):
+    def test_named_service_table_follows_new_regions_without_claiming_shared_login(self):
+        recipe = {'format': 'purpose-host-table', 'section': 'core',
+                  'headers': ['URL', 'Purpose'], 'purpose-prefixes': ['Model service'],
+                  'value-format': 'domain', 'all-exact': True}
+        body = ('<h2 id="core">Core</h2><table><tr><td>URL</td><td>Purpose</td></tr>'
+                '<tr><td>runtime.vendor.example</td><td>Model service (US)</td></tr>'
+                '<tr><td>login.shared.example</td><td>Shared account sign-in</td></tr>'
+                '<tr><td>telemetry.vendor.example</td><td>Optional telemetry</td></tr></table>')
+        self.assertEqual(extract_rows(recipe, body), {'DOMAIN,runtime.vendor.example'})
+        changed = body.replace('</table>', '<tr><td>runtime.new-region.example</td>'
+                               '<td>Model service (New region)</td></tr></table>')
+        self.assertEqual(extract_rows(recipe, changed), {
+            'DOMAIN,runtime.vendor.example', 'DOMAIN,runtime.new-region.example'})
+        with self.assertRaises(Invalid):
+            extract_rows(recipe, body, shared_hosts={'runtime.vendor.example'})
+        for host in ('*.shared.example', 'not a host', 'https://user:password@shared.example'):
+            with self.subTest(host=host), self.assertRaises(Invalid):
+                extract_rows(recipe, body.replace('runtime.vendor.example', host))
+        with self.assertRaises(Invalid):
+            extract_rows(recipe, body.replace('Model service', 'Different product'))
+        with self.assertRaises(Invalid):
+            extract_rows(recipe, body.replace('Model service', 'Model services-unrelated'))
+
     def test_unlisted_endpoint_and_registry_change_reach_views_and_client_outputs(self):
         from contextlib import redirect_stdout
         from io import StringIO
@@ -17,10 +40,13 @@ class ProviderSources(PublicSourceExamples):
         from loon_rules.exports import publish
         endpoint='https://docs.vendor.example/allowlist'
         registry='https://rdap.example/entity/ORG-SERVICE'
+        feed='https://rules.example/service.list'
         recipe={'format':'domain-column-table','source':endpoint,'section':'endpoints',
                 'headers':['Domain','Purpose'],'column':'Domain','value-format':'url'}
         service={'id':'service','priority':20,'mode':'compiled','section':'development',
-                 'description':'服务','boundary':'官方服务入口与自有网络','sources':[endpoint,registry],
+                 'description':'服务','boundary':'官方服务入口与自有网络','sources':[endpoint,registry,feed],
+                 'projection':[{'source':feed,'roots':['vendor.example'],
+                                'require-domain-closure':True}],
                  'ip-match':'target-ip','extract':[recipe,{
                      'format':'rdap-entity-autnums','source':registry,
                      'registrant-id':'ORG-SERVICE','registrant-name':'Service Operator'}]}
@@ -38,7 +64,7 @@ class ProviderSources(PublicSourceExamples):
                 'vcardArray':['vcard',[['fn',{},'text','Service Operator']]],
                 'autnums':[{'objectClassName':'autnum','handle':'AS399358',
                             'startAutnum':399358,'endAutnum':399358,'status':['active']}]}
-        inputs={endpoint:document(),registry:json.dumps(record)}
+        inputs={endpoint:document(),registry:json.dumps(record),feed:'DOMAIN,api.vendor.example'}
         with TemporaryDirectory() as tmp, patch.object(lib,'ROOT',prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
             (root/'config/catalog.json').write_text(json.dumps(config))
@@ -50,6 +76,7 @@ class ProviderSources(PublicSourceExamples):
             with patch.object(lib.transport,'download',side_effect=inputs.__getitem__):
                 lib.run();publish(root)
                 inputs[endpoint]=document('<tr><td>https://files.unlisted-provider.example</td><td>New product</td></tr>')
+                inputs[feed]+='\nDOMAIN,files.unlisted-provider.example'
                 record['autnums']=[{'objectClassName':'autnum','handle':'AS399359',
                                    'startAutnum':399359,'endAutnum':399359,'status':['active']}]
                 inputs[registry]=json.dumps(record)
@@ -66,6 +93,13 @@ class ProviderSources(PublicSourceExamples):
                     self.assertIn('IP-ASN,399359,no-resolve',yaml)
                 before={p:p.read_bytes() for folder in ('rules','dist')
                         for p in (root/folder).rglob('*') if p.is_file()}
+                state=(root/'data/maintenance-state.json').read_bytes()
+                inputs[feed]+='\nDOMAIN,new.unassigned.example'
+                with self.assertRaisesRegex(Invalid,'未处理|完整'):
+                    lib.run()
+                self.assertTrue(all(p.read_bytes()==body for p,body in before.items()))
+                self.assertEqual((root/'data/maintenance-state.json').read_bytes(),state)
+                inputs[feed]=inputs[feed].removesuffix('\nDOMAIN,new.unassigned.example')
                 record['vcardArray'][1][0][3]='Other Operator';inputs[registry]=json.dumps(record)
                 with self.assertRaises(Invalid):lib.run()
                 self.assertTrue(all(p.read_bytes()==body for p,body in before.items()))

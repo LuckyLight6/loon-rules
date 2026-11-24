@@ -113,18 +113,40 @@ def parse_purpose_host_table(recipe, text):
     rows = table.rows.get(recipe['section'], [])
     if recipe['headers'] not in rows:
         raise Invalid('业务端点表缺少标题列')
-    wanted = {s.casefold() for s in recipe['purposes']}
+    purposes = recipe.get('purposes', [])
+    prefixes = recipe.get('purpose-prefixes', [])
+    if (bool(purposes) == bool(prefixes) or not isinstance(purposes, list)
+            or not isinstance(prefixes, list)
+            or any(not isinstance(value, str) or not value.strip() for value in purposes + prefixes)):
+        raise Invalid('业务端点表需要一组明确用途或用途前缀')
+    value_format = recipe.get('value-format', 'url')
+    all_exact = recipe.get('all-exact', False)
+    if (value_format not in ('url', 'domain') or type(all_exact) is not bool
+            or all_exact and recipe.get('roots') or not all_exact and not recipe.get('roots')):
+        raise Invalid('业务端点表的主机格式或范围选择无效')
+    wanted = {s.casefold() for s in purposes or prefixes}
     seen = set()
     result = set()
     for row in rows:
-        if len(row) != 2 or row[1].casefold() not in wanted:
+        if row == recipe['headers']:
             continue
-        seen.add(row[1].casefold())
-        url = urlsplit(row[0])
-        if url.scheme != 'https' or not url.hostname or url.username is not None:
-            raise Invalid('业务端点不是公开 HTTPS 名称')
-        if valid_host(url.hostname) and within(url.hostname, recipe['roots']):
-            result.add('DOMAIN,' + url.hostname)
+        if len(row) != 2:
+            raise Invalid('业务端点表的列数发生变化')
+        purpose = row[1].casefold()
+        matches = {value for value in wanted if purpose == value or prefixes and
+                   re.match(re.escape(value) + r'(?:\s|[:(])', purpose)}
+        if not matches:
+            continue
+        seen.update(matches)
+        if value_format == 'url':
+            url = urlsplit(row[0])
+            if url.scheme != 'https' or not url.hostname or url.username is not None:
+                raise Invalid('业务端点不是公开 HTTPS 名称')
+            host = url.hostname
+        else:
+            host = domain_scope.public_host(row[0].strip())
+        if valid_host(host) and (all_exact or within(host, recipe['roots'])):
+            result.add('DOMAIN,' + host)
     if seen != wanted or not result:
         raise Invalid('业务端点表缺少已选用途')
     return result

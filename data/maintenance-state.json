@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T14:17:53Z",
-  "inputs-read": 570,
-  "critical": 828,
-  "inputs-requested": 570,
+  "checked-at": "2026-11-24T14:29:55Z",
+  "inputs-read": 578,
+  "critical": 834,
+  "inputs-requested": 578,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -888,7 +888,7 @@
       "apple-wallet-payments": 2,
       "apple-store-transactions": 11,
       "apple-app-package-downloads": 1,
-      "apple-find-my": 7,
+      "apple-find-my": 5,
       "apple-location-services": 4,
       "apple-messaging-identity": 1,
       "apple-icloud-mainland": 1,
@@ -898,7 +898,7 @@
       "apple-developer-downloads": 1,
       "apple-shared-store-assets": 2,
       "apple-system-connectivity": 11,
-      "apple-feedback-and-diagnostics": 2,
+      "apple-feedback-and-diagnostics": 1,
       "pypi-packages": 1,
       "signal-messenger": 1,
       "steam-international-platform": 2,
@@ -1287,9 +1287,8 @@
       "network-sign-in-and-probes": 9,
       "ip-egress-checks": 17,
       "claude-connections": 4,
-      "chatgpt-connections": 8,
+      "chatgpt-connections": 7,
       "github-copilot-connections": 3,
-      "together-model-services": 1,
       "apple-video-and-fitness": 3,
       "apple-tv-video-delivery": 2,
       "apple-news-and-sports": 4,
@@ -1307,7 +1306,7 @@
       "github-code-and-packages": 2,
       "gitlab-hosting": 1,
       "maven-central": 1,
-      "docker-hub": 3,
+      "docker-hub": 1,
       "workos-authentication": 1,
       "discord-messaging-and-voice": 1,
       "meta-shared-services": 1,
@@ -1402,13 +1401,15 @@
               "cloudflare-dns.com",
               "one.one.one"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ],
         "cloudflare-shared-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -1452,7 +1453,8 @@
               "servd-anthropic-website.b-cdn.net",
               "anthropic.auth0.com",
               "anthropic-com.ghost.io"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1530,21 +1532,23 @@
               "openaicom.imgix.net"
             ],
             "exact": [
-              "openaiassets.blob.core.windows.net",
-              "cdn.openaimerge.com",
               "chat.openai.com.cdn.cloudflare.net",
               "openai-api.arkoselabs.com",
+              "openaiassets.blob.core.windows.net",
               "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
               "openaicomproductionae4b.blob.core.windows.net",
               "production-openaicom-storage.azureedge.net"
-            ]
+            ],
+            "require-domain-closure": true,
+            "exact-from-extract": true
           }
         ],
         "ai-com-agents": [
           {
             "roots": [
               "ai.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1579,7 +1583,8 @@
         "gemini-connections": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -1613,7 +1618,8 @@
               "copilot-telemetry-service.githubusercontent.com",
               "copilot-telemetry.githubusercontent.com",
               "copilotprodattachments.blob.core.windows.net"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1729,121 +1735,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list": {
-      "state": "current",
-      "products": [
-        "together-model-services"
-      ],
-      "filters": {
-        "together-model-services": [
-          {
-            "exact": [
-              "api.together.xyz"
-            ],
-            "domain-lines-only": true
-          }
-        ]
-      },
-      "other-products": {
-        "gemini-connections": 15,
-        "github-copilot-connections": 3,
-        "groq-inference": 2,
-        "steam-international-platform": 8,
-        "prime-video-streaming": 4,
-        "claude-connections": 5,
-        "apple-store-transactions": 1,
-        "atlassian-cloud-services": 2,
-        "bahamut-video-and-community": 2,
-        "bbc-news-and-video": 3,
-        "bilibili-international-video": 1,
-        "binance-platform": 2,
-        "bitbucket-hosting": 1,
-        "blizzard-battlenet": 1,
-        "bluesky-social": 3,
-        "bybit-exchange": 2,
-        "xiaomi-international-services": 1,
-        "telegram-messaging": 10,
-        "instagram-social": 3,
-        "cerebras-model-services": 1,
-        "chatgpt-connections": 6,
-        "bytedance-international": 3,
-        "cursor-editor-and-api": 2,
-        "discord-messaging-and-voice": 6,
-        "disney-plus-streaming": 3,
-        "docker-desktop-and-platform": 1,
-        "docker-hub": 1,
-        "duck-ai-chat": 1,
-        "figma-design": 1,
-        "gamma-presentations": 1,
-        "github-code-and-packages": 6,
-        "gitlab-hosting": 2,
-        "go-modules": 2,
-        "google-drive-and-documents": 1,
-        "youtube-video-and-cdn": 9,
-        "xai-connections": 2,
-        "grokipedia-encyclopedia": 1,
-        "hbo-streaming": 2,
-        "hcaptcha-verification": 1,
-        "hoyoverse-international": 1,
-        "hugging-face-model-hub": 1,
-        "hulu-streaming": 2,
-        "intercom-customer-support": 2,
-        "jetbrains-ai": 1,
-        "twitch-live-video": 5,
-        "kraken-exchange": 1,
-        "kucoin-exchange": 1,
-        "leonardo-image-tools": 1,
-        "line-messenger": 4,
-        "linkedin-network": 1,
-        "microsoft-files-and-sharepoint": 5,
-        "vimeo-video": 3,
-        "lovart-international": 1,
-        "manus-agent-services": 1,
-        "meta-ai-assistant": 2,
-        "mistral-model-services": 1,
-        "tiktok-international-video": 7,
-        "muse-agent": 1,
-        "netflix-video-and-delivery": 7,
-        "notion-workspace": 2,
-        "npm-registry": 2,
-        "okx-platform": 2,
-        "perplexity-search-and-api": 1,
-        "pinterest-social": 21,
-        "poe-chat-and-api": 1,
-        "proton-suite": 3,
-        "reddit-community": 4,
-        "replit-cloud-development": 1,
-        "sentry-error-monitoring": 2,
-        "signal-messenger": 2,
-        "slack-workspaces": 1,
-        "soundcloud-audio": 2,
-        "sourcegraph-code-and-cody": 1,
-        "spotify-audio": 1,
-        "x-social-and-media": 6,
-        "threads-social": 2,
-        "ea-games": 1,
-        "trust-wallet": 1,
-        "whatsapp-messaging": 3,
-        "youmind-international": 1
-      },
-      "domain-scopes": 7837,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 7395,
-      "privacy-scopes": 9,
-      "shared-scopes": 197,
-      "declared-exclusions": 0,
-      "outside-selection": 6,
-      "other-lines": 116,
-      "other-rule-types": {
-        "DOMAIN-KEYWORD": 32,
-        "IP-CIDR": 80,
-        "IP-CIDR6": 3,
-        "USER-AGENT": 1
-      }
-    },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list": {
       "state": "current",
       "products": [
@@ -1855,7 +1746,8 @@
             "roots": [
               "replicate.com",
               "replicate.delivery"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1884,7 +1776,8 @@
             "roots": [
               "runway.com",
               "runwayml.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1912,7 +1805,8 @@
           {
             "roots": [
               "stability.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1940,7 +1834,8 @@
           {
             "roots": [
               "bfl.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1970,7 +1865,8 @@
               "repl.it",
               "replit.com",
               "replit.dev"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -1998,7 +1894,8 @@
           {
             "roots": [
               "augmentcode.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2027,15 +1924,14 @@
         "sourcegraph-code-and-cody": [
           {
             "roots": [
-              "cody.dev",
-              "sourcegraph.com"
+              "cody.dev"
             ]
           }
         ]
       },
       "other-products": {},
       "domain-scopes": 4,
-      "selected-scopes": 2,
+      "selected-scopes": 1,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 2,
@@ -2057,7 +1953,8 @@
           {
             "roots": [
               "continue.dev"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2085,7 +1982,8 @@
           {
             "roots": [
               "coderabbit.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2113,7 +2011,8 @@
           {
             "roots": [
               "tabnine.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2141,7 +2040,8 @@
           {
             "roots": [
               "factory.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2169,7 +2069,8 @@
           {
             "roots": [
               "zed.dev"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2197,17 +2098,19 @@
           {
             "roots": [
               "kiro.dev"
-            ]
+            ],
+            "require-domain-closure": true,
+            "exact-from-extract": true
           }
         ]
       },
       "other-products": {},
       "domain-scopes": 3,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
+      "selected-scopes": 3,
+      "narrowed-scopes": 2,
       "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 1,
+      "product-scopes": 2,
+      "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 1,
       "declared-exclusions": 0,
@@ -2225,7 +2128,8 @@
           {
             "roots": [
               "bolt.new"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2253,7 +2157,8 @@
           {
             "roots": [
               "lovable.dev"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2282,7 +2187,8 @@
             "roots": [
               "v0.app",
               "v0.dev"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2310,7 +2216,8 @@
           {
             "roots": [
               "genspark.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2338,7 +2245,8 @@
           {
             "roots": [
               "jasper.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2366,7 +2274,8 @@
           {
             "roots": [
               "gamma.app"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2394,7 +2303,8 @@
           {
             "roots": [
               "phind.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2423,7 +2333,8 @@
             "roots": [
               "inflection.ai",
               "pi.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2451,7 +2362,8 @@
           {
             "roots": [
               "h2o.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2479,7 +2391,8 @@
           {
             "roots": [
               "otter.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2507,7 +2420,8 @@
           {
             "roots": [
               "descript.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2535,7 +2449,8 @@
           {
             "roots": [
               "synthesia.io"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2563,7 +2478,8 @@
           {
             "roots": [
               "lumalabs.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2591,7 +2507,8 @@
           {
             "roots": [
               "leonardo.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2619,7 +2536,8 @@
           {
             "roots": [
               "pika.art"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2647,7 +2565,8 @@
           {
             "roots": [
               "recraft.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2675,7 +2594,8 @@
           {
             "roots": [
               "udio.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2703,7 +2623,8 @@
           {
             "roots": [
               "duck.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2731,7 +2652,8 @@
           {
             "roots": [
               "langchain.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2760,7 +2682,8 @@
             "roots": [
               "comfy.org",
               "comfyregistry.org"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2788,7 +2711,8 @@
           {
             "roots": [
               "lmstudio.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2816,7 +2740,8 @@
           {
             "roots": [
               "crewai.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2844,7 +2769,8 @@
           {
             "roots": [
               "eigent.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2873,7 +2799,8 @@
             "roots": [
               "manus.im",
               "manuscdn.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2902,7 +2829,8 @@
             "roots": [
               "diabrowser.com",
               "diabrowser.engineering"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2930,7 +2858,8 @@
           {
             "roots": [
               "openclaw.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -2970,7 +2899,8 @@
             "roots": [
               "kimi.ai",
               "moonshot.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "minimax-international": [
@@ -2978,7 +2908,8 @@
             "roots": [
               "minimax.io",
               "hailuoai.video"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "kimi-mainland": [
@@ -2987,7 +2918,8 @@
               "moonshot.cn",
               "kimichat.com",
               "kimi.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "zhipu-mainland": [
@@ -2996,7 +2928,8 @@
               "chatglm.cn",
               "zhipuai.cn",
               "bigmodel.cn"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "minimax-mainland": [
@@ -3004,7 +2937,8 @@
             "roots": [
               "minimaxi.com",
               "hailuoai.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "bytedance-mainland": [
@@ -3014,7 +2948,8 @@
               "coze.cn",
               "volces.com",
               "volcengine.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "deepseek-mainland": [
@@ -3022,7 +2957,8 @@
             "roots": [
               "deepseek.com",
               "deepseeksvc.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "iflytek-mainland": [
@@ -3031,14 +2967,16 @@
               "sparkchain.cn",
               "xfyun.cn",
               "xf-yun.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "baichuan-mainland": [
           {
             "roots": [
               "baichuan-ai.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "lingyi-mainland": [
@@ -3046,21 +2984,24 @@
             "roots": [
               "01.ai",
               "lingyiwanwu.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "stepfun-mainland": [
           {
             "roots": [
               "stepfun.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "sensetime-mainland": [
           {
             "roots": [
               "sensenova.cn"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3095,7 +3036,8 @@
               "ciciai.com",
               "ciciaicdn.com",
               "dola.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3125,7 +3067,8 @@
               "youmind.ai",
               "youmind.com",
               "youmind.site"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3153,7 +3096,8 @@
           {
             "roots": [
               "qoder.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3181,7 +3125,8 @@
           {
             "roots": [
               "lovart.ai"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3217,7 +3162,8 @@
               "np-edge.itunes.apple.com",
               "play-edge.itunes.apple.com",
               "uts-api.itunes.apple.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "apple-tv-video-delivery": [
@@ -3225,7 +3171,8 @@
             "exact": [
               "hls-amt.itunes.apple.com",
               "hls.itunes.apple.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "apple-news-and-sports": [
@@ -3242,7 +3189,8 @@
               "news-events.apple.com",
               "news.apple.com",
               "prod-domep-news-apple.v.aaplimg.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3278,7 +3226,8 @@
             ],
             "exact": [
               "beta.itunes.apple.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3309,7 +3258,8 @@
             "roots": [
               "fmipmobile.icloud.com",
               "fmfmobile.icloud.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3345,7 +3295,8 @@
             "exact": [
               "amp-api.media.apple.com",
               "mvod.itunes.apple.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ],
         "apple-music-audio-delivery": [
@@ -3356,7 +3307,8 @@
               "audio.itunes.apple.com",
               "audio-ssl.itunes.apple.com",
               "streamingaudio.itunes.apple.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -3383,7 +3335,8 @@
         "apple-other-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -3478,7 +3431,8 @@
             "exact": [
               "gitlab-assets.oss-cn-hongkong.aliyuncs.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -3589,11 +3543,11 @@
               "dockerstatic.com"
             ],
             "exact": [
-              "hub.docker.com",
-              "docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com",
-              "production.cloudfront.docker.com"
+              "docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true,
+            "exact-from-extract": true
           }
         ],
         "docker-desktop-and-platform": [
@@ -3602,7 +3556,8 @@
               "docker.com",
               "compose-spec.io"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -3634,7 +3589,8 @@
               "rust-lang.org",
               "docs.rs"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -3727,7 +3683,8 @@
               "sentry.io",
               "sentry-cdn.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -3757,7 +3714,8 @@
               "hcaptcha.com",
               "hcaptchastatus.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4032,7 +3990,8 @@
               "slack-msgs.com",
               "slack-core.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4129,7 +4088,8 @@
               "instagr.am",
               "instagram.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4189,7 +4149,8 @@
         "threads-social": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4216,7 +4177,8 @@
         "pinterest-social": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4243,7 +4205,8 @@
         "bluesky-social": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4270,7 +4233,8 @@
         "lark-international": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4297,7 +4261,8 @@
         "zoom-meetings": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4324,7 +4289,8 @@
         "xiaomi-international-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4351,7 +4317,8 @@
         "linkedin-network": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4455,7 +4422,8 @@
         "wise-transfers": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4621,7 +4589,8 @@
         "kraken-exchange": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4648,7 +4617,8 @@
         "bybit-exchange": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4675,7 +4645,8 @@
         "kucoin-exchange": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4704,7 +4675,8 @@
             "roots": [
               "trustwallet.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -4890,7 +4862,8 @@
         "hulu-streaming": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5132,7 +5105,8 @@
           {
             "roots": [
               "iq.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -5212,7 +5186,8 @@
         "vimeo-video": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5279,7 +5254,8 @@
         "soundcloud-audio": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5489,12 +5465,12 @@
       "selected-scopes": 3,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 8,
+      "product-scopes": 9,
       "fallback-scopes": 2,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
-      "outside-selection": 114,
+      "outside-selection": 113,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -5569,12 +5545,12 @@
       "selected-scopes": 6,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 6,
+      "product-scopes": 7,
       "fallback-scopes": 2,
       "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
-      "outside-selection": 157,
+      "outside-selection": 156,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -5648,7 +5624,8 @@
         "netease-international-games": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5689,12 +5666,12 @@
       "selected-scopes": 4,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 4,
+      "product-scopes": 5,
       "fallback-scopes": 1,
       "privacy-scopes": 0,
       "shared-scopes": 1,
       "declared-exclusions": 0,
-      "outside-selection": 1,
+      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -5709,7 +5686,8 @@
             "roots": [
               "figma.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5736,7 +5714,8 @@
         "proton-suite": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5768,7 +5747,8 @@
               "intercomassets.com",
               "intercomcdn.com"
             ],
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5804,7 +5784,8 @@
             "domain-lines-only": true,
             "parent-domains-source": "https://www.google.com/supported_domains",
             "brand-label": "google",
-            "prefix-label": "scholar"
+            "prefix-label": "scholar",
+            "require-domain-closure": true
           }
         ]
       },
@@ -5831,7 +5812,8 @@
         "google-firebase-messaging": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -5901,12 +5883,12 @@
       "selected-scopes": 33,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
-      "product-scopes": 216,
+      "product-scopes": 217,
       "fallback-scopes": 410,
       "privacy-scopes": 6,
       "shared-scopes": 12,
       "declared-exclusions": 0,
-      "outside-selection": 37,
+      "outside-selection": 36,
       "other-lines": 7,
       "other-rule-types": {
         "DOMAIN-KEYWORD": 5,
@@ -5938,7 +5920,8 @@
               "skydrive.wns.windows.com",
               "spoprod-a.akamaihd.net",
               "storage.msn.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -6023,7 +6006,8 @@
         "qualcomm-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6050,7 +6034,8 @@
         "nvidia-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6077,7 +6062,8 @@
         "intel-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6104,7 +6090,8 @@
         "samsung-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6131,7 +6118,8 @@
         "cloudflare-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6158,7 +6146,8 @@
         "adobe-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6185,7 +6174,8 @@
         "amazon-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6216,7 +6206,8 @@
             "roots": [
               "ernie.baidu.com",
               "yiyan.baidu.com"
-            ]
+            ],
+            "require-domain-closure": true
           }
         ]
       },
@@ -6480,7 +6471,8 @@
         "feishu-mainland": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6866,7 +6858,8 @@
         "douyu-live": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6893,7 +6886,8 @@
         "huya-live": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6950,7 +6944,8 @@
         "meituan-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -6977,7 +6972,8 @@
         "didi-mobility": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7045,7 +7041,8 @@
         "aliyun-drive": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7072,7 +7069,8 @@
         "wps-office": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7099,7 +7097,8 @@
         "digitalocean-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7126,7 +7125,8 @@
         "vultr-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7153,7 +7153,8 @@
         "hetzner-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7180,7 +7181,8 @@
         "vercel-shared-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7207,7 +7209,8 @@
         "netlify-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7234,7 +7237,8 @@
         "heroku-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7265,7 +7269,8 @@
               "java"
             ],
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7437,7 +7442,8 @@
         "huawei-shared-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -7496,7 +7502,8 @@
         "kingsoft-shared-services": [
           {
             "all-domains": true,
-            "domain-lines-only": true
+            "domain-lines-only": true,
+            "require-domain-closure": true
           }
         ]
       },
@@ -8398,8 +8405,8 @@
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
-    "state": "current",
-    "source-version": "2026-11-23_15-54-01_UTC",
+    "state": "retained-newer",
+    "source-version": "2026-11-23_11-59-57_UTC",
     "active-version": "2026-11-23_15-54-01_UTC"
   },
   "shared-service-transfers": {
@@ -12867,7 +12874,7 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 20,
+      "accepted-prefixes": 0,
       "unconfirmed-prefixes": 524,
       "retired-prefixes": 0
     },
@@ -13398,6 +13405,42 @@
       "domain-scopes": 18,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "google-company-navigation": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "nintendo-official-website-regions": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "ea-sports-official-website-alias": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "sourcegraph-official-platform": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "kiro-model-service-regions": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "find-my-purpose-boundary": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "functional-hosts": [
@@ -13660,6 +13703,8 @@
     "api.siliconflow.cn",
     "api.siliconflow.com",
     "api.stepfun.ai",
+    "api.together.ai",
+    "api.together.xyz",
     "api.tokenfactory.nebius.com",
     "api.us.elevenlabs.io",
     "api.us.mistral.ai",
@@ -13708,6 +13753,7 @@
     "azcliprod.blob.core.windows.net",
     "baseten.co",
     "bitbucket.org",
+    "blog.google",
     "bothub.ru",
     "cdn.atlassian-us-gov-mod.com",
     "cdn.openaimerge.com",
@@ -13763,6 +13809,7 @@
     "downloads.intercomcdn.com",
     "downloads.intercomcdn.eu",
     "downloads.marketplace.jetbrains.com",
+    "easports.com",
     "elevenlabs.io",
     "elevenlabsusercontent.com",
     "factory.com",
@@ -13861,8 +13908,12 @@
     "nexus-europe-websocket.intercom.io",
     "nexus-websocket-a.intercom.io",
     "nexus-websocket-b.intercom.io",
+    "nintendo.co.jp",
+    "nintendo.com",
+    "nintendo.de",
     "nodejs.org",
     "notion-custom.com",
+    "notion-status.com",
     "notion.com",
     "notionusercontent.com",
     "novita.ai",
@@ -14093,6 +14144,8 @@
     "productionresultssa8.blob.core.windows.net",
     "productionresultssa9.blob.core.windows.net",
     "profile.ess.apple.com",
+    "q.eu-central-1.amazonaws.com",
+    "q.us-east-1.amazonaws.com",
     "query.ess.apple.com",
     "quiz.directory",
     "registry-1.docker.io",
@@ -14112,6 +14165,8 @@
     "runnerproxjpw1.actions.githubusercontent.com",
     "runnerproxsdc1.actions.githubusercontent.com",
     "runnerproxweu1.actions.githubusercontent.com",
+    "runtime.eu-central-1.kiro.dev",
+    "runtime.us-east-1.kiro.dev",
     "safebrowsing.googleapis.com",
     "safebrowsing.mtls.googleapis.com",
     "sandbox.braintreegateway.com",
@@ -14126,6 +14181,7 @@
     "signal.me",
     "signal.tube",
     "smtp.gmail.com",
+    "sourcegraph.com",
     "ss-inf.net",
     "static.ampcode.com",
     "static.au.intercomassets.com",
@@ -14186,7 +14242,9 @@
     "wss-backup.slack.com",
     "wss-mobile.slack.com",
     "wss-primary.slack.com",
+    "www.blog.google",
     "www.braintreegateway.com",
+    "www.ea.com",
     "www.intercom-reporting.com",
     "www.jetbrains.com",
     "www.notion-status.com",
@@ -14229,13 +14287,9 @@
         "DOMAIN,auth.grokusercontent.com"
       ],
       "retained": [],
-      "retired": [
-        "DOMAIN,accounts.spacex.ai"
-      ],
-      "first-absent": {
-        "DOMAIN,accounts.spacex.ai": 1795457140
-      },
-      "last-read": 1795529830,
+      "retired": [],
+      "first-absent": {},
+      "last-read": 1795530572,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -14276,7 +14330,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "ollama-cloud": {
@@ -14307,7 +14361,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "stackit-model-services": {
@@ -14338,7 +14392,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "stepfun-international": {
@@ -14380,7 +14434,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "xiaomi-international": {
@@ -14423,7 +14477,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -14458,7 +14512,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -14508,7 +14562,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -14549,7 +14603,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14781,7 +14835,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "npm-registry": {
@@ -14814,7 +14868,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14858,7 +14912,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14891,7 +14945,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14944,7 +14998,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "braintree-payments": {
@@ -14971,7 +15025,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "notion-workspace": {
@@ -14997,7 +15051,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "google-account-authentication": {
@@ -15205,7 +15259,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -15231,7 +15285,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "google-play-services": {
@@ -15267,7 +15321,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "google-play-games": {
@@ -15295,7 +15349,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "kimi-mainland": {
@@ -15326,7 +15380,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -15357,7 +15411,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -15400,7 +15454,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -15439,7 +15493,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795529830,
+      "last-read": 1795530572,
       "state": "current"
     }
   },
@@ -15447,7 +15501,7 @@
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1280,
+  "business-domain-cases": 1286,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -15457,10 +15511,7 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "ai-overseas-all",
-    "xai-connections",
-    "mainland-routing-all",
-    "mainland-networks"
+    "ai-overseas-all"
   ],
   "scope-negatives": 149,
   "ip-cases": 44,
@@ -15536,7 +15587,7 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "ai-overseas-all": 643,
+    "ai-overseas-all": 645,
     "claude-connections": 24,
     "chatgpt-connections": 427,
     "gemini-connections": 52,
@@ -15589,7 +15640,7 @@
     "tabnine-code-assistant": 1,
     "factory-coding-agents": 2,
     "zed-editor-and-ai": 1,
-    "kiro-code-assistant": 1,
+    "kiro-code-assistant": 3,
     "bolt-app-builder": 1,
     "lovable-app-builder": 1,
     "v0-app-builder": 2,
@@ -15744,13 +15795,13 @@
     "twitch-live-video": 7,
     "bbc-news-and-video": 3,
     "bahamut-video-and-community": 5,
-    "overseas-games-all": 49,
+    "overseas-games-all": 51,
     "steam-international-platform": 12,
     "epic-games-services": 5,
     "playstation-network": 3,
-    "nintendo-platform": 14,
+    "nintendo-platform": 15,
     "hoyoverse-international": 4,
-    "ea-games": 4,
+    "ea-games": 5,
     "ubisoft-connect": 4,
     "blizzard-battlenet": 2,
     "netease-international-games": 1,
@@ -15761,7 +15812,7 @@
     "atlassian-cloud-services": 13,
     "proton-suite": 9,
     "intercom-customer-support": 23,
-    "google-all": 233,
+    "google-all": 234,
     "google-account-authentication": 190,
     "google-gmail-mail": 9,
     "google-meet-meetings": 11,
@@ -15771,7 +15822,7 @@
     "google-software-downloads": 6,
     "google-scholar": 76,
     "google-firebase-messaging": 16,
-    "google-platform-services": 220,
+    "google-platform-services": 221,
     "microsoft-all": 653,
     "microsoft-account-authentication": 19,
     "microsoft-outlook-mail": 10,
