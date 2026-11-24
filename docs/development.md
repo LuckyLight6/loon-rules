@@ -35,7 +35,7 @@ python3 -B -m loon_rules --export
 python3 -B -m loon_rules --check-exports
 ```
 
-`--refresh` 联网读取来源并写入通过检查的结果；`--check` 执行来源和生成检查，不写文件；`--verify-files` 只检查本地文件。安装后也可运行 `loon-rules --verify-files`；普通安装从当前目录向上查找规则仓库，在仓库内或其子目录运行即可。源码方式始终处理命令所在的仓库，原有 `python3 -B maintain.py ...` 和 `python3 -B scoped_dns.py ...` 无需安装包也可直接运行。`--adopt-ad-scope` 是维护者审阅扩展广告大幅变更后的手动操作，不在定时任务中使用。
+`--refresh` 联网读取来源并写入通过检查的结果；`--check` 执行来源和生成检查，不写文件；`--verify-files` 只检查本地文件。安装后也可运行 `loon-rules --verify-files`；普通安装从当前目录向上查找规则仓库，在仓库内或其子目录运行即可。源码方式始终处理命令所在的仓库，原有 `python3 -B maintain.py ...` 和 `python3 -B scoped_dns.py ...` 无需安装包也可直接运行。`--adopt-ad-scope` 用于维护者审阅常规或扩展广告的大幅变更后，一次性采用交叉核对范围，不在定时任务中使用。
 
 ## 工程结构
 
