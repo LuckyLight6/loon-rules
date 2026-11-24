@@ -4,8 +4,14 @@ import re
 import xml.etree.ElementTree as ET
 from urllib.parse import urlsplit
 from loon_rules import domains as domain_scope
+from loon_rules.sources import geosite
 from loon_rules.rules import Invalid, read_rules, valid_host
 from .common import within
+
+
+def geosite_domain_list(recipe, text):
+    record = geosite.parse(recipe, text)
+    return domain_scope_list(recipe, '\n'.join(record['rows']))
 
 
 def domain_scope_list(recipe, text):

@@ -44,7 +44,9 @@ def run(check=False, offline=False, adopt_ads=False):
     state_path=ROOT/'data/maintenance-state.json'
     previous_state=json.loads(state_path.read_text()) if state_path.is_file() else {}
     paths={k:ROOT/'rules'/rule_filename(e) for k,e in file_entries.items()}
-    present=set((ROOT/'rules').glob('*.lsr'))
+    download_aliases=catalog_schema.subscription_aliases(config)
+    alias_paths={ROOT/'rules'/(name+'.lsr') for name in download_aliases}
+    present=set((ROOT/'rules').glob('*.lsr'))-alias_paths
     known=set()
     if not offline and set(paths.values())-present:
         known=set(json.loads((ROOT/'data/maintenance-state.json').read_text())['rules'])
@@ -56,6 +58,13 @@ def run(check=False, offline=False, adopt_ads=False):
         if not path.is_file() or path.read_text()!=directory:
             raise rules.Invalid('厂商与产品目录未更新（maintain.py --render-index）')
     old={k:(None if k in missing else p.read_text()) for k,p in paths.items()}
+    names={path.stem:key for key,path in paths.items()}
+    for alias,canonical in download_aliases.items():
+        path=ROOT/'rules'/(alias+'.lsr')
+        if path.is_file() and '# name: '+names[canonical] not in path.read_text().splitlines():
+            raise rules.Invalid('兼容下载地址不能覆盖其他产品：'+alias)
+        if offline and (not path.is_file() or path.read_bytes()!=(ROOT/'rules'/(canonical+'.lsr')).read_bytes()):
+            raise rules.Invalid('兼容下载地址与当前成品不同步：'+alias)
     for key in components:
         rows=previous_state.get('component-rules',{}).get(key)
         if not isinstance(rows,list) or not rows:raise rules.Invalid('来源比对基线缺失：'+key)
@@ -78,7 +87,8 @@ def run(check=False, offline=False, adopt_ads=False):
             raise rules.Invalid('固定声明与维护方式报告不一致')
         source_coverage.verify_report(entries,report.get('projection-coverage',{}),order=route_order(config,entries),
             inventory_owners=projection_owners)
-        verify_inventories(config.get('source-inventories',()),report.get('source-inventories',{}))
+        verify_inventories(config.get('source-inventories',()),report.get('source-inventories',{}),
+                           data=data,order=route_order(config,entries))
         source_coverage.verify_reassignments(entries,data,report.get('projection-reassignments',{}),order=route_order(config,entries))
         source_aliases.verify_evidence(entries,data,report.get('cname-alias-evidence',{}),
             config.get('source-alias-policies',{}),order=route_order(config,entries),
@@ -127,7 +137,10 @@ def run(check=False, offline=False, adopt_ads=False):
         if 'business-domain-cases' in report and report['business-domain-cases']!=len(runtime['critical']):
             raise rules.Invalid('业务主机去重数量与实际用例不符')
         profiles=verify_cases(runtime,entries,data,True,contracts,report.get('functional-hosts',()))
-        print(f'{len(file_entries)} 份本地规则的范围、元数据和合并模式通过离线检查；{profiles} 种细分与合集组合通过。')
+        count=len(file_entries)+len(download_aliases)
+        aliases_note=(f'（{len(file_entries)} 个规则组，{len(download_aliases)} 份同文兼容入口）'
+                      if download_aliases else '')
+        print(f'{count} 份本地规则的范围、元数据和合并模式通过离线检查{aliases_note}；{profiles} 种细分与合集组合通过。')
         return 0
 
     reviewed={k:e for k,e in entries.items() if e['mode']=='managed'}
@@ -322,7 +335,8 @@ def run(check=False, offline=False, adopt_ads=False):
     now=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     inventories={spec['id']:audit_inventory(spec,downloaded,data,order=route_order(config,entries),entries=entries)
                  for spec in config.get('source-inventories',())}
-    verify_inventories(config.get('source-inventories',()),inventories)
+    verify_inventories(config.get('source-inventories',()),inventories,
+                       data=data,order=route_order(config,entries))
     changed=[]
     methods={}
     for k,e in file_entries.items():
@@ -337,6 +351,14 @@ def run(check=False, offline=False, adopt_ads=False):
             tmp.write_text(rendered)
             tmp.replace(paths[key])
     if not check:
+        for alias,canonical in download_aliases.items():
+            source=ROOT/'rules'/(canonical+'.lsr')
+            destination=ROOT/'rules'/(alias+'.lsr')
+            text=source.read_text()
+            if not destination.is_file() or destination.read_text()!=text:
+                temporary=destination.with_suffix('.new')
+                temporary.write_text(text)
+                temporary.replace(destination)
         if source:=config.get('public-suffix-source'):
             domain_scope.DATA.write_text(active_suffixes)
         report={

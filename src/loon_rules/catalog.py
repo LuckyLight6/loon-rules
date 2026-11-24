@@ -1,5 +1,6 @@
 """从产品声明生成兼容清单；旧格式的独立调用仍按原约定读取。"""
 from copy import deepcopy
+import re
 
 from loon_rules.rules import Invalid
 
@@ -98,3 +99,25 @@ def priority_label(entry, *, width=None):
 
 def rule_filename(entry, *, width=None):
     return f'{priority_label(entry,width=width)}-{entry["id"]}.lsr'
+
+
+def subscription_aliases(config):
+    aliases = config.get('subscription-aliases', {})
+    if not isinstance(aliases, dict):
+        raise Invalid('兼容下载地址必须按名称声明')
+    if not aliases:
+        return {}
+    entries = {entry['id']: entry for entry in config['entries']}
+    width = priority_width(config)
+    canonical = {rule_filename(entry, width=width).removesuffix('.lsr') for entry in entries.values()}
+    result = {}
+    for name, identifier in aliases.items():
+        if (not isinstance(name, str) or not re.fullmatch(r'[0-9]{3,4}-[a-z0-9]+(?:-[a-z0-9]+)*', name)
+                or not isinstance(identifier, str) or identifier not in entries
+                or name.partition('-')[2] != identifier or name in canonical):
+            raise Invalid('兼容下载地址不能越过目录、覆盖其他产品或代替当前地址')
+        entry = entries[identifier]
+        if type(entry['priority']) is not int or not 1 <= entry['priority'] < 10 ** width:
+            raise Invalid('兼容下载地址的目标编号无效')
+        result[name] = rule_filename(entry, width=width).removesuffix('.lsr')
+    return result

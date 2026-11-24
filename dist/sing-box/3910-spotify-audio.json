@@ -8,7 +8,28 @@
         "spoti.fi",
         "spotify.com",
         "spotifycdn.com",
-        "spotifycdn.net"
+        "spotifycdn.net",
+        "byspotify.com",
+        "lifeatspotify.com",
+        "spotify-everywhere.com",
+        "spotify.design",
+        "spotify.link",
+        "spotifycharts.com",
+        "spotifycodes.com",
+        "spotifyforbrands.com",
+        "spotifyforvendors.com",
+        "spotifyjobs.com",
+        "tospotify.com"
+      ],
+      "domain": [
+        "audio-ak-spotify-com.akamaized.net",
+        "audio4-ak-spotify-com.akamaized.net",
+        "cdn-spotify-experiments.conductrics.com",
+        "heads-ak-spotify-com.akamaized.net",
+        "heads4-ak-spotify-com.akamaized.net",
+        "spotify.com.edgesuite.net",
+        "spotify.map.fastly.net",
+        "spotify.map.fastlylb.net"
       ]
     }
   ]

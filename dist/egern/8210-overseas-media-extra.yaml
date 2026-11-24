@@ -4,11 +4,11 @@
 # description: 其他海外影音
 # boundary: 只补专项未覆盖的影音域名，交给海外影音策略；不按共享 IP、关键字或客户端名识别
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T14:59:22Z
+# updated-at: 2026-11-24T16:40:58Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
-# canonical-rule-count: 153
-# rule-count: 153
+# canonical-rule-count: 145
+# rule-count: 145
 # format: egern
 # canonical: rules/8210-overseas-media-extra.lsr
 
@@ -56,7 +56,6 @@ domain_suffix_set:
   - "ameblo.jp"
   - "avodmp4s3ww-a.akamaihd.net"
   - "bamgrid.com"
-  - "byspotify.com"
   - "byteoversea.com"
   - "c4assets.com"
   - "cbsaavideo.com"
@@ -141,12 +140,6 @@ domain_suffix_set:
   - "skyking.com.tw"
   - "smartmediarep.com"
   - "spotify-com.akamaized.net"
-  - "spotify-everywhere.com"
-  - "spotify.design"
-  - "spotifycharts.com"
-  - "spotifycodes.com"
-  - "spotifyforbrands.com"
-  - "spotifyjobs.com"
   - "spotifynewsroom.jp"
   - "spotilocal.com"
   - "theplatform.com"
@@ -154,7 +147,6 @@ domain_suffix_set:
   - "tidalhifi.com"
   - "tiktok.us"
   - "tiktokw.com"
-  - "tospotify.com"
   - "tv.naver.com"
   - "tvb.com"
   - "tver.jp"

@@ -15,6 +15,7 @@
 | 0210 | apple-and-ai-privacy-exceptions | Apple 广告与 OpenAI 广告像素的已核实拒绝项 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/0210-apple-and-ai-privacy-exceptions.json) |
 | 0220 | general-ad-and-tracking | Repcz 广告与追踪拦截 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 0230 | privacy-public-stun-endpoints | 已公开的 STUN 主机，供选择性阻断 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/0230-privacy-public-stun-endpoints.json) |
+| 0240 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/0240-extended-ad-and-tracking.json) |
 | 1000 | ai-overseas-all | 海外 AI 合集 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 1010 | claude-connections | Claude 登录、API、MCP、更新、附件和 Artifact | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 1020 | chatgpt-connections | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
@@ -173,13 +174,13 @@
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3230-bugsnag-error-monitoring.json) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 3310 | telegram-messaging | Telegram 登录、消息、文件与服务器地址 | v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
-| 3320 | discord-messaging-and-voice | Discord 消息、语音、活动和附件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3320-discord-messaging-and-voice.json) |
+| 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3320-discord-messaging-and-voice.json) |
 | 3330 | signal-messenger | Signal 消息、通话、贴纸、群组与用户名链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3330-signal-messenger.json) |
 | 3340 | line-messenger | LINE | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3340-line-messenger.json) |
 | 3350 | x-social-and-media | X / Twitter 社交与图像视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3350-x-social-and-media.json) |
 | 3360 | wechat-international-portal | WeChat 国际网站、支付与部分 App 连接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3360-wechat-international-portal.json) |
-| 3370 | slack-workspaces | Slack | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3370-slack-workspaces.json) |
-| 3380 | reddit-community | Reddit | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3380-reddit-community.json) |
+| 3370 | slack-workspaces | Slack 工作区、消息及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3370-slack-workspaces.json) |
+| 3380 | reddit-community | Reddit 社区、帮助与相关服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3380-reddit-community.json) |
 | 3390 | instagram-social | Instagram | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3390-instagram-social.json) |
 | 3400 | whatsapp-messaging | WhatsApp 消息、媒体与短链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3400-whatsapp-messaging.json) |
 | 3410 | threads-social | Threads | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3410-threads-social.json) |
@@ -218,7 +219,7 @@
 | 3880 | bilibili-international-video | 哔哩哔哩国际版视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3880-bilibili-international-video.json) |
 | 3890 | iqiyi-international | 爱奇艺国际版 iQIYI 与专用国际 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3890-iqiyi-international.json) |
 | 3900 | vimeo-video | Vimeo 视频与交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3900-vimeo-video.json) |
-| 3910 | spotify-audio | Spotify 音乐播放和音频文件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3910-spotify-audio.json) |
+| 3910 | spotify-audio | Spotify 音乐、播客及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3910-spotify-audio.json) |
 | 3920 | soundcloud-audio | SoundCloud 音频与创作者服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3920-soundcloud-audio.json) |
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3930-twitch-live-video.json) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/3940-bbc-news-and-video.json) |
@@ -335,7 +336,6 @@
 | 7460 | youdao-products | 有道词典、学习与内容服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/7460-youdao-products.json) |
 | 7470 | aliyun-drive | 阿里云盘 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/7470-aliyun-drive.json) |
 | 7480 | wps-office | WPS Office 与文档服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/7480-wps-office.json) |
-| 7800 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/7800-extended-ad-and-tracking.json) |
 | 8000 | global-platforms-all | 全球厂商与云平台共用服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8000-global-platforms-all.json) |
 | 8010 | digitalocean-services | DigitalOcean 云平台与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8010-digitalocean-services.json) |
 | 8020 | vultr-services | Vultr 云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8020-vultr-services.json) |
@@ -347,6 +347,7 @@
 | 8080 | adobe-shared-services | Adobe Creative Cloud、Acrobat 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8080-adobe-shared-services.json) |
 | 8090 | cloudflare-shared-services | Cloudflare 控制台、WARP、Tunnel 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8090-cloudflare-shared-services.json) |
 | 8100 | amazon-shared-services | Amazon、AWS 与共用云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8100-amazon-shared-services.json) |
+| 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8110-discord-activities-proxy.json) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8200-overseas-extra-all.json) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8210-overseas-media-extra.json) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/8220-overseas-sites-extra.json) |

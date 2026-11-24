@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-24T14:59:22Z",
-  "inputs-read": 580,
-  "critical": 841,
-  "inputs-requested": 580,
+  "checked-at": "2026-11-24T17:02:45Z",
+  "inputs-read": 583,
+  "critical": 852,
+  "inputs-requested": 583,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -670,22 +670,7 @@
       "DOMAIN-SUFFIX,adbfkaoxvm.in": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,axkozwhiqah.in": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,ovgadhtcyvak.in": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,events.bsky.app": "bluesky-social",
-      "DOMAIN,bee.tc.easebar.com": "netease-international-games",
-      "DOMAIN-SUFFIX,t2.hulu.com": "hulu-streaming",
-      "DOMAIN-SUFFIX,vortex.hulu.com": "hulu-streaming",
-      "DOMAIN-SUFFIX,metric.huya.com": "huya-live",
-      "DOMAIN-SUFFIX,statwup.huya.com": "huya-live",
-      "DOMAIN-SUFFIX,ylog.huya.com": "huya-live",
       "DOMAIN,analytics.pointdrive.linkedin.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,analytics.livestream.com": "vimeo-video",
-      "DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com": "samsung-mainland",
-      "DOMAIN-SUFFIX,telemetry.soundcloud.com": "soundcloud-audio",
-      "DOMAIN-SUFFIX,player-telemetry.vimeo.com": "vimeo-video",
-      "DOMAIN-SUFFIX,fresnel-events.vimeocdn.com": "vimeo-video",
-      "DOMAIN-SUFFIX,log-gateway.zoom.us": "zoom-meetings",
-      "DOMAIN-SUFFIX,t.jasper.ai": "jasper-marketing-ai",
-      "DOMAIN-SUFFIX,client-analytics.braintreegateway.com": "braintree-payments",
       "DOMAIN-SUFFIX,powerad.ai": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,mikka.app": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,tf.360.cn": "general-ad-and-tracking",
@@ -708,7 +693,6 @@
       "DOMAIN-SUFFIX,adsmediabox.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,adxadserv.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,afgodscarpe.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,collect.alipay.com": "alipay-mainland-payments",
       "DOMAIN-SUFFIX,impression.appsflyer.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,sdk.appsflyer.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,websdk.appsflyer.com": "general-ad-and-tracking",
@@ -720,34 +704,20 @@
       "DOMAIN-SUFFIX,exdynsrv.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,exoclick.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,eyeviewads.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,collector.githubapp.com": "github-code-and-packages",
-      "DOMAIN-SUFFIX,copilot-telemetry.githubusercontent.com": "github-code-and-packages",
       "DOMAIN-SUFFIX,googie-anaiytics.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,ogads-pa.googleapis.com": "google-platform-services",
       "DOMAIN-SUFFIX,ade.googlesyndication.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,log-upload-os.hoyolab.com": "hoyoverse-international",
-      "DOMAIN-SUFFIX,log-upload-os.hoyoverse.com": "hoyoverse-international",
       "DOMAIN,telemetry.sdk.inmobi.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,inpagepush.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,mllog.jd.com": "jingdong-shopping",
       "DOMAIN,apple.www.letv.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,liadm.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,ads.linkedin.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,outlookads.live.com": "microsoft-platform-services",
-      "DOMAIN,browser.pipe.aria.microsoft.com": "microsoft-platform-services",
-      "DOMAIN-SUFFIX,msadsscale.microsoft.com": "microsoft-platform-services",
-      "DOMAIN-SUFFIX,proxima.midjourney.com": "midjourney-image-tools",
       "DOMAIN-SUFFIX,tracking.miui.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,mookie1.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,mpnrs.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,srtb.msn.com": "microsoft-platform-services",
-      "DOMAIN-SUFFIX,metrics.mzstatic.com": "apple-shared-store-assets",
       "DOMAIN-SUFFIX,oimg.nbcuni.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,o333o.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,omguk.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,bzr.openai.com": "chatgpt-connections",
-      "DOMAIN-SUFFIX,bzrcdn.openai.com": "chatgpt-connections",
       "DOMAIN-SUFFIX,polarmobile.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,postrelease.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,propellerads.com": "general-ad-and-tracking",
@@ -757,7 +727,6 @@
       "DOMAIN,monitor.music.qq.com": "general-ad-and-tracking",
       "DOMAIN,stat.y.qq.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,realsrv.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,events.redditmedia.com": "reddit-community",
       "DOMAIN-SUFFIX,retargeter.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,revcontent.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,revmob.com": "general-ad-and-tracking",
@@ -776,16 +745,11 @@
       "DOMAIN-SUFFIX,stackadapt.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,steepto.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,stickyadstv.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,fourier.taobao.com": "taobao-and-xianyu-shopping",
-      "DOMAIN,tns.simba.taobao.com": "taobao-and-xianyu-shopping",
       "DOMAIN-SUFFIX,tapjoyads.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,tidaltv.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,mcs-va.tiktokv.com": "tiktok-international-video",
-      "DOMAIN,mon.us.tiktokv.com": "tiktok-international-video",
       "DOMAIN-SUFFIX,traffichunt.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,tremorhub.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,tynt.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,tracking.unrealengine.com": "epic-games-services",
       "DOMAIN-SUFFIX,unrulymedia.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,vdopia.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,vrtcal.com": "general-ad-and-tracking",
@@ -795,9 +759,6 @@
       "DOMAIN-SUFFIX,xapads.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,xlviirdr.com": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,yieldoptimizer.com": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,ems.youku.com": "youku-video",
-      "DOMAIN-SUFFIX,sugar.zhihu.com": "zhihu-community",
-      "DOMAIN-SUFFIX,zhihu-web-analytics.zhihu.com": "zhihu-community",
       "DOMAIN-SUFFIX,ad.gt": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,spotscenered.info": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,rtk.io": "general-ad-and-tracking",
@@ -805,8 +766,6 @@
       "DOMAIN-SUFFIX,popads.media": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,ad-delivery.net": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,adcloud.net": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,adsdk.bing.net": "microsoft-platform-services",
-      "DOMAIN-SUFFIX,bat.bing.net": "microsoft-platform-services",
       "DOMAIN-SUFFIX,ad.daum.net": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,inmobicdn.net": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,msads.net": "general-ad-and-tracking",
@@ -830,9 +789,9 @@
       "DOMAIN-SUFFIX,rubylife.go2cloud.org": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,cpx.to": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,teads.tv": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,r.bbci.co.uk": "bbc-news-and-video",
-      "DOMAIN-SUFFIX,mcs.tiktokv.us": "tiktok-international-video",
       "DOMAIN-SUFFIX,admicro.vn": "general-ad-and-tracking",
+      "DOMAIN-SUFFIX,copilot-telemetry.githubusercontent.com": "github-copilot-connections",
+      "DOMAIN-SUFFIX,slackb.com": "slack-workspaces",
       "DOMAIN-SUFFIX,bizographics.com": "linkedin-network",
       "DOMAIN-SUFFIX,gvt2.com": "google-platform-services",
       "DOMAIN-SUFFIX,adsensecustomsearchads.com": "overseas-sites-extra",
@@ -848,7 +807,6 @@
       "DOMAIN-SUFFIX,pctlwm.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,prpops.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,ptapjmp.com": "overseas-sites-extra",
-      "DOMAIN-SUFFIX,slackb.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,vid.me": "overseas-sites-extra",
       "DOMAIN-SUFFIX,zononi.com": "overseas-sites-extra",
       "DOMAIN-SUFFIX,allyes.com": "mainland-domains",
@@ -858,7 +816,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 329,
+    "routine-tables": 330,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -875,6 +833,7 @@
       "ip-egress-checks": 2,
       "apple-and-ai-privacy-exceptions": 3,
       "privacy-public-stun-endpoints": 2,
+      "extended-ad-and-tracking": 1,
       "chatgpt-connections": 1,
       "microsoft-copilot-connections": 2,
       "qwen-international": 2,
@@ -920,7 +879,6 @@
       "tencent-mainland": 2,
       "iflytek-mainland": 2,
       "liblib-mainland": 1,
-      "extended-ad-and-tracking": 1,
       "mainland-domains": 4
     },
     "fixed-only": [
@@ -931,6 +889,7 @@
     ],
     "baseline-managed": [
       "general-ad-and-tracking",
+      "extended-ad-and-tracking",
       "xai-connections",
       "cursor-editor-and-api",
       "perplexity-search-and-api",
@@ -948,7 +907,6 @@
       "bahamut-video-and-community",
       "google-drive-and-documents",
       "microsoft-platform-services",
-      "extended-ad-and-tracking",
       "mainland-domains",
       "mainland-networks",
       "mainland-geoip"
@@ -1245,6 +1203,7 @@
       "adobe-shared-services",
       "cloudflare-shared-services",
       "amazon-shared-services",
+      "discord-activities-proxy",
       "netease-shared-services",
       "alibaba-shared-services",
       "tencent-shared-content-and-sdk",
@@ -1735,124 +1694,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list": {
-      "state": "current",
-      "products": [
-        "replicate-model-services"
-      ],
-      "filters": {
-        "replicate-model-services": [
-          {
-            "roots": [
-              "replicate.com",
-              "replicate.delivery"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list": {
-      "state": "current",
-      "products": [
-        "runway-creative-tools"
-      ],
-      "filters": {
-        "runway-creative-tools": [
-          {
-            "roots": [
-              "runway.com",
-              "runwayml.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list": {
-      "state": "current",
-      "products": [
-        "stability-model-services"
-      ],
-      "filters": {
-        "stability-model-services": [
-          {
-            "roots": [
-              "stability.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list": {
-      "state": "current",
-      "products": [
-        "black-forest-model-services"
-      ],
-      "filters": {
-        "black-forest-model-services": [
-          {
-            "roots": [
-              "bfl.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list": {
       "state": "current",
       "products": [
@@ -1943,151 +1784,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list": {
-      "state": "current",
-      "products": [
-        "continue-code-assistant"
-      ],
-      "filters": {
-        "continue-code-assistant": [
-          {
-            "roots": [
-              "continue.dev"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list": {
-      "state": "current",
-      "products": [
-        "coderabbit-code-review"
-      ],
-      "filters": {
-        "coderabbit-code-review": [
-          {
-            "roots": [
-              "coderabbit.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list": {
-      "state": "current",
-      "products": [
-        "tabnine-code-assistant"
-      ],
-      "filters": {
-        "tabnine-code-assistant": [
-          {
-            "roots": [
-              "tabnine.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list": {
-      "state": "current",
-      "products": [
-        "factory-coding-agents"
-      ],
-      "filters": {
-        "factory-coding-agents": [
-          {
-            "roots": [
-              "factory.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list": {
-      "state": "current",
-      "products": [
-        "zed-editor-and-ai"
-      ],
-      "filters": {
-        "zed-editor-and-ai": [
-          {
-            "roots": [
-              "zed.dev"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list": {
       "state": "current",
       "products": [
@@ -2113,765 +1809,6 @@
       "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 1,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list": {
-      "state": "current",
-      "products": [
-        "bolt-app-builder"
-      ],
-      "filters": {
-        "bolt-app-builder": [
-          {
-            "roots": [
-              "bolt.new"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list": {
-      "state": "current",
-      "products": [
-        "lovable-app-builder"
-      ],
-      "filters": {
-        "lovable-app-builder": [
-          {
-            "roots": [
-              "lovable.dev"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list": {
-      "state": "current",
-      "products": [
-        "v0-app-builder"
-      ],
-      "filters": {
-        "v0-app-builder": [
-          {
-            "roots": [
-              "v0.app",
-              "v0.dev"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list": {
-      "state": "current",
-      "products": [
-        "genspark-connections"
-      ],
-      "filters": {
-        "genspark-connections": [
-          {
-            "roots": [
-              "genspark.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list": {
-      "state": "current",
-      "products": [
-        "jasper-marketing-ai"
-      ],
-      "filters": {
-        "jasper-marketing-ai": [
-          {
-            "roots": [
-              "jasper.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list": {
-      "state": "current",
-      "products": [
-        "gamma-presentations"
-      ],
-      "filters": {
-        "gamma-presentations": [
-          {
-            "roots": [
-              "gamma.app"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list": {
-      "state": "current",
-      "products": [
-        "phind-search"
-      ],
-      "filters": {
-        "phind-search": [
-          {
-            "roots": [
-              "phind.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list": {
-      "state": "current",
-      "products": [
-        "inflection-and-pi"
-      ],
-      "filters": {
-        "inflection-and-pi": [
-          {
-            "roots": [
-              "inflection.ai",
-              "pi.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list": {
-      "state": "current",
-      "products": [
-        "h2o-model-services"
-      ],
-      "filters": {
-        "h2o-model-services": [
-          {
-            "roots": [
-              "h2o.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list": {
-      "state": "current",
-      "products": [
-        "otter-meeting-assistant"
-      ],
-      "filters": {
-        "otter-meeting-assistant": [
-          {
-            "roots": [
-              "otter.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list": {
-      "state": "current",
-      "products": [
-        "descript-media-tools"
-      ],
-      "filters": {
-        "descript-media-tools": [
-          {
-            "roots": [
-              "descript.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list": {
-      "state": "current",
-      "products": [
-        "synthesia-video-tools"
-      ],
-      "filters": {
-        "synthesia-video-tools": [
-          {
-            "roots": [
-              "synthesia.io"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list": {
-      "state": "current",
-      "products": [
-        "luma-creative-tools"
-      ],
-      "filters": {
-        "luma-creative-tools": [
-          {
-            "roots": [
-              "lumalabs.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list": {
-      "state": "current",
-      "products": [
-        "leonardo-image-tools"
-      ],
-      "filters": {
-        "leonardo-image-tools": [
-          {
-            "roots": [
-              "leonardo.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list": {
-      "state": "current",
-      "products": [
-        "pika-video-tools"
-      ],
-      "filters": {
-        "pika-video-tools": [
-          {
-            "roots": [
-              "pika.art"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list": {
-      "state": "current",
-      "products": [
-        "recraft-design-tools"
-      ],
-      "filters": {
-        "recraft-design-tools": [
-          {
-            "roots": [
-              "recraft.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list": {
-      "state": "current",
-      "products": [
-        "udio-music-tools"
-      ],
-      "filters": {
-        "udio-music-tools": [
-          {
-            "roots": [
-              "udio.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list": {
-      "state": "current",
-      "products": [
-        "duck-ai-chat"
-      ],
-      "filters": {
-        "duck-ai-chat": [
-          {
-            "roots": [
-              "duck.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list": {
-      "state": "current",
-      "products": [
-        "langchain-agent-platform"
-      ],
-      "filters": {
-        "langchain-agent-platform": [
-          {
-            "roots": [
-              "langchain.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list": {
-      "state": "current",
-      "products": [
-        "comfy-cloud-and-registry"
-      ],
-      "filters": {
-        "comfy-cloud-and-registry": [
-          {
-            "roots": [
-              "comfy.org",
-              "comfyregistry.org"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list": {
-      "state": "current",
-      "products": [
-        "lmstudio-product-services"
-      ],
-      "filters": {
-        "lmstudio-product-services": [
-          {
-            "roots": [
-              "lmstudio.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list": {
-      "state": "current",
-      "products": [
-        "crewai-agent-platform"
-      ],
-      "filters": {
-        "crewai-agent-platform": [
-          {
-            "roots": [
-              "crewai.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list": {
-      "state": "current",
-      "products": [
-        "eigent-agent-services"
-      ],
-      "filters": {
-        "eigent-agent-services": [
-          {
-            "roots": [
-              "eigent.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list": {
-      "state": "current",
-      "products": [
-        "manus-agent-services"
-      ],
-      "filters": {
-        "manus-agent-services": [
-          {
-            "roots": [
-              "manus.im",
-              "manuscdn.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list": {
-      "state": "current",
-      "products": [
-        "dia-browser-services"
-      ],
-      "filters": {
-        "dia-browser-services": [
-          {
-            "roots": [
-              "diabrowser.com",
-              "diabrowser.engineering"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list": {
-      "state": "current",
-      "products": [
-        "openclaw-product-services"
-      ],
-      "filters": {
-        "openclaw-product-services": [
-          {
-            "roots": [
-              "openclaw.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
       "other-lines": 0,
@@ -3011,131 +1948,6 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 19,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list": {
-      "state": "current",
-      "products": [
-        "bytedance-international"
-      ],
-      "filters": {
-        "bytedance-international": [
-          {
-            "roots": [
-              "bytepluses.com",
-              "coze.com",
-              "marscode.com",
-              "trae.ai",
-              "cici.com",
-              "ciciai.com",
-              "ciciaicdn.com",
-              "dola.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 7,
-      "selected-scopes": 7,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 7,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list": {
-      "state": "current",
-      "products": [
-        "youmind-international"
-      ],
-      "filters": {
-        "youmind-international": [
-          {
-            "roots": [
-              "youmind.ai",
-              "youmind.com",
-              "youmind.site"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 3,
-      "selected-scopes": 3,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 3,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list": {
-      "state": "current",
-      "products": [
-        "qoder-international"
-      ],
-      "filters": {
-        "qoder-international": [
-          {
-            "roots": [
-              "qoder.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list": {
-      "state": "current",
-      "products": [
-        "lovart-international"
-      ],
-      "filters": {
-        "lovart-international": [
-          {
-            "roots": [
-              "lovart.ai"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
       "fallback-scopes": 0,
       "privacy-scopes": 0,
       "shared-scopes": 0,
@@ -3575,39 +2387,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list": {
-      "state": "current",
-      "products": [
-        "rust-cargo"
-      ],
-      "filters": {
-        "rust-cargo": [
-          {
-            "roots": [
-              "crates.io",
-              "rustup.rs",
-              "rust-lang.org",
-              "docs.rs"
-            ],
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 4,
-      "selected-scopes": 4,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 4,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/golang.list": {
       "state": "current",
       "products": [
@@ -3666,39 +2445,6 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 10,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list": {
-      "state": "current",
-      "products": [
-        "sentry-error-monitoring"
-      ],
-      "filters": {
-        "sentry-error-monitoring": [
-          {
-            "roots": [
-              "getsentry.com",
-              "sentry.dev",
-              "sentry.io",
-              "sentry-cdn.com"
-            ],
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 4,
-      "selected-scopes": 4,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 4,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -3810,8 +2556,8 @@
       "selected-scopes": 15,
       "narrowed-scopes": 1,
       "selected-uncovered": 0,
-      "product-scopes": 14,
-      "fallback-scopes": 13,
+      "product-scopes": 24,
+      "fallback-scopes": 3,
       "privacy-scopes": 0,
       "shared-scopes": 2,
       "declared-exclusions": 0,
@@ -3974,73 +2720,6 @@
         "IP-ASN": 1
       }
     },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list": {
-      "state": "current",
-      "products": [
-        "slack-workspaces"
-      ],
-      "filters": {
-        "slack-workspaces": [
-          {
-            "roots": [
-              "slack.com",
-              "slack-edge.com",
-              "slack-files.com",
-              "slack-imgs.com",
-              "slack-msgs.com",
-              "slack-core.com"
-            ],
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 11,
-      "selected-scopes": 6,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 6,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 5,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list": {
-      "state": "current",
-      "products": [
-        "reddit-community"
-      ],
-      "filters": {
-        "reddit-community": [
-          {
-            "roots": [
-              "reddit.com",
-              "redd.it",
-              "redditmedia.com",
-              "redditstatic.com"
-            ],
-            "domain-lines-only": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 12,
-      "selected-scopes": 4,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 4,
-      "fallback-scopes": 3,
-      "privacy-scopes": 0,
-      "shared-scopes": 1,
-      "declared-exclusions": 0,
-      "outside-selection": 4,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list": {
       "state": "current",
       "products": [
@@ -4140,202 +2819,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list": {
-      "state": "current",
-      "products": [
-        "threads-social"
-      ],
-      "filters": {
-        "threads-social": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list": {
-      "state": "current",
-      "products": [
-        "pinterest-social"
-      ],
-      "filters": {
-        "pinterest-social": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 52,
-      "selected-scopes": 52,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 50,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 2,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list": {
-      "state": "current",
-      "products": [
-        "bluesky-social"
-      ],
-      "filters": {
-        "bluesky-social": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 3,
-      "selected-scopes": 3,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 3,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list": {
-      "state": "current",
-      "products": [
-        "lark-international"
-      ],
-      "filters": {
-        "lark-international": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 31,
-      "selected-scopes": 31,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 31,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list": {
-      "state": "current",
-      "products": [
-        "zoom-meetings"
-      ],
-      "filters": {
-        "zoom-meetings": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 3,
-      "selected-scopes": 3,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 3,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list": {
-      "state": "current",
-      "products": [
-        "xiaomi-international-services"
-      ],
-      "filters": {
-        "xiaomi-international-services": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list": {
-      "state": "current",
-      "products": [
-        "linkedin-network"
-      ],
-      "filters": {
-        "linkedin-network": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 12,
-      "selected-scopes": 12,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 12,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/PayPal.lsr": {
       "state": "current",
       "products": [
@@ -4410,34 +2893,6 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 4,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list": {
-      "state": "current",
-      "products": [
-        "wise-transfers"
-      ],
-      "filters": {
-        "wise-transfers": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -4577,120 +3032,6 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 3,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list": {
-      "state": "current",
-      "products": [
-        "kraken-exchange"
-      ],
-      "filters": {
-        "kraken-exchange": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list": {
-      "state": "current",
-      "products": [
-        "bybit-exchange"
-      ],
-      "filters": {
-        "bybit-exchange": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 16,
-      "selected-scopes": 16,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 16,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list": {
-      "state": "current",
-      "products": [
-        "kucoin-exchange"
-      ],
-      "filters": {
-        "kucoin-exchange": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list": {
-      "state": "current",
-      "products": [
-        "trust-wallet"
-      ],
-      "filters": {
-        "trust-wallet": [
-          {
-            "roots": [
-              "trustwallet.com"
-            ],
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -4852,34 +3193,6 @@
         "DOMAIN-KEYWORD": 1,
         "USER-AGENT": 2
       }
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list": {
-      "state": "current",
-      "products": [
-        "hulu-streaming"
-      ],
-      "filters": {
-        "hulu-streaming": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 48,
-      "selected-scopes": 48,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 48,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list": {
       "state": "current",
@@ -5093,35 +3406,6 @@
         "IP-CIDR6": 1
       }
     },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list": {
-      "state": "current",
-      "products": [
-        "iqiyi-international"
-      ],
-      "filters": {
-        "iqiyi-international": [
-          {
-            "roots": [
-              "iq.com"
-            ],
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list": {
       "state": "current",
       "products": [
@@ -5149,13 +3433,13 @@
         "youtube-video-and-cdn": 7,
         "apple-music-and-radio": 1,
         "bbc-news-and-video": 2,
+        "spotify-audio": 14,
         "disney-plus-streaming": 3,
         "twitch-live-video": 6,
         "hbo-streaming": 4,
         "hulu-streaming": 5,
         "tiktok-international-video": 6,
         "netflix-video-and-delivery": 9,
-        "spotify-audio": 6,
         "soundcloud-audio": 1
       },
       "domain-scopes": 258,
@@ -5163,7 +3447,7 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 170,
+      "fallback-scopes": 162,
       "privacy-scopes": 1,
       "shared-scopes": 6,
       "declared-exclusions": 0,
@@ -5203,72 +3487,6 @@
       "other-rule-types": {
         "unsupported": 1
       }
-    },
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list": {
-      "state": "current",
-      "products": [
-        "spotify-audio"
-      ],
-      "filters": {
-        "spotify-audio": [
-          {
-            "roots": [
-              "spotify.com",
-              "scdn.co",
-              "spotifycdn.com",
-              "spotifycdn.net",
-              "pscdn.co",
-              "spoti.fi",
-              "spotify.net"
-            ]
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 26,
-      "selected-scopes": 6,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 6,
-      "fallback-scopes": 12,
-      "privacy-scopes": 0,
-      "shared-scopes": 3,
-      "declared-exclusions": 0,
-      "outside-selection": 5,
-      "other-lines": 4,
-      "other-rule-types": {
-        "DOMAIN-KEYWORD": 1,
-        "USER-AGENT": 1,
-        "IP-CIDR": 2
-      }
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list": {
-      "state": "current",
-      "products": [
-        "soundcloud-audio"
-      ],
-      "filters": {
-        "soundcloud-audio": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 3,
-      "selected-scopes": 3,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 3,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitch/Twitch.list": {
       "state": "current",
@@ -5612,34 +3830,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list": {
-      "state": "current",
-      "products": [
-        "netease-international-games"
-      ],
-      "filters": {
-        "netease-international-games": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/notion.list": {
       "state": "current",
       "products": [
@@ -5667,162 +3857,6 @@
       "fallback-scopes": 1,
       "privacy-scopes": 0,
       "shared-scopes": 1,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list": {
-      "state": "current",
-      "products": [
-        "figma-design"
-      ],
-      "filters": {
-        "figma-design": [
-          {
-            "roots": [
-              "figma.com"
-            ],
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list": {
-      "state": "current",
-      "products": [
-        "proton-suite"
-      ],
-      "filters": {
-        "proton-suite": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 9,
-      "selected-scopes": 9,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 9,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list": {
-      "state": "current",
-      "products": [
-        "intercom-customer-support"
-      ],
-      "filters": {
-        "intercom-customer-support": [
-          {
-            "roots": [
-              "intercom.com",
-              "intercom.io",
-              "intercomassets.com",
-              "intercomcdn.com"
-            ],
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 4,
-      "selected-scopes": 4,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 4,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list": {
-      "state": "current",
-      "products": [
-        "google-scholar"
-      ],
-      "filters": {
-        "google-scholar": [
-          {
-            "roots": [
-              "scholar.google.com",
-              "scholar.google.com.hk",
-              "scholar.google.co.uk",
-              "scholar.googleusercontent.com",
-              "scholar.l.google.com"
-            ],
-            "domain-lines-only": true,
-            "parent-domains-source": "https://www.google.com/supported_domains",
-            "brand-label": "google",
-            "prefix-label": "scholar",
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 76,
-      "selected-scopes": 76,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 76,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list": {
-      "state": "current",
-      "products": [
-        "google-firebase-messaging"
-      ],
-      "filters": {
-        "google-firebase-messaging": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 12,
-      "selected-scopes": 12,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 12,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
       "other-lines": 0,
@@ -5993,174 +4027,6 @@
       "other-rule-types": {
         "DOMAIN-KEYWORD": 3
       }
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list": {
-      "state": "current",
-      "products": [
-        "qualcomm-mainland"
-      ],
-      "filters": {
-        "qualcomm-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 6,
-      "selected-scopes": 6,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 5,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 1,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list": {
-      "state": "current",
-      "products": [
-        "nvidia-mainland"
-      ],
-      "filters": {
-        "nvidia-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 4,
-      "selected-scopes": 4,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 4,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list": {
-      "state": "current",
-      "products": [
-        "intel-mainland"
-      ],
-      "filters": {
-        "intel-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list": {
-      "state": "current",
-      "products": [
-        "samsung-mainland"
-      ],
-      "filters": {
-        "samsung-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 4,
-      "selected-scopes": 4,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 4,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list": {
-      "state": "current",
-      "products": [
-        "cloudflare-mainland"
-      ],
-      "filters": {
-        "cloudflare-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 19,
-      "selected-scopes": 19,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 19,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list": {
-      "state": "current",
-      "products": [
-        "adobe-mainland"
-      ],
-      "filters": {
-        "adobe-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 1,
-      "selected-scopes": 1,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 1,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/amazon@cn.list": {
       "state": "current",
@@ -6456,34 +4322,6 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 2,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list": {
-      "state": "current",
-      "products": [
-        "feishu-mainland"
-      ],
-      "filters": {
-        "feishu-mainland": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 43,
-      "selected-scopes": 43,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 43,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -6846,62 +4684,6 @@
       "other-lines": 0,
       "other-rule-types": {}
     },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list": {
-      "state": "current",
-      "products": [
-        "douyu-live"
-      ],
-      "filters": {
-        "douyu-live": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 7,
-      "selected-scopes": 7,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 7,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list": {
-      "state": "current",
-      "products": [
-        "huya-live"
-      ],
-      "filters": {
-        "huya-live": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 2,
-      "selected-scopes": 2,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 2,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent-games.list": {
       "state": "current",
       "products": [
@@ -6929,62 +4711,6 @@
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 14,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list": {
-      "state": "current",
-      "products": [
-        "meituan-services"
-      ],
-      "filters": {
-        "meituan-services": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 19,
-      "selected-scopes": 19,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 19,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list": {
-      "state": "current",
-      "products": [
-        "didi-mobility"
-      ],
-      "filters": {
-        "didi-mobility": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 12,
-      "selected-scopes": 12,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 12,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -7023,62 +4749,6 @@
       "product-scopes": 48,
       "fallback-scopes": 0,
       "privacy-scopes": 1,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list": {
-      "state": "current",
-      "products": [
-        "aliyun-drive"
-      ],
-      "filters": {
-        "aliyun-drive": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 6,
-      "selected-scopes": 6,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 6,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
-      "shared-scopes": 0,
-      "declared-exclusions": 0,
-      "outside-selection": 0,
-      "other-lines": 0,
-      "other-rule-types": {}
-    },
-    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list": {
-      "state": "current",
-      "products": [
-        "wps-office"
-      ],
-      "filters": {
-        "wps-office": [
-          {
-            "all-domains": true,
-            "domain-lines-only": true,
-            "require-domain-closure": true
-          }
-        ]
-      },
-      "other-products": {},
-      "domain-scopes": 13,
-      "selected-scopes": 13,
-      "narrowed-scopes": 0,
-      "selected-uncovered": 0,
-      "product-scopes": 13,
-      "fallback-scopes": 0,
-      "privacy-scopes": 0,
       "shared-scopes": 0,
       "declared-exclusions": 0,
       "outside-selection": 0,
@@ -8402,9 +6072,9 @@
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
-    "state": "retained-newer",
-    "source-version": "2026-11-23_11-59-57_UTC",
-    "active-version": "2026-11-23_15-54-01_UTC"
+    "state": "current",
+    "source-version": "2026-11-24_14-43-05_UTC",
+    "active-version": "2026-11-24_14-43-05_UTC"
   },
   "shared-service-transfers": {
     "google-play-services": {
@@ -12696,7 +10366,8 @@
       8425,
       6730,
       3580,
-      8495
+      8495,
+      8110
     ],
     "已核清单": [
       210,
@@ -12705,7 +10376,7 @@
     ],
     "整域拦截交叉核对": [
       220,
-      7800
+      240
     ],
     "组合生成": [
       1000,
@@ -13017,13 +10688,6 @@
       "outside-scope": 0,
       "other-rules": 0,
       "reviewed-outside": 2
-    },
-    "slack-client-coverage": {
-      "state": "current",
-      "domain-scopes": 11,
-      "outside-scope": 0,
-      "other-rules": 0,
-      "reviewed-outside": 5
     },
     "claude-service-domains": {
       "state": "current",
@@ -13446,6 +11110,368 @@
       "other-rules": 0
     },
     "bilibili-international-official-resource": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "replicate-model-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "runway-creative-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "stability-model-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "black-forest-model-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "continue-code-assistant-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "coderabbit-code-review-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "tabnine-code-assistant-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "factory-coding-agents-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "zed-editor-and-ai-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "bolt-app-builder-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "lovable-app-builder-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "v0-app-builder-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "genspark-connections-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "jasper-marketing-ai-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "gamma-presentations-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "phind-search-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "inflection-and-pi-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "h2o-model-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "otter-meeting-assistant-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "descript-media-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "synthesia-video-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "luma-creative-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "leonardo-image-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "pika-video-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "recraft-design-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "udio-music-tools-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "duck-ai-chat-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "langchain-agent-platform-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "comfy-cloud-and-registry-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "lmstudio-product-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "crewai-agent-platform-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "eigent-agent-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "manus-agent-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "dia-browser-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "openclaw-product-services-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "bytedance-international-source-manifest": {
+      "state": "current",
+      "domain-scopes": 7,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "youmind-international-source-manifest": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "qoder-international-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "lovart-international-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "rust-cargo-source-manifest": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "trust-wallet-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "iqiyi-international-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "figma-design-source-manifest": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "google-scholar-source-manifest": {
+      "state": "current",
+      "domain-scopes": 76,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "spotify-audio-complete-source": {
+      "state": "current",
+      "domain-scopes": 28,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": true,
+        "attributes": {
+          "ads": "用途标记保留产品归属，是否拦截由广告规则决定"
+        },
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {}
+      }
+    },
+    "reddit-community-complete-source": {
+      "state": "current",
+      "domain-scopes": 12,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": true,
+        "attributes": {},
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {}
+      }
+    },
+    "slack-workspaces-complete-source": {
+      "state": "current",
+      "domain-scopes": 11,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "delegated-domain-scopes": {},
+      "reading-policy": {
+        "subdomains-as-hosts": true,
+        "attributes": {},
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {}
+      }
+    },
+    "discord-messaging-and-voice-complete-source": {
+      "state": "current",
+      "domain-scopes": 26,
+      "outside-scope": 0,
+      "other-rules": 2,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {
+        "Unused": 2
+      },
+      "delegated-domain-scopes": {
+        "DOMAIN-SUFFIX,discordsays.com": "discord-activities-proxy"
+      },
+      "reading-policy": {
+        "subdomains-as-hosts": true,
+        "attributes": {},
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {
+          "Unused": "不自动新增上游标注未使用的候选；不据此撤回其他来源仍支持的已发布入口"
+        },
+        "delegated-scopes": {
+          "DOMAIN-SUFFIX,discordsays.com": {
+            "owner": "discord-activities-proxy",
+            "source": "https://discord.com/security",
+            "reason": "官方将该命名空间说明为 Activities 第三方应用代理，单独归平台服务"
+          }
+        }
+      }
+    },
+    "spotify-official-content-linking": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discord-activities-official-platform": {
       "state": "current",
       "domain-scopes": 1,
       "outside-scope": 0,
@@ -13950,6 +11976,7 @@
     "office-f-net.trafficmanager.net",
     "officecdn.microsoft.com.delivery.microsoft.com",
     "ollama.com",
+    "open.spotify.com",
     "openai.bothub.ru",
     "openapi.liblibai.cloud",
     "opencode.ai",
@@ -14191,6 +12218,7 @@
     "signal.tube",
     "smtp.gmail.com",
     "sourcegraph.com",
+    "spotify.link",
     "ss-inf.net",
     "static.ampcode.com",
     "static.au.intercomassets.com",
@@ -14298,7 +12326,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -14339,7 +12367,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "ollama-cloud": {
@@ -14370,7 +12398,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "stackit-model-services": {
@@ -14401,7 +12429,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "stepfun-international": {
@@ -14443,7 +12471,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "xiaomi-international": {
@@ -14486,7 +12514,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -14521,7 +12549,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -14571,7 +12599,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -14612,7 +12640,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14844,7 +12872,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "npm-registry": {
@@ -14877,7 +12905,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14921,7 +12949,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14954,7 +12982,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -15007,7 +13035,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "braintree-payments": {
@@ -15034,7 +13062,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "notion-workspace": {
@@ -15060,7 +13088,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "google-account-authentication": {
@@ -15268,7 +13296,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -15294,7 +13322,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "google-play-services": {
@@ -15330,7 +13358,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "google-play-games": {
@@ -15358,7 +13386,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "kimi-mainland": {
@@ -15389,7 +13417,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -15420,7 +13448,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -15463,7 +13491,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -15502,7 +13530,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795532331,
+      "last-read": 1795539729,
       "state": "current"
     }
   },
@@ -15510,7 +13538,7 @@
   "expanded-domain-cases": 219,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1293,
+  "business-domain-cases": 1304,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -15520,13 +13548,9 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "overseas-media-all",
-    "bilibili-international-video",
-    "bilibili-mainland-video",
-    "overseas-extra-all",
-    "overseas-media-extra"
+    "extended-ad-and-tracking"
   ],
-  "scope-negatives": 149,
+  "scope-negatives": 150,
   "ip-cases": 44,
   "ip-matching": {
     "local-links-and-addresses": {
@@ -15600,6 +13624,7 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
+    "extended-ad-and-tracking": 43508,
     "ai-overseas-all": 645,
     "claude-connections": 24,
     "chatgpt-connections": 427,
@@ -15756,15 +13781,15 @@
     "sift-fraud-prevention": 2,
     "auth0-identity-platform": 1,
     "bugsnag-error-monitoring": 1,
-    "overseas-social-all": 213,
+    "overseas-social-all": 237,
     "telegram-messaging": 32,
-    "discord-messaging-and-voice": 15,
+    "discord-messaging-and-voice": 26,
     "signal-messenger": 6,
     "line-messenger": 4,
     "x-social-and-media": 8,
     "wechat-international-portal": 4,
-    "slack-workspaces": 6,
-    "reddit-community": 4,
+    "slack-workspaces": 11,
+    "reddit-community": 12,
     "instagram-social": 7,
     "whatsapp-messaging": 3,
     "threads-social": 2,
@@ -15792,7 +13817,7 @@
     "bybit-exchange": 16,
     "kucoin-exchange": 2,
     "trust-wallet": 1,
-    "overseas-media-all": 160,
+    "overseas-media-all": 179,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
     "disney-plus-streaming": 3,
@@ -15803,7 +13828,7 @@
     "bilibili-international-video": 12,
     "iqiyi-international": 4,
     "vimeo-video": 16,
-    "spotify-audio": 6,
+    "spotify-audio": 25,
     "soundcloud-audio": 3,
     "twitch-live-video": 7,
     "bbc-news-and-video": 3,
@@ -15920,8 +13945,7 @@
     "youdao-products": 3,
     "aliyun-drive": 6,
     "wps-office": 13,
-    "extended-ad-and-tracking": 43466,
-    "global-platforms-all": 428,
+    "global-platforms-all": 429,
     "digitalocean-services": 6,
     "vultr-services": 1,
     "hetzner-services": 14,
@@ -15932,9 +13956,10 @@
     "adobe-shared-services": 124,
     "cloudflare-shared-services": 52,
     "amazon-shared-services": 168,
-    "overseas-extra-all": 18638,
-    "overseas-media-extra": 153,
-    "overseas-sites-extra": 18499,
+    "discord-activities-proxy": 1,
+    "overseas-extra-all": 18611,
+    "overseas-media-extra": 145,
+    "overseas-sites-extra": 18480,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,

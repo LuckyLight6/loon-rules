@@ -1,20 +1,20 @@
 # name: extended-ad-and-tracking
-# priority: 7800
+# priority: 0240
 # section: privacy
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T05:14:03Z
+# updated-at: 2026-11-24T17:02:45Z
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
 # source: https://easylist.to/easylist/easylist.txt
 # source: https://easylist.to/easylist/easyprivacy.txt
 # source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-# canonical-rule-count: 43466
-# rule-count: 43466
+# canonical-rule-count: 43508
+# rule-count: 43508
 # format: quantumult-x
-# canonical: rules/7800-extended-ad-and-tracking.lsr
+# canonical: rules/0240-extended-ad-and-tracking.lsr
 
 host-suffix,ad.animehub.ac,proxy
 host-suffix,flw.camcaps.ac,proxy
@@ -5227,7 +5227,6 @@ host-suffix,byoxcmxcprhztn.com,proxy
 host-suffix,bypassduehardly.com,proxy
 host-suffix,byracucosopenu.com,proxy
 host-suffix,byrniessilky.com,proxy
-host-suffix,pixel.byspotify.com,proxy
 host-suffix,sgali-mcs.byteoversea.com,proxy
 host-suffix,bzoomlubqo.com,proxy
 host-suffix,bzpnhlysdnfmq.com,proxy
@@ -43482,3 +43481,46 @@ host-suffix,zesdnqweaomtj.website,proxy
 host-suffix,zhdspsxvrhaxv.website,proxy
 host-suffix,zkdpamomhpnpm.website,proxy
 host-suffix,knnmokc6.xyz,proxy
+host-suffix,pixel.byspotify.com,proxy
+host-suffix,events.bsky.app,proxy
+host,bee.tc.easebar.com,proxy
+host-suffix,t2.hulu.com,proxy
+host-suffix,vortex.hulu.com,proxy
+host-suffix,metric.huya.com,proxy
+host-suffix,statwup.huya.com,proxy
+host-suffix,ylog.huya.com,proxy
+host-suffix,analytics.livestream.com,proxy
+host-suffix,analytics-api.samsunghealthcn.com,proxy
+host-suffix,telemetry.soundcloud.com,proxy
+host-suffix,player-telemetry.vimeo.com,proxy
+host-suffix,fresnel-events.vimeocdn.com,proxy
+host-suffix,log-gateway.zoom.us,proxy
+host-suffix,t.jasper.ai,proxy
+host-suffix,client-analytics.braintreegateway.com,proxy
+host-suffix,collect.alipay.com,proxy
+host-suffix,collector.githubapp.com,proxy
+host-suffix,ogads-pa.googleapis.com,proxy
+host-suffix,log-upload-os.hoyolab.com,proxy
+host-suffix,log-upload-os.hoyoverse.com,proxy
+host-suffix,mllog.jd.com,proxy
+host-suffix,outlookads.live.com,proxy
+host,browser.pipe.aria.microsoft.com,proxy
+host-suffix,msadsscale.microsoft.com,proxy
+host-suffix,proxima.midjourney.com,proxy
+host-suffix,srtb.msn.com,proxy
+host-suffix,metrics.mzstatic.com,proxy
+host-suffix,bzr.openai.com,proxy
+host-suffix,bzrcdn.openai.com,proxy
+host-suffix,events.redditmedia.com,proxy
+host-suffix,fourier.taobao.com,proxy
+host,tns.simba.taobao.com,proxy
+host-suffix,mcs-va.tiktokv.com,proxy
+host,mon.us.tiktokv.com,proxy
+host-suffix,tracking.unrealengine.com,proxy
+host-suffix,ems.youku.com,proxy
+host-suffix,sugar.zhihu.com,proxy
+host-suffix,zhihu-web-analytics.zhihu.com,proxy
+host-suffix,adsdk.bing.net,proxy
+host-suffix,bat.bing.net,proxy
+host-suffix,r.bbci.co.uk,proxy
+host-suffix,mcs.tiktokv.us,proxy

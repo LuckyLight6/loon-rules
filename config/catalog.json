@@ -31,14 +31,27 @@
           "start": 210,
           "title": "广告与隐私",
           "section": "privacy"
+        },
+        {
+          "id": "optional-ads",
+          "start": 240,
+          "title": "可选扩展广告与统计拦截",
+          "section": "privacy",
+          "policies": [
+            "reject"
+          ]
         }
       ],
       "ids": [
         "apple-and-ai-privacy-exceptions",
         "general-ad-and-tracking",
-        "privacy-public-stun-endpoints"
+        "privacy-public-stun-endpoints",
+        "extended-ad-and-tracking"
       ],
-      "subheadings": {}
+      "subheadings": {
+        "apple-and-ai-privacy-exceptions": "广告与隐私",
+        "extended-ad-and-tracking": "可选扩展广告与统计拦截"
+      }
     },
     {
       "start": 1000,
@@ -841,25 +854,6 @@
       }
     },
     {
-      "start": 7800,
-      "title": "可选扩展广告与统计拦截",
-      "groups": [
-        {
-          "id": "optional-ads",
-          "start": 7800,
-          "title": "可选扩展广告与统计拦截",
-          "section": "privacy",
-          "policies": [
-            "reject"
-          ]
-        }
-      ],
-      "ids": [
-        "extended-ad-and-tracking"
-      ],
-      "subheadings": {}
-    },
-    {
       "start": 8000,
       "title": "全球厂商与云平台共用服务",
       "groups": [
@@ -885,7 +879,8 @@
         "oracle-shared-services",
         "adobe-shared-services",
         "cloudflare-shared-services",
-        "amazon-shared-services"
+        "amazon-shared-services",
+        "discord-activities-proxy"
       ],
       "subheadings": {
         "digitalocean-services": "厂商与云平台细分"
@@ -3539,16 +3534,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list",
         "https://replicate.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list",
-          "roots": [
-            "replicate.com",
-            "replicate.delivery"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3559,7 +3544,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "runway-creative-tools",
@@ -3574,16 +3565,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list",
         "https://runwayml.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list",
-          "roots": [
-            "runway.com",
-            "runwayml.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3594,7 +3575,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "stability-model-services",
@@ -3609,15 +3596,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list",
         "https://stability.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list",
-          "roots": [
-            "stability.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3627,7 +3605,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "black-forest-model-services",
@@ -3642,15 +3626,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list",
         "https://bfl.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list",
-          "roots": [
-            "bfl.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3660,7 +3635,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "replit-cloud-development",
@@ -3787,15 +3768,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list",
         "https://continue.dev/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list",
-          "roots": [
-            "continue.dev"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3805,7 +3777,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "coderabbit-code-review",
@@ -3820,15 +3798,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list",
         "https://coderabbit.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list",
-          "roots": [
-            "coderabbit.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3838,7 +3807,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "tabnine-code-assistant",
@@ -3853,15 +3828,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list",
         "https://tabnine.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list",
-          "roots": [
-            "tabnine.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3871,7 +3837,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "factory-coding-agents",
@@ -3885,15 +3857,6 @@
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list",
         "https://factory.ai/"
-      ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list",
-          "roots": [
-            "factory.ai"
-          ],
-          "require-domain-closure": true
-        }
       ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
@@ -3910,6 +3873,10 @@
           "format": "site-identity",
           "brand": "Factory",
           "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list",
+          "format": "domain-scope-list"
         }
       ],
       "routing-group": "overseas-ai"
@@ -3927,15 +3894,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list",
         "https://zed.dev/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list",
-          "roots": [
-            "zed.dev"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -3945,7 +3903,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "kiro-code-assistant",
@@ -4011,15 +3975,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list",
         "https://bolt.new/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list",
-          "roots": [
-            "bolt.new"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4029,7 +3984,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "lovable-app-builder",
@@ -4044,15 +4005,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list",
         "https://lovable.dev/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list",
-          "roots": [
-            "lovable.dev"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4062,7 +4014,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "v0-app-builder",
@@ -4077,16 +4035,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list",
         "https://v0.app/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list",
-          "roots": [
-            "v0.app",
-            "v0.dev"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4097,7 +4045,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "genspark-connections",
@@ -4112,15 +4066,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list",
         "https://genspark.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list",
-          "roots": [
-            "genspark.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4130,7 +4075,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "jasper-marketing-ai",
@@ -4145,15 +4096,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list",
         "https://jasper.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list",
-          "roots": [
-            "jasper.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4163,7 +4105,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "gamma-presentations",
@@ -4178,15 +4126,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list",
         "https://gamma.app/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list",
-          "roots": [
-            "gamma.app"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4196,7 +4135,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "phind-search",
@@ -4211,15 +4156,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list",
         "https://phind.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list",
-          "roots": [
-            "phind.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4229,7 +4165,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "inflection-and-pi",
@@ -4244,16 +4186,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list",
         "https://inflection.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list",
-          "roots": [
-            "inflection.ai",
-            "pi.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4264,7 +4196,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "h2o-model-services",
@@ -4279,15 +4217,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list",
         "https://h2o.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list",
-          "roots": [
-            "h2o.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4297,7 +4226,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "otter-meeting-assistant",
@@ -4312,15 +4247,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list",
         "https://otter.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list",
-          "roots": [
-            "otter.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4330,7 +4256,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "descript-media-tools",
@@ -4345,15 +4277,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list",
         "https://descript.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list",
-          "roots": [
-            "descript.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4363,7 +4286,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "synthesia-video-tools",
@@ -4378,15 +4307,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list",
         "https://synthesia.io/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list",
-          "roots": [
-            "synthesia.io"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4396,7 +4316,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "luma-creative-tools",
@@ -4411,15 +4337,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list",
         "https://lumalabs.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list",
-          "roots": [
-            "lumalabs.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4429,7 +4346,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "leonardo-image-tools",
@@ -4444,15 +4367,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list",
         "https://leonardo.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list",
-          "roots": [
-            "leonardo.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4462,7 +4376,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "pika-video-tools",
@@ -4477,15 +4397,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list",
         "https://pika.art/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list",
-          "roots": [
-            "pika.art"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4495,7 +4406,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "recraft-design-tools",
@@ -4510,15 +4427,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list",
         "https://recraft.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list",
-          "roots": [
-            "recraft.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4528,7 +4436,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "udio-music-tools",
@@ -4543,15 +4457,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list",
         "https://udio.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list",
-          "roots": [
-            "udio.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4561,7 +4466,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "duck-ai-chat",
@@ -4576,15 +4487,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list",
         "https://duck.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list",
-          "roots": [
-            "duck.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4594,7 +4496,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "langchain-agent-platform",
@@ -4609,15 +4517,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list",
         "https://langchain.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list",
-          "roots": [
-            "langchain.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4627,7 +4526,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "comfy-cloud-and-registry",
@@ -4642,16 +4547,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list",
         "https://comfy.org/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list",
-          "roots": [
-            "comfy.org",
-            "comfyregistry.org"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4662,7 +4557,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "lmstudio-product-services",
@@ -4677,15 +4578,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list",
         "https://lmstudio.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list",
-          "roots": [
-            "lmstudio.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4695,7 +4587,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "crewai-agent-platform",
@@ -4710,15 +4608,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list",
         "https://crewai.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list",
-          "roots": [
-            "crewai.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4728,7 +4617,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "eigent-agent-services",
@@ -4743,15 +4638,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list",
         "https://eigent.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list",
-          "roots": [
-            "eigent.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4761,7 +4647,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "manus-agent-services",
@@ -4776,16 +4668,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list",
         "https://manus.im/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list",
-          "roots": [
-            "manus.im",
-            "manuscdn.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4796,7 +4678,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "dia-browser-services",
@@ -4811,16 +4699,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list",
         "https://diabrowser.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list",
-          "roots": [
-            "diabrowser.com",
-            "diabrowser.engineering"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4831,7 +4709,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "openclaw-product-services",
@@ -4846,15 +4730,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list",
         "https://openclaw.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list",
-          "roots": [
-            "openclaw.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -4864,7 +4739,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "ai-cn-international-all",
@@ -5059,24 +4940,14 @@
       "include": [
         "DOMAIN,ark.ap-southeast.bytepluses.com"
       ],
-      "projection": [
+      "selection": "detailed",
+      "routing-group": "chinese-ai-international",
+      "extract": [
         {
           "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list",
-          "roots": [
-            "bytepluses.com",
-            "coze.com",
-            "marscode.com",
-            "trae.ai",
-            "cici.com",
-            "ciciai.com",
-            "ciciaicdn.com",
-            "dola.com"
-          ],
-          "require-domain-closure": true
+          "format": "domain-scope-list"
         }
-      ],
-      "selection": "detailed",
-      "routing-group": "chinese-ai-international"
+      ]
     },
     {
       "id": "siliconflow-international",
@@ -5275,17 +5146,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list",
         "https://youmind.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list",
-          "roots": [
-            "youmind.ai",
-            "youmind.com",
-            "youmind.site"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -5297,7 +5157,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "chinese-ai-international"
+      "routing-group": "chinese-ai-international",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "qoder-international",
@@ -5312,15 +5178,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
         "https://qoder.com/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
-          "roots": [
-            "qoder.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -5330,7 +5187,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "chinese-ai-international"
+      "routing-group": "chinese-ai-international",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "lovart-international",
@@ -5345,15 +5208,6 @@
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list",
         "https://lovart.ai/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list",
-          "roots": [
-            "lovart.ai"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
@@ -5363,7 +5217,13 @@
         "api.cloudflare.com",
         "storage.googleapis.com"
       ],
-      "routing-group": "chinese-ai-international"
+      "routing-group": "chinese-ai-international",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "apple-all",
@@ -7432,19 +7292,6 @@
       "product-probes": [
         "index.crates.io"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list",
-          "domain-lines-only": true,
-          "roots": [
-            "crates.io",
-            "rustup.rs",
-            "rust-lang.org",
-            "docs.rs"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "selection": "detailed",
       "extract": [
         {
@@ -7459,6 +7306,10 @@
             ]
           ],
           "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list",
+          "format": "domain-scope-list"
         }
       ],
       "inventory-refresh": true,
@@ -7750,10 +7601,32 @@
       "id": "discord-messaging-and-voice",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "Discord 消息、语音、活动和附件",
-      "boundary": "仅 Discord 专用域及精确附件存储主机；不给整个 Google Storage 或含 discord 的域名选路",
+      "description": "Discord 通讯、语音及自营服务",
+      "boundary": "通讯、语音、附件、开发入口及相关自营服务；Activities 第三方应用代理另行匹配。未使用的候选别名不自动新增，其他来源仍支持的已有入口保留；共享云与客服平台只匹配专用主机",
       "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord",
+        "https://discord.com/security",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr"
+      ],
+      "priority": 3320,
+      "section": "social",
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord",
+          "format": "geosite-domain-list",
+          "subdomains-as-hosts": true,
+          "delegated-scopes": {
+            "DOMAIN-SUFFIX,discordsays.com": {
+              "owner": "discord-activities-proxy",
+              "source": "https://discord.com/security",
+              "reason": "官方将该命名空间说明为 Activities 第三方应用代理，单独归平台服务"
+            }
+          },
+          "excluded-comment-blocks": {
+            "Unused": "不自动新增上游标注未使用的候选；不据此撤回其他来源仍支持的已发布入口"
+          }
+        }
       ],
       "projection": [
         {
@@ -7778,10 +7651,7 @@
             "discord-attachments-uploads-prd.storage.googleapis.com"
           ]
         }
-      ],
-      "priority": 3320,
-      "section": "social",
-      "routing-group": "overseas-social"
+      ]
     },
     {
       "id": "signal-messenger",
@@ -7912,10 +7782,10 @@
       "priority": 3370,
       "section": "social",
       "mode": "compiled",
-      "description": "Slack",
-      "boundary": "工作区、消息、文件和素材；外部登录分别匹配。日志统计留给可选隐私规则，培训、演示和旧版跳转不当作当前客户端必需入口",
+      "description": "Slack 工作区、消息及相关网站",
+      "boundary": "工作区、消息、文件、培训、演示和相关网站；外部登录单独匹配，日志域的产品归属不代表绕过隐私拦截，官方用途资料只保护明确的实时连接主机",
       "sources": [
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/slack",
         "https://docs.slack.dev/faq/",
         "https://slack.com/help/articles/115004846068-Slack-updates-and-changes",
         "https://slack.com/help/articles/360001603387-Manage-Slack-connection-issues"
@@ -7923,21 +7793,6 @@
       "policy-hint": "global",
       "product-probes": [
         "app.slack.com"
-      ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list",
-          "domain-lines-only": true,
-          "roots": [
-            "slack.com",
-            "slack-edge.com",
-            "slack-files.com",
-            "slack-imgs.com",
-            "slack-msgs.com",
-            "slack-core.com"
-          ],
-          "require-domain-closure": true
-        }
       ],
       "selection": "detailed",
       "extract": [
@@ -7947,6 +7802,11 @@
           "parent-contains": "Check if your proxy is running SSL decryption",
           "value-after": "exempt the following domains:",
           "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/slack",
+          "format": "geosite-domain-list",
+          "subdomains-as-hosts": true
         }
       ],
       "routing-group": "overseas-social"
@@ -7956,29 +7816,24 @@
       "priority": 3380,
       "section": "social",
       "mode": "compiled",
-      "description": "Reddit",
-      "boundary": "社区及专用内容域；不包括外链网站",
+      "description": "Reddit 社区、帮助与相关服务",
+      "boundary": "社区、内容、帮助、状态、通知及相关网站；外链网站单独匹配，Branch 短链和 Fastly 租户只使用清单中的精确主机",
       "sources": [
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list"
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/reddit"
       ],
       "policy-hint": "global",
       "product-probes": [
         "www.reddit.com"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list",
-          "domain-lines-only": true,
-          "roots": [
-            "reddit.com",
-            "redd.it",
-            "redditmedia.com",
-            "redditstatic.com"
-          ]
-        }
-      ],
       "selection": "detailed",
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/reddit",
+          "format": "geosite-domain-list",
+          "subdomains-as-hosts": true
+        }
+      ]
     },
     {
       "id": "instagram-social",
@@ -8062,18 +7917,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.threads.net"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/threads.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "pinterest-social",
@@ -8087,18 +7940,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.pinterest.com"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/pinterest.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "bluesky-social",
@@ -8112,18 +7963,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "bsky.app"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bluesky.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "lark-international",
@@ -8137,18 +7986,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.larksuite.com"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "zoom-meetings",
@@ -8162,18 +8009,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "zoom.us"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/zoom.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "xiaomi-international-services",
@@ -8188,14 +8033,6 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list",
-          "all-domains": true,
-          "domain-lines-only": true,
-          "require-domain-closure": true
-        }
-      ],
       "separates": [
         "xiaomi-shared-services"
       ],
@@ -8203,7 +8040,13 @@
         "c.mi.com",
         "global.market.xiaomi.com"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi@!cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "linkedin-network",
@@ -8217,18 +8060,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.linkedin.com"
       ],
-      "routing-group": "overseas-social"
+      "routing-group": "overseas-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "meta-shared-services",
@@ -8489,18 +8330,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "wise.com"
       ],
-      "routing-group": "overseas-payments"
+      "routing-group": "overseas-payments",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "overseas-crypto-all",
@@ -8666,18 +8505,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.kraken.com"
       ],
-      "routing-group": "overseas-crypto"
+      "routing-group": "overseas-crypto",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "bybit-exchange",
@@ -8691,18 +8528,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.bybit.com"
       ],
-      "routing-group": "overseas-crypto"
+      "routing-group": "overseas-crypto",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "kucoin-exchange",
@@ -8716,18 +8551,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.kucoin.com"
       ],
-      "routing-group": "overseas-crypto"
+      "routing-group": "overseas-crypto",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "trust-wallet",
@@ -8743,18 +8576,14 @@
       "product-probes": [
         "trustwallet.com"
       ],
-      "projection": [
+      "selection": "detailed",
+      "routing-group": "overseas-crypto",
+      "extract": [
         {
           "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list",
-          "domain-lines-only": true,
-          "roots": [
-            "trustwallet.com"
-          ],
-          "require-domain-closure": true
+          "format": "domain-scope-list"
         }
-      ],
-      "selection": "detailed",
-      "routing-group": "overseas-crypto"
+      ]
     },
     {
       "id": "overseas-media-all",
@@ -8910,18 +8739,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.hulu.com"
       ],
-      "routing-group": "overseas-video"
+      "routing-group": "overseas-video",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hulu.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "youtube-video-and-cdn",
@@ -9046,13 +8873,6 @@
       ],
       "projection": [
         {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
-          "roots": [
-            "iq.com"
-          ],
-          "require-domain-closure": true
-        },
-        {
           "source": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list",
           "roots": [
             "iq.com",
@@ -9070,7 +8890,13 @@
       "product-negatives": [
         "www.iqiyi.com"
       ],
-      "routing-group": "overseas-video"
+      "routing-group": "overseas-video",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "vimeo-video",
@@ -9101,28 +8927,34 @@
       "id": "spotify-audio",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "Spotify 音乐播放和音频文件",
-      "boundary": "去掉任意包含 spotify 的关键词；播放走 spotify.com、scdn.co 等专用后缀",
+      "description": "Spotify 音乐、播客及相关网站",
+      "boundary": "播放、短链、产品网站和清单中的专用 CDN；共享 CDN 只取列出的精确主机，不采用 spotify 关键词、桌面 User-Agent 或共享云 IP",
       "sources": [
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list"
-      ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list",
-          "roots": [
-            "spotify.com",
-            "scdn.co",
-            "spotifycdn.com",
-            "spotifycdn.net",
-            "pscdn.co",
-            "spoti.fi",
-            "spotify.net"
-          ]
-        }
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify",
+        "https://developer.spotify.com/documentation/embeds/reference/oembed"
       ],
       "priority": 3910,
       "section": "media",
-      "routing-group": "overseas-audio"
+      "routing-group": "overseas-audio",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify",
+          "format": "geosite-domain-list",
+          "subdomains-as-hosts": true,
+          "attributes": {
+            "ads": "用途标记保留产品归属，是否拦截由广告规则决定"
+          }
+        },
+        {
+          "source": "https://developer.spotify.com/documentation/embeds/reference/oembed",
+          "format": "product-domain-statements",
+          "code-only": true,
+          "paragraph-contains": [
+            "The base URI is"
+          ],
+          "protect-from-reject": true
+        }
+      ]
     },
     {
       "id": "soundcloud-audio",
@@ -9136,18 +8968,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "soundcloud.com"
       ],
-      "routing-group": "overseas-audio"
+      "routing-group": "overseas-audio",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/soundcloud.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "twitch-live-video",
@@ -9547,21 +9377,19 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "separates": [
         "netease-shared-services"
       ],
       "product-probes": [
         "easebar.com"
       ],
-      "routing-group": "overseas-games"
+      "routing-group": "overseas-games",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease@!cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "overseas-productivity-all",
@@ -9650,18 +9478,14 @@
       "product-probes": [
         "www.figma.com"
       ],
-      "projection": [
+      "selection": "detailed",
+      "routing-group": "overseas-productivity",
+      "extract": [
         {
           "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list",
-          "domain-lines-only": true,
-          "roots": [
-            "figma.com"
-          ],
-          "require-domain-closure": true
+          "format": "domain-scope-list"
         }
-      ],
-      "selection": "detailed",
-      "routing-group": "overseas-productivity"
+      ]
     },
     {
       "id": "trello-boards",
@@ -9747,18 +9571,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "proton.me"
       ],
-      "routing-group": "overseas-productivity"
+      "routing-group": "overseas-productivity",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/protonmail.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "google-all",
@@ -10095,30 +9917,19 @@
         "scholar.google.co.jp",
         "scholar.google.de"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list",
-          "domain-lines-only": true,
-          "roots": [
-            "scholar.google.com",
-            "scholar.google.com.hk",
-            "scholar.google.co.uk",
-            "scholar.googleusercontent.com",
-            "scholar.l.google.com"
-          ],
-          "parent-domains-source": "https://www.google.com/supported_domains",
-          "brand-label": "google",
-          "prefix-label": "scholar",
-          "require-domain-closure": true
-        }
-      ],
       "product-negatives": [
         "accounts.google.com",
         "scholar.evil.test",
         "storage.googleapis.com"
       ],
       "selection": "detailed",
-      "routing-group": "google-services"
+      "routing-group": "google-services",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "google-platform-services",
@@ -10836,14 +10647,6 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list",
         "https://www.qualcomm.cn/"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "extract": [
         {
           "source": "https://www.qualcomm.cn/",
@@ -10852,6 +10655,10 @@
           "brand": "Qualcomm",
           "brand-field": "og:title",
           "brand-match": "word"
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/qualcomm@cn.list",
+          "format": "domain-scope-list"
         }
       ],
       "product-probes": [
@@ -10871,19 +10678,17 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.nvidia.cn",
         "cn.download.nvidia.com"
       ],
-      "routing-group": "vendor-mainland"
+      "routing-group": "vendor-mainland",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nvidia@cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "intel-mainland",
@@ -10897,18 +10702,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.intel.cn"
       ],
-      "routing-group": "vendor-mainland"
+      "routing-group": "vendor-mainland",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intel@cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "samsung-mainland",
@@ -10922,18 +10725,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.samsung.com.cn"
       ],
-      "routing-group": "vendor-mainland"
+      "routing-group": "vendor-mainland",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/samsung@cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "cloudflare-mainland",
@@ -10948,21 +10749,19 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "separates": [
         "cloudflare-shared-services"
       ],
       "product-probes": [
         "cloudflarechina.cn"
       ],
-      "routing-group": "vendor-mainland"
+      "routing-group": "vendor-mainland",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/cloudflare@cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "adobe-mainland",
@@ -10977,21 +10776,19 @@
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "separates": [
         "adobe-shared-services"
       ],
       "product-probes": [
         "adobedc.cn"
       ],
-      "routing-group": "vendor-mainland"
+      "routing-group": "vendor-mainland",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/adobe@cn.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "amazon-mainland",
@@ -11986,18 +11783,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.feishu.cn"
       ],
-      "routing-group": "mainland-social"
+      "routing-group": "mainland-social",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/feishu.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "weibo-social",
@@ -12452,18 +12247,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.douyu.com"
       ],
-      "routing-group": "mainland-short-and-live"
+      "routing-group": "mainland-short-and-live",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/douyu.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "huya-live",
@@ -12477,18 +12270,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.huya.com"
       ],
-      "routing-group": "mainland-short-and-live"
+      "routing-group": "mainland-short-and-live",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/huya.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "mainland-games-all",
@@ -12698,18 +12489,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.meituan.com"
       ],
-      "routing-group": "mainland-life"
+      "routing-group": "mainland-life",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "didi-mobility",
@@ -12723,18 +12512,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.didiglobal.com"
       ],
-      "routing-group": "mainland-life"
+      "routing-group": "mainland-life",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "youdao-products",
@@ -12779,18 +12566,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.aliyundrive.com"
       ],
-      "routing-group": "mainland-productivity"
+      "routing-group": "mainland-productivity",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "wps-office",
@@ -12804,18 +12589,16 @@
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "product-probes": [
         "www.wps.cn"
       ],
-      "routing-group": "mainland-productivity"
+      "routing-group": "mainland-productivity",
+      "extract": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list",
+          "format": "domain-scope-list"
+        }
+      ]
     },
     {
       "id": "extended-ad-and-tracking",
@@ -12838,7 +12621,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "xkww3n--Rules.txt",
-      "priority": 7800,
+      "priority": 240,
       "section": "privacy",
       "fallback": true,
       "feed-sources": [
@@ -13865,17 +13648,10 @@
         "de.sentry.io",
         "browser.sentry-cdn.com"
       ],
-      "projection": [
+      "extract": [
         {
           "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list",
-          "domain-lines-only": true,
-          "roots": [
-            "getsentry.com",
-            "sentry.dev",
-            "sentry.io",
-            "sentry-cdn.com"
-          ],
-          "require-domain-closure": true
+          "format": "domain-scope-list"
         }
       ]
     },
@@ -14079,19 +13855,6 @@
         "intercom-messenger.com",
         "uploads.intercomusercontent.com"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list",
-          "domain-lines-only": true,
-          "roots": [
-            "intercom.com",
-            "intercom.io",
-            "intercomassets.com",
-            "intercomcdn.com"
-          ],
-          "require-domain-closure": true
-        }
-      ],
       "extract": [
         {
           "source": "https://www.intercom.com/help/en/articles/3894-using-intercom-with-content-security-policy",
@@ -14110,6 +13873,10 @@
           ],
           "domain-scope": "domain-and-subdomains",
           "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/intercom.list",
+          "format": "domain-scope-list"
         }
       ]
     },
@@ -14135,14 +13902,6 @@
         "fcm.googleapis.com",
         "alt1-mtalk.google.com"
       ],
-      "projection": [
-        {
-          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list",
-          "domain-lines-only": true,
-          "all-domains": true,
-          "require-domain-closure": true
-        }
-      ],
       "extract": [
         {
           "source": "https://raw.githubusercontent.com/googleapis/google-api-python-client/main/googleapiclient/discovery_cache/documents/fcm.v1.json",
@@ -14165,6 +13924,10 @@
             "ENDPOINT"
           ],
           "protect-from-reject": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list",
+          "format": "domain-scope-list"
         }
       ]
     },
@@ -14450,6 +14213,36 @@
       "product-negatives": [
         "tenant.sinaapp.com"
       ]
+    },
+    {
+      "id": "discord-activities-proxy",
+      "priority": 8110,
+      "section": "vendors",
+      "routing-group": "global-platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Discord Activities 与第三方应用代理",
+      "boundary": "从 Discord 官方代理用途说明读取平台命名空间；其中可以承载第三方应用和游戏，不归为聊天、语音或第三方应用自身的全部服务",
+      "sources": [
+        "https://discord.com/security",
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord"
+      ],
+      "extract": [
+        {
+          "source": "https://discord.com/security",
+          "format": "product-domain-statements",
+          "include-list-items": true,
+          "paragraph-contains": [
+            "providers",
+            "proxied"
+          ],
+          "domain-scope": "private-platform"
+        }
+      ],
+      "separates": [
+        "discord-messaging-and-voice"
+      ]
     }
   ],
   "detailed": [
@@ -14706,6 +14499,7 @@
     "youdao-products",
     "aliyun-drive",
     "wps-office",
+    "discord-activities-proxy",
     "tencent-shared-content-and-sdk",
     "sina-shared-image-assets",
     "sina-web-and-shared-services"
@@ -17344,6 +17138,39 @@
     ],
     "upos-sz-mirrorcosbstar1.bilivideo.com": [
       "bilibili-international-video"
+    ],
+    "spotify.link": [
+      "spotify-audio"
+    ],
+    "audio4-ak-spotify-com.akamaized.net": [
+      "spotify-audio"
+    ],
+    "spotify.com.edgesuite.net": [
+      "spotify-audio"
+    ],
+    "reddithelp.com": [
+      "reddit-community"
+    ],
+    "redditstatus.com": [
+      "reddit-community"
+    ],
+    "reddit.app.link": [
+      "reddit-community"
+    ],
+    "slackcertified.com": [
+      "slack-workspaces"
+    ],
+    "slack-redir.net": [
+      "slack-workspaces"
+    ],
+    "discord.dev": [
+      "discord-messaging-and-voice"
+    ],
+    "discordmerch.com": [
+      "discord-messaging-and-voice"
+    ],
+    "12345678.discordsays.com": [
+      "discord-activities-proxy"
     ]
   },
   "shared-negatives": [
@@ -17538,7 +17365,7 @@
         210,
         220,
         230,
-        7800
+        240
       ]
     },
     {
@@ -17963,6 +17790,7 @@
         8080,
         8090,
         8100,
+        8110,
         8400,
         8410,
         8420,
@@ -18976,6 +18804,9 @@
     ],
     "tenant.sinaapp.com": [
       "sina-web-and-shared-services"
+    ],
+    "12345678.discordsays.com": [
+      "discord-messaging-and-voice"
     ]
   },
   "recommended-views": [
@@ -19064,20 +18895,6 @@
       "reviewed-outside": {
         "DOMAIN-SUFFIX,signalusers.org": "社区和历史关联范围，当前官方客户端网络说明未要求",
         "DOMAIN-SUFFIX,whispersystems.org": "历史名称，当前客户端网络说明未要求"
-      }
-    },
-    {
-      "id": "slack-client-coverage",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list",
-      "owners": [
-        "slack-workspaces"
-      ],
-      "reviewed-outside": {
-        "DOMAIN-SUFFIX,slack-redir.net": "官方已停止网页端外链重定向，不当作当前工作区必需入口",
-        "DOMAIN-SUFFIX,slackb.com": "开发工具的通用日志统计，保留可选隐私拦截",
-        "DOMAIN-SUFFIX,slackcertified.com": "培训认证范围，不是当前消息客户端必需入口",
-        "DOMAIN-SUFFIX,slackdemo.com": "演示范围，不是当前消息客户端必需入口",
-        "DOMAIN-SUFFIX,slackhq.com": "内容和历史品牌范围，不是当前消息客户端必需入口"
       }
     },
     {
@@ -19881,6 +19698,533 @@
           "og:image"
         ]
       }
+    },
+    {
+      "id": "replicate-model-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "replicate-model-services"
+      ]
+    },
+    {
+      "id": "runway-creative-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/runway.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "runway-creative-tools"
+      ]
+    },
+    {
+      "id": "stability-model-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/stability-ai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "stability-model-services"
+      ]
+    },
+    {
+      "id": "black-forest-model-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/black-forest-labs.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "black-forest-model-services"
+      ]
+    },
+    {
+      "id": "continue-code-assistant-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/continue.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "continue-code-assistant"
+      ]
+    },
+    {
+      "id": "coderabbit-code-review-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "coderabbit-code-review"
+      ]
+    },
+    {
+      "id": "tabnine-code-assistant-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/tabnine.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "tabnine-code-assistant"
+      ]
+    },
+    {
+      "id": "factory-coding-agents-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "factory-coding-agents"
+      ]
+    },
+    {
+      "id": "zed-editor-and-ai-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "zed-editor-and-ai"
+      ]
+    },
+    {
+      "id": "bolt-app-builder-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "bolt-app-builder"
+      ]
+    },
+    {
+      "id": "lovable-app-builder-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "lovable-app-builder"
+      ]
+    },
+    {
+      "id": "v0-app-builder-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/v0.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "v0-app-builder"
+      ]
+    },
+    {
+      "id": "genspark-connections-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/genspark.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "genspark-connections"
+      ]
+    },
+    {
+      "id": "jasper-marketing-ai-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/jasper.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "jasper-marketing-ai"
+      ]
+    },
+    {
+      "id": "gamma-presentations-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/gamma.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "gamma-presentations"
+      ]
+    },
+    {
+      "id": "phind-search-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/phind.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "phind-search"
+      ]
+    },
+    {
+      "id": "inflection-and-pi-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/inflection.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "inflection-and-pi"
+      ]
+    },
+    {
+      "id": "h2o-model-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/h2o-ai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "h2o-model-services"
+      ]
+    },
+    {
+      "id": "otter-meeting-assistant-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/otter-ai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "otter-meeting-assistant"
+      ]
+    },
+    {
+      "id": "descript-media-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/descript.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "descript-media-tools"
+      ]
+    },
+    {
+      "id": "synthesia-video-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/synthesia.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "synthesia-video-tools"
+      ]
+    },
+    {
+      "id": "luma-creative-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/luma-ai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "luma-creative-tools"
+      ]
+    },
+    {
+      "id": "leonardo-image-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/leonardo-ai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "leonardo-image-tools"
+      ]
+    },
+    {
+      "id": "pika-video-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/pika.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "pika-video-tools"
+      ]
+    },
+    {
+      "id": "recraft-design-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/recraft.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "recraft-design-tools"
+      ]
+    },
+    {
+      "id": "udio-music-tools-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "udio-music-tools"
+      ]
+    },
+    {
+      "id": "duck-ai-chat-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "duck-ai-chat"
+      ]
+    },
+    {
+      "id": "langchain-agent-platform-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "langchain-agent-platform"
+      ]
+    },
+    {
+      "id": "comfy-cloud-and-registry-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/comfyui.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "comfy-cloud-and-registry"
+      ]
+    },
+    {
+      "id": "lmstudio-product-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lmstudio.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "lmstudio-product-services"
+      ]
+    },
+    {
+      "id": "crewai-agent-platform-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/crewai.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "crewai-agent-platform"
+      ]
+    },
+    {
+      "id": "eigent-agent-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/eigent.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "eigent-agent-services"
+      ]
+    },
+    {
+      "id": "manus-agent-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/manus.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "manus-agent-services"
+      ]
+    },
+    {
+      "id": "dia-browser-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/dia-browser.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "dia-browser-services"
+      ]
+    },
+    {
+      "id": "openclaw-product-services-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "openclaw-product-services"
+      ]
+    },
+    {
+      "id": "bytedance-international-source-manifest",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "bytedance-international"
+      ]
+    },
+    {
+      "id": "youmind-international-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "youmind-international"
+      ]
+    },
+    {
+      "id": "qoder-international-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "qoder-international"
+      ]
+    },
+    {
+      "id": "lovart-international-source-manifest",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "lovart-international"
+      ]
+    },
+    {
+      "id": "rust-cargo-source-manifest",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/rust.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "rust-cargo"
+      ]
+    },
+    {
+      "id": "trust-wallet-source-manifest",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "trust-wallet"
+      ]
+    },
+    {
+      "id": "iqiyi-international-source-manifest",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/iqiyi%40%21cn.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "iqiyi-international"
+      ]
+    },
+    {
+      "id": "figma-design-source-manifest",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/figma.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "figma-design"
+      ]
+    },
+    {
+      "id": "google-scholar-source-manifest",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-scholar.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "google-scholar"
+      ]
+    },
+    {
+      "id": "spotify-audio-complete-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "subdomains-as-hosts": true,
+        "attributes": {
+          "ads": "用途标记保留产品归属，是否拦截由广告规则决定"
+        }
+      },
+      "owners": [
+        "spotify-audio"
+      ]
+    },
+    {
+      "id": "reddit-community-complete-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/reddit",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "subdomains-as-hosts": true
+      },
+      "owners": [
+        "reddit-community"
+      ]
+    },
+    {
+      "id": "slack-workspaces-complete-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/slack",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "subdomains-as-hosts": true
+      },
+      "owners": [
+        "slack-workspaces"
+      ]
+    },
+    {
+      "id": "discord-messaging-and-voice-complete-source",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord",
+      "recipe": {
+        "format": "geosite-domain-list",
+        "subdomains-as-hosts": true,
+        "delegated-scopes": {
+          "DOMAIN-SUFFIX,discordsays.com": {
+            "owner": "discord-activities-proxy",
+            "source": "https://discord.com/security",
+            "reason": "官方将该命名空间说明为 Activities 第三方应用代理，单独归平台服务"
+          }
+        },
+        "excluded-comment-blocks": {
+          "Unused": "不自动新增上游标注未使用的候选；不据此撤回其他来源仍支持的已发布入口"
+        }
+      },
+      "owners": [
+        "discord-messaging-and-voice"
+      ]
+    },
+    {
+      "id": "spotify-official-content-linking",
+      "source": "https://developer.spotify.com/documentation/embeds/reference/oembed",
+      "recipe": {
+        "format": "product-domain-statements",
+        "code-only": true,
+        "paragraph-contains": [
+          "The base URI is"
+        ]
+      },
+      "owners": [
+        "spotify-audio"
+      ]
+    },
+    {
+      "id": "discord-activities-official-platform",
+      "source": "https://discord.com/security",
+      "recipe": {
+        "format": "product-domain-statements",
+        "include-list-items": true,
+        "paragraph-contains": [
+          "providers",
+          "proxied"
+        ],
+        "domain-scope": "private-platform"
+      },
+      "owners": [
+        "discord-activities-proxy"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -22139,9 +22483,15 @@
         "name": "Discord",
         "products": [
           {
-            "name": "Discord 消息、语音、活动和附件",
+            "name": "Discord 通讯、语音及自营服务",
             "rules": [
               "discord-messaging-and-voice"
+            ]
+          },
+          {
+            "name": "Discord Activities 与第三方应用代理",
+            "rules": [
+              "discord-activities-proxy"
             ]
           }
         ]
@@ -22175,7 +22525,7 @@
         "name": "Slack",
         "products": [
           {
-            "name": "Slack",
+            "name": "Slack 工作区、消息及相关网站",
             "rules": [
               "slack-workspaces"
             ]
@@ -22187,7 +22537,7 @@
         "name": "Reddit",
         "products": [
           {
-            "name": "Reddit",
+            "name": "Reddit 社区、帮助与相关服务",
             "rules": [
               "reddit-community"
             ]
@@ -22451,7 +22801,7 @@
         "name": "Spotify",
         "products": [
           {
-            "name": "Spotify 音乐播放和音频文件",
+            "name": "Spotify 音乐、播客及相关网站",
             "rules": [
               "spotify-audio"
             ]
@@ -23410,5 +23760,8 @@
       "mainland-networks",
       "mainland-geoip"
     ]
+  },
+  "subscription-aliases": {
+    "7800-extended-ad-and-tracking": "extended-ad-and-tracking"
   }
 }

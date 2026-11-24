@@ -21,6 +21,7 @@
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
 | 同一业务的地区端点表 | `purpose-host-table` 可用 `purpose-prefixes` 选择同类用途、`value-format: domain` 读取主机列；`all-exact: true` 只生成精确主机 | Kiro 1530 跟随官方表中的模型服务地区，不收相邻的 AWS 共用登录与验证码 |
 | 独立产品域名清单 | `domain-scope-list` 读取整份原生域名规则；`subdomains-as-hosts: true` 保留注册域后缀，将清单中具体服务器收窄为精确主机 | Bilibili 国际版 3880 使用业务专表，不使用混有中国站海外 CDN 的地理标签表 |
+| 原生 geosite 产品清单 | `geosite-domain-list` 读取裸域名、`domain:` 与 `full:`，核对属性、子分类引用和共享范围的归属；不使用固定根域白名单代替整份来源 | Spotify 3910、Reddit 3380、Slack 3370、Discord 3320 |
 | 官网资源元数据 | `site-resource-hosts` 先用 `identity` 核对站点，再从 `properties` 指定的 Open Graph 图片、音频或视频 URL 取精确主机 | 3880 的独立完整性检查核对官网实际引用的素材；不扫描页面全部链接、广告或脚本 |
 
 例如 GitHub 只读取网站、软件包和 Actions 域名，不读取相邻的 IP 字段：
@@ -86,6 +87,8 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 
 `domain-scope-list` 不把主机扩大为注册域。例如 `api.global.example.com` 在主机模式下保持精确匹配，`example.com` 若原本是后缀规则则保持不变。出现 IP、ASN、参数、公共后缀或共享托管后缀时停止读取；主机模式也不接受来源新增的通配符，避免把格式变化当作普通补全。源中已有的精确规则不会被扩大。
 
+这类完整清单必须配套 `source-inventories`，范围选择要与生成声明一致。生成器既检查整份来源是否由正确产品承接，也检查第一条实际命中；正文里有一条父域，不能代替共享主机和其他产品的归属判断。
+
 确认来源描述的是完整产品范围后，设置 `require-domain-closure: true`。检查读取整份来源，发生在筛选前：未选范围也必须由正确产品完整承接，或有明确的共享、排除依据。落到补充、Reject 或无关产品都不能算通过；其他产品的承接须在独立来源清单中声明并通过首条命中检查。宽泛的地区合集和混有历史品牌的公司表仍按参考资料核对，不能为了消除待查数量开启整表收录。
 
 读取含其他客户端语法的资料时，`projection.domain-lines-only` 和 `source-inventories.domain-lines-only` 选择三种域名规则。`projection-coverage.other-rule-types` 另外列出 IPv4、IPv6、ASN、进程等类型及数量；已认可类型的地址或 ASN 格式错误也会停止更新。采用 IP 还要核对目的地址用途，采用 ASN 要核对运营者，进程规则要核对系统和客户端，类型统计不代替这些判断
@@ -93,6 +96,18 @@ API 目录中仍公开的旧版本也参加完整清单的并集。页面中的�
 `source-inventories.recipe` 可以复用读取器核对结构化的完整来源。Google 地区域名使用 `brand-domain-list`，按官方注册域清单逐项检查首条命中。完整性检查失败会阻止发布，读取失败也不能按零条处理。
 
 Telegram 3310 同时读取官方 CIDR、官方列明的域名范围和注册组织的当前 ASN 集合。域名范围新增项会进入细分表及通讯合集；官方漏洞奖励范围并非全部客户端端点清单，因此不据此撤回其他仍有来源的域名。组织记录出现新 ASN 时自动生成，不再维护一串 ASN 编号；组织身份不符、列表截断或成员损坏时保留已发布版本。ASN 的实际匹配仍依赖客户端的 ASN 数据
+
+## 原生 geosite 清单怎样分配
+
+`geosite-domain-list` 读取[上游定义的规则语法](https://github.com/v2fly/domain-list-community/blob/master/README.md)，不把评论中的网站名当成规则。裸域名和 `domain:` 保留后缀含义，`full:` 保留精确匹配；可用 `subdomains-as-hosts` 将具体服务器进一步收窄。属性须在 `attributes` 说明用途，不能把 `@ads` 理解为绕过本仓的广告策略。当前读取器不自动执行带属性的 `include:` 筛选，遇到这种输入会停止更新。
+
+`include:child` 表示引用另一个分类，不代表这些域名都属于当前产品。用 `delegated-includes` 指明子分类对应的产品，目标产品须读取同一目录中的实际子文件，并有独立完整性检查。缺少目标来源、出现未处理的引用或循环引用时，不发布部分结果。关键词和正则只有在 `omit-types` 写明原因后才能省略；未识别的类型不能靠这项声明跳过。
+
+同一份清单混入独立平台时，`delegated-scopes` 说明范围、目标产品和用途来源。生成器不会只从当前组删掉这一项：完整性检查还会核对目标组是否承接了整个范围，以及实际第一条命中是否正确。Discord 的 `discordsays.com` 从官方说明确认是 Activities 第三方应用代理，因此由 8110 处理，3320 继续处理通讯、语音与自营入口。
+
+公共后缀表的 PRIVATE 部分描述子域之间的隔离边界，不能单独证明业务属于谁。[PSL 提交规则](https://publicsuffix.org/submit/)说明，这些域名可以由向不同使用者分配子域的域名所有者提交。`product-domain-statements.domain-scope: private-platform` 只在明确的平台用途说明中使用，要求读取结果确实是 PRIVATE 命名空间；不会把普通注册域或公共注册后缀扩大成平台规则。来源写在列表项里时，显式使用 `include-list-items`。
+
+注释也不是停用证明。`excluded-comment-blocks` 只作用于指定注释紧邻的候选块，遇到空行或新注释即结束；不能让一个 `Unused` 注释误伤后面的上传主机。这项选择只控制本来源是否新增候选，其他来源仍支持的已发布入口继续保留，丢失覆盖检查不会因此取消。读取策略、省略类型、候选块和共享范围分配都记录在 `source-inventories` 状态中。
 
 ## 如何证明读取器真的能更新
 

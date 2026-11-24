@@ -4,8 +4,8 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-24T04:48:27Z
-# rule-count: 18499
+# updated-at: 2026-11-24T16:40:58Z
+# rule-count: 18480
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
@@ -735,8 +735,6 @@ DOMAIN-SUFFIX,airav.wiki
 DOMAIN-SUFFIX,airconsole.com
 DOMAIN-SUFFIX,aircrack-ng.org
 DOMAIN-SUFFIX,airgonetworks.com
-DOMAIN-SUFFIX,airhorn.solutions
-DOMAIN-SUFFIX,airhornbot.com
 DOMAIN-SUFFIX,airitilibrary.com
 DOMAIN-SUFFIX,airsextube.com
 DOMAIN-SUFFIX,airtable.com
@@ -1813,7 +1811,6 @@ DOMAIN-SUFFIX,biedian.me
 DOMAIN-SUFFIX,bienvenuechezbestbuy.ca
 DOMAIN-SUFFIX,big.one
 DOMAIN-SUFFIX,bigassporn.tv
-DOMAIN-SUFFIX,bigbeans.solutions
 DOMAIN-SUFFIX,bigboobbundle.com
 DOMAIN-SUFFIX,bigboobsalert.com
 DOMAIN-SUFFIX,bigboobsandhotsex.com
@@ -4183,14 +4180,7 @@ DOMAIN-SUFFIX,dirtyship.com
 DOMAIN-SUFFIX,discogs.com
 DOMAIN-SUFFIX,discoins.com
 DOMAIN-SUFFIX,disconnect.me
-DOMAIN-SUFFIX,discord.design
-DOMAIN-SUFFIX,discord.dev
-DOMAIN-SUFFIX,discord.new
-DOMAIN-SUFFIX,discord.store
-DOMAIN-SUFFIX,discord.tools
 DOMAIN-SUFFIX,discordapp.io
-DOMAIN-SUFFIX,discordmerch.com
-DOMAIN-SUFFIX,discordsays.com
 DOMAIN-SUFFIX,discourse.group
 DOMAIN-SUFFIX,discuss.com.hk
 DOMAIN-SUFFIX,discuss4u.com
@@ -13122,10 +13112,7 @@ DOMAIN-SUFFIX,redbull.com
 DOMAIN-SUFFIX,redbullracing.com
 DOMAIN-SUFFIX,redchinacn.net
 DOMAIN-SUFFIX,redchinacn.org
-DOMAIN-SUFFIX,reddithelp.com
 DOMAIN-SUFFIX,redditlist.com
-DOMAIN-SUFFIX,redditmail.com
-DOMAIN-SUFFIX,redditspace.com
 DOMAIN-SUFFIX,reddituploads.com
 DOMAIN-SUFFIX,redfaptube.com
 DOMAIN-SUFFIX,redgifs.com
@@ -14067,14 +14054,9 @@ DOMAIN-SUFFIX,skyporn.online
 DOMAIN-SUFFIX,skyvegas.com
 DOMAIN-SUFFIX,skyxvpn.com
 DOMAIN-SUFFIX,sl-reverse.com
-DOMAIN-SUFFIX,slack-redir.net
-DOMAIN-SUFFIX,slackb.com
 DOMAIN-SUFFIX,slackbook.org
 DOMAIN-SUFFIX,slackbuilds.org
-DOMAIN-SUFFIX,slackcertified.com
-DOMAIN-SUFFIX,slackdemo.com
 DOMAIN-SUFFIX,slacker.com
-DOMAIN-SUFFIX,slackhq.com
 DOMAIN-SUFFIX,slackware-fr.org
 DOMAIN-SUFFIX,slackware-id.org
 DOMAIN-SUFFIX,slackware-srbija.org
@@ -16783,7 +16765,6 @@ DOMAIN-SUFFIX,waskucity.com
 DOMAIN-SUFFIX,watch-my-gf.com
 DOMAIN-SUFFIX,watch-porn.net
 DOMAIN-SUFFIX,watch8x.com
-DOMAIN-SUFFIX,watchanimeattheoffice.com
 DOMAIN-SUFFIX,watchersweb.com
 DOMAIN-SUFFIX,watchindianporn.net
 DOMAIN-SUFFIX,watchinese.com

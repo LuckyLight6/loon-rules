@@ -40,7 +40,7 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-over
 
 网络接入与局域网、常规广告与隐私之后，依次处理海外与国际版 AI、Apple、海外具体产品、Google 和 Microsoft。跨国厂商的国内入口随后处理；国内具体产品再按业务排列。厂商通用父域、海外补充和国内补充放在后面，避免抢走具体业务
 
-常规广告用 0220，0210 是已核实的 Apple 广告与 OpenAI 广告像素。7800 是默认关闭的扩展拦截，位于具体产品之后、厂商共用表之前。0230 只拦已列公共 STUN 端点，可能影响通话和会议，不能凭它宣称 WebRTC 已防泄漏。[实际命中与防泄漏测试](docs/network-testing.md)
+常规广告用 0220，0210 是已核实的 Apple 广告与 OpenAI 广告像素。0240 是默认关闭的扩展拦截；启用时放在具体产品前，保留正常网站和必需入口的保护。0230 只拦已列公共 STUN 端点，可能影响通话和会议，不能凭它宣称 WebRTC 已防泄漏。[实际命中与防泄漏测试](docs/network-testing.md)
 
 ## DNS 插件单独选择
 

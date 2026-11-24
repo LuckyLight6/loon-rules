@@ -431,7 +431,8 @@
           "domain:amazon.com.au",
           "domain:amazon.co.za",
           "domain:amazon.co.uk",
-          "domain:amazon.co.jp"
+          "domain:amazon.co.jp",
+          "domain:discordsays.com"
         ],
         "outboundTag": "PROXY"
       }

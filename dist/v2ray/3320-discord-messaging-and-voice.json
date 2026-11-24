@@ -18,7 +18,18 @@
           "domain:discordapp.net",
           "domain:discordcdn.com",
           "domain:discordpartygames.com",
-          "domain:discordstatus.com"
+          "domain:discordstatus.com",
+          "full:hammerandchisel.ssl.zendesk.com",
+          "domain:airhorn.solutions",
+          "domain:airhornbot.com",
+          "domain:bigbeans.solutions",
+          "domain:discord.design",
+          "domain:discord.dev",
+          "domain:discord.new",
+          "domain:discord.store",
+          "domain:discord.tools",
+          "domain:discordmerch.com",
+          "domain:watchanimeattheoffice.com"
         ],
         "outboundTag": "PROXY"
       }

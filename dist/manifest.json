@@ -138,6 +138,16 @@
           "status": "available",
           "path": "rules/0230-privacy-public-stun-endpoints.lsr"
         },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "rules/0240-extended-ad-and-tracking.lsr"
+        },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
           "rule-count": 645,
@@ -1700,11 +1710,11 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 213,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 237,
           "status": "available",
           "path": "rules/3300-overseas-social-all.lsr"
         },
@@ -1720,11 +1730,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "rules/3320-discord-messaging-and-voice.lsr"
         },
@@ -1770,21 +1780,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "rules/3370-slack-workspaces.lsr"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "rules/3380-reddit-community.lsr"
         },
@@ -2060,11 +2070,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "rules/3800-overseas-media-all.lsr"
         },
@@ -2170,11 +2180,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/3910-spotify-audio.lsr"
         },
@@ -3338,23 +3348,13 @@
           "status": "available",
           "path": "rules/7480-wps-office.lsr"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "rules/7800-extended-ad-and-tracking.lsr"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "rules/8000-global-platforms-all.lsr"
         },
@@ -3458,33 +3458,43 @@
           "status": "available",
           "path": "rules/8100-amazon-shared-services.lsr"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/8110-discord-activities-proxy.lsr"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.lsr"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "rules/8210-overseas-media-extra.lsr"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.lsr"
         },
@@ -3649,7 +3659,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 360,
+      "available": 361,
       "unsupported": 0
     },
     "surge": {
@@ -3743,6 +3753,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "rules/0230-privacy-public-stun-endpoints.list"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "rules/0240-extended-ad-and-tracking.list"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -5306,11 +5326,11 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 213,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 237,
           "status": "available",
           "path": "rules/3300-overseas-social-all.list"
         },
@@ -5326,11 +5346,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "rules/3320-discord-messaging-and-voice.list"
         },
@@ -5376,21 +5396,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "rules/3370-slack-workspaces.list"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "rules/3380-reddit-community.list"
         },
@@ -5666,11 +5686,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "rules/3800-overseas-media-all.list"
         },
@@ -5776,11 +5796,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/3910-spotify-audio.list"
         },
@@ -6944,23 +6964,13 @@
           "status": "available",
           "path": "rules/7480-wps-office.list"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "rules/7800-extended-ad-and-tracking.list"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "rules/8000-global-platforms-all.list"
         },
@@ -7064,33 +7074,43 @@
           "status": "available",
           "path": "rules/8100-amazon-shared-services.list"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/8110-discord-activities-proxy.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "rules/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "rules/8220-overseas-sites-extra.list"
         },
@@ -7255,7 +7275,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 360,
+      "available": 361,
       "unsupported": 0
     },
     "clash-classical": {
@@ -7349,6 +7369,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/clash-classical/0230-privacy-public-stun-endpoints.yaml"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/clash-classical/0240-extended-ad-and-tracking.yaml"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -8912,11 +8942,11 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 213,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 237,
           "status": "available",
           "path": "dist/clash-classical/3300-overseas-social-all.yaml"
         },
@@ -8932,11 +8962,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/clash-classical/3320-discord-messaging-and-voice.yaml"
         },
@@ -8982,21 +9012,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/clash-classical/3370-slack-workspaces.yaml"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/clash-classical/3380-reddit-community.yaml"
         },
@@ -9272,11 +9302,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/clash-classical/3800-overseas-media-all.yaml"
         },
@@ -9382,11 +9412,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/clash-classical/3910-spotify-audio.yaml"
         },
@@ -10550,23 +10580,13 @@
           "status": "available",
           "path": "dist/clash-classical/7480-wps-office.yaml"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/clash-classical/7800-extended-ad-and-tracking.yaml"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/clash-classical/8000-global-platforms-all.yaml"
         },
@@ -10670,33 +10690,43 @@
           "status": "available",
           "path": "dist/clash-classical/8100-amazon-shared-services.yaml"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/clash-classical/8110-discord-activities-proxy.yaml"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/clash-classical/8200-overseas-extra-all.yaml"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/clash-classical/8210-overseas-media-extra.yaml"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/clash-classical/8220-overseas-sites-extra.yaml"
         },
@@ -10861,7 +10891,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 360,
+      "available": 361,
       "unsupported": 0
     },
     "egern": {
@@ -10955,6 +10985,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/egern/0230-privacy-public-stun-endpoints.yaml"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/egern/0240-extended-ad-and-tracking.yaml"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -12518,11 +12558,11 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 213,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 237,
           "status": "available",
           "path": "dist/egern/3300-overseas-social-all.yaml"
         },
@@ -12538,11 +12578,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/egern/3320-discord-messaging-and-voice.yaml"
         },
@@ -12588,21 +12628,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/egern/3370-slack-workspaces.yaml"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/egern/3380-reddit-community.yaml"
         },
@@ -12878,11 +12918,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/egern/3800-overseas-media-all.yaml"
         },
@@ -12988,11 +13028,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/egern/3910-spotify-audio.yaml"
         },
@@ -14156,23 +14196,13 @@
           "status": "available",
           "path": "dist/egern/7480-wps-office.yaml"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/egern/7800-extended-ad-and-tracking.yaml"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/egern/8000-global-platforms-all.yaml"
         },
@@ -14276,33 +14306,43 @@
           "status": "available",
           "path": "dist/egern/8100-amazon-shared-services.yaml"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/egern/8110-discord-activities-proxy.yaml"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/egern/8200-overseas-extra-all.yaml"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/egern/8210-overseas-media-extra.yaml"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/egern/8220-overseas-sites-extra.yaml"
         },
@@ -14467,7 +14507,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 360,
+      "available": 361,
       "unsupported": 0
     },
     "surfboard": {
@@ -14561,6 +14601,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/surge-compatible/0230-privacy-public-stun-endpoints.list"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -16122,10 +16172,10 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T16:40:58Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -16140,11 +16190,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/surge-compatible/3320-discord-messaging-and-voice.list"
         },
@@ -16190,21 +16240,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/surge-compatible/3370-slack-workspaces.list"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/surge-compatible/3380-reddit-community.list"
         },
@@ -16480,11 +16530,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -16590,11 +16640,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/surge-compatible/3910-spotify-audio.list"
         },
@@ -17758,23 +17808,13 @@
           "status": "available",
           "path": "dist/surge-compatible/7480-wps-office.list"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/surge-compatible/7800-extended-ad-and-tracking.list"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
         },
@@ -17878,33 +17918,43 @@
           "status": "available",
           "path": "dist/surge-compatible/8100-amazon-shared-services.list"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/8110-discord-activities-proxy.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/surge-compatible/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -18069,7 +18119,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 356,
+      "available": 357,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -18163,6 +18213,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/surge-compatible/0230-privacy-public-stun-endpoints.list"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -19726,11 +19786,11 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 213,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 237,
           "status": "available",
           "path": "dist/surge-compatible/3300-overseas-social-all.list"
         },
@@ -19746,11 +19806,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/surge-compatible/3320-discord-messaging-and-voice.list"
         },
@@ -19796,21 +19856,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/surge-compatible/3370-slack-workspaces.list"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/surge-compatible/3380-reddit-community.list"
         },
@@ -20086,11 +20146,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -20196,11 +20256,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/surge-compatible/3910-spotify-audio.list"
         },
@@ -21364,23 +21424,13 @@
           "status": "available",
           "path": "dist/surge-compatible/7480-wps-office.list"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/surge-compatible/7800-extended-ad-and-tracking.list"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
         },
@@ -21484,33 +21534,43 @@
           "status": "available",
           "path": "dist/surge-compatible/8100-amazon-shared-services.list"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/surge-compatible/8110-discord-activities-proxy.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/surge-compatible/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/surge-compatible/8220-overseas-sites-extra.list"
         },
@@ -21675,7 +21735,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 360,
+      "available": 361,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -21765,6 +21825,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/quantumult-x/0230-privacy-public-stun-endpoints.list"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/quantumult-x/0240-extended-ad-and-tracking.list"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -23323,10 +23393,10 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T16:40:58Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -23341,11 +23411,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/quantumult-x/3320-discord-messaging-and-voice.list"
         },
@@ -23391,21 +23461,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/quantumult-x/3370-slack-workspaces.list"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/quantumult-x/3380-reddit-community.list"
         },
@@ -23681,11 +23751,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/quantumult-x/3800-overseas-media-all.list"
         },
@@ -23791,11 +23861,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/quantumult-x/3910-spotify-audio.list"
         },
@@ -24955,23 +25025,13 @@
           "status": "available",
           "path": "dist/quantumult-x/7480-wps-office.list"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/quantumult-x/7800-extended-ad-and-tracking.list"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/quantumult-x/8000-global-platforms-all.list"
         },
@@ -25075,33 +25135,43 @@
           "status": "available",
           "path": "dist/quantumult-x/8100-amazon-shared-services.list"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/quantumult-x/8110-discord-activities-proxy.list"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/quantumult-x/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/quantumult-x/8210-overseas-media-extra.list"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/quantumult-x/8220-overseas-sites-extra.list"
         },
@@ -25266,7 +25336,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 345,
+      "available": 346,
       "unsupported": 15
     },
     "sing-box": {
@@ -25356,6 +25426,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/sing-box/0230-privacy-public-stun-endpoints.json"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/sing-box/0240-extended-ad-and-tracking.json"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -26914,10 +26994,10 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T16:40:58Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -26932,11 +27012,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/sing-box/3320-discord-messaging-and-voice.json"
         },
@@ -26982,21 +27062,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/sing-box/3370-slack-workspaces.json"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/sing-box/3380-reddit-community.json"
         },
@@ -27272,11 +27352,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/sing-box/3800-overseas-media-all.json"
         },
@@ -27382,11 +27462,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/sing-box/3910-spotify-audio.json"
         },
@@ -28546,23 +28626,13 @@
           "status": "available",
           "path": "dist/sing-box/7480-wps-office.json"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/sing-box/7800-extended-ad-and-tracking.json"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/sing-box/8000-global-platforms-all.json"
         },
@@ -28666,33 +28736,43 @@
           "status": "available",
           "path": "dist/sing-box/8100-amazon-shared-services.json"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/sing-box/8110-discord-activities-proxy.json"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/sing-box/8200-overseas-extra-all.json"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/sing-box/8210-overseas-media-extra.json"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/sing-box/8220-overseas-sites-extra.json"
         },
@@ -28854,7 +28934,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 342,
+      "available": 343,
       "unsupported": 18
     },
     "v2ray": {
@@ -28944,6 +29024,16 @@
           "output-rule-count": 2,
           "status": "available",
           "path": "dist/v2ray/0230-privacy-public-stun-endpoints.json"
+        },
+        "0240-extended-ad-and-tracking": {
+          "source": "rules/0240-extended-ad-and-tracking.lsr",
+          "rule-count": 43508,
+          "description": "可选的扩展广告与统计拦截",
+          "created-at": "2026-11-19T10:51:17Z",
+          "updated-at": "2026-11-24T17:02:45Z",
+          "output-rule-count": 43508,
+          "status": "available",
+          "path": "dist/v2ray/0240-extended-ad-and-tracking.json"
         },
         "1000-ai-overseas-all": {
           "source": "rules/1000-ai-overseas-all.lsr",
@@ -30502,10 +30592,10 @@
         },
         "3300-overseas-social-all": {
           "source": "rules/3300-overseas-social-all.lsr",
-          "rule-count": 213,
+          "rule-count": 237,
           "description": "海外通讯与社交合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
+          "updated-at": "2026-11-24T16:40:58Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -30520,11 +30610,11 @@
         },
         "3320-discord-messaging-and-voice": {
           "source": "rules/3320-discord-messaging-and-voice.lsr",
-          "rule-count": 15,
-          "description": "Discord 消息、语音、活动和附件",
+          "rule-count": 26,
+          "description": "Discord 通讯、语音及自营服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 26,
           "status": "available",
           "path": "dist/v2ray/3320-discord-messaging-and-voice.json"
         },
@@ -30570,21 +30660,21 @@
         },
         "3370-slack-workspaces": {
           "source": "rules/3370-slack-workspaces.lsr",
-          "rule-count": 6,
-          "description": "Slack",
+          "rule-count": 11,
+          "description": "Slack 工作区、消息及相关网站",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 11,
           "status": "available",
           "path": "dist/v2ray/3370-slack-workspaces.json"
         },
         "3380-reddit-community": {
           "source": "rules/3380-reddit-community.lsr",
-          "rule-count": 4,
-          "description": "Reddit",
+          "rule-count": 12,
+          "description": "Reddit 社区、帮助与相关服务",
           "created-at": "2026-11-20T06:07:48Z",
-          "updated-at": "2026-11-20T06:07:48Z",
-          "output-rule-count": 4,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 12,
           "status": "available",
           "path": "dist/v2ray/3380-reddit-community.json"
         },
@@ -30860,11 +30950,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 160,
+          "rule-count": 179,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 160,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 179,
           "status": "available",
           "path": "dist/v2ray/3800-overseas-media-all.json"
         },
@@ -30970,11 +31060,11 @@
         },
         "3910-spotify-audio": {
           "source": "rules/3910-spotify-audio.lsr",
-          "rule-count": 6,
-          "description": "Spotify 音乐播放和音频文件",
+          "rule-count": 25,
+          "description": "Spotify 音乐、播客及相关网站",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-19T09:33:57Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "dist/v2ray/3910-spotify-audio.json"
         },
@@ -32134,23 +32224,13 @@
           "status": "available",
           "path": "dist/v2ray/7480-wps-office.json"
         },
-        "7800-extended-ad-and-tracking": {
-          "source": "rules/7800-extended-ad-and-tracking.lsr",
-          "rule-count": 43466,
-          "description": "可选的扩展广告与统计拦截",
-          "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T05:14:03Z",
-          "output-rule-count": 43466,
-          "status": "available",
-          "path": "dist/v2ray/7800-extended-ad-and-tracking.json"
-        },
         "8000-global-platforms-all": {
           "source": "rules/8000-global-platforms-all.lsr",
-          "rule-count": 428,
+          "rule-count": 429,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-22T17:48:09Z",
-          "output-rule-count": 428,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 429,
           "status": "available",
           "path": "dist/v2ray/8000-global-platforms-all.json"
         },
@@ -32254,33 +32334,43 @@
           "status": "available",
           "path": "dist/v2ray/8100-amazon-shared-services.json"
         },
+        "8110-discord-activities-proxy": {
+          "source": "rules/8110-discord-activities-proxy.lsr",
+          "rule-count": 1,
+          "description": "Discord Activities 与第三方应用代理",
+          "created-at": "2026-11-24T16:40:58Z",
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "dist/v2ray/8110-discord-activities-proxy.json"
+        },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18638,
+          "rule-count": 18611,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 18638,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18611,
           "status": "available",
           "path": "dist/v2ray/8200-overseas-extra-all.json"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 153,
+          "rule-count": 145,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T14:59:22Z",
-          "output-rule-count": 153,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 145,
           "status": "available",
           "path": "dist/v2ray/8210-overseas-media-extra.json"
         },
         "8220-overseas-sites-extra": {
           "source": "rules/8220-overseas-sites-extra.lsr",
-          "rule-count": 18499,
+          "rule-count": 18480,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18499,
+          "updated-at": "2026-11-24T16:40:58Z",
+          "output-rule-count": 18480,
           "status": "available",
           "path": "dist/v2ray/8220-overseas-sites-extra.json"
         },
@@ -32442,8 +32532,11 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 342,
+      "available": 343,
       "unsupported": 18
     }
+  },
+  "aliases": {
+    "7800-extended-ad-and-tracking": "0240-extended-ad-and-tracking"
   }
 }

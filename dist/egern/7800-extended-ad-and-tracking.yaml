@@ -1,20 +1,20 @@
 # name: extended-ad-and-tracking
-# priority: 7800
+# priority: 0240
 # section: privacy
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T05:14:03Z
+# updated-at: 2026-11-24T17:02:45Z
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
 # source: https://easylist.to/easylist/easylist.txt
 # source: https://easylist.to/easylist/easyprivacy.txt
 # source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-# canonical-rule-count: 43466
-# rule-count: 43466
+# canonical-rule-count: 43508
+# rule-count: 43508
 # format: egern
-# canonical: rules/7800-extended-ad-and-tracking.lsr
+# canonical: rules/0240-extended-ad-and-tracking.lsr
 
 domain_suffix_set:
   - "ad.animehub.ac"
@@ -5221,7 +5221,6 @@ domain_suffix_set:
   - "bypassduehardly.com"
   - "byracucosopenu.com"
   - "byrniessilky.com"
-  - "pixel.byspotify.com"
   - "sgali-mcs.byteoversea.com"
   - "bzoomlubqo.com"
   - "bzpnhlysdnfmq.com"
@@ -43377,6 +43376,45 @@ domain_suffix_set:
   - "zhdspsxvrhaxv.website"
   - "zkdpamomhpnpm.website"
   - "knnmokc6.xyz"
+  - "pixel.byspotify.com"
+  - "events.bsky.app"
+  - "t2.hulu.com"
+  - "vortex.hulu.com"
+  - "metric.huya.com"
+  - "statwup.huya.com"
+  - "ylog.huya.com"
+  - "analytics.livestream.com"
+  - "analytics-api.samsunghealthcn.com"
+  - "telemetry.soundcloud.com"
+  - "player-telemetry.vimeo.com"
+  - "fresnel-events.vimeocdn.com"
+  - "log-gateway.zoom.us"
+  - "t.jasper.ai"
+  - "client-analytics.braintreegateway.com"
+  - "collect.alipay.com"
+  - "collector.githubapp.com"
+  - "ogads-pa.googleapis.com"
+  - "log-upload-os.hoyolab.com"
+  - "log-upload-os.hoyoverse.com"
+  - "mllog.jd.com"
+  - "outlookads.live.com"
+  - "msadsscale.microsoft.com"
+  - "proxima.midjourney.com"
+  - "srtb.msn.com"
+  - "metrics.mzstatic.com"
+  - "bzr.openai.com"
+  - "bzrcdn.openai.com"
+  - "events.redditmedia.com"
+  - "fourier.taobao.com"
+  - "mcs-va.tiktokv.com"
+  - "tracking.unrealengine.com"
+  - "ems.youku.com"
+  - "sugar.zhihu.com"
+  - "zhihu-web-analytics.zhihu.com"
+  - "adsdk.bing.net"
+  - "bat.bing.net"
+  - "r.bbci.co.uk"
+  - "mcs.tiktokv.us"
 domain_set:
   - "tracker.bt.uol.com.br"
   - "analytics.lasegunda.ecn.cl"
@@ -43484,3 +43522,7 @@ domain_set:
   - "search-carousel-widget.snc-prod.aws.cinch.co.uk"
   - "analytics.eip.telegraph.co.uk"
   - "targeting.washpost.nile.works"
+  - "bee.tc.easebar.com"
+  - "browser.pipe.aria.microsoft.com"
+  - "tns.simba.taobao.com"
+  - "mon.us.tiktokv.com"

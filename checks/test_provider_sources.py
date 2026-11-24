@@ -43,6 +43,8 @@ class ProviderSources(PublicSourceExamples):
                   'source-inventories': [
                       {'id': 'international-manifest', 'source': manifest,
                        'recipe': source_recipe, 'owners': ['international']},
+                      {'id': 'company-manifest', 'source': company,
+                       'recipe': {'format': 'domain-scope-list'}, 'owners': ['mainland']},
                       {'id': 'official-resource', 'source': page,
                        'recipe': resource_recipe, 'owners': ['international']}]}
 

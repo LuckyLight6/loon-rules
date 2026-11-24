@@ -4,13 +4,15 @@
 # description: 海外通讯与社交合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T04:48:27Z
-# rule-count: 213
+# updated-at: 2026-11-24T16:40:58Z
+# rule-count: 237
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
 # source: https://core.telegram.org/bug-bounty
 # source: https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE
 # source: https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord
+# source: https://discord.com/security
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/signal.list
 # source: https://support.signal.org/hc/en-us/articles/360007320291-Firewall-and-Internet-settings
@@ -19,11 +21,11 @@
 # source: https://developers.line.biz/en/docs/messaging-api/try-rich-menu/
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/slack
 # source: https://docs.slack.dev/faq/
 # source: https://slack.com/help/articles/115004846068-Slack-updates-and-changes
 # source: https://slack.com/help/articles/360001603387-Manage-Slack-connection-issues
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/reddit
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Instagram.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list
@@ -84,6 +86,17 @@ DOMAIN-SUFFIX,discordapp.net
 DOMAIN-SUFFIX,discordcdn.com
 DOMAIN-SUFFIX,discordpartygames.com
 DOMAIN-SUFFIX,discordstatus.com
+DOMAIN,hammerandchisel.ssl.zendesk.com
+DOMAIN-SUFFIX,airhorn.solutions
+DOMAIN-SUFFIX,airhornbot.com
+DOMAIN-SUFFIX,bigbeans.solutions
+DOMAIN-SUFFIX,discord.design
+DOMAIN-SUFFIX,discord.dev
+DOMAIN-SUFFIX,discord.new
+DOMAIN-SUFFIX,discord.store
+DOMAIN-SUFFIX,discord.tools
+DOMAIN-SUFFIX,discordmerch.com
+DOMAIN-SUFFIX,watchanimeattheoffice.com
 DOMAIN-SUFFIX,signal.group
 DOMAIN-SUFFIX,signal.link
 DOMAIN-SUFFIX,signal.me
@@ -112,10 +125,23 @@ DOMAIN-SUFFIX,slack-files.com
 DOMAIN-SUFFIX,slack-imgs.com
 DOMAIN-SUFFIX,slack-msgs.com
 DOMAIN-SUFFIX,slack.com
+DOMAIN-SUFFIX,slack-redir.net
+DOMAIN-SUFFIX,slackb.com
+DOMAIN-SUFFIX,slackcertified.com
+DOMAIN-SUFFIX,slackdemo.com
+DOMAIN-SUFFIX,slackhq.com
 DOMAIN-SUFFIX,redd.it
 DOMAIN-SUFFIX,reddit.com
 DOMAIN-SUFFIX,redditmedia.com
 DOMAIN-SUFFIX,redditstatic.com
+DOMAIN,reddit.app.link
+DOMAIN,reddit.map.fastly.net
+DOMAIN-SUFFIX,redditblog.com
+DOMAIN-SUFFIX,reddithelp.com
+DOMAIN-SUFFIX,redditinc.com
+DOMAIN-SUFFIX,redditmail.com
+DOMAIN-SUFFIX,redditspace.com
+DOMAIN-SUFFIX,redditstatus.com
 DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,ig.me
 DOMAIN-SUFFIX,igcdn.com

@@ -11,6 +11,61 @@ from loon_rules.rules import Invalid
 
 
 class ExportFormats(unittest.TestCase):
+    def test_numbered_download_aliases_share_outputs_without_becoming_extra_groups(self):
+        formats = self.exports()
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / 'rules').mkdir()
+            (root / 'config').mkdir()
+            canonical = root / 'rules/0240-product.lsr'
+            canonical.write_text('# name: product\nDOMAIN,api.product.example\n')
+            alias = root / 'rules/7800-product.lsr'
+            alias.write_text('# name: product\nDOMAIN,previous.product.example\n')
+            config = {'priority-width': 4, 'entries': [{'id': 'product', 'priority': 240}],
+                      'subscription-aliases': {'7800-product': 'product'}}
+            (root / 'config/catalog.json').write_text(json.dumps(config))
+            formats.publish(root)
+            manifest = json.loads((root / 'dist/manifest.json').read_text())
+            self.assertEqual(set(manifest['formats']['loon']['rules']), {'0240-product'})
+            self.assertEqual(manifest['aliases'], {'7800-product': '0240-product'})
+            self.assertEqual(alias.read_bytes(), canonical.read_bytes())
+            self.assertEqual(alias.with_suffix('.list').read_bytes(), canonical.read_bytes())
+            for folder, extension in [('clash-classical', 'yaml'), ('egern', 'yaml'),
+                                      ('quantumult-x', 'list'), ('sing-box', 'json'), ('v2ray', 'json')]:
+                self.assertEqual((root / 'dist' / folder / ('7800-product.' + extension)).read_bytes(),
+                                 (root / 'dist' / folder / ('0240-product.' + extension)).read_bytes())
+            canonical.write_text(canonical.read_text() + 'DOMAIN,new.product.example\n')
+            with self.assertRaisesRegex(Invalid, '客户端'):
+                formats.publish(root, check=True)
+            formats.publish(root)
+            self.assertEqual(alias.read_bytes(), canonical.read_bytes())
+            self.assertEqual(formats.publish(root, check=True), 0)
+
+    def test_a_number_change_cannot_hide_an_unsupported_client_regression(self):
+        formats = self.exports()
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / 'rules').mkdir()
+            (root / 'config').mkdir()
+            previous = root / 'rules/7800-product.lsr'
+            previous.write_text('# name: product\nDOMAIN,api.product.example\n')
+            formats.publish(root)
+            before = {path: path.read_bytes() for path in (root / 'dist').rglob('*') if path.is_file()}
+            (root / 'rules/0240-product.lsr').write_text(previous.read_text() + 'IP-ASN,399358,no-resolve\n')
+            config = {'priority-width': 4, 'entries': [{'id': 'product', 'priority': 240}],
+                      'subscription-aliases': {'7800-product': 'product'}}
+            (root / 'config/catalog.json').write_text(json.dumps(config))
+            with self.assertRaisesRegex(Invalid, '不能自动删减'):
+                formats.publish(root)
+            self.assertTrue(all(path.read_bytes() == text for path, text in before.items()))
+
+    def test_download_aliases_cannot_escape_rules_or_replace_another_product(self):
+        from loon_rules.catalog import subscription_aliases
+        config = {'priority-width': 4, 'entries': [{'id': 'product', 'priority': 240}]}
+        for alias in ('../outside', '0240-product', '7800-other', '/absolute'):
+            with self.subTest(alias=alias), self.assertRaises(Invalid):
+                subscription_aliases({**config, 'subscription-aliases': {alias: 'product'}})
+
     def exports(self):
         try:
             from loon_rules import exports

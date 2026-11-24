@@ -1,13 +1,14 @@
 # name: spotify-audio
 # priority: 3910
 # section: media
-# description: Spotify 音乐播放和音频文件
-# boundary: 去掉任意包含 spotify 的关键词；播放走 spotify.com、scdn.co 等专用后缀
+# description: Spotify 音乐、播客及相关网站
+# boundary: 播放、短链、产品网站和清单中的专用 CDN；共享 CDN 只取列出的精确主机，不采用 spotify 关键词、桌面 User-Agent 或共享云 IP
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
-# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list
-# canonical-rule-count: 6
-# rule-count: 6
+# updated-at: 2026-11-24T16:40:58Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
+# source: https://developer.spotify.com/documentation/embeds/reference/oembed
+# canonical-rule-count: 25
+# rule-count: 25
 # format: quantumult-x
 # canonical: rules/3910-spotify-audio.lsr
 
@@ -17,3 +18,22 @@ host-suffix,spoti.fi,proxy
 host-suffix,spotify.com,proxy
 host-suffix,spotifycdn.com,proxy
 host-suffix,spotifycdn.net,proxy
+host,audio-ak-spotify-com.akamaized.net,proxy
+host,audio4-ak-spotify-com.akamaized.net,proxy
+host,cdn-spotify-experiments.conductrics.com,proxy
+host,heads-ak-spotify-com.akamaized.net,proxy
+host,heads4-ak-spotify-com.akamaized.net,proxy
+host,spotify.com.edgesuite.net,proxy
+host,spotify.map.fastly.net,proxy
+host,spotify.map.fastlylb.net,proxy
+host-suffix,byspotify.com,proxy
+host-suffix,lifeatspotify.com,proxy
+host-suffix,spotify-everywhere.com,proxy
+host-suffix,spotify.design,proxy
+host-suffix,spotify.link,proxy
+host-suffix,spotifycharts.com,proxy
+host-suffix,spotifycodes.com,proxy
+host-suffix,spotifyforbrands.com,proxy
+host-suffix,spotifyforvendors.com,proxy
+host-suffix,spotifyjobs.com,proxy
+host-suffix,tospotify.com,proxy

@@ -13,6 +13,7 @@
 | [blackmatrix7 / ios_rule_script](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon) | 局域网、音乐、直播、微信与 iCloud Private Relay 等用途核对 | [GPL-2.0](licenses/blackmatrix7--ios_rule_script.txt) |
 | [SukkaW / Surge](https://github.com/SukkaW/Surge) | 海外影音与 Apple 通用服务的已选域名，不照搬关键字、User-Agent、进程匹配或整个 Apple IP 段 | [AGPL-3.0](licenses/SukkaW--Surge.txt) |
 | [MetaCubeX / meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) | Apple 别名、证书、更新，以及 AI、开发、通讯、游戏、媒体等产品范围 | [GPL-3.0](licenses/MetaCubeX--meta-rules-dat.txt) |
+| [v2fly / domain-list-community](https://github.com/v2fly/domain-list-community) | Spotify、Reddit、Slack 与 Discord 的原生产品清单；保留精确主机、属性和分类引用的含义，共享平台另行核对 | [MIT](licenses/v2fly--domain-list-community.txt) |
 | [xkww3n / Rules](https://github.com/xkww3n/Rules) | 联网、保留地址、Apple 媒体与智能服务、广告及国内外范围比对 | [MIT](licenses/xkww3n--Rules.txt) |
 | [VPSDance / ai-proxy-rules](https://github.com/VPSDance/ai-proxy-rules) | 海外 AI 产品；合集由本仓细分生成 | [MIT](licenses/VPSDance--ai-proxy-rules.txt) |
 | [erwanjun / surge-claude-rules](https://github.com/erwanjun/surge-claude-rules) | Claude 产品范围核对 | [MIT](licenses/erwanjun--surge-claude-rules.txt) |
@@ -40,6 +41,7 @@
 | [Cargo 配置](https://index.crates.io/config.json)、[PyPI](https://pypi.org/pypi/pip/json)、[npm](https://registry.npmjs.org/npm/latest) | 服务与文件下载字段、公开版本依据；不复制包内容、作者资料、摘要或签名 |
 | [JetBrains 网络表](https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json)、[Node.js](https://nodejs.org/en)、[ACP](https://agentclientprotocol.com/) | AI 地区注释、IDE 用途及独立产品身份，不复制安装程序或代理实现 |
 | [Signal](https://support.signal.org/hc/en-us/articles/360007320291-Firewall-and-Internet-settings)、[Slack](https://slack.com/help/articles/360001603387-Manage-Slack-connection-issues)、[Tailscale DERP](https://controlplane.tailscale.com/derpmap/default) | 公开客户端与实时主机、中继名称；不读取用户工作区或 Tailnet 配置 |
+| [Spotify oEmbed](https://developer.spotify.com/documentation/embeds/reference/oembed)、[Discord 安全范围](https://discord.com/security)及 [Activities 网络说明](https://github.com/discord/discord-api-docs/blob/main/developers/activities/development-guides/networking.mdx) | 从 Spotify 基础 URI 说明读取内容链接主机；区分 Discord 通讯与承载第三方应用的 Activities 代理平台，不复制文档正文 |
 | [Atlassian](https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/)、[Notion](https://www.notion.com/help/allowlist-ip)、[Ubisoft](https://www.ubisoft.com/legal/documents/termsofuse/en-US) | 自营、产品与共用范围；合作方、出站 IP、公共租户与自定义域不直接归入 |
 | [Link](https://www.link.com/)、[Venmo](https://venmo.com/)、[Xoom](https://www.xoom.com/)、[Braintree](https://developer.paypal.com/braintree/docs/reference/general/braintree-ip-addresses) | 产品身份与生产、沙箱域名，不发起账户或交易请求 |
 | [Binance REST](https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)、[WebSocket](https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md)、[Gemini Exchange](https://developer.gemini.com/rest) | 基础端点与服务器字段，不转载交易示例 |

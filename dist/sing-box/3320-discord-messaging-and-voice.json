@@ -16,10 +16,21 @@
         "discordapp.net",
         "discordcdn.com",
         "discordpartygames.com",
-        "discordstatus.com"
+        "discordstatus.com",
+        "airhorn.solutions",
+        "airhornbot.com",
+        "bigbeans.solutions",
+        "discord.design",
+        "discord.dev",
+        "discord.new",
+        "discord.store",
+        "discord.tools",
+        "discordmerch.com",
+        "watchanimeattheoffice.com"
       ],
       "domain": [
-        "discord-attachments-uploads-prd.storage.googleapis.com"
+        "discord-attachments-uploads-prd.storage.googleapis.com",
+        "hammerandchisel.ssl.zendesk.com"
       ]
     }
   ]

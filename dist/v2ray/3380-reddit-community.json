@@ -7,7 +7,15 @@
           "domain:redd.it",
           "domain:reddit.com",
           "domain:redditmedia.com",
-          "domain:redditstatic.com"
+          "domain:redditstatic.com",
+          "full:reddit.app.link",
+          "full:reddit.map.fastly.net",
+          "domain:redditblog.com",
+          "domain:reddithelp.com",
+          "domain:redditinc.com",
+          "domain:redditmail.com",
+          "domain:redditspace.com",
+          "domain:redditstatus.com"
         ],
         "outboundTag": "PROXY"
       }

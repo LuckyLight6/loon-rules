@@ -215,3 +215,23 @@ class ServiceCoverageGate(unittest.TestCase):
                 published = root / 'rules' / pipeline.rule_filename(company)
                 self.assertEqual(pipeline.rules.read_rules(published.read_text()), ['DOMAIN-SUFFIX,vendor.com'])
 
+
+    def test_complete_manifest_readers_cannot_bypass_an_independent_inventory(self):
+        source = 'https://publisher.example/product.list'
+        recipe = {'source': source, 'format': 'domain-scope-list'}
+        entry = {'id': 'product', 'mode': 'compiled', 'priority': 30,
+                 'section': 'products', 'description': '产品', 'boundary': '完整产品来源',
+                 'sources': [source], 'extract': [recipe]}
+        config = {'schema-version': 2, 'entries': [entry], 'critical': {},
+                  'shared-negatives': [], 'sections': [{'id': 'products', 'title': '产品'}]}
+        with self.assertRaisesRegex(Invalid, '完整.*清单|独立.*核对'):
+            pipeline.validate_declarations(config)
+        config['source-inventories'] = [{'id': 'product-manifest', 'source': source,
+                                         'owners': ['product'],
+                                         'recipe': {'format': 'domain-scope-list'}}]
+        pipeline.validate_declarations(config)
+        config['source-inventories'][0]['recipe']['subdomains-as-hosts'] = False
+        pipeline.validate_declarations(config)
+        config['source-inventories'][0]['recipe']['subdomains-as-hosts'] = True
+        with self.assertRaisesRegex(Invalid, '完整.*清单|独立.*核对'):
+            pipeline.validate_declarations(config)

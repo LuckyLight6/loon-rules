@@ -9,7 +9,12 @@
           "domain:slack-files.com",
           "domain:slack-imgs.com",
           "domain:slack-msgs.com",
-          "domain:slack.com"
+          "domain:slack.com",
+          "domain:slack-redir.net",
+          "domain:slackb.com",
+          "domain:slackcertified.com",
+          "domain:slackdemo.com",
+          "domain:slackhq.com"
         ],
         "outboundTag": "PROXY"
       }

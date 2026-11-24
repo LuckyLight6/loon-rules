@@ -3,6 +3,7 @@ from loon_rules import rules
 from loon_rules.sources import policy as source_policy
 from loon_rules.sources import transport as source_transport
 from loon_rules.sources import expansion as source_expansion
+from loon_rules.sources import geosite
 from loon_rules.sources.coverage import same_business_family
 from loon_rules import catalog as catalog_schema
 from loon_rules.generation import inventories as service_inventory
@@ -128,6 +129,16 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') in ('domain-scope-list', geosite.FORMAT):
+                options = geosite.SCOPE_OPTIONS
+                inventories = [spec for spec in config.get('source-inventories', ())
+                               if spec['source'] == recipe['source'] and e['id'] in spec['owners']]
+                if not any((spec.get('recipe', {}).get('format') == recipe['format']
+                            and geosite.scope_options(spec['recipe']) == geosite.scope_options(recipe))
+                           or not spec.get('recipe') and recipe['format'] == 'domain-scope-list'
+                           and not any(recipe.get(option) for option in options)
+                           for spec in inventories):
+                    raise rules.Invalid('完整产品清单缺少同范围的独立归属核对：' + e['id'])
             if recipe.get('check-sharing') and (e['mode']!='compiled'
                     or recipe.get('format')!='exclusive-purpose-table' or recipe.get('part')=='shared'):
                 raise rules.Invalid('共享用途必须由产品的同一官方用途表核对：'+e['id'])
@@ -186,6 +197,7 @@ def validate_declarations(config):
             url for member in view['members'] for url in entries[member]['sources'])),
             **{'allowed-shared':sorted(set(view.get('allowed-shared',()))|{
                 host for member in view['members'] for host in entries[member].get('allowed-shared',())})})
+    catalog_schema.subscription_aliases(config)
     for section in config['sections']:
         for ref in section.get('related',()):
             if ref['id'] not in entries or entries[ref['id']]['section']==section['id'] or not ref['note']:
@@ -202,5 +214,6 @@ def validate_declarations(config):
     source_policy.validate(config,entries)
     source_transport.validate(config)
     source_expansion.validate(config,entries)
+    geosite.validate_references(entries)
     service_inventory.validate(entries)
     return entries

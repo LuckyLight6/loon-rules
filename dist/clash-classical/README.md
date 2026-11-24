@@ -15,6 +15,7 @@
 | 0210 | apple-and-ai-privacy-exceptions | Apple 广告与 OpenAI 广告像素的已核实拒绝项 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/0210-apple-and-ai-privacy-exceptions.yaml) |
 | 0220 | general-ad-and-tracking | Repcz 广告与追踪拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/0220-general-ad-and-tracking.yaml) |
 | 0230 | privacy-public-stun-endpoints | 已公开的 STUN 主机，供选择性阻断 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/0230-privacy-public-stun-endpoints.yaml) |
+| 0240 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/0240-extended-ad-and-tracking.yaml) |
 | 1000 | ai-overseas-all | 海外 AI 合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/1000-ai-overseas-all.yaml) |
 | 1010 | claude-connections | Claude 登录、API、MCP、更新、附件和 Artifact | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/1010-claude-connections.yaml) |
 | 1020 | chatgpt-connections | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/1020-chatgpt-connections.yaml) |
@@ -173,13 +174,13 @@
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3230-bugsnag-error-monitoring.yaml) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3300-overseas-social-all.yaml) |
 | 3310 | telegram-messaging | Telegram 登录、消息、文件与服务器地址 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3310-telegram-messaging.yaml) |
-| 3320 | discord-messaging-and-voice | Discord 消息、语音、活动和附件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3320-discord-messaging-and-voice.yaml) |
+| 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3320-discord-messaging-and-voice.yaml) |
 | 3330 | signal-messenger | Signal 消息、通话、贴纸、群组与用户名链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3330-signal-messenger.yaml) |
 | 3340 | line-messenger | LINE | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3340-line-messenger.yaml) |
 | 3350 | x-social-and-media | X / Twitter 社交与图像视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3350-x-social-and-media.yaml) |
 | 3360 | wechat-international-portal | WeChat 国际网站、支付与部分 App 连接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3360-wechat-international-portal.yaml) |
-| 3370 | slack-workspaces | Slack | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3370-slack-workspaces.yaml) |
-| 3380 | reddit-community | Reddit | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3380-reddit-community.yaml) |
+| 3370 | slack-workspaces | Slack 工作区、消息及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3370-slack-workspaces.yaml) |
+| 3380 | reddit-community | Reddit 社区、帮助与相关服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3380-reddit-community.yaml) |
 | 3390 | instagram-social | Instagram | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3390-instagram-social.yaml) |
 | 3400 | whatsapp-messaging | WhatsApp 消息、媒体与短链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3400-whatsapp-messaging.yaml) |
 | 3410 | threads-social | Threads | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3410-threads-social.yaml) |
@@ -218,7 +219,7 @@
 | 3880 | bilibili-international-video | 哔哩哔哩国际版视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3880-bilibili-international-video.yaml) |
 | 3890 | iqiyi-international | 爱奇艺国际版 iQIYI 与专用国际 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3890-iqiyi-international.yaml) |
 | 3900 | vimeo-video | Vimeo 视频与交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3900-vimeo-video.yaml) |
-| 3910 | spotify-audio | Spotify 音乐播放和音频文件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3910-spotify-audio.yaml) |
+| 3910 | spotify-audio | Spotify 音乐、播客及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3910-spotify-audio.yaml) |
 | 3920 | soundcloud-audio | SoundCloud 音频与创作者服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3920-soundcloud-audio.yaml) |
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3930-twitch-live-video.yaml) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/3940-bbc-news-and-video.yaml) |
@@ -335,7 +336,6 @@
 | 7460 | youdao-products | 有道词典、学习与内容服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/7460-youdao-products.yaml) |
 | 7470 | aliyun-drive | 阿里云盘 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/7470-aliyun-drive.yaml) |
 | 7480 | wps-office | WPS Office 与文档服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/7480-wps-office.yaml) |
-| 7800 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/7800-extended-ad-and-tracking.yaml) |
 | 8000 | global-platforms-all | 全球厂商与云平台共用服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8000-global-platforms-all.yaml) |
 | 8010 | digitalocean-services | DigitalOcean 云平台与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8010-digitalocean-services.yaml) |
 | 8020 | vultr-services | Vultr 云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8020-vultr-services.yaml) |
@@ -347,6 +347,7 @@
 | 8080 | adobe-shared-services | Adobe Creative Cloud、Acrobat 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8080-adobe-shared-services.yaml) |
 | 8090 | cloudflare-shared-services | Cloudflare 控制台、WARP、Tunnel 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8090-cloudflare-shared-services.yaml) |
 | 8100 | amazon-shared-services | Amazon、AWS 与共用云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8100-amazon-shared-services.yaml) |
+| 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8110-discord-activities-proxy.yaml) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8200-overseas-extra-all.yaml) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8210-overseas-media-extra.yaml) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/8220-overseas-sites-extra.yaml) |

@@ -94,6 +94,11 @@ def parse_product_domain_statements(recipe, text):
     guide = PurposeFragments()
     guide.feed(text)
     result = set()
+    scope = recipe.get('domain-scope', 'listed')
+    include_items = recipe.get('include-list-items', False)
+    if (scope not in ('listed', 'private-platform') or type(include_items) is not bool
+            or scope == 'private-platform' and recipe.get('code-only')):
+        raise Invalid('用途说明的域名范围或列表选择无效')
     if recipe.get('code-only'):
         marker=recipe.get('annotation');part=recipe.get('part','all');annotated_count=0
         if part not in ('all','annotated','other') or (part!='all' and not marker):
@@ -126,13 +131,23 @@ def parse_product_domain_statements(recipe, text):
             or any(scheme not in ('http','https') for scheme in schemes)):
         raise Invalid('产品参考链接的协议声明无效')
     protocol='(?:'+ '|'.join(re.escape(scheme) for scheme in schemes)+')://'
-    for paragraph in guide.paragraphs:
+    statements = guide.paragraphs + (guide.items if include_items else [])
+    for paragraph in statements:
         if not all((phrase.casefold() in paragraph.casefold() for phrase in recipe['paragraph-contains'])):
             continue
         for host in re.findall('(?<![\\w@./-])(?:'+protocol+')?([a-z0-9][a-z0-9.-]*\\.[a-z]{2,})(?![\\w@-]|\\.[\\w-])', paragraph.casefold()):
             result.add(product_host(host))
     if not result:
         raise Invalid('官方资料缺少已选产品用途的域名说明')
+    if scope == 'private-platform':
+        platforms = set()
+        for row in result:
+            host = row.split(',')[1]
+            suffix, private = domain_scope.current().suffix(host)
+            if host != suffix or not private:
+                raise Invalid('平台用途说明没有指向明确的私有托管命名空间')
+            platforms.add('DOMAIN-SUFFIX,' + host)
+        return platforms
     return result
 
 def parse_product_role_links(recipe, text):

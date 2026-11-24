@@ -1,0 +1,16 @@
+# name: discord-activities-proxy
+# priority: 8110
+# section: vendors
+# description: Discord Activities 与第三方应用代理
+# boundary: 从 Discord 官方代理用途说明读取平台命名空间；其中可以承载第三方应用和游戏，不归为聊天、语音或第三方应用自身的全部服务
+# created-at: 2026-11-24T16:40:58Z
+# updated-at: 2026-11-24T16:40:58Z
+# source: https://discord.com/security
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/8110-discord-activities-proxy.lsr
+
+domain_suffix_set:
+  - "discordsays.com"

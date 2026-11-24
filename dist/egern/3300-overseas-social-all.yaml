@@ -4,12 +4,14 @@
 # description: 海外通讯与社交合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T16:40:58Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
 # source: https://core.telegram.org/resources/cidr.txt
 # source: https://core.telegram.org/bug-bounty
 # source: https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE
 # source: https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord
+# source: https://discord.com/security
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/signal.list
 # source: https://support.signal.org/hc/en-us/articles/360007320291-Firewall-and-Internet-settings
@@ -18,11 +20,11 @@
 # source: https://developers.line.biz/en/docs/messaging-api/try-rich-menu/
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Twitter.lsr
 # source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/slack.list
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/slack
 # source: https://docs.slack.dev/faq/
 # source: https://slack.com/help/articles/115004846068-Slack-updates-and-changes
 # source: https://slack.com/help/articles/360001603387-Manage-Slack-connection-issues
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/reddit.list
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/reddit
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/instagram.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Instagram.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/whatsapp.list
@@ -35,8 +37,8 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/linkedin.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meta.list
-# canonical-rule-count: 213
-# rule-count: 213
+# canonical-rule-count: 237
+# rule-count: 237
 # format: egern
 # canonical: rules/3300-overseas-social-all.lsr
 
@@ -66,6 +68,16 @@ domain_suffix_set:
   - "discordcdn.com"
   - "discordpartygames.com"
   - "discordstatus.com"
+  - "airhorn.solutions"
+  - "airhornbot.com"
+  - "bigbeans.solutions"
+  - "discord.design"
+  - "discord.dev"
+  - "discord.new"
+  - "discord.store"
+  - "discord.tools"
+  - "discordmerch.com"
+  - "watchanimeattheoffice.com"
   - "signal.group"
   - "signal.link"
   - "signal.me"
@@ -94,10 +106,21 @@ domain_suffix_set:
   - "slack-imgs.com"
   - "slack-msgs.com"
   - "slack.com"
+  - "slack-redir.net"
+  - "slackb.com"
+  - "slackcertified.com"
+  - "slackdemo.com"
+  - "slackhq.com"
   - "redd.it"
   - "reddit.com"
   - "redditmedia.com"
   - "redditstatic.com"
+  - "redditblog.com"
+  - "reddithelp.com"
+  - "redditinc.com"
+  - "redditmail.com"
+  - "redditspace.com"
+  - "redditstatus.com"
   - "cdninstagram.com"
   - "ig.me"
   - "igcdn.com"
@@ -232,6 +255,9 @@ domain_set:
   - "contest.com"
   - "quiz.directory"
   - "discord-attachments-uploads-prd.storage.googleapis.com"
+  - "hammerandchisel.ssl.zendesk.com"
+  - "reddit.app.link"
+  - "reddit.map.fastly.net"
   - "e122475.dscg.akamaiedge.net"
   - "licdn.cn.cdn20.com"
   - "linkedin.sc.omtrdc.net"

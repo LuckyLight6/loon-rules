@@ -1,20 +1,20 @@
 # name: extended-ad-and-tracking
-# priority: 7800
+# priority: 0240
 # section: privacy
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T05:14:03Z
+# updated-at: 2026-11-24T17:02:45Z
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
 # source: https://easylist.to/easylist/easylist.txt
 # source: https://easylist.to/easylist/easyprivacy.txt
 # source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-# canonical-rule-count: 43466
-# rule-count: 43466
+# canonical-rule-count: 43508
+# rule-count: 43508
 # format: surge-compatible
-# canonical: rules/7800-extended-ad-and-tracking.lsr
+# canonical: rules/0240-extended-ad-and-tracking.lsr
 
 DOMAIN-SUFFIX,ad.animehub.ac
 DOMAIN-SUFFIX,flw.camcaps.ac
@@ -5227,7 +5227,6 @@ DOMAIN-SUFFIX,byoxcmxcprhztn.com
 DOMAIN-SUFFIX,bypassduehardly.com
 DOMAIN-SUFFIX,byracucosopenu.com
 DOMAIN-SUFFIX,byrniessilky.com
-DOMAIN-SUFFIX,pixel.byspotify.com
 DOMAIN-SUFFIX,sgali-mcs.byteoversea.com
 DOMAIN-SUFFIX,bzoomlubqo.com
 DOMAIN-SUFFIX,bzpnhlysdnfmq.com
@@ -43482,3 +43481,46 @@ DOMAIN-SUFFIX,zesdnqweaomtj.website
 DOMAIN-SUFFIX,zhdspsxvrhaxv.website
 DOMAIN-SUFFIX,zkdpamomhpnpm.website
 DOMAIN-SUFFIX,knnmokc6.xyz
+DOMAIN-SUFFIX,pixel.byspotify.com
+DOMAIN-SUFFIX,events.bsky.app
+DOMAIN,bee.tc.easebar.com
+DOMAIN-SUFFIX,t2.hulu.com
+DOMAIN-SUFFIX,vortex.hulu.com
+DOMAIN-SUFFIX,metric.huya.com
+DOMAIN-SUFFIX,statwup.huya.com
+DOMAIN-SUFFIX,ylog.huya.com
+DOMAIN-SUFFIX,analytics.livestream.com
+DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com
+DOMAIN-SUFFIX,telemetry.soundcloud.com
+DOMAIN-SUFFIX,player-telemetry.vimeo.com
+DOMAIN-SUFFIX,fresnel-events.vimeocdn.com
+DOMAIN-SUFFIX,log-gateway.zoom.us
+DOMAIN-SUFFIX,t.jasper.ai
+DOMAIN-SUFFIX,client-analytics.braintreegateway.com
+DOMAIN-SUFFIX,collect.alipay.com
+DOMAIN-SUFFIX,collector.githubapp.com
+DOMAIN-SUFFIX,ogads-pa.googleapis.com
+DOMAIN-SUFFIX,log-upload-os.hoyolab.com
+DOMAIN-SUFFIX,log-upload-os.hoyoverse.com
+DOMAIN-SUFFIX,mllog.jd.com
+DOMAIN-SUFFIX,outlookads.live.com
+DOMAIN,browser.pipe.aria.microsoft.com
+DOMAIN-SUFFIX,msadsscale.microsoft.com
+DOMAIN-SUFFIX,proxima.midjourney.com
+DOMAIN-SUFFIX,srtb.msn.com
+DOMAIN-SUFFIX,metrics.mzstatic.com
+DOMAIN-SUFFIX,bzr.openai.com
+DOMAIN-SUFFIX,bzrcdn.openai.com
+DOMAIN-SUFFIX,events.redditmedia.com
+DOMAIN-SUFFIX,fourier.taobao.com
+DOMAIN,tns.simba.taobao.com
+DOMAIN-SUFFIX,mcs-va.tiktokv.com
+DOMAIN,mon.us.tiktokv.com
+DOMAIN-SUFFIX,tracking.unrealengine.com
+DOMAIN-SUFFIX,ems.youku.com
+DOMAIN-SUFFIX,sugar.zhihu.com
+DOMAIN-SUFFIX,zhihu-web-analytics.zhihu.com
+DOMAIN-SUFFIX,adsdk.bing.net
+DOMAIN-SUFFIX,bat.bing.net
+DOMAIN-SUFFIX,r.bbci.co.uk
+DOMAIN-SUFFIX,mcs.tiktokv.us

@@ -15,6 +15,7 @@
 | 0210 | apple-and-ai-privacy-exceptions | Apple 广告与 OpenAI 广告像素的已核实拒绝项 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/0210-apple-and-ai-privacy-exceptions.list) |
 | 0220 | general-ad-and-tracking | Repcz 广告与追踪拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/0220-general-ad-and-tracking.list) |
 | 0230 | privacy-public-stun-endpoints | 已公开的 STUN 主机，供选择性阻断 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/0230-privacy-public-stun-endpoints.list) |
+| 0240 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/0240-extended-ad-and-tracking.list) |
 | 1000 | ai-overseas-all | 海外 AI 合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/1000-ai-overseas-all.list) |
 | 1010 | claude-connections | Claude 登录、API、MCP、更新、附件和 Artifact | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/1010-claude-connections.list) |
 | 1020 | chatgpt-connections | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/1020-chatgpt-connections.list) |
@@ -173,13 +174,13 @@
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3230-bugsnag-error-monitoring.list) |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3300-overseas-social-all.list) |
 | 3310 | telegram-messaging | Telegram 登录、消息、文件与服务器地址 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3310-telegram-messaging.list) |
-| 3320 | discord-messaging-and-voice | Discord 消息、语音、活动和附件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3320-discord-messaging-and-voice.list) |
+| 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3320-discord-messaging-and-voice.list) |
 | 3330 | signal-messenger | Signal 消息、通话、贴纸、群组与用户名链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3330-signal-messenger.list) |
 | 3340 | line-messenger | LINE | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3340-line-messenger.list) |
 | 3350 | x-social-and-media | X / Twitter 社交与图像视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3350-x-social-and-media.list) |
 | 3360 | wechat-international-portal | WeChat 国际网站、支付与部分 App 连接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3360-wechat-international-portal.list) |
-| 3370 | slack-workspaces | Slack | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3370-slack-workspaces.list) |
-| 3380 | reddit-community | Reddit | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3380-reddit-community.list) |
+| 3370 | slack-workspaces | Slack 工作区、消息及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3370-slack-workspaces.list) |
+| 3380 | reddit-community | Reddit 社区、帮助与相关服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3380-reddit-community.list) |
 | 3390 | instagram-social | Instagram | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3390-instagram-social.list) |
 | 3400 | whatsapp-messaging | WhatsApp 消息、媒体与短链接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3400-whatsapp-messaging.list) |
 | 3410 | threads-social | Threads | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3410-threads-social.list) |
@@ -218,7 +219,7 @@
 | 3880 | bilibili-international-video | 哔哩哔哩国际版视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3880-bilibili-international-video.list) |
 | 3890 | iqiyi-international | 爱奇艺国际版 iQIYI 与专用国际 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3890-iqiyi-international.list) |
 | 3900 | vimeo-video | Vimeo 视频与交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3900-vimeo-video.list) |
-| 3910 | spotify-audio | Spotify 音乐播放和音频文件 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3910-spotify-audio.list) |
+| 3910 | spotify-audio | Spotify 音乐、播客及相关网站 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3910-spotify-audio.list) |
 | 3920 | soundcloud-audio | SoundCloud 音频与创作者服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3920-soundcloud-audio.list) |
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3930-twitch-live-video.list) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/3940-bbc-news-and-video.list) |
@@ -335,7 +336,6 @@
 | 7460 | youdao-products | 有道词典、学习与内容服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/7460-youdao-products.list) |
 | 7470 | aliyun-drive | 阿里云盘 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/7470-aliyun-drive.list) |
 | 7480 | wps-office | WPS Office 与文档服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/7480-wps-office.list) |
-| 7800 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/7800-extended-ad-and-tracking.list) |
 | 8000 | global-platforms-all | 全球厂商与云平台共用服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8000-global-platforms-all.list) |
 | 8010 | digitalocean-services | DigitalOcean 云平台与共用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8010-digitalocean-services.list) |
 | 8020 | vultr-services | Vultr 云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8020-vultr-services.list) |
@@ -347,6 +347,7 @@
 | 8080 | adobe-shared-services | Adobe Creative Cloud、Acrobat 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8080-adobe-shared-services.list) |
 | 8090 | cloudflare-shared-services | Cloudflare 控制台、WARP、Tunnel 与共用平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8090-cloudflare-shared-services.list) |
 | 8100 | amazon-shared-services | Amazon、AWS 与共用云平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8100-amazon-shared-services.list) |
+| 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8110-discord-activities-proxy.list) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8200-overseas-extra-all.list) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8210-overseas-media-extra.list) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/8220-overseas-sites-extra.list) |

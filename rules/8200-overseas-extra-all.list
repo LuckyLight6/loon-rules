@@ -4,8 +4,8 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T14:59:22Z
-# rule-count: 18638
+# updated-at: 2026-11-24T16:40:58Z
+# rule-count: 18611
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -46,7 +46,6 @@ DOMAIN-SUFFIX,amebaowndme.com
 DOMAIN-SUFFIX,ameblo.jp
 DOMAIN-SUFFIX,avodmp4s3ww-a.akamaihd.net
 DOMAIN-SUFFIX,bamgrid.com
-DOMAIN-SUFFIX,byspotify.com
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,c4assets.com
 DOMAIN-SUFFIX,cbsaavideo.com
@@ -129,12 +128,6 @@ DOMAIN-SUFFIX,showtime.com
 DOMAIN-SUFFIX,skyking.com.tw
 DOMAIN-SUFFIX,smartmediarep.com
 DOMAIN-SUFFIX,spotify-com.akamaized.net
-DOMAIN-SUFFIX,spotify-everywhere.com
-DOMAIN-SUFFIX,spotify.design
-DOMAIN-SUFFIX,spotifycharts.com
-DOMAIN-SUFFIX,spotifycodes.com
-DOMAIN-SUFFIX,spotifyforbrands.com
-DOMAIN-SUFFIX,spotifyjobs.com
 DOMAIN-SUFFIX,spotifynewsroom.jp
 DOMAIN-SUFFIX,spotilocal.com
 DOMAIN-SUFFIX,theplatform.com
@@ -142,7 +135,6 @@ DOMAIN-SUFFIX,tidal.com
 DOMAIN-SUFFIX,tidalhifi.com
 DOMAIN-SUFFIX,tiktok.us
 DOMAIN-SUFFIX,tiktokw.com
-DOMAIN-SUFFIX,tospotify.com
 DOMAIN-SUFFIX,tvb.com
 DOMAIN-SUFFIX,tver.jp
 DOMAIN-SUFFIX,tvlicensing.co.uk
@@ -876,8 +868,6 @@ DOMAIN-SUFFIX,airav.wiki
 DOMAIN-SUFFIX,airconsole.com
 DOMAIN-SUFFIX,aircrack-ng.org
 DOMAIN-SUFFIX,airgonetworks.com
-DOMAIN-SUFFIX,airhorn.solutions
-DOMAIN-SUFFIX,airhornbot.com
 DOMAIN-SUFFIX,airitilibrary.com
 DOMAIN-SUFFIX,airsextube.com
 DOMAIN-SUFFIX,airtable.com
@@ -1954,7 +1944,6 @@ DOMAIN-SUFFIX,biedian.me
 DOMAIN-SUFFIX,bienvenuechezbestbuy.ca
 DOMAIN-SUFFIX,big.one
 DOMAIN-SUFFIX,bigassporn.tv
-DOMAIN-SUFFIX,bigbeans.solutions
 DOMAIN-SUFFIX,bigboobbundle.com
 DOMAIN-SUFFIX,bigboobsalert.com
 DOMAIN-SUFFIX,bigboobsandhotsex.com
@@ -4324,14 +4313,7 @@ DOMAIN-SUFFIX,dirtyship.com
 DOMAIN-SUFFIX,discogs.com
 DOMAIN-SUFFIX,discoins.com
 DOMAIN-SUFFIX,disconnect.me
-DOMAIN-SUFFIX,discord.design
-DOMAIN-SUFFIX,discord.dev
-DOMAIN-SUFFIX,discord.new
-DOMAIN-SUFFIX,discord.store
-DOMAIN-SUFFIX,discord.tools
 DOMAIN-SUFFIX,discordapp.io
-DOMAIN-SUFFIX,discordmerch.com
-DOMAIN-SUFFIX,discordsays.com
 DOMAIN-SUFFIX,discourse.group
 DOMAIN-SUFFIX,discuss.com.hk
 DOMAIN-SUFFIX,discuss4u.com
@@ -13263,10 +13245,7 @@ DOMAIN-SUFFIX,redbull.com
 DOMAIN-SUFFIX,redbullracing.com
 DOMAIN-SUFFIX,redchinacn.net
 DOMAIN-SUFFIX,redchinacn.org
-DOMAIN-SUFFIX,reddithelp.com
 DOMAIN-SUFFIX,redditlist.com
-DOMAIN-SUFFIX,redditmail.com
-DOMAIN-SUFFIX,redditspace.com
 DOMAIN-SUFFIX,reddituploads.com
 DOMAIN-SUFFIX,redfaptube.com
 DOMAIN-SUFFIX,redgifs.com
@@ -14208,14 +14187,9 @@ DOMAIN-SUFFIX,skyporn.online
 DOMAIN-SUFFIX,skyvegas.com
 DOMAIN-SUFFIX,skyxvpn.com
 DOMAIN-SUFFIX,sl-reverse.com
-DOMAIN-SUFFIX,slack-redir.net
-DOMAIN-SUFFIX,slackb.com
 DOMAIN-SUFFIX,slackbook.org
 DOMAIN-SUFFIX,slackbuilds.org
-DOMAIN-SUFFIX,slackcertified.com
-DOMAIN-SUFFIX,slackdemo.com
 DOMAIN-SUFFIX,slacker.com
-DOMAIN-SUFFIX,slackhq.com
 DOMAIN-SUFFIX,slackware-fr.org
 DOMAIN-SUFFIX,slackware-id.org
 DOMAIN-SUFFIX,slackware-srbija.org
@@ -16924,7 +16898,6 @@ DOMAIN-SUFFIX,waskucity.com
 DOMAIN-SUFFIX,watch-my-gf.com
 DOMAIN-SUFFIX,watch-porn.net
 DOMAIN-SUFFIX,watch8x.com
-DOMAIN-SUFFIX,watchanimeattheoffice.com
 DOMAIN-SUFFIX,watchersweb.com
 DOMAIN-SUFFIX,watchindianporn.net
 DOMAIN-SUFFIX,watchinese.com

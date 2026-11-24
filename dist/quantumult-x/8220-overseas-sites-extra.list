@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T16:40:58Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18499
-# rule-count: 18499
+# canonical-rule-count: 18480
+# rule-count: 18480
 # format: quantumult-x
 # canonical: rules/8220-overseas-sites-extra.lsr
 
@@ -738,8 +738,6 @@ host-suffix,airav.wiki,proxy
 host-suffix,airconsole.com,proxy
 host-suffix,aircrack-ng.org,proxy
 host-suffix,airgonetworks.com,proxy
-host-suffix,airhorn.solutions,proxy
-host-suffix,airhornbot.com,proxy
 host-suffix,airitilibrary.com,proxy
 host-suffix,airsextube.com,proxy
 host-suffix,airtable.com,proxy
@@ -1816,7 +1814,6 @@ host-suffix,biedian.me,proxy
 host-suffix,bienvenuechezbestbuy.ca,proxy
 host-suffix,big.one,proxy
 host-suffix,bigassporn.tv,proxy
-host-suffix,bigbeans.solutions,proxy
 host-suffix,bigboobbundle.com,proxy
 host-suffix,bigboobsalert.com,proxy
 host-suffix,bigboobsandhotsex.com,proxy
@@ -4186,14 +4183,7 @@ host-suffix,dirtyship.com,proxy
 host-suffix,discogs.com,proxy
 host-suffix,discoins.com,proxy
 host-suffix,disconnect.me,proxy
-host-suffix,discord.design,proxy
-host-suffix,discord.dev,proxy
-host-suffix,discord.new,proxy
-host-suffix,discord.store,proxy
-host-suffix,discord.tools,proxy
 host-suffix,discordapp.io,proxy
-host-suffix,discordmerch.com,proxy
-host-suffix,discordsays.com,proxy
 host-suffix,discourse.group,proxy
 host-suffix,discuss.com.hk,proxy
 host-suffix,discuss4u.com,proxy
@@ -13125,10 +13115,7 @@ host-suffix,redbull.com,proxy
 host-suffix,redbullracing.com,proxy
 host-suffix,redchinacn.net,proxy
 host-suffix,redchinacn.org,proxy
-host-suffix,reddithelp.com,proxy
 host-suffix,redditlist.com,proxy
-host-suffix,redditmail.com,proxy
-host-suffix,redditspace.com,proxy
 host-suffix,reddituploads.com,proxy
 host-suffix,redfaptube.com,proxy
 host-suffix,redgifs.com,proxy
@@ -14070,14 +14057,9 @@ host-suffix,skyporn.online,proxy
 host-suffix,skyvegas.com,proxy
 host-suffix,skyxvpn.com,proxy
 host-suffix,sl-reverse.com,proxy
-host-suffix,slack-redir.net,proxy
-host-suffix,slackb.com,proxy
 host-suffix,slackbook.org,proxy
 host-suffix,slackbuilds.org,proxy
-host-suffix,slackcertified.com,proxy
-host-suffix,slackdemo.com,proxy
 host-suffix,slacker.com,proxy
-host-suffix,slackhq.com,proxy
 host-suffix,slackware-fr.org,proxy
 host-suffix,slackware-id.org,proxy
 host-suffix,slackware-srbija.org,proxy
@@ -16786,7 +16768,6 @@ host-suffix,waskucity.com,proxy
 host-suffix,watch-my-gf.com,proxy
 host-suffix,watch-porn.net,proxy
 host-suffix,watch8x.com,proxy
-host-suffix,watchanimeattheoffice.com,proxy
 host-suffix,watchersweb.com,proxy
 host-suffix,watchindianporn.net,proxy
 host-suffix,watchinese.com,proxy

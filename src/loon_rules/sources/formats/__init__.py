@@ -16,6 +16,7 @@ READERS = {
     'destination-table': tables.parse_destination_table,
     'domain-column-table': tables.domain_column_table,
     'domain-scope-list': feeds.domain_scope_list,
+    'geosite-domain-list': feeds.geosite_domain_list,
     'derp-map': structured.derp_map,
     'endpoint-network-sets': networks.parse_endpoint_network_sets,
     'endpoint-sets': tables.parse_endpoint_sets,
@@ -74,7 +75,7 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    strict_scope = source_alias or form in ('domain-scope-list', 'site-resource-hosts')
+    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts')
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

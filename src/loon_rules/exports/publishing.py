@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 
 from loon_rules.rules import Invalid, read_rules
+from loon_rules.catalog import subscription_aliases
 from .formats import Unsupported, convert, yaml_text
 
 
@@ -47,10 +48,16 @@ def condition_count(value):
 def build(root):
     expected = {}
     manifest = {'schema-version': 1, 'clients': CLIENTS, 'formats': {}}
-    paths = sorted((root / 'rules').glob('*.lsr'))
+    config_path = root / 'config/catalog.json'
+    aliases = subscription_aliases(json.loads(config_path.read_text())) if config_path.is_file() else {}
+    paths = sorted(path for path in (root / 'rules').glob('*.lsr') if path.stem not in aliases)
     if not paths:
         raise Invalid('没有可转换的客户端规则')
     canonical = {path.stem: (path, path.read_text(), read_rules(path.read_text())) for path in paths}
+    if not set(aliases.values()) <= canonical.keys():
+        raise Invalid('兼容下载地址缺少当前规则成品')
+    if aliases:
+        manifest['aliases'] = aliases
     for target, (extension, label) in FORMATS.items():
         items = {}
         index = ['# ' + label + ' 规则', '',
@@ -98,6 +105,12 @@ def build(root):
         manifest['formats'][target] = {'rules': items,
                                       'available': sum(item['status'] == 'available' for item in items.values()),
                                       'unsupported': sum(item['status'] == 'unsupported' for item in items.values())}
+        for alias, name in aliases.items():
+            item = items[name]
+            if item['status'] != 'available':
+                continue
+            output = Path(item['path']).with_name(alias + '.' + extension).as_posix()
+            expected[output] = canonical[name][1] if target == 'loon' else expected[item['path']]
         expected[f'dist/{target}/README.md'] = '\n'.join(index) + '\n'
     expected['dist/manifest.json'] = json.dumps(manifest, ensure_ascii=False, indent=2) + '\n'
     return expected
@@ -110,15 +123,20 @@ def publish(root, *, check=False):
     if manifest_path.is_file():
         previous = json.loads(manifest_path.read_text())
         current = json.loads(expected['dist/manifest.json'])
+        if not set(previous.get('aliases', {})) <= set(current.get('aliases', {})):
+            raise Invalid('已发布的兼容下载地址不能静默撤销')
         for target, group in previous['formats'].items():
             for name, item in group['rules'].items():
-                updated = current['formats'].get(target, {}).get('rules', {}).get(name)
+                canonical = current.get('aliases', {}).get(name, name)
+                updated = current['formats'].get(target, {}).get('rules', {}).get(canonical)
                 if item['status'] == 'available' and updated and updated['status'] != 'available':
                     raise Invalid('已发布客户端订阅不能自动删减：' + target + '/' + name + '；' + updated['reason'])
     present = {p.relative_to(root).as_posix() for target, (extension, _) in FORMATS.items()
                for folder in {target, OUTPUT_FOLDERS.get(target, target)}
                for pattern in ('*.' + extension, 'README.md') for p in (root / 'dist' / folder).glob(pattern)}
     present.update(p.relative_to(root).as_posix() for p in (root / 'rules').glob('*.list'))
+    present.update('rules/' + name + '.lsr' for name in json.loads(expected['dist/manifest.json']).get('aliases', {})
+                   if (root / 'rules' / (name + '.lsr')).is_file())
     if manifest_path.is_file():
         present.add('dist/manifest.json')
     stale = present - expected.keys()

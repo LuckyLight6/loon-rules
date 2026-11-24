@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 191 个厂商或项目、327 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 191 个厂商或项目、328 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -25,7 +25,7 @@
 | 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/6900-mainland-media-all.lsr) | 10 |
 | 国内游戏合集 | [7200 国内游戏合集](../rules/7200-mainland-games-all.lsr) | 3 |
 | 国内购物、生活与办公合集 | [7400 国内购物、生活与办公合集](../rules/7400-mainland-daily-services-all.lsr) | 8 |
-| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 10 |
+| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/8000-global-platforms-all.lsr) | 11 |
 | 国内厂商共用服务合集 | [8400 国内厂商共用服务合集](../rules/8400-mainland-platforms-all.lsr) | 11 |
 
 ## Tailscale
@@ -819,7 +819,8 @@
 
 | 产品或服务 | 对应规则 |
 |---|---|
-| Discord 消息、语音、活动和附件 | [3320 Discord 消息、语音、活动和附件](../rules/3320-discord-messaging-and-voice.lsr) |
+| Discord 通讯、语音及自营服务 | [3320 Discord 通讯、语音及自营服务](../rules/3320-discord-messaging-and-voice.lsr) |
+| Discord Activities 与第三方应用代理 | [8110 Discord Activities 与第三方应用代理](../rules/8110-discord-activities-proxy.lsr) |
 
 ## Signal
 
@@ -837,13 +838,13 @@
 
 | 产品或服务 | 对应规则 |
 |---|---|
-| Slack | [3370 Slack](../rules/3370-slack-workspaces.lsr) |
+| Slack 工作区、消息及相关网站 | [3370 Slack 工作区、消息及相关网站](../rules/3370-slack-workspaces.lsr) |
 
 ## Reddit
 
 | 产品或服务 | 对应规则 |
 |---|---|
-| Reddit | [3380 Reddit](../rules/3380-reddit-community.lsr) |
+| Reddit 社区、帮助与相关服务 | [3380 Reddit 社区、帮助与相关服务](../rules/3380-reddit-community.lsr) |
 
 ## Pinterest
 
@@ -985,7 +986,7 @@
 
 | 产品或服务 | 对应规则 |
 |---|---|
-| Spotify 音乐播放和音频文件 | [3910 Spotify 音乐播放和音频文件](../rules/3910-spotify-audio.lsr) |
+| Spotify 音乐、播客及相关网站 | [3910 Spotify 音乐、播客及相关网站](../rules/3910-spotify-audio.lsr) |
 
 ## SoundCloud
 
@@ -1329,7 +1330,7 @@
 | Apple 广告与 OpenAI 广告像素的已核实拒绝项 | [0210 Apple 广告与 OpenAI 广告像素的已核实拒绝项](../rules/0210-apple-and-ai-privacy-exceptions.lsr) |
 | Repcz 广告与追踪拦截 | [0220 Repcz 广告与追踪拦截](../rules/0220-general-ad-and-tracking.lsr) |
 | 已公开的 STUN 主机，供选择性阻断 | [0230 已公开的 STUN 主机，供选择性阻断](../rules/0230-privacy-public-stun-endpoints.lsr) |
-| 可选的扩展广告与统计拦截 | [7800 可选的扩展广告与统计拦截](../rules/7800-extended-ad-and-tracking.lsr) |
+| 可选的扩展广告与统计拦截 | [0240 可选的扩展广告与统计拦截](../rules/0240-extended-ad-and-tracking.lsr) |
 | 海外补充合集 | [8200 海外补充合集](../rules/8200-overseas-extra-all.lsr) |
 | 其他海外影音 | [8210 其他海外影音](../rules/8210-overseas-media-extra.lsr) |
 | 其他海外网站与受限站点 | [8220 其他海外网站与受限站点](../rules/8220-overseas-sites-extra.lsr) |

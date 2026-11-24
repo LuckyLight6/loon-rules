@@ -6,6 +6,15 @@ from loon_rules.rules import Invalid
 
 
 class AuditConventions(unittest.TestCase):
+    def test_optional_extended_ads_precede_product_parents_in_the_actual_catalog(self):
+        config = json.loads((lib.ROOT / 'config/catalog.json').read_text())
+        entries = lib.validate_declarations(config)
+        order = lib.subscription_order(config, entries)
+        self.assertLess(order.index('general-ad-and-tracking'), order.index('extended-ad-and-tracking'))
+        for product in order:
+            if entries[product]['section'] not in ('network', 'privacy'):
+                self.assertLess(order.index('extended-ad-and-tracking'), order.index(product))
+
     def test_published_maintenance_labels_refer_to_the_current_catalog_numbers(self):
         config=json.loads((lib.ROOT/'config/catalog.json').read_text())
         entries=lib.validate_declarations(config)

@@ -1,13 +1,14 @@
 # name: spotify-audio
 # priority: 3910
 # section: media
-# description: Spotify 音乐播放和音频文件
-# boundary: 去掉任意包含 spotify 的关键词；播放走 spotify.com、scdn.co 等专用后缀
+# description: Spotify 音乐、播客及相关网站
+# boundary: 播放、短链、产品网站和清单中的专用 CDN；共享 CDN 只取列出的精确主机，不采用 spotify 关键词、桌面 User-Agent 或共享云 IP
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-19T09:33:57Z
-# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list
-# canonical-rule-count: 6
-# rule-count: 6
+# updated-at: 2026-11-24T16:40:58Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
+# source: https://developer.spotify.com/documentation/embeds/reference/oembed
+# canonical-rule-count: 25
+# rule-count: 25
 # format: surge-compatible
 # canonical: rules/3910-spotify-audio.lsr
 
@@ -17,3 +18,22 @@ DOMAIN-SUFFIX,spoti.fi
 DOMAIN-SUFFIX,spotify.com
 DOMAIN-SUFFIX,spotifycdn.com
 DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN,audio-ak-spotify-com.akamaized.net
+DOMAIN,audio4-ak-spotify-com.akamaized.net
+DOMAIN,cdn-spotify-experiments.conductrics.com
+DOMAIN,heads-ak-spotify-com.akamaized.net
+DOMAIN,heads4-ak-spotify-com.akamaized.net
+DOMAIN,spotify.com.edgesuite.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
+DOMAIN-SUFFIX,byspotify.com
+DOMAIN-SUFFIX,lifeatspotify.com
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,spotify.design
+DOMAIN-SUFFIX,spotify.link
+DOMAIN-SUFFIX,spotifycharts.com
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotifyforbrands.com
+DOMAIN-SUFFIX,spotifyforvendors.com
+DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,tospotify.com

@@ -4,6 +4,7 @@ from loon_rules.domains import covers
 from loon_rules.matching import RuleIndex
 from loon_rules.sources.inputs import extract_rows
 from loon_rules.sources.coverage import domain_lines
+from loon_rules.sources import geosite
 from loon_rules.generation.ordering import route_order,shadowed_domains
 
 
@@ -12,10 +13,23 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
     """Look outside the publishing filters for unassigned domain scopes. Never export candidates."""
     if spec['source'] not in downloaded: return {'state':'unavailable'}
     other_lines=0
+    source_details={}
+    delegated_domains={}
     try:
         text=downloaded[spec['source']]
         if spec.get('recipe'):
+            if spec['recipe'].get('format') == geosite.FORMAT:
+                record = geosite.parse(spec['recipe'], text)
+                other_lines = (len(record['includes']) + sum(record['omitted-types'].values())
+                               + sum(record['omitted-comment-blocks'].values()))
+                source_details = {'delegated-includes': record['includes'],
+                                  'omitted-rule-types': record['omitted-types'],
+                                  'omitted-comment-blocks': record['omitted-comment-blocks'],
+                                  'delegated-domain-scopes': record['delegated-scopes'],
+                                  'reading-policy': geosite.scope_options(spec['recipe'])}
+                delegated_domains=record['delegated-scopes']
             rows=sorted(extract_rows(spec['recipe'],text))
+            rows.extend(delegated_domains)
         elif spec.get('domain-lines-only'):
             rows,other_lines=domain_lines(text)
         else:
@@ -29,28 +43,65 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
     other=0
     for row in domains:
         if row in reviewed: continue
-        wanted={spec['other-owners'][row]} if row in spec.get('other-owners',{}) else set(spec['owners'])
+        if row in delegated_domains:
+            wanted={delegated_domains[row]}
+        elif row in spec.get('other-owners',{}):
+            wanted={spec['other-owners'][row]}
+        else:
+            wanted=set(spec['owners'])
         if entries is not None:
             wanted.update(member for key in tuple(wanted) for member in entries[key].get('members',()))
         matching=index.scope_bits(row)
         owner=next((key for key in order if matching&index.bits[key]),None)
         if owner not in wanted: other+=1
     report={'state':'review' if other else 'current','domain-scopes':len(domains),
-            'outside-scope':other,'other-rules':other_lines+len(rows)-len(domains)}
+            'outside-scope':other,'other-rules':other_lines+len(rows)-len(domains),**source_details}
     if spec.get('reviewed-outside'):
         report['reviewed-outside']=len(set(domains)&set(spec['reviewed-outside']))
     return report
 
 
-def verify_inventories(specs, report):
+def verify_inventories(specs, report, *, data=None, order=None):
     expected={spec['id'] for spec in specs}
     if set(report)!=expected:
         raise rules.Invalid('服务来源清单的检查结果缺失或多出')
-    for name,state in report.items():
+    for spec in specs:
+        name=spec['id'];state=report[name]
         if (state.get('state')!='current' or state.get('outside-scope')!=0
                 or type(state.get('domain-scopes')) is not int or state['domain-scopes']<=0
                 or type(state.get('other-rules')) is not int or state['other-rules']<0):
             raise rules.Invalid('服务来源清单未完整归属，停止发布：'+name)
+        if spec.get('recipe', {}).get('format') == geosite.FORMAT:
+            omitted=state.get('omitted-rule-types')
+            delegated=state.get('delegated-includes')
+            blocks=state.get('omitted-comment-blocks')
+            excluded_blocks=set(spec['recipe'].get('excluded-comment-blocks',{}))
+            if (not isinstance(omitted,dict)
+                    or not set(omitted)<=set(spec['recipe'].get('omit-types',{}))
+                    or any(type(count) is not int or count<=0 for count in omitted.values())
+                    or delegated!=sorted(spec['recipe'].get('delegated-includes',{}))
+                    or not isinstance(blocks,dict) or not set(blocks)<=excluded_blocks
+                    or any(type(count) is not int or count<=0 for count in blocks.values())
+                    or state.get('reading-policy')!=geosite.scope_options(spec['recipe'])
+                    or state['other-rules']!=len(delegated)+sum(omitted.values())+sum(blocks.values())):
+                raise rules.Invalid('上游分类的省略类型或子分类记录不完整：'+name)
+            delegated_domains=state.get('delegated-domain-scopes')
+            assignments=spec['recipe'].get('delegated-scopes',{})
+            if not isinstance(delegated_domains,dict) or not set(assignments)<=set(delegated_domains):
+                raise rules.Invalid('上游分类的共享范围分配记录不完整：'+name)
+            for row,owner in delegated_domains.items():
+                if rules.read_rules(row)!=[row] or row.count(',')!=1:
+                    raise rules.Invalid('上游共享范围的记录含无效规则：'+name)
+                wanted={target['owner'] for scope,target in assignments.items() if covers(scope,row)}
+                if wanted!={owner}:
+                    raise rules.Invalid('上游共享范围的记录与产品分配不一致：'+name)
+            if data is not None and delegated_domains:
+                index=RuleIndex(data,order)
+                for row,owner in delegated_domains.items():
+                    matching=index.scope_bits(row)
+                    actual=next((key for key in index.order if matching&index.bits[key]),None)
+                    if actual!=owner:
+                        raise rules.Invalid('上游共享范围没有由目标产品完整承接：'+name)
 
 
 def maintenance_method(entry):

@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T16:40:58Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18499
-# rule-count: 18499
+# canonical-rule-count: 18480
+# rule-count: 18480
 # format: egern
 # canonical: rules/8220-overseas-sites-extra.lsr
 
@@ -740,8 +740,6 @@ domain_suffix_set:
   - "airconsole.com"
   - "aircrack-ng.org"
   - "airgonetworks.com"
-  - "airhorn.solutions"
-  - "airhornbot.com"
   - "airitilibrary.com"
   - "airsextube.com"
   - "airtable.com"
@@ -1818,7 +1816,6 @@ domain_suffix_set:
   - "bienvenuechezbestbuy.ca"
   - "big.one"
   - "bigassporn.tv"
-  - "bigbeans.solutions"
   - "bigboobbundle.com"
   - "bigboobsalert.com"
   - "bigboobsandhotsex.com"
@@ -4188,14 +4185,7 @@ domain_suffix_set:
   - "discogs.com"
   - "discoins.com"
   - "disconnect.me"
-  - "discord.design"
-  - "discord.dev"
-  - "discord.new"
-  - "discord.store"
-  - "discord.tools"
   - "discordapp.io"
-  - "discordmerch.com"
-  - "discordsays.com"
   - "discourse.group"
   - "discuss.com.hk"
   - "discuss4u.com"
@@ -13127,10 +13117,7 @@ domain_suffix_set:
   - "redbullracing.com"
   - "redchinacn.net"
   - "redchinacn.org"
-  - "reddithelp.com"
   - "redditlist.com"
-  - "redditmail.com"
-  - "redditspace.com"
   - "reddituploads.com"
   - "redfaptube.com"
   - "redgifs.com"
@@ -14072,14 +14059,9 @@ domain_suffix_set:
   - "skyvegas.com"
   - "skyxvpn.com"
   - "sl-reverse.com"
-  - "slack-redir.net"
-  - "slackb.com"
   - "slackbook.org"
   - "slackbuilds.org"
-  - "slackcertified.com"
-  - "slackdemo.com"
   - "slacker.com"
-  - "slackhq.com"
   - "slackware-fr.org"
   - "slackware-id.org"
   - "slackware-srbija.org"
@@ -16788,7 +16770,6 @@ domain_suffix_set:
   - "watch-my-gf.com"
   - "watch-porn.net"
   - "watch8x.com"
-  - "watchanimeattheoffice.com"
   - "watchersweb.com"
   - "watchindianporn.net"
   - "watchinese.com"
