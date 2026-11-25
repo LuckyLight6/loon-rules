@@ -4,8 +4,8 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T17:50:37Z
-# rule-count: 19276
+# updated-at: 2026-11-25T13:33:39Z
+# rule-count: 19285
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -15440,7 +15440,13 @@ IP-CIDR,221.208.0.0/12
 IP-CIDR,221.224.0.0/12
 IP-CIDR,221.8.0.0/14
 IP-CIDR,222.125.0.0/16
-IP-CIDR,222.126.128.0/17
+IP-CIDR,222.126.128.0/19
+IP-CIDR,222.126.160.0/21
+IP-CIDR,222.126.168.0/22
+IP-CIDR,222.126.172.0/23
+IP-CIDR,222.126.175.0/24
+IP-CIDR,222.126.176.0/20
+IP-CIDR,222.126.192.0/18
 IP-CIDR,222.128.0.0/12
 IP-CIDR,222.16.0.0/12
 IP-CIDR,222.160.0.0/14
@@ -18464,7 +18470,10 @@ IP-CIDR6,2406:840:9965::/48
 IP-CIDR6,2406:840:9968::/46
 IP-CIDR6,2406:840:996d::/48
 IP-CIDR6,2406:840:996e::/47
-IP-CIDR6,2406:840:9970::/44
+IP-CIDR6,2406:840:9970::/46
+IP-CIDR6,2406:840:9974::/47
+IP-CIDR6,2406:840:9976::/48
+IP-CIDR6,2406:840:9978::/45
 IP-CIDR6,2406:840:9981::/48
 IP-CIDR6,2406:840:9982::/47
 IP-CIDR6,2406:840:9984::/46

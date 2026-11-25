@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2026-11-24_14-43-05_UTC
-// COMMIT: c7d37dcf732b662548a6e52b93f27cc4986689a9
+// VERSION: 2026-11-25_05-20-38_UTC
+// COMMIT: bfb50ced2d707ecac4b43f72e6af84fcb5a4d937
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -13626,6 +13626,10 @@ on.expo.app
 staging.expo.app
 on.staging.expo.app
 
+// Faable : https://faable.com/
+// Submitted by Marc Pomar <support@faable.com>
+faable.link
+
 // fachschaften.org: https://fachschaften.org/
 // Submitted by Felix Schäfer <security@fachschaften.org>
 fspages.org
@@ -14126,6 +14130,10 @@ grayjayleagues.com
 // Grebedoc : https://grebedoc.dev
 // Submitted by Catherine Zotova <admin@grebedoc.dev>
 grebedoc.dev
+
+// Greybull : https://greybull.cloud/
+// Submitted by Nick Bouwhuis <security@greybull.cloud>
+greybull.site
 
 // GünstigBestellen : https://günstigbestellen.de
 // Submitted by Furkan Akkoc <info@hendelzon.de>
@@ -15745,10 +15753,6 @@ devices.resinstaging.io
 // Retool : https://retool.com
 // Submitted by Andrew Guan <security@retool.com>
 retool.app
-
-// Rico Developments Limited : https://adimo.co
-// Submitted by Colin Brown <hello@adimo.co>
-adimo.co.uk
 
 // Riseup Networks : https://riseup.net
 // Submitted by Micah Anderson <micah@riseup.net>

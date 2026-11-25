@@ -4,12 +4,12 @@
 # description: 可按 IPv4 / IPv6 网段判断的国内地址
 # boundary: 域名未命中时按目标地址查网段，排在 GeoIP 之前，不替代国内域名表。每轮整表与 APNIC 中国分配记录和运营商清单取共同支持的范围；证据不足的地址继续由后续规则判断，不据此认定所在地
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-25T13:33:39Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
-# canonical-rule-count: 6997
-# rule-count: 6997
+# canonical-rule-count: 7006
+# rule-count: 7006
 # format: egern
 # canonical: rules/8620-mainland-networks.lsr
 
@@ -3160,7 +3160,13 @@ ip_cidr_set:
   - "221.224.0.0/12"
   - "221.8.0.0/14"
   - "222.125.0.0/16"
-  - "222.126.128.0/17"
+  - "222.126.128.0/19"
+  - "222.126.160.0/21"
+  - "222.126.168.0/22"
+  - "222.126.172.0/23"
+  - "222.126.175.0/24"
+  - "222.126.176.0/20"
+  - "222.126.192.0/18"
   - "222.128.0.0/12"
   - "222.16.0.0/12"
   - "222.160.0.0/14"
@@ -6185,7 +6191,10 @@ ip_cidr6_set:
   - "2406:840:9968::/46"
   - "2406:840:996d::/48"
   - "2406:840:996e::/47"
-  - "2406:840:9970::/44"
+  - "2406:840:9970::/46"
+  - "2406:840:9974::/47"
+  - "2406:840:9976::/48"
+  - "2406:840:9978::/45"
   - "2406:840:9981::/48"
   - "2406:840:9982::/47"
   - "2406:840:9984::/46"

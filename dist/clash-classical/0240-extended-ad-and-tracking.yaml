@@ -4,15 +4,15 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-24T22:29:23Z
+# updated-at: 2026-11-25T13:33:39Z
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
 # source: https://easylist.to/easylist/easylist.txt
 # source: https://easylist.to/easylist/easyprivacy.txt
 # source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-# canonical-rule-count: 43863
-# rule-count: 43863
+# canonical-rule-count: 43864
+# rule-count: 43864
 # format: clash-classical
 # canonical: rules/0240-extended-ad-and-tracking.lsr
 
@@ -43880,3 +43880,4 @@ payload:
   - "DOMAIN-SUFFIX,zpmeimfikuacb.website"
   - "DOMAIN-SUFFIX,zvzlalhsmengo.website"
   - "DOMAIN-SUFFIX,gibres.xyz"
+  - "DOMAIN-SUFFIX,id5-tech.io"

@@ -140,11 +140,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "rules/0240-extended-ad-and-tracking.lsr"
         },
@@ -3800,11 +3800,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "rules/8600-mainland-routing-all.lsr"
         },
@@ -3820,11 +3820,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "rules/8620-mainland-networks.lsr"
         },
@@ -3936,11 +3936,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "rules/0240-extended-ad-and-tracking.list"
         },
@@ -7596,11 +7596,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "rules/8600-mainland-routing-all.list"
         },
@@ -7616,11 +7616,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "rules/8620-mainland-networks.list"
         },
@@ -7732,11 +7732,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/clash-classical/0240-extended-ad-and-tracking.yaml"
         },
@@ -11392,11 +11392,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "dist/clash-classical/8600-mainland-routing-all.yaml"
         },
@@ -11412,11 +11412,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "dist/clash-classical/8620-mainland-networks.yaml"
         },
@@ -11528,11 +11528,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/egern/0240-extended-ad-and-tracking.yaml"
         },
@@ -15188,11 +15188,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "dist/egern/8600-mainland-routing-all.yaml"
         },
@@ -15208,11 +15208,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "dist/egern/8620-mainland-networks.yaml"
         },
@@ -15324,11 +15324,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
@@ -18980,11 +18980,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "dist/surge-compatible/8600-mainland-routing-all.list"
         },
@@ -19000,11 +19000,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "dist/surge-compatible/8620-mainland-networks.list"
         },
@@ -19116,11 +19116,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/surge-compatible/0240-extended-ad-and-tracking.list"
         },
@@ -22776,11 +22776,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "dist/surge-compatible/8600-mainland-routing-all.list"
         },
@@ -22796,11 +22796,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "dist/surge-compatible/8620-mainland-networks.list"
         },
@@ -22908,11 +22908,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/quantumult-x/0240-extended-ad-and-tracking.list"
         },
@@ -26557,11 +26557,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 19276,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 19285,
           "status": "available",
           "path": "dist/quantumult-x/8600-mainland-routing-all.list"
         },
@@ -26577,11 +26577,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
-          "output-rule-count": 6997,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 7006,
           "status": "available",
           "path": "dist/quantumult-x/8620-mainland-networks.list"
         },
@@ -26689,11 +26689,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/sing-box/0240-extended-ad-and-tracking.json"
         },
@@ -30338,10 +30338,10 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-25T13:33:39Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -30357,10 +30357,10 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-25T13:33:39Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -30467,11 +30467,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 43863,
+          "rule-count": 43864,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 43863,
+          "updated-at": "2026-11-25T13:33:39Z",
+          "output-rule-count": 43864,
           "status": "available",
           "path": "dist/v2ray/0240-extended-ad-and-tracking.json"
         },
@@ -34116,10 +34116,10 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/8600-mainland-routing-all.lsr",
-          "rule-count": 19276,
+          "rule-count": 19285,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-25T13:33:39Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -34135,10 +34135,10 @@
         },
         "8620-mainland-networks": {
           "source": "rules/8620-mainland-networks.lsr",
-          "rule-count": 6997,
+          "rule-count": 7006,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T17:50:37Z",
+          "updated-at": "2026-11-25T13:33:39Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
