@@ -1,5 +1,5 @@
 {
-  "checked-at": "2026-11-25T13:33:39Z",
+  "checked-at": "2026-11-25T23:51:04Z",
   "inputs-read": 609,
   "critical": 908,
   "inputs-requested": 609,
@@ -5381,8 +5381,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates-http.g.aaplimg.com",
       "DOMAIN,updates.g.aaplimg.com",
+      "DOMAIN,updates-http.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net",
       "DOMAIN,swcdn.apple.com.edgesuite.net"
     ],
@@ -10179,7 +10179,7 @@
       "asset-prefix": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static",
       "documents": [
         {
-          "source": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static/_next/static/chunks/pages/apis/workflow-d944640d00334dab.js",
+          "source": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static/_next/static/chunks/pages/apis/workflow-afb9fa1f374514ed.js",
           "roles": {
             "接口请求：": [
               "DOMAIN,openapi.liblibai.cloud"
@@ -10784,8 +10784,8 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 0,
-      "unconfirmed-prefixes": 527,
+      "accepted-prefixes": 106,
+      "unconfirmed-prefixes": 531,
       "retired-prefixes": 2
     },
     "mainland-geoip": {
@@ -10826,9 +10826,9 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 17979,
-      "admitted-rules": 1,
-      "retired-rules": 0
+      "not-whole-host-consensus": 17998,
+      "admitted-rules": 338,
+      "retired-rules": 1
     }
   },
   "official-endpoints": {
@@ -13678,7 +13678,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -13719,7 +13719,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "ollama-cloud": {
@@ -13750,7 +13750,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "stackit-model-services": {
@@ -13781,7 +13781,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "stepfun-international": {
@@ -13823,7 +13823,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "xiaomi-international": {
@@ -13866,7 +13866,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13901,7 +13901,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13951,7 +13951,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13992,7 +13992,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14233,7 +14233,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "npm-registry": {
@@ -14266,7 +14266,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14310,7 +14310,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14343,7 +14343,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14396,7 +14396,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "braintree-payments": {
@@ -14423,7 +14423,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "notion-workspace": {
@@ -14450,7 +14450,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14658,7 +14658,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14684,7 +14684,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "google-play-services": {
@@ -14720,7 +14720,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "google-play-games": {
@@ -14748,7 +14748,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "kimi-mainland": {
@@ -14779,7 +14779,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -14810,7 +14810,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -14853,7 +14853,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14892,7 +14892,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795613542,
+      "last-read": 1795650608,
       "state": "current"
     }
   },
@@ -14970,7 +14970,7 @@
     "mainland-networks": {
       "intent": "allow-dns",
       "no-resolve": 0,
-      "resolve-for-match": 7006
+      "resolve-for-match": 7038
     },
     "mainland-geoip": {
       "intent": "allow-dns",
@@ -14988,7 +14988,7 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "extended-ad-and-tracking": 43864,
+    "extended-ad-and-tracking": 44201,
     "ai-overseas-all": 682,
     "claude-connections": 24,
     "chatgpt-connections": 460,
@@ -15354,9 +15354,9 @@
     "kingsoft-shared-services": 32,
     "sina-shared-image-assets": 2,
     "sina-web-and-shared-services": 7,
-    "mainland-routing-all": 19285,
+    "mainland-routing-all": 19317,
     "mainland-domains": 12278,
-    "mainland-networks": 7006,
+    "mainland-networks": 7038,
     "mainland-geoip": 1
   },
   "component-rules": {
