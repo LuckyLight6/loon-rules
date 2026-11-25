@@ -419,6 +419,12 @@
           "start": 3940,
           "title": "新闻与内容社区",
           "section": "media"
+        },
+        {
+          "id": "overseas-media-platforms",
+          "start": 3960,
+          "title": "影音平台共用接口",
+          "section": "media"
         }
       ],
       "ids": [
@@ -429,6 +435,7 @@
         "disney-plus-streaming",
         "prime-video-streaming",
         "hulu-streaming",
+        "discovery-plus-streaming",
         "youtube-video-and-cdn",
         "tiktok-international-video",
         "bilibili-international-video",
@@ -439,13 +446,15 @@
         "soundcloud-audio",
         "twitch-live-video",
         "bbc-news-and-video",
-        "bahamut-video-and-community"
+        "bahamut-video-and-community",
+        "wbd-streaming-platform"
       ],
       "subheadings": {
         "hbo-streaming": "视频平台与配套服务",
         "spotify-audio": "音乐与音频平台",
         "twitch-live-video": "直播平台",
-        "bbc-news-and-video": "新闻与内容社区"
+        "bbc-news-and-video": "新闻与内容社区",
+        "wbd-streaming-platform": "影音平台共用接口"
       }
     },
     {
@@ -8638,7 +8647,8 @@
           "overseas-video",
           "overseas-audio",
           "overseas-live",
-          "overseas-media-content"
+          "overseas-media-content",
+          "overseas-media-platforms"
         ]
       },
       "routing-group": "overseas-media-bundle"
@@ -15139,6 +15149,465 @@
         "storage.googleapis.com",
         "githubcopilot.com"
       ]
+    },
+    {
+      "id": "discovery-plus-streaming",
+      "priority": 3855,
+      "section": "media",
+      "routing-group": "overseas-video",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "media",
+      "description": "Discovery+ 播放、网站与地区 API",
+      "boundary": "Discovery+ 网站、地区 API 与专用播放租户；共用后端归 WBD 平台，不接管整个视频 CDN",
+      "sources": [
+        "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discoveryplus",
+        "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+        "https://www.discoveryplus.com/",
+        "https://www.discoveryplus.in/",
+        "https://www.discoveryplus.it/",
+        "https://discoveryplus.co.uk/",
+        "https://www.discoveryplus.no/",
+        "https://www.discoveryplus.se/"
+      ],
+      "extract": [
+        {
+          "format": "geosite-domain-list",
+          "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discoveryplus",
+          "subdomains-as-hosts": true,
+          "delegated-scopes": {
+            "DOMAIN-SUFFIX,disco-api.com": {
+              "owner": "wbd-streaming-platform",
+              "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+              "reason": "完整产品表列出的旧 API 平台；维护中的客户端显示 HGTV 等 Discovery 产品共用，归平台层而非 Discovery+ 专有"
+            }
+          }
+        },
+        {
+          "format": "python-sdk-endpoints",
+          "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+          "class-prefixes": [
+            "DiscoveryPlus"
+          ],
+          "fields": [
+            "_DISCO_API_PARAMS"
+          ],
+          "bare-hosts": true,
+          "dictionary-host-fields": [
+            "disco_host",
+            "domain"
+          ],
+          "dictionary-required-fields": [
+            "disco_host"
+          ],
+          "dictionary-metadata-fields": [
+            "realm",
+            "country"
+          ],
+          "nullable-class-defaults": true,
+          "non-network-fields": {
+            "_VALID_URL": {
+              "kind": "input-url-pattern",
+              "reason": "识别用户输入的视频链接，不是客户端默认服务器"
+            },
+            "_TESTS": {
+              "kind": "test-cases",
+              "reason": "提取器测试样例，不作为客户端配置读取"
+            }
+          },
+          "scalar-host-fields": [
+            "_BASE_API",
+            "_DOMAIN"
+          ]
+        },
+        {
+          "format": "site-identity",
+          "source": "https://www.discoveryplus.com/",
+          "scope": "source-root",
+          "brand": "Discovery Plus"
+        },
+        {
+          "format": "site-identity",
+          "source": "https://www.discoveryplus.in/",
+          "scope": "source-root",
+          "brand": "discovery+",
+          "brand-field": "html:title"
+        },
+        {
+          "format": "site-identity",
+          "source": "https://www.discoveryplus.it/",
+          "brand": "Discovery Plus",
+          "include-source-alias": true,
+          "canonical-parents": [
+            "discoveryplus.com"
+          ]
+        },
+        {
+          "format": "site-identity",
+          "source": "https://discoveryplus.co.uk/",
+          "brand": "Discovery Plus",
+          "include-source-alias": true,
+          "canonical-parents": [
+            "discoveryplus.com"
+          ]
+        },
+        {
+          "format": "site-identity",
+          "source": "https://www.discoveryplus.no/",
+          "brand": "Discovery Plus",
+          "include-source-alias": true,
+          "canonical-parents": [
+            "discoveryplus.com"
+          ]
+        },
+        {
+          "format": "site-identity",
+          "source": "https://www.discoveryplus.se/",
+          "brand": "Discovery Plus",
+          "include-source-alias": true,
+          "canonical-parents": [
+            "discoveryplus.com"
+          ]
+        },
+        {
+          "format": "python-regional-hosts",
+          "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+          "class": "DPlayIE",
+          "field": "_VALID_URL",
+          "path-field": "_PATH_REGEX",
+          "origin-group": "domain",
+          "branch-group": "plus_country",
+          "function": "_real_extract",
+          "origin-variable": "domain",
+          "server-variable": "host",
+          "request-method": "_get_disco_api_info",
+          "server-argument": 2,
+          "pattern-groups": [
+            "domain",
+            "host",
+            "country",
+            "plus_country",
+            "subdomain_country",
+            "id"
+          ],
+          "other-branch-groups": [
+            "country",
+            "subdomain_country"
+          ],
+          "non-network-fields": {
+            "_TESTS": {
+              "kind": "test-cases",
+              "reason": "客户端的测试样例，不作为默认服务器读取"
+            }
+          }
+        }
+      ],
+      "product-probes": [
+        "www.discoveryplus.com",
+        "discoveryplus.in",
+        "www.discoveryplus.in",
+        "ap2-prod-direct.discoveryplus.in",
+        "us1-prod-direct.discoveryplus.com",
+        "content-ause1-ur-discovery1.uplynk.com",
+        "discoveryplus.it",
+        "www.discoveryplus.it",
+        "disco-api.discoveryplus.it",
+        "discoveryplus.co.uk",
+        "www.discoveryplus.co.uk",
+        "discoveryplus.no",
+        "www.discoveryplus.no",
+        "discoveryplus.se",
+        "www.discoveryplus.se"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "www.hbomax.com",
+        "eu1-prod.disco-api.com",
+        "unrelated.uplynk.com"
+      ]
+    },
+    {
+      "id": "wbd-streaming-platform",
+      "priority": 3960,
+      "section": "media",
+      "routing-group": "overseas-media-platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "media",
+      "description": "HBO Max 与 Discovery 共用流媒体接口",
+      "boundary": "Max 与 Discovery+ 共用后端，以及 HGTV 等产品使用的 Discovery 旧接口平台；具体产品先匹配，不接管 AWS、Uplynk 或其他共用 CDN",
+      "sources": [
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/discoveryplus.list",
+        "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+        "https://www.hbomax.com/",
+        "https://www.discoveryplus.com/",
+        "https://press.wbd.com/us/media-release/discovery-migrates-technology-infrastructure-unlocking-expanded-suite-product"
+      ],
+      "extract": [
+        {
+          "source": "https://www.hbomax.com/",
+          "format": "next-service-urls",
+          "decode-json": [
+            [
+              "props",
+              "pageProps",
+              "pageData"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "ogSiteName"
+              ],
+              "equals": "HBO Max"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "environment"
+              ],
+              "equals": "prd"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "effectiveTenantId"
+              ],
+              "equals": "hbomax"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "isPublished"
+              ],
+              "equals": true
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "pageData",
+                "dataSources",
+                "*",
+                "type"
+              ],
+              "each-equals": "graphql"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "pageData",
+                "dataSources",
+                "*",
+                "httpMethod"
+              ],
+              "each-equals": "post"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "pageData",
+                "dataSources",
+                "*"
+              ],
+              "each-keys": [
+                "id",
+                "type",
+                "url",
+                "body",
+                "data",
+                "httpMethod",
+                "variables"
+              ]
+            }
+          ],
+          "paths": [
+            [
+              "props",
+              "pageProps",
+              "labsTrackUrl"
+            ],
+            [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*",
+              "url"
+            ]
+          ]
+        },
+        {
+          "source": "https://www.discoveryplus.com/",
+          "format": "next-service-urls",
+          "decode-json": [
+            [
+              "props",
+              "pageProps",
+              "pageData"
+            ]
+          ],
+          "identity": [
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "ogSiteName"
+              ],
+              "equals": "Discovery Plus"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "environment"
+              ],
+              "equals": "prd"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "effectiveTenantId"
+              ],
+              "equals": "dplus"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "isPublished"
+              ],
+              "equals": true
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "pageData",
+                "dataSources",
+                "*",
+                "type"
+              ],
+              "each-equals": "graphql"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "pageData",
+                "dataSources",
+                "*",
+                "httpMethod"
+              ],
+              "each-equals": "post"
+            },
+            {
+              "path": [
+                "props",
+                "pageProps",
+                "pageData",
+                "dataSources",
+                "*"
+              ],
+              "each-keys": [
+                "id",
+                "type",
+                "url",
+                "body",
+                "data",
+                "httpMethod",
+                "variables"
+              ]
+            }
+          ],
+          "paths": [
+            [
+              "props",
+              "pageProps",
+              "labsTrackUrl"
+            ],
+            [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*",
+              "url"
+            ]
+          ]
+        },
+        {
+          "format": "python-sdk-endpoints",
+          "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+          "fields": [
+            "_DISCO_API_PARAMS"
+          ],
+          "bare-hosts": true,
+          "dictionary-host-fields": [
+            "disco_host",
+            "domain"
+          ],
+          "dictionary-required-fields": [
+            "disco_host"
+          ],
+          "dictionary-metadata-fields": [
+            "realm",
+            "country"
+          ],
+          "nullable-class-defaults": true,
+          "classes": [
+            "HGTVDeIE"
+          ],
+          "non-network-fields": {
+            "_VALID_URL": {
+              "kind": "input-url-pattern",
+              "reason": "识别用户输入的视频链接，不是客户端默认服务器"
+            },
+            "_TESTS": {
+              "kind": "test-cases",
+              "reason": "提取器测试样例，不作为客户端配置读取"
+            }
+          }
+        }
+      ],
+      "projection": [
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list",
+          "roots": [
+            "discomax.com"
+          ],
+          "domain-lines-only": true
+        },
+        {
+          "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/discoveryplus.list",
+          "roots": [
+            "disco-api.com"
+          ],
+          "domain-lines-only": true
+        }
+      ],
+      "product-probes": [
+        "prd.api.discomax.com",
+        "graphql.prd.api.discomax.com",
+        "graphql-2.use1.prd.api.discomax.com",
+        "eu1-prod.disco-api.com"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "s3.amazonaws.com",
+        "www.hbomax.com",
+        "www.discoveryplus.com",
+        "content-ause1-ur-discovery1.uplynk.com"
+      ]
     }
   ],
   "detailed": [
@@ -15327,11 +15796,13 @@
     "hbo-streaming",
     "netflix-connection-tests",
     "hulu-streaming",
+    "discovery-plus-streaming",
     "iqiyi-international",
     "vimeo-video",
     "whosampled-music-discovery",
     "soundcloud-audio",
     "bbc-news-and-video",
+    "wbd-streaming-platform",
     "playstation-network",
     "nintendo-platform",
     "hoyoverse-international",
@@ -18194,6 +18665,63 @@
     ],
     "github.io": [
       "github-pages-hosting"
+    ],
+    "www.discoveryplus.com": [
+      "discovery-plus-streaming"
+    ],
+    "discoveryplus.in": [
+      "discovery-plus-streaming"
+    ],
+    "www.discoveryplus.in": [
+      "discovery-plus-streaming"
+    ],
+    "ap2-prod-direct.discoveryplus.in": [
+      "discovery-plus-streaming"
+    ],
+    "us1-prod-direct.discoveryplus.com": [
+      "discovery-plus-streaming"
+    ],
+    "content-ause1-ur-discovery1.uplynk.com": [
+      "discovery-plus-streaming"
+    ],
+    "prd.api.discomax.com": [
+      "wbd-streaming-platform"
+    ],
+    "graphql.prd.api.discomax.com": [
+      "wbd-streaming-platform"
+    ],
+    "graphql-2.use1.prd.api.discomax.com": [
+      "wbd-streaming-platform"
+    ],
+    "eu1-prod.disco-api.com": [
+      "wbd-streaming-platform"
+    ],
+    "discoveryplus.it": [
+      "discovery-plus-streaming"
+    ],
+    "www.discoveryplus.it": [
+      "discovery-plus-streaming"
+    ],
+    "disco-api.discoveryplus.it": [
+      "discovery-plus-streaming"
+    ],
+    "discoveryplus.co.uk": [
+      "discovery-plus-streaming"
+    ],
+    "www.discoveryplus.co.uk": [
+      "discovery-plus-streaming"
+    ],
+    "discoveryplus.no": [
+      "discovery-plus-streaming"
+    ],
+    "www.discoveryplus.no": [
+      "discovery-plus-streaming"
+    ],
+    "discoveryplus.se": [
+      "discovery-plus-streaming"
+    ],
+    "www.discoveryplus.se": [
+      "discovery-plus-streaming"
     ]
   },
   "shared-negatives": [
@@ -18677,6 +19205,7 @@
         3830,
         3840,
         3850,
+        3855,
         3860,
         3870,
         3880,
@@ -18688,6 +19217,7 @@
         3930,
         3940,
         3950,
+        3960,
         6900,
         6910,
         6920,
@@ -22038,6 +22568,441 @@
           "githubusercontent.com"
         ]
       }
+    },
+    {
+      "id": "discovery-plus-complete-native",
+      "source": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discoveryplus",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "geosite-domain-list",
+        "subdomains-as-hosts": true,
+        "delegated-scopes": {
+          "DOMAIN-SUFFIX,disco-api.com": {
+            "owner": "wbd-streaming-platform",
+            "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+            "reason": "完整产品表列出的旧 API 平台；维护中的客户端显示 HGTV 等 Discovery 产品共用，归平台层而非 Discovery+ 专有"
+          }
+        }
+      }
+    },
+    {
+      "id": "discovery-plus-client-family",
+      "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "python-sdk-endpoints",
+        "class-prefixes": [
+          "DiscoveryPlus"
+        ],
+        "fields": [
+          "_DISCO_API_PARAMS"
+        ],
+        "bare-hosts": true,
+        "dictionary-host-fields": [
+          "disco_host",
+          "domain"
+        ],
+        "dictionary-required-fields": [
+          "disco_host"
+        ],
+        "dictionary-metadata-fields": [
+          "realm",
+          "country"
+        ],
+        "nullable-class-defaults": true,
+        "non-network-fields": {
+          "_VALID_URL": {
+            "kind": "input-url-pattern",
+            "reason": "识别用户输入的视频链接，不是客户端默认服务器"
+          },
+          "_TESTS": {
+            "kind": "test-cases",
+            "reason": "提取器测试样例，不作为客户端配置读取"
+          }
+        },
+        "scalar-host-fields": [
+          "_BASE_API",
+          "_DOMAIN"
+        ]
+      }
+    },
+    {
+      "id": "discovery-plus-product-site",
+      "source": "https://www.discoveryplus.com/",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand": "Discovery Plus"
+      }
+    },
+    {
+      "id": "discovery-plus-india-site",
+      "source": "https://www.discoveryplus.in/",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand": "discovery+",
+        "brand-field": "html:title"
+      }
+    },
+    {
+      "id": "wbd-legacy-client-services",
+      "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+      "owners": [
+        "wbd-streaming-platform"
+      ],
+      "recipe": {
+        "format": "python-sdk-endpoints",
+        "fields": [
+          "_DISCO_API_PARAMS"
+        ],
+        "bare-hosts": true,
+        "dictionary-host-fields": [
+          "disco_host",
+          "domain"
+        ],
+        "dictionary-required-fields": [
+          "disco_host"
+        ],
+        "dictionary-metadata-fields": [
+          "realm",
+          "country"
+        ],
+        "nullable-class-defaults": true,
+        "classes": [
+          "HGTVDeIE"
+        ],
+        "non-network-fields": {
+          "_VALID_URL": {
+            "kind": "input-url-pattern",
+            "reason": "识别用户输入的视频链接，不是客户端默认服务器"
+          },
+          "_TESTS": {
+            "kind": "test-cases",
+            "reason": "提取器测试样例，不作为客户端配置读取"
+          }
+        }
+      }
+    },
+    {
+      "id": "wbd-max-production-services",
+      "source": "https://www.hbomax.com/",
+      "owners": [
+        "wbd-streaming-platform"
+      ],
+      "recipe": {
+        "format": "next-service-urls",
+        "decode-json": [
+          [
+            "props",
+            "pageProps",
+            "pageData"
+          ]
+        ],
+        "identity": [
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "ogSiteName"
+            ],
+            "equals": "HBO Max"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "environment"
+            ],
+            "equals": "prd"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "effectiveTenantId"
+            ],
+            "equals": "hbomax"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "isPublished"
+            ],
+            "equals": true
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*",
+              "type"
+            ],
+            "each-equals": "graphql"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*",
+              "httpMethod"
+            ],
+            "each-equals": "post"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*"
+            ],
+            "each-keys": [
+              "id",
+              "type",
+              "url",
+              "body",
+              "data",
+              "httpMethod",
+              "variables"
+            ]
+          }
+        ],
+        "paths": [
+          [
+            "props",
+            "pageProps",
+            "labsTrackUrl"
+          ],
+          [
+            "props",
+            "pageProps",
+            "pageData",
+            "dataSources",
+            "*",
+            "url"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wbd-discovery-production-services",
+      "source": "https://www.discoveryplus.com/",
+      "owners": [
+        "wbd-streaming-platform"
+      ],
+      "recipe": {
+        "format": "next-service-urls",
+        "decode-json": [
+          [
+            "props",
+            "pageProps",
+            "pageData"
+          ]
+        ],
+        "identity": [
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "ogSiteName"
+            ],
+            "equals": "Discovery Plus"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "environment"
+            ],
+            "equals": "prd"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "effectiveTenantId"
+            ],
+            "equals": "dplus"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "isPublished"
+            ],
+            "equals": true
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*",
+              "type"
+            ],
+            "each-equals": "graphql"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*",
+              "httpMethod"
+            ],
+            "each-equals": "post"
+          },
+          {
+            "path": [
+              "props",
+              "pageProps",
+              "pageData",
+              "dataSources",
+              "*"
+            ],
+            "each-keys": [
+              "id",
+              "type",
+              "url",
+              "body",
+              "data",
+              "httpMethod",
+              "variables"
+            ]
+          }
+        ],
+        "paths": [
+          [
+            "props",
+            "pageProps",
+            "labsTrackUrl"
+          ],
+          [
+            "props",
+            "pageProps",
+            "pageData",
+            "dataSources",
+            "*",
+            "url"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "discovery-plus-italy-site",
+      "source": "https://www.discoveryplus.it/",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "brand": "Discovery Plus",
+        "include-source-alias": true,
+        "canonical-parents": [
+          "discoveryplus.com"
+        ]
+      }
+    },
+    {
+      "id": "discovery-plus-uk-site",
+      "source": "https://discoveryplus.co.uk/",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "brand": "Discovery Plus",
+        "include-source-alias": true,
+        "canonical-parents": [
+          "discoveryplus.com"
+        ]
+      }
+    },
+    {
+      "id": "discovery-plus-no-site",
+      "source": "https://www.discoveryplus.no/",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "brand": "Discovery Plus",
+        "include-source-alias": true,
+        "canonical-parents": [
+          "discoveryplus.com"
+        ]
+      }
+    },
+    {
+      "id": "discovery-plus-se-site",
+      "source": "https://www.discoveryplus.se/",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "site-identity",
+        "brand": "Discovery Plus",
+        "include-source-alias": true,
+        "canonical-parents": [
+          "discoveryplus.com"
+        ]
+      }
+    },
+    {
+      "id": "discovery-plus-regional-construction",
+      "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+      "owners": [
+        "discovery-plus-streaming"
+      ],
+      "recipe": {
+        "format": "python-regional-hosts",
+        "class": "DPlayIE",
+        "field": "_VALID_URL",
+        "path-field": "_PATH_REGEX",
+        "origin-group": "domain",
+        "branch-group": "plus_country",
+        "function": "_real_extract",
+        "origin-variable": "domain",
+        "server-variable": "host",
+        "request-method": "_get_disco_api_info",
+        "server-argument": 2,
+        "pattern-groups": [
+          "domain",
+          "host",
+          "country",
+          "plus_country",
+          "subdomain_country",
+          "id"
+        ],
+        "other-branch-groups": [
+          "country",
+          "subdomain_country"
+        ],
+        "non-network-fields": {
+          "_TESTS": {
+            "kind": "test-cases",
+            "reason": "客户端的测试样例，不作为默认服务器读取"
+          }
+        }
+      }
     }
   ],
   "source-alias-policies": {
@@ -24544,13 +25509,25 @@
         ]
       },
       {
-        "id": "hbo-streaming",
-        "name": "HBO Max",
+        "id": "warner-bros-discovery",
+        "name": "Warner Bros. Discovery",
         "products": [
           {
             "name": "HBO Max",
             "rules": [
               "hbo-streaming"
+            ]
+          },
+          {
+            "name": "Discovery+ 播放、网站与地区 API",
+            "rules": [
+              "discovery-plus-streaming"
+            ]
+          },
+          {
+            "name": "HBO Max 与 Discovery 共用流媒体接口",
+            "rules": [
+              "wbd-streaming-platform"
             ]
           }
         ]

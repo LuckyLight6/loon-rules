@@ -4,11 +4,11 @@
 # description: 其他海外影音
 # boundary: 只补专项未覆盖的影音域名，交给海外影音策略；不按共享 IP、关键字或客户端名识别
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T20:44:08Z
+# updated-at: 2026-11-25T00:37:42Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
-# canonical-rule-count: 144
-# rule-count: 144
+# canonical-rule-count: 139
+# rule-count: 139
 # format: quantumult-x
 # canonical: rules/8210-overseas-media-extra.lsr
 
@@ -68,11 +68,6 @@ host-suffix,dca-ll-livedazn-dznlivejp.s.llnwi.net,proxy
 host-suffix,dcalivedazn.akamaized.net,proxy
 host-suffix,dcblivedazn.akamaized.net,proxy
 host-suffix,deezer.com,proxy
-host-suffix,disco-api.com,proxy
-host-suffix,discomax.com,proxy
-host-suffix,discoveryplus.co.uk,proxy
-host-suffix,discoveryplus.com,proxy
-host-suffix,discoveryplus.in,proxy
 host-suffix,disneystreaming.com,proxy
 host-suffix,dmc.nico,proxy
 host-suffix,dmm-extension.com,proxy

@@ -1,8 +1,8 @@
 {
-  "checked-at": "2026-11-25T00:11:27Z",
-  "inputs-read": 599,
-  "critical": 889,
-  "inputs-requested": 599,
+  "checked-at": "2026-11-25T00:37:42Z",
+  "inputs-read": 609,
+  "critical": 908,
+  "inputs-requested": 609,
   "profiles-checked": 167772160,
   "assigned-rules": {
     "apple-system-connectivity": {
@@ -844,7 +844,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 346,
+    "routine-tables": 348,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1123,6 +1123,7 @@
       "disney-plus-streaming",
       "prime-video-streaming",
       "hulu-streaming",
+      "discovery-plus-streaming",
       "youtube-video-and-cdn",
       "tiktok-international-video",
       "bilibili-international-video",
@@ -1133,6 +1134,7 @@
       "soundcloud-audio",
       "twitch-live-video",
       "bbc-news-and-video",
+      "wbd-streaming-platform",
       "steam-international-platform",
       "epic-games-services",
       "playstation-network",
@@ -3095,7 +3097,8 @@
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list": {
       "state": "current",
       "products": [
-        "hbo-streaming"
+        "hbo-streaming",
+        "wbd-streaming-platform"
       ],
       "filters": {
         "hbo-streaming": [
@@ -3113,15 +3116,23 @@
             ],
             "domain-lines-only": true
           }
+        ],
+        "wbd-streaming-platform": [
+          {
+            "roots": [
+              "discomax.com"
+            ],
+            "domain-lines-only": true
+          }
         ]
       },
       "other-products": {},
       "domain-scopes": 65,
-      "selected-scopes": 7,
+      "selected-scopes": 8,
       "narrowed-scopes": 2,
       "selected-uncovered": 0,
-      "product-scopes": 7,
-      "fallback-scopes": 10,
+      "product-scopes": 8,
+      "fallback-scopes": 9,
       "privacy-scopes": 0,
       "shared-scopes": 3,
       "declared-exclusions": 0,
@@ -3496,6 +3507,8 @@
         "apple-music-and-radio": 1,
         "bbc-news-and-video": 2,
         "spotify-audio": 15,
+        "wbd-streaming-platform": 2,
+        "discovery-plus-streaming": 3,
         "disney-plus-streaming": 3,
         "twitch-live-video": 6,
         "hbo-streaming": 4,
@@ -3509,7 +3522,7 @@
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 4,
-      "fallback-scopes": 161,
+      "fallback-scopes": 156,
       "privacy-scopes": 1,
       "shared-scopes": 6,
       "declared-exclusions": 0,
@@ -3616,6 +3629,37 @@
       "shared-scopes": 1,
       "declared-exclusions": 0,
       "outside-selection": 23,
+      "other-lines": 0,
+      "other-rule-types": {}
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/discoveryplus.list": {
+      "state": "current",
+      "products": [
+        "wbd-streaming-platform"
+      ],
+      "filters": {
+        "wbd-streaming-platform": [
+          {
+            "roots": [
+              "disco-api.com"
+            ],
+            "domain-lines-only": true
+          }
+        ]
+      },
+      "other-products": {
+        "discovery-plus-streaming": 1
+      },
+      "domain-scopes": 3,
+      "selected-scopes": 1,
+      "narrowed-scopes": 0,
+      "selected-uncovered": 0,
+      "product-scopes": 1,
+      "fallback-scopes": 1,
+      "privacy-scopes": 0,
+      "shared-scopes": 0,
+      "declared-exclusions": 0,
+      "outside-selection": 0,
       "other-lines": 0,
       "other-rule-types": {}
     },
@@ -6145,8 +6189,8 @@
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
-    "state": "retained-newer",
-    "source-version": "2026-11-24_09-08-17_UTC",
+    "state": "current",
+    "source-version": "2026-11-24_14-43-05_UTC",
     "active-version": "2026-11-24_14-43-05_UTC"
   },
   "shared-service-transfers": {
@@ -10560,7 +10604,9 @@
       3250,
       3915,
       3825,
-      8130
+      8130,
+      3855,
+      3960
     ],
     "已核清单": [
       210,
@@ -12672,6 +12718,100 @@
       "domain-scopes": 212,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "discovery-plus-complete-native": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "delegated-includes": [],
+      "omitted-rule-types": {},
+      "omitted-comment-blocks": {},
+      "unselected-domain-scopes": 0,
+      "delegated-domain-scopes": {
+        "DOMAIN-SUFFIX,disco-api.com": "wbd-streaming-platform"
+      },
+      "reading-policy": {
+        "subdomains-as-hosts": true,
+        "attributes": {},
+        "omit-types": {},
+        "delegated-includes": {},
+        "excluded-comment-blocks": {},
+        "delegated-scopes": {
+          "DOMAIN-SUFFIX,disco-api.com": {
+            "owner": "wbd-streaming-platform",
+            "source": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py",
+            "reason": "完整产品表列出的旧 API 平台；维护中的客户端显示 HGTV 等 Discovery 产品共用，归平台层而非 Discovery+ 专有"
+          }
+        },
+        "include-comment-blocks": {}
+      }
+    },
+    "discovery-plus-client-family": {
+      "state": "current",
+      "domain-scopes": 6,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-product-site": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-india-site": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wbd-legacy-client-services": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wbd-max-production-services": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wbd-discovery-production-services": {
+      "state": "current",
+      "domain-scopes": 3,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-italy-site": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-uk-site": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-no-site": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-se-site": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "discovery-plus-regional-construction": {
+      "state": "current",
+      "domain-scopes": 18,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "security-program-history-version": 1,
@@ -13537,7 +13677,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "jetbrains-ai": {
@@ -13578,7 +13718,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "ollama-cloud": {
@@ -13609,7 +13749,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "stackit-model-services": {
@@ -13640,7 +13780,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "stepfun-international": {
@@ -13682,7 +13822,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "xiaomi-international": {
@@ -13725,7 +13865,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13760,7 +13900,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13810,7 +13950,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13851,7 +13991,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14092,7 +14232,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "npm-registry": {
@@ -14125,7 +14265,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14169,7 +14309,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14202,7 +14342,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14255,7 +14395,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "braintree-payments": {
@@ -14282,7 +14422,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "notion-workspace": {
@@ -14308,7 +14448,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14516,7 +14656,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14542,7 +14682,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "google-play-services": {
@@ -14578,7 +14718,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "google-play-games": {
@@ -14606,7 +14746,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "kimi-mainland": {
@@ -14637,7 +14777,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -14668,7 +14808,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -14711,7 +14851,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14750,7 +14890,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795565413,
+      "last-read": 1795567020,
       "state": "current"
     }
   },
@@ -14758,7 +14898,7 @@
   "expanded-domain-cases": 222,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1342,
+  "business-domain-cases": 1361,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -14767,7 +14907,12 @@
     }
   },
   "shared-negatives": 19,
-  "changed": [],
+  "changed": [
+    "overseas-media-all",
+    "overseas-extra-all",
+    "overseas-media-extra",
+    "discovery-plus-streaming"
+  ],
   "scope-negatives": 157,
   "ip-cases": 44,
   "ip-matching": {
@@ -15041,13 +15186,14 @@
     "ton-foundation-sites": 1,
     "toncenter-blockchain-api": 1,
     "fragment-digital-assets": 1,
-    "overseas-media-all": 201,
+    "overseas-media-all": 219,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
     "netflix-connection-tests": 1,
     "disney-plus-streaming": 6,
     "prime-video-streaming": 11,
     "hulu-streaming": 48,
+    "discovery-plus-streaming": 16,
     "youtube-video-and-cdn": 12,
     "tiktok-international-video": 12,
     "bilibili-international-video": 12,
@@ -15059,6 +15205,7 @@
     "twitch-live-video": 7,
     "bbc-news-and-video": 3,
     "bahamut-video-and-community": 5,
+    "wbd-streaming-platform": 2,
     "overseas-games-all": 51,
     "steam-international-platform": 12,
     "epic-games-services": 5,
@@ -15191,8 +15338,8 @@
     "discord-activities-proxy": 1,
     "disney-shared-services": 4,
     "github-pages-hosting": 1,
-    "overseas-extra-all": 18605,
-    "overseas-media-extra": 144,
+    "overseas-extra-all": 18600,
+    "overseas-media-extra": 139,
     "overseas-sites-extra": 18475,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,

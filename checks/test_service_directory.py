@@ -63,16 +63,25 @@ class ServiceDirectory(unittest.TestCase):
 
     def test_company_products_can_split_a_shared_scope_across_business_sections(self):
         from loon_rules.generation import pipeline
-        import json
-        config = json.loads((pipeline.ROOT / 'config/catalog.json').read_text())
-        target = next(entry for entry in config['entries'] if entry['id'] == 'apple-find-my')
-        target['section'] = 'media'
-        target['routing-group'] = 'overseas-media-content'
-        target['priority'] = 3990
+        config, _ = self.fixture()
+        config.update({'schema-version': 2, 'priority-width': 4,
+                       'sections': [{'id': 'products', 'title': '产品'}, {'id': 'media', 'title': '影音'}],
+                       'critical': {}, 'shared-negatives': []})
+        for entry in config['entries']:
+            entry['section'] = 'media' if entry['id'] == 'files' else 'products'
+            entry['boundary'] = '已核实的业务范围'
+            if entry['mode'] == 'view':
+                entry['members'] = ['chat']
+            else:
+                entry.update({'sources': ['https://source.vendor.example/rules.list'],
+                              'include': ['DOMAIN-SUFFIX,vendor.example']})
+        target = next(entry for entry in config['entries'] if entry['id'] == 'files')
+        target['separates'] = ['chat']
         entries = pipeline.validate_declarations(config)
-        self.assertEqual(entries[target['id']]['vendor'], 'apple')
-        apple = next(v for v in config['service-directory']['vendors'] if v['id']=='apple')
-        apple['products'] = [product for product in apple['products'] if target['id'] not in product['rules']]
+        self.assertNotEqual(entries['chat']['section'], entries['files']['section'])
+        self.assertEqual(entries[target['id']]['vendor'], 'vendor')
+        vendor = config['service-directory']['vendors'][0]
+        vendor['products'] = [product for product in vendor['products'] if target['id'] not in product['rules']]
         config['service-directory']['vendors'].append(
             {'id': 'other', 'name': '其他厂商', 'products': [{'name': '应用', 'rules': [target['id']]}]})
         with self.assertRaises(Invalid):

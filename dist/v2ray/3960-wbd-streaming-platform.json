@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:discomax.com",
+          "domain:disco-api.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

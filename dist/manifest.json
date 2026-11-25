@@ -2130,11 +2130,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/3800-overseas-media-all.lsr"
         },
@@ -2197,6 +2197,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "rules/3850-hulu-streaming.lsr"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "rules/3855-discovery-plus-streaming.lsr"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -2307,6 +2317,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "rules/3950-bahamut-video-and-community.lsr"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/3960-wbd-streaming-platform.lsr"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -3493,7 +3513,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "rules/8000-global-platforms-all.lsr"
@@ -3630,21 +3650,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.lsr"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "rules/8210-overseas-media-extra.lsr"
         },
@@ -3819,7 +3839,7 @@
           "path": "rules/8630-mainland-geoip.lsr"
         }
       },
-      "available": 377,
+      "available": 379,
       "unsupported": 0
     },
     "surge": {
@@ -5906,11 +5926,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/3800-overseas-media-all.list"
         },
@@ -5973,6 +5993,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "rules/3850-hulu-streaming.list"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "rules/3855-discovery-plus-streaming.list"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -6083,6 +6113,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "rules/3950-bahamut-video-and-community.list"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/3960-wbd-streaming-platform.list"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -7269,7 +7309,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "rules/8000-global-platforms-all.list"
@@ -7406,21 +7446,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "rules/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "rules/8210-overseas-media-extra.list"
         },
@@ -7595,7 +7635,7 @@
           "path": "rules/8630-mainland-geoip.list"
         }
       },
-      "available": 377,
+      "available": 379,
       "unsupported": 0
     },
     "clash-classical": {
@@ -9682,11 +9722,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/clash-classical/3800-overseas-media-all.yaml"
         },
@@ -9749,6 +9789,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/clash-classical/3850-hulu-streaming.yaml"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/clash-classical/3855-discovery-plus-streaming.yaml"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -9859,6 +9909,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/clash-classical/3950-bahamut-video-and-community.yaml"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/clash-classical/3960-wbd-streaming-platform.yaml"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -11045,7 +11105,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/clash-classical/8000-global-platforms-all.yaml"
@@ -11182,21 +11242,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/clash-classical/8200-overseas-extra-all.yaml"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/clash-classical/8210-overseas-media-extra.yaml"
         },
@@ -11371,7 +11431,7 @@
           "path": "dist/clash-classical/8630-mainland-geoip.yaml"
         }
       },
-      "available": 377,
+      "available": 379,
       "unsupported": 0
     },
     "egern": {
@@ -13458,11 +13518,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/egern/3800-overseas-media-all.yaml"
         },
@@ -13525,6 +13585,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/egern/3850-hulu-streaming.yaml"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/egern/3855-discovery-plus-streaming.yaml"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -13635,6 +13705,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/egern/3950-bahamut-video-and-community.yaml"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/egern/3960-wbd-streaming-platform.yaml"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -14821,7 +14901,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/egern/8000-global-platforms-all.yaml"
@@ -14958,21 +15038,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/egern/8200-overseas-extra-all.yaml"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/egern/8210-overseas-media-extra.yaml"
         },
@@ -15147,7 +15227,7 @@
           "path": "dist/egern/8630-mainland-geoip.yaml"
         }
       },
-      "available": 377,
+      "available": 379,
       "unsupported": 0
     },
     "surfboard": {
@@ -17230,11 +17310,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -17297,6 +17377,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/surge-compatible/3850-hulu-streaming.list"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/surge-compatible/3855-discovery-plus-streaming.list"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -17407,6 +17497,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/surge-compatible/3950-bahamut-video-and-community.list"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/surge-compatible/3960-wbd-streaming-platform.list"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -18593,7 +18693,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
@@ -18730,21 +18830,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/surge-compatible/8210-overseas-media-extra.list"
         },
@@ -18919,7 +19019,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 373,
+      "available": 375,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -21006,11 +21106,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/surge-compatible/3800-overseas-media-all.list"
         },
@@ -21073,6 +21173,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/surge-compatible/3850-hulu-streaming.list"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/surge-compatible/3855-discovery-plus-streaming.list"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -21183,6 +21293,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/surge-compatible/3950-bahamut-video-and-community.list"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/surge-compatible/3960-wbd-streaming-platform.list"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -22369,7 +22489,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/surge-compatible/8000-global-platforms-all.list"
@@ -22506,21 +22626,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/surge-compatible/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/surge-compatible/8210-overseas-media-extra.list"
         },
@@ -22695,7 +22815,7 @@
           "path": "dist/surge-compatible/8630-mainland-geoip.list"
         }
       },
-      "available": 377,
+      "available": 379,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -24771,11 +24891,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/quantumult-x/3800-overseas-media-all.list"
         },
@@ -24838,6 +24958,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/quantumult-x/3850-hulu-streaming.list"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/quantumult-x/3855-discovery-plus-streaming.list"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -24948,6 +25078,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/quantumult-x/3950-bahamut-video-and-community.list"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/quantumult-x/3960-wbd-streaming-platform.list"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -26130,7 +26270,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/quantumult-x/8000-global-platforms-all.list"
@@ -26267,21 +26407,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/quantumult-x/8200-overseas-extra-all.list"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/quantumult-x/8210-overseas-media-extra.list"
         },
@@ -26456,7 +26596,7 @@
           "path": "dist/quantumult-x/8630-mainland-geoip.list"
         }
       },
-      "available": 362,
+      "available": 364,
       "unsupported": 15
     },
     "sing-box": {
@@ -28532,11 +28672,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/sing-box/3800-overseas-media-all.json"
         },
@@ -28599,6 +28739,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/sing-box/3850-hulu-streaming.json"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/sing-box/3855-discovery-plus-streaming.json"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -28709,6 +28859,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/sing-box/3950-bahamut-video-and-community.json"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/sing-box/3960-wbd-streaming-platform.json"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -29891,7 +30051,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/sing-box/8000-global-platforms-all.json"
@@ -30028,21 +30188,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/sing-box/8200-overseas-extra-all.json"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/sing-box/8210-overseas-media-extra.json"
         },
@@ -30214,7 +30374,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 359,
+      "available": 361,
       "unsupported": 18
     },
     "v2ray": {
@@ -32290,11 +32450,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/3800-overseas-media-all.lsr",
-          "rule-count": 201,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-24T21:43:09Z",
-          "output-rule-count": 201,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "dist/v2ray/3800-overseas-media-all.json"
         },
@@ -32357,6 +32517,16 @@
           "output-rule-count": 48,
           "status": "available",
           "path": "dist/v2ray/3850-hulu-streaming.json"
+        },
+        "3855-discovery-plus-streaming": {
+          "source": "rules/3855-discovery-plus-streaming.lsr",
+          "rule-count": 16,
+          "description": "Discovery+ 播放、网站与地区 API",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 16,
+          "status": "available",
+          "path": "dist/v2ray/3855-discovery-plus-streaming.json"
         },
         "3860-youtube-video-and-cdn": {
           "source": "rules/3860-youtube-video-and-cdn.lsr",
@@ -32467,6 +32637,16 @@
           "output-rule-count": 5,
           "status": "available",
           "path": "dist/v2ray/3950-bahamut-video-and-community.json"
+        },
+        "3960-wbd-streaming-platform": {
+          "source": "rules/3960-wbd-streaming-platform.lsr",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "created-at": "2026-11-24T23:23:14Z",
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "dist/v2ray/3960-wbd-streaming-platform.json"
         },
         "4100-overseas-games-all": {
           "source": "rules/4100-overseas-games-all.lsr",
@@ -33649,7 +33829,7 @@
           "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
+          "updated-at": "2026-11-24T23:34:46Z",
           "output-rule-count": 434,
           "status": "available",
           "path": "dist/v2ray/8000-global-platforms-all.json"
@@ -33786,21 +33966,21 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/8200-overseas-extra-all.lsr",
-          "rule-count": 18605,
+          "rule-count": 18600,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18605,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 18600,
           "status": "available",
           "path": "dist/v2ray/8200-overseas-extra-all.json"
         },
         "8210-overseas-media-extra": {
           "source": "rules/8210-overseas-media-extra.lsr",
-          "rule-count": 144,
+          "rule-count": 139,
           "description": "其他海外影音",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 144,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 139,
           "status": "available",
           "path": "dist/v2ray/8210-overseas-media-extra.json"
         },
@@ -33972,7 +34152,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 359,
+      "available": 361,
       "unsupported": 18
     }
   },

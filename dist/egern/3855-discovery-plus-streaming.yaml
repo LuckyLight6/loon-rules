@@ -1,0 +1,38 @@
+# name: discovery-plus-streaming
+# priority: 3855
+# section: media
+# description: Discovery+ 播放、网站与地区 API
+# boundary: Discovery+ 网站、地区 API 与专用播放租户；共用后端归 WBD 平台，不接管整个视频 CDN
+# created-at: 2026-11-24T23:23:14Z
+# updated-at: 2026-11-25T00:37:42Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discoveryplus
+# source: https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py
+# source: https://www.discoveryplus.com/
+# source: https://www.discoveryplus.in/
+# source: https://www.discoveryplus.it/
+# source: https://discoveryplus.co.uk/
+# source: https://www.discoveryplus.no/
+# source: https://www.discoveryplus.se/
+# canonical-rule-count: 16
+# rule-count: 16
+# format: egern
+# canonical: rules/3855-discovery-plus-streaming.lsr
+
+domain_set:
+  - "content-ause1-ur-discovery1.uplynk.com"
+  - "disco-api.discoveryplus.dk"
+  - "disco-api.discoveryplus.es"
+  - "disco-api.discoveryplus.fi"
+  - "discoveryplus.dk"
+  - "discoveryplus.es"
+  - "discoveryplus.fi"
+  - "www.discoveryplus.dk"
+  - "www.discoveryplus.es"
+  - "www.discoveryplus.fi"
+domain_suffix_set:
+  - "discoveryplus.com"
+  - "discoveryplus.in"
+  - "discoveryplus.it"
+  - "discoveryplus.co.uk"
+  - "discoveryplus.no"
+  - "discoveryplus.se"

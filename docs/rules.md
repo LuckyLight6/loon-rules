@@ -339,7 +339,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3800 | [overseas-media-all](../rules/3800-overseas-media-all.lsr) | 海外影音与内容合集 | **合集：替代 3810–3950。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3800-overseas-media-all.lsr) |
+| 3800 | [overseas-media-all](../rules/3800-overseas-media-all.lsr) | 海外影音与内容合集 | **合集：替代 3810–3960。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3800-overseas-media-all.lsr) |
 
 ### 9.2 视频平台与配套服务
 
@@ -351,6 +351,7 @@
 | 3830 | [disney-plus-streaming](../rules/3830-disney-plus-streaming.lsr) | Disney+ 播放及其专用交付 | 播放、网页及专用分发域；官网公开配置按产品身份读取 API、内容与图片入口。迪士尼乐园、Hulu、内部服务器和共用资源另行归属 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3830-disney-plus-streaming.lsr) |
 | 3840 | [prime-video-streaming](../rules/3840-prime-video-streaming.lsr) | Prime Video 视频 API 和内容 | Amazon 零售、共享 CloudFront 父域和通用图片不纳入。本组只保已识别视频专用域和 CDN 别名 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3840-prime-video-streaming.lsr) |
 | 3850 | [hulu-streaming](../rules/3850-hulu-streaming.lsr) | Hulu 视频与交付 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3850-hulu-streaming.lsr) |
+| 3855 | [discovery-plus-streaming](../rules/3855-discovery-plus-streaming.lsr) | Discovery+ 播放、网站与地区 API | Discovery+ 网站、地区 API 与专用播放租户；共用后端归 WBD 平台，不接管整个视频 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3855-discovery-plus-streaming.lsr) |
 | 3860 | [youtube-video-and-cdn](../rules/3860-youtube-video-and-cdn.lsr) | YouTube 视频、音乐、频道与专用 CDN | 保留 youtubei、googlevideo 和 YouTube 静态域；不收整个 gvt2、Google IP 或 youtube 关键词 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3860-youtube-video-and-cdn.lsr) |
 | 3870 | [tiktok-international-video](../rules/3870-tiktok-international-video.lsr) | TikTok 国际短视频与直播 | 只含 TikTok 专有域；CapCut、抖音、Trae 以及两版共用字节云不划进本组 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3870-tiktok-international-video.lsr) |
 | 3880 | [bilibili-international-video](../rules/3880-bilibili-international-video.lsr) | 哔哩哔哩国际版视频 | 国际版网站、API、素材与专用视频主机，按业务清单全文更新；子域主机用精确匹配，中国站及其海外 CDN 不按地理标签混入 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3880-bilibili-international-video.lsr) |
@@ -377,6 +378,12 @@
 |---:|---|---|---|---|
 | 3940 | [bbc-news-and-video](../rules/3940-bbc-news-and-video.lsr) | BBC 新闻与影音 | BBC 自有产品域；不包揽共享 CDN 或据此保证地区版权可用 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3940-bbc-news-and-video.lsr) |
 | 3950 | [bahamut-video-and-community](../rules/3950-bahamut-video-and-community.lsr) | 巴哈姆特动画疯和电玩社区 | 专表有巴哈姆特域名和精确 CDN 别名，不匹配整个 Akamai/Hinet | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3950-bahamut-video-and-community.lsr) |
+
+### 9.6 影音平台共用接口
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
+|---:|---|---|---|---|
+| 3960 | [wbd-streaming-platform](../rules/3960-wbd-streaming-platform.lsr) | HBO Max 与 Discovery 共用流媒体接口 | Max 与 Discovery+ 共用后端，以及 HGTV 等产品使用的 Discovery 旧接口平台；具体产品先匹配，不接管 AWS、Uplynk 或其他共用 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3960-wbd-streaming-platform.lsr) |
 
 ## 10 游戏（海外）
 

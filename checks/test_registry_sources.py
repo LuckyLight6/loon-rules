@@ -40,9 +40,15 @@ class RegistrySources(PublicSourceExamples):
     def test_server_fields_reject_non_urls_private_hosts_and_parameters(self):
         for value in ('https://127.0.0.1/file','https://files.internal/file',
                       'https://reader@files.vendor.example/file','http://files.vendor.example/file',
+                      'https://files.vendor.example:not-a-port/file','https://files.vendor.example:70000/file',
                       'https://files.vendor.example/file?credential=value','https://{tenant}.shared.example/file',3):
             doc=self.document();doc['urls'][0]['url']=value
             with self.subTest(value=value),self.assertRaises(Invalid):extract_rows(self.recipe(),json.dumps(doc))
+
+    def test_a_valid_alternate_service_port_does_not_change_the_domain_rule(self):
+        document = self.document()
+        document['urls'][0]['url'] = 'https://files.vendor.example:8443/file.whl'
+        self.assertEqual(extract_rows(self.recipe(), json.dumps(document)), {'DOMAIN,files.vendor.example'})
 
     def test_shared_storage_request_hosts_cannot_become_package_rules_from_a_file_path(self):
         doc=self.document();doc['urls'].append({'url':'https://storage.googleapis.com/vendor/file.whl'})

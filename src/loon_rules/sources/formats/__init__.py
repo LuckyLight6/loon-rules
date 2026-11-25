@@ -1,7 +1,7 @@
 """Dispatch public input formats. Each reader returns rule rows, never policy names."""
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
-from . import api, contextual, documents, feeds, networks, regions, structured, tables
+from . import api, contextual, documents, feeds, networks, python_regions, regions, structured, tables
 
 
 def security_program_rows(recipe, text):
@@ -55,6 +55,7 @@ READERS = {
     'purpose-host-table': tables.parse_purpose_host_table,
     'purpose-url-table': tables.purpose_url_table,
     'python-sdk-endpoints': api.parse_python_sdk_endpoints,
+    'python-regional-hosts': python_regions.read,
     'qt-host-predicate': api.qt_host_predicate,
     'region-endpoint-table': regions.extract,
     'rdap-autnum': networks.rdap_autnum,
@@ -87,7 +88,12 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    strict_scope = source_alias or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts', 'qt-host-predicate', 'next-service-urls', 'literal-object-urls', 'security-program-domains', 'nested-purpose-domains', 'service-domain-groups', 'json-service-urls', 'plist-service-fields', 'purpose-domain-table')
+    strict_scope = (source_alias or form == 'python-sdk-endpoints' and 'dictionary-host-fields' in recipe
+                    or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts',
+                                'qt-host-predicate', 'next-service-urls', 'literal-object-urls',
+                                'security-program-domains', 'nested-purpose-domains', 'service-domain-groups',
+                                'json-service-urls', 'plist-service-fields', 'purpose-domain-table',
+                                'python-regional-hosts'))
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

@@ -7,7 +7,7 @@
 | 资料 | 读取方式与关键条件 | 现有实例 |
 |---|---|---|
 | 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 开发平台 3010、GitHub Pages 托管 8130、Cargo 3080、PyPI 3060、npm 3040 |
-| 页面内的公开服务配置 | `next-service-urls` 核对唯一的页面 JSON 与产品身份，再用 `paths` 读取业务 URL；`url-fields` 只在指定正文范围读取所列资源字段 | Disney+ 3830 读取生产 API、默认内容服务和图片；内部与预览配置不参与 |
+| 页面内的公开服务配置 | `next-service-urls` 核对唯一的页面 JSON 与产品身份，再用 `paths` 读取业务 URL；`url-fields` 只在指定正文范围读取所列资源字段 | Disney+ 3830 的生产 API、内容和图片；WBD 3960 从 HBO Max 与 Discovery+ 读取共用生产接口 |
 | SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 读取指定函数的字面 HTTPS；`qt-host-predicate` 读取 Qt 主机判断；`code-api-endpoints` 读取指定源码字段；`literal-object-urls` 从 JavaScript 语法树读取指定环境的完整 URL 对象 | Claude 1010、xAI 1040、Telegram 3310、Firebase 消息 4585、Disney 共用服务 8120 等 |
 | 服务域名列与 CSP | `domain-column-table` 核对列头后读取指定列，`value-format: url` 从 HTTPS／WSS URL 取精确主机；`csp-origins` 按章节、指令和品牌取源 | Datadog 3140、Docker 3075 的完整用途表、Intercom 4360 |
 | Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2090 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
@@ -49,11 +49,23 @@ JSON、plist 和用途表格中选定的网络字段都须处理完整。混入�
 
 `next-service-urls` 只解析 `__NEXT_DATA__` 的 JSON，不执行页面脚本。`url-fields` 的每项声明包含 `path` 和 `fields`：在指定对象或列表中查找这些用途字段，字段至少出现一次，出现的值都必须是有效 URL。图片等公开资源可显式设置 `allow-query: true`，结果仍只保留精确主机。选中字段指向共用平台、页面数据缺失或重复、类型及产品身份变化时，停止更新；同一用途范围必须有独立 `source-inventories` 核对。这类局部页面配置不能单独启用 `inventory-refresh`，原入口消失时也不能据此认定整个服务已经停用它。
 
+页面把一份 JSON 存成字符串时，用 `decode-json` 指定内层字段路径，再从中读取业务字段。外层与内层都拒绝重复键、损坏数据和非标准数值；身份比较区分布尔值与数字。`identity.each-equals` 核对每条记录的用途值，`each-keys` 核对记录的完整字段范围。WBD 的数据源须保持 GraphQL、POST 和已核实的字段结构，出现新用途或新字段时先停止更新。生成和独立归属检查必须使用相同的解码路径。
+
+`python-sdk-endpoints` 也支持客户端的服务字典。`class-prefixes` 跟随产品家族新增的顶层类，`fields` 选择字典，`dictionary-host-fields` 选择主机字段；`dictionary-required-fields` 指明必需字段，`dictionary-metadata-fields` 记录其余已核实用途。`scalar-host-fields` 同时读取成组的单值服务字段。Discovery+ 3855 用它们核对全球、印度及意大利地区入口，不逐条列服务器名称。
+
+选定的客户端家族中，尚未处理的网络字段、局部网络值、动态主机或缺少对应默认值的请求模板都会停止更新。其他嵌套类不归当前产品。`non-network-fields` 必须逐项写明输入链接模式与测试样例的用途，并核对类型；这些内容不当成默认服务器。不能因其余端点仍有父域覆盖就忽略新增字段。旧的标量 SDK 读取方式继续可用。
+
+`nullable-class-defaults: true` 只允许类声明用空值占位，且同一类的方法仍须有可核实的具体服务字典。元数据字段不能隐藏未处理的主机、地址或 ASN。这里解析语法树，不导入或执行上游代码；客户端家族、字典、单值字段和非网络字段的用途声明同样须配套完整用途清单。
+
+`python-regional-hosts` 读取客户端链接模式中的有限地区分支，再核对请求方法怎样规范化来源主机、构造 API 和传入服务器参数。主机与路径模式一起解析，结果只生成精确主机。3855 用它跟随 Discovery+ 的地区入口，不预填国家或服务器名称。`pattern-groups` 核对完整捕获字段，`branch-group` 选择产品分支，`other-branch-groups` 标明同一方法处理的其他入口；新增或未归属分支、无限主机范围、控制流程与请求用途变化都会停止更新。该声明同样须有范围一致的独立完整性核对。
+
 `product-role-links` 从指定用途的链接取主机，公开跟踪参数不进入规则。相对链接按声明的来源 URL 补全，没有来源地址时不能猜测目标；HTTP、脚本动作和带凭据的链接仍不采用。子域保持精确匹配；链接指向共享平台时，不能因路径属于某个产品就认领整个主机。Google 4590 从官网的 News、Blog 和 Press resources 链接跟随资讯入口。
 
 Netflix 3825 从[官方连接检查说明](https://help.netflix.com/en/node/14424)读取 FAST 测速网站，随用途说明中的名称更新；3820 继续处理播放、设备 API 和分发。独立的 `nested-purpose-domains` 清单核对官方要求可达的全部地址，分别检查它们的首条命中。清单新增未确认归属的主机、共享平台范围或 IP 时停止更新，不能因其他几项仍能识别就忽略新增项。FAST 属于 Netflix 配套测速，比较 Netflix 路径时应选同一出口。
 
 已核实的首方网站发生跳转时，`site-identity.include-source-alias` 可以保留请求最先访问的注册域。它要求品牌与 Open Graph URL 一致，最终身份位于 `canonical-parents` 声明的官方命名空间；canonical 存在时还要与 Open Graph 一致。来源必须是 HTTPS 根入口，不能是业务子域、共享托管租户或带凭据、参数的 URL。EA 4160 用此方式识别 EA Sports 网站入口，不靠手写域名规则补跳转。
+
+独立 Web App 缺少 Open Graph 时，可显式用 `site-identity` 的 `scope: source-root`、`brand-field: html:title` 核对唯一且完整的 HTML 标题。这只适用于已核实的独立产品根网站，不能从业务子域、登录路径或共享租户扩大到父域；页面若提供 canonical 或 Open Graph URL，仍须属于同一注册域。3855 用它核对客户端明确列出的印度区网站。原有 Open Graph 读取条件保持不变。
 
 `purpose-domain-lists.select` 可用 `roots`、`exact` 从同一官方清单选出产品自有范围。完整清单仍由端点合同独立核对，筛选不能把未处理的新增项藏起来。OpenAI 1020 用这种方式区分自有服务与第三方共享依赖。
 

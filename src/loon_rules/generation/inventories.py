@@ -11,10 +11,10 @@ from loon_rules.matching import merge_cases
 WAIT_SECONDS=20*3600
 MAX_GAP_SECONDS=3*86400
 INVENTORY_FIELDS={'service-domain-groups':('path','groups','platform-domains','only-platforms','exclude-platforms'),
-                  'json-service-urls':('paths','url-fields','identity','revision-path'),
+                  'json-service-urls':('paths','url-fields','identity','revision-path','decode-json'),
                   'plist-service-fields':('host-paths','url-paths','identity','records','data-path'),
                   'section-code-domains':('sections',),
-                  'json-document':('body-path','identity','document'),
+                  'json-document':('body-path','identity','document','decode-json'),
                   'purpose-domain-lists':('labels','allow-identical-duplicates','nested-subdomain-labels',
                                           'item-purpose-prefixes','item-purpose-contains','item-purpose-style')}
 

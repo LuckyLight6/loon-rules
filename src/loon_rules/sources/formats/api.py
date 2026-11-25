@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid, valid_host
 from .common import within, PurposeFragments
+from . import python_maps
 
 
 def literal_code_tokens(text):
@@ -295,6 +296,8 @@ def sdk_client_endpoints(recipe, text):
 
 def python_sdk_endpoints(recipe, text):
     tree = ast.parse(text)
+    if any(field in recipe for field in python_maps.OPTIONS):
+        return python_maps.endpoints(recipe, tree)
     classes = {n.name: n for n in tree.body if isinstance(n, ast.ClassDef)}
     functions = {n.name: n for n in tree.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))}
     if not set(recipe.get('classes', ())) <= classes.keys() or not set(recipe.get('functions', ())) <= functions.keys():

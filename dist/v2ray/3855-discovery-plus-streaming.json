@@ -1,0 +1,28 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:content-ause1-ur-discovery1.uplynk.com",
+          "domain:discoveryplus.com",
+          "domain:discoveryplus.in",
+          "domain:discoveryplus.it",
+          "domain:discoveryplus.co.uk",
+          "domain:discoveryplus.no",
+          "domain:discoveryplus.se",
+          "full:disco-api.discoveryplus.dk",
+          "full:disco-api.discoveryplus.es",
+          "full:disco-api.discoveryplus.fi",
+          "full:discoveryplus.dk",
+          "full:discoveryplus.es",
+          "full:discoveryplus.fi",
+          "full:www.discoveryplus.dk",
+          "full:www.discoveryplus.es",
+          "full:www.discoveryplus.fi"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

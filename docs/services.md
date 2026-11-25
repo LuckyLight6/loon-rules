@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 196 个厂商或项目、344 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 196 个厂商或项目、346 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -14,7 +14,7 @@
 | 海外通讯与社交合集 | [3300 海外通讯与社交合集](../rules/3300-overseas-social-all.lsr) | 18 |
 | 海外支付合集 | [3500 海外支付合集](../rules/3500-overseas-payments-all.lsr) | 8 |
 | 海外加密资产服务合集 | [3600 海外加密资产服务合集](../rules/3600-overseas-crypto-all.lsr) | 10 |
-| 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 17 |
+| 海外影音与内容合集 | [3800 海外影音与内容合集](../rules/3800-overseas-media-all.lsr) | 19 |
 | 海外游戏合集 | [4100 海外游戏合集](../rules/4100-overseas-games-all.lsr) | 9 |
 | 海外办公、邮件与协作合集 | [4300 海外办公、邮件与协作合集](../rules/4300-overseas-productivity-all.lsr) | 6 |
 | 跨国厂商国内可用服务合集 | [4900 跨国厂商国内可用服务合集](../rules/4900-multinational-mainland-all.lsr) | 8 |
@@ -962,11 +962,13 @@
 |---|---|
 | Fragment 用户名与数字资产服务 | [3700 Fragment 用户名与数字资产服务](../rules/3700-fragment-digital-assets.lsr) |
 
-## HBO Max
+## Warner Bros. Discovery
 
 | 产品或服务 | 对应规则 |
 |---|---|
 | HBO Max | [3810 HBO Max](../rules/3810-hbo-streaming.lsr) |
+| Discovery+ 播放、网站与地区 API | [3855 Discovery+ 播放、网站与地区 API](../rules/3855-discovery-plus-streaming.lsr) |
+| HBO Max 与 Discovery 共用流媒体接口 | [3960 HBO Max 与 Discovery 共用流媒体接口](../rules/3960-wbd-streaming-platform.lsr) |
 
 ## Netflix
 

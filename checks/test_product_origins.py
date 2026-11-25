@@ -38,6 +38,24 @@ class ProductOrigins(PublicSourceExamples):
         self.assertEqual(extract_rows(recipe,body),{'DOMAIN-SUFFIX,vendor.example'})
         with self.assertRaises(Invalid):extract_rows(recipe,body.replace('<meta property="og:url" content="https://vendor.example">',''))
 
+    def test_explicit_html_title_identity_can_verify_a_dedicated_app_root_without_open_graph(self):
+        recipe = {**self.recipe(), 'brand-field': 'html:title', 'brand-match': 'exact'}
+        body = '<html><head><title>Vendor</title></head><body>Application</body></html>'
+        self.assertEqual(extract_rows(recipe, body), {'DOMAIN-SUFFIX,vendor.example'})
+        for bad in (body.replace('Vendor', 'Different product'), body + body,
+                    '<script>"<title>Vendor</title>"</script>',
+                    '<template><title>Vendor</title></template>', '<title>Vendor',
+                    body + '<link rel="canonical" href="https://other.example/">'):
+            with self.subTest(body=bad), self.assertRaises(Invalid): extract_rows(recipe, bad)
+        for source in ('https://app.vendor.example/', 'https://www.vendor.example/login',
+                       'https://vendor.zendesk.com/'):
+            with self.subTest(source=source), self.assertRaises(Invalid):
+                extract_rows({**recipe, 'source': source}, body)
+
+    def test_existing_open_graph_root_identity_still_requires_a_canonical_url(self):
+        body = self.site().replace('<link rel="canonical" href="https://www.vendor.example">', '')
+        with self.assertRaises(Invalid): extract_rows(self.recipe(), body)
+
     def test_domain_blocks_are_scoped_to_each_required_section_and_never_import_addresses(self):
         recipe={'format':'section-code-domains','sections':['production','sandbox']}
         doc=('<h2 id="production">Production</h2><p>Required domains</p><pre><code>'

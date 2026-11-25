@@ -238,10 +238,13 @@ def parse_site_identity(recipe, text):
         return {row}
     if scope=='source-root':
         field=recipe.get('brand-field','og:site_name');match=recipe.get('brand-match','exact')
-        if field not in ('og:site_name','og:title') or match not in ('exact','word'):
+        if field not in ('og:site_name','og:title','html:title') or match not in ('exact','word'):
             raise Invalid('产品站点的品牌字段或匹配方式无效')
-        identity=guide.metadata.get(field,[])
-        if len(identity)!=1 or len(guide.canonical)!=1 or len(guide.metadata.get('og:url',[]))>1:
+        html_title = field == 'html:title'
+        identity = guide.titles if html_title else guide.metadata.get(field, [])
+        if (len(identity)!=1 or (len(guide.canonical)>1 if html_title else len(guide.canonical)!=1)
+                or len(guide.metadata.get('og:url',[]))>1
+                or html_title and (guide.document_title is not None or guide.broken_title)):
             raise Invalid('产品站点身份或入口数量变化')
         brand=recipe['brand'].casefold();value=identity[0].casefold()
         if not (value==brand if match=='exact' else re.search(r'(?<!\w)'+re.escape(brand)+r'(?!\w)',value)):
@@ -254,6 +257,10 @@ def parse_site_identity(recipe, text):
             if suffixes.suffix(host)[1]:raise Invalid('共享托管站点不能认领整个产品根域')
             return suffixes.registrable(host)
         source=root(recipe['source'])
+        if html_title:
+            origin = urlsplit(recipe['source'])
+            if origin.path not in ('', '/') or origin.hostname not in (source, 'www.' + source):
+                raise Invalid('HTML 标题身份只适用于独立产品的根网站')
         if not source or any(root(url)!=source for url in guide.canonical+guide.metadata.get('og:url',[])):
             raise Invalid('产品站点的来源与身份 URL 不属于同一注册域')
         return {'DOMAIN-SUFFIX,'+source}

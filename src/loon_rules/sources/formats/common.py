@@ -200,6 +200,9 @@ class PurposeFragments(HTMLParser):
         self.inline_fields = []
         self.metadata = {}
         self.canonical = []
+        self.titles = []
+        self.document_title = None
+        self.broken_title = False
 
     def handle_starttag(self, tag, attrs):
         if tag in HIDDEN:
@@ -207,6 +210,10 @@ class PurposeFragments(HTMLParser):
         if self.hidden:
             return
         attrs = dict(attrs)
+        if tag == 'title':
+            if self.document_title is not None:
+                self.broken_title = True
+            self.document_title = []
         if tag == 'meta' and (name := attrs.get('property')):
             self.metadata.setdefault(name, []).append(attrs.get('content', ''))
         if tag == 'link' and attrs.get('rel') == 'canonical':
@@ -230,6 +237,8 @@ class PurposeFragments(HTMLParser):
     def handle_data(self, value):
         if self.hidden:
             return
+        if self.document_title is not None:
+            self.document_title.append(value)
         if self.code is not None:
             self.code.append(value)
         if self.link is not None:
@@ -244,6 +253,9 @@ class PurposeFragments(HTMLParser):
         if tag in HIDDEN:
             self.hidden = max(0, self.hidden - 1)
         elif not self.hidden:
+            if tag == 'title' and self.document_title is not None:
+                self.titles.append(' '.join(''.join(self.document_title).split()))
+                self.document_title = None
             if tag == 'p' and self.paragraph is not None:
                 self.paragraphs.append(' '.join(''.join(self.paragraph).split()))
                 self.paragraph_fields.append((''.join(self.paragraph),self.inline_fields))

@@ -5,6 +5,7 @@ from loon_rules.sources import transport as source_transport
 from loon_rules.sources import expansion as source_expansion
 from loon_rules.sources import geosite
 from loon_rules.sources import security_programs
+from loon_rules.sources.formats import python_maps, python_regions
 from loon_rules.sources.coverage import same_business_family
 from loon_rules import catalog as catalog_schema
 from loon_rules.generation import inventories as service_inventory
@@ -130,6 +131,18 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') == 'python-regional-hosts':
+                if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                           and spec.get('recipe', {}).get('format') == recipe['format']
+                           and all(spec['recipe'].get(field) == recipe.get(field) for field in python_regions.SCOPE_FIELDS)
+                           for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('地区客户端缺少同分支与请求用途的完整核对：' + e['id'])
+            if recipe.get('format') == 'python-sdk-endpoints' and any(field in recipe for field in python_maps.OPTIONS):
+                if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                           and spec.get('recipe', {}).get('format') == recipe['format']
+                           and all(spec['recipe'].get(field) == recipe.get(field) for field in python_maps.SCOPE_FIELDS)
+                           for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('SDK 客户端家族缺少同范围的完整用途核对：' + e['id'])
             if recipe.get('format') == 'service-domain-groups' and recipe.get('platform-domains'):
                 whole = {field: recipe[field] for field in ('format', 'path', 'groups', 'platform-domains')}
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
@@ -148,7 +161,7 @@ def validate_declarations(config):
                                    for selector in recipe.get('assets', ())) for spec in inventories):
                     raise rules.Invalid('安全资产产品还须核对筛选前的完整项目：' + e['id'])
             if recipe.get('format') == 'next-service-urls':
-                fields = ('paths', 'url-fields', 'identity')
+                fields = ('paths', 'url-fields', 'identity', 'decode-json')
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
                            and spec.get('recipe', {}).get('format') == recipe['format']
                            and all(spec['recipe'].get(field) == recipe.get(field) for field in fields)

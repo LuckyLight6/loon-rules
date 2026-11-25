@@ -4,8 +4,8 @@
 # description: 其他海外影音
 # boundary: 只补专项未覆盖的影音域名，交给海外影音策略；不按共享 IP、关键字或客户端名识别
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-24T20:44:08Z
-# rule-count: 144
+# updated-at: 2026-11-25T00:37:42Z
+# rule-count: 139
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 
@@ -65,11 +65,6 @@ DOMAIN-SUFFIX,dca-ll-livedazn-dznlivejp.s.llnwi.net
 DOMAIN-SUFFIX,dcalivedazn.akamaized.net
 DOMAIN-SUFFIX,dcblivedazn.akamaized.net
 DOMAIN-SUFFIX,deezer.com
-DOMAIN-SUFFIX,disco-api.com
-DOMAIN-SUFFIX,discomax.com
-DOMAIN-SUFFIX,discoveryplus.co.uk
-DOMAIN-SUFFIX,discoveryplus.com
-DOMAIN-SUFFIX,discoveryplus.in
 DOMAIN-SUFFIX,disneystreaming.com
 DOMAIN-SUFFIX,dmc.nico
 DOMAIN-SUFFIX,dmm-extension.com

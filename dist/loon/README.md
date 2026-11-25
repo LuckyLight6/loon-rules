@@ -221,6 +221,7 @@
 | 3830 | disney-plus-streaming | Disney+ 播放及其专用交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3830-disney-plus-streaming.lsr) |
 | 3840 | prime-video-streaming | Prime Video 视频 API 和内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3840-prime-video-streaming.lsr) |
 | 3850 | hulu-streaming | Hulu 视频与交付 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3850-hulu-streaming.lsr) |
+| 3855 | discovery-plus-streaming | Discovery+ 播放、网站与地区 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3855-discovery-plus-streaming.lsr) |
 | 3860 | youtube-video-and-cdn | YouTube 视频、音乐、频道与专用 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3860-youtube-video-and-cdn.lsr) |
 | 3870 | tiktok-international-video | TikTok 国际短视频与直播 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3870-tiktok-international-video.lsr) |
 | 3880 | bilibili-international-video | 哔哩哔哩国际版视频 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3880-bilibili-international-video.lsr) |
@@ -232,6 +233,7 @@
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3930-twitch-live-video.lsr) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3940-bbc-news-and-video.lsr) |
 | 3950 | bahamut-video-and-community | 巴哈姆特动画疯和电玩社区 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3950-bahamut-video-and-community.lsr) |
+| 3960 | wbd-streaming-platform | HBO Max 与 Discovery 共用流媒体接口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/3960-wbd-streaming-platform.lsr) |
 | 4100 | overseas-games-all | 海外游戏合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/4100-overseas-games-all.lsr) |
 | 4110 | steam-international-platform | Steam 国际商店、社区、联机和下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/4110-steam-international-platform.lsr) |
 | 4120 | epic-games-services | Epic Games 商店、登录及 Unreal 服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/4120-epic-games-services.lsr) |

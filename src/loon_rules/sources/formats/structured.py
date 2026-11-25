@@ -88,7 +88,7 @@ def service_namespace_roots(recipe):
 
 
 def service_domain_groups(recipe,text):
-    document=json.loads(text)
+    document=json_object(text)
     for field in recipe['path']:
         if not isinstance(document,dict) or field not in document:
             raise Invalid('官方服务清单缺少域名字段')
@@ -133,12 +133,67 @@ def json_values(node,path,*,mappings=False):
     return json_values(node[field],tail,mappings=mappings)
 
 
-def json_record(recipe,text):
-    try:document=json.loads(text)
-    except ValueError as exc:raise Invalid('服务元数据不是 JSON') from exc
+def json_object(text):
+    def unique_fields(pairs):
+        result = {}
+        for name, value in pairs:
+            if name in result:
+                raise Invalid('服务元数据含重复 JSON 字段')
+            result[name] = value
+        return result
+
+    def invalid_constant(value):
+        raise Invalid('服务元数据含 JSON 标准之外的数值')
+
+    if not isinstance(text, str):
+        raise Invalid('服务元数据的 JSON 字段不是字符串')
+    try:
+        document = json.loads(text, object_pairs_hook=unique_fields, parse_constant=invalid_constant)
+    except (ValueError, RecursionError) as exc:
+        raise Invalid('服务元数据不是有效 JSON') from exc
     if not isinstance(document,dict):raise Invalid('服务元数据不是对象')
-    for identity in recipe.get('identity',()):
-        if json_values(document,identity['path'])!=[identity['equals']]:
+    return document
+
+
+def json_record(recipe,text):
+    document = json_object(text)
+    paths = recipe.get('decode-json', [])
+    if (not isinstance(paths, list) or any(not isinstance(path, list) or not path
+            or any(not isinstance(field, str) or not field or field == '*' for field in path) for path in paths)):
+        raise Invalid('内层 JSON 缺少明确且唯一的字段路径')
+    selected = set()
+    for path in paths:
+        key = tuple(path)
+        if any(key[:len(prior)] == prior or prior[:len(key)] == key for prior in selected):
+            raise Invalid('内层 JSON 字段路径重复或相互嵌套')
+        selected.add(key)
+        parents = json_values(document, path[:-1])
+        if len(parents) != 1 or not isinstance(parents[0], dict) or path[-1] not in parents[0]:
+            raise Invalid('服务元数据缺少内层 JSON 字段')
+        parents[0][path[-1]] = json_object(parents[0][path[-1]])
+    identities = recipe.get('identity', [])
+    if not isinstance(identities, list):
+        raise Invalid('服务元数据的身份条件必须是数组')
+    for identity in identities:
+        if (not isinstance(identity, dict) or 'path' not in identity
+                or len(set(identity) & {'equals', 'each-equals', 'each-keys'}) != 1
+                or set(identity) - {'path', 'equals', 'each-equals', 'each-keys'}
+                or not isinstance(identity['path'], list)
+                or any(not isinstance(field, str) or not field for field in identity['path'])):
+            raise Invalid('服务元数据的身份条件或记录用途无效')
+        values = json_values(document, identity['path'])
+        if 'each-keys' in identity:
+            fields = identity['each-keys']
+            if (not isinstance(fields, list) or not fields
+                    or any(not isinstance(field, str) or not field for field in fields)
+                    or len(fields) != len(set(fields))
+                    or any(not isinstance(value, dict) or set(value) != set(fields) for value in values)):
+                raise Invalid('服务记录的字段范围发生变化')
+            continue
+        mode = 'equals' if 'equals' in identity else 'each-equals'
+        expected = json.dumps(identity[mode], sort_keys=True, allow_nan=False)
+        if (mode == 'equals' and len(values) != 1
+                or any(json.dumps(value, sort_keys=True, allow_nan=False) != expected for value in values)):
             raise Invalid('服务元数据的产品身份不符')
     return document
 
@@ -219,9 +274,13 @@ def next_service_urls(recipe, text):
 def service_url_host(value, *, allow_query=False):
     if not isinstance(value,str) or value!=value.strip() or any(ord(c)<32 for c in value):
         raise Invalid('服务 URL 字段不是有效字符串')
-    url=urlsplit(value)
+    try:
+        url=urlsplit(value)
+        port=url.port
+    except ValueError as exc:
+        raise Invalid('服务 URL 的地址或端口格式无效') from exc
     if (url.scheme != 'https' or not url.hostname or url.username is not None
-            or url.fragment or (url.query and not allow_query)):
+            or port == 0 or url.fragment or (url.query and not allow_query)):
         raise Invalid('服务 URL 字段不是无凭据的 HTTPS 入口')
     return domain_scope.public_host(url.hostname)
 
