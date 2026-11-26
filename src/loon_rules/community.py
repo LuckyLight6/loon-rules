@@ -5,7 +5,7 @@ from ipaddress import ip_network
 
 from loon_rules import domains, rules
 
-FORMATS = {'classical', 'quantumult-x', 'domain-set', 'clash-domain', 'clash-classical', 'clash-domain-lines', 'sing-box'}
+FORMATS = {'classical', 'quantumult-x', 'domain-set', 'clash-domain', 'clash-classical', 'clash-domain-lines', 'sing-box', 'egern'}
 JSON_FIELDS = {'domain': 'DOMAIN', 'domain_suffix': 'DOMAIN-SUFFIX', 'domain_keyword': 'DOMAIN-KEYWORD',
     'domain_regex': 'DOMAIN-REGEX', 'ip_cidr': 'IP-CIDR', 'ip_asn': 'IP-ASN',
     'source_ip_cidr': 'SRC-IP-CIDR', 'process_name': 'PROCESS-NAME', 'process_path': 'PROCESS-PATH',
@@ -92,6 +92,77 @@ def payload(text):
     return result
 
 
+
+def egern_fields(text):
+    """Read explicit scalar lists without changing YAML's ASCII separators."""
+    fields={}
+    current=None
+    indentation=None
+    known={'domain_set','domain_suffix_set','domain_keyword_set','domain_wildcard_set',
+           'domain_regex_set','ip_cidr_set','ip_cidr6_set','asn_set','geoip_set','url_regex_set',
+           'user_agent_set','ssid_set','bssid_set','cellular_set','protocol_set','dest_port_set'}
+    lines=text.removeprefix('\ufeff').replace('\r\n','\n').replace('\r','\n').split('\n')
+    for raw in lines:
+        line=raw.strip(' \t')
+        if not line or line.startswith('#'):
+            continue
+        prefix=raw[:len(raw)-len(raw.lstrip(' \t'))]
+        if '\t' in prefix:
+            raise rules.Invalid('Egern 规则集的缩进尚未确认')
+        header=re.fullmatch(r'([a-z][a-z0-9_]*):(?:[ \t]+(.*))?',line) if not prefix else None
+        if header:
+            key,value=header.groups()
+            if key in fields:
+                raise rules.Invalid('Egern 规则集含重复字段')
+            if key=='no_resolve':
+                value=re.split(r'[ \t]+#',value or '',maxsplit=1)[0].strip(' \t')
+                if value not in ('true','false'):
+                    raise rules.Invalid('Egern no_resolve 不是明确布尔值')
+                fields[key]=value=='true'
+                current=None
+            elif key in known and (not value or value.startswith('#')):
+                fields[key]=[]
+                current=key
+                indentation=None
+            else:
+                raise rules.Invalid('Egern 来源含尚未确认的字段、逻辑或结构')
+            continue
+        item=re.fullmatch(r'-[ \t]+(.*)',line)
+        if current is None or item is None:
+            raise rules.Invalid('Egern 来源不是完整的简单集合列表')
+        if indentation is not None and len(prefix)!=indentation:
+            raise rules.Invalid('Egern 集合含嵌套或不一致结构')
+        indentation=len(prefix)
+        scalar=item[1]
+        value=scalar
+        if value.startswith('"'):
+            try:
+                value,end=json.JSONDecoder().raw_decode(scalar)
+            except ValueError as error:
+                raise rules.Invalid('Egern 集合的引号或转义尚未确认') from error
+            remainder=scalar[end:]
+            if remainder and not re.fullmatch(r'[ \t]+#.*',remainder):
+                raise rules.Invalid('Egern 集合的引号后含未知结构')
+        elif value.startswith("'"):
+            quoted=re.fullmatch(r"'((?:[^']|'')*)'(?:[ \t]+#.*)?",value)
+            if not quoted:
+                raise rules.Invalid('Egern 集合的单引号不完整')
+            value=quoted[1].replace("''", "'")
+        else:
+            value=re.split(r'[ \t]+#',value,maxsplit=1)[0].strip(' \t')
+            if (not value or value[0] in '#*&!|>{[~@`'
+                    or re.match(r'[-?](?:[ \t]|$)',value)
+                    or re.search(r':(?:[ \t]|$)',value)
+                    or value.casefold() in ('true','false','null')):
+                raise rules.Invalid('Egern 集合含尚未确认的YAML类型或引用')
+        if not isinstance(value,str) or not value:
+            raise rules.Invalid('Egern 集合缺少完整文字条件')
+        fields[current].append(value)
+    if not fields or any(not values for key,values in fields.items() if key!='no_resolve'):
+        raise rules.Invalid('Egern 规则集为空或含未完整读取的集合')
+    return fields
+
+
 def normalize(form, text):
     if form not in FORMATS:
         raise rules.Invalid('社区来源尚未确认格式：' + form)
@@ -99,7 +170,40 @@ def normalize(form, text):
     conditions = []
     policies = {}
     notes = set()
-    if form == 'sing-box':
+    if form=='egern':
+        fields=egern_fields(text)
+        no_resolve=fields.pop('no_resolve',False)
+        kinds={'domain_set':'DOMAIN','domain_suffix_set':'DOMAIN-SUFFIX',
+               'domain_keyword_set':'DOMAIN-KEYWORD','domain_wildcard_set':'DOMAIN-WILDCARD',
+               'ip_cidr_set':'IP-CIDR','ip_cidr6_set':'IP-CIDR6','asn_set':'IP-ASN'}
+        for field,values in fields.items():
+            if field not in kinds:
+                condition={field:values}
+                if field=='geoip_set':condition['no_resolve']=no_resolve
+                conditions.append({'egern':condition})
+                continue
+            kind=kinds[field]
+            for value in values:
+                if kind.startswith('DOMAIN') and not value.isascii():
+                    if kind!='DOMAIN-KEYWORD' and not re.fullmatch(r'[\w.*?\[\]-]+',value):
+                        raise rules.Invalid('Egern 国际化域名含未确认结构')
+                    conditions.append({'egern':{field:[value]},'native-domain-semantics':'unverified'})
+                    notes.add('unicode-domain-semantics-unverified')
+                    continue
+                if field=='asn_set':
+                    number=value[2:] if value.upper().startswith('AS') else value
+                    if not number.isdecimal():
+                        conditions.append({'egern-asn-organization':value,'no_resolve':no_resolve})
+                        continue
+                    value=number
+                if field in ('ip_cidr_set','ip_cidr6_set'):
+                    network=ip_network(value,strict=False)
+                    if network.version!=(4 if field=='ip_cidr_set' else 6):
+                        raise rules.Invalid('Egern 地址族与字段不符')
+                    if str(network)!=value:notes.add('unaligned-or-noncanonical-ip-prefix')
+                options=['no-resolve'] if no_resolve and kind.startswith('IP-') else []
+                atoms.add(canonical(kind,value,options))
+    elif form == 'sing-box':
         doc = json.loads(text)
         if (not isinstance(doc, dict) or set(doc) != {'version', 'rules'}
                 or type(doc['version']) is not int or doc['version'] not in (1, 2, 3, 4, 5)

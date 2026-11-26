@@ -1,17 +1,17 @@
 {
   "schema-version": 1,
-  "checked-at": "2026-11-26T19:36:26.350657+00:00",
+  "checked-at": "2026-11-26T21:38:03.708614+00:00",
   "summary": {
-    "inputs-expected": 2467,
-    "inputs-observed": 2467,
-    "inputs-normalized": 2215,
-    "inputs-held": 252,
+    "inputs-expected": 2673,
+    "inputs-observed": 2673,
+    "inputs-normalized": 2420,
+    "inputs-held": 253,
     "inputs-with-changes": 0,
-    "repository-branches": 83,
+    "repository-branches": 86,
     "products-with-file-candidates": 318,
     "searches-held": 0,
     "hosted-sources-checked": 1,
-    "hosted-sources-held": 0
+    "hosted-sources-held": 1
   },
   "inputs": {
     "source-1d38a9a824f81c928af5": {
@@ -1153,8 +1153,8 @@
       "ref": "main",
       "path": "rule/Lan.list",
       "format": "classical",
-      "revision": "9c90c1e69fab2da47386a02362084690e7f15189",
-      "committed-at": "2026-11-26T19:06:11Z",
+      "revision": "29c3712753c799b3a6c7b4cbcdb51c262bc9717a",
+      "committed-at": "2026-11-26T20:21:20Z",
       "sha256": "f2025d03d3bbb329f3fd4d4f45deed5ea90f59b052bae133d3b3e7c22a67b264",
       "bytes": 833,
       "lineage-status": "unverified",
@@ -33364,8 +33364,8 @@
       "ref": "main",
       "path": "rule/geosite-Lan.json",
       "format": "sing-box",
-      "revision": "ca6adf2e35f1d17a8143b7ceb0460889d3fa1f11",
-      "committed-at": "2026-11-25T21:00:34Z",
+      "revision": "7bd2300a75abbc5aa7f83841d85b25381d3fdffc",
+      "committed-at": "2026-11-26T20:53:41Z",
       "sha256": "1b6d89fe7de8cc75bde779646fee50895a19ba5cd6c26af3e3ad0655ab9fcb77",
       "bytes": 5557,
       "lineage-status": "unverified",
@@ -37998,6 +37998,3608 @@
       "conditional_rules": 0,
       "products": [
         "ai-overseas-all"
+      ]
+    },
+    "source-e1f8c6cba47bb1fca926": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/12306/12306.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "8ad30769874e71d1402d1e252f30ea18af22bbaa223d5d3f90bf8f9c3b8ddc3a",
+      "bytes": 298,
+      "lineage-status": "unverified",
+      "rules": 15,
+      "conditional_rules": 0,
+      "products": [
+        "railway-tickets"
+      ]
+    },
+    "source-e0b6adb36785bbc01d7b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AMP/AMP.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "f0c1935ccee8df38f43b949071dfa3bef399f60370b4256d399cceaf25e1f318",
+      "bytes": 161,
+      "lineage-status": "unverified",
+      "rules": 5,
+      "conditional_rules": 0,
+      "products": [
+        "amp-connections"
+      ]
+    },
+    "source-e13e2eab39fb5884e5b9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Adobe/Adobe.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "042eece4d9aa28ab4875a938d0102bccbcecf4f8a629e9629b728752ac78af10",
+      "bytes": 2756,
+      "lineage-status": "unverified",
+      "rules": 137,
+      "conditional_rules": 0,
+      "products": [
+        "adobe-mainland",
+        "adobe-shared-services"
+      ]
+    },
+    "source-9312a2357968b11b4687": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AliPay/AliPay.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "eaed0e8806bb5d97bbd9aef495cfad77eb1231290a33e617b062c32c18e7a88d",
+      "bytes": 444,
+      "lineage-status": "unverified",
+      "rules": 21,
+      "conditional_rules": 0,
+      "products": [
+        "alipay-mainland-payments"
+      ]
+    },
+    "source-d45f1421133e5de92339": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Alibaba/Alibaba.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "e0c844908262915133789764444b221b67e7468237252ada3a0953d6f9f4c90a",
+      "bytes": 1152,
+      "lineage-status": "unverified",
+      "rules": 57,
+      "conditional_rules": 0,
+      "products": [
+        "alibaba-shared-services",
+        "npmmirror-registry"
+      ]
+    },
+    "source-e30b6088809b348c433e": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Amazon/Amazon.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b546dd450a46f47c7bc0f6845f082090fb60e14eceb4a166d131f1f03ab43b9f",
+      "bytes": 4214,
+      "lineage-status": "unverified",
+      "rules": 202,
+      "conditional_rules": 2,
+      "products": [
+        "amazon-mainland",
+        "amazon-shared-services"
+      ]
+    },
+    "source-f78d36d719aedb44278a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AmazonCN/AmazonCN.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "298e7136965d629e959a57259e0daafab5b2fcbe97b0f5a012e78b7081ded544",
+      "bytes": 1025,
+      "lineage-status": "unverified",
+      "rules": 47,
+      "conditional_rules": 0,
+      "products": [
+        "amazon-mainland"
+      ]
+    },
+    "source-51eec1675b0e676e0531": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AmazonPrimeVideo/AmazonPrimeVideo.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "dd80abc286e75d93030c6b7034375400a92d0a98b23f183bc8f01d8926f0f7e8",
+      "bytes": 740,
+      "lineage-status": "unverified",
+      "rules": 25,
+      "conditional_rules": 1,
+      "products": [
+        "prime-video-streaming"
+      ]
+    },
+    "source-e4ef778670be75e98457": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Anthropic/Anthropic.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "2189adabbd68782b15e0edde3045d3a76ace19ba3c2b92924c33ee17d806131e",
+      "bytes": 146,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all",
+        "claude-connections"
+      ]
+    },
+    "source-51c1bdb13b2490900a77": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppStore/AppStore.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "2ff7dd1d596e0304ef87949ec59b77ab82c72d981cf2281566f94697541a1810",
+      "bytes": 96,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "apple-store-transactions"
+      ]
+    },
+    "source-3bd5aa3d25f91eefe91b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Apple/Apple.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "961b30afb288f07374986aa6cb574ad23ff7bc358e005f4c028e04292968d3a8",
+      "bytes": 963,
+      "lineage-status": "unverified",
+      "rules": 20,
+      "conditional_rules": 1,
+      "products": [
+        "apple-account-authentication",
+        "apple-and-ai-privacy-exceptions",
+        "apple-app-and-device-verification",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-certificate-validation",
+        "apple-cloud-sync",
+        "apple-developer-downloads",
+        "apple-developer-portal",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-find-my",
+        "apple-icloud-content-domains",
+        "apple-icloud-mainland",
+        "apple-intelligence-relays",
+        "apple-location-services",
+        "apple-mainland-delivery-aliases",
+        "apple-messaging-identity",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-other-services",
+        "apple-podcasts",
+        "apple-private-relay-connections",
+        "apple-push-connection",
+        "apple-schoolwork-handouts",
+        "apple-shared-store-assets",
+        "apple-siri-and-search",
+        "apple-store-transactions",
+        "apple-system-connectivity",
+        "apple-testflight",
+        "apple-tv-video-delivery",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-video-and-fitness",
+        "apple-wallet-payments"
+      ]
+    },
+    "source-71bf1c0a0f13d6d637c5": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleID/AppleID.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "ca87358c025fc363f32d0e4056fba572d154f095e59437bd5741067307ead880",
+      "bytes": 141,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "apple-account-authentication"
+      ]
+    },
+    "source-19ececd4ae1a4ce381c8": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleMedia/AppleMedia.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "56ce9e27e588ddf374f42be03dea20ae8f6e9f5bbf37c32a14f75ba6bc05873a",
+      "bytes": 1152,
+      "lineage-status": "unverified",
+      "rules": 52,
+      "conditional_rules": 0,
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ]
+    },
+    "source-7f07faab6e26816e0e57": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleMusic/AppleMusic.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "afe21299e1125e11fa69618905741c006ba91f7733bfcc4723518a0c917e06a4",
+      "bytes": 344,
+      "lineage-status": "unverified",
+      "rules": 9,
+      "conditional_rules": 1,
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ]
+    },
+    "source-cc71c021f35574eb2491": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleNews/AppleNews.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "9baf92229bd2a427e72d1731805b5170a6faba414c41a47f502b197fd6e7a948",
+      "bytes": 117,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "apple-news-and-sports"
+      ]
+    },
+    "source-b2082e2b600b6f713208": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleTV/AppleTV.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "4b91400ec360065333b0b76c27dd7e41e7b70948a38fb32ae4188d46c073d81a",
+      "bytes": 307,
+      "lineage-status": "unverified",
+      "rules": 7,
+      "conditional_rules": 1,
+      "products": [
+        "apple-tv-video-delivery"
+      ]
+    },
+    "source-afe9bfc6e2ae1e1d866f": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Atlassian/Atlassian.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "71900a6c3a0682e68b324049614aa743a62ed24a6f0147d61fb8cca097f8b1ea",
+      "bytes": 151,
+      "lineage-status": "unverified",
+      "rules": 5,
+      "conditional_rules": 0,
+      "products": [
+        "atlassian-cloud-services",
+        "bitbucket-hosting",
+        "trello-boards"
+      ]
+    },
+    "source-5225fa195507f866b1e9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/BBC/BBC.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "92e7ef2c944a70fe332affb67f2945c96250e593f7de96c637b3be41491e9880",
+      "bytes": 772,
+      "lineage-status": "unverified",
+      "rules": 28,
+      "conditional_rules": 1,
+      "products": [
+        "bbc-news-and-video"
+      ]
+    },
+    "source-106deba50baf81ca9c85": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Bahamut/Bahamut.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "af46499cb6b2f38399fc9af28521005369d3bb1a99afa045b89cb51766e7992b",
+      "bytes": 225,
+      "lineage-status": "unverified",
+      "rules": 7,
+      "conditional_rules": 1,
+      "products": [
+        "bahamut-video-and-community"
+      ]
+    },
+    "source-ee5e171194660a197417": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Baidu/Baidu.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "f0091072b0c41a684d97d1d02347f0408450c0b990d99cdb31a74ceb289e767f",
+      "bytes": 4375,
+      "lineage-status": "unverified",
+      "rules": 251,
+      "conditional_rules": 0,
+      "products": [
+        "baidu-mainland",
+        "baidu-shared-services"
+      ]
+    },
+    "source-e128b617c15c96fd7675": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/BardAI/BardAI.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "3b336f28c58e296f55a93029a210f40bee9b1fe1796ce81f6d6022bdefb1fbf9",
+      "bytes": 342,
+      "lineage-status": "unverified",
+      "rules": 10,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all"
+      ]
+    },
+    "source-e09ce11c8d34c3a192e1": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/BiliBili/BiliBili.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "bd3085cf8eb40466a3bf84b19a5df0f81f8bc4c2488b3658fec72553c2182055",
+      "bytes": 3525,
+      "lineage-status": "unverified",
+      "rules": 123,
+      "conditional_rules": 1,
+      "products": [
+        "bilibili-international-video",
+        "bilibili-mainland-video"
+      ]
+    },
+    "source-cf6a93fe509e93684f03": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Binance/Binance.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "5c66579f2dff25be22e6ecdec1dcb315692d2aba4ae368f1b14fd55e33961b6d",
+      "bytes": 267,
+      "lineage-status": "unverified",
+      "rules": 12,
+      "conditional_rules": 0,
+      "products": [
+        "binance-platform"
+      ]
+    },
+    "source-893469bd8da0c94b11c6": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Blizzard/Blizzard.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "96ab3353ea9dbd0b1744d9d1bb7faf086181f1bd424778fb76e11b6b80d2095c",
+      "bytes": 1490,
+      "lineage-status": "unverified",
+      "rules": 62,
+      "conditional_rules": 0,
+      "products": [
+        "blizzard-battlenet"
+      ]
+    },
+    "source-637c917ab339544e77a7": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/ByteDance/ByteDance.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "f1bce2777f1d37358e91b24a01b1ed4222888f7ab53c348961c029cfe537b7c7",
+      "bytes": 6957,
+      "lineage-status": "unverified",
+      "rules": 371,
+      "conditional_rules": 1,
+      "products": [
+        "bytedance-international",
+        "bytedance-mainland",
+        "bytedance-shared-services"
+      ]
+    },
+    "source-bab75d6470e1311c44e6": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/China/China_Domain.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "a297459cc5d2b432259a0fe1d86a81fc9fe1be70af72d624790ca94b26525751",
+      "bytes": 62009,
+      "lineage-status": "unverified",
+      "rules": 3689,
+      "conditional_rules": 0,
+      "products": [
+        "gitcode-hosting",
+        "mainland-domains",
+        "overseas-sites-extra",
+        "railway-tickets",
+        "unionpay-mainland"
+      ]
+    },
+    "source-988b60749748a406b57c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Civitai/Civitai.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "df4aad3b7a582f85f79054e035db2188a7db12b77224b81e4acdd862606ff792",
+      "bytes": 78,
+      "lineage-status": "unverified",
+      "rules": 1,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all"
+      ]
+    },
+    "source-105bc83f88f81450f7a6": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Claude/Claude.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b4dabcdf5d90be1c88f7b6aafc0018efac476287a8a2387bc5091f10fa487552",
+      "bytes": 127,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all",
+        "claude-connections"
+      ]
+    },
+    "source-e0074e153a655366889a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Cloudflare/Cloudflare.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "83e6f55244841917aead6ef8dcf1310514d2e253b7e25522547c2340424eae93",
+      "bytes": 1430,
+      "lineage-status": "unverified",
+      "rules": 65,
+      "conditional_rules": 0,
+      "products": [
+        "cloudflare-mainland",
+        "cloudflare-public-dns",
+        "cloudflare-shared-services"
+      ]
+    },
+    "source-99b64f1354835a0b308f": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Cloudflarecn/Cloudflarecn.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "ab75fba27bb5076740298e0f9233147f975137c810950e5d8242a6ae9734f149",
+      "bytes": 338,
+      "lineage-status": "unverified",
+      "rules": 14,
+      "conditional_rules": 0,
+      "products": [
+        "cloudflare-mainland"
+      ]
+    },
+    "source-b72a8b17c61f9046ff42": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Copilot/Copilot.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "9db33603d63400003e977bc2cf9ed4548c9aac146abc6b67aedd8a6af9f58ad5",
+      "bytes": 1355,
+      "lineage-status": "unverified",
+      "rules": 51,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all"
+      ]
+    },
+    "source-f5cd687e245f44d0800c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DiDi/DiDi.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b270d7a174224236f8c86a8711cbba461d4fe86defb767cab994b0187f831250",
+      "bytes": 518,
+      "lineage-status": "unverified",
+      "rules": 25,
+      "conditional_rules": 0,
+      "products": [
+        "didi-mobility"
+      ]
+    },
+    "source-fd2e05ba971c3b343d0b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DigitalOcean/DigitalOcean.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "7ee23c54b7fe247f467b3e1a778d91396cb34d3b75d8813a8d854b2c2e27dd31",
+      "bytes": 144,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "digitalocean-services"
+      ]
+    },
+    "source-7a3e72eb1c0f3ec5846a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DingTalk/DingTalk.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "4d3929b14f772566de10579d9d94a6db96703fed2606be983d28369ef06fc9aa",
+      "bytes": 245,
+      "lineage-status": "unverified",
+      "rules": 11,
+      "conditional_rules": 0,
+      "products": [
+        "dingtalk-public"
+      ]
+    },
+    "source-1c8c6af9073c302044ea": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Discord/Discord.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "ebb65a1ac5a2c54b77ae7665ea5d0a71bf947511124e66b53d30ffb125662eb2",
+      "bytes": 691,
+      "lineage-status": "unverified",
+      "rules": 29,
+      "conditional_rules": 0,
+      "products": [
+        "discord-activities-proxy",
+        "discord-messaging-and-voice"
+      ]
+    },
+    "source-49282e7955c0395274a8": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DiscoveryPlus/DiscoveryPlus.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "35b749a41ff494db40d1d618619eedc4ee88b67e859f114c8a040cf24eda5e19",
+      "bytes": 522,
+      "lineage-status": "unverified",
+      "rules": 15,
+      "conditional_rules": 1,
+      "products": [
+        "discovery-plus-streaming",
+        "wbd-streaming-platform"
+      ]
+    },
+    "source-245125fc4455dc32ef01": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Disney/Disney.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "725d1b23c8f534421fd6e78ad8fa22e8ce7e9b96d46e3836bd7dc5d5114e4d24",
+      "bytes": 3744,
+      "lineage-status": "unverified",
+      "rules": 172,
+      "conditional_rules": 1,
+      "products": [
+        "disney-plus-streaming",
+        "disney-shared-services"
+      ]
+    },
+    "source-37f97ca64fbd7c6980ab": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Docker/Docker.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "a073b9cc628eb6c25b1d7f3c00a113dde8d94326faa5b8bd4a5dbd1b5e6b56dc",
+      "bytes": 242,
+      "lineage-status": "unverified",
+      "rules": 7,
+      "conditional_rules": 0,
+      "products": [
+        "docker-desktop-and-platform",
+        "docker-hub"
+      ]
+    },
+    "source-67b8370715d27745f06a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DouBan/DouBan.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "569d4a656d35ee595e71732d0719a0ac3b32910f1511d3ea419e2e2611c98aaa",
+      "bytes": 107,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "douban-community"
+      ]
+    },
+    "source-ea52b0f4f1b25f8f004b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DouYin/DouYin.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "3c1d97618ad52ba9de75b82a400346d0808904ede06a48a5c81d4980363304e2",
+      "bytes": 322,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "douyin-mainland-video"
+      ]
+    },
+    "source-7ebb9a45088f8193c467": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Douyu/Douyu.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "4ea6dd609407b3b193b1d7ecf444c82af2d41de0290a6a9a490cdce53b3cc00a",
+      "bytes": 270,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "douyu-live"
+      ]
+    },
+    "source-bb41b6da08868895ab2b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/EA/EA.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "e7085a7dccfa39ec3e5f7b7c6f6155f8227136e8848d6d7ecbf550e30e33aff4",
+      "bytes": 3578,
+      "lineage-status": "unverified",
+      "rules": 165,
+      "conditional_rules": 0,
+      "products": [
+        "ea-games"
+      ]
+    },
+    "source-722a45d5700094e460b2": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Epic/Epic.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b169e9ff4bb0eb6277a1213c8c2a302ba057ab325218e7452fad6c1bc9767ca4",
+      "bytes": 343,
+      "lineage-status": "unverified",
+      "rules": 15,
+      "conditional_rules": 0,
+      "products": [
+        "epic-games-services"
+      ]
+    },
+    "source-8d4ab4905ab9ac37f061": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Facebook/Facebook.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "863d3509859ccfb286725b6e3469c6c26992d493a6b5abcf30521327722e34fb",
+      "bytes": 11497,
+      "lineage-status": "unverified",
+      "rules": 570,
+      "conditional_rules": 0,
+      "products": [
+        "meta-shared-services"
+      ]
+    },
+    "source-e0d7ee1135ad431b3eae": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Figma/Figma.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "1a37a533e15698676d3dfd25322ec39a6cd8493155de2d98d1133f705087b26c",
+      "bytes": 74,
+      "lineage-status": "unverified",
+      "rules": 1,
+      "conditional_rules": 0,
+      "products": [
+        "figma-design"
+      ]
+    },
+    "source-5fd6deecb063cfe664e4": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/FindMy/FindMy.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "dd37a5a74a975d198d781fcfcb2030ebf16eb3260dadc05bdf7bbb32c62cf50a",
+      "bytes": 128,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "apple-find-my",
+        "apple-location-services"
+      ]
+    },
+    "source-98355afbb490678c7418": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Gemini/Gemini.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b85f2b2ebec0d6ab8136d749eb9d3518294fcf2937074cad688b6362c22d6608",
+      "bytes": 399,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all",
+        "gemini-connections",
+        "gemini-exchange"
+      ]
+    },
+    "source-8495b2921d7d979edd01": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GitHub/GitHub.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "6998a6f2509f22cefaec8665e7b71602fb989fdce1a65c9eb7b1af439ca2c687",
+      "bytes": 711,
+      "lineage-status": "unverified",
+      "rules": 31,
+      "conditional_rules": 0,
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ]
+    },
+    "source-5447e5bf2b52bef325b6": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GitLab/GitLab.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "0a069db1c854c77e6c0fd7982911d611445a029b2a5589bdc2b41ae55869dd7c",
+      "bytes": 196,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "gitlab-hosting"
+      ]
+    },
+    "source-dc536039ddcc8ec844a9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Gitee/Gitee.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "d4c9da8c4df0606f8ac0899934a3a32f762abe593d345244d382e59dcd9726ea",
+      "bytes": 87,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "gitee-hosting"
+      ]
+    },
+    "source-78c12178bd308591733f": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Google/Google.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "7de190fc9af7e2c66af674a3464e4b533fa4133aead121df27aa9a410f1e74d2",
+      "bytes": 12724,
+      "lineage-status": "unverified",
+      "rules": 695,
+      "conditional_rules": 1,
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ]
+    },
+    "source-7d6514bbb7c2f449a000": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GoogleDrive/GoogleDrive.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "3f1596e76d10004c3eb9fadcc33b9d1f44da2b2658794af1f1063542aa590ec5",
+      "bytes": 293,
+      "lineage-status": "unverified",
+      "rules": 5,
+      "conditional_rules": 1,
+      "products": [
+        "google-drive-and-documents"
+      ]
+    },
+    "source-f9ddbe28b8367b03d0c9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GoogleFCM/GoogleFCM.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "51a829316b744f9b3ce9992b8b29cf79ce16433d038be2864b15ed2a173b09f7",
+      "bytes": 1076,
+      "lineage-status": "unverified",
+      "rules": 41,
+      "conditional_rules": 0,
+      "products": [
+        "google-firebase-messaging"
+      ]
+    },
+    "source-9482571483dfb59360e8": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/HBO/HBO.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "acc6350d5e5faa1ea92f01c9b79816b9206cba419a534cb9badfd2e1bb3ecf06",
+      "bytes": 1163,
+      "lineage-status": "unverified",
+      "rules": 47,
+      "conditional_rules": 1,
+      "products": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ]
+    },
+    "source-3bd4b0bbbf67dd0e62d0": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Heroku/Heroku.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "5bb305316666910e1903c547bcf89476844fa06d73a7af9c80ece4fac0da586d",
+      "bytes": 264,
+      "lineage-status": "unverified",
+      "rules": 12,
+      "conditional_rules": 0,
+      "products": [
+        "heroku-services"
+      ]
+    },
+    "source-7a30674b0f9d63f2cd36": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/HoYoverse/HoYoverse.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "d49cf9518b070c7131703c94be744fdeb3cded1efefc660dbdccd6a271cec5b2",
+      "bytes": 273,
+      "lineage-status": "unverified",
+      "rules": 11,
+      "conditional_rules": 0,
+      "products": [
+        "hoyoverse-international"
+      ]
+    },
+    "source-47bdae81ae9a12d41d7f": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/HuYa/HuYa.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "22c6eff2a14204da045f929e46942415486c73882b308b624e5ff73d1e2b5836",
+      "bytes": 122,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "huya-live"
+      ]
+    },
+    "source-e9a67ecf2316003f1e61": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Huawei/Huawei.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "2a63eeae4c2542a093eab1205f3b72c07ea4eace18444ea2713540bbd74e5a67",
+      "bytes": 2942,
+      "lineage-status": "unverified",
+      "rules": 160,
+      "conditional_rules": 0,
+      "products": [
+        "huawei-shared-services"
+      ]
+    },
+    "source-573cd7f1f20ebd34b0d2": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Hulu/Hulu.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "6dbb9e4e51f603e791335e9651298493c487efc999a6157715778ee1b538c051",
+      "bytes": 1156,
+      "lineage-status": "unverified",
+      "rules": 58,
+      "conditional_rules": 0,
+      "products": [
+        "hulu-streaming"
+      ]
+    },
+    "source-1b964dcff853fb3081d3": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Instagram/Instagram.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "14b304ec1d2bb315f5a9a28d2961004fe5115d45ad636011adccd5e92bb22500",
+      "bytes": 152,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "instagram-social"
+      ]
+    },
+    "source-d8ce206a67eba9984360": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Intel/Intel.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b76cafd930dfcaf9d0a9825e1bb3fa26267837c79afefddd22582df0b8013458",
+      "bytes": 4419,
+      "lineage-status": "unverified",
+      "rules": 261,
+      "conditional_rules": 0,
+      "products": [
+        "intel-mainland"
+      ]
+    },
+    "source-e485e6fb3ab0a6263307": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Intercom/Intercom.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "1de98fcea4731ab2be4e4c71620ab7fce0c33160c19d2d2afce8987ab1c6fc13",
+      "bytes": 139,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "intercom-customer-support"
+      ]
+    },
+    "source-cc7393489ff18616bb42": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Jetbrains/Jetbrains.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "f571ec244b889f8a7da74e49bef07aad48871b726534accf4d7e605bae09176c",
+      "bytes": 311,
+      "lineage-status": "unverified",
+      "rules": 14,
+      "conditional_rules": 0,
+      "products": [
+        "jetbrains-ai",
+        "jetbrains-ai-mainland",
+        "jetbrains-ides"
+      ]
+    },
+    "source-ab964d69ff2efeb4f69e": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/JingDong/JingDong.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "a14ae92d46c7cc9a05e895b3a6a4112c0d5375affbc7afb58853e9be7fb1e859",
+      "bytes": 4658,
+      "lineage-status": "unverified",
+      "rules": 249,
+      "conditional_rules": 0,
+      "products": [
+        "jingdong-shopping"
+      ]
+    },
+    "source-1a7819b6bbacb07d8f83": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Kingsoft/Kingsoft.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "8a1dc213146f027a3ad475d79f524db8c529252de2319430921af3465ac87ca6",
+      "bytes": 4201,
+      "lineage-status": "unverified",
+      "rules": 256,
+      "conditional_rules": 0,
+      "products": [
+        "kingsoft-shared-services"
+      ]
+    },
+    "source-a1a2e4897a0d4a0b498b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/KuaiShou/KuaiShou.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "fd526390556eceb8daf9c295665906e1b7b094a38b19ace045301d7fc07c08a7",
+      "bytes": 12488,
+      "lineage-status": "unverified",
+      "rules": 678,
+      "conditional_rules": 0,
+      "products": [
+        "kuaishou-video"
+      ]
+    },
+    "source-0a2c1671f685e37f6a5a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Lan/Lan.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "0471a65bcbcebfd81f321dcddc6c5b4726b8b10bde8e78263d7047e0926c3662",
+      "bytes": 3332,
+      "lineage-status": "unverified",
+      "rules": 142,
+      "conditional_rules": 0,
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ]
+    },
+    "source-4daa5089089f64508965": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Line/Line.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "ef9e0411f62de153a32a4570fd2b8178abf4f4721da9cc61b8c7fb761cd12117",
+      "bytes": 540,
+      "lineage-status": "unverified",
+      "rules": 24,
+      "conditional_rules": 0,
+      "products": [
+        "line-messenger"
+      ]
+    },
+    "source-9a4a85273cd3101ba7cf": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/LinkedIn/LinkedIn.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "f51b45e16774447d453ba57a3b564b7776e160995ae0b3d3b757e26bf44f145f",
+      "bytes": 316,
+      "lineage-status": "unverified",
+      "rules": 12,
+      "conditional_rules": 0,
+      "products": [
+        "linkedin-network"
+      ]
+    },
+    "source-d57be5ba60a13fe42760": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/MeiTuan/MeiTuan.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "d90c2729ab9c3c4761c2aaf574924d5fe9122c43b49bc404cdb9afa1b9c5e650",
+      "bytes": 170,
+      "lineage-status": "unverified",
+      "rules": 7,
+      "conditional_rules": 0,
+      "products": [
+        "meituan-services"
+      ]
+    },
+    "source-3af026e97ca1ef3a126c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Microsoft/Microsoft.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "7a06df48c4a0e9f47cddb2e2f20bce4f6def392ebce103dd0e5688918ef14464",
+      "bytes": 13748,
+      "lineage-status": "unverified",
+      "rules": 668,
+      "conditional_rules": 1,
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ]
+    },
+    "source-bce6dde2e0cb11430487": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/NetEase/NetEase.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "31ac7bc67abb75c09a7375885e51dab5c349bc12e288a192e36ab3d67f3a51dc",
+      "bytes": 2613,
+      "lineage-status": "unverified",
+      "rules": 146,
+      "conditional_rules": 0,
+      "products": [
+        "netease-international-games",
+        "netease-music",
+        "netease-shared-services",
+        "youdao-products"
+      ]
+    },
+    "source-9dc0cc17f92fc6246b65": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/NetEaseMusic/NetEaseMusic.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "7eb2272059bddae23ec81e0fe26f914a1723c1fdd59b15c44e654ef1ae74e87e",
+      "bytes": 787,
+      "lineage-status": "unverified",
+      "rules": 28,
+      "conditional_rules": 1,
+      "products": [
+        "netease-music"
+      ]
+    },
+    "source-576033f990b22a68007c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Netflix/Netflix.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "52342ae4c559fe666b21cff2759ba0b0174867e6c0cc237042cded0366fc03c3",
+      "bytes": 23141,
+      "lineage-status": "unverified",
+      "rules": 1156,
+      "conditional_rules": 1,
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ]
+    },
+    "source-dd8d706bcd4b992aa3be": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Nintendo/Nintendo.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "85869133dfc0c59da85524a0f69ab047066f97af758507c342864cbeae9a34d9",
+      "bytes": 2776,
+      "lineage-status": "unverified",
+      "rules": 126,
+      "conditional_rules": 0,
+      "products": [
+        "nintendo-platform"
+      ]
+    },
+    "source-8e13f5d3c17934a7b47f": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Notion/Notion.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "d2051e501ae5548d84c22737fbe9c5561a60d89b2168bfa1c949aca9082c27d6",
+      "bytes": 194,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "notion-workspace"
+      ]
+    },
+    "source-8b23c0356d85cf2e67df": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Npmjs/Npmjs.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "04b1623ec101c5d980dff67804f18ceca2daca018c202c61996305ff7aeeeb46",
+      "bytes": 106,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "npm-registry"
+      ]
+    },
+    "source-be14793312bf6e6e1f82": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Nvidia/Nvidia.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "aeda3dcd37dae48bc5a15703a5348ed9ad8f91671c08fc7b38a38ad099f5e401",
+      "bytes": 1115,
+      "lineage-status": "unverified",
+      "rules": 62,
+      "conditional_rules": 0,
+      "products": [
+        "nvidia-mainland"
+      ]
+    },
+    "source-d35df15bbbd9d710d3d8": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/OKX/OKX.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "77d3ee13f55703940208146d09be158eb15970584e5e07769da0a2159c634914",
+      "bytes": 98,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "okx-platform"
+      ]
+    },
+    "source-f7ca7d832fead50ba781": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/OneDrive/OneDrive.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "8b51c5a83b8d41ccf3f7d70d1fc6c34d292c29b52fc170a22c2ceaaf54752b40",
+      "bytes": 408,
+      "lineage-status": "unverified",
+      "rules": 16,
+      "conditional_rules": 0,
+      "products": [
+        "microsoft-files-and-sharepoint"
+      ]
+    },
+    "source-c69299b5172a7945f06a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/OpenAI/OpenAI.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "c98c5cfaae402e1379f40221fdc3bf15561f49cc91f5cdccbc19206883a3b8dc",
+      "bytes": 958,
+      "lineage-status": "unverified",
+      "rules": 35,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all"
+      ]
+    },
+    "source-165f65d8181770878597": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Oracle/Oracle.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "997093e0b5a5880b8da78f45ed127d53ace77be3fbab576d23feff6cca83ab33",
+      "bytes": 557,
+      "lineage-status": "unverified",
+      "rules": 25,
+      "conditional_rules": 0,
+      "products": [
+        "oracle-shared-services"
+      ]
+    },
+    "source-ef638d320642e9d6948f": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/PayPal/PayPal.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "2323bbfa615addfb76fbb7df68a5dfca187a031500ce13bcf6f9809c6e6594d4",
+      "bytes": 5287,
+      "lineage-status": "unverified",
+      "rules": 247,
+      "conditional_rules": 1,
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ]
+    },
+    "source-7095b71ad744de3e6db1": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Pinterest/Pinterest.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "555c74374b38b8a138d3e4135cec28b8a4be8bbbf63220d29f96e872214e51a6",
+      "bytes": 469,
+      "lineage-status": "unverified",
+      "rules": 23,
+      "conditional_rules": 0,
+      "products": [
+        "pinterest-social"
+      ]
+    },
+    "source-3ebed3f097b4ec418002": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/PlayStation/PlayStation.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "05392ffee1caabeb163e5e595707c1546eb9226b6c3087e22abf22a56dee8a22",
+      "bytes": 166,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "playstation-network"
+      ]
+    },
+    "source-38fe920c9755e0ab49a5": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/PrimeVideo/PrimeVideo.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "0dd7f0bd5f47abc1f750765a0bfa75a652b0a984aaf31884179e2e7e67c69299",
+      "bytes": 547,
+      "lineage-status": "unverified",
+      "rules": 16,
+      "conditional_rules": 1,
+      "products": [
+        "prime-video-streaming"
+      ]
+    },
+    "source-4863498e32d25af092f4": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Privacy/Privacy.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "39cb5a7400895c892719f81272adb6ca33f2535e30ceb425f7e86afe9329a493",
+      "bytes": 440,
+      "lineage-status": "unverified",
+      "rules": 20,
+      "conditional_rules": 0,
+      "products": [
+        "privacy-public-stun-endpoints",
+        "tenpay-mainland-payments"
+      ]
+    },
+    "source-18a263415051b8bee237": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Protonmail/Protonmail.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "88b711af774ae7b6fca2a010ddd1026109611f932fc99101a984e153016c36c9",
+      "bytes": 147,
+      "lineage-status": "unverified",
+      "rules": 5,
+      "conditional_rules": 0,
+      "products": [
+        "proton-suite"
+      ]
+    },
+    "source-6bdab7e9639d37ac98b8": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Proxy/Proxy.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "fa3c775be554702cd4dcde002cdaead99ada88dc5a65ad5e415b3216c6f9c758",
+      "bytes": 2550,
+      "lineage-status": "unverified",
+      "rules": 126,
+      "conditional_rules": 1,
+      "products": [
+        "overseas-sites-extra"
+      ]
+    },
+    "source-d41864901d0ba0ee0ee9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Qualcomm/Qualcomm.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "239a5435aecbb432e72d4a85c93f71cca79788c1aec234526c16940d7132fba8",
+      "bytes": 945,
+      "lineage-status": "unverified",
+      "rules": 45,
+      "conditional_rules": 0,
+      "products": [
+        "qualcomm-mainland"
+      ]
+    },
+    "source-7e53570d61304804c1eb": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Reddit/Reddit.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "a7012eadc9596e9d8c45b3d5a1935ffdd87aece5b19f7e57014f32d58180576d",
+      "bytes": 252,
+      "lineage-status": "unverified",
+      "rules": 8,
+      "conditional_rules": 0,
+      "products": [
+        "reddit-community"
+      ]
+    },
+    "source-96d106f87f33101e5e02": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Samsung/Samsung.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "614c1c7832df0cb57dfda269cbf10badce994037d557aca185d130d72a255650",
+      "bytes": 329,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "samsung-mainland"
+      ]
+    },
+    "source-bcc38979a00b743fb300": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Sina/Sina.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "4762c176c1e705af74ee4a789a77f10455ecd834f9ac6159967efc5d17ddafa4",
+      "bytes": 1817,
+      "lineage-status": "unverified",
+      "rules": 108,
+      "conditional_rules": 0,
+      "products": [
+        "sina-shared-image-assets",
+        "sina-web-and-shared-services",
+        "weibo-social"
+      ]
+    },
+    "source-5b0e8f68061d0549bd17": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Slack/Slack.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b36d8e3e7c05420927101fbd54c92a9f4005e96cbf6fca729e517e000256d5a9",
+      "bytes": 263,
+      "lineage-status": "unverified",
+      "rules": 11,
+      "conditional_rules": 0,
+      "products": [
+        "slack-workspaces"
+      ]
+    },
+    "source-01c2b92aaf6345dec7bb": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/SoundCloud/SoundCloud.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "b376f64e193b53cc54af5ba5704e032c422c5db5b946d342793684e04d593ff0",
+      "bytes": 146,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 1,
+      "products": [
+        "soundcloud-audio"
+      ]
+    },
+    "source-eab0465489ff44e23905": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Spotify/Spotify.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "14c6f90d58d07919b3983a1466dfd9d962710c77a83847dd616ac7acbfdf4153",
+      "bytes": 855,
+      "lineage-status": "unverified",
+      "rules": 29,
+      "conditional_rules": 1,
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ]
+    },
+    "source-56644d20bcfc28ce08f8": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Steam/Steam.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "81eccab84789954ac2a5bd43e2af93c050a977718a07067ea12fad01e7bf82d0",
+      "bytes": 1739,
+      "lineage-status": "unverified",
+      "rules": 69,
+      "conditional_rules": 0,
+      "products": [
+        "steam-international-platform",
+        "steam-mainland-downloads"
+      ]
+    },
+    "source-d25a781c09e5469b861c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Stripe/Stripe.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "faa04eae35398cdf1e1565cecae4ddf10b9b1fed6f174a32307ed2d65892c193",
+      "bytes": 73,
+      "lineage-status": "unverified",
+      "rules": 1,
+      "conditional_rules": 0,
+      "products": [
+        "overseas-payments-all",
+        "stripe-payments"
+      ]
+    },
+    "source-41cb9c280ba560f717a5": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/SystemOTA/SystemOTA.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "68025ee9771e9062ef08fc3ad37fd0f3fb00269958feb7d7e07dafead8a62d02",
+      "bytes": 2501,
+      "lineage-status": "unverified",
+      "rules": 78,
+      "conditional_rules": 0,
+      "products": [
+        "apple-certificate-validation",
+        "apple-developer-downloads",
+        "apple-feedback-and-diagnostics",
+        "apple-system-connectivity",
+        "apple-update-control",
+        "apple-update-downloads"
+      ]
+    },
+    "source-c37c5e49b7dc3130162a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Telegram/Telegram.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "0bf7b9a12f71fd4e7e48c0ca42e6873a3ba0f9fe375a2b20c0ffc560519df2be",
+      "bytes": 823,
+      "lineage-status": "unverified",
+      "rules": 40,
+      "conditional_rules": 0,
+      "products": [
+        "telegram-messaging"
+      ]
+    },
+    "source-d43f30e03c73625330c2": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Tencent/Tencent.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "0173979b4401b1a371ca0d127fe5677be214f902ff5c3af3206a5fdf78e19ad9",
+      "bytes": 621,
+      "lineage-status": "unverified",
+      "rules": 20,
+      "conditional_rules": 1,
+      "products": [
+        "tencent-international",
+        "tencent-mainland",
+        "tencent-music-shared-services",
+        "tencent-shared-content-and-sdk",
+        "tencent-shared-services",
+        "tenpay-global-payments",
+        "tenpay-mainland-payments"
+      ]
+    },
+    "source-b69b0f0b87c499e715a9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/TestFlight/TestFlight.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "ff3b0332f10fe420a12f157691f060b71c697e878090a14ee8589e09fc94f365",
+      "bytes": 137,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "apple-store-transactions",
+        "apple-testflight"
+      ]
+    },
+    "source-dfd309c2c5b0305b782d": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Threads/Threads.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "656bc9a47961d924e2f2e193aa345ea809d2c4e04cdc947c11691050241692f7",
+      "bytes": 78,
+      "lineage-status": "unverified",
+      "rules": 1,
+      "conditional_rules": 0,
+      "products": [
+        "threads-social"
+      ]
+    },
+    "source-8eab532ded706ee8d8e0": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/TikTok/TikTok.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "08aed39fe70e8367c1a149e136e74a097b58e61b0baebb7230d3e1aebe6d4574",
+      "bytes": 772,
+      "lineage-status": "unverified",
+      "rules": 34,
+      "conditional_rules": 1,
+      "products": [
+        "tiktok-international-video"
+      ]
+    },
+    "source-d35b113ef8e0e90589bc": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Twitch/Twitch.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "7b712e2776d44726e2725aaca9b5897b4bb3689d660384b6c2547c04645fea45",
+      "bytes": 514,
+      "lineage-status": "unverified",
+      "rules": 21,
+      "conditional_rules": 0,
+      "products": [
+        "twitch-live-video"
+      ]
+    },
+    "source-dbafc713eb0ef390d0df": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Twitter/Twitter.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "6501064cd70db4803c64fe9b6c551db41c3370ae02ccbf22637f34be9564f886",
+      "bytes": 677,
+      "lineage-status": "unverified",
+      "rules": 33,
+      "conditional_rules": 0,
+      "products": [
+        "x-social-and-media"
+      ]
+    },
+    "source-23a05b36ab66c6aec8ef": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Ubisoft/Ubisoft.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "186099882372eea6cf74f2882d9da9908eb67f6b81df2e27def07221975f35c2",
+      "bytes": 89,
+      "lineage-status": "unverified",
+      "rules": 1,
+      "conditional_rules": 0,
+      "products": [
+        "ubisoft-connect"
+      ]
+    },
+    "source-c81c7982d12f22141adb": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/UnionPay/UnionPay.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "e9c123162ce52ee9eb193c703ed9b4c68defb89f7f4528562df69e5e64f7c5ae",
+      "bytes": 361,
+      "lineage-status": "unverified",
+      "rules": 16,
+      "conditional_rules": 0,
+      "products": [
+        "unionpay-mainland"
+      ]
+    },
+    "source-0ddd3385edf31a1c9074": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Vercel/Vercel.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "c6ad50b9d4bccf66eaaca4e9bad01decc79bd919ad06a26dec04670f1e1bfd64",
+      "bytes": 510,
+      "lineage-status": "unverified",
+      "rules": 27,
+      "conditional_rules": 0,
+      "products": [
+        "vercel-shared-services"
+      ]
+    },
+    "source-891abdf9aeb1097ae285": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Vimeo/Vimeo.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "483ac770afc07775284341f3b85a84e66311e2a6a3509b86155f21118e539379",
+      "bytes": 338,
+      "lineage-status": "unverified",
+      "rules": 16,
+      "conditional_rules": 0,
+      "products": [
+        "vimeo-video"
+      ]
+    },
+    "source-65cf76d5096f19f87a2b": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/WeChat/WeChat.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "3cf61e68e81d894afdade77ff99e6b99ec7e13fbe2ae4486ceb2158db206c822",
+      "bytes": 6206,
+      "lineage-status": "unverified",
+      "rules": 330,
+      "conditional_rules": 1,
+      "products": [
+        "tencent-shared-content-and-sdk",
+        "tenpay-mainland-payments",
+        "wechat-international-portal",
+        "wechat-shared-and-mainland"
+      ]
+    },
+    "source-3892e2d39432a28f73fb": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Weibo/Weibo.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "764fde0153e670166beeed734d600bfb1795a0dcfc613aa01651ea38041f0b6b",
+      "bytes": 134,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "weibo-social"
+      ]
+    },
+    "source-fb19db56521d11310938": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Whatsapp/Whatsapp.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "a24e6e696a87c64084c162610b54ead6d105caa0bb4b3f295ab2be440236fad7",
+      "bytes": 455,
+      "lineage-status": "unverified",
+      "rules": 17,
+      "conditional_rules": 0,
+      "products": [
+        "whatsapp-messaging"
+      ]
+    },
+    "source-f95dd0c326eaed9d20fb": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/XiaoHongShu/XiaoHongShu.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "dafe6758a62df8e711b1f47bf0c087f243d73cfa0e4334c7708629579e81b9a0",
+      "bytes": 138,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "xiaohongshu-community"
+      ]
+    },
+    "source-87999057c22ef70a901a": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/XiaoMi/XiaoMi.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "9f09801baa22f171f3a0b3d1f2c07ec93d1fc080d19ca11cf21d0f87232249bb",
+      "bytes": 2986,
+      "lineage-status": "unverified",
+      "rules": 157,
+      "conditional_rules": 0,
+      "products": [
+        "xiaomi-international",
+        "xiaomi-international-services",
+        "xiaomi-mainland-and-shared",
+        "xiaomi-shared-services"
+      ]
+    },
+    "source-6d2754895490980f209c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/YouTube/YouTube.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "0dc28e244ab893d85b19e86b5fc6d5438e1eaef1590470a873e96d04f266bd34",
+      "bytes": 3490,
+      "lineage-status": "unverified",
+      "rules": 183,
+      "conditional_rules": 1,
+      "products": [
+        "youtube-video-and-cdn"
+      ]
+    },
+    "source-b7ef0eef8644f822423c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Youku/Youku.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "e0935549318f0eed63fa209122e62b6bc7c0a69aa3ba4ca09a9ca1351a4a93d6",
+      "bytes": 734,
+      "lineage-status": "unverified",
+      "rules": 35,
+      "conditional_rules": 1,
+      "products": [
+        "youku-video"
+      ]
+    },
+    "source-d5b4181ddfb863e5848c": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Zhihu/Zhihu.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "556285a079e65237c180da6241e4f15f31f1392ecd22d7833038cd430a80e4cc",
+      "bytes": 265,
+      "lineage-status": "unverified",
+      "rules": 7,
+      "conditional_rules": 0,
+      "products": [
+        "zhihu-community"
+      ]
+    },
+    "source-cec7977e41407564dbd9": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iCloud/iCloud.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "8f1b746043dcadc2369db978b7001786da1e236bae39a71a8d54498174d66948",
+      "bytes": 1171,
+      "lineage-status": "unverified",
+      "rules": 61,
+      "conditional_rules": 0,
+      "products": [
+        "apple-find-my"
+      ]
+    },
+    "source-92d53055b8eb8a67d083": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iCloudPrivateRelay/iCloudPrivateRelay.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "ce22350a6e9f4aa195eb02ee4555b3e8d07dcf05e8174be14b2eac15f89f3721",
+      "bytes": 230,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "apple-private-relay-connections"
+      ]
+    },
+    "source-a2f2b920d33bb401479d": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iFlytek/iFlytek.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "8f005ba7b378e49304f8aef704afee3c03bb2ddb3b5447b3e491899fc97fded3",
+      "bytes": 2646,
+      "lineage-status": "unverified",
+      "rules": 151,
+      "conditional_rules": 0,
+      "products": [
+        "iflytek-mainland"
+      ]
+    },
+    "source-6664400c7ee030c35884": {
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iQIYI/iQIYI.yaml",
+      "format": "egern",
+      "revision": "c3363a111c48c505889dcf73fb1d004f4f437078",
+      "committed-at": "2026-10-30T06:07:29Z",
+      "sha256": "c8be04112013879279167c06b6b1479491d25a2f5b0f1cb8fdbf736f97c2c73e",
+      "bytes": 1150,
+      "lineage-status": "unverified",
+      "rules": 56,
+      "conditional_rules": 1,
+      "products": [
+        "iqiyi-international",
+        "iqiyi-mainland"
+      ]
+    },
+    "source-ee0f340f5cefcd9a6238": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AI.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "936c99e8fa8aff40f3ac0fdb0c8124264b34642d60a38b82a6a7f893bc62160a",
+      "bytes": 1491,
+      "lineage-status": "unverified",
+      "rules": 60,
+      "conditional_rules": 1,
+      "products": [
+        "ai-com-agents",
+        "ai-overseas-all"
+      ]
+    },
+    "source-ddf3adf98fca1896653e": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/APNs.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "1b47a58816af16d0eeeeb646208f0733e7917ce765f253261db21385f8bb9ebb",
+      "bytes": 341,
+      "lineage-status": "unverified",
+      "rules": 11,
+      "conditional_rules": 0,
+      "products": [
+        "apple-push-connection"
+      ]
+    },
+    "source-1b23254e344aba93c16b": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppStore.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "2ff7dd1d596e0304ef87949ec59b77ab82c72d981cf2281566f94697541a1810",
+      "bytes": 96,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "apple-store-transactions"
+      ]
+    },
+    "source-ce99f76aa3d011d0946b": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Apple.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "092b704377cf594eaffcf06e86c31e6228e79457ca9bd1ad642b3b743e530bf6",
+      "bytes": 1485,
+      "lineage-status": "unverified",
+      "rules": 44,
+      "conditional_rules": 1,
+      "products": [
+        "apple-account-authentication",
+        "apple-and-ai-privacy-exceptions",
+        "apple-app-and-device-verification",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-certificate-validation",
+        "apple-cloud-sync",
+        "apple-developer-downloads",
+        "apple-developer-portal",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-find-my",
+        "apple-icloud-content-domains",
+        "apple-icloud-mainland",
+        "apple-intelligence-relays",
+        "apple-location-services",
+        "apple-mainland-delivery-aliases",
+        "apple-messaging-identity",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-other-services",
+        "apple-podcasts",
+        "apple-private-relay-connections",
+        "apple-push-connection",
+        "apple-schoolwork-handouts",
+        "apple-shared-store-assets",
+        "apple-siri-and-search",
+        "apple-store-transactions",
+        "apple-system-connectivity",
+        "apple-testflight",
+        "apple-tv-video-delivery",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-video-and-fitness",
+        "apple-wallet-payments"
+      ]
+    },
+    "source-85d14e462f4a08295d19": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleCN.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "974c528f8d5b87895af63e88df787f98b739c125acf08279131a0924ba028d32",
+      "bytes": 4807,
+      "lineage-status": "unverified",
+      "rules": 167,
+      "conditional_rules": 0,
+      "products": [
+        "apple-app-package-downloads",
+        "apple-certificate-validation",
+        "apple-developer-downloads",
+        "apple-feedback-and-diagnostics",
+        "apple-mainland-delivery-aliases",
+        "apple-shared-store-assets",
+        "apple-system-connectivity",
+        "apple-update-control",
+        "apple-update-downloads"
+      ]
+    },
+    "source-278bf1ca1a01c5fc6de3": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleID.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "ca87358c025fc363f32d0e4056fba572d154f095e59437bd5741067307ead880",
+      "bytes": 141,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "apple-account-authentication"
+      ]
+    },
+    "source-c8f773285b84b60d3e1c": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleMedia.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "56ce9e27e588ddf374f42be03dea20ae8f6e9f5bbf37c32a14f75ba6bc05873a",
+      "bytes": 1152,
+      "lineage-status": "unverified",
+      "rules": 52,
+      "conditional_rules": 0,
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ]
+    },
+    "source-459a03a368b5a079dc2c": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleMusic.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "3c3f1bd77d62f2c922f08db4980524b2400be1bfafb5c8a47c617af96af7de3e",
+      "bytes": 509,
+      "lineage-status": "unverified",
+      "rules": 18,
+      "conditional_rules": 0,
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ]
+    },
+    "source-5a4cc4a83bc789292b0f": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Bahamut.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "b3e45ce25bbacf4e27c53ad00746812d70950ef2ae67f1433282e322c3e845ea",
+      "bytes": 193,
+      "lineage-status": "unverified",
+      "rules": 5,
+      "conditional_rules": 0,
+      "products": [
+        "bahamut-video-and-community"
+      ]
+    },
+    "source-d1e72da4566623a7242d": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Bilibili.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "47794bed2fa68151f1ab6a10722641b0f393be736ded6a1d1188a79e6ffa3e12",
+      "bytes": 431,
+      "lineage-status": "unverified",
+      "rules": 21,
+      "conditional_rules": 0,
+      "products": [
+        "bilibili-international-video",
+        "bilibili-mainland-video"
+      ]
+    },
+    "source-d46b3b72d28495509fe4": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Blizzard.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "a4601722462ac2d9e024e80fa979de5de2e23c031d9fbcf3d97c4be7cce30ee1",
+      "bytes": 980,
+      "lineage-status": "unverified",
+      "rules": 39,
+      "conditional_rules": 0,
+      "products": [
+        "blizzard-battlenet"
+      ]
+    },
+    "source-f36189b1a3d95c8b5699": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ChinaDomain.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "7db9e1a00db49ad211d390b8d59cae58d94de0faeaac3fe726971eda0379b70f",
+      "bytes": 232472,
+      "lineage-status": "unverified",
+      "rules": 13096,
+      "conditional_rules": 147,
+      "products": [
+        "gitcode-hosting",
+        "mainland-domains",
+        "overseas-sites-extra",
+        "railway-tickets",
+        "unionpay-mainland"
+      ]
+    },
+    "source-1520abd86810f2b71835": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ChinaIP.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "e9a7972ddf24b85453078fd084b1cb66250745e34ac8f5fd09ac57f7cd768077",
+      "bytes": 147318,
+      "lineage-status": "unverified",
+      "rules": 7339,
+      "conditional_rules": 0,
+      "products": [
+        "mainland-networks"
+      ]
+    },
+    "source-721b1a62ae167029719b": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Claude.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "a0d1a56c0390d26c74fbe7a8d743153e95b22a9ce8e7589bc5864db43bbd4b7a",
+      "bytes": 93,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all",
+        "claude-connections"
+      ]
+    },
+    "source-8e2fdfb1ccb015c4e188": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Cloudflare.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "5b05cef9742c51476b99623e6eb7d598117d5bbce8d2e5293ed649a050ab1170",
+      "bytes": 712,
+      "lineage-status": "unverified",
+      "rules": 30,
+      "conditional_rules": 0,
+      "products": [
+        "cloudflare-mainland",
+        "cloudflare-public-dns",
+        "cloudflare-shared-services"
+      ]
+    },
+    "source-16f10b3c21a762d3b3f5": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Disney.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "a7880dc8df4bcecaabe5f5e7a180996536b2155788e22c94bb0c472343ed6712",
+      "bytes": 5269,
+      "lineage-status": "unverified",
+      "rules": 248,
+      "conditional_rules": 0,
+      "products": [
+        "disney-plus-streaming",
+        "disney-shared-services"
+      ]
+    },
+    "source-a7adaaa9807649e369fa": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/EA.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "b72e2876557391554b18197f1a8f2afdd3b3b623e499476bad2d56d52004314b",
+      "bytes": 3657,
+      "lineage-status": "unverified",
+      "rules": 168,
+      "conditional_rules": 0,
+      "products": [
+        "ea-games"
+      ]
+    },
+    "source-87f722d258567aa38a52": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Epic.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "b169e9ff4bb0eb6277a1213c8c2a302ba057ab325218e7452fad6c1bc9767ca4",
+      "bytes": 343,
+      "lineage-status": "unverified",
+      "rules": 15,
+      "conditional_rules": 0,
+      "products": [
+        "epic-games-services"
+      ]
+    },
+    "source-2823f7eca7377af17cec": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/FILTER_REGION.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "2d2b6ef7b62b6a9ea69f630c7a8e89ffbed071008d0ae9cb56841616422b962f",
+      "bytes": 67,
+      "lineage-status": "unverified",
+      "rules": 0,
+      "conditional_rules": 1,
+      "products": [
+        "mainland-geoip"
+      ]
+    },
+    "source-251e59d615096c34373e": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Facebook.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "3f797a2a842f2bdea4eb4ef1ffa89cf76560f8432c4f08d99f9b53867cd27dea",
+      "bytes": 11693,
+      "lineage-status": "unverified",
+      "rules": 580,
+      "conditional_rules": 0,
+      "products": [
+        "meta-shared-services"
+      ]
+    },
+    "source-04df1ecb5fcabfa56025": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Github.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "99a882840435501177e9987898e793b0b4df29387efefa8bfb50428e7fb87526",
+      "bytes": 186,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ]
+    },
+    "source-b2467914b844432ada79": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Google.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "952a3cbcc72126528662b97870a4b078b74715c903c54a521b851e4a3414b0e2",
+      "bytes": 487,
+      "lineage-status": "unverified",
+      "rules": 25,
+      "conditional_rules": 0,
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ]
+    },
+    "source-29433befd4421b795376": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/HBO.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "f0e0bc8e24b703994685420016254c6f71ad35ef2eeca58e1057ee47b746b4c8",
+      "bytes": 1954,
+      "lineage-status": "unverified",
+      "rules": 92,
+      "conditional_rules": 1,
+      "products": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ]
+    },
+    "source-81888e394775b338d569": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Instagram.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "14b304ec1d2bb315f5a9a28d2961004fe5115d45ad636011adccd5e92bb22500",
+      "bytes": 152,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "instagram-social"
+      ]
+    },
+    "source-6268735f65e020ed5621": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Lan.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "20c9e16af23a4b53e317ad854a1b349c188efdc86316b1313e3db684e330fa4a",
+      "bytes": 289,
+      "lineage-status": "unverified",
+      "rules": 14,
+      "conditional_rules": 0,
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ]
+    },
+    "source-78566839a9e3a1cc2111": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Microsoft.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "77dd1417b3adc73e0c9c6475de6b622f73b60bb4d950a1b6d241f77be97bed5d",
+      "bytes": 13805,
+      "lineage-status": "unverified",
+      "rules": 669,
+      "conditional_rules": 0,
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ]
+    },
+    "source-a8ca68f8668a9ec2bdd2": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Netflix.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "1291c0f01c4aa9e14a2245716198933ec4b99026aa9c802961c689b050694fce",
+      "bytes": 10517,
+      "lineage-status": "unverified",
+      "rules": 497,
+      "conditional_rules": 1,
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ]
+    },
+    "source-45dfd35371a6cf75bc24": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Nintendo.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "968c11d09b4d4c12dba8ad4b674b469a34986fd4d9ee486c7d1c93f551444f1e",
+      "bytes": 2716,
+      "lineage-status": "unverified",
+      "rules": 122,
+      "conditional_rules": 2,
+      "products": [
+        "nintendo-platform"
+      ]
+    },
+    "source-9d78d4b694e9694a67a8": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/OneDrive.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "c2161fbd5056e2a7556cd0640f32823793d1a933cc3a5769b802edb4bd63f87d",
+      "bytes": 395,
+      "lineage-status": "unverified",
+      "rules": 15,
+      "conditional_rules": 0,
+      "products": [
+        "microsoft-files-and-sharepoint"
+      ]
+    },
+    "source-6770a26ca539c1d4032d": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/OpenAI.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "998d5decc46187dc8a6f3984176f5aa37f97e77549500908a9ad6549c52d9bca",
+      "bytes": 415,
+      "lineage-status": "unverified",
+      "rules": 17,
+      "conditional_rules": 0,
+      "products": [
+        "ai-overseas-all"
+      ]
+    },
+    "source-68b6b86d64e12d27eeb8": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Oracle.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "997093e0b5a5880b8da78f45ed127d53ace77be3fbab576d23feff6cca83ab33",
+      "bytes": 557,
+      "lineage-status": "unverified",
+      "rules": 25,
+      "conditional_rules": 0,
+      "products": [
+        "oracle-shared-services"
+      ]
+    },
+    "source-da68d00b640c66800dd0": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/PayPal.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "512119717bf69d3a9bd77893918dae1f4ff3c381dadeb8595501ce4c0ca49da1",
+      "bytes": 5306,
+      "lineage-status": "unverified",
+      "rules": 247,
+      "conditional_rules": 1,
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ]
+    },
+    "source-219d34ec864b7e217bf0": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/PrimeVideo.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "5cc5033669ba8a9ac1bfb18b4932d2732ba4ffc5026dc6e8dd32df260f45fcf7",
+      "bytes": 707,
+      "lineage-status": "unverified",
+      "rules": 24,
+      "conditional_rules": 0,
+      "products": [
+        "prime-video-streaming"
+      ]
+    },
+    "source-6cf28ff4982c3d8676d8": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Proxy.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "9baa7cc0cef42c2524386f377221db5af4ca4dcd70b97f939352e0889c2d97b6",
+      "bytes": 315149,
+      "lineage-status": "unverified",
+      "rules": 17437,
+      "conditional_rules": 10,
+      "products": [
+        "overseas-sites-extra"
+      ]
+    },
+    "source-375ce0dc554255b42e08": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ProxyGFW.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "bf098685cda7029eb283b286304bc3026895df4f2f06554e01fba3e9905c23d7",
+      "bytes": 136732,
+      "lineage-status": "unverified",
+      "rules": 7952,
+      "conditional_rules": 1,
+      "products": [
+        "overseas-sites-extra"
+      ]
+    },
+    "source-b250df99816d76363a4c": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ProxyMedia.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "7e8685c3dcfde495064600798f62abdde53f893bb5f36079e476d0f1c5570c01",
+      "bytes": 6418,
+      "lineage-status": "unverified",
+      "rules": 272,
+      "conditional_rules": 1,
+      "products": [
+        "iqiyi-international",
+        "overseas-media-extra"
+      ]
+    },
+    "source-8ce314f00b55aeb73b75": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Reddit.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "a7012eadc9596e9d8c45b3d5a1935ffdd87aece5b19f7e57014f32d58180576d",
+      "bytes": 252,
+      "lineage-status": "unverified",
+      "rules": 8,
+      "conditional_rules": 0,
+      "products": [
+        "reddit-community"
+      ]
+    },
+    "source-9cd65feeb4bd431722a5": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Reject.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "6f42c012decca6855dff7e9971e6e40511a48c2689602e6cd97ffdf35e9a2847",
+      "bytes": 147171,
+      "lineage-status": "unverified",
+      "rules": 7571,
+      "conditional_rules": 0,
+      "products": [
+        "extended-ad-and-tracking",
+        "general-ad-and-tracking"
+      ]
+    },
+    "source-5bd70c150dafb694bd01": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Spotify.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "7c3999bace78d50f9357e2e1d3d769fbe3b50cde5518a515a23b3ce226053967",
+      "bytes": 558,
+      "lineage-status": "unverified",
+      "rules": 19,
+      "conditional_rules": 1,
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ]
+    },
+    "source-4b415051ff9dfc8d63ab": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Steam.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "5d52d8a8e1a15719ab019916d7b5c07d6793f48090752ecb646e222f6600089e",
+      "bytes": 461,
+      "lineage-status": "unverified",
+      "rules": 20,
+      "conditional_rules": 0,
+      "products": [
+        "steam-international-platform",
+        "steam-mainland-downloads"
+      ]
+    },
+    "source-029775c841f1500db244": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Telegram.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "633eb30f944dc39fdf853f75050de6d2e8b492c3a79d51d92e138ebcf8737aa6",
+      "bytes": 1027,
+      "lineage-status": "unverified",
+      "rules": 51,
+      "conditional_rules": 0,
+      "products": [
+        "telegram-messaging"
+      ]
+    },
+    "source-621b998e38f5105d7e19": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/TestFlight.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "024d676db5030bcc485dc0742e7b2aeb86d4f016a9ed2a13cc1db00371e7d5b7",
+      "bytes": 118,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "apple-store-transactions",
+        "apple-testflight"
+      ]
+    },
+    "source-3baa63d5e0bc81a46a6f": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/TikTok.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "c709a73cb2adb7c68960c535c0dc4c8f9aa82709af2b4040838dc93df6e06355",
+      "bytes": 1784,
+      "lineage-status": "unverified",
+      "rules": 83,
+      "conditional_rules": 0,
+      "products": [
+        "tiktok-international-video"
+      ]
+    },
+    "source-fe3cf368bbdbaca0c226": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Trust.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "6ca4ebeec5171234f88997cb28ad323b6ff647bfdc0948a0fca4900cb1dea011",
+      "bytes": 301,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "apple-account-authentication",
+        "trust-wallet"
+      ]
+    },
+    "source-bd148870fee7ba011cd3": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Twitter.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "b95928fba1a46cf1f64bfd5189b50adeedd295189653978baae840d00c294ace",
+      "bytes": 685,
+      "lineage-status": "unverified",
+      "rules": 34,
+      "conditional_rules": 0,
+      "products": [
+        "x-social-and-media"
+      ]
+    },
+    "source-666e97f47adff18e3b77": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/WeChat.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "ca433caaec8832ef6d810c970a22508d4c3feab72897474be09dc077ca983241",
+      "bytes": 6437,
+      "lineage-status": "unverified",
+      "rules": 339,
+      "conditional_rules": 1,
+      "products": [
+        "tencent-shared-content-and-sdk",
+        "tenpay-mainland-payments",
+        "wechat-international-portal",
+        "wechat-shared-and-mainland"
+      ]
+    },
+    "source-b624f3a47991dfcf6141": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/YouTube.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "90aa82b013b1217392c18a5f415d6de51ff0c7fe1817689fa5184d09868a6407",
+      "bytes": 351,
+      "lineage-status": "unverified",
+      "rules": 14,
+      "conditional_rules": 0,
+      "products": [
+        "youtube-video-and-cdn"
+      ]
+    },
+    "source-298f53a08b5de9d417ef": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/iCloud.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "10473289b67c48a7b52c994519b48e078b321facaa9b50a2e185b3c0309e494b",
+      "bytes": 1081,
+      "lineage-status": "unverified",
+      "rules": 56,
+      "conditional_rules": 0,
+      "products": [
+        "apple-find-my"
+      ]
+    },
+    "source-3eb6185318e24f7fbe79": {
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/xAI.yaml",
+      "format": "egern",
+      "revision": "6ede8c3193780daa6c4dbd6f705bbdabe75a609a",
+      "committed-at": "2026-11-26T16:29:14Z",
+      "sha256": "11418a7b821c36e5445b9e5053b2f0d62d1fa30dd23746837835dc9d0e987bd6",
+      "bytes": 80,
+      "lineage-status": "unverified",
+      "rules": 2,
+      "conditional_rules": 0,
+      "products": [
+        "grokipedia-encyclopedia",
+        "xai-connections"
+      ]
+    },
+    "source-5b41d7d9b8c93978db2d": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/AI/AI.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "4842ccb4b9c203acc2d4ab01e0128744f5ed31db919068f0e234ecc564e6bad5",
+      "bytes": 5553,
+      "lineage-status": "unverified",
+      "rules": 178,
+      "conditional_rules": 0,
+      "products": [
+        "ai-com-agents",
+        "ai-overseas-all"
+      ]
+    },
+    "source-f6b7975f2b717569aca5": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Discord/Discord.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "d1ab68ff365868375c99559f4c6e2ea3474bf4b79d991aca36e9b67edeb9b6f6",
+      "bytes": 430,
+      "lineage-status": "unverified",
+      "rules": 9,
+      "conditional_rules": 0,
+      "products": [
+        "discord-activities-proxy",
+        "discord-messaging-and-voice"
+      ]
+    },
+    "source-d5e763bad3955dc99fe4": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/DisneyPlus/DisneyPlus.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "42a568c6855ca78755c9280bae7ccb0cf705953cf44128cea4084ad7a7baa7f3",
+      "bytes": 362,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "disney-plus-streaming"
+      ]
+    },
+    "source-481dfc6401b311062717": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Facebook/Facebook.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "124e670fdd234e9ff85be35f09cc35babbeef6f7fbca1c6daf5022b86754b0e5",
+      "bytes": 271,
+      "lineage-status": "unverified",
+      "rules": 3,
+      "conditional_rules": 0,
+      "products": [
+        "meta-shared-services"
+      ]
+    },
+    "source-2921c38eed638dfdbecb": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/GitHub/GitHub.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "242c982f9c10ae7354120cdf5e5fa62c616e555524e66e3d0b23622d867afc83",
+      "bytes": 451,
+      "lineage-status": "unverified",
+      "rules": 12,
+      "conditional_rules": 0,
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ]
+    },
+    "source-58853c6fb5990dc857af": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Google/Google.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "e927b62fb39d75dfb6a4a8550ae0e5ecbacb84014f46ea14bca48487f1ef59b0",
+      "bytes": 340,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ]
+    },
+    "source-bc15232bbcd69ba8e24b": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Instagram/Instagram.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "1ea9334fa607937871e7ad4e8a0277c6eecc20278cae3749db4217f30ed0b722",
+      "bytes": 303,
+      "lineage-status": "unverified",
+      "rules": 5,
+      "conditional_rules": 0,
+      "products": [
+        "instagram-social"
+      ]
+    },
+    "source-ff33b121b3f8016559a3": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/LAN/LAN.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "f4cfd4da7f66c411e5dec43babea5a268e1633e2d5cda3445750152717ce19af",
+      "bytes": 333,
+      "lineage-status": "unverified",
+      "rules": 12,
+      "conditional_rules": 0,
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ]
+    },
+    "source-fe878619bbab572cde92": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Max/Max.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "919ffda6910c445a963d023abbd31cb1b3e829c92e116cf8cb9802e4a6bee7e0",
+      "bytes": 403,
+      "lineage-status": "unverified",
+      "rules": 9,
+      "conditional_rules": 0,
+      "products": [
+        "hbo-streaming"
+      ]
+    },
+    "source-042913a7b7ce098cda73": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Microsoft/Microsoft.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "b60c251b5890fee3d0a50621e1b2fa47874dbbc624b5433fce9abfba7b4b2673",
+      "bytes": 516,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ]
+    },
+    "source-f2de460a620cb451b2ef": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Netflix/Netflix.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "a673de6ef8362ec4882dcea15d0c68ea8ba7c4ac6e5a19a7244253c2d4e97030",
+      "bytes": 413,
+      "lineage-status": "unverified",
+      "rules": 10,
+      "conditional_rules": 0,
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ]
+    },
+    "source-8812172119d7ef63b73d": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/PayPal/PayPal.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "50bb55ccbf922fa13f722f61425950c840f3b9a3158dcb05432eeee498ff1a54",
+      "bytes": 371,
+      "lineage-status": "unverified",
+      "rules": 9,
+      "conditional_rules": 0,
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ]
+    },
+    "source-df0f259f528addde92cf": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/PrimeVideo/PrimeVideo.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "2954e217f985f147d3b0220205ff91898aeb0e1bd7e7850e9fef5067c046fd9a",
+      "bytes": 356,
+      "lineage-status": "unverified",
+      "rules": 6,
+      "conditional_rules": 0,
+      "products": [
+        "prime-video-streaming"
+      ]
+    },
+    "source-98e27436b67ac0e43709": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Spotify/Spotify.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "e6854f0778ef695242e5f7e272b7894c78cfe4240e42d0b962e0f706b643fe17",
+      "bytes": 575,
+      "lineage-status": "unverified",
+      "rules": 13,
+      "conditional_rules": 0,
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ]
+    },
+    "source-0ba39bac7add51231c9d": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Telegram/Telegram.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "363e11990b05f39f118ee07172561fa14d78c9c16995a44c7f1d4f1d750dc95d",
+      "bytes": 386,
+      "lineage-status": "unverified",
+      "rules": 10,
+      "conditional_rules": 0,
+      "products": [
+        "telegram-messaging"
+      ]
+    },
+    "source-c6818616bbdb809a10b0": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/TikTok/TikTok.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "f2a8c1762c46e399a54e75ed963a8e854cb83f1c7684ba1247867985d11ba318",
+      "bytes": 602,
+      "lineage-status": "unverified",
+      "rules": 20,
+      "conditional_rules": 0,
+      "products": [
+        "tiktok-international-video"
+      ]
+    },
+    "source-af7e139a755ebdb1b1c4": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/WhatsApp/WhatsApp.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "0c5b00dec5db5d91ba9efc91d22cbd734f9ef516e87f0f1d741e918a615d5063",
+      "bytes": 287,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "whatsapp-messaging"
+      ]
+    },
+    "source-7bc6fad07641588e82fc": {
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/YouTube/YouTube.yaml",
+      "format": "egern",
+      "revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e",
+      "committed-at": "2026-11-25T01:12:37Z",
+      "sha256": "07772b94a116c288c8c9ed97ef6c1139b86f23cf13cc127b184c90e5bace79e3",
+      "bytes": 484,
+      "lineage-status": "unverified",
+      "rules": 12,
+      "conditional_rules": 0,
+      "products": [
+        "youtube-video-and-cdn"
+      ]
+    },
+    "source-3b90f40f51fdd422fdaa": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/AIGC.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "c2a1146c18523d99b3267e159ebfb933236d9e37c19b877a486902e94f921ce5",
+      "bytes": 3418,
+      "lineage-status": "unverified",
+      "rules": 146,
+      "conditional_rules": 1,
+      "products": [
+        "ai-overseas-all"
+      ]
+    },
+    "source-ebcb3ec8112abb132ead": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Apple.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "5bbd7deee530845838d105f60aaab504b2404dff7e02243a878c01a0263848cf",
+      "bytes": 1015,
+      "lineage-status": "unverified",
+      "rules": 20,
+      "conditional_rules": 1,
+      "products": [
+        "apple-account-authentication",
+        "apple-and-ai-privacy-exceptions",
+        "apple-app-and-device-verification",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-certificate-validation",
+        "apple-cloud-sync",
+        "apple-developer-downloads",
+        "apple-developer-portal",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-find-my",
+        "apple-icloud-content-domains",
+        "apple-icloud-mainland",
+        "apple-intelligence-relays",
+        "apple-location-services",
+        "apple-mainland-delivery-aliases",
+        "apple-messaging-identity",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-other-services",
+        "apple-podcasts",
+        "apple-private-relay-connections",
+        "apple-push-connection",
+        "apple-schoolwork-handouts",
+        "apple-shared-store-assets",
+        "apple-siri-and-search",
+        "apple-store-transactions",
+        "apple-system-connectivity",
+        "apple-testflight",
+        "apple-tv-video-delivery",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-video-and-fitness",
+        "apple-wallet-payments"
+      ]
+    },
+    "source-23308d1f1a95b09142d7": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Disney.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "56cd2570a68bdd76160ad0d110eb0322a4c58fed99f99353be2bb9d47af77a81",
+      "bytes": 3571,
+      "lineage-status": "unverified",
+      "rules": 172,
+      "conditional_rules": 1,
+      "products": [
+        "disney-plus-streaming",
+        "disney-shared-services"
+      ]
+    },
+    "source-58e421ef932e816b8ce6": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/GitHub.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "b547acc5f80189791667c8f47653edfd493b6622e8087e12637c77d33bd25c1b",
+      "bytes": 830,
+      "lineage-status": "unverified",
+      "rules": 31,
+      "conditional_rules": 0,
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ]
+    },
+    "source-c169e5e657fe38604785": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Google.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "bcb3f7ae8fe3b011d1cfaec077b6dc2dc34a3f1737409f01ea0f16c09ba4acba",
+      "bytes": 11501,
+      "lineage-status": "unverified",
+      "rules": 695,
+      "conditional_rules": 1,
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ]
+    },
+    "source-633462ae3debb76b1c12": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/HBO.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "aa786db13d0e973797a1252e024e73a73fd0c47de5db9a9796c307dd1b703cf6",
+      "bytes": 1233,
+      "lineage-status": "unverified",
+      "rules": 47,
+      "conditional_rules": 1,
+      "products": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ]
+    },
+    "source-c36c5d57cdc2a605fc18": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Instagram.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "a1a09a021653496087b5bdca65bed5298d5498578d9ce5aa61d41b4b2c884313",
+      "bytes": 328,
+      "lineage-status": "unverified",
+      "rules": 4,
+      "conditional_rules": 0,
+      "products": [
+        "instagram-social"
+      ]
+    },
+    "source-b922d9f811a2597be126": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Lan.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "d44e75582815f9f70451f488ebff7b7cb2bb84e53f23ccbd0190f82b96952c3e",
+      "bytes": 3218,
+      "lineage-status": "unverified",
+      "rules": 142,
+      "conditional_rules": 0,
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ]
+    },
+    "source-2ea66b277b7ec7e5a094": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Microsoft.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "19ba9868d7326fc5380d58dfaab2a642f903caf09e15028336d12c57003f43f3",
+      "bytes": 12578,
+      "lineage-status": "unverified",
+      "rules": 668,
+      "conditional_rules": 1,
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ]
+    },
+    "source-b69f710fada740b469b4": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Netflix.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "d34ac236d1599741498548107e8c2aa62a22e929fbe2aa808f7bc695ef60f7f6",
+      "bytes": 21001,
+      "lineage-status": "unverified",
+      "rules": 1156,
+      "conditional_rules": 1,
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ]
+    },
+    "source-62082a8c17c42301d7af": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/PayPal.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "3b24ccf3fd72b74f27a3dd71021583050accc6a8ef5cc4538ab542671ab999ed",
+      "bytes": 4970,
+      "lineage-status": "unverified",
+      "rules": 247,
+      "conditional_rules": 1,
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ]
+    },
+    "source-a6fcdb163f630edb496a": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Spotify.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "64aecbb5fe2181cd20c000583971644189df41ae17afa7842a6f615b510e2542",
+      "bytes": 969,
+      "lineage-status": "unverified",
+      "rules": 29,
+      "conditional_rules": 1,
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ]
+    },
+    "source-f65ad63fd1cd19edddbd": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/TikTok.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "d566ba28b836bc8ff99574796e9a09f678748b9a6064833a83a7c4c0fe5f4ad1",
+      "bytes": 875,
+      "lineage-status": "unverified",
+      "rules": 34,
+      "conditional_rules": 1,
+      "products": [
+        "tiktok-international-video"
+      ]
+    },
+    "source-3c5d3d353cae3aef0ee3": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Twitter.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "9fdadceb0047b56406776c185aa905b821f82faa8cd5f31cb2f716e5cc9ecaaa",
+      "bytes": 787,
+      "lineage-status": "unverified",
+      "rules": 33,
+      "conditional_rules": 0,
+      "products": [
+        "x-social-and-media"
+      ]
+    },
+    "source-4bc79f586fad19dbe9a0": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/WeChat.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "51322d1466894926f26819952eced1b955beb362a92fba2c9ef77107a56bdd2e",
+      "bytes": 5713,
+      "lineage-status": "unverified",
+      "rules": 330,
+      "conditional_rules": 1,
+      "products": [
+        "tencent-shared-content-and-sdk",
+        "tenpay-mainland-payments",
+        "wechat-international-portal",
+        "wechat-shared-and-mainland"
+      ]
+    },
+    "source-412c398b09bf36dfd776": {
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/YouTube.yaml",
+      "format": "egern",
+      "revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b",
+      "committed-at": "2026-11-26T08:54:00Z",
+      "sha256": "a3a536aa889821a27206e896c7b465879d8496e3ed5b29de0a0c8c6a4d5e7c16",
+      "bytes": 3278,
+      "lineage-status": "unverified",
+      "rules": 183,
+      "conditional_rules": 1,
+      "products": [
+        "youtube-video-and-cdn"
       ]
     }
   },

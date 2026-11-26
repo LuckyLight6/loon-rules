@@ -22,7 +22,9 @@
     "topic:sing-box geosite archived:false",
     "surge ruleset in:name,description archived:false",
     "shadowrocket rules in:name,description archived:false",
-    "egern rules in:name,description archived:false"
+    "egern rules in:name,description archived:false",
+    "Stash ruleset in:name,description archived:false",
+    "Mihomo ruleset yaml in:name,description archived:false"
   ],
   "source-websites": [
     {
@@ -710,7 +712,10 @@
     "eveodw/proxy-rules-public",
     "patrickyanxxxxx/xiaohongshu-rednote-egern-rules",
     "kokoro-o/egern-apple-intelligence",
-    "tuohai57/egern-rules"
+    "tuohai57/egern-rules",
+    "Repcz/EgernRules",
+    "jnlaoshu/MySelf",
+    "YUDIDIFEI/Scripts"
   ],
   "inputs": [
     {
@@ -33199,6 +33204,2800 @@
       ],
       "use": "complete-input-comparison",
       "initial-revision": "fcd386682655787fb2115d01004c93ab2e490309"
+    },
+    {
+      "id": "source-e1f8c6cba47bb1fca926",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/12306/12306.yaml",
+      "format": "egern",
+      "products": [
+        "railway-tickets"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e0b6adb36785bbc01d7b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AMP/AMP.yaml",
+      "format": "egern",
+      "products": [
+        "amp-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e13e2eab39fb5884e5b9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Adobe/Adobe.yaml",
+      "format": "egern",
+      "products": [
+        "adobe-mainland",
+        "adobe-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-9312a2357968b11b4687",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AliPay/AliPay.yaml",
+      "format": "egern",
+      "products": [
+        "alipay-mainland-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d45f1421133e5de92339",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Alibaba/Alibaba.yaml",
+      "format": "egern",
+      "products": [
+        "alibaba-shared-services",
+        "npmmirror-registry"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e30b6088809b348c433e",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Amazon/Amazon.yaml",
+      "format": "egern",
+      "products": [
+        "amazon-mainland",
+        "amazon-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-f78d36d719aedb44278a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AmazonCN/AmazonCN.yaml",
+      "format": "egern",
+      "products": [
+        "amazon-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-51eec1675b0e676e0531",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AmazonPrimeVideo/AmazonPrimeVideo.yaml",
+      "format": "egern",
+      "products": [
+        "prime-video-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e4ef778670be75e98457",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Anthropic/Anthropic.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all",
+        "claude-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-51c1bdb13b2490900a77",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppStore/AppStore.yaml",
+      "format": "egern",
+      "products": [
+        "apple-store-transactions"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-3bd5aa3d25f91eefe91b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Apple/Apple.yaml",
+      "format": "egern",
+      "products": [
+        "apple-account-authentication",
+        "apple-and-ai-privacy-exceptions",
+        "apple-app-and-device-verification",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-certificate-validation",
+        "apple-cloud-sync",
+        "apple-developer-downloads",
+        "apple-developer-portal",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-find-my",
+        "apple-icloud-content-domains",
+        "apple-icloud-mainland",
+        "apple-intelligence-relays",
+        "apple-location-services",
+        "apple-mainland-delivery-aliases",
+        "apple-messaging-identity",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-other-services",
+        "apple-podcasts",
+        "apple-private-relay-connections",
+        "apple-push-connection",
+        "apple-schoolwork-handouts",
+        "apple-shared-store-assets",
+        "apple-siri-and-search",
+        "apple-store-transactions",
+        "apple-system-connectivity",
+        "apple-testflight",
+        "apple-tv-video-delivery",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-video-and-fitness",
+        "apple-wallet-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-71bf1c0a0f13d6d637c5",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleID/AppleID.yaml",
+      "format": "egern",
+      "products": [
+        "apple-account-authentication"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-19ececd4ae1a4ce381c8",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleMedia/AppleMedia.yaml",
+      "format": "egern",
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7f07faab6e26816e0e57",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleMusic/AppleMusic.yaml",
+      "format": "egern",
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-cc71c021f35574eb2491",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleNews/AppleNews.yaml",
+      "format": "egern",
+      "products": [
+        "apple-news-and-sports"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-b2082e2b600b6f713208",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/AppleTV/AppleTV.yaml",
+      "format": "egern",
+      "products": [
+        "apple-tv-video-delivery"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-afe9bfc6e2ae1e1d866f",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Atlassian/Atlassian.yaml",
+      "format": "egern",
+      "products": [
+        "atlassian-cloud-services",
+        "bitbucket-hosting",
+        "trello-boards"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-5225fa195507f866b1e9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/BBC/BBC.yaml",
+      "format": "egern",
+      "products": [
+        "bbc-news-and-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-106deba50baf81ca9c85",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Bahamut/Bahamut.yaml",
+      "format": "egern",
+      "products": [
+        "bahamut-video-and-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-ee5e171194660a197417",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Baidu/Baidu.yaml",
+      "format": "egern",
+      "products": [
+        "baidu-mainland",
+        "baidu-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e128b617c15c96fd7675",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/BardAI/BardAI.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e09ce11c8d34c3a192e1",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/BiliBili/BiliBili.yaml",
+      "format": "egern",
+      "products": [
+        "bilibili-international-video",
+        "bilibili-mainland-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-cf6a93fe509e93684f03",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Binance/Binance.yaml",
+      "format": "egern",
+      "products": [
+        "binance-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-893469bd8da0c94b11c6",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Blizzard/Blizzard.yaml",
+      "format": "egern",
+      "products": [
+        "blizzard-battlenet"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-637c917ab339544e77a7",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/ByteDance/ByteDance.yaml",
+      "format": "egern",
+      "products": [
+        "bytedance-international",
+        "bytedance-mainland",
+        "bytedance-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-bab75d6470e1311c44e6",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/China/China_Domain.yaml",
+      "format": "egern",
+      "products": [
+        "gitcode-hosting",
+        "mainland-domains",
+        "overseas-sites-extra",
+        "railway-tickets",
+        "unionpay-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-988b60749748a406b57c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Civitai/Civitai.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-105bc83f88f81450f7a6",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Claude/Claude.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all",
+        "claude-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e0074e153a655366889a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Cloudflare/Cloudflare.yaml",
+      "format": "egern",
+      "products": [
+        "cloudflare-mainland",
+        "cloudflare-public-dns",
+        "cloudflare-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-99b64f1354835a0b308f",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Cloudflarecn/Cloudflarecn.yaml",
+      "format": "egern",
+      "products": [
+        "cloudflare-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-b72a8b17c61f9046ff42",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Copilot/Copilot.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-f5cd687e245f44d0800c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DiDi/DiDi.yaml",
+      "format": "egern",
+      "products": [
+        "didi-mobility"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-fd2e05ba971c3b343d0b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DigitalOcean/DigitalOcean.yaml",
+      "format": "egern",
+      "products": [
+        "digitalocean-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7a3e72eb1c0f3ec5846a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DingTalk/DingTalk.yaml",
+      "format": "egern",
+      "products": [
+        "dingtalk-public"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-1c8c6af9073c302044ea",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Discord/Discord.yaml",
+      "format": "egern",
+      "products": [
+        "discord-activities-proxy",
+        "discord-messaging-and-voice"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-49282e7955c0395274a8",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DiscoveryPlus/DiscoveryPlus.yaml",
+      "format": "egern",
+      "products": [
+        "discovery-plus-streaming",
+        "wbd-streaming-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-245125fc4455dc32ef01",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Disney/Disney.yaml",
+      "format": "egern",
+      "products": [
+        "disney-plus-streaming",
+        "disney-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-37f97ca64fbd7c6980ab",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Docker/Docker.yaml",
+      "format": "egern",
+      "products": [
+        "docker-desktop-and-platform",
+        "docker-hub"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-67b8370715d27745f06a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DouBan/DouBan.yaml",
+      "format": "egern",
+      "products": [
+        "douban-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-ea52b0f4f1b25f8f004b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/DouYin/DouYin.yaml",
+      "format": "egern",
+      "products": [
+        "douyin-mainland-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7ebb9a45088f8193c467",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Douyu/Douyu.yaml",
+      "format": "egern",
+      "products": [
+        "douyu-live"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-bb41b6da08868895ab2b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/EA/EA.yaml",
+      "format": "egern",
+      "products": [
+        "ea-games"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-722a45d5700094e460b2",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Epic/Epic.yaml",
+      "format": "egern",
+      "products": [
+        "epic-games-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-8d4ab4905ab9ac37f061",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Facebook/Facebook.yaml",
+      "format": "egern",
+      "products": [
+        "meta-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e0d7ee1135ad431b3eae",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Figma/Figma.yaml",
+      "format": "egern",
+      "products": [
+        "figma-design"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-5fd6deecb063cfe664e4",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/FindMy/FindMy.yaml",
+      "format": "egern",
+      "products": [
+        "apple-find-my",
+        "apple-location-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-98355afbb490678c7418",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Gemini/Gemini.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all",
+        "gemini-connections",
+        "gemini-exchange"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-8495b2921d7d979edd01",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GitHub/GitHub.yaml",
+      "format": "egern",
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-5447e5bf2b52bef325b6",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GitLab/GitLab.yaml",
+      "format": "egern",
+      "products": [
+        "gitlab-hosting"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-dc536039ddcc8ec844a9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Gitee/Gitee.yaml",
+      "format": "egern",
+      "products": [
+        "gitee-hosting"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-78c12178bd308591733f",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Google/Google.yaml",
+      "format": "egern",
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7d6514bbb7c2f449a000",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GoogleDrive/GoogleDrive.yaml",
+      "format": "egern",
+      "products": [
+        "google-drive-and-documents"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-f9ddbe28b8367b03d0c9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/GoogleFCM/GoogleFCM.yaml",
+      "format": "egern",
+      "products": [
+        "google-firebase-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-9482571483dfb59360e8",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/HBO/HBO.yaml",
+      "format": "egern",
+      "products": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-3bd4b0bbbf67dd0e62d0",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Heroku/Heroku.yaml",
+      "format": "egern",
+      "products": [
+        "heroku-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7a30674b0f9d63f2cd36",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/HoYoverse/HoYoverse.yaml",
+      "format": "egern",
+      "products": [
+        "hoyoverse-international"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-47bdae81ae9a12d41d7f",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/HuYa/HuYa.yaml",
+      "format": "egern",
+      "products": [
+        "huya-live"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e9a67ecf2316003f1e61",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Huawei/Huawei.yaml",
+      "format": "egern",
+      "products": [
+        "huawei-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-573cd7f1f20ebd34b0d2",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Hulu/Hulu.yaml",
+      "format": "egern",
+      "products": [
+        "hulu-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-1b964dcff853fb3081d3",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Instagram/Instagram.yaml",
+      "format": "egern",
+      "products": [
+        "instagram-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d8ce206a67eba9984360",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Intel/Intel.yaml",
+      "format": "egern",
+      "products": [
+        "intel-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-e485e6fb3ab0a6263307",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Intercom/Intercom.yaml",
+      "format": "egern",
+      "products": [
+        "intercom-customer-support"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-cc7393489ff18616bb42",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Jetbrains/Jetbrains.yaml",
+      "format": "egern",
+      "products": [
+        "jetbrains-ai",
+        "jetbrains-ai-mainland",
+        "jetbrains-ides"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-ab964d69ff2efeb4f69e",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/JingDong/JingDong.yaml",
+      "format": "egern",
+      "products": [
+        "jingdong-shopping"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-1a7819b6bbacb07d8f83",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Kingsoft/Kingsoft.yaml",
+      "format": "egern",
+      "products": [
+        "kingsoft-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-a1a2e4897a0d4a0b498b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/KuaiShou/KuaiShou.yaml",
+      "format": "egern",
+      "products": [
+        "kuaishou-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-0a2c1671f685e37f6a5a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Lan/Lan.yaml",
+      "format": "egern",
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-4daa5089089f64508965",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Line/Line.yaml",
+      "format": "egern",
+      "products": [
+        "line-messenger"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-9a4a85273cd3101ba7cf",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/LinkedIn/LinkedIn.yaml",
+      "format": "egern",
+      "products": [
+        "linkedin-network"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d57be5ba60a13fe42760",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/MeiTuan/MeiTuan.yaml",
+      "format": "egern",
+      "products": [
+        "meituan-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-3af026e97ca1ef3a126c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Microsoft/Microsoft.yaml",
+      "format": "egern",
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-bce6dde2e0cb11430487",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/NetEase/NetEase.yaml",
+      "format": "egern",
+      "products": [
+        "netease-international-games",
+        "netease-music",
+        "netease-shared-services",
+        "youdao-products"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-9dc0cc17f92fc6246b65",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/NetEaseMusic/NetEaseMusic.yaml",
+      "format": "egern",
+      "products": [
+        "netease-music"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-576033f990b22a68007c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Netflix/Netflix.yaml",
+      "format": "egern",
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-dd8d706bcd4b992aa3be",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Nintendo/Nintendo.yaml",
+      "format": "egern",
+      "products": [
+        "nintendo-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-8e13f5d3c17934a7b47f",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Notion/Notion.yaml",
+      "format": "egern",
+      "products": [
+        "notion-workspace"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-8b23c0356d85cf2e67df",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Npmjs/Npmjs.yaml",
+      "format": "egern",
+      "products": [
+        "npm-registry"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-be14793312bf6e6e1f82",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Nvidia/Nvidia.yaml",
+      "format": "egern",
+      "products": [
+        "nvidia-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d35df15bbbd9d710d3d8",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/OKX/OKX.yaml",
+      "format": "egern",
+      "products": [
+        "okx-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-f7ca7d832fead50ba781",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/OneDrive/OneDrive.yaml",
+      "format": "egern",
+      "products": [
+        "microsoft-files-and-sharepoint"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-c69299b5172a7945f06a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/OpenAI/OpenAI.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-165f65d8181770878597",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Oracle/Oracle.yaml",
+      "format": "egern",
+      "products": [
+        "oracle-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-ef638d320642e9d6948f",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/PayPal/PayPal.yaml",
+      "format": "egern",
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7095b71ad744de3e6db1",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Pinterest/Pinterest.yaml",
+      "format": "egern",
+      "products": [
+        "pinterest-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-3ebed3f097b4ec418002",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/PlayStation/PlayStation.yaml",
+      "format": "egern",
+      "products": [
+        "playstation-network"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-38fe920c9755e0ab49a5",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/PrimeVideo/PrimeVideo.yaml",
+      "format": "egern",
+      "products": [
+        "prime-video-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-4863498e32d25af092f4",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Privacy/Privacy.yaml",
+      "format": "egern",
+      "products": [
+        "privacy-public-stun-endpoints",
+        "tenpay-mainland-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-18a263415051b8bee237",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Protonmail/Protonmail.yaml",
+      "format": "egern",
+      "products": [
+        "proton-suite"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-6bdab7e9639d37ac98b8",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Proxy/Proxy.yaml",
+      "format": "egern",
+      "products": [
+        "overseas-sites-extra"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d41864901d0ba0ee0ee9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Qualcomm/Qualcomm.yaml",
+      "format": "egern",
+      "products": [
+        "qualcomm-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-7e53570d61304804c1eb",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Reddit/Reddit.yaml",
+      "format": "egern",
+      "products": [
+        "reddit-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-96d106f87f33101e5e02",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Samsung/Samsung.yaml",
+      "format": "egern",
+      "products": [
+        "samsung-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-bcc38979a00b743fb300",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Sina/Sina.yaml",
+      "format": "egern",
+      "products": [
+        "sina-shared-image-assets",
+        "sina-web-and-shared-services",
+        "weibo-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-5b0e8f68061d0549bd17",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Slack/Slack.yaml",
+      "format": "egern",
+      "products": [
+        "slack-workspaces"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-01c2b92aaf6345dec7bb",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/SoundCloud/SoundCloud.yaml",
+      "format": "egern",
+      "products": [
+        "soundcloud-audio"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-eab0465489ff44e23905",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Spotify/Spotify.yaml",
+      "format": "egern",
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-56644d20bcfc28ce08f8",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Steam/Steam.yaml",
+      "format": "egern",
+      "products": [
+        "steam-international-platform",
+        "steam-mainland-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d25a781c09e5469b861c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Stripe/Stripe.yaml",
+      "format": "egern",
+      "products": [
+        "overseas-payments-all",
+        "stripe-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-41cb9c280ba560f717a5",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/SystemOTA/SystemOTA.yaml",
+      "format": "egern",
+      "products": [
+        "apple-certificate-validation",
+        "apple-developer-downloads",
+        "apple-feedback-and-diagnostics",
+        "apple-system-connectivity",
+        "apple-update-control",
+        "apple-update-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-c37c5e49b7dc3130162a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Telegram/Telegram.yaml",
+      "format": "egern",
+      "products": [
+        "telegram-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d43f30e03c73625330c2",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Tencent/Tencent.yaml",
+      "format": "egern",
+      "products": [
+        "tencent-international",
+        "tencent-mainland",
+        "tencent-music-shared-services",
+        "tencent-shared-content-and-sdk",
+        "tencent-shared-services",
+        "tenpay-global-payments",
+        "tenpay-mainland-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-b69b0f0b87c499e715a9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/TestFlight/TestFlight.yaml",
+      "format": "egern",
+      "products": [
+        "apple-store-transactions",
+        "apple-testflight"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-dfd309c2c5b0305b782d",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Threads/Threads.yaml",
+      "format": "egern",
+      "products": [
+        "threads-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-8eab532ded706ee8d8e0",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/TikTok/TikTok.yaml",
+      "format": "egern",
+      "products": [
+        "tiktok-international-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d35b113ef8e0e90589bc",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Twitch/Twitch.yaml",
+      "format": "egern",
+      "products": [
+        "twitch-live-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-dbafc713eb0ef390d0df",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Twitter/Twitter.yaml",
+      "format": "egern",
+      "products": [
+        "x-social-and-media"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-23a05b36ab66c6aec8ef",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Ubisoft/Ubisoft.yaml",
+      "format": "egern",
+      "products": [
+        "ubisoft-connect"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-c81c7982d12f22141adb",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/UnionPay/UnionPay.yaml",
+      "format": "egern",
+      "products": [
+        "unionpay-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-0ddd3385edf31a1c9074",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Vercel/Vercel.yaml",
+      "format": "egern",
+      "products": [
+        "vercel-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-891abdf9aeb1097ae285",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Vimeo/Vimeo.yaml",
+      "format": "egern",
+      "products": [
+        "vimeo-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-65cf76d5096f19f87a2b",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/WeChat/WeChat.yaml",
+      "format": "egern",
+      "products": [
+        "tencent-shared-content-and-sdk",
+        "tenpay-mainland-payments",
+        "wechat-international-portal",
+        "wechat-shared-and-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-3892e2d39432a28f73fb",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Weibo/Weibo.yaml",
+      "format": "egern",
+      "products": [
+        "weibo-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-fb19db56521d11310938",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Whatsapp/Whatsapp.yaml",
+      "format": "egern",
+      "products": [
+        "whatsapp-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-f95dd0c326eaed9d20fb",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/XiaoHongShu/XiaoHongShu.yaml",
+      "format": "egern",
+      "products": [
+        "xiaohongshu-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-87999057c22ef70a901a",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/XiaoMi/XiaoMi.yaml",
+      "format": "egern",
+      "products": [
+        "xiaomi-international",
+        "xiaomi-international-services",
+        "xiaomi-mainland-and-shared",
+        "xiaomi-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-6d2754895490980f209c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/YouTube/YouTube.yaml",
+      "format": "egern",
+      "products": [
+        "youtube-video-and-cdn"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-b7ef0eef8644f822423c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Youku/Youku.yaml",
+      "format": "egern",
+      "products": [
+        "youku-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-d5b4181ddfb863e5848c",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/Zhihu/Zhihu.yaml",
+      "format": "egern",
+      "products": [
+        "zhihu-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-cec7977e41407564dbd9",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iCloud/iCloud.yaml",
+      "format": "egern",
+      "products": [
+        "apple-find-my"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-92d53055b8eb8a67d083",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iCloudPrivateRelay/iCloudPrivateRelay.yaml",
+      "format": "egern",
+      "products": [
+        "apple-private-relay-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-a2f2b920d33bb401479d",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iFlytek/iFlytek.yaml",
+      "format": "egern",
+      "products": [
+        "iflytek-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-6664400c7ee030c35884",
+      "repository": "Repcz/EgernRules",
+      "ref": "X",
+      "path": "Rules/iQIYI/iQIYI.yaml",
+      "format": "egern",
+      "products": [
+        "iqiyi-international",
+        "iqiyi-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "c3363a111c48c505889dcf73fb1d004f4f437078"
+    },
+    {
+      "id": "source-ee0f340f5cefcd9a6238",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AI.yaml",
+      "format": "egern",
+      "products": [
+        "ai-com-agents",
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-ddf3adf98fca1896653e",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/APNs.yaml",
+      "format": "egern",
+      "products": [
+        "apple-push-connection"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-1b23254e344aba93c16b",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppStore.yaml",
+      "format": "egern",
+      "products": [
+        "apple-store-transactions"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-ce99f76aa3d011d0946b",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Apple.yaml",
+      "format": "egern",
+      "products": [
+        "apple-account-authentication",
+        "apple-and-ai-privacy-exceptions",
+        "apple-app-and-device-verification",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-certificate-validation",
+        "apple-cloud-sync",
+        "apple-developer-downloads",
+        "apple-developer-portal",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-find-my",
+        "apple-icloud-content-domains",
+        "apple-icloud-mainland",
+        "apple-intelligence-relays",
+        "apple-location-services",
+        "apple-mainland-delivery-aliases",
+        "apple-messaging-identity",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-other-services",
+        "apple-podcasts",
+        "apple-private-relay-connections",
+        "apple-push-connection",
+        "apple-schoolwork-handouts",
+        "apple-shared-store-assets",
+        "apple-siri-and-search",
+        "apple-store-transactions",
+        "apple-system-connectivity",
+        "apple-testflight",
+        "apple-tv-video-delivery",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-video-and-fitness",
+        "apple-wallet-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-85d14e462f4a08295d19",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleCN.yaml",
+      "format": "egern",
+      "products": [
+        "apple-app-package-downloads",
+        "apple-certificate-validation",
+        "apple-developer-downloads",
+        "apple-feedback-and-diagnostics",
+        "apple-mainland-delivery-aliases",
+        "apple-shared-store-assets",
+        "apple-system-connectivity",
+        "apple-update-control",
+        "apple-update-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-278bf1ca1a01c5fc6de3",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleID.yaml",
+      "format": "egern",
+      "products": [
+        "apple-account-authentication"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-c8f773285b84b60d3e1c",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleMedia.yaml",
+      "format": "egern",
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-459a03a368b5a079dc2c",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/AppleMusic.yaml",
+      "format": "egern",
+      "products": [
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-tv-video-delivery",
+        "apple-video-and-fitness"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-5a4cc4a83bc789292b0f",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Bahamut.yaml",
+      "format": "egern",
+      "products": [
+        "bahamut-video-and-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-d1e72da4566623a7242d",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Bilibili.yaml",
+      "format": "egern",
+      "products": [
+        "bilibili-international-video",
+        "bilibili-mainland-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-d46b3b72d28495509fe4",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Blizzard.yaml",
+      "format": "egern",
+      "products": [
+        "blizzard-battlenet"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-f36189b1a3d95c8b5699",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ChinaDomain.yaml",
+      "format": "egern",
+      "products": [
+        "gitcode-hosting",
+        "mainland-domains",
+        "overseas-sites-extra",
+        "railway-tickets",
+        "unionpay-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-1520abd86810f2b71835",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ChinaIP.yaml",
+      "format": "egern",
+      "products": [
+        "mainland-networks"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-721b1a62ae167029719b",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Claude.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all",
+        "claude-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-8e2fdfb1ccb015c4e188",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Cloudflare.yaml",
+      "format": "egern",
+      "products": [
+        "cloudflare-mainland",
+        "cloudflare-public-dns",
+        "cloudflare-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-16f10b3c21a762d3b3f5",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Disney.yaml",
+      "format": "egern",
+      "products": [
+        "disney-plus-streaming",
+        "disney-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-a7adaaa9807649e369fa",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/EA.yaml",
+      "format": "egern",
+      "products": [
+        "ea-games"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-87f722d258567aa38a52",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Epic.yaml",
+      "format": "egern",
+      "products": [
+        "epic-games-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-2823f7eca7377af17cec",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/FILTER_REGION.yaml",
+      "format": "egern",
+      "products": [
+        "mainland-geoip"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-251e59d615096c34373e",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Facebook.yaml",
+      "format": "egern",
+      "products": [
+        "meta-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-04df1ecb5fcabfa56025",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Github.yaml",
+      "format": "egern",
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-b2467914b844432ada79",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Google.yaml",
+      "format": "egern",
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-29433befd4421b795376",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/HBO.yaml",
+      "format": "egern",
+      "products": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-81888e394775b338d569",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Instagram.yaml",
+      "format": "egern",
+      "products": [
+        "instagram-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-6268735f65e020ed5621",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Lan.yaml",
+      "format": "egern",
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-78566839a9e3a1cc2111",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Microsoft.yaml",
+      "format": "egern",
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-a8ca68f8668a9ec2bdd2",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Netflix.yaml",
+      "format": "egern",
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-45dfd35371a6cf75bc24",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Nintendo.yaml",
+      "format": "egern",
+      "products": [
+        "nintendo-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-9d78d4b694e9694a67a8",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/OneDrive.yaml",
+      "format": "egern",
+      "products": [
+        "microsoft-files-and-sharepoint"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-6770a26ca539c1d4032d",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/OpenAI.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-68b6b86d64e12d27eeb8",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Oracle.yaml",
+      "format": "egern",
+      "products": [
+        "oracle-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-da68d00b640c66800dd0",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/PayPal.yaml",
+      "format": "egern",
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-219d34ec864b7e217bf0",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/PrimeVideo.yaml",
+      "format": "egern",
+      "products": [
+        "prime-video-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-6cf28ff4982c3d8676d8",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Proxy.yaml",
+      "format": "egern",
+      "products": [
+        "overseas-sites-extra"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-375ce0dc554255b42e08",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ProxyGFW.yaml",
+      "format": "egern",
+      "products": [
+        "overseas-sites-extra"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-b250df99816d76363a4c",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/ProxyMedia.yaml",
+      "format": "egern",
+      "products": [
+        "iqiyi-international",
+        "overseas-media-extra"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-8ce314f00b55aeb73b75",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Reddit.yaml",
+      "format": "egern",
+      "products": [
+        "reddit-community"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-9cd65feeb4bd431722a5",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Reject.yaml",
+      "format": "egern",
+      "products": [
+        "extended-ad-and-tracking",
+        "general-ad-and-tracking"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-5bd70c150dafb694bd01",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Spotify.yaml",
+      "format": "egern",
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-4b415051ff9dfc8d63ab",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Steam.yaml",
+      "format": "egern",
+      "products": [
+        "steam-international-platform",
+        "steam-mainland-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-029775c841f1500db244",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Telegram.yaml",
+      "format": "egern",
+      "products": [
+        "telegram-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-621b998e38f5105d7e19",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/TestFlight.yaml",
+      "format": "egern",
+      "products": [
+        "apple-store-transactions",
+        "apple-testflight"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-3baa63d5e0bc81a46a6f",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/TikTok.yaml",
+      "format": "egern",
+      "products": [
+        "tiktok-international-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-fe3cf368bbdbaca0c226",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Trust.yaml",
+      "format": "egern",
+      "products": [
+        "apple-account-authentication",
+        "trust-wallet"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-bd148870fee7ba011cd3",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/Twitter.yaml",
+      "format": "egern",
+      "products": [
+        "x-social-and-media"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-666e97f47adff18e3b77",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/WeChat.yaml",
+      "format": "egern",
+      "products": [
+        "tencent-shared-content-and-sdk",
+        "tenpay-mainland-payments",
+        "wechat-international-portal",
+        "wechat-shared-and-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-b624f3a47991dfcf6141",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/YouTube.yaml",
+      "format": "egern",
+      "products": [
+        "youtube-video-and-cdn"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-298f53a08b5de9d417ef",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/iCloud.yaml",
+      "format": "egern",
+      "products": [
+        "apple-find-my"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-3eb6185318e24f7fbe79",
+      "repository": "Repcz/Tool",
+      "ref": "X",
+      "path": "Egern/Rules/xAI.yaml",
+      "format": "egern",
+      "products": [
+        "grokipedia-encyclopedia",
+        "xai-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "ac5c64ebf950ac0b3ba684b5c92844968863e852"
+    },
+    {
+      "id": "source-5b41d7d9b8c93978db2d",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/AI/AI.yaml",
+      "format": "egern",
+      "products": [
+        "ai-com-agents",
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-f6b7975f2b717569aca5",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Discord/Discord.yaml",
+      "format": "egern",
+      "products": [
+        "discord-activities-proxy",
+        "discord-messaging-and-voice"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-d5e763bad3955dc99fe4",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/DisneyPlus/DisneyPlus.yaml",
+      "format": "egern",
+      "products": [
+        "disney-plus-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-481dfc6401b311062717",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Facebook/Facebook.yaml",
+      "format": "egern",
+      "products": [
+        "meta-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-2921c38eed638dfdbecb",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/GitHub/GitHub.yaml",
+      "format": "egern",
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-58853c6fb5990dc857af",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Google/Google.yaml",
+      "format": "egern",
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-bc15232bbcd69ba8e24b",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Instagram/Instagram.yaml",
+      "format": "egern",
+      "products": [
+        "instagram-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-ff33b121b3f8016559a3",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/LAN/LAN.yaml",
+      "format": "egern",
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-fe878619bbab572cde92",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Max/Max.yaml",
+      "format": "egern",
+      "products": [
+        "hbo-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-042913a7b7ce098cda73",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Microsoft/Microsoft.yaml",
+      "format": "egern",
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-f2de460a620cb451b2ef",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Netflix/Netflix.yaml",
+      "format": "egern",
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-8812172119d7ef63b73d",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/PayPal/PayPal.yaml",
+      "format": "egern",
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-df0f259f528addde92cf",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/PrimeVideo/PrimeVideo.yaml",
+      "format": "egern",
+      "products": [
+        "prime-video-streaming"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-98e27436b67ac0e43709",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Spotify/Spotify.yaml",
+      "format": "egern",
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-0ba39bac7add51231c9d",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/Telegram/Telegram.yaml",
+      "format": "egern",
+      "products": [
+        "telegram-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-c6818616bbdb809a10b0",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/TikTok/TikTok.yaml",
+      "format": "egern",
+      "products": [
+        "tiktok-international-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-af7e139a755ebdb1b1c4",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/WhatsApp/WhatsApp.yaml",
+      "format": "egern",
+      "products": [
+        "whatsapp-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-7bc6fad07641588e82fc",
+      "repository": "YUDIDIFEI/Scripts",
+      "ref": "master",
+      "path": "rule/Egern/YouTube/YouTube.yaml",
+      "format": "egern",
+      "products": [
+        "youtube-video-and-cdn"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "30f374f407c20ba3ba1e4cb02650cdd658a3d42e"
+    },
+    {
+      "id": "source-3b90f40f51fdd422fdaa",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/AIGC.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-ebcb3ec8112abb132ead",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Apple.yaml",
+      "format": "egern",
+      "products": [
+        "apple-account-authentication",
+        "apple-and-ai-privacy-exceptions",
+        "apple-app-and-device-verification",
+        "apple-app-package-downloads",
+        "apple-association-services",
+        "apple-certificate-validation",
+        "apple-cloud-sync",
+        "apple-developer-downloads",
+        "apple-developer-portal",
+        "apple-device-registration",
+        "apple-feedback-and-diagnostics",
+        "apple-find-my",
+        "apple-icloud-content-domains",
+        "apple-icloud-mainland",
+        "apple-intelligence-relays",
+        "apple-location-services",
+        "apple-mainland-delivery-aliases",
+        "apple-messaging-identity",
+        "apple-music-and-radio",
+        "apple-music-audio-delivery",
+        "apple-news-and-sports",
+        "apple-other-services",
+        "apple-podcasts",
+        "apple-private-relay-connections",
+        "apple-push-connection",
+        "apple-schoolwork-handouts",
+        "apple-shared-store-assets",
+        "apple-siri-and-search",
+        "apple-store-transactions",
+        "apple-system-connectivity",
+        "apple-testflight",
+        "apple-tv-video-delivery",
+        "apple-update-control",
+        "apple-update-downloads",
+        "apple-video-and-fitness",
+        "apple-wallet-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-23308d1f1a95b09142d7",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Disney.yaml",
+      "format": "egern",
+      "products": [
+        "disney-plus-streaming",
+        "disney-shared-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-58e421ef932e816b8ce6",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/GitHub.yaml",
+      "format": "egern",
+      "products": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "github-pages-hosting"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-c169e5e657fe38604785",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Google.yaml",
+      "format": "egern",
+      "products": [
+        "google-account-authentication",
+        "google-drive-and-documents",
+        "google-firebase-messaging",
+        "google-gmail-mail",
+        "google-meet-meetings",
+        "google-platform-services",
+        "google-play-games",
+        "google-play-services",
+        "google-scholar",
+        "google-software-downloads"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-633462ae3debb76b1c12",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/HBO.yaml",
+      "format": "egern",
+      "products": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-c36c5d57cdc2a605fc18",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Instagram.yaml",
+      "format": "egern",
+      "products": [
+        "instagram-social"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-b922d9f811a2597be126",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Lan.yaml",
+      "format": "egern",
+      "products": [
+        "local-links-and-addresses",
+        "local-no-resolve-alt"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-2ea66b277b7ec7e5a094",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Microsoft.yaml",
+      "format": "egern",
+      "products": [
+        "microsoft-account-authentication",
+        "microsoft-china-cloud-controls",
+        "microsoft-copilot-connections",
+        "microsoft-files-and-sharepoint",
+        "microsoft-office-downloads",
+        "microsoft-outlook-mail",
+        "microsoft-platform-services",
+        "microsoft-power-bi",
+        "microsoft-store-services",
+        "microsoft-teams-meetings",
+        "microsoft-update-and-store-downloads",
+        "microsoft-vscode",
+        "microsoft-windows-update-services",
+        "microsoft-xbox-services"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-b69f710fada740b469b4",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Netflix.yaml",
+      "format": "egern",
+      "products": [
+        "netflix-connection-tests",
+        "netflix-video-and-delivery"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-62082a8c17c42301d7af",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/PayPal.yaml",
+      "format": "egern",
+      "products": [
+        "braintree-payments",
+        "paypal-payments"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-a6fcdb163f630edb496a",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Spotify.yaml",
+      "format": "egern",
+      "products": [
+        "spotify-advertising-and-analytics",
+        "spotify-audio"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-2850e504a3373f3a3ec7",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Telegram.yaml",
+      "format": "egern",
+      "products": [
+        "telegram-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-f65ad63fd1cd19edddbd",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/TikTok.yaml",
+      "format": "egern",
+      "products": [
+        "tiktok-international-video"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-3c5d3d353cae3aef0ee3",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/Twitter.yaml",
+      "format": "egern",
+      "products": [
+        "x-social-and-media"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-4bc79f586fad19dbe9a0",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/WeChat.yaml",
+      "format": "egern",
+      "products": [
+        "tencent-shared-content-and-sdk",
+        "tenpay-mainland-payments",
+        "wechat-international-portal",
+        "wechat-shared-and-mainland"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-412c398b09bf36dfd776",
+      "repository": "jnlaoshu/MySelf",
+      "ref": "main",
+      "path": "Egern/Rule/YouTube.yaml",
+      "format": "egern",
+      "products": [
+        "youtube-video-and-cdn"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
     }
   ]
 }
