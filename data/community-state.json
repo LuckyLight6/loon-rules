@@ -1,6 +1,6 @@
 {
   "schema-version": 1,
-  "checked-at": "2026-11-26T19:02:55.545550+00:00",
+  "checked-at": "2026-11-26T19:36:26.350657+00:00",
   "summary": {
     "inputs-expected": 2467,
     "inputs-observed": 2467,
@@ -11,7 +11,7 @@
     "products-with-file-candidates": 318,
     "searches-held": 0,
     "hosted-sources-checked": 1,
-    "hosted-sources-held": 1
+    "hosted-sources-held": 0
   },
   "inputs": {
     "source-1d38a9a824f81c928af5": {
@@ -1153,8 +1153,8 @@
       "ref": "main",
       "path": "rule/Lan.list",
       "format": "classical",
-      "revision": "ec5f274f4bf04ca9a1d322b5a68ad96401dac908",
-      "committed-at": "2026-11-26T16:19:29Z",
+      "revision": "9c90c1e69fab2da47386a02362084690e7f15189",
+      "committed-at": "2026-11-26T19:06:11Z",
       "sha256": "f2025d03d3bbb329f3fd4d4f45deed5ea90f59b052bae133d3b3e7c22a67b264",
       "bytes": 833,
       "lineage-status": "unverified",
@@ -38001,5 +38001,95 @@
       ]
     }
   },
-  "websites": {}
+  "websites": {
+    "surge-bojin": {
+      "version": "20261125093047",
+      "artifacts": {
+        "strict-category-ai-!cn": {
+          "url": "https://surge.bojin.co/geosite/strict/category-ai-!cn",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "ae95e9f8ac2573d210526968195d4b376826188a560dabbc75f9b0f4de4f0a81",
+          "bytes": 6705
+        },
+        "balanced-category-ai-!cn": {
+          "url": "https://surge.bojin.co/geosite/balanced/category-ai-!cn",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "b9fca0f846d7fbf07d426d9dc4d86f171cd612f0edcccff4d424e9f3931db1a9",
+          "bytes": 6770
+        },
+        "strict-category-finance": {
+          "url": "https://surge.bojin.co/geosite/strict/category-finance",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "adc5705b999df2afdd2f19439013e7f6c053f946bf32c35b853fbf940c3db46f",
+          "bytes": 18213
+        },
+        "balanced-category-finance": {
+          "url": "https://surge.bojin.co/geosite/balanced/category-finance",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "adc5705b999df2afdd2f19439013e7f6c053f946bf32c35b853fbf940c3db46f",
+          "bytes": 18213
+        },
+        "strict-paypal": {
+          "url": "https://surge.bojin.co/geosite/strict/paypal",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "b4b4b5e0c0bc9c3e27cdfc01d7d3252821eaa22779af4b0504e42ceee5cb9bfb",
+          "bytes": 7586
+        },
+        "balanced-paypal": {
+          "url": "https://surge.bojin.co/geosite/balanced/paypal",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "b4b4b5e0c0bc9c3e27cdfc01d7d3252821eaa22779af4b0504e42ceee5cb9bfb",
+          "bytes": 7586
+        },
+        "strict-cursor": {
+          "url": "https://surge.bojin.co/geosite/strict/cursor",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "c96090fa0c73a439a93440c22a8af0bad1bf15983651692fa00b90139b847114",
+          "bytes": 133
+        },
+        "balanced-cursor": {
+          "url": "https://surge.bojin.co/geosite/balanced/cursor",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "c96090fa0c73a439a93440c22a8af0bad1bf15983651692fa00b90139b847114",
+          "bytes": 133
+        },
+        "strict-github-copilot": {
+          "url": "https://surge.bojin.co/geosite/strict/github-copilot",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "806d55544269b76a5cab810e164747e45020e1dfc8ea45ae52148db343dbb627",
+          "bytes": 327
+        },
+        "balanced-github-copilot": {
+          "url": "https://surge.bojin.co/geosite/balanced/github-copilot",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "806d55544269b76a5cab810e164747e45020e1dfc8ea45ae52148db343dbb627",
+          "bytes": 327
+        },
+        "strict-openai": {
+          "url": "https://surge.bojin.co/geosite/strict/openai",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "8895b4ce723bbd984fe38cdbdc778cf8d1d3bc5e67e5f54b88cd8423226c1739",
+          "bytes": 801
+        },
+        "balanced-openai": {
+          "url": "https://surge.bojin.co/geosite/balanced/openai",
+          "format": "classical",
+          "version": "20261125093047",
+          "sha256": "ee562236a68ac6ec8ed74ae864e94aa7a9e420c81269d8915a1a17129b926d99",
+          "bytes": 866
+        }
+      }
+    }
+  }
 }
