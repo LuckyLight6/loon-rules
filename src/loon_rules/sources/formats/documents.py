@@ -296,7 +296,10 @@ def parse_site_identity(recipe, text):
                 try:pairs=parse_qsl(url.query,keep_blank_values=True,strict_parsing=True,max_num_fields=16)
                 except ValueError as error:raise Invalid('产品canonical参数格式无效') from error
                 if not canonical or len(pairs)!=len(dict(pairs)) or dict(pairs)!=allowed_query:
-                    raise Invalid('产品canonical出现未声明的参数、值或重复字段')
+                    public_flags=','.join(name+'='+('true' if value=='true' else 'false' if value=='false' else '<unlisted>')
+                                          for name,value in pairs)
+                    raise Invalid('产品canonical出现未声明的参数、值或重复字段：'
+                                  +recipe['brand']+' '+urlsplit(recipe['source']).hostname+' '+public_flags)
             host=domain_scope.public_host(url.hostname);suffixes=domain_scope.current()
             if suffixes.suffix(host)[1]:raise Invalid('共享托管站点不能认领整个产品根域')
             return suffixes.registrable(host)

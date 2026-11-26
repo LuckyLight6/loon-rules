@@ -14,3 +14,14 @@ class SiteIdentityQueries(PublicSourceExamples):
             with self.subTest(query=query),self.assertRaises(Invalid):extract_rows(recipe,body(query))
         strict={key:value for key,value in recipe.items() if key!='allowed-canonical-query'}
         with self.assertRaises(Invalid):extract_rows(strict,body('?has_gdpr=true'))
+
+    def test_unexpected_query_identifies_the_source_without_printing_unknown_values(self):
+        recipe={'format':'site-identity','source':'https://vendor.example/','scope':'source-root','brand':'Vendor',
+                'allowed-canonical-query':{'has_gdpr':'true'}}
+        body='<meta property="og:site_name" content="Vendor"><link rel="canonical" href="https://vendor.example/?has_gdpr=false&amp;token=private-sensitive-value">'
+        with self.assertRaises(Invalid) as caught:extract_rows(recipe,body)
+        message=str(caught.exception)
+        self.assertIn('Vendor',message)
+        self.assertIn('vendor.example',message)
+        self.assertIn('has_gdpr=false',message)
+        self.assertNotIn('private-sensitive-value',message)
