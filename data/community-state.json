@@ -1,6 +1,6 @@
 {
   "schema-version": 1,
-  "checked-at": "2026-11-26T21:38:03.708614+00:00",
+  "checked-at": "2026-11-26T22:05:50.517292+00:00",
   "summary": {
     "inputs-expected": 2673,
     "inputs-observed": 2673,
@@ -11,7 +11,7 @@
     "products-with-file-candidates": 318,
     "searches-held": 0,
     "hosted-sources-checked": 1,
-    "hosted-sources-held": 1
+    "hosted-sources-held": 0
   },
   "inputs": {
     "source-1d38a9a824f81c928af5": {
