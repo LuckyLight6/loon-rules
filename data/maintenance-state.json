@@ -1,9 +1,9 @@
 {
-  "checked-at": "2026-11-26T21:56:12Z",
-  "inputs-read": 623,
-  "critical": 939,
-  "inputs-requested": 623,
-  "profiles-checked": 2852126720,
+  "checked-at": "2026-11-26T22:51:28Z",
+  "inputs-read": 625,
+  "critical": 941,
+  "inputs-requested": 625,
+  "profiles-checked": 4991221760,
   "assigned-rules": {
     "apple-system-connectivity": {
       "DOMAIN-SUFFIX,appattest.apple.com": "apple-app-and-device-verification",
@@ -843,7 +843,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 357,
+    "routine-tables": 358,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1085,6 +1085,7 @@
       "spotify-advertising-and-analytics",
       "newrelic-platform",
       "newrelic-ingest-networks",
+      "github-enterprise-ingress-networks",
       "telegram-messaging",
       "discord-messaging-and-voice",
       "signal-messenger",
@@ -4118,7 +4119,7 @@
         ]
       },
       "other-products": {
-        "github-code-and-packages": 31,
+        "github-code-and-packages": 32,
         "github-copilot-connections": 7,
         "microsoft-files-and-sharepoint": 6,
         "microsoft-account-authentication": 2,
@@ -4137,7 +4138,7 @@
       "privacy-scopes": 1,
       "shared-scopes": 29,
       "declared-exclusions": 0,
-      "outside-selection": 82,
+      "outside-selection": 81,
       "other-lines": 3,
       "other-rule-types": {
         "DOMAIN-KEYWORD": 3
@@ -5390,8 +5391,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net",
       "DOMAIN,swcdn.apple.com.edgesuite.net"
     ],
@@ -6198,8 +6199,8 @@
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
-    "state": "retained-newer",
-    "source-version": "2026-11-25_18-55-17_UTC",
+    "state": "current",
+    "source-version": "2026-11-26_11-38-20_UTC",
     "active-version": "2026-11-26_11-38-20_UTC"
   },
   "shared-service-transfers": {
@@ -10491,6 +10492,284 @@
           "sha256": "435fdbb0900a27e6f365035572660d68877363727b4029f9c56f7088a11a1bcb"
         }
       ]
+    },
+    "github-enterprise-ingress-networks": {
+      "method": "network-source-agreement",
+      "directory": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+      "documents": [
+        {
+          "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+          "recipes": [
+            {
+              "format": "network-column-tables",
+              "section": "githubs-ip-addresses",
+              "headers": [
+                "Ranges for egress traffic",
+                "Ranges for ingress traffic"
+              ],
+              "column": "Ranges for ingress traffic",
+              "families": [
+                4,
+                6
+              ],
+              "min-prefix": {
+                "4": 24,
+                "6": 48
+              }
+            }
+          ],
+          "kind": "network-source-agreement",
+          "rows": [
+            "IP-CIDR,4.190.169.240/28,no-resolve",
+            "IP-CIDR,4.237.73.192/28,no-resolve",
+            "IP-CIDR,20.5.226.112/28,no-resolve",
+            "IP-CIDR,20.123.213.96/28,no-resolve",
+            "IP-CIDR,20.224.46.144/28,no-resolve",
+            "IP-CIDR,20.240.194.240/28,no-resolve",
+            "IP-CIDR,20.240.211.208/28,no-resolve",
+            "IP-CIDR,20.240.220.192/28,no-resolve",
+            "IP-CIDR,20.248.163.176/28,no-resolve",
+            "IP-CIDR,40.81.176.224/28,no-resolve",
+            "IP-CIDR,48.214.149.96/28,no-resolve",
+            "IP-CIDR,74.226.88.240/28,no-resolve",
+            "IP-CIDR,74.249.180.192/28,no-resolve",
+            "IP-CIDR,108.143.197.176/28,no-resolve",
+            "IP-CIDR,172.202.123.176/28,no-resolve"
+          ],
+          "shared-rows": [],
+          "retired-rows": [],
+          "sha256": "5052e55db3c2e82dafc12c8e3dcde2721156607d2c1c37b462ed22c1f803c88f",
+          "purpose-rows": {
+            "Ranges for egress traffic": [
+              "IP-CIDR,4.190.169.192/28,no-resolve",
+              "IP-CIDR,20.5.34.240/28,no-resolve",
+              "IP-CIDR,20.5.146.128/28,no-resolve",
+              "IP-CIDR,20.61.46.32/28,no-resolve",
+              "IP-CIDR,20.118.27.192/28,no-resolve",
+              "IP-CIDR,20.221.76.128/28,no-resolve",
+              "IP-CIDR,20.224.62.160/28,no-resolve",
+              "IP-CIDR,20.240.211.176/28,no-resolve",
+              "IP-CIDR,40.81.180.112/28,no-resolve",
+              "IP-CIDR,51.12.252.16/28,no-resolve",
+              "IP-CIDR,68.218.155.16/28,no-resolve",
+              "IP-CIDR,74.226.88.192/28,no-resolve",
+              "IP-CIDR,74.241.131.48/28,no-resolve",
+              "IP-CIDR,108.143.221.96/28,no-resolve",
+              "IP-CIDR,135.233.115.208/28,no-resolve"
+            ],
+            "Ranges for ingress traffic": [
+              "IP-CIDR,4.190.169.240/28,no-resolve",
+              "IP-CIDR,4.237.73.192/28,no-resolve",
+              "IP-CIDR,20.5.226.112/28,no-resolve",
+              "IP-CIDR,20.123.213.96/28,no-resolve",
+              "IP-CIDR,20.224.46.144/28,no-resolve",
+              "IP-CIDR,20.240.194.240/28,no-resolve",
+              "IP-CIDR,20.240.211.208/28,no-resolve",
+              "IP-CIDR,20.240.220.192/28,no-resolve",
+              "IP-CIDR,20.248.163.176/28,no-resolve",
+              "IP-CIDR,40.81.176.224/28,no-resolve",
+              "IP-CIDR,48.214.149.96/28,no-resolve",
+              "IP-CIDR,74.226.88.240/28,no-resolve",
+              "IP-CIDR,74.249.180.192/28,no-resolve",
+              "IP-CIDR,108.143.197.176/28,no-resolve",
+              "IP-CIDR,172.202.123.176/28,no-resolve"
+            ]
+          },
+          "region-rows": {
+            "the eu": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,20.61.46.32/28,no-resolve",
+                "IP-CIDR,20.224.62.160/28,no-resolve",
+                "IP-CIDR,20.240.211.176/28,no-resolve",
+                "IP-CIDR,51.12.252.16/28,no-resolve",
+                "IP-CIDR,74.241.131.48/28,no-resolve",
+                "IP-CIDR,108.143.221.96/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,20.123.213.96/28,no-resolve",
+                "IP-CIDR,20.224.46.144/28,no-resolve",
+                "IP-CIDR,20.240.194.240/28,no-resolve",
+                "IP-CIDR,20.240.211.208/28,no-resolve",
+                "IP-CIDR,20.240.220.192/28,no-resolve",
+                "IP-CIDR,108.143.197.176/28,no-resolve"
+              ]
+            },
+            "australia": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,20.5.34.240/28,no-resolve",
+                "IP-CIDR,20.5.146.128/28,no-resolve",
+                "IP-CIDR,68.218.155.16/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,4.237.73.192/28,no-resolve",
+                "IP-CIDR,20.5.226.112/28,no-resolve",
+                "IP-CIDR,20.248.163.176/28,no-resolve"
+              ]
+            },
+            "us": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,20.118.27.192/28,no-resolve",
+                "IP-CIDR,20.221.76.128/28,no-resolve",
+                "IP-CIDR,135.233.115.208/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,48.214.149.96/28,no-resolve",
+                "IP-CIDR,74.249.180.192/28,no-resolve",
+                "IP-CIDR,172.202.123.176/28,no-resolve"
+              ]
+            },
+            "japan": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,4.190.169.192/28,no-resolve",
+                "IP-CIDR,40.81.180.112/28,no-resolve",
+                "IP-CIDR,74.226.88.192/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,4.190.169.240/28,no-resolve",
+                "IP-CIDR,40.81.176.224/28,no-resolve",
+                "IP-CIDR,74.226.88.240/28,no-resolve"
+              ]
+            }
+          }
+        },
+        {
+          "source": "https://raw.githubusercontent.com/github/docs/main/content/admin/data-residency/network-details-for-ghecom.md",
+          "recipes": [
+            {
+              "format": "network-column-tables",
+              "section": "githubs-ip-addresses",
+              "headers": [
+                "Ranges for egress traffic",
+                "Ranges for ingress traffic"
+              ],
+              "column": "Ranges for ingress traffic",
+              "families": [
+                4,
+                6
+              ],
+              "min-prefix": {
+                "4": 24,
+                "6": 48
+              },
+              "document-format": "markdown",
+              "section-heading": "{% data variables.product.github %}'s IP addresses"
+            }
+          ],
+          "kind": "network-source-agreement",
+          "rows": [
+            "IP-CIDR,4.190.169.240/28,no-resolve",
+            "IP-CIDR,4.237.73.192/28,no-resolve",
+            "IP-CIDR,20.5.226.112/28,no-resolve",
+            "IP-CIDR,20.123.213.96/28,no-resolve",
+            "IP-CIDR,20.224.46.144/28,no-resolve",
+            "IP-CIDR,20.240.194.240/28,no-resolve",
+            "IP-CIDR,20.240.211.208/28,no-resolve",
+            "IP-CIDR,20.240.220.192/28,no-resolve",
+            "IP-CIDR,20.248.163.176/28,no-resolve",
+            "IP-CIDR,40.81.176.224/28,no-resolve",
+            "IP-CIDR,48.214.149.96/28,no-resolve",
+            "IP-CIDR,74.226.88.240/28,no-resolve",
+            "IP-CIDR,74.249.180.192/28,no-resolve",
+            "IP-CIDR,108.143.197.176/28,no-resolve",
+            "IP-CIDR,172.202.123.176/28,no-resolve"
+          ],
+          "shared-rows": [],
+          "retired-rows": [],
+          "sha256": "1cc96a001a0fad9bd464e2151ed08c47064e0cba0a65ddf25769211d284e801c",
+          "purpose-rows": {
+            "Ranges for egress traffic": [
+              "IP-CIDR,4.190.169.192/28,no-resolve",
+              "IP-CIDR,20.5.34.240/28,no-resolve",
+              "IP-CIDR,20.5.146.128/28,no-resolve",
+              "IP-CIDR,20.61.46.32/28,no-resolve",
+              "IP-CIDR,20.118.27.192/28,no-resolve",
+              "IP-CIDR,20.221.76.128/28,no-resolve",
+              "IP-CIDR,20.224.62.160/28,no-resolve",
+              "IP-CIDR,20.240.211.176/28,no-resolve",
+              "IP-CIDR,40.81.180.112/28,no-resolve",
+              "IP-CIDR,51.12.252.16/28,no-resolve",
+              "IP-CIDR,68.218.155.16/28,no-resolve",
+              "IP-CIDR,74.226.88.192/28,no-resolve",
+              "IP-CIDR,74.241.131.48/28,no-resolve",
+              "IP-CIDR,108.143.221.96/28,no-resolve",
+              "IP-CIDR,135.233.115.208/28,no-resolve"
+            ],
+            "Ranges for ingress traffic": [
+              "IP-CIDR,4.190.169.240/28,no-resolve",
+              "IP-CIDR,4.237.73.192/28,no-resolve",
+              "IP-CIDR,20.5.226.112/28,no-resolve",
+              "IP-CIDR,20.123.213.96/28,no-resolve",
+              "IP-CIDR,20.224.46.144/28,no-resolve",
+              "IP-CIDR,20.240.194.240/28,no-resolve",
+              "IP-CIDR,20.240.211.208/28,no-resolve",
+              "IP-CIDR,20.240.220.192/28,no-resolve",
+              "IP-CIDR,20.248.163.176/28,no-resolve",
+              "IP-CIDR,40.81.176.224/28,no-resolve",
+              "IP-CIDR,48.214.149.96/28,no-resolve",
+              "IP-CIDR,74.226.88.240/28,no-resolve",
+              "IP-CIDR,74.249.180.192/28,no-resolve",
+              "IP-CIDR,108.143.197.176/28,no-resolve",
+              "IP-CIDR,172.202.123.176/28,no-resolve"
+            ]
+          },
+          "region-rows": {
+            "the eu": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,20.61.46.32/28,no-resolve",
+                "IP-CIDR,20.224.62.160/28,no-resolve",
+                "IP-CIDR,20.240.211.176/28,no-resolve",
+                "IP-CIDR,51.12.252.16/28,no-resolve",
+                "IP-CIDR,74.241.131.48/28,no-resolve",
+                "IP-CIDR,108.143.221.96/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,20.123.213.96/28,no-resolve",
+                "IP-CIDR,20.224.46.144/28,no-resolve",
+                "IP-CIDR,20.240.194.240/28,no-resolve",
+                "IP-CIDR,20.240.211.208/28,no-resolve",
+                "IP-CIDR,20.240.220.192/28,no-resolve",
+                "IP-CIDR,108.143.197.176/28,no-resolve"
+              ]
+            },
+            "australia": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,20.5.34.240/28,no-resolve",
+                "IP-CIDR,20.5.146.128/28,no-resolve",
+                "IP-CIDR,68.218.155.16/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,4.237.73.192/28,no-resolve",
+                "IP-CIDR,20.5.226.112/28,no-resolve",
+                "IP-CIDR,20.248.163.176/28,no-resolve"
+              ]
+            },
+            "us": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,20.118.27.192/28,no-resolve",
+                "IP-CIDR,20.221.76.128/28,no-resolve",
+                "IP-CIDR,135.233.115.208/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,48.214.149.96/28,no-resolve",
+                "IP-CIDR,74.249.180.192/28,no-resolve",
+                "IP-CIDR,172.202.123.176/28,no-resolve"
+              ]
+            },
+            "japan": {
+              "Ranges for egress traffic": [
+                "IP-CIDR,4.190.169.192/28,no-resolve",
+                "IP-CIDR,40.81.180.112/28,no-resolve",
+                "IP-CIDR,74.226.88.192/28,no-resolve"
+              ],
+              "Ranges for ingress traffic": [
+                "IP-CIDR,4.190.169.240/28,no-resolve",
+                "IP-CIDR,40.81.176.224/28,no-resolve",
+                "IP-CIDR,74.226.88.240/28,no-resolve"
+              ]
+            }
+          }
+        }
+      ]
     }
   },
   "maintenance": {
@@ -10849,7 +11128,8 @@
       1019,
       1059,
       205,
-      206
+      206,
+      3005
     ],
     "按用途与来源家族自动补全": [
       1010,
@@ -10898,7 +11178,8 @@
     "从官方目录发现产品与版本，再读取服务端点": [
       2170,
       2180,
-      3290
+      3290,
+      3295
     ],
     "随发布文件发现主机，保留版本依据": [
       3040,
@@ -11032,8 +11313,8 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 18011,
-      "admitted-rules": 270,
+      "not-whole-host-consensus": 18005,
+      "admitted-rules": 0,
       "retired-rules": 0
     }
   },
@@ -13121,6 +13402,12 @@
       "domain-scopes": 4,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "github-enterprise-public-namespace": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
     }
   },
   "service-dependencies": {
@@ -13137,7 +13424,7 @@
             "protect-from-reject": true
           },
           "complete": true,
-          "sha256": "78b35211e253c2bf1205f0cc96a6da254fe699e48825deb5576c27c1ee2f9954",
+          "sha256": "bee2cff0d50e1a4b0e2973ba92d39d46f2682e93a73f94ecef68abe30bad661a",
           "rules": [
             "DOMAIN,android.chat.openai.com",
             "DOMAIN,auth0.openai.com",
@@ -13214,6 +13501,22 @@
             "DOMAIN-WILDCARD,copilot-reports-*.b01.azurefd.net",
             "DOMAIN-WILDCARD,usagereports*.blob.core.windows.net"
           ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+            "format": "product-domain-statements",
+            "paragraph-contains": [
+              "Most GitHub Copilot services require access to"
+            ],
+            "require-complete": true,
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "5052e55db3c2e82dafc12c8e3dcde2721156607d2c1c37b462ed22c1f803c88f",
+          "rules": [
+            "DOMAIN-SUFFIX,ghe.com"
+          ]
         }
       ]
     },
@@ -13230,7 +13533,7 @@
             "protect-from-reject": true
           },
           "complete": true,
-          "sha256": "78b35211e253c2bf1205f0cc96a6da254fe699e48825deb5576c27c1ee2f9954",
+          "sha256": "bee2cff0d50e1a4b0e2973ba92d39d46f2682e93a73f94ecef68abe30bad661a",
           "rules": [
             "DOMAIN,android.chat.openai.com",
             "DOMAIN,auth0.openai.com",
@@ -13310,6 +13613,22 @@
             "DOMAIN-WILDCARD,*.individual.githubcopilot.com",
             "DOMAIN-WILDCARD,copilot-reports-*.b01.azurefd.net",
             "DOMAIN-WILDCARD,usagereports*.blob.core.windows.net"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+            "format": "product-domain-statements",
+            "paragraph-contains": [
+              "Most GitHub Copilot services require access to"
+            ],
+            "require-complete": true,
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "5052e55db3c2e82dafc12c8e3dcde2721156607d2c1c37b462ed22c1f803c88f",
+          "rules": [
+            "DOMAIN-SUFFIX,ghe.com"
           ]
         }
       ]
@@ -14575,6 +14894,7 @@
     "gemma.ai",
     "generativelanguage.googleapis.com",
     "ghcr.io",
+    "ghe.com",
     "gifs.intercomcdn.com",
     "github-registry-files.githubusercontent.com",
     "github-releases.githubusercontent.com",
@@ -15050,7 +15370,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "ollama-cloud": {
@@ -15081,7 +15401,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "stackit-model-services": {
@@ -15112,7 +15432,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "stepfun-international": {
@@ -15154,7 +15474,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "xiaomi-international": {
@@ -15197,7 +15517,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -15232,7 +15552,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -15282,7 +15602,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -15323,7 +15643,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -15564,7 +15884,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "npm-registry": {
@@ -15597,7 +15917,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -15641,7 +15961,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -15674,7 +15994,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -15727,7 +16047,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "braintree-payments": {
@@ -15754,7 +16074,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "notion-workspace": {
@@ -15781,7 +16101,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "google-account-authentication": {
@@ -15989,7 +16309,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -16015,7 +16335,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "google-play-services": {
@@ -16051,7 +16371,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "google-play-games": {
@@ -16079,7 +16399,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "kimi-mainland": {
@@ -16110,7 +16430,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -16141,7 +16461,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -16184,7 +16504,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -16223,7 +16543,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795729981,
+      "last-read": 1795733416,
       "state": "current"
     }
   },
@@ -16231,7 +16551,7 @@
   "expanded-domain-cases": 226,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1389,
+  "business-domain-cases": 1391,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -16240,11 +16560,9 @@
     }
   },
   "shared-negatives": 19,
-  "changed": [
-    "extended-ad-and-tracking"
-  ],
+  "changed": [],
   "scope-negatives": 157,
-  "ip-cases": 62,
+  "ip-cases": 92,
   "ip-matching": {
     "local-links-and-addresses": {
       "intent": "per-rule",
@@ -16310,6 +16628,11 @@
       "intent": "target-ip",
       "no-resolve": 9,
       "resolve-for-match": 0
+    },
+    "github-enterprise-ingress-networks": {
+      "intent": "target-ip",
+      "no-resolve": 15,
+      "resolve-for-match": 0
     }
   },
   "rules": {
@@ -16324,8 +16647,8 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "extended-ad-and-tracking": 44558,
-    "ai-overseas-all": 711,
+    "extended-ad-and-tracking": 44564,
+    "ai-overseas-all": 712,
     "claude-connections": 24,
     "chatgpt-service-all": 475,
     "chatgpt-connections": 460,
@@ -16337,7 +16660,7 @@
     "xai-connections": 4,
     "grokipedia-encyclopedia": 1,
     "foundry-local-voice-models": 4,
-    "github-copilot-service-all": 27,
+    "github-copilot-service-all": 28,
     "github-copilot-connections": 17,
     "microsoft-copilot-connections": 5,
     "meta-ai-assistant": 4,
@@ -16465,8 +16788,9 @@
     "apple-device-registration": 2,
     "apple-feedback-and-diagnostics": 16,
     "apple-other-services": 6,
-    "overseas-development-all": 239,
-    "github-code-and-packages": 157,
+    "overseas-development-all": 240,
+    "github-domains-and-ghe-ingress-all": 173,
+    "github-code-and-packages": 158,
     "gitlab-hosting": 4,
     "bitbucket-hosting": 1,
     "npm-registry": 2,
@@ -16494,6 +16818,7 @@
     "spotify-advertising-and-analytics": 5,
     "newrelic-platform": 9,
     "newrelic-ingest-networks": 9,
+    "github-enterprise-ingress-networks": 15,
     "overseas-social-all": 240,
     "telegram-messaging": 35,
     "discord-messaging-and-voice": 26,

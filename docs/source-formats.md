@@ -17,6 +17,7 @@
 | Microsoft 端点行 | `endpoint-sets` 按服务区与端点 ID 选行。只有确认整行专用时才用 `all-hosts`；否则保留 `roots`、`exact` 筛选 | Outlook 4720、Teams 4730、Office 下载 4780 |
 | 官方服务地址表 | `service-address-table` 选择章节与 IPv4／IPv6 列，只接收单个公网地址，生成 `/32`、`/128` 与 `no-resolve`；宽网段、缺列或地址族错误时停止更新 | Cloudflare 公共 DNS 0160，只取标准解析器，和 Families 分开 |
 | 指定方向的地址章节 | `section-network-blocks` 只读所选标题下的 CIDR 代码字段，核对地址族与最宽掩码，生成 `no-resolve` | Claude 1010 只读官方入站地址；出站工具调用和已停用地址不混入客户端目的地址 |
+| 地区与用途分别列出的网段表 | `network-column-tables` 完整检查每个地区与全部用途列；网页和原始 Markdown 的地区、用途与网段须一致，只输出所选方向 | GHE 3295 的公网入站网络；表外地址、缺地区表和原始多余列会停止更新 |
 | 组织持有的 ASN 集合 | `rdap-entity-autnums` 核对注册组织 ID 与名称，读取当前活动 ASN 列表；成员增减自动跟随，生成 `no-resolve`，不预填 ASN 编号 | Telegram 3310、Anthropic 1010；适用于已确认的产品网络运营者，不能据共享云厂商的登记推断租户用途 |
 | 单个 ASN 注册记录 | `rdap-autnum` 核对指定 ASN、注册实体 ID 和组织名称；持有人不符时停止更新 | 只核对一个已知自治系统时使用，维护联系人不等于注册持有人 |
 | 独立产品站 | `site-identity` 核对 canonical、品牌及可选的 Open Graph 字段；`scope: source-root` 只适用于已核实的单产品注册域 | 独立支付或产品站 |
@@ -40,6 +41,8 @@
 ```
 
 官方公司服务清单可以描述来源自身的注册域。`platform-domains` 另行声明已核实由该供应商提供的平台命名空间，须属于公共后缀表中的私有托管部分。GitHub 官方资料明确区分 Pages 网站托管和开发平台：8130 用 `only-platforms` 选择 Pages，3010 用 `exclude-platforms` 留下代码、原始内容和 Actions 等范围。两个组都要配套筛选前完整服务字段的 `source-inventories`；读取器先检查全部所选字段，再划分产品，新平台范围不能因不符合筛选条件而被忽略。相邻的 IP 字段不是这些域名字段的一部分。
+
+GHE 数据驻留网络另用 `network-column-tables`：`section` 选择唯一用途章节，`headers` 声明完整列及顺序，`column` 指定入站方向，`families` 与 `min-prefix` 限制地址族和最宽网段。每个 h3 地区标题都须有完整网段表，不预填地区名；地区集合、每个地区的全部用途列及表格外地址同时核对，再选目标列。Markdown 在渲染前另查原始列数，避免多余字段被渲染器丢弃。官方原始 Markdown 设置 `document-format: markdown` 和精确 `section-heading`，按 H2 边界读取。`network-source-agreement` 同时核对两份资料的完整用途范围；即使入站相同，出站不一致也停止更新。输出网络保留 `no-resolve`。
 
 Pages 的默认域名可供不同产品托管网站，因此 8130 放在全球平台共用层，具体产品的专用租户主机先匹配。Pages 的管理与产品介绍仍使用 GitHub 网站；自定义域名不能仅凭解析到 Pages 的 IP 就改归托管平台。
 

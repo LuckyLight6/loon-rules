@@ -4,8 +4,8 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-26T21:56:12Z
-# rule-count: 44558
+# updated-at: 2026-11-26T22:25:08Z
+# rule-count: 44564
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
@@ -44571,3 +44571,9 @@ DOMAIN-SUFFIX,xswllmffbsyca.website
 DOMAIN-SUFFIX,zatrzmvlegbgu.website
 DOMAIN-SUFFIX,zmwoclhxaxwuc.website
 DOMAIN-SUFFIX,zxkzwcrsumucc.website
+DOMAIN-SUFFIX,wcdezpiqgwwjc.online
+DOMAIN-SUFFIX,ihpkdfnisctqr.space
+DOMAIN-SUFFIX,kkscyggskwhqq.space
+DOMAIN-SUFFIX,omtohiuvchwyf.space
+DOMAIN-SUFFIX,bbnqwnpljcaqt.website
+DOMAIN-SUFFIX,vcplcahjboitn.website

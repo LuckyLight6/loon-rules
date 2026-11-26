@@ -2,12 +2,13 @@
 # priority: 3000
 # section: development
 # description: 海外开发合集
-# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。 GHE入站网络单列3295，GitHub域名与GHE网络可选3005。
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-26T20:13:18Z
-# rule-count: 239
+# updated-at: 2026-11-26T22:25:08Z
+# rule-count: 240
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr
 # source: https://api.github.com/meta
+# source: https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
 # source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
@@ -203,6 +204,7 @@ DOMAIN,productionresultssa7.blob.core.windows.net
 DOMAIN,productionresultssa8.blob.core.windows.net
 DOMAIN,productionresultssa9.blob.core.windows.net
 DOMAIN,rubygemsregistryv2prod.blob.core.windows.net
+DOMAIN-SUFFIX,ghe.com
 DOMAIN,gitlab-assets.oss-cn-hongkong.aliyuncs.com
 DOMAIN-SUFFIX,gitlab.com
 DOMAIN-SUFFIX,gitlab.net

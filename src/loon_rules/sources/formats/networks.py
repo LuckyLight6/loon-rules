@@ -295,3 +295,164 @@ def paragraph_network_list(recipe,text):
         found+=1
     if not found or not result:raise Invalid('明确的地址用途说明缺失')
     return result
+
+
+def network_table_options(recipe):
+    section=recipe.get('section');headers=recipe.get('headers');column=recipe.get('column')
+    families=recipe.get('families');limits=recipe.get('min-prefix')
+    form=recipe.get('document-format','html');heading=recipe.get('section-heading')
+    if (not isinstance(section,str) or not re.fullmatch(r'[a-z][a-z0-9-]*',section)
+            or not isinstance(headers,list) or not headers
+            or any(not isinstance(value,str) or not value.strip() for value in headers)
+            or len(headers)!=len(set(headers))
+            or column not in headers or form not in ('html','markdown')
+            or not isinstance(families,list) or not families
+            or any(type(family) is not int or family not in (4,6) for family in families)
+            or len(set(families))!=len(families) or not isinstance(limits,dict)):
+        raise Invalid('用途网段表缺少明确章节、列或地址族')
+    for family in families:
+        if type(limits.get(str(family))) is not int or not 1<=limits[str(family)]<=(32 if family==4 else 128):
+            raise Invalid('用途网段表缺少对应地址族的最宽前缀')
+    if form=='markdown' and (not isinstance(heading,str) or not heading.strip()):
+        raise Invalid('原始文档的用途网段表缺少明确标题')
+    if form=='html' and heading is not None:
+        raise Invalid('HTML用途网段表须使用章节身份')
+    return section,headers,column,families,form,heading
+
+
+class NetworkRegionTables(HostTables):
+    """Keep every declared region and reject addresses outside its tables."""
+    def __init__(self, section):
+        super().__init__(ignore_controls=True)
+        self.target_section = section
+        self.regions = {}
+        self.region = None
+        self.heading = None
+        self.outside = []
+
+    def handle_starttag(self, tag, attrs):
+        if not self.hidden and self.section == self.target_section:
+            if tag in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
+                if self.heading is not None or self._table_stack:
+                    raise Invalid('用途地区标题未闭合或嵌入网段表')
+                if tag in ('h4', 'h5', 'h6'):
+                    raise Invalid('用途地区的标题层级尚未确认')
+            if tag in ('h1', 'h2'):
+                self.region = None
+        if tag == 'h1' and not self.hidden:
+            self.section = ''
+        super().handle_starttag(tag, attrs)
+        if self.hidden or self.section != self.target_section:
+            return
+        if tag == 'h3':
+            self.heading = []
+        elif tag == 'table':
+            if self.heading is not None or self.region is None:
+                raise Invalid('用途网段表没有完整地区标题')
+            self.regions[self.region].append(self._table_stack[-1])
+
+    def handle_data(self, value):
+        super().handle_data(value)
+        if self.hidden or self.section != self.target_section:
+            return
+        if self.heading is not None:
+            self.heading.append(value)
+        elif not self._table_stack:
+            self.outside.append(value)
+
+    def handle_endtag(self, tag):
+        if tag == 'h3' and not self.hidden and self.section == self.target_section:
+            if self.heading is None:
+                raise Invalid('用途地区标题结构不完整')
+            name = ' '.join(''.join(self.heading).split()).casefold()
+            if not name or name in self.regions:
+                raise Invalid('用途地区名称缺失或重复')
+            self.regions[name] = []
+            self.region = name
+            self.outside.extend(self.heading)
+            self.heading = None
+        super().handle_endtag(tag)
+
+    def complete(self):
+        if (self._table_stack or self.row is not None or self.cell is not None
+                or self.hidden or self.heading is not None):
+            raise Invalid('用途网段表的HTML结构未闭合')
+        if not self.regions or any(not tables for tables in self.regions.values()):
+            raise Invalid('用途章节含没有完整网段表的地区')
+        outside = ''.join(self.outside)
+        if re.search(r'(?:\d{1,3}\.){3}\d{1,3}|(?:[0-9a-f]{0,4}:){2,}[0-9a-f:.]*|/\d{1,3}', outside, re.I):
+            raise Invalid('用途章节的表格外出现未完整处理的地址')
+
+
+def network_column_details(recipe, text):
+    """Validate every region and purpose before selecting a destination role."""
+    section, headers, column, families, form, heading = network_table_options(recipe)
+    if form == 'markdown':
+        from markdown_it import MarkdownIt
+        parser = MarkdownIt('commonmark').enable('table')
+        tokens = parser.parse(text)
+        matches = [index for index, token in enumerate(tokens)
+                   if token.type == 'heading_open' and token.tag == 'h2' and index + 2 < len(tokens)
+                   and tokens[index + 1].type == 'inline' and tokens[index + 1].content == heading
+                   and tokens[index + 2].type == 'heading_close']
+        if len(matches) != 1:
+            raise Invalid('原始文档的用途章节缺失或重复')
+        start = matches[0] + 3
+        end = next((index for index in range(start, len(tokens))
+                    if tokens[index].type == 'heading_open' and tokens[index].tag in ('h1', 'h2')), len(tokens))
+        lines = text.splitlines()
+        for token in tokens[start:end]:
+            if token.type != 'table_open':
+                continue
+            # Markdown rendering pads short rows and drops excess cells. Validate
+            # the source rows first so an unknown address column cannot disappear.
+            for number in range(*token.map):
+                raw = lines[number].strip()
+                if '\\' in raw:
+                    raise Invalid('用途Markdown表含尚未确认的转义')
+                cells = raw.split('|')
+                if not cells[0].strip():
+                    cells = cells[1:]
+                if cells and not cells[-1].strip():
+                    cells = cells[:-1]
+                if len(cells) != len(headers):
+                    raise Invalid('用途Markdown表的原始列数变化')
+        text = '<h2 id="' + section + '"></h2>' + parser.renderer.render(tokens[start:end], parser.options, {})
+    identity = HeadingSectionText(section)
+    identity.feed(text)
+    if identity.found != 1:
+        raise Invalid('用途网段章节缺失或重复')
+    parser = NetworkRegionTables(section)
+    parser.feed(text)
+    parser.complete()
+    scopes = {header: set() for header in headers}
+    regions = {}
+    for name, tables in parser.regions.items():
+        regional_scopes = {header: set() for header in headers}
+        for table in tables:
+            rows = table['rows']
+            if table['nested'] or len(rows) < 2 or rows[0] != headers:
+                raise Invalid('用途章节出现空表、嵌套表或未知标题列')
+            for cells in rows[1:]:
+                if len(cells) != len(headers):
+                    raise Invalid('用途网段表的数据列数变化')
+                for label, value in zip(headers, cells):
+                    if '/' not in value:
+                        raise Invalid('用途网段字段缺少明确CIDR掩码')
+                    row, family = public_media_network(value, recipe)
+                    if family not in families:
+                        raise Invalid('用途网段表出现未声明地址族')
+                    scopes[label].add(row)
+                    regional_scopes[label].add(row)
+        if any(not rows for rows in regional_scopes.values()):
+            raise Invalid('用途地区含空用途范围')
+        regions[name] = regional_scopes
+    return scopes, regions
+
+
+def network_column_scopes(recipe, text):
+    return network_column_details(recipe, text)[0]
+
+
+def network_column_tables(recipe, text):
+    return network_column_scopes(recipe, text)[recipe['column']]

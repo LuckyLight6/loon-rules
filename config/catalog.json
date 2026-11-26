@@ -296,6 +296,7 @@
       ],
       "ids": [
         "overseas-development-all",
+        "github-domains-and-ghe-ingress-all",
         "github-code-and-packages",
         "gitlab-hosting",
         "bitbucket-hosting",
@@ -323,7 +324,8 @@
         "backstage-developer-portal",
         "spotify-advertising-and-analytics",
         "newrelic-platform",
-        "newrelic-ingest-networks"
+        "newrelic-ingest-networks",
+        "github-enterprise-ingress-networks"
       ],
       "subheadings": {
         "github-code-and-packages": "海外开发 · 产品细分",
@@ -1512,7 +1514,7 @@
       "mode": "view",
       "policy-hint": "global",
       "description": "海外 AI 合集",
-      "boundary": "合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。",
+      "boundary": "合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。",
       "priority": 1000,
       "section": "ai",
       "member-selection": {
@@ -1544,6 +1546,15 @@
           "all-purposes": true,
           "require-complete": true,
           "allow-tenant-prefixes": true,
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+          "format": "product-domain-statements",
+          "paragraph-contains": [
+            "Most GitHub Copilot services require access to"
+          ],
+          "require-complete": true,
           "protect-from-reject": true
         }
       ]
@@ -6988,14 +6999,15 @@
       "description": "海外开发合集",
       "section": "development",
       "policy-hint": "global",
-      "boundary": "合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。",
+      "boundary": "合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。 GHE入站网络单列3295，GitHub域名与GHE网络可选3005。",
       "member-selection": {
         "section": "development",
         "groups": [
           "overseas-development"
         ],
         "exclude": [
-          "newrelic-ingest-networks"
+          "newrelic-ingest-networks",
+          "github-enterprise-ingress-networks"
         ]
       },
       "priority": 3000,
@@ -7005,11 +7017,12 @@
       "id": "github-code-and-packages",
       "mode": "compiled",
       "policy-hint": "global",
-      "description": "GitHub 代码托管、API、Actions 与容器镜像",
-      "boundary": "代码、API、Actions、容器与软件包；官方 Meta 清单按服务字段补入，原始内容命名空间按 GitHub 平台处理；Pages 网站托管单列，Copilot 先由 AI 专项匹配，npm 公共仓库另有专表，不接管相邻的 IP 或其他云平台",
+      "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
+      "boundary": "代码、API、Actions、软件包与 GHE 公共命名空间，包括企业内的 Pages。公共 github.io 网站托管另在8130，Copilot 先由AI专项匹配，npm公共仓库另有专表；GHE入站网络单列3295，域名与GHE网络可选3005。企业专用Azure存储和WebSocket主机依企业正式清单处理，不扩大到整家云平台。",
       "sources": [
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr",
-        "https://api.github.com/meta"
+        "https://api.github.com/meta",
+        "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom"
       ],
       "projection": [
         {
@@ -7063,10 +7076,28 @@
           "exclude-platforms": [
             "github.io"
           ]
+        },
+        {
+          "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+          "format": "product-domain-statements",
+          "paragraph-contains": [
+            "To access your enterprise on"
+          ],
+          "require-complete": true,
+          "protect-from-reject": true
         }
       ],
       "inventory-refresh": true,
-      "routing-group": "overseas-development"
+      "routing-group": "overseas-development",
+      "product-probes": [
+        "ghe.com",
+        "auth.ghe.com"
+      ],
+      "product-negatives": [
+        "github.io",
+        "blob.core.windows.net",
+        "webpubsub.azure.com"
+      ]
     },
     {
       "id": "gitlab-hosting",
@@ -16128,7 +16159,7 @@
       "mode": "view",
       "policy-hint": "global",
       "description": "GitHub Copilot、认证、实验与语音模型合集",
-      "boundary": "替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。",
+      "boundary": "替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。",
       "members": [
         "foundry-local-voice-models",
         "github-copilot-connections"
@@ -16146,6 +16177,15 @@
           "all-purposes": true,
           "require-complete": true,
           "allow-tenant-prefixes": true,
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+          "format": "product-domain-statements",
+          "paragraph-contains": [
+            "Most GitHub Copilot services require access to"
+          ],
+          "require-complete": true,
           "protect-from-reject": true
         }
       ]
@@ -16742,6 +16782,89 @@
         ]
       },
       "ip-match": "target-ip"
+    },
+    {
+      "id": "github-domains-and-ghe-ingress-all",
+      "priority": 3005,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "view",
+      "policy-hint": "global",
+      "description": "GitHub 域名与 GHE 公网入站网络合集",
+      "boundary": "合并3010已列域名和3295的GHE入站目的网络，与成员二选一；不能等价保留no-resolve的客户端不提供本组，可用3010域名方案。与包含3010的3000二选一。本组没有扩展普通GitHub.com IP或推断企业专用Azure依赖。",
+      "members": [
+        "github-code-and-packages",
+        "github-enterprise-ingress-networks"
+      ]
+    },
+    {
+      "id": "github-enterprise-ingress-networks",
+      "mode": "compiled",
+      "sources": [
+        "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+        "https://raw.githubusercontent.com/github/docs/main/content/admin/data-residency/network-details-for-ghecom.md"
+      ],
+      "expand": {
+        "method": "network-source-agreement",
+        "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+        "max-documents": 2,
+        "inputs": [
+          {
+            "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+            "recipes": [
+              {
+                "format": "network-column-tables",
+                "section": "githubs-ip-addresses",
+                "headers": [
+                  "Ranges for egress traffic",
+                  "Ranges for ingress traffic"
+                ],
+                "column": "Ranges for ingress traffic",
+                "families": [
+                  4,
+                  6
+                ],
+                "min-prefix": {
+                  "4": 24,
+                  "6": 48
+                }
+              }
+            ]
+          },
+          {
+            "source": "https://raw.githubusercontent.com/github/docs/main/content/admin/data-residency/network-details-for-ghecom.md",
+            "recipes": [
+              {
+                "format": "network-column-tables",
+                "section": "githubs-ip-addresses",
+                "headers": [
+                  "Ranges for egress traffic",
+                  "Ranges for ingress traffic"
+                ],
+                "column": "Ranges for ingress traffic",
+                "families": [
+                  4,
+                  6
+                ],
+                "min-prefix": {
+                  "4": 24,
+                  "6": 48
+                },
+                "document-format": "markdown",
+                "section-heading": "{% data variables.product.github %}'s IP addresses"
+              }
+            ]
+          }
+        ]
+      },
+      "priority": 3295,
+      "section": "development",
+      "routing-group": "overseas-development-networks",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "ip-match": "target-ip",
+      "description": "GitHub GHE 数据驻留公网入站网络",
+      "boundary": "完整读取官方各地区入站和出站列，仅生成入站目的网段；网页与官方原始文档的全部用途范围须一致，按no-resolve匹配。普通GitHub.com IP、服务器出站和客户VPC不属于本表。"
     }
   ],
   "detailed": [
@@ -16902,6 +17025,7 @@
     "spotify-advertising-and-analytics",
     "newrelic-platform",
     "newrelic-ingest-networks",
+    "github-enterprise-ingress-networks",
     "signal-messenger",
     "line-messenger",
     "slack-workspaces",
@@ -17126,6 +17250,7 @@
     "apple-overseas-all",
     "apple-direct-all",
     "overseas-development-all",
+    "github-domains-and-ghe-ingress-all",
     "overseas-social-all",
     "overseas-payments-all",
     "overseas-crypto-all",
@@ -19965,6 +20090,12 @@
     ],
     "nr-synthetics-production.s3.amazonaws.com": [
       "newrelic-platform"
+    ],
+    "ghe.com": [
+      "github-code-and-packages"
+    ],
+    "auth.ghe.com": [
+      "github-code-and-packages"
     ]
   },
   "shared-negatives": [
@@ -20532,6 +20663,56 @@
       "newrelic-service-all",
       "newrelic-service-and-networks-all",
       "overseas-development-all"
+    ],
+    "copilot-proxy.githubusercontent.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "ghe.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "github.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "api.github.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "ghcr.io": [
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "origin-tracker.githubusercontent.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "copilot-reports.github.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "raw.githubusercontent.com": [
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
+    ],
+    "auth.ghe.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-development-all",
+      "github-domains-and-ghe-ingress-all"
     ]
   },
   "sections": [
@@ -20808,6 +20989,7 @@
         205,
         206,
         3000,
+        3005,
         3010,
         3020,
         3030,
@@ -20836,6 +21018,7 @@
         3250,
         3260,
         3290,
+        3295,
         6300,
         6310,
         6320,
@@ -21480,6 +21663,156 @@
     },
     {
       "target": "2a0d:8000::1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "4.190.169.241",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "4.190.169.241",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "4.237.73.193",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "4.237.73.193",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.5.226.113",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.5.226.113",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.123.213.97",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.123.213.97",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.224.46.145",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.224.46.145",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.240.194.241",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.240.194.241",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.240.211.209",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.240.211.209",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.240.220.193",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.240.220.193",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "20.248.163.177",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "20.248.163.177",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "40.81.176.225",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "40.81.176.225",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "48.214.149.97",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "48.214.149.97",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "74.226.88.241",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "74.226.88.241",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "74.249.180.193",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "74.249.180.193",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "108.143.197.177",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "108.143.197.177",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "172.202.123.177",
+      "literal": true,
+      "rule": "github-enterprise-ingress-networks"
+    },
+    {
+      "target": "172.202.123.177",
       "literal": false,
       "rule": null
     }
@@ -25078,6 +25411,20 @@
       "owners": [
         "foundry-local-voice-models"
       ]
+    },
+    {
+      "id": "github-enterprise-public-namespace",
+      "source": "https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom",
+      "recipe": {
+        "format": "product-domain-statements",
+        "paragraph-contains": [
+          "To access your enterprise on"
+        ],
+        "require-complete": true
+      },
+      "owners": [
+        "github-code-and-packages"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -25656,7 +26003,7 @@
             ]
           },
           {
-            "name": "GitHub 代码托管、API、Actions 与容器镜像",
+            "name": "GitHub 代码、API、Actions 与 GHE 企业云域名",
             "rules": [
               "github-code-and-packages"
             ]
@@ -25767,6 +26114,12 @@
             "name": "Foundry Local 语音模型目录与下载",
             "rules": [
               "foundry-local-voice-models"
+            ]
+          },
+          {
+            "name": "GitHub GHE 数据驻留公网入站网络",
+            "rules": [
+              "github-enterprise-ingress-networks"
             ]
           }
         ]

@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 200 个厂商或项目、355 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 200 个厂商或项目、356 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，到[对应应用目录](../rules/README.md)取订阅地址，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -92,15 +92,16 @@
 
 ## Microsoft
 
-可用合集：[1059 GitHub Copilot、认证、实验与语音模型合集](rules.md#rule-github-copilot-service-all)、[4700 Microsoft 日常服务合集](rules.md#rule-microsoft-all)
+可用合集：[1059 GitHub Copilot、认证、实验与语音模型合集](rules.md#rule-github-copilot-service-all)、[3005 GitHub 域名与 GHE 公网入站网络合集](rules.md#rule-github-domains-and-ghe-ingress-all)、[4700 Microsoft 日常服务合集](rules.md#rule-microsoft-all)
 
 | 产品或服务 | 对应规则 |
 |---|---|
 | Foundry Local 语音模型目录与下载 | [1058 Foundry Local 语音模型目录、区域 API 与下载](rules.md#rule-foundry-local-voice-models) |
 | GitHub Copilot：补全、对话、API 与专用附件 | [1060 Copilot API、补全、对话及已证实的附件服务](rules.md#rule-github-copilot-connections) |
 | Microsoft Copilot 个人版与工作版独立入口 | [1070 Microsoft Copilot 个人版与工作版独立入口](rules.md#rule-microsoft-copilot-connections) |
-| GitHub 代码托管、API、Actions 与容器镜像 | [3010 GitHub 代码托管、API、Actions 与容器镜像](rules.md#rule-github-code-and-packages) |
+| GitHub 代码、API、Actions 与 GHE 企业云域名 | [3010 GitHub 代码、API、Actions 与 GHE 企业云域名](rules.md#rule-github-code-and-packages) |
 | npm 软件包 | [3040 npm 软件包](rules.md#rule-npm-registry) |
+| GitHub GHE 数据驻留公网入站网络 | [3295 GitHub GHE 数据驻留公网入站网络](rules.md#rule-github-enterprise-ingress-networks) |
 | LinkedIn | [3470 LinkedIn](rules.md#rule-linkedin-network) |
 | Blizzard / Battle.net 国际服务 | [4180 Blizzard / Battle.net 国际服务](rules.md#rule-blizzard-battlenet) |
 | Microsoft 个人账户与 Entra 登录 | [4710 Microsoft 个人账户与 Entra 登录](rules.md#rule-microsoft-account-authentication) |

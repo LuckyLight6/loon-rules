@@ -159,7 +159,8 @@
 | 2360 | apple-feedback-and-diagnostics | Feedback Assistant、错误报告与自愿诊断上传 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/2360-apple-feedback-and-diagnostics.list) |
 | 2370 | apple-other-services | Apple 官网与尚未细分的通用服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/2370-apple-other-services.list) |
 | 3000 | overseas-development-all | 海外开发合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3000-overseas-development-all.list) |
-| 3010 | github-code-and-packages | GitHub 代码托管、API、Actions 与容器镜像 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3010-github-code-and-packages.list) |
+| 3005 | github-domains-and-ghe-ingress-all | GitHub 域名与 GHE 公网入站网络合集 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
+| 3010 | github-code-and-packages | GitHub 代码、API、Actions 与 GHE 企业云域名 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3010-github-code-and-packages.list) |
 | 3020 | gitlab-hosting | GitLab.com | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3020-gitlab-hosting.list) |
 | 3030 | bitbucket-hosting | Atlassian Bitbucket | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3030-bitbucket-hosting.list) |
 | 3040 | npm-registry | npm 软件包 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3040-npm-registry.list) |
@@ -187,6 +188,7 @@
 | 3250 | spotify-advertising-and-analytics | Spotify 广告 API 与广告分析 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3250-spotify-advertising-and-analytics.list) |
 | 3260 | newrelic-platform | New Relic 官网、控制台与专用资源 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3260-newrelic-platform.list) |
 | 3290 | newrelic-ingest-networks | New Relic 数据接收网络IPv4与IPv6 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
+| 3295 | github-enterprise-ingress-networks | GitHub GHE 数据驻留公网入站网络 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3310 | telegram-messaging | Telegram 通讯、文件与官方关联工具 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3320-discord-messaging-and-voice.list) |

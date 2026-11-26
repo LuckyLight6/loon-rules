@@ -2,12 +2,13 @@
 # priority: 1059
 # section: ai
 # description: GitHub Copilot、认证、实验与语音模型合集
-# boundary: 替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。
+# boundary: 替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。
 # created-at: 2026-11-26T17:47:39Z
-# updated-at: 2026-11-26T17:47:39Z
-# rule-count: 27
+# updated-at: 2026-11-26T22:25:08Z
+# rule-count: 28
 # source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
+# source: https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom
 
 DOMAIN,ai.azure.com
 DOMAIN,api.catalog.azureml.ms
@@ -36,3 +37,4 @@ DOMAIN,collector.github.com
 DOMAIN,default.exp-tas.com
 DOMAIN,github.com
 DOMAIN,github.githubassets.com
+DOMAIN-SUFFIX,ghe.com

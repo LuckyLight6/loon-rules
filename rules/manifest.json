@@ -213,11 +213,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/loon/0240-extended-ad-and-tracking.lsr",
           "paths": {
@@ -226,11 +226,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 711,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 712,
           "status": "available",
           "path": "rules/loon/1000-ai-overseas-all.lsr",
           "paths": {
@@ -382,11 +382,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/loon/1059-github-copilot-service-all.lsr",
           "paths": {
@@ -2046,24 +2046,37 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/loon/3000-overseas-development-all.lsr",
           "paths": {
             "loon": "rules/loon/3000-overseas-development-all.lsr"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 173,
+          "status": "available",
+          "path": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "paths": {
+            "loon": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr"
+          }
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/loon/3010-github-code-and-packages.lsr",
           "paths": {
@@ -2419,6 +2432,19 @@
           "path": "rules/loon/3290-newrelic-ingest-networks.lsr",
           "paths": {
             "loon": "rules/loon/3290-newrelic-ingest-networks.lsr"
+          }
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 15,
+          "status": "available",
+          "path": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "paths": {
+            "loon": "rules/loon/3295-github-enterprise-ingress-networks.lsr"
           }
         },
         "3300-overseas-social-all": {
@@ -5204,7 +5230,7 @@
           }
         }
       },
-      "available": 395,
+      "available": 397,
       "unsupported": 0
     },
     "surge": {
@@ -5354,11 +5380,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/surge/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -5367,11 +5393,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 711,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 712,
           "status": "available",
           "path": "rules/surge/1000-ai-overseas-all.list",
           "paths": {
@@ -5523,11 +5549,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/surge/1059-github-copilot-service-all.list",
           "paths": {
@@ -7187,24 +7213,37 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/surge/3000-overseas-development-all.list",
           "paths": {
             "surge": "rules/surge/3000-overseas-development-all.list"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 173,
+          "status": "available",
+          "path": "rules/surge/3005-github-domains-and-ghe-ingress-all.list",
+          "paths": {
+            "surge": "rules/surge/3005-github-domains-and-ghe-ingress-all.list"
+          }
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/surge/3010-github-code-and-packages.list",
           "paths": {
@@ -7560,6 +7599,19 @@
           "path": "rules/surge/3290-newrelic-ingest-networks.list",
           "paths": {
             "surge": "rules/surge/3290-newrelic-ingest-networks.list"
+          }
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 15,
+          "status": "available",
+          "path": "rules/surge/3295-github-enterprise-ingress-networks.list",
+          "paths": {
+            "surge": "rules/surge/3295-github-enterprise-ingress-networks.list"
           }
         },
         "3300-overseas-social-all": {
@@ -10345,7 +10397,7 @@
           }
         }
       },
-      "available": 395,
+      "available": 397,
       "unsupported": 0
     },
     "clash-classical": {
@@ -10506,11 +10558,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/mihomo/0240-extended-ad-and-tracking.yaml",
           "paths": {
@@ -10520,11 +10572,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 711,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 712,
           "status": "available",
           "path": "rules/mihomo/1000-ai-overseas-all.yaml",
           "paths": {
@@ -10688,11 +10740,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/mihomo/1059-github-copilot-service-all.yaml",
           "paths": {
@@ -12480,11 +12532,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/mihomo/3000-overseas-development-all.yaml",
           "paths": {
@@ -12492,13 +12544,27 @@
             "stash": "rules/stash/3000-overseas-development-all.yaml"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 173,
+          "status": "available",
+          "path": "rules/mihomo/3005-github-domains-and-ghe-ingress-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/3005-github-domains-and-ghe-ingress-all.yaml",
+            "stash": "rules/stash/3005-github-domains-and-ghe-ingress-all.yaml"
+          }
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/mihomo/3010-github-code-and-packages.yaml",
           "paths": {
@@ -12882,6 +12948,20 @@
           "paths": {
             "mihomo": "rules/mihomo/3290-newrelic-ingest-networks.yaml",
             "stash": "rules/stash/3290-newrelic-ingest-networks.yaml"
+          }
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 15,
+          "status": "available",
+          "path": "rules/mihomo/3295-github-enterprise-ingress-networks.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/3295-github-enterprise-ingress-networks.yaml",
+            "stash": "rules/stash/3295-github-enterprise-ingress-networks.yaml"
           }
         },
         "3300-overseas-social-all": {
@@ -15881,7 +15961,7 @@
           }
         }
       },
-      "available": 395,
+      "available": 397,
       "unsupported": 0
     },
     "egern": {
@@ -16031,11 +16111,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/egern/0240-extended-ad-and-tracking.yaml",
           "paths": {
@@ -16044,11 +16124,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 711,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 712,
           "status": "available",
           "path": "rules/egern/1000-ai-overseas-all.yaml",
           "paths": {
@@ -16200,11 +16280,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/egern/1059-github-copilot-service-all.yaml",
           "paths": {
@@ -17864,24 +17944,37 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/egern/3000-overseas-development-all.yaml",
           "paths": {
             "egern": "rules/egern/3000-overseas-development-all.yaml"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 173,
+          "status": "available",
+          "path": "rules/egern/3005-github-domains-and-ghe-ingress-all.yaml",
+          "paths": {
+            "egern": "rules/egern/3005-github-domains-and-ghe-ingress-all.yaml"
+          }
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/egern/3010-github-code-and-packages.yaml",
           "paths": {
@@ -18237,6 +18330,19 @@
           "path": "rules/egern/3290-newrelic-ingest-networks.yaml",
           "paths": {
             "egern": "rules/egern/3290-newrelic-ingest-networks.yaml"
+          }
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 15,
+          "status": "available",
+          "path": "rules/egern/3295-github-enterprise-ingress-networks.yaml",
+          "paths": {
+            "egern": "rules/egern/3295-github-enterprise-ingress-networks.yaml"
           }
         },
         "3300-overseas-social-all": {
@@ -21022,7 +21128,7 @@
           }
         }
       },
-      "available": 395,
+      "available": 397,
       "unsupported": 0
     },
     "surfboard": {
@@ -21172,11 +21278,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/surfboard/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -21185,10 +21291,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -21333,11 +21439,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/surfboard/1059-github-copilot-service-all.list",
           "paths": {
@@ -22997,24 +23103,37 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/surfboard/3000-overseas-development-all.list",
           "paths": {
             "surfboard": "rules/surfboard/3000-overseas-development-all.list"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 173,
+          "status": "available",
+          "path": "rules/surfboard/3005-github-domains-and-ghe-ingress-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/3005-github-domains-and-ghe-ingress-all.list"
+          }
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/surfboard/3010-github-code-and-packages.list",
           "paths": {
@@ -23370,6 +23489,19 @@
           "path": "rules/surfboard/3290-newrelic-ingest-networks.list",
           "paths": {
             "surfboard": "rules/surfboard/3290-newrelic-ingest-networks.list"
+          }
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 15,
+          "status": "available",
+          "path": "rules/surfboard/3295-github-enterprise-ingress-networks.list",
+          "paths": {
+            "surfboard": "rules/surfboard/3295-github-enterprise-ingress-networks.list"
           }
         },
         "3300-overseas-social-all": {
@@ -26147,7 +26279,7 @@
           }
         }
       },
-      "available": 391,
+      "available": 393,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -26297,11 +26429,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/shadowrocket/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -26310,11 +26442,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 711,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 712,
           "status": "available",
           "path": "rules/shadowrocket/1000-ai-overseas-all.list",
           "paths": {
@@ -26466,11 +26598,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/shadowrocket/1059-github-copilot-service-all.list",
           "paths": {
@@ -28130,24 +28262,37 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/shadowrocket/3000-overseas-development-all.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/3000-overseas-development-all.list"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 173,
+          "status": "available",
+          "path": "rules/shadowrocket/3005-github-domains-and-ghe-ingress-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/3005-github-domains-and-ghe-ingress-all.list"
+          }
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/shadowrocket/3010-github-code-and-packages.list",
           "paths": {
@@ -28503,6 +28648,19 @@
           "path": "rules/shadowrocket/3290-newrelic-ingest-networks.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/3290-newrelic-ingest-networks.list"
+          }
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 15,
+          "status": "available",
+          "path": "rules/shadowrocket/3295-github-enterprise-ingress-networks.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/3295-github-enterprise-ingress-networks.list"
           }
         },
         "3300-overseas-social-all": {
@@ -31288,7 +31446,7 @@
           }
         }
       },
-      "available": 395,
+      "available": 397,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -31418,11 +31576,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/quantumult-x/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -31431,10 +31589,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -31571,11 +31729,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/quantumult-x/1059-github-copilot-service-all.list",
           "paths": {
@@ -33227,24 +33385,33 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/quantumult-x/3000-overseas-development-all.list",
           "paths": {
             "quantumult-x": "rules/quantumult-x/3000-overseas-development-all.list"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "status": "unsupported",
+          "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/quantumult-x/3010-github-code-and-packages.list",
           "paths": {
@@ -33595,6 +33762,15 @@
           "description": "New Relic 数据接收网络IPv4与IPv6",
           "created-at": "2026-11-26T20:13:18Z",
           "updated-at": "2026-11-26T20:13:18Z",
+          "status": "unsupported",
+          "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -36358,7 +36534,7 @@
         }
       },
       "available": 377,
-      "unsupported": 18
+      "unsupported": 20
     },
     "sing-box": {
       "rules": {
@@ -36487,11 +36663,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/sing-box/0240-extended-ad-and-tracking.json",
           "paths": {
@@ -36500,10 +36676,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -36640,11 +36816,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/sing-box/1059-github-copilot-service-all.json",
           "paths": {
@@ -38296,24 +38472,33 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/sing-box/3000-overseas-development-all.json",
           "paths": {
             "sing-box": "rules/sing-box/3000-overseas-development-all.json"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "status": "unsupported",
+          "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/sing-box/3010-github-code-and-packages.json",
           "paths": {
@@ -38664,6 +38849,15 @@
           "description": "New Relic 数据接收网络IPv4与IPv6",
           "created-at": "2026-11-26T20:13:18Z",
           "updated-at": "2026-11-26T20:13:18Z",
+          "status": "unsupported",
+          "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -41415,7 +41609,7 @@
         }
       },
       "available": 374,
-      "unsupported": 21
+      "unsupported": 23
     },
     "v2ray": {
       "rules": {
@@ -41544,11 +41738,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44558,
+          "rule-count": 44564,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T21:56:12Z",
-          "output-rule-count": 44558,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 44564,
           "status": "available",
           "path": "rules/v2ray/0240-extended-ad-and-tracking.json",
           "paths": {
@@ -41557,10 +41751,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 711,
+          "rule-count": 712,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -41697,11 +41891,11 @@
         },
         "1059-github-copilot-service-all": {
           "source": "rules/loon/1059-github-copilot-service-all.lsr",
-          "rule-count": 27,
+          "rule-count": 28,
           "description": "GitHub Copilot、认证、实验与语音模型合集",
           "created-at": "2026-11-26T17:47:39Z",
-          "updated-at": "2026-11-26T17:47:39Z",
-          "output-rule-count": 27,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 28,
           "status": "available",
           "path": "rules/v2ray/1059-github-copilot-service-all.json",
           "paths": {
@@ -43353,24 +43547,33 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 239,
+          "rule-count": 240,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T20:13:18Z",
-          "output-rule-count": 239,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 240,
           "status": "available",
           "path": "rules/v2ray/3000-overseas-development-all.json",
           "paths": {
             "v2ray": "rules/v2ray/3000-overseas-development-all.json"
           }
         },
+        "3005-github-domains-and-ghe-ingress-all": {
+          "source": "rules/loon/3005-github-domains-and-ghe-ingress-all.lsr",
+          "rule-count": 173,
+          "description": "GitHub 域名与 GHE 公网入站网络合集",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
+          "status": "unsupported",
+          "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
         "3010-github-code-and-packages": {
           "source": "rules/loon/3010-github-code-and-packages.lsr",
-          "rule-count": 157,
-          "description": "GitHub 代码托管、API、Actions 与容器镜像",
+          "rule-count": 158,
+          "description": "GitHub 代码、API、Actions 与 GHE 企业云域名",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 157,
+          "updated-at": "2026-11-26T22:25:08Z",
+          "output-rule-count": 158,
           "status": "available",
           "path": "rules/v2ray/3010-github-code-and-packages.json",
           "paths": {
@@ -43721,6 +43924,15 @@
           "description": "New Relic 数据接收网络IPv4与IPv6",
           "created-at": "2026-11-26T20:13:18Z",
           "updated-at": "2026-11-26T20:13:18Z",
+          "status": "unsupported",
+          "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
+        "3295-github-enterprise-ingress-networks": {
+          "source": "rules/loon/3295-github-enterprise-ingress-networks.lsr",
+          "rule-count": 15,
+          "description": "GitHub GHE 数据驻留公网入站网络",
+          "created-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-26T22:25:08Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -46472,7 +46684,7 @@
         }
       },
       "available": 374,
-      "unsupported": 21
+      "unsupported": 23
     }
   },
   "aliases": {

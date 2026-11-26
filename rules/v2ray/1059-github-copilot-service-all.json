@@ -30,7 +30,8 @@
           "full:collector.github.com",
           "full:default.exp-tas.com",
           "full:github.com",
-          "full:github.githubassets.com"
+          "full:github.githubassets.com",
+          "domain:ghe.com"
         ],
         "outboundTag": "PROXY"
       }

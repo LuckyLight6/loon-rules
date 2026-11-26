@@ -37,6 +37,7 @@ READERS = {
     'https-hosts': feeds.parse_https_hosts,
     'ip-prefix-json': networks.parse_ip_prefix_json,
     'ip-network-map': networks.ip_network_map,
+    'network-column-tables': networks.network_column_tables,
     'paragraph-network-list': networks.paragraph_network_list,
     'json-service-urls': structured.json_service_urls,
     'labelled-networks': networks.parse_labelled_networks,

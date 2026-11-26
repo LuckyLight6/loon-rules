@@ -68,7 +68,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 1000 | <a id="rule-ai-overseas-all"></a>`ai-overseas-all` | 海外 AI 合集 | **合集：替代 1010、1020–1030、1035–1058、1060–1790。** 合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 |
+| 1000 | <a id="rule-ai-overseas-all"></a>`ai-overseas-all` | 海外 AI 合集 | **合集：替代 1010、1020–1030、1035–1058、1060–1790。** 合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。 |
 
 ### 4.2 海外 AI · 产品细分
 
@@ -120,7 +120,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 1059 | <a id="rule-github-copilot-service-all"></a>`github-copilot-service-all` | GitHub Copilot、认证、实验与语音模型合集 | **合集：替代 1058、1060。** 替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。 |
+| 1059 | <a id="rule-github-copilot-service-all"></a>`github-copilot-service-all` | GitHub Copilot、认证、实验与语音模型合集 | **合集：替代 1058、1060。** 替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。 |
 
 ### 4.10 细分规则
 
@@ -302,13 +302,19 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 3000 | <a id="rule-overseas-development-all"></a>`overseas-development-all` | 海外开发合集 | **合集：替代 3010–3260。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。 |
+| 3000 | <a id="rule-overseas-development-all"></a>`overseas-development-all` | 海外开发合集 | **合集：替代 3010–3260。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。 GHE入站网络单列3295，GitHub域名与GHE网络可选3005。 |
 
-### 6.2 海外开发 · 产品细分
+### 6.2 GitHub 域名与 GHE 公网入站网络合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 3010 | <a id="rule-github-code-and-packages"></a>`github-code-and-packages` | GitHub 代码托管、API、Actions 与容器镜像 | 代码、API、Actions、容器与软件包；官方 Meta 清单按服务字段补入，原始内容命名空间按 GitHub 平台处理；Pages 网站托管单列，Copilot 先由 AI 专项匹配，npm 公共仓库另有专表，不接管相邻的 IP 或其他云平台 |
+| 3005 | <a id="rule-github-domains-and-ghe-ingress-all"></a>`github-domains-and-ghe-ingress-all` | GitHub 域名与 GHE 公网入站网络合集 | **合集：替代 3010、3295。** 合并3010已列域名和3295的GHE入站目的网络，与成员二选一；不能等价保留no-resolve的客户端不提供本组，可用3010域名方案。与包含3010的3000二选一。本组没有扩展普通GitHub.com IP或推断企业专用Azure依赖。 |
+
+### 6.3 海外开发 · 产品细分
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 3010 | <a id="rule-github-code-and-packages"></a>`github-code-and-packages` | GitHub 代码、API、Actions 与 GHE 企业云域名 | 代码、API、Actions、软件包与 GHE 公共命名空间，包括企业内的 Pages。公共 github.io 网站托管另在8130，Copilot 先由AI专项匹配，npm公共仓库另有专表；GHE入站网络单列3295，域名与GHE网络可选3005。企业专用Azure存储和WebSocket主机依企业正式清单处理，不扩大到整家云平台。 |
 | 3020 | <a id="rule-gitlab-hosting"></a>`gitlab-hosting` | GitLab.com | 仅 GitLab 公共托管平台；不接管自建 GitLab 或用户 Pages |
 | 3030 | <a id="rule-bitbucket-hosting"></a>`bitbucket-hosting` | Atlassian Bitbucket | 代码托管与公共 API，不收整个 Atlassian、Jira 或用户站 |
 | 3040 | <a id="rule-npm-registry"></a>`npm-registry` | npm 软件包 | 官方注册表和产品站；国内镜像单列 |
@@ -336,11 +342,12 @@
 | 3250 | <a id="rule-spotify-advertising-and-analytics"></a>`spotify-advertising-and-analytics` | Spotify 广告 API 与广告分析 | Ads API 及 Podsights／Spotify Ad Analytics 的控制台、统计和指定租户；分类不代表免于广告与隐私拦截，不接管整个 Spotify 或 Google 云 |
 | 3260 | <a id="rule-newrelic-platform"></a>`newrelic-platform` | New Relic 官网、控制台与专用资源 | 识别官网、控制台与按用途确认的专用资源。nr-data.net遥测及共享依赖由0205域名服务例外承接，目的IP网络另在3290；不改常规追踪拦截。 |
 
-### 6.3 海外开发服务的专用目的网络
+### 6.4 海外开发服务的专用目的网络
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3290 | <a id="rule-newrelic-ingest-networks"></a>`newrelic-ingest-networks` | New Relic 数据接收网络IPv4与IPv6 | 仅采用官方网页接收网段与JSON清单覆盖一致的公网目的地址，按no-resolve匹配；不加入探测器专属出站地址、已停用网络或客户VPC。可单用或选0206完整合集。 |
+| 3295 | <a id="rule-github-enterprise-ingress-networks"></a>`github-enterprise-ingress-networks` | GitHub GHE 数据驻留公网入站网络 | 完整读取官方各地区入站和出站列，仅生成入站目的网段；网页与官方原始文档的全部用途范围须一致，按no-resolve匹配。普通GitHub.com IP、服务器出站和客户VPC不属于本表。 |
 
 ## 7 通讯与社交（海外）
 

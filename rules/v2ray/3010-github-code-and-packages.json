@@ -160,7 +160,8 @@
           "full:productionresultssa7.blob.core.windows.net",
           "full:productionresultssa8.blob.core.windows.net",
           "full:productionresultssa9.blob.core.windows.net",
-          "full:rubygemsregistryv2prod.blob.core.windows.net"
+          "full:rubygemsregistryv2prod.blob.core.windows.net",
+          "domain:ghe.com"
         ],
         "outboundTag": "PROXY"
       }

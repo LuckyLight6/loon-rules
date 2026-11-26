@@ -161,6 +161,7 @@
           "full:productionresultssa8.blob.core.windows.net",
           "full:productionresultssa9.blob.core.windows.net",
           "full:rubygemsregistryv2prod.blob.core.windows.net",
+          "domain:ghe.com",
           "full:gitlab-assets.oss-cn-hongkong.aliyuncs.com",
           "domain:gitlab.com",
           "domain:gitlab.net",

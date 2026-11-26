@@ -1,0 +1,29 @@
+# name: github-enterprise-ingress-networks
+# priority: 3295
+# section: development
+# description: GitHub GHE 数据驻留公网入站网络
+# boundary: 完整读取官方各地区入站和出站列，仅生成入站目的网段；网页与官方原始文档的全部用途范围须一致，按no-resolve匹配。普通GitHub.com IP、服务器出站和客户VPC不属于本表。
+# created-at: 2026-11-26T22:25:08Z
+# updated-at: 2026-11-26T22:25:08Z
+# source: https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom
+# source: https://raw.githubusercontent.com/github/docs/main/content/admin/data-residency/network-details-for-ghecom.md
+# canonical-rule-count: 15
+# rule-count: 15
+# format: surfboard
+# canonical: rules/loon/3295-github-enterprise-ingress-networks.lsr
+
+IP-CIDR,4.190.169.240/28,no-resolve
+IP-CIDR,4.237.73.192/28,no-resolve
+IP-CIDR,20.5.226.112/28,no-resolve
+IP-CIDR,20.123.213.96/28,no-resolve
+IP-CIDR,20.224.46.144/28,no-resolve
+IP-CIDR,20.240.194.240/28,no-resolve
+IP-CIDR,20.240.211.208/28,no-resolve
+IP-CIDR,20.240.220.192/28,no-resolve
+IP-CIDR,20.248.163.176/28,no-resolve
+IP-CIDR,40.81.176.224/28,no-resolve
+IP-CIDR,48.214.149.96/28,no-resolve
+IP-CIDR,74.226.88.240/28,no-resolve
+IP-CIDR,74.249.180.192/28,no-resolve
+IP-CIDR,108.143.197.176/28,no-resolve
+IP-CIDR,172.202.123.176/28,no-resolve
