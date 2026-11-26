@@ -314,6 +314,9 @@ def site_resource_hosts(recipe, text):
     if (type(recipe.get('exclude-source-host', False)) is not bool
             or recipe.get('exclude-source-host') and 'image-attributes' not in recipe):
         raise Invalid('网站资源的原站主机划分需要明确的图片属性')
+    if (type(recipe.get('respect-existing-owners', False)) is not bool
+            or recipe.get('respect-existing-owners') and 'image-attributes' not in recipe):
+        raise Invalid('网页图片的已有归属选择须为明确布尔值')
     if 'source' in identity and identity['source'] != recipe['source']:
         raise Invalid('网站资源不能改变身份来源')
     parse_site_identity({**identity, 'source': recipe['source']}, text)

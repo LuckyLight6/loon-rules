@@ -58,6 +58,14 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
             wanted={spec['other-owners'][row]}
         else:
             wanted=set(spec['owners'])
+        if collector := spec.get('resource-owner'):
+            if entries is None or collector not in entries:
+                raise rules.Invalid('网页图片清单缺少可核对的产品范围')
+            matching = index.scope_bits(row)
+            existing = next((key for key in order if key != collector
+                             and entries[key].get('policy-hint') != 'reject'
+                             and matching & index.bits[key]), None)
+            wanted = {existing or collector}
         if entries is not None:
             wanted.update(member for key in tuple(wanted) for member in entries[key].get('members',()))
         matching=index.scope_bits(row)

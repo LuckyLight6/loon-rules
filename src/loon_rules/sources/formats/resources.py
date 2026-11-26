@@ -2,7 +2,7 @@
 from html.parser import HTMLParser
 import math
 import re
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 from loon_rules.rules import Invalid
 from .common import public_domain_pattern
@@ -37,8 +37,8 @@ def srcset_urls(value):
             raise Invalid('响应式图片包含无法确认的多个描述符')
         if descriptors:
             descriptor = descriptors[0]
-            width = re.fullmatch(r'[1-9][0-9]*w', descriptor)
-            density = re.fullmatch(r'(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?x', descriptor)
+            width = re.fullmatch(r'[0-9]+w', descriptor) and descriptor[:-1].strip('0')
+            density = re.fullmatch(r'(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?x', descriptor)
             if not width and not density:
                 raise Invalid('响应式图片的宽度或像素密度格式无效')
             if density:
@@ -103,12 +103,14 @@ def image_hosts(source, text, attributes):
     if len(parser.bases) > 1:
         raise Invalid('网页图片存在多个基准地址，不能确认请求主机')
     base = urljoin(source, parser.bases[0]) if parser.bases else source
+    base = urlsplit(base)._replace(fragment='').geturl()
     service_url_host(base, allow_query=True)
     result = set()
     for value in parser.urls:
         if value.casefold().startswith(('data:', 'blob:')):
             continue
-        host = service_url_host(urljoin(base, value), allow_query=True)
+        destination = urlsplit(urljoin(base, value))._replace(fragment='').geturl()
+        host = service_url_host(destination, allow_query=True)
         if public_domain_pattern(host) is None:
             raise Invalid('网页图片包含未确认归属的共享主机')
         result.add('DOMAIN,' + host)

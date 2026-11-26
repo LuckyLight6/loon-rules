@@ -15596,7 +15596,7 @@
             "data-src",
             "data-srcset"
           ],
-          "exclude-source-host": true
+          "respect-existing-owners": true
         },
         {
           "format": "site-resource-hosts",
@@ -15614,7 +15614,7 @@
             "data-src",
             "data-srcset"
           ],
-          "exclude-source-host": true
+          "respect-existing-owners": true
         }
       ],
       "projection": [
@@ -23165,8 +23165,10 @@
           "srcset",
           "data-src",
           "data-srcset"
-        ]
-      }
+        ],
+        "respect-existing-owners": true
+      },
+      "resource-owner": "wbd-streaming-platform"
     },
     {
       "id": "wbd-discovery-page-images",
@@ -23189,8 +23191,10 @@
           "srcset",
           "data-src",
           "data-srcset"
-        ]
-      }
+        ],
+        "respect-existing-owners": true
+      },
+      "resource-owner": "wbd-streaming-platform"
     },
     {
       "id": "mux-data-analytics-purposes",
@@ -23243,10 +23247,20 @@
           "complete-example"
         ],
         "directives": [
+          "default-src",
           "connect-src",
           "media-src",
           "img-src",
           "script-src",
+          "script-src-elem",
+          "style-src",
+          "style-src-elem",
+          "font-src",
+          "worker-src",
+          "frame-src",
+          "child-src",
+          "object-src",
+          "manifest-src",
           "form-action"
         ],
         "domain-scope": "listed"

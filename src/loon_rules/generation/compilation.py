@@ -12,7 +12,7 @@ from loon_rules.generation.protection import extract_rows
 
 
 
-def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extra_rows=(),shared_hosts=(),projection_rows=None):
+def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extra_rows=(),shared_hosts=(),projection_rows=None,resource_rows=None):
     """Build membership from declared inputs only; yesterday's output is not a source."""
     included = entry.get('include', [])
     rows = list(extra_rows)
@@ -28,7 +28,12 @@ def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extr
         found = extract_rows(recipe, downloaded[recipe['source']], shared_hosts=shared_hosts)
         if not found:
             raise rules.Invalid('来源没有符合用途的端点：'+entry['id']+' '+recipe['source'])
-        extracted.extend(sorted(found))
+        if recipe.get('respect-existing-owners'):
+            if resource_rows is None:
+                raise rules.Invalid('网页图片需要完整产品范围才能核对已有归属')
+            resource_rows.setdefault(entry['id'], set()).update(found)
+        else:
+            extracted.extend(sorted(found))
     if any(part.get('exact-from-extract') for part in entry.get('projection', ())):
         extracted = domain_scope.exclude_shared_scopes(extracted, shared_hosts)
     for part in entry.get('projection', ()):
@@ -63,6 +68,8 @@ def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extr
         rows.extend(('IP-CIDR,' if n.version==4 else 'IP-CIDR6,')+str(n)+',no-resolve' for n in nets)
     rows=domain_scope.exclude_shared_scopes(rows,shared_scopes)
     rows=[row for row in rows if not any(covers(other,row) for other in reserved_rows)]
+    if not rows and resource_rows and entry['id'] in resource_rows:
+        return []  # Ownership is resolved after all products have compiled.
     return compact(rules.read_rules('\n'.join(rows)))
 
 

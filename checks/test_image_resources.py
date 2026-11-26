@@ -52,6 +52,21 @@ class SiteImageResources(PublicSourceExamples):
             with self.subTest(base=base), self.assertRaises(Invalid):
                 extract_rows(self.recipe(), self.page(base + '<img src="photo.jpg">'))
 
+    def test_image_fragments_do_not_change_the_request_host(self):
+        text = self.page('<img src="https://icons.vendor.example/icons.svg#play">'
+                         '<img srcset="https://icons.other.example/icons.svg#pause 2x">')
+        self.assertEqual(extract_rows(self.recipe(), text), {
+            'DOMAIN,images.vendor.example', 'DOMAIN,icons.vendor.example', 'DOMAIN,icons.other.example'})
+
+    def test_srcset_uses_html_number_syntax(self):
+        text = self.page('<img srcset="https://images.number.example/a.jpg 0320w, '
+                         'https://images.number.example/b.jpg .5x">')
+        self.assertEqual(extract_rows(self.recipe(), text), {
+            'DOMAIN,images.vendor.example', 'DOMAIN,images.number.example'})
+        for descriptor in ('1.x', '1.e2x', '000w', '1e2w'):
+            with self.subTest(descriptor=descriptor), self.assertRaises(Invalid):
+                extract_rows(self.recipe(), self.page('<img srcset="https://invalid.example/a.jpg ' + descriptor + '">'))
+
     def test_srcset_keeps_commas_inside_urls_and_ignores_inline_placeholders(self):
         text = self.page('<img src="data:image/png;base64,aGVsbG8=">'
                          '<img srcset="https://images.comma.example/a.jpg?crop=1,2,3 320w, '

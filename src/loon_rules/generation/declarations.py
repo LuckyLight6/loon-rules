@@ -168,10 +168,11 @@ def validate_declarations(config):
                            for spec in config.get('source-inventories', ())):
                     raise rules.Invalid('产品页面用途字段缺少同范围的完整归属核对：' + e['id'])
             if recipe.get('format') == 'site-resource-hosts' and 'image-attributes' in recipe:
-                fields = ('identity', 'properties', 'image-attributes')
+                fields = ('identity', 'properties', 'image-attributes', 'respect-existing-owners')
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
                            and spec.get('recipe', {}).get('format') == recipe['format']
                            and spec['recipe'].get('exclude-source-host', False) is False
+                           and (not recipe.get('respect-existing-owners') or spec.get('resource-owner') == e['id'])
                            and all(spec['recipe'].get(field) == recipe.get(field) for field in fields)
                            for spec in config.get('source-inventories', ())):
                     raise rules.Invalid('网页图片缺少同身份和完整属性范围的独立核对：' + e['id'])
@@ -267,6 +268,14 @@ def validate_declarations(config):
         if not spec['owners'] or not owners<=set(entries) or not any(
                 spec['source'] in e['sources'] for e in entries.values()):
             raise rules.Invalid('来源核对缺少归属或出处：'+spec['id'])
+        if collector := spec.get('resource-owner'):
+            recipe = spec.get('recipe', {})
+            if (collector not in spec['owners'] or entries[collector]['mode'] != 'compiled'
+                    or recipe.get('format') != 'site-resource-hosts' or not recipe.get('image-attributes')
+                    or recipe.get('respect-existing-owners') is not True
+                    or not any(part.get('respect-existing-owners') is True
+                               and part['source'] == spec['source'] for part in entries[collector].get('extract', ()))):
+                raise rules.Invalid('网页图片的已有归属核对缺少同来源生成声明：' + spec['id'])
         if any(not reason.strip() or not row.startswith(('DOMAIN,','DOMAIN-SUFFIX,'))
                for row,reason in spec.get('reviewed-outside',{}).items()):
             raise rules.Invalid('来源范围排除须说明公开用途：'+spec['id'])

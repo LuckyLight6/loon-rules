@@ -16,7 +16,7 @@ from loon_rules.generation.declarations import validate_declarations, section_fo
 from loon_rules.generation.feeds import calibration_urls, refresh_reviewed_feed, reviewed_input
 from loon_rules.generation.membership import compact, domain_rows, merge_conflicts, merge_view, product_rows, stable_order, project_domains, outside_tenant_scopes, uncovered_count, overlapping_rules, without_protected, outside_domain_scopes, merge_domain_sources
 from loon_rules.generation.ordering import route_order, ordered_route, subscription_order, shadowed_domains, verify_domain_order, verify_ip_order, ordered_ip_route
-from loon_rules.generation.ownership import apply_domain_ownership, derive_domain_merges, restore_assigned_rules
+from loon_rules.generation.ownership import apply_domain_ownership, derive_domain_merges, restore_assigned_rules, assign_resource_owners
 from loon_rules.generation.protection import extract_rows, functional_hostnames, protected_hosts, retained_functional_hostnames, shared_hostnames
 from loon_rules.generation.rendering import decorate, metadata, render_index, render_review, verify_file
 from loon_rules.generation.reporting import audit_inventory, verify_inventories, ip_summary, maintenance_audit, maintenance_method, subscription_audit
@@ -189,7 +189,7 @@ def run(check=False, offline=False, adopt_ads=False):
         shared_hosts=SHARED_PARENT|shared_hosts)
     contract_status=endpoint_contracts.verify_sources(contracts,downloaded)
     source_status={}
-    compiled={};projection_inputs={}
+    compiled={};projection_inputs={};resource_inputs={}
     for k,e in file_entries.items():
         if e['mode']!='compiled' or e.get('merge-domains') or e.get('refine'):
             continue
@@ -203,8 +203,9 @@ def run(check=False, offline=False, adopt_ads=False):
                        for contract in contracts for owner,hosts in contract.get('routes',{}).items()
                        if owner!=k for host in hosts] if e.get('domain-remainder') else ()
         data[k]=compile_entry(e, downloaded,shared_scopes=shared_scopes,reserved_rows=reserved_rows,
-                              extra_rows=expanded_rows.get(k,()),shared_hosts=shared_hosts,projection_rows=projected)
+                              extra_rows=expanded_rows.get(k,()),shared_hosts=shared_hosts,projection_rows=projected,resource_rows=resource_inputs)
         if projected:projection_inputs[k]=projected
+    resource_transfers=assign_resource_owners(entries,data,resource_inputs,route_order(config,entries))
     dns_names={row.split(',')[1] for key,entry in entries.items() if entry.get('aliases',{}).get('resolve-cname')
                for row in data[key] if row.startswith(('DOMAIN,','DOMAIN-SUFFIX,')) and row.count(',')==1}
     dns_patterns={host:[pattern for e in entries.values() if e.get('aliases',{}).get('resolve-cname')
@@ -256,6 +257,7 @@ def run(check=False, offline=False, adopt_ads=False):
             transferred=[row for owner,rows in aliases.items() if owner!=k for row in rows]
             transferred.extend(row for row,owner in shared_transfers.get(k,{}).items() if owner is not None)
             transferred.extend(projection_transfers.get(k,{}))
+            transferred.extend(resource_transfers.get(k,{}))
             if e.get('domain-remainder'):
                 transferred.extend(row for owner in route_order(config,entries) if owner!=k
                     and not entries[owner].get('fallback') and not entries[owner].get('domain-remainder')

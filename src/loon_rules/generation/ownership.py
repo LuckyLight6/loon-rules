@@ -1,5 +1,7 @@
 """Assign shared coverage and fallback membership."""
 from loon_rules import rules
+from loon_rules.domains import covers
+from loon_rules.matching import RuleIndex
 from loon_rules.generation.membership import compact,merge_domain_sources,stable_order
 from loon_rules.generation.ordering import route_order,shadowed_domains,subscription_order
 
@@ -68,3 +70,25 @@ def apply_domain_ownership(config,entries,data):
             if not data[key]:raise rules.Invalid('扩展拦截没有独立范围，应合并或删除：'+key)
             assigned.setdefault(key,{}).update(protected)
     return assigned
+
+
+def assign_resource_owners(entries, data, resources, order):
+    """Keep source-declared images with an existing product or supplier scope."""
+    normal = [key for key in order if entries[key].get('policy-hint') != 'reject']
+    index = RuleIndex(data, normal)
+    transfers = {}
+    for key, rows in resources.items():
+        delegated = {}
+        additions = []
+        for row in sorted(rows):
+            matching = index.scope_bits(row)
+            owner = next((other for other in normal if other != key and matching & index.bits[other]), None)
+            if owner is None:
+                additions.append(row)
+            else:
+                if any(covers(actual, row) for actual in data[key]):
+                    raise rules.Invalid('网页图片与独立产品范围归属冲突：' + key + ' ' + row)
+                delegated[row] = owner
+        data[key] = compact(data[key] + additions)
+        transfers[key] = delegated
+    return transfers
