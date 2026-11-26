@@ -4,8 +4,8 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-26T15:02:33Z
-# rule-count: 44290
+# updated-at: 2026-11-26T13:10:06Z
+# rule-count: 44289
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
@@ -44246,7 +44246,6 @@ DOMAIN-SUFFIX,towedpuree.com
 DOMAIN-SUFFIX,vfwektumalyop.com
 DOMAIN-SUFFIX,viiwbpyl.com
 DOMAIN-SUFFIX,xldphchfmiao.com
-DOMAIN-SUFFIX,yearlyartist.com
 DOMAIN-SUFFIX,cowgirlguestenmanzas.cyou
 DOMAIN-SUFFIX,curnsbeckysquiffy.cyou
 DOMAIN-SUFFIX,eralrepolon.cyou

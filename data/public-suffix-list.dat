@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2026-11-25_10-02-46_UTC
-// COMMIT: 8727c5c7a529cca5c232adc45acc7b7e26742b57
+// VERSION: 2026-11-25_18-55-17_UTC
+// COMMIT: 88260fe6a68fd46fbf3af5d6df49a575551d4728
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -12601,6 +12601,10 @@ square.site
 // Submitted by Joshua Weiss <admin.engineering@bluebite.com>
 bluebite.io
 
+// Bonto : https://bonto.dev
+// Submitted by Sidequest Ltd <bonto@sidequestvr.com>
+bonto.page
+
 // Boomla : https://boomla.com
 // Submitted by Tibor Halter <thalter@boomla.com>
 boomla.net
@@ -13860,6 +13864,10 @@ wien.funkfeuer.at
 // Submitted by Aether <furry@org.digital>
 xwx.me
 
+// FuseBase : https://thefusebase.com/
+// Submitted by FuseBase <contact@thefusebase.com>
+fusebase.site
+
 // Future Versatile Group. : https://www.fvg-on.net/
 // T.Kabu <webmaster@fvg-on.net>
 daemon.asia
@@ -14640,10 +14648,6 @@ leadpages.co
 lpages.co
 lpusercontent.com
 
-// Leapcell : https://leapcell.io/
-// Submitted by Leapcell Team <support@leapcell.io>
-leapcell.app
-
 // Liara : https://liara.ir
 // Submitted by Amirhossein Badinloo <info@liara.ir>
 liara.run
@@ -14862,6 +14866,11 @@ apps.fbsbx.com
 custom.metacentrum.cz
 flt.cloud.muni.cz
 usr.cloud.muni.cz
+
+// MetaGPT LLC : https://atoms.dev/
+// Submitted by Atoms IT <it@fuzhi.ai>
+atoms.world
+pub.atoms.world
 
 // Meteor Development Group : https://www.meteor.com/hosting
 // Submitted by Pierre Carrier <pierre@meteor.com>
@@ -15619,6 +15628,12 @@ e.id
 chirurgiens-dentistes-en-france.fr
 byen.site
 
+// PublicFreeSuffix : https://publicfreesuffix.org
+// Submitted by Ethan Walker <contact@fs5.net>
+fs.kg
+bg5.net
+is-a.si
+
 // PublicZone : https://publiczone.org/
 // Submitted by PublicZone NOC Team <noc@publiczone.org>
 nyc.mn
@@ -16276,6 +16291,10 @@ vps-host.net
 atl.jelastic.vps-host.net
 njs.jelastic.vps-host.net
 ric.jelastic.vps-host.net
+
+// Strawberry Browser Inc. : https://strawberrybrowser.com/
+// Submitted by Hannes Fant <security@strawberrybrowser.com>
+strw.app
 
 // Streak : https://streak.com
 // Submitted by Blake Kadatz <eng@streak.com>

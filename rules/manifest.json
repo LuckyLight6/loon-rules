@@ -187,11 +187,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/loon/0240-extended-ad-and-tracking.lsr",
           "paths": {
@@ -2774,11 +2774,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/loon/3800-overseas-media-all.lsr",
           "paths": {
@@ -3021,11 +3021,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/loon/3960-wbd-streaming-platform.lsr",
           "paths": {
@@ -4568,11 +4568,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/loon/8000-global-platforms-all.lsr",
           "paths": {
@@ -4746,32 +4746,6 @@
           "path": "rules/loon/8130-github-pages-hosting.lsr",
           "paths": {
             "loon": "rules/loon/8130-github-pages-hosting.lsr"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/loon/8140-mux-data-analytics.lsr",
-          "paths": {
-            "loon": "rules/loon/8140-mux-data-analytics.lsr"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/loon/8150-mux-video-platform.lsr",
-          "paths": {
-            "loon": "rules/loon/8150-mux-video-platform.lsr"
           }
         },
         "8200-overseas-extra-all": {
@@ -4974,7 +4948,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/loon/8600-mainland-routing-all.lsr",
@@ -5000,7 +4974,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/loon/8620-mainland-networks.lsr",
@@ -5022,7 +4996,7 @@
           }
         }
       },
-      "available": 381,
+      "available": 379,
       "unsupported": 0
     },
     "surge": {
@@ -5146,11 +5120,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/surge/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -7733,11 +7707,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/surge/3800-overseas-media-all.list",
           "paths": {
@@ -7980,11 +7954,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/surge/3960-wbd-streaming-platform.list",
           "paths": {
@@ -9527,11 +9501,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/surge/8000-global-platforms-all.list",
           "paths": {
@@ -9705,32 +9679,6 @@
           "path": "rules/surge/8130-github-pages-hosting.list",
           "paths": {
             "surge": "rules/surge/8130-github-pages-hosting.list"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/surge/8140-mux-data-analytics.list",
-          "paths": {
-            "surge": "rules/surge/8140-mux-data-analytics.list"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/surge/8150-mux-video-platform.list",
-          "paths": {
-            "surge": "rules/surge/8150-mux-video-platform.list"
           }
         },
         "8200-overseas-extra-all": {
@@ -9933,7 +9881,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/surge/8600-mainland-routing-all.list",
@@ -9959,7 +9907,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/surge/8620-mainland-networks.list",
@@ -9981,7 +9929,7 @@
           }
         }
       },
-      "available": 381,
+      "available": 379,
       "unsupported": 0
     },
     "clash-classical": {
@@ -10114,11 +10062,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/mihomo/0240-extended-ad-and-tracking.yaml",
           "paths": {
@@ -12900,11 +12848,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/mihomo/3800-overseas-media-all.yaml",
           "paths": {
@@ -13166,11 +13114,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/mihomo/3960-wbd-streaming-platform.yaml",
           "paths": {
@@ -14832,11 +14780,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/mihomo/8000-global-platforms-all.yaml",
           "paths": {
@@ -15024,34 +14972,6 @@
           "paths": {
             "mihomo": "rules/mihomo/8130-github-pages-hosting.yaml",
             "stash": "rules/stash/8130-github-pages-hosting.yaml"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/mihomo/8140-mux-data-analytics.yaml",
-          "paths": {
-            "mihomo": "rules/mihomo/8140-mux-data-analytics.yaml",
-            "stash": "rules/stash/8140-mux-data-analytics.yaml"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/mihomo/8150-mux-video-platform.yaml",
-          "paths": {
-            "mihomo": "rules/mihomo/8150-mux-video-platform.yaml",
-            "stash": "rules/stash/8150-mux-video-platform.yaml"
           }
         },
         "8200-overseas-extra-all": {
@@ -15269,7 +15189,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/mihomo/8600-mainland-routing-all.yaml",
@@ -15297,7 +15217,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/mihomo/8620-mainland-networks.yaml",
@@ -15321,7 +15241,7 @@
           }
         }
       },
-      "available": 381,
+      "available": 379,
       "unsupported": 0
     },
     "egern": {
@@ -15445,11 +15365,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/egern/0240-extended-ad-and-tracking.yaml",
           "paths": {
@@ -18032,11 +17952,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/egern/3800-overseas-media-all.yaml",
           "paths": {
@@ -18279,11 +18199,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/egern/3960-wbd-streaming-platform.yaml",
           "paths": {
@@ -19826,11 +19746,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/egern/8000-global-platforms-all.yaml",
           "paths": {
@@ -20004,32 +19924,6 @@
           "path": "rules/egern/8130-github-pages-hosting.yaml",
           "paths": {
             "egern": "rules/egern/8130-github-pages-hosting.yaml"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/egern/8140-mux-data-analytics.yaml",
-          "paths": {
-            "egern": "rules/egern/8140-mux-data-analytics.yaml"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/egern/8150-mux-video-platform.yaml",
-          "paths": {
-            "egern": "rules/egern/8150-mux-video-platform.yaml"
           }
         },
         "8200-overseas-extra-all": {
@@ -20232,7 +20126,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/egern/8600-mainland-routing-all.yaml",
@@ -20258,7 +20152,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/egern/8620-mainland-networks.yaml",
@@ -20280,7 +20174,7 @@
           }
         }
       },
-      "available": 381,
+      "available": 379,
       "unsupported": 0
     },
     "surfboard": {
@@ -20404,11 +20298,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/surfboard/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -22975,11 +22869,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/surfboard/3800-overseas-media-all.list",
           "paths": {
@@ -23222,11 +23116,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/surfboard/3960-wbd-streaming-platform.list",
           "paths": {
@@ -24769,11 +24663,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/surfboard/8000-global-platforms-all.list",
           "paths": {
@@ -24947,32 +24841,6 @@
           "path": "rules/surfboard/8130-github-pages-hosting.list",
           "paths": {
             "surfboard": "rules/surfboard/8130-github-pages-hosting.list"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/surfboard/8140-mux-data-analytics.list",
-          "paths": {
-            "surfboard": "rules/surfboard/8140-mux-data-analytics.list"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/surfboard/8150-mux-video-platform.list",
-          "paths": {
-            "surfboard": "rules/surfboard/8150-mux-video-platform.list"
           }
         },
         "8200-overseas-extra-all": {
@@ -25175,7 +25043,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/surfboard/8600-mainland-routing-all.list",
@@ -25201,7 +25069,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/surfboard/8620-mainland-networks.list",
@@ -25223,7 +25091,7 @@
           }
         }
       },
-      "available": 377,
+      "available": 375,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -25347,11 +25215,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/shadowrocket/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -27934,11 +27802,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/shadowrocket/3800-overseas-media-all.list",
           "paths": {
@@ -28181,11 +28049,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/shadowrocket/3960-wbd-streaming-platform.list",
           "paths": {
@@ -29728,11 +29596,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/shadowrocket/8000-global-platforms-all.list",
           "paths": {
@@ -29906,32 +29774,6 @@
           "path": "rules/shadowrocket/8130-github-pages-hosting.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/8130-github-pages-hosting.list"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/shadowrocket/8140-mux-data-analytics.list",
-          "paths": {
-            "shadowrocket": "rules/shadowrocket/8140-mux-data-analytics.list"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/shadowrocket/8150-mux-video-platform.list",
-          "paths": {
-            "shadowrocket": "rules/shadowrocket/8150-mux-video-platform.list"
           }
         },
         "8200-overseas-extra-all": {
@@ -30134,7 +29976,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/shadowrocket/8600-mainland-routing-all.list",
@@ -30160,7 +30002,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/shadowrocket/8620-mainland-networks.list",
@@ -30182,7 +30024,7 @@
           }
         }
       },
-      "available": 381,
+      "available": 379,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -30290,11 +30132,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/quantumult-x/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -32849,11 +32691,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/quantumult-x/3800-overseas-media-all.list",
           "paths": {
@@ -33096,11 +32938,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/quantumult-x/3960-wbd-streaming-platform.list",
           "paths": {
@@ -34627,11 +34469,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/quantumult-x/8000-global-platforms-all.list",
           "paths": {
@@ -34805,32 +34647,6 @@
           "path": "rules/quantumult-x/8130-github-pages-hosting.list",
           "paths": {
             "quantumult-x": "rules/quantumult-x/8130-github-pages-hosting.list"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/quantumult-x/8140-mux-data-analytics.list",
-          "paths": {
-            "quantumult-x": "rules/quantumult-x/8140-mux-data-analytics.list"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/quantumult-x/8150-mux-video-platform.list",
-          "paths": {
-            "quantumult-x": "rules/quantumult-x/8150-mux-video-platform.list"
           }
         },
         "8200-overseas-extra-all": {
@@ -35033,7 +34849,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 19272,
           "status": "available",
           "path": "rules/quantumult-x/8600-mainland-routing-all.list",
@@ -35059,7 +34875,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "output-rule-count": 6993,
           "status": "available",
           "path": "rules/quantumult-x/8620-mainland-networks.list",
@@ -35081,7 +34897,7 @@
           }
         }
       },
-      "available": 366,
+      "available": 364,
       "unsupported": 15
     },
     "sing-box": {
@@ -35189,11 +35005,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/sing-box/0240-extended-ad-and-tracking.json",
           "paths": {
@@ -37748,11 +37564,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/sing-box/3800-overseas-media-all.json",
           "paths": {
@@ -37995,11 +37811,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/sing-box/3960-wbd-streaming-platform.json",
           "paths": {
@@ -39526,11 +39342,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/sing-box/8000-global-platforms-all.json",
           "paths": {
@@ -39704,32 +39520,6 @@
           "path": "rules/sing-box/8130-github-pages-hosting.json",
           "paths": {
             "sing-box": "rules/sing-box/8130-github-pages-hosting.json"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/sing-box/8140-mux-data-analytics.json",
-          "paths": {
-            "sing-box": "rules/sing-box/8140-mux-data-analytics.json"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/sing-box/8150-mux-video-platform.json",
-          "paths": {
-            "sing-box": "rules/sing-box/8150-mux-video-platform.json"
           }
         },
         "8200-overseas-extra-all": {
@@ -39932,7 +39722,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -39954,7 +39744,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -39968,7 +39758,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 363,
+      "available": 361,
       "unsupported": 18
     },
     "v2ray": {
@@ -40076,11 +39866,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44290,
+          "rule-count": 44289,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 44290,
+          "updated-at": "2026-11-26T13:10:06Z",
+          "output-rule-count": 44289,
           "status": "available",
           "path": "rules/v2ray/0240-extended-ad-and-tracking.json",
           "paths": {
@@ -42635,11 +42425,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 220,
+          "rule-count": 219,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 220,
+          "updated-at": "2026-11-25T00:37:42Z",
+          "output-rule-count": 219,
           "status": "available",
           "path": "rules/v2ray/3800-overseas-media-all.json",
           "paths": {
@@ -42882,11 +42672,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 3,
-          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+          "rule-count": 2,
+          "description": "HBO Max 与 Discovery 共用流媒体接口",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-26T15:02:33Z",
-          "output-rule-count": 3,
+          "updated-at": "2026-11-24T23:23:14Z",
+          "output-rule-count": 2,
           "status": "available",
           "path": "rules/v2ray/3960-wbd-streaming-platform.json",
           "paths": {
@@ -44413,11 +44203,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 436,
+          "rule-count": 434,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 436,
+          "updated-at": "2026-11-24T23:34:46Z",
+          "output-rule-count": 434,
           "status": "available",
           "path": "rules/v2ray/8000-global-platforms-all.json",
           "paths": {
@@ -44591,32 +44381,6 @@
           "path": "rules/v2ray/8130-github-pages-hosting.json",
           "paths": {
             "v2ray": "rules/v2ray/8130-github-pages-hosting.json"
-          }
-        },
-        "8140-mux-data-analytics": {
-          "source": "rules/loon/8140-mux-data-analytics.lsr",
-          "rule-count": 1,
-          "description": "Mux Data 播放质量监测与 SDK",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/v2ray/8140-mux-data-analytics.json",
-          "paths": {
-            "v2ray": "rules/v2ray/8140-mux-data-analytics.json"
-          }
-        },
-        "8150-mux-video-platform": {
-          "source": "rules/loon/8150-mux-video-platform.lsr",
-          "rule-count": 1,
-          "description": "Mux 视频播放、缩略图与平台接口",
-          "created-at": "2026-11-26T15:16:08Z",
-          "updated-at": "2026-11-26T15:16:08Z",
-          "output-rule-count": 1,
-          "status": "available",
-          "path": "rules/v2ray/8150-mux-video-platform.json",
-          "paths": {
-            "v2ray": "rules/v2ray/8150-mux-video-platform.json"
           }
         },
         "8200-overseas-extra-all": {
@@ -44819,7 +44583,7 @@
           "rule-count": 19272,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -44841,7 +44605,7 @@
           "rule-count": 6993,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T15:02:33Z",
+          "updated-at": "2026-11-26T13:10:06Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -44855,7 +44619,7 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 363,
+      "available": 361,
       "unsupported": 18
     }
   }
