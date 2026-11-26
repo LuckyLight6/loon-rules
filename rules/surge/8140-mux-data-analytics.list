@@ -1,0 +1,11 @@
+# name: mux-data-analytics
+# priority: 8140
+# section: vendors
+# description: Mux Data 播放质量监测与 SDK
+# boundary: Mux Data 的专用 litix.io 名称空间；供多个应用使用，独立于接入应用的内容播放规则
+# created-at: 2026-11-26T15:16:08Z
+# updated-at: 2026-11-26T15:16:08Z
+# rule-count: 1
+# source: https://www.mux.com/docs/core/content-security-policy
+
+DOMAIN-SUFFIX,litix.io

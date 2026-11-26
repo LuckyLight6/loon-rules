@@ -4,7 +4,7 @@
 # description: 海外影音与内容合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-25T00:37:42Z
+# updated-at: 2026-11-26T15:02:33Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
 # source: https://help.netflix.com/en/node/14424
@@ -41,8 +41,8 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/discoveryplus.list
 # source: https://www.hbomax.com/
 # source: https://press.wbd.com/us/media-release/discovery-migrates-technology-infrastructure-unlocking-expanded-suite-product
-# canonical-rule-count: 219
-# rule-count: 219
+# canonical-rule-count: 220
+# rule-count: 220
 # format: shadowrocket
 # canonical: rules/loon/3800-overseas-media-all.lsr
 
@@ -265,3 +265,4 @@ DOMAIN-SUFFIX,bahamut.com.tw
 DOMAIN-SUFFIX,gamer.com.tw
 DOMAIN-SUFFIX,discomax.com
 DOMAIN-SUFFIX,disco-api.com
+DOMAIN,beam-images.warnermediacdn.com

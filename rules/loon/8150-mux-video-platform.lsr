@@ -1,0 +1,11 @@
+# name: mux-video-platform
+# priority: 8150
+# section: vendors
+# description: Mux 视频播放、缩略图与平台接口
+# boundary: Mux 自有 mux.com 平台范围，按官方 CSP 跟随播放和图片入口；上传使用的 Google 公共存储仍由其自身规则处理
+# created-at: 2026-11-26T15:16:08Z
+# updated-at: 2026-11-26T15:16:08Z
+# rule-count: 1
+# source: https://www.mux.com/docs/core/content-security-policy
+
+DOMAIN-SUFFIX,mux.com

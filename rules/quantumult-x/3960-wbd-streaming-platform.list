@@ -1,20 +1,21 @@
 # name: wbd-streaming-platform
 # priority: 3960
 # section: media
-# description: HBO Max 与 Discovery 共用流媒体接口
-# boundary: Max 与 Discovery+ 共用后端，以及 HGTV 等产品使用的 Discovery 旧接口平台；具体产品先匹配，不接管 AWS、Uplynk 或其他共用 CDN
+# description: HBO Max 与 Discovery 共用流媒体接口和网页图片
+# boundary: Max 与 Discovery+ 共用后端、网页图片，以及 Discovery 旧接口平台；原站图片由具体产品处理，共用图片只收实际请求主机，不接管整个 CDN 或图片参数里的后台存储
 # created-at: 2026-11-24T23:23:14Z
-# updated-at: 2026-11-24T23:23:14Z
+# updated-at: 2026-11-26T15:02:33Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/discoveryplus.list
 # source: https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/yt_dlp/extractor/dplay.py
 # source: https://www.hbomax.com/
 # source: https://www.discoveryplus.com/
 # source: https://press.wbd.com/us/media-release/discovery-migrates-technology-infrastructure-unlocking-expanded-suite-product
-# canonical-rule-count: 2
-# rule-count: 2
+# canonical-rule-count: 3
+# rule-count: 3
 # format: quantumult-x
 # canonical: rules/loon/3960-wbd-streaming-platform.lsr
 
 host-suffix,discomax.com,proxy
 host-suffix,disco-api.com,proxy
+host,beam-images.warnermediacdn.com,proxy

@@ -167,6 +167,14 @@ def validate_declarations(config):
                            and all(spec['recipe'].get(field) == recipe.get(field) for field in fields)
                            for spec in config.get('source-inventories', ())):
                     raise rules.Invalid('产品页面用途字段缺少同范围的完整归属核对：' + e['id'])
+            if recipe.get('format') == 'site-resource-hosts' and 'image-attributes' in recipe:
+                fields = ('identity', 'properties', 'image-attributes')
+                if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                           and spec.get('recipe', {}).get('format') == recipe['format']
+                           and spec['recipe'].get('exclude-source-host', False) is False
+                           and all(spec['recipe'].get(field) == recipe.get(field) for field in fields)
+                           for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('网页图片缺少同身份和完整属性范围的独立核对：' + e['id'])
             if recipe.get('format') == 'qt-host-predicate':
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
                            and spec.get('recipe', {}).get('format') == 'qt-host-predicate'

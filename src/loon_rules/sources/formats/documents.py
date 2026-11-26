@@ -6,6 +6,7 @@ from urllib.parse import urljoin, urlsplit
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid, valid_host
 from .common import within, LabelledLists, PurposeFragments, product_host, https_product_host, HeadingSectionText, public_domain_pattern
+from .resources import image_hosts
 
 class BrandRegionLinks(HTMLParser):
 
@@ -302,12 +303,17 @@ def parse_site_identity(recipe, text):
 
 def site_resource_hosts(recipe, text):
     identity = recipe.get('identity')
-    properties = recipe.get('properties')
+    properties = recipe.get('properties', [])
     if (not isinstance(identity, dict) or not identity
-            or not isinstance(properties, list) or not properties
+            or not isinstance(properties, list)
+            or any(not isinstance(field, str) for field in properties)
+            or not properties and 'image-attributes' not in recipe
             or len(properties) != len(set(properties))
             or not set(properties) <= {'og:image', 'og:video', 'og:audio'}):
         raise Invalid('网站资源缺少品牌身份或明确的资源属性')
+    if (type(recipe.get('exclude-source-host', False)) is not bool
+            or recipe.get('exclude-source-host') and 'image-attributes' not in recipe):
+        raise Invalid('网站资源的原站主机划分需要明确的图片属性')
     if 'source' in identity and identity['source'] != recipe['source']:
         raise Invalid('网站资源不能改变身份来源')
     parse_site_identity({**identity, 'source': recipe['source']}, text)
@@ -319,6 +325,13 @@ def site_resource_hosts(recipe, text):
             raise Invalid('网站缺少所选资源属性：' + field)
         for value in guide.metadata[field]:
             result.add('DOMAIN,' + https_product_host(value).split(',')[1])
+    if 'image-attributes' in recipe:
+        result.update(image_hosts(recipe['source'], text, recipe['image-attributes']))
+    if recipe.get('exclude-source-host'):
+        origin = urlsplit(recipe['source']).hostname
+        result = {row for row in result if row.split(',')[1] != origin}
+    if not result:
+        raise Invalid('网站资源没有可核实的网络主机')
     return result
 
 

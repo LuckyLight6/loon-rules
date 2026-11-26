@@ -905,7 +905,9 @@
         "amazon-shared-services",
         "discord-activities-proxy",
         "disney-shared-services",
-        "github-pages-hosting"
+        "github-pages-hosting",
+        "mux-data-analytics",
+        "mux-video-platform"
       ],
       "subheadings": {
         "digitalocean-services": "厂商与云平台细分"
@@ -15334,8 +15336,8 @@
       "mode": "compiled",
       "selection": "detailed",
       "policy-hint": "media",
-      "description": "HBO Max 与 Discovery 共用流媒体接口",
-      "boundary": "Max 与 Discovery+ 共用后端，以及 HGTV 等产品使用的 Discovery 旧接口平台；具体产品先匹配，不接管 AWS、Uplynk 或其他共用 CDN",
+      "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
+      "boundary": "Max 与 Discovery+ 共用后端、网页图片，以及 Discovery 旧接口平台；原站图片由具体产品处理，共用图片只收实际请求主机，不接管整个 CDN 或图片参数里的后台存储",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hbo.list",
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/discoveryplus.list",
@@ -15577,6 +15579,42 @@
               "reason": "提取器测试样例，不作为客户端配置读取"
             }
           }
+        },
+        {
+          "format": "site-resource-hosts",
+          "source": "https://www.hbomax.com/",
+          "identity": {
+            "scope": "source-root",
+            "brand": "HBO Max"
+          },
+          "properties": [
+            "og:image"
+          ],
+          "image-attributes": [
+            "src",
+            "srcset",
+            "data-src",
+            "data-srcset"
+          ],
+          "exclude-source-host": true
+        },
+        {
+          "format": "site-resource-hosts",
+          "source": "https://www.discoveryplus.com/",
+          "identity": {
+            "scope": "source-root",
+            "brand": "Discovery Plus"
+          },
+          "properties": [
+            "og:image"
+          ],
+          "image-attributes": [
+            "src",
+            "srcset",
+            "data-src",
+            "data-srcset"
+          ],
+          "exclude-source-host": true
         }
       ],
       "projection": [
@@ -15599,7 +15637,8 @@
         "prd.api.discomax.com",
         "graphql.prd.api.discomax.com",
         "graphql-2.use1.prd.api.discomax.com",
-        "eu1-prod.disco-api.com"
+        "eu1-prod.disco-api.com",
+        "beam-images.warnermediacdn.com"
       ],
       "product-negatives": [
         "storage.googleapis.com",
@@ -15607,6 +15646,88 @@
         "www.hbomax.com",
         "www.discoveryplus.com",
         "content-ause1-ur-discovery1.uplynk.com"
+      ]
+    },
+    {
+      "id": "mux-data-analytics",
+      "priority": 8140,
+      "section": "vendors",
+      "routing-group": "global-platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Mux Data 播放质量监测与 SDK",
+      "boundary": "Mux Data 的专用 litix.io 名称空间；供多个应用使用，独立于接入应用的内容播放规则",
+      "sources": [
+        "https://www.mux.com/docs/core/content-security-policy"
+      ],
+      "extract": [
+        {
+          "source": "https://www.mux.com/docs/core/content-security-policy",
+          "format": "csp-origins",
+          "sections": [
+            "mux-data-integration",
+            "hosted-mux-data-integrations"
+          ],
+          "directives": [
+            "connect-src",
+            "img-src",
+            "script-src"
+          ],
+          "domain-scope": "domain-and-subdomains",
+          "brand-prefixes": [
+            "litix"
+          ]
+        }
+      ],
+      "product-probes": [
+        "img.litix.io",
+        "src.litix.io"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "beam-images.warnermediacdn.com"
+      ]
+    },
+    {
+      "id": "mux-video-platform",
+      "priority": 8150,
+      "section": "vendors",
+      "routing-group": "global-platforms",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Mux 视频播放、缩略图与平台接口",
+      "boundary": "Mux 自有 mux.com 平台范围，按官方 CSP 跟随播放和图片入口；上传使用的 Google 公共存储仍由其自身规则处理",
+      "sources": [
+        "https://www.mux.com/docs/core/content-security-policy"
+      ],
+      "extract": [
+        {
+          "source": "https://www.mux.com/docs/core/content-security-policy",
+          "format": "csp-origins",
+          "sections": [
+            "mux-video-playback",
+            "video-thumbnails-and-storyboards"
+          ],
+          "directives": [
+            "connect-src",
+            "media-src",
+            "img-src"
+          ],
+          "domain-scope": "domain-and-subdomains",
+          "brand-prefixes": [
+            "mux"
+          ]
+        }
+      ],
+      "product-probes": [
+        "stream.mux.com",
+        "image.mux.com"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "beam-images.warnermediacdn.com"
       ]
     }
   ],
@@ -15883,6 +16004,8 @@
     "discord-activities-proxy",
     "disney-shared-services",
     "github-pages-hosting",
+    "mux-data-analytics",
+    "mux-video-platform",
     "tencent-shared-content-and-sdk",
     "sina-shared-image-assets",
     "sina-web-and-shared-services"
@@ -18722,6 +18845,21 @@
     ],
     "www.discoveryplus.se": [
       "discovery-plus-streaming"
+    ],
+    "beam-images.warnermediacdn.com": [
+      "wbd-streaming-platform"
+    ],
+    "img.litix.io": [
+      "mux-data-analytics"
+    ],
+    "src.litix.io": [
+      "mux-data-analytics"
+    ],
+    "stream.mux.com": [
+      "mux-video-platform"
+    ],
+    "image.mux.com": [
+      "mux-video-platform"
     ]
   },
   "shared-negatives": [
@@ -19360,6 +19498,8 @@
         8110,
         8120,
         8130,
+        8140,
+        8150,
         8400,
         8410,
         8420,
@@ -23002,6 +23142,121 @@
             "reason": "客户端的测试样例，不作为默认服务器读取"
           }
         }
+      }
+    },
+    {
+      "id": "wbd-hbo-page-images",
+      "source": "https://www.hbomax.com/",
+      "owners": [
+        "hbo-streaming",
+        "wbd-streaming-platform"
+      ],
+      "recipe": {
+        "format": "site-resource-hosts",
+        "identity": {
+          "scope": "source-root",
+          "brand": "HBO Max"
+        },
+        "properties": [
+          "og:image"
+        ],
+        "image-attributes": [
+          "src",
+          "srcset",
+          "data-src",
+          "data-srcset"
+        ]
+      }
+    },
+    {
+      "id": "wbd-discovery-page-images",
+      "source": "https://www.discoveryplus.com/",
+      "owners": [
+        "discovery-plus-streaming",
+        "wbd-streaming-platform"
+      ],
+      "recipe": {
+        "format": "site-resource-hosts",
+        "identity": {
+          "scope": "source-root",
+          "brand": "Discovery Plus"
+        },
+        "properties": [
+          "og:image"
+        ],
+        "image-attributes": [
+          "src",
+          "srcset",
+          "data-src",
+          "data-srcset"
+        ]
+      }
+    },
+    {
+      "id": "mux-data-analytics-purposes",
+      "source": "https://www.mux.com/docs/core/content-security-policy",
+      "recipe": {
+        "format": "csp-origins",
+        "sections": [
+          "mux-data-integration",
+          "hosted-mux-data-integrations"
+        ],
+        "directives": [
+          "connect-src",
+          "img-src",
+          "script-src"
+        ],
+        "domain-scope": "domain-and-subdomains"
+      },
+      "owners": [
+        "mux-data-analytics"
+      ]
+    },
+    {
+      "id": "mux-video-platform-purposes",
+      "source": "https://www.mux.com/docs/core/content-security-policy",
+      "recipe": {
+        "format": "csp-origins",
+        "sections": [
+          "mux-video-playback",
+          "video-thumbnails-and-storyboards"
+        ],
+        "directives": [
+          "connect-src",
+          "media-src",
+          "img-src"
+        ],
+        "domain-scope": "domain-and-subdomains"
+      },
+      "owners": [
+        "mux-video-platform"
+      ]
+    },
+    {
+      "id": "mux-complete-csp",
+      "source": "https://www.mux.com/docs/core/content-security-policy",
+      "recipe": {
+        "format": "csp-origins",
+        "sections": [
+          "granular-csp-configuration",
+          "upload-and-media-handling",
+          "complete-example"
+        ],
+        "directives": [
+          "connect-src",
+          "media-src",
+          "img-src",
+          "script-src",
+          "form-action"
+        ],
+        "domain-scope": "listed"
+      },
+      "owners": [
+        "mux-data-analytics",
+        "mux-video-platform"
+      ],
+      "reviewed-outside": {
+        "DOMAIN,storage.googleapis.com": "官方说明这是 Direct Uploads 使用的 Google 公共存储请求主机；同一主机服务其他客户，不能归为 Mux 自有范围。用途依据：https://www.mux.com/docs/core/content-security-policy#upload-and-media-handling"
       }
     }
   ],
@@ -26656,6 +26911,24 @@
             "name": "Backstage 开发者门户",
             "rules": [
               "backstage-developer-portal"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mux",
+        "name": "Mux",
+        "products": [
+          {
+            "name": "Mux Data 播放质量监测与 SDK",
+            "rules": [
+              "mux-data-analytics"
+            ]
+          },
+          {
+            "name": "Mux 视频播放、缩略图与平台接口",
+            "rules": [
+              "mux-video-platform"
             ]
           }
         ]

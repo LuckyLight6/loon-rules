@@ -10,12 +10,26 @@ from .common import within, DestinationTables, public_domain_pattern
 
 def domain_column_table(recipe, text):
     headers = recipe['headers']
-    column = recipe['column']
+    if ('column' in recipe) == ('columns' in recipe):
+        raise Invalid('域名表须选择单列或多列，不能混用')
+    columns = [recipe['column']] if 'column' in recipe else recipe['columns']
     scope = recipe.get('domain-scope', 'listed')
     value_format = recipe.get('value-format', 'domain')
-    if (not isinstance(headers, list) or not headers or len(set(headers)) != len(headers)
-            or column not in headers or scope not in ('listed', 'domain-and-subdomains')
-            or value_format not in ('domain', 'url') or value_format == 'url' and scope != 'listed'):
+    split_values = recipe.get('split-values', False)
+    groups = recipe.get('group-rows', [])
+    if (not isinstance(headers, list) or not headers
+            or any(not isinstance(value, str) or not value.strip() for value in headers)
+            or len(set(headers)) != len(headers)
+            or not isinstance(columns, list) or not columns
+            or any(not isinstance(value, str) or value not in headers for value in columns)
+            or len(set(columns)) != len(columns)
+            or not isinstance(groups, list)
+            or any(not isinstance(value, str) or not value.strip() for value in groups)
+            or len(set(groups)) != len(groups)
+            or type(split_values) is not bool
+            or scope not in ('listed', 'domain-and-subdomains')
+            or value_format not in ('domain', 'url')
+            or value_format == 'url' and (scope != 'listed' or split_values)):
         raise Invalid('域名表缺少明确的列和匹配范围')
     table = HostTables()
     table.feed(text)
@@ -24,25 +38,28 @@ def domain_column_table(recipe, text):
         raise Invalid('域名表的章节或标题列缺失、重复')
     result = set()
     for cells in rows:
-        if cells == headers:
+        if cells == headers or len(cells) == 1 and cells[0] in groups:
             continue
         if len(cells) != len(headers):
             raise Invalid('域名表的列数发生变化')
-        value = cells[headers.index(column)].strip()
-        if value_format == 'url':
-            url = urlsplit(value)
-            if (url.scheme not in ('https', 'wss') or not url.hostname or url.username is not None
-                    or url.query or url.fragment):
-                raise Invalid('域名表的 URL 列不是公开 HTTPS 或 WSS 连接')
-            value = url.hostname
-        row = public_domain_pattern(value)
-        if row is None:
-            continue
-        if scope == 'domain-and-subdomains':
-            if not row.startswith('DOMAIN,'):
-                raise Invalid('域名列的整域匹配不接受通配符')
-            row = 'DOMAIN-SUFFIX,' + row.split(',')[1]
-        result.add(row)
+        for column in columns:
+            cell = cells[headers.index(column)].strip()
+            values = re.split(r'[,\s]+', cell) if split_values else [cell]
+            for value in values:
+                if value_format == 'url':
+                    url = urlsplit(value)
+                    if (url.scheme not in ('https', 'wss') or not url.hostname or url.username is not None
+                            or url.query or url.fragment):
+                        raise Invalid('域名表的 URL 列不是公开 HTTPS 或 WSS 连接')
+                    value = url.hostname
+                row = public_domain_pattern(value)
+                if row is None:
+                    raise Invalid('域名表包含未确认归属的共享托管范围')
+                if scope == 'domain-and-subdomains':
+                    if not row.startswith('DOMAIN,'):
+                        raise Invalid('域名列的整域匹配不接受通配符')
+                    row = 'DOMAIN-SUFFIX,' + row.split(',')[1]
+                result.add(row)
     if not result:
         raise Invalid('域名表没有可归属的公开名称')
     return result

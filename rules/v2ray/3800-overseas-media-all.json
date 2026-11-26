@@ -222,7 +222,8 @@
           "domain:bahamut.com.tw",
           "domain:gamer.com.tw",
           "domain:discomax.com",
-          "domain:disco-api.com"
+          "domain:disco-api.com",
+          "full:beam-images.warnermediacdn.com"
         ],
         "outboundTag": "PROXY"
       }

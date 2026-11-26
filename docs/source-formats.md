@@ -9,7 +9,7 @@
 | 官方服务 JSON | `service-domain-groups` 选择业务组；`json-service-urls` 用 `paths` 取服务器或下载字段，数组使用 `*`；`identity` 核对产品身份 | GitHub 开发平台 3010、GitHub Pages 托管 8130、Cargo 3080、PyPI 3060、npm 3040 |
 | 页面内的公开服务配置 | `next-service-urls` 核对唯一的页面 JSON 与产品身份，再用 `paths` 读取业务 URL；`url-fields` 只在指定正文范围读取所列资源字段 | Disney+ 3830 的生产 API、内容和图片；WBD 3960 从 HBO Max 与 Discovery+ 读取共用生产接口 |
 | SDK 静态配置 | 按模块、类和字段解析默认端点；`c-function-url` 读取指定函数的字面 HTTPS；`qt-host-predicate` 读取 Qt 主机判断；`code-api-endpoints` 读取指定源码字段；`literal-object-urls` 从 JavaScript 语法树读取指定环境的完整 URL 对象 | Claude 1010、xAI 1040、Telegram 3310、Firebase 消息 4585、Disney 共用服务 8120 等 |
-| 服务域名列与 CSP | `domain-column-table` 核对列头后读取指定列，`value-format: url` 从 HTTPS／WSS URL 取精确主机；`csp-origins` 按章节、指令和品牌取源 | Datadog 3140、Docker 3075 的完整用途表、Intercom 4360 |
+| 服务域名列与 CSP | `domain-column-table` 核对列头后用 `column` 或 `columns` 读取单列或多列；`split-values` 读取域名格中的多个值，`group-rows` 只跳过明确列出的单格分组标题；未知分组、坏值和未归属共享范围停止整轮更新。`value-format: url` 从 HTTPS／WSS URL 取精确主机；`csp-origins` 按章节、指令和品牌取源 | Datadog 3140、Docker 3075 的完整用途表、Intercom 4360 |
 | Go 客户端的主机用途分支 | `go-host-switch` 选择一个函数中直接返回指定用途的字面主机分支，只生成精确域名；忽略注释、字符串示例和其他用途，控制逻辑变化时停止采用 | Apple 账户 2090 跟随 GrandSlam 生产主机更新，补充企业网络表未列出的客户端入口 |
 | 业务域名表 | 按章节、列头和用途选择 `host-table`、`purpose-domain-table`、`nested-purpose-domains` 等；IP 列单独处理 | Apple、Microsoft 产品 |
 | 标签后面的主机列表 | `purpose-domain-lists`、`host-purpose-list` 按用途标签读取；嵌套子域必须有明确说明并符合域名关系 | Cursor 1100、Signal 3330、Slack 3370 |
@@ -60,6 +60,10 @@ CSP 也按所选章节和指令检查完整输入。无法确认归属的共享�
 `nullable-class-defaults: true` 只允许类声明用空值占位，且同一类的方法仍须有可核实的具体服务字典。元数据字段不能隐藏未处理的主机、地址或 ASN。这里解析语法树，不导入或执行上游代码；客户端家族、字典、单值字段和非网络字段的用途声明同样须配套完整用途清单。
 
 `python-regional-hosts` 读取客户端链接模式中的有限地区分支，再核对请求方法怎样规范化来源主机、构造 API 和传入服务器参数。主机与路径模式一起解析，结果只生成精确主机。3855 用它跟随 Discovery+ 的地区入口，不预填国家或服务器名称。`pattern-groups` 核对完整捕获字段，`branch-group` 选择产品分支，`other-branch-groups` 标明同一方法处理的其他入口；新增或未归属分支、无限主机范围、控制流程与请求用途变化都会停止更新。该声明同样须有范围一致的独立完整性核对。
+
+网页图片可在 `site-resource-hosts` 中声明 `image-attributes`，读取 `img` 的 `src`、`srcset`、`data-src`、`data-srcset`，以及 `picture` 内 `source` 的响应式属性。相对图片地址遵循唯一的网页 `base`；基准地址不明确时停止更新。只保留图片 URL 的精确主机；图片参数中的后台存储域名不生成规则。内嵌图片、脚本和模板中的字符串不当作独立网络入口。
+
+`exclude-source-host: true` 将原站主机留给前面的具体产品。独立清单仍须包含原站与全部已声明图片属性，分别核对具体产品和共用图片服务；不能跟着排除原站或只核对一条 Open Graph 图片。图片描述符、重复属性、品牌身份或共享范围不符时停止更新并保留原成品。3960 从 HBO Max 与 Discovery+ 当前页面读取共用图片请求，不手写 CDN 主机名单。
 
 `product-role-links` 从指定用途的链接取主机，公开跟踪参数不进入规则。相对链接按声明的来源 URL 补全，没有来源地址时不能猜测目标；HTTP、脚本动作和带凭据的链接仍不采用。子域保持精确匹配；链接指向共享平台时，不能因路径属于某个产品就认领整个主机。Google 4590 从官网的 News、Blog 和 Press resources 链接跟随资讯入口。
 

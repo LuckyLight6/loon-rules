@@ -4,15 +4,15 @@
 # description: 可选的扩展广告与统计拦截
 # boundary: 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-25T23:51:04Z
+# updated-at: 2026-11-26T15:02:33Z
 # source: https://rules.xkww3n.cyou/classical/reject.txt
 # source: https://docs.statsig.com/infrastructure/statsig_domains
 # source: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/
 # source: https://easylist.to/easylist/easylist.txt
 # source: https://easylist.to/easylist/easyprivacy.txt
 # source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-# canonical-rule-count: 44201
-# rule-count: 44201
+# canonical-rule-count: 44290
+# rule-count: 44290
 # format: quantumult-x
 # canonical: rules/loon/0240-extended-ad-and-tracking.lsr
 
@@ -44217,3 +44217,92 @@ host-suffix,yacgsaamnkiln.website,proxy
 host-suffix,zcfftuoqzlqqx.website,proxy
 host-suffix,zxfzgfvajcrlo.website,proxy
 host-suffix,7soyhrnb.xyz,proxy
+host-suffix,tornadorainbow.biz,proxy
+host-suffix,7nmvn73b484n9e6.cfd,proxy
+host-suffix,foplingstikine.cfd,proxy
+host-suffix,pigginspedum.cfd,proxy
+host-suffix,shamsspurns.cfd,proxy
+host-suffix,smalmedbabashalver.cfd,proxy
+host-suffix,chariotflex.click,proxy
+host-suffix,clipeiunvague.click,proxy
+host-suffix,dslplb.click,proxy
+host-suffix,getaesylvite.click,proxy
+host-suffix,unhabittureens.click,proxy
+host-suffix,ingest.t3.codes,proxy
+host-suffix,behearbkpt.com,proxy
+host-suffix,bwuwognt.com,proxy
+host-suffix,coupescalina.com,proxy
+host-suffix,d12bb32e0a.com,proxy
+host-suffix,dsjgdd.com,proxy
+host-suffix,dsjlsr.com,proxy
+host-suffix,dsjpcc.com,proxy
+host-suffix,dskwun.com,proxy
+host-suffix,dssmyq.com,proxy
+host-suffix,falutineaglet.com,proxy
+host-suffix,gelscrower.com,proxy
+host-suffix,helpfulspring.com,proxy
+host-suffix,ingraftballets.com,proxy
+host-suffix,novitydarkeys.com,proxy
+host-suffix,oxyopytidings.com,proxy
+host-suffix,teriexcited.com,proxy
+host-suffix,towedpuree.com,proxy
+host-suffix,vfwektumalyop.com,proxy
+host-suffix,viiwbpyl.com,proxy
+host-suffix,xldphchfmiao.com,proxy
+host-suffix,yearlyartist.com,proxy
+host-suffix,cowgirlguestenmanzas.cyou,proxy
+host-suffix,curnsbeckysquiffy.cyou,proxy
+host-suffix,eralrepolon.cyou,proxy
+host-suffix,kecklesaroynts.cyou,proxy
+host-suffix,panmanupgazeschazan.cyou,proxy
+host-suffix,rebentmarline.cyou,proxy
+host-suffix,sjomiladuplyaraban.cyou,proxy
+host-suffix,wallopsabigail.cyou,proxy
+host-suffix,yetterleetman.cyou,proxy
+host-suffix,kaqohxojp.in,proxy
+host-suffix,xtoagxhi.in,proxy
+host-suffix,badgerflower.mobi,proxy
+host-suffix,ebnwqpqjhwtdb.online,proxy
+host-suffix,gerdvsvshbsgg.online,proxy
+host-suffix,gkhrjlvjscfqi.online,proxy
+host-suffix,nfvpgpsgyeprb.online,proxy
+host-suffix,ocydpculhabrh.online,proxy
+host-suffix,otekyzejdxaax.online,proxy
+host-suffix,owrmsecvuojhb.online,proxy
+host-suffix,vztkqvrpjkgjx.online,proxy
+host-suffix,ysmdgkfncqxko.online,proxy
+host-suffix,4pqlpibcjom1tbf331nz.rest,proxy
+host-suffix,glucosestichos.rest,proxy
+host-suffix,onermotyka.rest,proxy
+host-suffix,pituitefauns.rest,proxy
+host-suffix,puacheer.rest,proxy
+host-suffix,uilxp9tij22y7e.rest,proxy
+host-suffix,aahzgywgksgwh.site,proxy
+host-suffix,brvoddzitcfwx.site,proxy
+host-suffix,cjezcvxmnxtzq.site,proxy
+host-suffix,eydlpegggcimz.site,proxy
+host-suffix,gafwqszdvapoq.site,proxy
+host-suffix,gfuqwplijbefe.site,proxy
+host-suffix,jjqswoyunxngm.site,proxy
+host-suffix,mlbubpklvtpnh.site,proxy
+host-suffix,nbytbkernhuxg.site,proxy
+host-suffix,pswhvvfknpixy.site,proxy
+host-suffix,pwrrtyfexaenv.site,proxy
+host-suffix,qfergnqrydhpz.site,proxy
+host-suffix,raeonsgcxhjtk.site,proxy
+host-suffix,tybanfsgwdplt.site,proxy
+host-suffix,yscexilehvsqq.site,proxy
+host-suffix,hshxjlmolqarw.space,proxy
+host-suffix,igbzdceraoqme.space,proxy
+host-suffix,qbmqaqcwicsbu.space,proxy
+host-suffix,qxpgqdsieoakd.space,proxy
+host-suffix,xvtmttvzcgzvb.space,proxy
+host-suffix,acktihkhdeswy.website,proxy
+host-suffix,etoeyxbjruyse.website,proxy
+host-suffix,fcmuzyreagfpt.website,proxy
+host-suffix,idkkajuxeciwm.website,proxy
+host-suffix,pegkkbkhuclko.website,proxy
+host-suffix,pnyevyapfspdt.website,proxy
+host-suffix,snevozufekhoj.website,proxy
+host-suffix,zwrshdfaayjun.website,proxy
+host-suffix,hobres.xyz,proxy

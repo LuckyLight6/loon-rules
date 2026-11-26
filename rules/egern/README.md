@@ -233,7 +233,7 @@
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/3930-twitch-live-video.yaml) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/3940-bbc-news-and-video.yaml) |
 | 3950 | bahamut-video-and-community | 巴哈姆特动画疯和电玩社区 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/3950-bahamut-video-and-community.yaml) |
-| 3960 | wbd-streaming-platform | HBO Max 与 Discovery 共用流媒体接口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/3960-wbd-streaming-platform.yaml) |
+| 3960 | wbd-streaming-platform | HBO Max 与 Discovery 共用流媒体接口和网页图片 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/3960-wbd-streaming-platform.yaml) |
 | 4100 | overseas-games-all | 海外游戏合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/4100-overseas-games-all.yaml) |
 | 4110 | steam-international-platform | Steam 国际商店、社区、联机和下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/4110-steam-international-platform.yaml) |
 | 4120 | epic-games-services | Epic Games 商店、登录及 Unreal 服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/4120-epic-games-services.yaml) |
@@ -366,6 +366,8 @@
 | 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8110-discord-activities-proxy.yaml) |
 | 8120 | disney-shared-services | Disney 共用账户、登录组件与日志 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8120-disney-shared-services.yaml) |
 | 8130 | github-pages-hosting | GitHub Pages 默认网站托管 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8130-github-pages-hosting.yaml) |
+| 8140 | mux-data-analytics | Mux Data 播放质量监测与 SDK | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8140-mux-data-analytics.yaml) |
+| 8150 | mux-video-platform | Mux 视频播放、缩略图与平台接口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8150-mux-video-platform.yaml) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8200-overseas-extra-all.yaml) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8210-overseas-media-extra.yaml) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/8220-overseas-sites-extra.yaml) |

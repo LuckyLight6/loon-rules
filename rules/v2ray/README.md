@@ -233,7 +233,7 @@
 | 3930 | twitch-live-video | Twitch 直播、聊天室和内容 CDN | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/3930-twitch-live-video.json) |
 | 3940 | bbc-news-and-video | BBC 新闻与影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/3940-bbc-news-and-video.json) |
 | 3950 | bahamut-video-and-community | 巴哈姆特动画疯和电玩社区 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/3950-bahamut-video-and-community.json) |
-| 3960 | wbd-streaming-platform | HBO Max 与 Discovery 共用流媒体接口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/3960-wbd-streaming-platform.json) |
+| 3960 | wbd-streaming-platform | HBO Max 与 Discovery 共用流媒体接口和网页图片 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/3960-wbd-streaming-platform.json) |
 | 4100 | overseas-games-all | 海外游戏合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/4100-overseas-games-all.json) |
 | 4110 | steam-international-platform | Steam 国际商店、社区、联机和下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/4110-steam-international-platform.json) |
 | 4120 | epic-games-services | Epic Games 商店、登录及 Unreal 服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/4120-epic-games-services.json) |
@@ -366,6 +366,8 @@
 | 8110 | discord-activities-proxy | Discord Activities 与第三方应用代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8110-discord-activities-proxy.json) |
 | 8120 | disney-shared-services | Disney 共用账户、登录组件与日志 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8120-disney-shared-services.json) |
 | 8130 | github-pages-hosting | GitHub Pages 默认网站托管 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8130-github-pages-hosting.json) |
+| 8140 | mux-data-analytics | Mux Data 播放质量监测与 SDK | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8140-mux-data-analytics.json) |
+| 8150 | mux-video-platform | Mux 视频播放、缩略图与平台接口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8150-mux-video-platform.json) |
 | 8200 | overseas-extra-all | 海外补充合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8200-overseas-extra-all.json) |
 | 8210 | overseas-media-extra | 其他海外影音 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8210-overseas-media-extra.json) |
 | 8220 | overseas-sites-extra | 其他海外网站与受限站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/8220-overseas-sites-extra.json) |

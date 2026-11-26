@@ -383,7 +383,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 3960 | [wbd-streaming-platform](../rules/loon/3960-wbd-streaming-platform.lsr) | HBO Max 与 Discovery 共用流媒体接口 | Max 与 Discovery+ 共用后端，以及 HGTV 等产品使用的 Discovery 旧接口平台；具体产品先匹配，不接管 AWS、Uplynk 或其他共用 CDN | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/3960-wbd-streaming-platform.lsr) |
+| 3960 | [wbd-streaming-platform](../rules/loon/3960-wbd-streaming-platform.lsr) | HBO Max 与 Discovery 共用流媒体接口和网页图片 | Max 与 Discovery+ 共用后端、网页图片，以及 Discovery 旧接口平台；原站图片由具体产品处理，共用图片只收实际请求主机，不接管整个 CDN 或图片参数里的后台存储 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/3960-wbd-streaming-platform.lsr) |
 
 ## 10 游戏（海外）
 
@@ -685,7 +685,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |
 |---:|---|---|---|---|
-| 8000 | [global-platforms-all](../rules/loon/8000-global-platforms-all.lsr) | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8130。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8000-global-platforms-all.lsr) |
+| 8000 | [global-platforms-all](../rules/loon/8000-global-platforms-all.lsr) | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8150。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8000-global-platforms-all.lsr) |
 
 ### 23.2 厂商与云平台细分
 
@@ -704,6 +704,8 @@
 | 8110 | [discord-activities-proxy](../rules/loon/8110-discord-activities-proxy.lsr) | Discord Activities 与第三方应用代理 | 从 Discord 官方代理用途说明读取平台命名空间；其中可以承载第三方应用和游戏，不归为聊天、语音或第三方应用自身的全部服务 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8110-discord-activities-proxy.lsr) |
 | 8120 | [disney-shared-services](../rules/loon/8120-disney-shared-services.lsr) | Disney 共用账户、登录组件与日志 | MyDisney 账户管理及当前公开 SDK 的生产登录、组件和日志主机，供多个 Disney 产品共用；保持精确匹配，不接管整个 disney.com 或 go.com | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8120-disney-shared-services.lsr) |
 | 8130 | [github-pages-hosting](../rules/loon/8130-github-pages-hosting.lsr) | GitHub Pages 默认网站托管 | 默认 github.io 托管命名空间；具体产品的专用租户主机先匹配，本组处理其余平台请求。Pages 管理和产品介绍仍使用 GitHub 网站，自定义域名按其实际产品处理，不从共享 IP 反推归属 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8130-github-pages-hosting.lsr) |
+| 8140 | [mux-data-analytics](../rules/loon/8140-mux-data-analytics.lsr) | Mux Data 播放质量监测与 SDK | Mux Data 的专用 litix.io 名称空间；供多个应用使用，独立于接入应用的内容播放规则 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8140-mux-data-analytics.lsr) |
+| 8150 | [mux-video-platform](../rules/loon/8150-mux-video-platform.lsr) | Mux 视频播放、缩略图与平台接口 | Mux 自有 mux.com 平台范围，按官方 CSP 跟随播放和图片入口；上传使用的 Google 公共存储仍由其自身规则处理 | [订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/8150-mux-video-platform.lsr) |
 
 ## 24 海外补充
 

@@ -437,7 +437,9 @@
           "full:log.go.com",
           "full:login.disney.com",
           "full:my.disney.com",
-          "domain:github.io"
+          "domain:github.io",
+          "domain:litix.io",
+          "domain:mux.com"
         ],
         "outboundTag": "PROXY"
       }

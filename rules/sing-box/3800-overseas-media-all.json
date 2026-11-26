@@ -216,7 +216,8 @@
         "www.whosampled.com",
         "bahamut.akamaized.net",
         "gamer-cds.cdn.hinet.net",
-        "gamer2-cds.cdn.hinet.net"
+        "gamer2-cds.cdn.hinet.net",
+        "beam-images.warnermediacdn.com"
       ],
       "domain_regex": [
         "(?i)^.*\\.atspotify\\.com$",

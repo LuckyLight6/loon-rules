@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 196 个厂商或项目、346 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 197 个厂商或项目、348 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -25,7 +25,7 @@
 | 国内影音与直播合集 | [6900 国内影音与直播合集](../rules/loon/6900-mainland-media-all.lsr) | 16 |
 | 国内游戏合集 | [7200 国内游戏合集](../rules/loon/7200-mainland-games-all.lsr) | 3 |
 | 国内购物、生活与办公合集 | [7400 国内购物、生活与办公合集](../rules/loon/7400-mainland-daily-services-all.lsr) | 8 |
-| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/loon/8000-global-platforms-all.lsr) | 13 |
+| 全球厂商与云平台共用服务合集 | [8000 全球厂商与云平台共用服务合集](../rules/loon/8000-global-platforms-all.lsr) | 15 |
 | 国内厂商共用服务合集 | [8400 国内厂商共用服务合集](../rules/loon/8400-mainland-platforms-all.lsr) | 11 |
 
 ## Tailscale
@@ -968,7 +968,7 @@
 |---|---|
 | HBO Max | [3810 HBO Max](../rules/loon/3810-hbo-streaming.lsr) |
 | Discovery+ 播放、网站与地区 API | [3855 Discovery+ 播放、网站与地区 API](../rules/loon/3855-discovery-plus-streaming.lsr) |
-| HBO Max 与 Discovery 共用流媒体接口 | [3960 HBO Max 与 Discovery 共用流媒体接口](../rules/loon/3960-wbd-streaming-platform.lsr) |
+| HBO Max 与 Discovery 共用流媒体接口 | [3960 HBO Max 与 Discovery 共用流媒体接口和网页图片](../rules/loon/3960-wbd-streaming-platform.lsr) |
 
 ## Netflix
 
@@ -1355,6 +1355,13 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Oracle、Java 与云平台共用服务 | [8070 Oracle、Java 与云平台共用服务](../rules/loon/8070-oracle-shared-services.lsr) |
+
+## Mux
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| Mux Data 播放质量监测与 SDK | [8140 Mux Data 播放质量监测与 SDK](../rules/loon/8140-mux-data-analytics.lsr) |
+| Mux 视频播放、缩略图与平台接口 | [8150 Mux 视频播放、缩略图与平台接口](../rules/loon/8150-mux-video-platform.lsr) |
 
 ## 华为
 
