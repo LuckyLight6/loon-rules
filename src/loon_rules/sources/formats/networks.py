@@ -4,7 +4,7 @@ import json
 import re
 from loon_rules.sources.formats.html import HostTables
 from loon_rules.rules import Invalid, valid_host
-from .common import within, LabelledLists, HeadingSectionText
+from .common import within, LabelledLists, HeadingSectionText, PurposeFragments
 
 
 def rdap_entity_autnums(recipe, text):
@@ -140,9 +140,9 @@ def public_media_network(value, recipe):
     try:
         net = ip_network(value, strict=True)
     except ValueError as exc:
-        raise Invalid('媒体地址不是对齐的 CIDR') from exc
+        raise Invalid('服务地址不是对齐的 CIDR') from exc
     if not net.is_global or net.prefixlen < recipe['min-prefix'][str(net.version)]:
-        raise Invalid('媒体地址超过已确认范围')
+        raise Invalid('服务地址超过已确认范围')
     return (('IP-CIDR,' if net.version == 4 else 'IP-CIDR6,') + str(net) + ',no-resolve', net.version)
 
 
@@ -242,3 +242,56 @@ def parse_ip_prefix_json(recipe, text):
 
 def parse_labelled_networks(recipe, text):
     return set(labelled_networks(recipe, text))
+
+
+def ip_network_map(recipe,text):
+    fields=recipe.get('fields')
+    limits=recipe.get('min-prefix')
+    if (not isinstance(fields,dict) or not fields or not isinstance(limits,dict)
+            or any(not isinstance(name,str) or not name or type(family) is not int or family not in (4,6)
+                   for name,family in fields.items())
+            or any(type(limits.get(str(family))) is not int or not 1<=limits[str(family)]<=(32 if family==4 else 128)
+                   for family in fields.values())):
+        raise Invalid('网段映射缺少明确的字段、地址族或最小前缀')
+    def unique(pairs):
+        result={}
+        for key,value in pairs:
+            if key in result:raise Invalid('网段映射包含重复字段')
+            result[key]=value
+        return result
+    document=json.loads(text,object_pairs_hook=unique)
+    if not isinstance(document,dict) or set(document)!=set(fields):
+        raise Invalid('网段映射的字段缺失或变化')
+    result=set()
+    for field,family in fields.items():
+        values=document[field]
+        if not isinstance(values,list) or not values or any(not isinstance(value,str) for value in values):
+            raise Invalid('网段映射的地址族列表为空或无效')
+        for value in values:
+            row,version=public_media_network(value,recipe)
+            if version!=family:raise Invalid('网段映射的地址族与字段不符')
+            if row in result:raise Invalid('网段映射包含重复范围')
+            result.add(row)
+    return result
+
+
+def paragraph_network_list(recipe,text):
+    prefix=recipe.get('prefix');until=recipe.get('until')
+    if not isinstance(prefix,str) or not prefix.strip() or not isinstance(until,str) or not until.strip():
+        raise Invalid('地址用途说明缺少明确的起止文字')
+    parser=PurposeFragments();parser.feed(text)
+    result=set();found=0
+    for raw in parser.paragraphs:
+        paragraph=' '.join(raw.split())
+        if not paragraph.casefold().startswith(prefix.casefold()):continue
+        field,separator,_=paragraph[len(prefix):].partition(until)
+        if not separator:raise Invalid('地址用途说明的字段结束标记缺失')
+        values=re.split(r'[,\s]+',field.strip().removesuffix('.'))
+        if not values:raise Invalid('地址用途说明没有完整地址')
+        for value in values:
+            if '/' not in value:raise Invalid('地址用途说明包含未知字段或无掩码地址')
+            row,_=public_media_network(value,recipe)
+            result.add(row)
+        found+=1
+    if not found or not result:raise Invalid('明确的地址用途说明缺失')
+    return result

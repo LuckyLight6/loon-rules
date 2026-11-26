@@ -6,18 +6,26 @@ HIDDEN_HTML=frozenset({'script','style','template','noscript'})
 
 class HostTables(HTMLParser):
     """Consume host/role cells without preserving editorial text."""
-    def __init__(self):
+    def __init__(self,*,ignore_controls=False):
         super().__init__()
+        self.hidden_tags=HIDDEN_HTML|({'button'} if ignore_controls else set())
+        self.tables=defaultdict(list)
+        self._table_stack=[]
         self.section = ''
         self.rows = defaultdict(list)
         self.row = self.cell = None
         self.hidden = 0
 
     def handle_starttag(self, tag, attrs):
-        if tag in HIDDEN_HTML:self.hidden+=1
+        if tag in self.hidden_tags:self.hidden+=1
         if self.hidden:return
         if tag=='br' and self.cell is not None:
             self.cell.append(' ')
+        if tag=='table':
+            if self._table_stack:self._table_stack[-1]['nested']=True
+            table={'rows':[],'nested':False}
+            self.tables[self.section].append(table)
+            self._table_stack.append(table)
         if tag=='h2':
             self.section=dict(attrs).get('id') or ''
         elif tag=='tr':
@@ -30,8 +38,11 @@ class HostTables(HTMLParser):
             self.cell.append(value)
 
     def handle_endtag(self, tag):
-        if tag in HIDDEN_HTML:self.hidden=max(0,self.hidden-1);return
+        if tag in self.hidden_tags:self.hidden=max(0,self.hidden-1);return
         if self.hidden:return
+        if tag=='table':
+            if self._table_stack:self._table_stack.pop()
+            return
         if tag in ('td','th') and self.cell is not None:
             self.row.append(''.join(self.cell).strip())
             self.cell=None
@@ -43,6 +54,7 @@ class HostTables(HTMLParser):
 
     def record(self,row):
         self.rows[self.section].append(row)
+        if self._table_stack:self._table_stack[-1]['rows'].append(row)
 
 
 class AppleTables(HostTables):

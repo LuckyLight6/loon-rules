@@ -4,14 +4,14 @@
 # description: 其他海外网站与受限站点
 # boundary: 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除
 # created-at: 2026-11-19T17:59:30Z
-# updated-at: 2026-11-26T16:38:35Z
+# updated-at: 2026-11-26T20:13:18Z
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Proxy.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18472
-# rule-count: 18472
+# canonical-rule-count: 18471
+# rule-count: 18471
 # format: egern
 # canonical: rules/loon/8220-overseas-sites-extra.lsr
 
@@ -10911,7 +10911,6 @@ domain_suffix_set:
   - "newlineporn.com"
   - "newmitbbs.com"
   - "newnews.ca"
-  - "newrelic.com"
   - "newrepublic.com"
   - "news-postseven.com"
   - "news.com.au"

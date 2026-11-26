@@ -2,9 +2,9 @@
 # priority: 3000
 # section: development
 # description: 海外开发合集
-# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T20:44:08Z
+# updated-at: 2026-11-26T20:13:18Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr
 # source: https://api.github.com/meta
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
@@ -42,8 +42,10 @@
 # source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
 # source: https://backstage.io/docs/overview/background/
 # source: https://newsroom.spotify.com/2023-06-13/evolving-brands-measurement-experience-with-all-new-spotify-ad-analytics/
-# canonical-rule-count: 230
-# rule-count: 230
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# canonical-rule-count: 239
+# rule-count: 239
 # format: quantumult-x
 # canonical: rules/loon/3000-overseas-development-all.lsr
 
@@ -277,3 +279,12 @@ host,metarouter.pdst.io,proxy
 host,podcast-graph-dot-adaptive-growth.appspot.com,proxy
 host-suffix,pdst.fm,proxy
 host-suffix,podsights.com,proxy
+host-suffix,newrelic.com,proxy
+host,newrelic.github.io,proxy
+host,nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com,proxy
+host,nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com,proxy
+host,nr-synthetics-production.s3.amazonaws.com,proxy
+host,onenr.io,proxy
+host,pa-api.newrelic-external.com,proxy
+host-wildcard,*.nr-assets.net,proxy
+host-wildcard,*.nr-ext.net,proxy

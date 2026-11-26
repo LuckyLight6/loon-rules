@@ -18,6 +18,12 @@ def domain_column_table(recipe, text):
     value_format = recipe.get('value-format', 'domain')
     split_values = recipe.get('split-values', False)
     groups = recipe.get('group-rows', [])
+    escaped=recipe.get('decode-escaped-wildcards',False)
+    tenant_wildcards=recipe.get('allow-tenant-wildcards',False)
+    select=recipe.get('select')
+    controls=recipe.get('ignore-controls',False)
+    bare_addresses=recipe.get('allow-bare-addresses',False)
+    other_headers=recipe.get('other-table-headers')
     if (not isinstance(headers, list) or not headers
             or any(not isinstance(value, str) or not value.strip() for value in headers)
             or len(set(headers)) != len(headers)
@@ -29,15 +35,61 @@ def domain_column_table(recipe, text):
             or len(set(groups)) != len(groups)
             or type(split_values) is not bool
             or scope not in ('listed', 'domain-and-subdomains')
-            or value_format not in ('domain', 'url')
+            or type(escaped) is not bool or type(tenant_wildcards) is not bool
+            or type(controls) is not bool or type(bare_addresses) is not bool
+            or bare_addresses and value_format!='domain-or-url'
+            or value_format not in ('domain', 'url', 'domain-or-url')
             or value_format == 'url' and (scope != 'listed' or split_values)):
         raise Invalid('域名表缺少明确的列和匹配范围')
-    table = HostTables()
+    if select is not None:
+        if not isinstance(select,dict) or set(select)-{'roots','exact','purpose-column','purpose-prefixes'}:
+            raise Invalid('域名表的产品范围筛选无效')
+        for field in ('roots','exact'):
+            if field not in select:continue
+            values=select[field]
+            if (not isinstance(values,list) or any(not isinstance(value,str) or domain_scope.public_host(value)!=value for value in values)):
+                raise Invalid('域名表的产品名称筛选无效')
+        if 'purpose-prefixes' in select or 'purpose-column' in select:
+            prefixes=select.get('purpose-prefixes')
+            if (select.get('purpose-column') not in headers or not isinstance(prefixes,list) or not prefixes
+                    or any(not isinstance(value,str) or not value.strip() for value in prefixes)):
+                raise Invalid('域名表的用途选择缺少标题列或明确前缀')
+        if not any(select.get(field) for field in ('roots','exact','purpose-prefixes')):
+            raise Invalid('域名表没有实际产品范围选择')
+    if other_headers is not None:
+        if (not isinstance(other_headers,list) or any(not isinstance(value,list) or not value
+                or any(not isinstance(cell,str) or not cell.strip() for cell in value) for value in other_headers)
+                or headers in other_headers or len({tuple(value) for value in other_headers})!=len(other_headers)):
+            raise Invalid('同章节的其他表格须列出明确且不重复的标题列')
+    table = HostTables(ignore_controls=controls)
     table.feed(text)
+    if table._table_stack or table.row is not None or table.cell is not None or table.hidden:
+        raise Invalid('完整域名表的HTML结构未闭合')
     rows = table.rows.get(recipe['section'], [])
+    if other_headers is not None:
+        selected=[]
+        declared={tuple(value) for value in [headers,*other_headers]}
+        seen=set()
+        for current in table.tables.get(recipe['section'],[]):
+            values=current['rows']
+            if current['nested'] or len(values)<2:raise Invalid('完整章节含嵌套表或空表')
+            identity=tuple(values[0])
+            if identity not in declared or identity in seen:
+                raise Invalid('完整章节出现未知或重复用途表格')
+            seen.add(identity)
+            for cells in values[1:]:
+                if values[0]==headers and len(cells)==1 and cells[0] in groups:
+                    continue
+                if len(cells)!=len(identity) or tuple(cells)==identity:
+                    raise Invalid('已声明用途表格的数据列数变化或重复标题')
+            if values[0]==headers:selected.append(values)
+        if seen!=declared or len(selected)!=1:
+            raise Invalid('已声明的完整用途表格缺失或重复')
+        rows=selected[0]
     if rows.count(headers) != 1:
         raise Invalid('域名表的章节或标题列缺失、重复')
     result = set()
+    purposes={}
     for cells in rows:
         if cells == headers or len(cells) == 1 and cells[0] in groups:
             continue
@@ -45,15 +97,25 @@ def domain_column_table(recipe, text):
             raise Invalid('域名表的列数发生变化')
         for column in columns:
             cell = cells[headers.index(column)].strip()
-            values = re.split(r'[,\s]+', cell) if split_values else [cell]
+            values = re.split(r'[,|\s]+', cell) if split_values else [cell]
             for value in values:
-                if value_format == 'url':
-                    url = urlsplit(value)
-                    if (url.scheme not in ('https', 'wss') or not url.hostname or url.username is not None
-                            or url.query or url.fragment):
-                        raise Invalid('域名表的 URL 列不是公开 HTTPS 或 WSS 连接')
+                if escaped and value.startswith('\\*.'):value=value[1:]
+                bare=bare_addresses and '://' not in value
+                if value_format == 'url' or value_format=='domain-or-url' and ('://' in value or bare):
+                    url = urlsplit('//'+value if bare else value)
+                    try:port=url.port
+                    except ValueError as error:raise Invalid('端点表的端口字段无效') from error
+                    if (not bare and url.scheme not in ('https', 'wss') or not url.hostname or url.username is not None
+                            or url.query or url.fragment or port is not None and not 1<=port<=65535):
+                        raise Invalid('域名表的地址列不是公开主机或 HTTPS/WSS 连接')
                     value = url.hostname
+                elif value_format=='domain-or-url':
+                    value=value.removesuffix('/')
                 row = public_domain_pattern(value)
+                if row is None and tenant_wildcards and value.startswith('*.') and value.count('*')==1:
+                    tail=domain_scope.public_host(value[2:])
+                    suffix,private=domain_scope.current().suffix(tail)
+                    if private and tail!=suffix:row='DOMAIN-WILDCARD,*.'+tail
                 if row is None:
                     raise Invalid('域名表包含未确认归属的共享托管范围')
                 if scope == 'domain-and-subdomains':
@@ -61,6 +123,15 @@ def domain_column_table(recipe, text):
                         raise Invalid('域名列的整域匹配不接受通配符')
                     row = 'DOMAIN-SUFFIX,' + row.split(',')[1]
                 result.add(row)
+                if select is not None and select.get('purpose-prefixes'):
+                    purpose=' '.join(cells[headers.index(select['purpose-column'])].split()).casefold()
+                    purposes.setdefault(row,set()).add(purpose)
+    if select is not None:
+        result={row for row in result
+                if within(domain_scope.fixed_tail(row.split(',')[1]),select.get('roots',()))
+                or row.startswith('DOMAIN,') and row.split(',')[1] in select.get('exact',())
+                or any(purpose.startswith(prefix.casefold()) for purpose in purposes.get(row,())
+                       for prefix in select.get('purpose-prefixes',()))}
     if not result:
         raise Invalid('域名表没有可归属的公开名称')
     return result

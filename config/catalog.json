@@ -23,6 +23,23 @@
       "subheadings": {}
     },
     {
+      "start": 205,
+      "title": "按需启用的完整服务例外",
+      "groups": [
+        {
+          "id": "service-overrides",
+          "start": 205,
+          "title": "按需启用的完整服务例外",
+          "section": "development"
+        }
+      ],
+      "ids": [
+        "newrelic-service-all",
+        "newrelic-service-and-networks-all"
+      ],
+      "subheadings": {}
+    },
+    {
       "start": 210,
       "title": "广告与隐私",
       "groups": [
@@ -269,6 +286,12 @@
           "start": 3000,
           "title": "海外开发",
           "section": "development"
+        },
+        {
+          "id": "overseas-development-networks",
+          "start": 3290,
+          "title": "海外开发服务的专用目的网络",
+          "section": "development"
         }
       ],
       "ids": [
@@ -298,10 +321,13 @@
         "auth0-identity-platform",
         "bugsnag-error-monitoring",
         "backstage-developer-portal",
-        "spotify-advertising-and-analytics"
+        "spotify-advertising-and-analytics",
+        "newrelic-platform",
+        "newrelic-ingest-networks"
       ],
       "subheadings": {
-        "github-code-and-packages": "海外开发 · 产品细分"
+        "github-code-and-packages": "海外开发 · 产品细分",
+        "newrelic-ingest-networks": "海外开发服务的专用目的网络"
       }
     },
     {
@@ -6962,11 +6988,14 @@
       "description": "海外开发合集",
       "section": "development",
       "policy-hint": "global",
-      "boundary": "合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅",
+      "boundary": "合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。",
       "member-selection": {
         "section": "development",
         "groups": [
           "overseas-development"
+        ],
+        "exclude": [
+          "newrelic-ingest-networks"
         ]
       },
       "priority": 3000,
@@ -16120,6 +16149,594 @@
           "protect-from-reject": true
         }
       ]
+    },
+    {
+      "id": "newrelic-service-all",
+      "priority": 205,
+      "section": "development",
+      "routing-group": "service-overrides",
+      "mode": "view",
+      "policy-hint": "global",
+      "privacy-override": true,
+      "description": "New Relic 完整域名与必要遥测例外",
+      "boundary": "主动选用时优先于追踪拦截，完整覆盖官方所列公共域名、遥测与共享依赖。共享主机上的其他请求也随本表选路。目的IP另选3290，或改选0206；与3260及包含它的3000二选一。常规拦截本身不变，不纳入客户私有连接或整家云平台。",
+      "members": [
+        "newrelic-platform"
+      ],
+      "dependency-inputs": [
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "user-facing-domains",
+          "headers": [
+            "Domain",
+            "Description"
+          ],
+          "column": "Domain",
+          "decode-escaped-wildcards": true,
+          "allow-tenant-wildcards": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "new-relic-endpoints",
+          "headers": [
+            "Capability",
+            "US data center endpoint (default)",
+            "EU data center endpoint",
+            "Japan data center endpoint"
+          ],
+          "columns": [
+            "US data center endpoint (default)",
+            "EU data center endpoint",
+            "Japan data center endpoint"
+          ],
+          "split-values": true,
+          "group-rows": [
+            "APM",
+            "AWS",
+            "Browser",
+            "IAST",
+            "Ingest APIs",
+            "Infrastructure",
+            "Agent Control (Fleet Control)",
+            "Lookup tables",
+            "Mobile",
+            "OpenTelemetry"
+          ]
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "new-relic-dualstack-endpoints",
+          "headers": [
+            "Capability",
+            "US data center endpoint (default)",
+            "EU data center endpoint"
+          ],
+          "columns": [
+            "US data center endpoint (default)",
+            "EU data center endpoint"
+          ],
+          "split-values": true,
+          "group-rows": [
+            "APM",
+            "AWS",
+            "Browser",
+            "IAST",
+            "Ingest APIs",
+            "Infrastructure",
+            "Agent Control (Fleet Control)",
+            "Lookup tables",
+            "Mobile",
+            "OpenTelemetry"
+          ]
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+          "format": "domain-column-table",
+          "section": "agents",
+          "headers": [
+            "Endpoint",
+            "FedRAMP endpoint",
+            "Purpose and notes"
+          ],
+          "columns": [
+            "Endpoint",
+            "FedRAMP endpoint"
+          ],
+          "other-table-headers": [
+            [
+              "Language",
+              "Code or environment variable"
+            ],
+            [
+              "YAML config field",
+              "Endpoint URL"
+            ],
+            [
+              "Environment variable",
+              "Endpoint URL"
+            ],
+            [
+              "Agent",
+              "Code or environment variable"
+            ]
+          ],
+          "split-values": true,
+          "value-format": "domain-or-url",
+          "allow-bare-addresses": true,
+          "ignore-controls": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+          "format": "domain-column-table",
+          "section": "agents",
+          "headers": [
+            "YAML config field",
+            "Endpoint URL"
+          ],
+          "columns": [
+            "Endpoint URL"
+          ],
+          "other-table-headers": [
+            [
+              "Endpoint",
+              "FedRAMP endpoint",
+              "Purpose and notes"
+            ],
+            [
+              "Language",
+              "Code or environment variable"
+            ],
+            [
+              "Environment variable",
+              "Endpoint URL"
+            ],
+            [
+              "Agent",
+              "Code or environment variable"
+            ]
+          ],
+          "split-values": true,
+          "value-format": "domain-or-url",
+          "allow-bare-addresses": true,
+          "ignore-controls": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+          "format": "domain-column-table",
+          "section": "agents",
+          "headers": [
+            "Environment variable",
+            "Endpoint URL"
+          ],
+          "columns": [
+            "Endpoint URL"
+          ],
+          "other-table-headers": [
+            [
+              "Endpoint",
+              "FedRAMP endpoint",
+              "Purpose and notes"
+            ],
+            [
+              "Language",
+              "Code or environment variable"
+            ],
+            [
+              "YAML config field",
+              "Endpoint URL"
+            ],
+            [
+              "Agent",
+              "Code or environment variable"
+            ]
+          ],
+          "split-values": true,
+          "value-format": "domain-or-url",
+          "allow-bare-addresses": true,
+          "ignore-controls": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "agent-download",
+          "headers": [
+            "Purpose",
+            "Domain"
+          ],
+          "column": "Domain",
+          "split-values": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "The Pixie integration requires outbound network access to the following:"
+          ]
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "product-domain-statements",
+          "paragraph-contains": [
+            "Pixie community project uses container images"
+          ],
+          "code-only": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "Use one of the following according to your region:"
+          ],
+          "item-address": "single-url"
+        }
+      ]
+    },
+    {
+      "id": "newrelic-service-and-networks-all",
+      "priority": 206,
+      "section": "development",
+      "routing-group": "service-overrides",
+      "mode": "view",
+      "policy-hint": "global",
+      "privacy-override": true,
+      "description": "New Relic 域名、必要遥测与接收网络合集",
+      "boundary": "覆盖0205域名范围及3290公网目的IPv4/IPv6，主动选用时优先于追踪拦截。不能等价表达no-resolve的客户端会标记本组不可用，可使用0205域名方案。与0205、3260、3290或包含这些成员的合集二选一；不加入公共探测器专属出站地址、旧网段或客户VPC。",
+      "members": [
+        "newrelic-platform",
+        "newrelic-ingest-networks"
+      ],
+      "dependency-inputs": [
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "user-facing-domains",
+          "headers": [
+            "Domain",
+            "Description"
+          ],
+          "column": "Domain",
+          "decode-escaped-wildcards": true,
+          "allow-tenant-wildcards": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "new-relic-endpoints",
+          "headers": [
+            "Capability",
+            "US data center endpoint (default)",
+            "EU data center endpoint",
+            "Japan data center endpoint"
+          ],
+          "columns": [
+            "US data center endpoint (default)",
+            "EU data center endpoint",
+            "Japan data center endpoint"
+          ],
+          "split-values": true,
+          "group-rows": [
+            "APM",
+            "AWS",
+            "Browser",
+            "IAST",
+            "Ingest APIs",
+            "Infrastructure",
+            "Agent Control (Fleet Control)",
+            "Lookup tables",
+            "Mobile",
+            "OpenTelemetry"
+          ]
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "new-relic-dualstack-endpoints",
+          "headers": [
+            "Capability",
+            "US data center endpoint (default)",
+            "EU data center endpoint"
+          ],
+          "columns": [
+            "US data center endpoint (default)",
+            "EU data center endpoint"
+          ],
+          "split-values": true,
+          "group-rows": [
+            "APM",
+            "AWS",
+            "Browser",
+            "IAST",
+            "Ingest APIs",
+            "Infrastructure",
+            "Agent Control (Fleet Control)",
+            "Lookup tables",
+            "Mobile",
+            "OpenTelemetry"
+          ]
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+          "format": "domain-column-table",
+          "section": "agents",
+          "headers": [
+            "Endpoint",
+            "FedRAMP endpoint",
+            "Purpose and notes"
+          ],
+          "columns": [
+            "Endpoint",
+            "FedRAMP endpoint"
+          ],
+          "other-table-headers": [
+            [
+              "Language",
+              "Code or environment variable"
+            ],
+            [
+              "YAML config field",
+              "Endpoint URL"
+            ],
+            [
+              "Environment variable",
+              "Endpoint URL"
+            ],
+            [
+              "Agent",
+              "Code or environment variable"
+            ]
+          ],
+          "split-values": true,
+          "value-format": "domain-or-url",
+          "allow-bare-addresses": true,
+          "ignore-controls": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+          "format": "domain-column-table",
+          "section": "agents",
+          "headers": [
+            "YAML config field",
+            "Endpoint URL"
+          ],
+          "columns": [
+            "Endpoint URL"
+          ],
+          "other-table-headers": [
+            [
+              "Endpoint",
+              "FedRAMP endpoint",
+              "Purpose and notes"
+            ],
+            [
+              "Language",
+              "Code or environment variable"
+            ],
+            [
+              "Environment variable",
+              "Endpoint URL"
+            ],
+            [
+              "Agent",
+              "Code or environment variable"
+            ]
+          ],
+          "split-values": true,
+          "value-format": "domain-or-url",
+          "allow-bare-addresses": true,
+          "ignore-controls": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+          "format": "domain-column-table",
+          "section": "agents",
+          "headers": [
+            "Environment variable",
+            "Endpoint URL"
+          ],
+          "columns": [
+            "Endpoint URL"
+          ],
+          "other-table-headers": [
+            [
+              "Endpoint",
+              "FedRAMP endpoint",
+              "Purpose and notes"
+            ],
+            [
+              "Language",
+              "Code or environment variable"
+            ],
+            [
+              "YAML config field",
+              "Endpoint URL"
+            ],
+            [
+              "Agent",
+              "Code or environment variable"
+            ]
+          ],
+          "split-values": true,
+          "value-format": "domain-or-url",
+          "allow-bare-addresses": true,
+          "ignore-controls": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "agent-download",
+          "headers": [
+            "Purpose",
+            "Domain"
+          ],
+          "column": "Domain",
+          "split-values": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "The Pixie integration requires outbound network access to the following:"
+          ]
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "product-domain-statements",
+          "paragraph-contains": [
+            "Pixie community project uses container images"
+          ],
+          "code-only": true
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "Use one of the following according to your region:"
+          ],
+          "item-address": "single-url"
+        }
+      ]
+    },
+    {
+      "id": "newrelic-platform",
+      "priority": 3260,
+      "section": "development",
+      "routing-group": "overseas-development",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "New Relic 官网、控制台与专用资源",
+      "boundary": "识别官网、控制台与按用途确认的专用资源。nr-data.net遥测及共享依赖由0205域名服务例外承接，目的IP网络另在3290；不改常规追踪拦截。",
+      "sources": [
+        "https://newrelic.com/",
+        "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/"
+      ],
+      "extract": [
+        {
+          "source": "https://newrelic.com/",
+          "format": "site-identity",
+          "scope": "source-root",
+          "brand": "New Relic",
+          "allowed-canonical-query": {
+            "has_gdpr": "true"
+          }
+        },
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "format": "domain-column-table",
+          "section": "user-facing-domains",
+          "headers": [
+            "Domain",
+            "Description"
+          ],
+          "column": "Domain",
+          "decode-escaped-wildcards": true,
+          "allow-tenant-wildcards": true,
+          "select": {
+            "purpose-column": "Description",
+            "purpose-prefixes": [
+              "New Relic and supporting services",
+              "Static New Relic assets",
+              "New Relic Nerdpacks and assets",
+              "New Relic sharing permalinks",
+              "Synthetics screenshots, logs, and similar assets",
+              "New Relic Partner API",
+              "Public New Relic Github Pages"
+            ]
+          }
+        }
+      ],
+      "product-probes": [
+        "one.newrelic.com",
+        "download.newrelic.com",
+        "nr-synthetics-production.s3.amazonaws.com"
+      ],
+      "product-negatives": [
+        "s3.amazonaws.com",
+        "storage.googleapis.com",
+        "fonts.googleapis.com",
+        "bam.nr-data.net"
+      ]
+    },
+    {
+      "id": "newrelic-ingest-networks",
+      "priority": 3290,
+      "section": "development",
+      "routing-group": "overseas-development-networks",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "New Relic 数据接收网络IPv4与IPv6",
+      "boundary": "仅采用官方网页接收网段与JSON清单覆盖一致的公网目的地址，按no-resolve匹配；不加入探测器专属出站地址、已停用网络或客户VPC。可单用或选0206完整合集。",
+      "sources": [
+        "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+        "https://nr-downloads-main.s3.us-east-1.amazonaws.com/networking/newrelic-ip-ranges.json"
+      ],
+      "expand": {
+        "method": "network-source-agreement",
+        "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+        "max-documents": 2,
+        "inputs": [
+          {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "recipes": [
+              {
+                "format": "section-network-blocks",
+                "section": "ingest-blocks",
+                "families": [
+                  4
+                ],
+                "min-prefix": {
+                  "4": 16,
+                  "6": 28
+                }
+              },
+              {
+                "format": "section-network-blocks",
+                "section": "dualstack-ingest-blocks",
+                "families": [
+                  4,
+                  6
+                ],
+                "min-prefix": {
+                  "4": 16,
+                  "6": 28
+                }
+              }
+            ],
+            "retired-recipes": [
+              {
+                "format": "paragraph-network-list",
+                "prefix": "New Relic has discontinued the use of the following IP ranges:",
+                "until": "As of",
+                "min-prefix": {
+                  "4": 16,
+                  "6": 28
+                }
+              }
+            ]
+          },
+          {
+            "source": "https://nr-downloads-main.s3.us-east-1.amazonaws.com/networking/newrelic-ip-ranges.json",
+            "recipes": [
+              {
+                "format": "ip-network-map",
+                "fields": {
+                  "New Relic IPv4": 4,
+                  "New Relic IPv6": 6
+                },
+                "min-prefix": {
+                  "4": 16,
+                  "6": 28
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "ip-match": "target-ip"
     }
   ],
   "detailed": [
@@ -16278,6 +16895,8 @@
     "bugsnag-error-monitoring",
     "backstage-developer-portal",
     "spotify-advertising-and-analytics",
+    "newrelic-platform",
+    "newrelic-ingest-networks",
     "signal-messenger",
     "line-messenger",
     "slack-workspaces",
@@ -16489,6 +17108,8 @@
     "extended-ad-and-tracking"
   ],
   "views": [
+    "newrelic-service-all",
+    "newrelic-service-and-networks-all",
     "ai-overseas-all",
     "chatgpt-service-all",
     "grokipedia-service-all",
@@ -19330,6 +19951,15 @@
     ],
     "ai.azure.com": [
       "foundry-local-voice-models"
+    ],
+    "one.newrelic.com": [
+      "newrelic-platform"
+    ],
+    "download.newrelic.com": [
+      "newrelic-platform"
+    ],
+    "nr-synthetics-production.s3.amazonaws.com": [
+      "newrelic-platform"
     ]
   },
   "shared-negatives": [
@@ -19569,6 +20199,334 @@
       "ai-overseas-all",
       "github-copilot-service-all",
       "overseas-extra-all"
+    ],
+    "aws-api.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "cloud-collector.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "trace-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "nrql-lookup.service.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "aws-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "insights-collector.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "nr-synthetics-production.s3.amazonaws.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all",
+      "global-platforms-all"
+    ],
+    "infrastructure-command-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "cloud-collector.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "otlp.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "mobile-crash.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "insights-collector.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "download.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "aws-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "csec.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "metric-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "opamp.service.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "log-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "collector.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "opamp.service.jp.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "one.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "collector.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "infrastructure-command-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "mobile-symbol-upload.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "bam-cell.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "fonts.googleapis.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "google-all"
+    ],
+    "security-api.service.jp.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "metric-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "opamp.service.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "system-identity-oauth.service.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "otlp.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "gov-identity-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "identity-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "mobile-symbol-upload.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "identity-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "collector.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "metric-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "mobile-symbol-upload.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "infrastructure-command-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "work.withpixie.ai": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "aws-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "csec.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "log-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "bam.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "mobile-collector.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "identity-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "mobile-collector.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "registry-1.docker.io": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "withpixie.ai": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "insights-collector.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "gov-bam.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "cloud-collector.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "infra-api.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "bam.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "collector.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "otlp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "bam.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "nrql-lookup.service.jp.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "system-identity-oauth.service.jp.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "mobile-crash.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "infra-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "gcr.io": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-extra-all"
+    ],
+    "infra-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "trace-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "log-api.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "trace-api.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "nrql-lookup.service.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
+    ],
+    "mobile-collector.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "csec.jp.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "mobile-crash.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "infra-api.eu01.nr-data.net": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all"
+    ],
+    "system-identity-oauth.service.eu.newrelic.com": [
+      "newrelic-service-all",
+      "newrelic-service-and-networks-all",
+      "overseas-development-all"
     ]
   },
   "sections": [
@@ -19842,6 +20800,8 @@
       "id": "development",
       "title": "开发与代码托管",
       "numbers": [
+        205,
+        206,
         3000,
         3010,
         3020,
@@ -19869,6 +20829,8 @@
         3230,
         3240,
         3250,
+        3260,
+        3290,
         6300,
         6310,
         6320,
@@ -20423,6 +21385,96 @@
     },
     {
       "target": "2606:4700:4700::1001",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "64.251.192.1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "64.251.192.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "152.38.128.1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "152.38.128.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "162.247.240.1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "162.247.240.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "185.221.84.1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "185.221.84.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "212.32.0.1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "212.32.0.1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "2401:7c60::1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "2401:7c60::1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "2602:816:5000::1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "2602:816:5000::1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "2620:16:4000::1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "2620:16:4000::1",
+      "literal": false,
+      "rule": null
+    },
+    {
+      "target": "2a0d:8000::1",
+      "literal": true,
+      "rule": "newrelic-ingest-networks"
+    },
+    {
+      "target": "2a0d:8000::1",
       "literal": false,
       "rule": null
     }
@@ -27734,6 +28786,24 @@
             "name": "Paddle 订阅结账与商家平台",
             "rules": [
               "paddle-subscription-payments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "newrelic",
+        "name": "New Relic",
+        "products": [
+          {
+            "name": "官网、控制台、下载与专用资源",
+            "rules": [
+              "newrelic-platform"
+            ]
+          },
+          {
+            "name": "数据接收公网IPv4/IPv6",
+            "rules": [
+              "newrelic-ingest-networks"
             ]
           }
         ]

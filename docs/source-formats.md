@@ -77,6 +77,14 @@ Netflix 3825 从[官方连接检查说明](https://help.netflix.com/en/node/1442
 
 官方表已明确用途、且列出的是单个主机时，`host-table.select` 可结合 `role` 与 `all-exact: true` 跟随这些精确端点。2020 只选择 PCC 和 Apple Intelligence 扩展两种用途；官方增加第三方中继主机时可以自动补入，不必先把新名字写进白名单。相邻的 Siri、下载与 iCloud Private Relay 行不参加该选择，域名也不会扩大为整个 CDN 后缀。
 
+`domain-column-table` 可以用 `other-table-headers` 明确记录同一章节里的其他表格；主表和陪同表都须各出现一次，全部数据行逐一检查列数。未知、缺失或重复表格，以及缺列、多列都会停止更新。`select` 按用途列的已核对说明选择范围，筛选前仍验证全部行。`decode-escaped-wildcards` 只解开 Markdown 的星号转义；`allow-tenant-wildcards` 只允许已能区分的单个托管租户，不接受整个共享平台。`value-format: domain-or-url` 与 `allow-bare-addresses` 用于官方混列的域名、HTTPS／WSS 和明确主机端口，结果只保留主机。
+
+`purpose-domain-lists` 的 `item-address: single-url` 读取地区说明中每项唯一的 HTTPS／WSS 地址；多地址、未知协议、凭据及查询参数停止更新。`site-identity` 的 `allowed-canonical-query` 仅能在独立产品根站声明公开参数及其固定值，不放开未知、重复或凭据参数。
+
+目的网段可以用 `network-source-agreement` 核对两份完整发布形式。每份 `inputs` 指明来源及 `recipes`，支持按方向读取的 `section-network-blocks` 和按地址族字段读取的 `ip-network-map`；后者拒绝重复字段、地址族混用、非公网或过宽范围。比较按实际地址空间进行，等价的相邻 CIDR 可以合并；一方新增、缺失或不一致时保留上一版。两份同厂商资料用于相互核对，不算两票独立社区证据。
+
+`retired-recipes` 用 `paragraph-network-list` 的 `prefix`、`until` 读取官方明确撤回的地址说明。即使两份当前清单相同，与撤回范围相交仍停止更新。New Relic 3290 同时核对网页、官方 JSON 和撤回说明，只生成目标 IP 的 `no-resolve`；普通探测器出站地址不混入接收网络。
+
 ## plist 和客户端配置
 
 公开 plist 使用 `plist-service-fields`：

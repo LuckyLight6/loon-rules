@@ -12,7 +12,9 @@ class AuditConventions(unittest.TestCase):
         order = lib.subscription_order(config, entries)
         self.assertLess(order.index('general-ad-and-tracking'), order.index('extended-ad-and-tracking'))
         for product in order:
-            if entries[product]['section'] not in ('network', 'privacy'):
+            if entries[product].get('privacy-override'):
+                self.assertLess(order.index(product), order.index('general-ad-and-tracking'))
+            elif entries[product]['section'] not in ('network', 'privacy'):
                 self.assertLess(order.index('extended-ad-and-tracking'), order.index(product))
 
     def test_published_maintenance_labels_refer_to_the_current_catalog_numbers(self):

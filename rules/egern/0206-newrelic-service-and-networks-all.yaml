@@ -1,0 +1,54 @@
+# name: newrelic-service-and-networks-all
+# priority: 0206
+# section: development
+# description: New Relic 域名、必要遥测与接收网络合集
+# boundary: 覆盖0205域名范围及3290公网目的IPv4/IPv6，主动选用时优先于追踪拦截。不能等价表达no-resolve的客户端会标记本组不可用，可使用0205域名方案。与0205、3260、3290或包含这些成员的合集二选一；不加入公共探测器专属出站地址、旧网段或客户VPC。
+# created-at: 2026-11-26T20:13:18Z
+# updated-at: 2026-11-26T20:13:18Z
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# source: https://nr-downloads-main.s3.us-east-1.amazonaws.com/networking/newrelic-ip-ranges.json
+# source: https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/
+# source: https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/
+# canonical-rule-count: 31
+# rule-count: 31
+# format: egern
+# canonical: rules/loon/0206-newrelic-service-and-networks-all.lsr
+
+no_resolve: true
+domain_suffix_set:
+  - "newrelic.com"
+domain_set:
+  - "newrelic.github.io"
+  - "nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com"
+  - "nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com"
+  - "nr-synthetics-production.s3.amazonaws.com"
+  - "onenr.io"
+  - "pa-api.newrelic-external.com"
+  - "fonts.googleapis.com"
+  - "fonts.gstatic.com"
+  - "secure.gravatar.com"
+  - "www.google.com"
+  - "www.gstatic.com"
+  - "auth.docker.io"
+  - "production.cloudfront.docker.com"
+  - "registry-1.docker.io"
+  - "withpixie.ai"
+  - "work.withpixie.ai"
+  - "gcr.io"
+domain_regex_set:
+  - "(?i)^.*\\.nr\\-assets\\.net$"
+  - "(?i)^.*\\.nr\\-ext\\.net$"
+  - "(?i)^.*\\.nr\\-data\\.net$"
+  - "(?i)^.*\\.typescript\\.azureedge\\.net$"
+ip_cidr_set:
+  - "64.251.192.0/20"
+  - "152.38.128.0/19"
+  - "162.247.240.0/22"
+  - "185.221.84.0/22"
+  - "212.32.0.0/20"
+ip_cidr6_set:
+  - "2401:7c60::/32"
+  - "2602:816:5000::/40"
+  - "2620:16:4000::/48"
+  - "2a0d:8000::/29"

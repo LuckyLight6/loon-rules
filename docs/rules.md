@@ -32,9 +32,23 @@
 | 0150 | <a id="rule-ip-egress-checks"></a>`ip-egress-checks` | 查询当前公网出口：国内检测页、IPv4、IPv6 和双栈 API | 只收用途明确的查询主机，不接管 IP 资料站、DNS、STUN 或多用途网站。设为代理后，用这些主机查地址的 DDNS 客户端也会看到代理出口 |
 | 0160 | <a id="rule-cloudflare-public-dns"></a>`cloudflare-public-dns` | Cloudflare 公共 DNS 与标准解析器地址 | 从官方标准解析器表读取单个公网地址，全部 no-resolve；不使用 Cloudflare 大段 IP，也不导入 Families 产品地址 |
 
-## 2 广告与隐私
+## 2 按需启用的完整服务例外
 
-### 2.1 广告与隐私
+### 2.1 New Relic 完整域名与必要遥测例外合集
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 0205 | <a id="rule-newrelic-service-all"></a>`newrelic-service-all` | New Relic 完整域名与必要遥测例外 | **合集：替代 3260。** 主动选用时优先于追踪拦截，完整覆盖官方所列公共域名、遥测与共享依赖。共享主机上的其他请求也随本表选路。目的IP另选3290，或改选0206；与3260及包含它的3000二选一。常规拦截本身不变，不纳入客户私有连接或整家云平台。 |
+
+### 2.2 New Relic 域名、必要遥测与接收网络合集
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 0206 | <a id="rule-newrelic-service-and-networks-all"></a>`newrelic-service-and-networks-all` | New Relic 域名、必要遥测与接收网络合集 | **合集：替代 3260–3290。** 覆盖0205域名范围及3290公网目的IPv4/IPv6，主动选用时优先于追踪拦截。不能等价表达no-resolve的客户端会标记本组不可用，可使用0205域名方案。与0205、3260、3290或包含这些成员的合集二选一；不加入公共探测器专属出站地址、旧网段或客户VPC。 |
+
+## 3 广告与隐私
+
+### 3.1 广告与隐私
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -42,58 +56,58 @@
 | 0220 | <a id="rule-general-ad-and-tracking"></a>`general-ad-and-tracking` | Repcz 广告与追踪拦截 | 新增广告域名须有过滤表与 DNS 表共同支持；保留仍获原来源支持的已审范围，保护业务必需入口；未经交叉确认的新 IP 不自动加入 |
 | 0230 | <a id="rule-privacy-public-stun-endpoints"></a>`privacy-public-stun-endpoints` | 已公开的 STUN 主机，供选择性阻断 | **可选。** 仅两个精确主机，不拦 webrtc.org 或所有 stun.*。启用可能影响语音和会议；不能代替 WebRTC 或 DNS 出口检查 |
 
-### 2.2 可选扩展广告与统计拦截
+### 3.2 可选扩展广告与统计拦截
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 0240 | <a id="rule-extended-ad-and-tracking"></a>`extended-ad-and-tracking` | 可选的扩展广告与统计拦截 | **可选。** 默认关闭。整域拦截需过滤表与 DNS 表共同支持；与已列网站同范围或会覆盖正常入口的规则让位，专用广告子域仍可拦截 |
 
-## 3 AI 服务（海外与国际版）
+## 4 AI 服务（海外与国际版）
 
-### 3.1 海外 AI 合集
+### 4.1 海外 AI 合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1000 | <a id="rule-ai-overseas-all"></a>`ai-overseas-all` | 海外 AI 合集 | **合集：替代 1010、1020–1030、1035–1058、1060–1790。** 合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 |
 
-### 3.2 海外 AI · 产品细分
+### 4.2 海外 AI · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1010 | <a id="rule-claude-connections"></a>`claude-connections` | Anthropic：Claude、Claude Code 与 API（登录、附件、MCP 和更新） | Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和注册组织当前持有的 Anthropic ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude |
 
-### 3.3 ChatGPT、Codex、API 与官方共享依赖合集
+### 4.3 ChatGPT、Codex、API 与官方共享依赖合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1019 | <a id="rule-chatgpt-service-all"></a>`chatgpt-service-all` | ChatGPT、Codex、API 与官方共享依赖合集 | **合集：替代 1020。** 替代1020，包含官方网络清单中的 WorkOS、验证码、支付、支持和遥测接口；同一共享主机上的其他应用请求也随本表选路。与1000及1020二选一。 |
 
-### 3.4 细分规则
+### 4.4 细分规则
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1020 | <a id="rule-chatgpt-connections"></a>`chatgpt-connections` | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | ChatGPT、Codex、OpenAI API 与语音媒体的专用范围；需单份包含官方列出的共享登录、验证码、支付、支持与遥测接口时选1019，统一 AI 出口可选1000。共享主机不能按发起应用区分。 |
 | 1030 | <a id="rule-gemini-connections"></a>`gemini-connections` | Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel | Google AI 自有入口跟随已核实的专用来源、官方 API 与文档身份更新；通用 Google 登录、下载、存储与 API 仍分开 |
 
-### 3.5 Grokipedia 内容与登录合集
+### 4.5 Grokipedia 内容与登录合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1031 | <a id="rule-grokipedia-service-all"></a>`grokipedia-service-all` | Grokipedia 内容与登录合集 | **合集：替代 1035、1050。** 替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。 |
 
-### 3.6 Grok、xAI API 与登录合集
+### 4.6 Grok、xAI API 与登录合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1032 | <a id="rule-xai-service-all"></a>`xai-service-all` | Grok、xAI API 与登录合集 | **合集：替代 1035–1045。** 替代所列产品和共用账号成员，与其他包含同一账号成员的服务合集互斥。各应用目录内原1040-xai-connections是本组的同文兼容入口，保留原有登录覆盖；分别选路时使用1045内容与API、1035共用账号。 |
 
-### 3.7 Cursor 编辑器、API 与登录合集
+### 4.7 Cursor 编辑器、API 与登录合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1033 | <a id="rule-cursor-service-all"></a>`cursor-service-all` | Cursor 编辑器、API 与登录合集 | **合集：替代 1035、1100。** 替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。 |
 
-### 3.8 细分规则
+### 4.8 细分规则
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -102,13 +116,13 @@
 | 1050 | <a id="rule-grokipedia-encyclopedia"></a>`grokipedia-encyclopedia` | Grokipedia AI 百科站点 | 百科页面与内容；共用登录主机由前置1035优先匹配。单份覆盖内容及登录可选1031。 |
 | 1058 | <a id="rule-foundry-local-voice-models"></a>`foundry-local-voice-models` | Foundry Local 语音模型目录、区域 API 与下载 | Copilot CLI 与 App 的本地语音功能需要的模型目录、区域选择和下载；共享模型目录不能再按具体模型区分。Blob 只收官方明确的有限租户前缀，不收整个 Azure 云。 |
 
-### 3.9 GitHub Copilot、认证、实验与语音模型合集
+### 4.9 GitHub Copilot、认证、实验与语音模型合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1059 | <a id="rule-github-copilot-service-all"></a>`github-copilot-service-all` | GitHub Copilot、认证、实验与语音模型合集 | **合集：替代 1058、1060。** 替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。 |
 
-### 3.10 细分规则
+### 4.10 细分规则
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -189,13 +203,13 @@
 | 1780 | <a id="rule-dia-browser-services"></a>`dia-browser-services` | Dia 浏览器自营服务 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1790 | <a id="rule-openclaw-product-services"></a>`openclaw-product-services` | OpenClaw 产品与发布服务 | 只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理 |
 
-### 3.11 国产 AI 国际版合集
+### 4.11 国产 AI 国际版合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1800 | <a id="rule-ai-cn-international-all"></a>`ai-cn-international-all` | 国产 AI 国际版合集 | **合集：替代 1810–1920。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 3.12 国产 AI · 国际版产品细分
+### 4.12 国产 AI · 国际版产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -212,21 +226,21 @@
 | 1910 | <a id="rule-qoder-international"></a>`qoder-international` | Qoder · 国际产品入口 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1920 | <a id="rule-lovart-international"></a>`lovart-international` | Lovart · 国际产品入口 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 
-## 4 Apple 生态
+## 5 Apple 生态
 
-### 4.1 Apple 生态完整合集
+### 5.1 Apple 生态完整合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 2000 | <a id="rule-apple-all"></a>`apple-all` | Apple 生态完整合集 | **合集：替代 2020–2070、2090–2370。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 4.2 Apple 海外功能合集
+### 5.2 Apple 海外功能合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 2010 | <a id="rule-apple-overseas-all"></a>`apple-overseas-all` | Apple 海外功能合集 | **合集：替代 2020–2060。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 4.3 海外功能细分
+### 5.3 海外功能细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -236,19 +250,19 @@
 | 2050 | <a id="rule-apple-tv-video-delivery"></a>`apple-tv-video-delivery` | Apple TV 已识别的 HLS 视频交付 | 匹配已识别 HLS 主机。大陆网络默认与 TV 播放控制同一代理；可单独统计流量，不把其他 Apple CDN 一并代理 |
 | 2060 | <a id="rule-apple-news-and-sports"></a>`apple-news-and-sports` | Apple News／News+、内容入口与 Apple Sports | 中国大陆未提供；默认选对应服务可用地区的代理，不纳入国内直连例外 |
 
-### 4.4 APNs 推送
+### 5.4 APNs 推送
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 2070 | <a id="rule-apple-push-connection"></a>`apple-push-connection` | APNs 系统推送的域名与公开客户端网段 | 独立选择长连接出口。默认保留实测可用路径；直连丢通知时可只切此组对照。不能按 App 国别拆系统推送 |
 
-### 4.5 Apple 普通服务合集
+### 5.5 Apple 普通服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 2080 | <a id="rule-apple-direct-all"></a>`apple-direct-all` | Apple 普通服务合集 | **合集：替代 2090–2370。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 4.6 普通服务细分
+### 5.6 普通服务细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -282,15 +296,15 @@
 | 2360 | <a id="rule-apple-feedback-and-diagnostics"></a>`apple-feedback-and-diagnostics` | Feedback Assistant、错误报告与自愿诊断上传 | 只分流已有的反馈和诊断连接，不启用数据分享；诊断素材下载仍归系统联网，更新检查与包体分开 |
 | 2370 | <a id="rule-apple-other-services"></a>`apple-other-services` | Apple 官网与尚未细分的通用服务 | 放在 Apple 细分之后，接住来源列出的 Apple 自有服务域；随完整域名来源补入，不另列一份根域白名单。细分先匹配；忽略上游进程和 IP 规则，不使用整个 17.0.0.0/8 |
 
-## 5 开发（海外）
+## 6 开发（海外）
 
-### 5.1 海外开发合集
+### 6.1 海外开发合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 3000 | <a id="rule-overseas-development-all"></a>`overseas-development-all` | 海外开发合集 | **合集：替代 3010–3250。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
+| 3000 | <a id="rule-overseas-development-all"></a>`overseas-development-all` | 海外开发合集 | **合集：替代 3010–3260。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。 |
 
-### 5.2 海外开发 · 产品细分
+### 6.2 海外开发 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -320,16 +334,23 @@
 | 3230 | <a id="rule-bugsnag-error-monitoring"></a>`bugsnag-error-monitoring` | Bugsnag 错误监控与会话报告 | 供应商自有平台与共享客户端组件；已被前置产品专表识别的专用租户继续归原产品，不因被某个应用使用就整域算作该应用 |
 | 3240 | <a id="rule-backstage-developer-portal"></a>`backstage-developer-portal` | Backstage 开发者门户项目 | Backstage 项目网站与公开产品清单；用户自行部署的门户、GitHub 源码托管和 Spotify 音乐不归本组 |
 | 3250 | <a id="rule-spotify-advertising-and-analytics"></a>`spotify-advertising-and-analytics` | Spotify 广告 API 与广告分析 | Ads API 及 Podsights／Spotify Ad Analytics 的控制台、统计和指定租户；分类不代表免于广告与隐私拦截，不接管整个 Spotify 或 Google 云 |
+| 3260 | <a id="rule-newrelic-platform"></a>`newrelic-platform` | New Relic 官网、控制台与专用资源 | 识别官网、控制台与按用途确认的专用资源。nr-data.net遥测及共享依赖由0205域名服务例外承接，目的IP网络另在3290；不改常规追踪拦截。 |
 
-## 6 通讯与社交（海外）
+### 6.3 海外开发服务的专用目的网络
 
-### 6.1 海外通讯与社交合集
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 3290 | <a id="rule-newrelic-ingest-networks"></a>`newrelic-ingest-networks` | New Relic 数据接收网络IPv4与IPv6 | 仅采用官方网页接收网段与JSON清单覆盖一致的公网目的地址，按no-resolve匹配；不加入探测器专属出站地址、已停用网络或客户VPC。可单用或选0206完整合集。 |
+
+## 7 通讯与社交（海外）
+
+### 7.1 海外通讯与社交合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3300 | <a id="rule-overseas-social-all"></a>`overseas-social-all` | 海外通讯与社交合集 | **合集：替代 3310–3480。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 6.2 海外通讯与社交 · 产品细分
+### 7.2 海外通讯与社交 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -352,15 +373,15 @@
 | 3470 | <a id="rule-linkedin-network"></a>`linkedin-network` | LinkedIn | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 | 3480 | <a id="rule-meta-shared-services"></a>`meta-shared-services` | Meta、Facebook 与 Messenger 共用服务 | 跟随所列 Facebook、Messenger、Meta 与 Oculus 业务域范围；品牌拼写变体、买粉、周边站点和未确认用途不作为产品端点；Instagram、WhatsApp、Threads 与 Meta AI 先匹配各自专表 |
 
-## 7 支付（海外）
+## 8 支付（海外）
 
-### 7.1 海外支付合集
+### 8.1 海外支付合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3500 | <a id="rule-overseas-payments-all"></a>`overseas-payments-all` | 海外支付合集 | **合集：替代 3510–3595。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 7.2 海外支付 · 产品细分
+### 8.2 海外支付 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -375,15 +396,15 @@
 | 3590 | <a id="rule-paddle-subscription-payments"></a>`paddle-subscription-payments` | Paddle 订阅支付、结账、商家 API、账单与 Retain | 从 Paddle.js 生产环境字段跟随当前 Retain 脚本，覆盖结账、商家 API、账单与恢复支付接口；共享 ProfitWell 主机上的其他请求也随本表匹配。开发与预发布环境单独排除，其他支付处理方保留各自规则。 |
 | 3595 | <a id="rule-lemonsqueezy-subscription-payments"></a>`lemonsqueezy-subscription-payments` | Lemon Squeezy 订阅支付、结账与商家 API | 官网身份核对支付平台的自有命名空间，覆盖结账和商家入口；商家的自定义域名及银行卡、PayPal、Apple Pay、Google Pay 等处理方仍按其实际服务匹配，不认领整家云平台。 |
 
-## 8 加密资产服务（海外）
+## 9 加密资产服务（海外）
 
-### 8.1 海外加密资产服务合集
+### 9.1 海外加密资产服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3600 | <a id="rule-overseas-crypto-all"></a>`overseas-crypto-all` | 海外加密资产服务合集 | **合集：替代 3610–3700。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 8.2 海外加密资产服务 · 产品细分
+### 9.2 海外加密资产服务 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -398,15 +419,15 @@
 | 3690 | <a id="rule-toncenter-blockchain-api"></a>`toncenter-blockchain-api` | TON Center 区块链 API | 识别 TON Center 自营 API、主网与测试网入口；其他 RPC 提供商和 Telegram 消息分别匹配 |
 | 3700 | <a id="rule-fragment-digital-assets"></a>`fragment-digital-assets` | Fragment 用户名与数字资产服务 | 识别 Fragment 自营网站及服务；Telegram 登录和钱包连接按各自服务匹配，不视为 Telegram 消息流量 |
 
-## 9 影音与内容（海外）
+## 10 影音与内容（海外）
 
-### 9.1 海外影音与内容合集
+### 10.1 海外影音与内容合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3800 | <a id="rule-overseas-media-all"></a>`overseas-media-all` | 海外影音与内容合集 | **合集：替代 3810–3960。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 9.2 视频平台与配套服务
+### 10.2 视频平台与配套服务
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -423,7 +444,7 @@
 | 3890 | <a id="rule-iqiyi-international"></a>`iqiyi-international` | 爱奇艺国际版 iQIYI 与专用国际 API | 国际产品域及已核对的 intl 服务子域先匹配；爱奇艺国内版与整段 iqiyi.com 由国内版规则处理 |
 | 3900 | <a id="rule-vimeo-video"></a>`vimeo-video` | Vimeo 视频与交付 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 
-### 9.3 音乐与音频平台
+### 10.3 音乐与音频平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -431,34 +452,34 @@
 | 3915 | <a id="rule-whosampled-music-discovery"></a>`whosampled-music-discovery` | WhoSampled 音乐采样与作品资料库 | 按官方项目说明读取音乐资料网站与同主机 API，和 Spotify 播放入口分开；不因移动 App 未纳入漏洞奖励就认定其网络流量可忽略 |
 | 3920 | <a id="rule-soundcloud-audio"></a>`soundcloud-audio` | SoundCloud 音频与创作者服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 
-### 9.4 直播平台
+### 10.4 直播平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3930 | <a id="rule-twitch-live-video"></a>`twitch-live-video` | Twitch 直播、聊天室和内容 CDN | 不导入整个来源 ASN/IP 或关键词。Twitch 专属后缀独立于其他视频服务 |
 
-### 9.5 新闻与内容社区
+### 10.5 新闻与内容社区
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3940 | <a id="rule-bbc-news-and-video"></a>`bbc-news-and-video` | BBC 新闻与影音 | BBC 自有产品域；不包揽共享 CDN 或据此保证地区版权可用 |
 | 3950 | <a id="rule-bahamut-video-and-community"></a>`bahamut-video-and-community` | 巴哈姆特动画疯和电玩社区 | 专表有巴哈姆特域名和精确 CDN 别名，不匹配整个 Akamai/Hinet |
 
-### 9.6 影音平台共用接口
+### 10.6 影音平台共用接口
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 3960 | <a id="rule-wbd-streaming-platform"></a>`wbd-streaming-platform` | HBO Max 与 Discovery 共用流媒体接口和网页图片 | Max 与 Discovery+ 共用后端、网页图片，以及 Discovery 旧接口平台；原站图片由具体产品处理，共用图片只收实际请求主机，不接管整个 CDN 或图片参数里的后台存储 |
 
-## 10 游戏（海外）
+## 11 游戏（海外）
 
-### 10.1 海外游戏合集
+### 11.1 海外游戏合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 4100 | <a id="rule-overseas-games-all"></a>`overseas-games-all` | 海外游戏合集 | **合集：替代 4110–4190。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 10.2 海外游戏 · 产品细分
+### 11.2 海外游戏 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -472,15 +493,15 @@
 | 4180 | <a id="rule-blizzard-battlenet"></a>`blizzard-battlenet` | Blizzard / Battle.net 国际服务 | 国际平台入口；国内运营商入口不因品牌相同而并入 |
 | 4190 | <a id="rule-netease-international-games"></a>`netease-international-games` | 网易国际游戏与共用 SDK | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 
-## 11 办公、邮件与协作（海外）
+## 12 办公、邮件与协作（海外）
 
-### 11.1 海外办公、邮件与协作合集
+### 12.1 海外办公、邮件与协作合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 4300 | <a id="rule-overseas-productivity-all"></a>`overseas-productivity-all` | 海外办公、邮件与协作合集 | **合集：替代 4310–4360。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 11.2 海外办公、邮件与协作 · 产品细分
+### 12.2 海外办公、邮件与协作 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -491,15 +512,15 @@
 | 4350 | <a id="rule-proton-suite"></a>`proton-suite` | Proton 邮件、账户及共用服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 | 4360 | <a id="rule-intercom-customer-support"></a>`intercom-customer-support` | Intercom 客服、会话、附件与实时通信 | 核心站点与官方 CSP 中 Intercom 品牌来源；地区 CDN 和附件范围跟随文档，不收 YouTube、Vimeo 等外部嵌入产品 |
 
-## 12 Google 生态
+## 13 Google 生态
 
-### 12.1 Google 日常服务合集
+### 13.1 Google 日常服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 4500 | <a id="rule-google-all"></a>`google-all` | Google 日常服务合集 | **合集：替代 4510–4590。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 12.2 Google 日常服务 · 产品细分
+### 13.2 Google 日常服务 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -514,15 +535,15 @@
 | 4585 | <a id="rule-google-firebase-messaging"></a>`google-firebase-messaging` | Google Firebase Cloud Messaging 推送与令牌注册 | Web、iOS SDK 与官方 API 元数据读取推送专用主机；不把设备配置、Firebase 安装标识或 Google 网段都判作推送；iOS 通知的 APNs 接收路径仍在 Apple |
 | 4590 | <a id="rule-google-platform-services"></a>`google-platform-services` | Google 搜索、官方资讯、安全浏览 API 与共享平台兜底 | 账号、邮件、会议、云盘、商店、下载、Gemini 和 YouTube 专项先匹配；官方资讯入口按页面用途读取，安全浏览读取服务字段，共用主机保留在平台层，不引入整段共享 IP |
 
-## 13 Microsoft 生态
+## 14 Microsoft 生态
 
-### 13.1 Microsoft 日常服务合集
+### 14.1 Microsoft 日常服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 4700 | <a id="rule-microsoft-all"></a>`microsoft-all` | Microsoft 日常服务合集 | **合集：替代 4710–4820。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 13.2 Microsoft 日常服务 · 产品细分
+### 14.2 Microsoft 日常服务 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -539,15 +560,15 @@
 | 4810 | <a id="rule-microsoft-xbox-services"></a>`microsoft-xbox-services` | Xbox Live 已知登录与服务端点 | 明确的 Xbox 令牌与服务、资产主机；不代表全部游戏下载、语音、联机流量均可按域名识别 |
 | 4820 | <a id="rule-microsoft-platform-services"></a>`microsoft-platform-services` | Microsoft 通用客户端和共享服务兜底 | 保留 Microsoft 通用服务和官方列出的 Azure 控制端点；按官方云定义排除租户后缀及会覆盖租户的父域。Graph 留在这里，不把多租户托管平台或共享 Akamai 整段接管 |
 
-## 14 跨国厂商国内可用服务
+## 15 跨国厂商国内可用服务
 
-### 14.1 跨国厂商国内可用服务合集
+### 15.1 跨国厂商国内可用服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 4900 | <a id="rule-multinational-mainland-all"></a>`multinational-mainland-all` | 跨国厂商国内可用服务合集 | **合集：替代 4910–4980。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 14.2 厂商国内入口细分
+### 15.2 厂商国内入口细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -560,15 +581,15 @@
 | 4970 | <a id="rule-amazon-mainland"></a>`amazon-mainland` | Amazon 与 AWS 中国区入口 | 采用来源明确标注有中国大陆接入的范围，不按厂商总部或 .cn 后缀猜地区；不等同于所有服务只在中国运行，国际入口与共用主机另列 |
 | 4980 | <a id="rule-microsoft-china-cloud-controls"></a>`microsoft-china-cloud-controls` | Microsoft Azure 中国区登录与控制端点 | 从 Azure 官方中国云定义读取登录、管理、门户、目录与 Graph 入口；只收精确控制主机，不接管中国云租户存储或整个 chinacloudapi.cn |
 
-## 15 AI 服务（国内版）
+## 16 AI 服务（国内版）
 
-### 15.1 国产 AI 国内版与共用入口合集
+### 16.1 国产 AI 国内版与共用入口合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6000 | <a id="rule-ai-cn-all"></a>`ai-cn-all` | 国产 AI 国内版与共用入口合集 | **合集：替代 6010–6170。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 15.2 国产 AI · 国内版与共用入口 · 产品细分
+### 16.2 国产 AI · 国内版与共用入口 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -590,29 +611,29 @@
 | 6160 | <a id="rule-modelscope-mainland"></a>`modelscope-mainland` | 魔搭 ModelScope · 模型 API | ModelScope 模型 API；模型文件与共享下载地址不因这个 API 一并代理 |
 | 6170 | <a id="rule-xiaomi-mainland-and-shared"></a>`xiaomi-mainland-and-shared` | 小米 MiMo · 国内计划与共用 API | MiMo 国内计划和没有独立地区域名的共用 API；共用入口不能据域名判断账户地区，海外专用计划在国际版规则中 |
 
-## 16 海外 AI 中国区服务
+## 17 海外 AI 中国区服务
 
-### 16.1 海外 AI 中国区服务合集
+### 17.1 海外 AI 中国区服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6250 | <a id="rule-ai-overseas-mainland-all"></a>`ai-overseas-mainland-all` | 海外 AI 中国区服务合集 | **合集：替代 6260。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 16.2 海外 AI · 中国区服务 · 产品细分
+### 17.2 海外 AI · 中国区服务 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6260 | <a id="rule-jetbrains-ai-mainland"></a>`jetbrains-ai-mainland` | JetBrains AI · 中国区 API | 只采用官方明确标注 for China 的 API 主机；不并入国产 AI 合集，不按 .cn 后缀推断其它服务或地区 |
 
-## 17 开发（国内）
+## 18 开发（国内）
 
-### 17.1 国内开发合集
+### 18.1 国内开发合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6300 | <a id="rule-mainland-development-all"></a>`mainland-development-all` | 国内开发合集 | **合集：替代 6310–6350。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 17.2 国内开发 · 产品细分
+### 18.2 国内开发 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -622,15 +643,15 @@
 | 6340 | <a id="rule-npmmirror-registry"></a>`npmmirror-registry` | npmmirror 国内镜像 | npm 镜像与二进制镜像；不会替 npm 客户端修改源 |
 | 6350 | <a id="rule-tuna-mirrors"></a>`tuna-mirrors` | 清华 TUNA 开源镜像 | 只收镜像站与 PyPI 镜像，不接管校园网络 |
 
-## 18 通讯与社交（国内及两版共用）
+## 19 通讯与社交（国内及两版共用）
 
-### 18.1 国内通讯与社交合集
+### 19.1 国内通讯与社交合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6500 | <a id="rule-mainland-social-all"></a>`mainland-social-all` | 国内通讯与社交合集 | **合集：替代 6510–6570。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 18.2 国内通讯与社交 · 产品细分
+### 19.2 国内通讯与社交 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -642,15 +663,15 @@
 | 6560 | <a id="rule-xiaohongshu-community"></a>`xiaohongshu-community` | 小红书国内内容、社区及专用 CDN | 只收明确产品域；去掉共用风控，不把海外版或未知通用基础设施归入 |
 | 6570 | <a id="rule-zhihu-community"></a>`zhihu-community` | 知乎 | 社区和图片域；明确的广告仍由前置拦截规则处理 |
 
-## 19 支付（国内）
+## 20 支付（国内）
 
-### 19.1 国内支付合集
+### 20.1 国内支付合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6700 | <a id="rule-mainland-payments-all"></a>`mainland-payments-all` | 国内支付合集 | **合集：替代 6710–6730。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 19.2 国内支付 · 产品细分
+### 20.2 国内支付 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -658,15 +679,15 @@
 | 6720 | <a id="rule-unionpay-mainland"></a>`unionpay-mainland` | 银联、云闪付国内服务 | 国内服务入口；不把银联国际站按国内支付匹配 |
 | 6730 | <a id="rule-tenpay-mainland-payments"></a>`tenpay-mainland-payments` | 财付通与 QQ 钱包共用支付 | 独立财付通域下的账户、支付、QQ 钱包与共用资源；微信专域下的支付接入仍由微信表处理；TenPay Global 独立分类 |
 
-## 20 影音与直播（国内）
+## 21 影音与直播（国内）
 
-### 20.1 国内影音与直播合集
+### 21.1 国内影音与直播合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 6900 | <a id="rule-mainland-media-all"></a>`mainland-media-all` | 国内影音与直播合集 | **合集：替代 6910–7000。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 20.2 视频平台
+### 21.2 视频平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -674,7 +695,7 @@
 | 6920 | <a id="rule-iqiyi-mainland"></a>`iqiyi-mainland` | 爱奇艺国内版 | 国内版与专用素材；同时使用国际版规则时，国际专用子域先匹配；单用本表不能从 iqiyi.com 父域排除国际业务 |
 | 6930 | <a id="rule-youku-video"></a>`youku-video` | 优酷国内站 | 只认国内站及专用素材，不收国际站、整个阿里 CDN |
 
-### 20.3 音乐、听书与互动平台
+### 21.3 音乐、听书与互动平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -688,7 +709,7 @@
 | 6960 | <a id="rule-netease-music"></a>`netease-music` | 网易云音乐 | 识别音乐 API、音频与专用内容主机；网易通用云、其他产品和上游大段 IP 不并入音乐表 |
 | 6965 | <a id="rule-tencent-music-shared-services"></a>`tencent-music-shared-services` | 腾讯音乐集团、目录产品与共用服务 | 完整集团清单及官网产品目录扣除前面已识别的具体产品；保留官网、曲谱等目录入口与共用连接，不包含整个腾讯网络 |
 
-### 20.4 短视频与直播平台
+### 21.4 短视频与直播平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -697,15 +718,15 @@
 | 6990 | <a id="rule-douyu-live"></a>`douyu-live` | 斗鱼直播 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 | 7000 | <a id="rule-huya-live"></a>`huya-live` | 虎牙直播 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 
-## 21 游戏（国内）
+## 22 游戏（国内）
 
-### 21.1 国内游戏合集
+### 22.1 国内游戏合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 7200 | <a id="rule-mainland-games-all"></a>`mainland-games-all` | 国内游戏合集 | **合集：替代 7210–7230。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 21.2 国内游戏 · 产品细分
+### 22.2 国内游戏 · 产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -713,22 +734,22 @@
 | 7220 | <a id="rule-mihoyo-mainland"></a>`mihoyo-mainland` | 米哈游国服与米游社 | 只选可区分的国服产品入口，不根据共享素材判断游戏区服 |
 | 7230 | <a id="rule-wegame-mainland"></a>`wegame-mainland` | 腾讯 WeGame 国内平台 | 国内平台；不把 Tencent Games 的国际产品和整个 qq.com 直连 |
 
-## 22 购物、生活与办公（国内）
+## 23 购物、生活与办公（国内）
 
-### 22.1 国内购物、生活与办公合集
+### 23.1 国内购物、生活与办公合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 7400 | <a id="rule-mainland-daily-services-all"></a>`mainland-daily-services-all` | 国内购物、生活与办公合集 | **合集：替代 7410–7480。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 22.2 购物平台
+### 23.2 购物平台
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 7410 | <a id="rule-taobao-and-xianyu-shopping"></a>`taobao-and-xianyu-shopping` | 淘宝、天猫、闲鱼购物与图片 | 只收国内消费平台及专用 CDN。不含 AliExpress、整个阿里云或支付宝 |
 | 7420 | <a id="rule-jingdong-shopping"></a>`jingdong-shopping` | 京东购物、账户与商品素材 | 不将整个京东云网络或金融产品一并转为购物匹配 |
 
-### 22.3 出行与生活服务
+### 23.3 出行与生活服务
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -736,7 +757,7 @@
 | 7440 | <a id="rule-meituan-services"></a>`meituan-services` | 美团与大众点评服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 | 7450 | <a id="rule-didi-mobility"></a>`didi-mobility` | 滴滴出行 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 
-### 22.4 办公、云盘与学习工具
+### 23.4 办公、云盘与学习工具
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -744,15 +765,15 @@
 | 7470 | <a id="rule-aliyun-drive"></a>`aliyun-drive` | 阿里云盘 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 | 7480 | <a id="rule-wps-office"></a>`wps-office` | WPS Office 与文档服务 | 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理 |
 
-## 23 全球厂商与云平台共用服务
+## 24 全球厂商与云平台共用服务
 
-### 23.1 全球厂商与云平台共用服务合集
+### 24.1 全球厂商与云平台共用服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 8000 | <a id="rule-global-platforms-all"></a>`global-platforms-all` | 全球厂商与云平台共用服务合集 | **合集：替代 8010–8150。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 23.2 厂商与云平台细分
+### 24.2 厂商与云平台细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -772,30 +793,30 @@
 | 8140 | <a id="rule-mux-data-analytics"></a>`mux-data-analytics` | Mux Data 播放质量监测与 SDK | Mux Data 的专用 litix.io 名称空间；供多个应用使用，独立于接入应用的内容播放规则 |
 | 8150 | <a id="rule-mux-video-platform"></a>`mux-video-platform` | Mux 视频播放、缩略图与平台接口 | Mux 自有 mux.com 平台范围，按官方 CSP 跟随播放和图片入口；上传使用的 Google 公共存储仍由其自身规则处理 |
 
-## 24 海外补充
+## 25 海外补充
 
-### 24.1 海外补充合集
+### 25.1 海外补充合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 8200 | <a id="rule-overseas-extra-all"></a>`overseas-extra-all` | 海外补充合集 | **合集：替代 8210–8220。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 24.2 影音与网站补充
+### 25.2 影音与网站补充
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 8210 | <a id="rule-overseas-media-extra"></a>`overseas-media-extra` | 其他海外影音 | 只补专项未覆盖的影音域名，交给海外影音策略；不按共享 IP、关键字或客户端名识别 |
 | 8220 | <a id="rule-overseas-sites-extra"></a>`overseas-sites-extra` | 其他海外网站与受限站点 | 专项先识别；已采用的海外与受限站点来源优先于宽泛国内补充，共享云与公共后缀继续排除 |
 
-## 25 国内厂商共用服务
+## 26 国内厂商共用服务
 
-### 25.1 国内厂商共用服务合集
+### 26.1 国内厂商共用服务合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 8400 | <a id="rule-mainland-platforms-all"></a>`mainland-platforms-all` | 国内厂商共用服务合集 | **合集：替代 8410–8495。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 25.2 厂商共用范围细分
+### 26.2 厂商共用范围细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
@@ -811,15 +832,15 @@
 | 8490 | <a id="rule-sina-shared-image-assets"></a>`sina-shared-image-assets` | 新浪与微博共用图片 | 新浪新闻、微博等服务共用的图片域，不代表微博专用；图片域下的广告仍按前置拦截规则处理 |
 | 8495 | <a id="rule-sina-web-and-shared-services"></a>`sina-web-and-shared-services` | 新浪网站、新闻、邮箱与网页服务 | 新浪网站与共用网页范围；微博、AI 和共用图片按前表分别处理，不把整个新浪云租户平台当新闻网站 |
 
-## 26 国内补充
+## 27 国内补充
 
-### 26.1 国内补充合集
+### 27.1 国内补充合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 8600 | <a id="rule-mainland-routing-all"></a>`mainland-routing-all` | 国内补充合集 | **合集：替代 8610–8630。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 26.2 域名、网段与 GeoIP
+### 27.2 域名、网段与 GeoIP
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|

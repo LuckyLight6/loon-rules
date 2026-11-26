@@ -12,6 +12,8 @@
 | 0140 | tailscale-control-and-tailnet | Tailscale 控制面、公开中继与 Tailnet 域名 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/0140-tailscale-control-and-tailnet.list) |
 | 0150 | ip-egress-checks | 查询当前公网出口：国内检测页、IPv4、IPv6 和双栈 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/0150-ip-egress-checks.list) |
 | 0160 | cloudflare-public-dns | Cloudflare 公共 DNS 与标准解析器地址 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
+| 0205 | newrelic-service-all | New Relic 完整域名与必要遥测例外 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/0205-newrelic-service-all.list) |
+| 0206 | newrelic-service-and-networks-all | New Relic 域名、必要遥测与接收网络合集 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 0210 | apple-and-ai-privacy-exceptions | Apple 广告与 OpenAI 广告像素的已核实拒绝项 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/0210-apple-and-ai-privacy-exceptions.list) |
 | 0220 | general-ad-and-tracking | Repcz 广告与追踪拦截 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 0230 | privacy-public-stun-endpoints | 已公开的 STUN 主机，供选择性阻断 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/0230-privacy-public-stun-endpoints.list) |
@@ -183,6 +185,8 @@
 | 3230 | bugsnag-error-monitoring | Bugsnag 错误监控与会话报告 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3230-bugsnag-error-monitoring.list) |
 | 3240 | backstage-developer-portal | Backstage 开发者门户项目 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3240-backstage-developer-portal.list) |
 | 3250 | spotify-advertising-and-analytics | Spotify 广告 API 与广告分析 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3250-spotify-advertising-and-analytics.list) |
+| 3260 | newrelic-platform | New Relic 官网、控制台与专用资源 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3260-newrelic-platform.list) |
+| 3290 | newrelic-ingest-networks | New Relic 数据接收网络IPv4与IPv6 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3300 | overseas-social-all | 海外通讯与社交合集 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3310 | telegram-messaging | Telegram 通讯、文件与官方关联工具 | Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR |
 | 3320 | discord-messaging-and-voice | Discord 通讯、语音及自营服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/3320-discord-messaging-and-voice.list) |

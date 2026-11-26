@@ -33,7 +33,10 @@ class SemanticCatalog(unittest.TestCase):
         self.assertGreater(len(foreign),70);self.assertEqual(len(international),12)
         self.assertLess(max(entries[key]['priority'] for key in foreign),entries['ai-cn-international-all']['priority'])
         index=pipeline.render_index(config,entries)
-        ai=index.split('## 3 ',1)[1].split('## 4 ',1)[0]
+        sections=[section for section in index.split('\n## ')
+                  if section.split('\n',1)[0].endswith(' '+band['title'])]
+        self.assertEqual(len(sections),1)
+        ai=sections[0]
         for key in foreign:
             self.assertEqual(entries[key]['routing-group'],'overseas-ai')
             self.assertIn('rule-'+key,ai)

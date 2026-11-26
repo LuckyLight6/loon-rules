@@ -1,0 +1,38 @@
+# name: newrelic-service-all
+# priority: 0205
+# section: development
+# description: New Relic 完整域名与必要遥测例外
+# boundary: 主动选用时优先于追踪拦截，完整覆盖官方所列公共域名、遥测与共享依赖。共享主机上的其他请求也随本表选路。目的IP另选3290，或改选0206；与3260及包含它的3000二选一。常规拦截本身不变，不纳入客户私有连接或整家云平台。
+# created-at: 2026-11-26T20:13:18Z
+# updated-at: 2026-11-26T20:13:18Z
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# source: https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/
+# source: https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/
+# canonical-rule-count: 22
+# rule-count: 22
+# format: shadowrocket
+# canonical: rules/loon/0205-newrelic-service-all.lsr
+
+DOMAIN-SUFFIX,newrelic.com
+DOMAIN,newrelic.github.io
+DOMAIN,nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com
+DOMAIN,nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com
+DOMAIN,nr-synthetics-production.s3.amazonaws.com
+DOMAIN,onenr.io
+DOMAIN,pa-api.newrelic-external.com
+DOMAIN-WILDCARD,*.nr-assets.net
+DOMAIN-WILDCARD,*.nr-ext.net
+DOMAIN,fonts.googleapis.com
+DOMAIN,fonts.gstatic.com
+DOMAIN,secure.gravatar.com
+DOMAIN,www.google.com
+DOMAIN,www.gstatic.com
+DOMAIN-WILDCARD,*.nr-data.net
+DOMAIN-WILDCARD,*.typescript.azureedge.net
+DOMAIN,auth.docker.io
+DOMAIN,production.cloudfront.docker.com
+DOMAIN,registry-1.docker.io
+DOMAIN,withpixie.ai
+DOMAIN,work.withpixie.ai
+DOMAIN,gcr.io

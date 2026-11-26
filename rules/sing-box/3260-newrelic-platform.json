@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "newrelic.com"
+      ],
+      "domain": [
+        "newrelic.github.io",
+        "nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com",
+        "nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com",
+        "nr-synthetics-production.s3.amazonaws.com",
+        "onenr.io",
+        "pa-api.newrelic-external.com"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.nr\\-assets\\.net$",
+        "(?i)^.*\\.nr\\-ext\\.net$"
+      ]
+    }
+  ]
+}

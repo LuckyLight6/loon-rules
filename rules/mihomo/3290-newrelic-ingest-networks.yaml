@@ -1,0 +1,24 @@
+# name: newrelic-ingest-networks
+# priority: 3290
+# section: development
+# description: New Relic 数据接收网络IPv4与IPv6
+# boundary: 仅采用官方网页接收网段与JSON清单覆盖一致的公网目的地址，按no-resolve匹配；不加入探测器专属出站地址、已停用网络或客户VPC。可单用或选0206完整合集。
+# created-at: 2026-11-26T20:13:18Z
+# updated-at: 2026-11-26T20:13:18Z
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# source: https://nr-downloads-main.s3.us-east-1.amazonaws.com/networking/newrelic-ip-ranges.json
+# canonical-rule-count: 9
+# rule-count: 9
+# format: clash-classical
+# canonical: rules/loon/3290-newrelic-ingest-networks.lsr
+
+payload:
+  - "IP-CIDR,64.251.192.0/20,no-resolve"
+  - "IP-CIDR,152.38.128.0/19,no-resolve"
+  - "IP-CIDR,162.247.240.0/22,no-resolve"
+  - "IP-CIDR,185.221.84.0/22,no-resolve"
+  - "IP-CIDR,212.32.0.0/20,no-resolve"
+  - "IP-CIDR6,2401:7c60::/32,no-resolve"
+  - "IP-CIDR6,2602:816:5000::/40,no-resolve"
+  - "IP-CIDR6,2620:16:4000::/48,no-resolve"
+  - "IP-CIDR6,2a0d:8000::/29,no-resolve"

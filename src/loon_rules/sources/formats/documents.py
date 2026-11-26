@@ -2,7 +2,7 @@
 from html.parser import HTMLParser
 import json
 import re
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import parse_qsl, urljoin, urlsplit
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid, valid_host
 from .common import within, LabelledLists, PurposeFragments, product_host, https_product_host, HeadingSectionText, public_domain_pattern
@@ -63,6 +63,12 @@ def parse_purpose_domain_lists(recipe, text):
         raise Invalid('用途清单的字段分隔要求必须为布尔值')
     style=recipe.get('item-purpose-style','colon')
     if style not in ('colon','parentheses'):raise Invalid('用途清单的条目格式无效')
+    address=recipe.get('item-address','domain')
+    if address not in ('domain','single-url'):
+        raise Invalid('用途清单的主机字段类型无效')
+    if address=='single-url' and (style!='colon' or any(recipe.get(field) for field in
+            ('item-purpose-prefixes','item-purpose-contains','item-separator-required','nested-subdomain-labels'))):
+        raise Invalid('单URL清单不能混用域名条目说明或嵌套结构')
     parser = LabelledLists(recipe['labels'], contains=True, allow_identical=recipe.get('allow-identical-duplicates', False),
                            subdomain_labels=recipe.get('nested-subdomain-labels',()))
     parser.feed(text)
@@ -71,6 +77,21 @@ def parse_purpose_domain_lists(recipe, text):
         if not parser.rows.get(label):
             raise Invalid('官方网络资料缺少用途清单：' + label)
         for item in parser.rows[label]:
+            if address=='single-url':
+                values=re.findall(r'\b[a-z][a-z0-9+.-]*:\S+',item,flags=re.IGNORECASE)
+                if len(values)!=1:raise Invalid('地区服务清单的条目没有唯一完整URL')
+                try:
+                    url=urlsplit(values[0])
+                    port=url.port
+                except ValueError as error:
+                    raise Invalid('地区服务地址的URL或端口无效') from error
+                if (url.scheme not in ('https','wss') or not url.hostname or url.username is not None
+                        or url.query or url.fragment or port is not None and not 1<=port<=65535):
+                    raise Invalid('地区服务地址含未知协议、凭据、参数或无效端口')
+                row=public_domain_pattern(url.hostname)
+                if row is None:raise Invalid('地区服务地址指向整个共享托管范围')
+                result.add(row)
+                continue
             field,separator,purpose=item.partition('(' if style=='parentheses' else ':')
             if recipe.get('item-separator-required') and not separator:continue
             if required:=recipe.get('item-purpose-prefixes'):
@@ -96,6 +117,8 @@ def parse_purpose_domain_lists(recipe, text):
     return result
 
 def parse_product_domain_statements(recipe, text):
+    if type(recipe.get('require-complete',False)) is not bool:
+        raise Invalid('产品说明的完整读取开关必须为布尔值')
     guide = PurposeFragments()
     guide.feed(text)
     result = set()
@@ -126,7 +149,10 @@ def parse_product_domain_statements(recipe, text):
                     if url.scheme not in ('https','wss') or not url.hostname or url.username is not None or url.query or url.fragment:
                         raise Invalid('说明中的代码字段不是公开服务器入口')
                     value=url.hostname
-                if row:=public_domain_pattern(value):result.add(row)
+                row=public_domain_pattern(value)
+                if row is None and recipe.get('require-complete'):
+                    raise Invalid('完整产品说明包含未能归属的共享托管范围')
+                if row:result.add(row)
         if marker and not annotated_count:raise Invalid('域名说明缺少要求的地区注释')
         if not result:raise Invalid('官方说明没有所选的代码域名字段')
         return result
@@ -228,6 +254,8 @@ def parse_site_identity(recipe, text):
     guide = PurposeFragments()
     guide.feed(text)
     scope=recipe.get('scope','canonical')
+    if 'allowed-canonical-query' in recipe and scope!='source-root':
+        raise Invalid('固定canonical参数只适用于已核实的产品根域身份')
     if scope == 'source-host':
         field = recipe.get('brand-field', 'og:site_name')
         if field not in ('og:site_name', 'og:title') or guide.metadata.get(field) != [recipe['brand']]:
@@ -256,10 +284,19 @@ def parse_site_identity(recipe, text):
         brand=recipe['brand'].casefold();value=identity[0].casefold()
         if not (value==brand if match=='exact' else re.search(r'(?<!\w)'+re.escape(brand)+r'(?!\w)',value)):
             raise Invalid('产品站点的品牌标识不符')
-        def root(value):
+        allowed_query=recipe.get('allowed-canonical-query',{})
+        if (not isinstance(allowed_query,dict) or any(not isinstance(key,str) or not key
+                or not isinstance(value,str) or not value for key,value in allowed_query.items())):
+            raise Invalid('canonical固定公开参数的名称或值无效')
+        def root(value,*,canonical=False):
             url=urlsplit(value)
-            if url.scheme!='https' or not url.hostname or url.username is not None or url.query or url.fragment:
+            if url.scheme!='https' or not url.hostname or url.username is not None or url.fragment:
                 raise Invalid('产品站点身份不是无凭据的 HTTPS 入口')
+            if url.query:
+                try:pairs=parse_qsl(url.query,keep_blank_values=True,strict_parsing=True,max_num_fields=16)
+                except ValueError as error:raise Invalid('产品canonical参数格式无效') from error
+                if not canonical or len(pairs)!=len(dict(pairs)) or dict(pairs)!=allowed_query:
+                    raise Invalid('产品canonical出现未声明的参数、值或重复字段')
             host=domain_scope.public_host(url.hostname);suffixes=domain_scope.current()
             if suffixes.suffix(host)[1]:raise Invalid('共享托管站点不能认领整个产品根域')
             return suffixes.registrable(host)
@@ -268,7 +305,7 @@ def parse_site_identity(recipe, text):
             origin = urlsplit(recipe['source'])
             if origin.path not in ('', '/') or origin.hostname not in (source, 'www.' + source):
                 raise Invalid('HTML 标题身份只适用于独立产品的根网站')
-        if not source or any(root(url)!=source for url in guide.canonical+guide.metadata.get('og:url',[])):
+        if not source or any(root(url,canonical=True)!=source for url in guide.canonical+guide.metadata.get('og:url',[])):
             raise Invalid('产品站点的来源与身份 URL 不属于同一注册域')
         return {'DOMAIN-SUFFIX,'+source}
     if scope!='canonical':raise Invalid('产品站点的归属范围无效')

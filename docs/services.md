@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 199 个厂商或项目、353 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 200 个厂商或项目、355 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，到[对应应用目录](../rules/README.md)取订阅地址，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -11,7 +11,7 @@
 | 海外 AI 合集 | [1000 海外 AI 合集](rules.md#rule-ai-overseas-all) | 83 |
 | Cursor 编辑器、API 与登录合集 | [1033 Cursor 编辑器、API 与登录合集](rules.md#rule-cursor-service-all) | 2 |
 | 国产 AI 国际版合集 | [1800 国产 AI 国际版合集](rules.md#rule-ai-cn-international-all) | 12 |
-| 海外开发合集 | [3000 海外开发合集](rules.md#rule-overseas-development-all) | 26 |
+| 海外开发合集 | [3000 海外开发合集](rules.md#rule-overseas-development-all) | 27 |
 | 海外通讯与社交合集 | [3300 海外通讯与社交合集](rules.md#rule-overseas-social-all) | 18 |
 | 海外支付合集 | [3500 海外支付合集](rules.md#rule-overseas-payments-all) | 10 |
 | 海外加密资产服务合集 | [3600 海外加密资产服务合集](rules.md#rule-overseas-crypto-all) | 10 |
@@ -837,6 +837,15 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Backstage 开发者门户 | [3240 Backstage 开发者门户项目](rules.md#rule-backstage-developer-portal) |
+
+## New Relic
+
+可用合集：[0205 New Relic 完整域名与必要遥测例外](rules.md#rule-newrelic-service-all)、[0206 New Relic 域名、必要遥测与接收网络合集](rules.md#rule-newrelic-service-and-networks-all)
+
+| 产品或服务 | 对应规则 |
+|---|---|
+| 官网、控制台、下载与专用资源 | [3260 New Relic 官网、控制台与专用资源](rules.md#rule-newrelic-platform) |
+| 数据接收公网IPv4/IPv6 | [3290 New Relic 数据接收网络IPv4与IPv6](rules.md#rule-newrelic-ingest-networks) |
 
 ## Telegram
 

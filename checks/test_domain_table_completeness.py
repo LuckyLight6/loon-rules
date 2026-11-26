@@ -111,3 +111,59 @@ class CompleteDomainTables(PublicSourceExamples):
                     path = root / 'rules/loon' / pipeline.rule_filename(entries[key])
                     self.assertIn('DOMAIN,runtime.unprefilled.example', pipeline.rules.read_rules(path.read_text()))
                     self.assertIn('runtime.unprefilled.example', (root / 'rules/sing-box' / path.with_suffix('.json').name).read_text())
+
+    def test_declared_escaped_wildcards_and_single_tenant_assets_keep_their_scope(self):
+        recipe={'format':'domain-column-table','section':'ui','headers':['Domain','Purpose'],'column':'Domain',
+                'decode-escaped-wildcards':True,'allow-tenant-wildcards':True}
+        page=r'<h2 id="ui">UI</h2><table><tr><th>Domain</th><th>Purpose</th></tr><tr><td>\*.vendor.example</td><td>UI</td></tr><tr><td>*.assets.github.io</td><td>Assets</td></tr></table>'
+        self.assertEqual(extract_rows(recipe,page),{'DOMAIN-WILDCARD,*.vendor.example','DOMAIN-WILDCARD,*.assets.github.io'})
+        for changed in [page.replace('*.assets.github.io','*.github.io'),page.replace(r'\*.vendor.example',r'\vendor.example')]:
+            with self.assertRaises(Invalid):extract_rows(recipe,changed)
+        for field in ['decode-escaped-wildcards','allow-tenant-wildcards']:
+            with self.assertRaises(Invalid):extract_rows({**recipe,field:'true'},page)
+
+    def test_row_selection_still_validates_every_cell_before_filtering(self):
+        recipe={'format':'domain-column-table','section':'ui','headers':['Domain','Purpose'],'column':'Domain',
+                'select':{'roots':['vendor.example']}}
+        body='<h2 id="ui">UI</h2><table><tr><th>Domain</th><th>Purpose</th></tr><tr><td>api.vendor.example</td><td>API</td></tr><tr><td>fonts.shared.example</td><td>Font</td></tr></table>'
+        self.assertEqual(extract_rows(recipe,body),{'DOMAIN,api.vendor.example'})
+        with self.assertRaises(Invalid):extract_rows(recipe,body.replace('fonts.shared.example','127.0.0.1'))
+
+    def test_endpoint_columns_accept_declared_domain_or_url_values_and_pipe_separators(self):
+        recipe={'format':'domain-column-table','section':'api','headers':['Endpoint','Purpose'],'column':'Endpoint',
+                'value-format':'domain-or-url','split-values':True}
+        body='<h2 id="api">API</h2><table><tr><th>Endpoint</th><th>Purpose</th></tr><tr><td>api.vendor.example/ | https://api.eu.vendor.example/v1</td><td>API</td></tr></table>'
+        self.assertEqual(extract_rows(recipe,body),{'DOMAIN,api.vendor.example','DOMAIN,api.eu.vendor.example'})
+        for changed in [body.replace('https://api.eu.vendor.example/v1','https://user@api.eu.vendor.example/'),
+                        body.replace('api.vendor.example/','api.vendor.example/other')]:
+            with self.assertRaises(Invalid):extract_rows(recipe,changed)
+
+    def test_explicit_table_identity_handles_known_companions_and_rejects_new_tables(self):
+        recipe={'format':'domain-column-table','section':'agents','headers':['Endpoint','Purpose'],'column':'Endpoint',
+                'other-table-headers':[['Language','Code']]}
+        first='<table><tr><th>Endpoint</th><th>Purpose</th></tr><tr><td>api.vendor.example</td><td>Ingest</td></tr></table>'
+        other='<table><tr><th>Language</th><th>Code</th></tr><tr><td>Python</td><td>configure_client()</td></tr></table>'
+        body='<h2 id="agents">Agents</h2>'+first+other
+        self.assertEqual(extract_rows(recipe,body),{'DOMAIN,api.vendor.example'})
+        for changed in [body+first,body.replace('<th>Code</th>','<th>Unknown purpose</th>'),
+                        body.replace('<td>Ingest</td>',''),body+other,
+                        body.replace(other,''),
+                        body.replace('<td>configure_client()</td>',''),
+                        body.replace('<td>configure_client()</td>','<td>configure_client()</td><td>new.unlisted.example</td>')]:
+            with self.subTest(changed=changed),self.assertRaises(Invalid):extract_rows(recipe,changed)
+
+    def test_bare_endpoint_references_and_copy_controls_are_explicit(self):
+        recipe={'format':'domain-column-table','section':'agents','headers':['Endpoint'],'column':'Endpoint',
+                'value-format':'domain-or-url','allow-bare-addresses':True,'ignore-controls':True,'split-values':True}
+        body='<h2 id="agents">Agents</h2><table><tr><th>Endpoint</th></tr><tr><td>api.vendor.example:4317/path/</td></tr><tr><td>https://eu.vendor.example< button>Copy</button></td></tr></table>'.replace('< button>','<button>')
+        self.assertEqual(extract_rows(recipe,body),{'DOMAIN,api.vendor.example','DOMAIN,eu.vendor.example'})
+        for changed in [body.replace('api.vendor.example:4317/path/','user@api.vendor.example:443/'),
+                        body.replace('api.vendor.example:4317/path/','api.vendor.example:abc/')]:
+            with self.assertRaises(Invalid):extract_rows(recipe,changed)
+
+    def test_dedicated_assets_follow_their_documented_purpose_without_pinning_hosts(self):
+        recipe={'format':'domain-column-table','section':'assets','headers':['Host','Purpose'],'column':'Host',
+                'select':{'purpose-column':'Purpose','purpose-prefixes':['Dedicated product assets']}}
+        body='<h2 id="assets">Assets</h2><table><tr><th>Host</th><th>Purpose</th></tr><tr><td>new-tenant.s3.amazonaws.com</td><td>Dedicated product assets in a new region</td></tr><tr><td>fonts.shared.example</td><td>Shared fonts</td></tr></table>'
+        self.assertEqual(extract_rows(recipe,body),{'DOMAIN,new-tenant.s3.amazonaws.com'})
+        with self.assertRaises(Invalid):extract_rows(recipe,body.replace('fonts.shared.example','127.0.0.1'))

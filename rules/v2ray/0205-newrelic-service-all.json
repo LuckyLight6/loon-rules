@@ -1,0 +1,34 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:newrelic.com",
+          "full:newrelic.github.io",
+          "full:nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com",
+          "full:nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com",
+          "full:nr-synthetics-production.s3.amazonaws.com",
+          "full:onenr.io",
+          "full:pa-api.newrelic-external.com",
+          "regexp:(?i)^.*\\.nr\\-assets\\.net$",
+          "regexp:(?i)^.*\\.nr\\-ext\\.net$",
+          "full:fonts.googleapis.com",
+          "full:fonts.gstatic.com",
+          "full:secure.gravatar.com",
+          "full:www.google.com",
+          "full:www.gstatic.com",
+          "regexp:(?i)^.*\\.nr\\-data\\.net$",
+          "regexp:(?i)^.*\\.typescript\\.azureedge\\.net$",
+          "full:auth.docker.io",
+          "full:production.cloudfront.docker.com",
+          "full:registry-1.docker.io",
+          "full:withpixie.ai",
+          "full:work.withpixie.ai",
+          "full:gcr.io"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

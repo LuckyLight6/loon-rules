@@ -124,3 +124,11 @@ class CollaborationSources(PublicSourceExamples):
             self.assertNotIn('DOMAIN-SUFFIX,unlisted-repo.example',data['shared-cloud'])
             self.assertIsNone(lib.ordered_route('api.cloud.other.example',['repository','shared-cloud'],data))
             self.assertEqual(lib.run(offline=True),0)
+
+    def test_an_extra_column_in_any_declared_row_cannot_disappear(self):
+        recipe={'format':'purpose-domain-table','sections':['owned'],'headers':['Domain','Purpose'],
+                'purpose-prefixes':['Repository']}
+        body='<h2 id="owned">Domains</h2><table><tr><td>Domain</td><td>Purpose</td></tr><tr><td>api.vendor.example</td><td>Repository API</td></tr>{}</table>'
+        for purpose in ['Repository downloads','Another service']:
+            extra='<tr><td>new.vendor.example</td><td>'+purpose+'</td><td>New metadata</td></tr>'
+            with self.subTest(purpose=purpose),self.assertRaises(Invalid):extract_rows(recipe,body.format(extra))

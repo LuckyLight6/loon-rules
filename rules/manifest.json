@@ -146,6 +146,32 @@
             "loon": "rules/loon/0160-cloudflare-public-dns.lsr"
           }
         },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/loon/0205-newrelic-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/0205-newrelic-service-all.lsr"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 31,
+          "status": "available",
+          "path": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "paths": {
+            "loon": "rules/loon/0206-newrelic-service-and-networks-all.lsr"
+          }
+        },
         "0210-apple-and-ai-privacy-exceptions": {
           "source": "rules/loon/0210-apple-and-ai-privacy-exceptions.lsr",
           "rule-count": 3,
@@ -2020,11 +2046,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/loon/3000-overseas-development-all.lsr",
           "paths": {
@@ -2367,6 +2393,32 @@
           "path": "rules/loon/3250-spotify-advertising-and-analytics.lsr",
           "paths": {
             "loon": "rules/loon/3250-spotify-advertising-and-analytics.lsr"
+          }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/loon/3260-newrelic-platform.lsr",
+          "paths": {
+            "loon": "rules/loon/3260-newrelic-platform.lsr"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "paths": {
+            "loon": "rules/loon/3290-newrelic-ingest-networks.lsr"
           }
         },
         "3300-overseas-social-all": {
@@ -4906,11 +4958,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/loon/8200-overseas-extra-all.lsr",
           "paths": {
@@ -4932,11 +4984,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/loon/8220-overseas-sites-extra.lsr",
           "paths": {
@@ -5152,7 +5204,7 @@
           }
         }
       },
-      "available": 391,
+      "available": 395,
       "unsupported": 0
     },
     "surge": {
@@ -5233,6 +5285,32 @@
           "path": "rules/surge/0160-cloudflare-public-dns.list",
           "paths": {
             "surge": "rules/surge/0160-cloudflare-public-dns.list"
+          }
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/surge/0205-newrelic-service-all.list",
+          "paths": {
+            "surge": "rules/surge/0205-newrelic-service-all.list"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 31,
+          "status": "available",
+          "path": "rules/surge/0206-newrelic-service-and-networks-all.list",
+          "paths": {
+            "surge": "rules/surge/0206-newrelic-service-and-networks-all.list"
           }
         },
         "0210-apple-and-ai-privacy-exceptions": {
@@ -7109,11 +7187,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/surge/3000-overseas-development-all.list",
           "paths": {
@@ -7456,6 +7534,32 @@
           "path": "rules/surge/3250-spotify-advertising-and-analytics.list",
           "paths": {
             "surge": "rules/surge/3250-spotify-advertising-and-analytics.list"
+          }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/surge/3260-newrelic-platform.list",
+          "paths": {
+            "surge": "rules/surge/3260-newrelic-platform.list"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/surge/3290-newrelic-ingest-networks.list",
+          "paths": {
+            "surge": "rules/surge/3290-newrelic-ingest-networks.list"
           }
         },
         "3300-overseas-social-all": {
@@ -9995,11 +10099,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/surge/8200-overseas-extra-all.list",
           "paths": {
@@ -10021,11 +10125,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/surge/8220-overseas-sites-extra.list",
           "paths": {
@@ -10241,7 +10345,7 @@
           }
         }
       },
-      "available": 391,
+      "available": 395,
       "unsupported": 0
     },
     "clash-classical": {
@@ -10328,6 +10432,34 @@
           "paths": {
             "mihomo": "rules/mihomo/0160-cloudflare-public-dns.yaml",
             "stash": "rules/stash/0160-cloudflare-public-dns.yaml"
+          }
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/mihomo/0205-newrelic-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/0205-newrelic-service-all.yaml",
+            "stash": "rules/stash/0205-newrelic-service-all.yaml"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 31,
+          "status": "available",
+          "path": "rules/mihomo/0206-newrelic-service-and-networks-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/0206-newrelic-service-and-networks-all.yaml",
+            "stash": "rules/stash/0206-newrelic-service-and-networks-all.yaml"
           }
         },
         "0210-apple-and-ai-privacy-exceptions": {
@@ -12348,11 +12480,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/mihomo/3000-overseas-development-all.yaml",
           "paths": {
@@ -12722,6 +12854,34 @@
           "paths": {
             "mihomo": "rules/mihomo/3250-spotify-advertising-and-analytics.yaml",
             "stash": "rules/stash/3250-spotify-advertising-and-analytics.yaml"
+          }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/mihomo/3260-newrelic-platform.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/3260-newrelic-platform.yaml",
+            "stash": "rules/stash/3260-newrelic-platform.yaml"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/mihomo/3290-newrelic-ingest-networks.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/3290-newrelic-ingest-networks.yaml",
+            "stash": "rules/stash/3290-newrelic-ingest-networks.yaml"
           }
         },
         "3300-overseas-social-all": {
@@ -15456,11 +15616,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/mihomo/8200-overseas-extra-all.yaml",
           "paths": {
@@ -15484,11 +15644,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/mihomo/8220-overseas-sites-extra.yaml",
           "paths": {
@@ -15721,7 +15881,7 @@
           }
         }
       },
-      "available": 391,
+      "available": 395,
       "unsupported": 0
     },
     "egern": {
@@ -15802,6 +15962,32 @@
           "path": "rules/egern/0160-cloudflare-public-dns.yaml",
           "paths": {
             "egern": "rules/egern/0160-cloudflare-public-dns.yaml"
+          }
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/egern/0205-newrelic-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/0205-newrelic-service-all.yaml"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 31,
+          "status": "available",
+          "path": "rules/egern/0206-newrelic-service-and-networks-all.yaml",
+          "paths": {
+            "egern": "rules/egern/0206-newrelic-service-and-networks-all.yaml"
           }
         },
         "0210-apple-and-ai-privacy-exceptions": {
@@ -17678,11 +17864,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/egern/3000-overseas-development-all.yaml",
           "paths": {
@@ -18025,6 +18211,32 @@
           "path": "rules/egern/3250-spotify-advertising-and-analytics.yaml",
           "paths": {
             "egern": "rules/egern/3250-spotify-advertising-and-analytics.yaml"
+          }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/egern/3260-newrelic-platform.yaml",
+          "paths": {
+            "egern": "rules/egern/3260-newrelic-platform.yaml"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/egern/3290-newrelic-ingest-networks.yaml",
+          "paths": {
+            "egern": "rules/egern/3290-newrelic-ingest-networks.yaml"
           }
         },
         "3300-overseas-social-all": {
@@ -20564,11 +20776,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/egern/8200-overseas-extra-all.yaml",
           "paths": {
@@ -20590,11 +20802,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/egern/8220-overseas-sites-extra.yaml",
           "paths": {
@@ -20810,7 +21022,7 @@
           }
         }
       },
-      "available": 391,
+      "available": 395,
       "unsupported": 0
     },
     "surfboard": {
@@ -20891,6 +21103,32 @@
           "path": "rules/surfboard/0160-cloudflare-public-dns.list",
           "paths": {
             "surfboard": "rules/surfboard/0160-cloudflare-public-dns.list"
+          }
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/surfboard/0205-newrelic-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/0205-newrelic-service-all.list"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 31,
+          "status": "available",
+          "path": "rules/surfboard/0206-newrelic-service-and-networks-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/0206-newrelic-service-and-networks-all.list"
           }
         },
         "0210-apple-and-ai-privacy-exceptions": {
@@ -22759,11 +22997,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/surfboard/3000-overseas-development-all.list",
           "paths": {
@@ -23106,6 +23344,32 @@
           "path": "rules/surfboard/3250-spotify-advertising-and-analytics.list",
           "paths": {
             "surfboard": "rules/surfboard/3250-spotify-advertising-and-analytics.list"
+          }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/surfboard/3260-newrelic-platform.list",
+          "paths": {
+            "surfboard": "rules/surfboard/3260-newrelic-platform.list"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/surfboard/3290-newrelic-ingest-networks.list",
+          "paths": {
+            "surfboard": "rules/surfboard/3290-newrelic-ingest-networks.list"
           }
         },
         "3300-overseas-social-all": {
@@ -25637,11 +25901,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/surfboard/8200-overseas-extra-all.list",
           "paths": {
@@ -25663,11 +25927,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/surfboard/8220-overseas-sites-extra.list",
           "paths": {
@@ -25883,7 +26147,7 @@
           }
         }
       },
-      "available": 387,
+      "available": 391,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -25964,6 +26228,32 @@
           "path": "rules/shadowrocket/0160-cloudflare-public-dns.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/0160-cloudflare-public-dns.list"
+          }
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/shadowrocket/0205-newrelic-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/0205-newrelic-service-all.list"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 31,
+          "status": "available",
+          "path": "rules/shadowrocket/0206-newrelic-service-and-networks-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/0206-newrelic-service-and-networks-all.list"
           }
         },
         "0210-apple-and-ai-privacy-exceptions": {
@@ -27840,11 +28130,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/shadowrocket/3000-overseas-development-all.list",
           "paths": {
@@ -28187,6 +28477,32 @@
           "path": "rules/shadowrocket/3250-spotify-advertising-and-analytics.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/3250-spotify-advertising-and-analytics.list"
+          }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/shadowrocket/3260-newrelic-platform.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/3260-newrelic-platform.list"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/shadowrocket/3290-newrelic-ingest-networks.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/3290-newrelic-ingest-networks.list"
           }
         },
         "3300-overseas-social-all": {
@@ -30726,11 +31042,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/shadowrocket/8200-overseas-extra-all.list",
           "paths": {
@@ -30752,11 +31068,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/shadowrocket/8220-overseas-sites-extra.list",
           "paths": {
@@ -30972,7 +31288,7 @@
           }
         }
       },
-      "available": 391,
+      "available": 395,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -31040,6 +31356,28 @@
           "description": "Cloudflare 公共 DNS 与标准解析器地址",
           "created-at": "2026-11-22T15:05:24Z",
           "updated-at": "2026-11-22T15:05:24Z",
+          "status": "unsupported",
+          "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/quantumult-x/0205-newrelic-service-all.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/0205-newrelic-service-all.list"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -32889,11 +33227,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/quantumult-x/3000-overseas-development-all.list",
           "paths": {
@@ -33237,6 +33575,28 @@
           "paths": {
             "quantumult-x": "rules/quantumult-x/3250-spotify-advertising-and-analytics.list"
           }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/quantumult-x/3260-newrelic-platform.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/3260-newrelic-platform.list"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "status": "unsupported",
+          "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
         "3300-overseas-social-all": {
           "source": "rules/loon/3300-overseas-social-all.lsr",
@@ -35751,11 +36111,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/quantumult-x/8200-overseas-extra-all.list",
           "paths": {
@@ -35777,11 +36137,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/quantumult-x/8220-overseas-sites-extra.list",
           "paths": {
@@ -35997,8 +36357,8 @@
           }
         }
       },
-      "available": 375,
-      "unsupported": 16
+      "available": 377,
+      "unsupported": 18
     },
     "sing-box": {
       "rules": {
@@ -36065,6 +36425,28 @@
           "description": "Cloudflare 公共 DNS 与标准解析器地址",
           "created-at": "2026-11-22T15:05:24Z",
           "updated-at": "2026-11-22T15:05:24Z",
+          "status": "unsupported",
+          "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/sing-box/0205-newrelic-service-all.json",
+          "paths": {
+            "sing-box": "rules/sing-box/0205-newrelic-service-all.json"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -37914,11 +38296,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/sing-box/3000-overseas-development-all.json",
           "paths": {
@@ -38262,6 +38644,28 @@
           "paths": {
             "sing-box": "rules/sing-box/3250-spotify-advertising-and-analytics.json"
           }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/sing-box/3260-newrelic-platform.json",
+          "paths": {
+            "sing-box": "rules/sing-box/3260-newrelic-platform.json"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "status": "unsupported",
+          "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
         "3300-overseas-social-all": {
           "source": "rules/loon/3300-overseas-social-all.lsr",
@@ -40776,11 +41180,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/sing-box/8200-overseas-extra-all.json",
           "paths": {
@@ -40802,11 +41206,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/sing-box/8220-overseas-sites-extra.json",
           "paths": {
@@ -41010,8 +41414,8 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 372,
-      "unsupported": 19
+      "available": 374,
+      "unsupported": 21
     },
     "v2ray": {
       "rules": {
@@ -41078,6 +41482,28 @@
           "description": "Cloudflare 公共 DNS 与标准解析器地址",
           "created-at": "2026-11-22T15:05:24Z",
           "updated-at": "2026-11-22T15:05:24Z",
+          "status": "unsupported",
+          "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
+        "0205-newrelic-service-all": {
+          "source": "rules/loon/0205-newrelic-service-all.lsr",
+          "rule-count": 22,
+          "description": "New Relic 完整域名与必要遥测例外",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 22,
+          "status": "available",
+          "path": "rules/v2ray/0205-newrelic-service-all.json",
+          "paths": {
+            "v2ray": "rules/v2ray/0205-newrelic-service-all.json"
+          }
+        },
+        "0206-newrelic-service-and-networks-all": {
+          "source": "rules/loon/0206-newrelic-service-and-networks-all.lsr",
+          "rule-count": 31,
+          "description": "New Relic 域名、必要遥测与接收网络合集",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -42927,11 +43353,11 @@
         },
         "3000-overseas-development-all": {
           "source": "rules/loon/3000-overseas-development-all.lsr",
-          "rule-count": 230,
+          "rule-count": 239,
           "description": "海外开发合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 230,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 239,
           "status": "available",
           "path": "rules/v2ray/3000-overseas-development-all.json",
           "paths": {
@@ -43275,6 +43701,28 @@
           "paths": {
             "v2ray": "rules/v2ray/3250-spotify-advertising-and-analytics.json"
           }
+        },
+        "3260-newrelic-platform": {
+          "source": "rules/loon/3260-newrelic-platform.lsr",
+          "rule-count": 9,
+          "description": "New Relic 官网、控制台与专用资源",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 9,
+          "status": "available",
+          "path": "rules/v2ray/3260-newrelic-platform.json",
+          "paths": {
+            "v2ray": "rules/v2ray/3260-newrelic-platform.json"
+          }
+        },
+        "3290-newrelic-ingest-networks": {
+          "source": "rules/loon/3290-newrelic-ingest-networks.lsr",
+          "rule-count": 9,
+          "description": "New Relic 数据接收网络IPv4与IPv6",
+          "created-at": "2026-11-26T20:13:18Z",
+          "updated-at": "2026-11-26T20:13:18Z",
+          "status": "unsupported",
+          "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
         "3300-overseas-social-all": {
           "source": "rules/loon/3300-overseas-social-all.lsr",
@@ -45789,11 +46237,11 @@
         },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18597,
+          "rule-count": 18596,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18597,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18596,
           "status": "available",
           "path": "rules/v2ray/8200-overseas-extra-all.json",
           "paths": {
@@ -45815,11 +46263,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18472,
+          "rule-count": 18471,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-26T16:38:35Z",
-          "output-rule-count": 18472,
+          "updated-at": "2026-11-26T20:13:18Z",
+          "output-rule-count": 18471,
           "status": "available",
           "path": "rules/v2ray/8220-overseas-sites-extra.json",
           "paths": {
@@ -46023,8 +46471,8 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 372,
-      "unsupported": 19
+      "available": 374,
+      "unsupported": 21
     }
   },
   "aliases": {

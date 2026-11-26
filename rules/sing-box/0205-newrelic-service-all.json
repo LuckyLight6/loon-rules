@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "newrelic.com"
+      ],
+      "domain": [
+        "newrelic.github.io",
+        "nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com",
+        "nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com",
+        "nr-synthetics-production.s3.amazonaws.com",
+        "onenr.io",
+        "pa-api.newrelic-external.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "secure.gravatar.com",
+        "www.google.com",
+        "www.gstatic.com",
+        "auth.docker.io",
+        "production.cloudfront.docker.com",
+        "registry-1.docker.io",
+        "withpixie.ai",
+        "work.withpixie.ai",
+        "gcr.io"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.nr\\-assets\\.net$",
+        "(?i)^.*\\.nr\\-ext\\.net$",
+        "(?i)^.*\\.nr\\-data\\.net$",
+        "(?i)^.*\\.typescript\\.azureedge\\.net$"
+      ]
+    }
+  ]
+}

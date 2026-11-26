@@ -12,6 +12,11 @@ from loon_rules.policy import SHARED_PARENT,overbroad
 
 def validate(entries):
     for key,entry in entries.items():
+        if 'privacy-override' in entry:
+            if (type(entry['privacy-override']) is not bool or entry.get('mode')!='view'
+                    or not entry.get('dependency-inputs')
+                    or entry['privacy-override'] and any(recipe.get('protect-from-reject') for recipe in entry['dependency-inputs'])):
+                raise rules.Invalid('按需隐私例外只能用于有明确用途依赖且不改全局拦截的服务合集：'+key)
         if 'dependency-inputs' not in entry:
             continue
         recipes=entry['dependency-inputs']
@@ -19,7 +24,7 @@ def validate(entries):
             raise rules.Invalid('官方共享依赖只能用于明确的替代合集：'+key)
         for recipe in recipes:
             if (not isinstance(recipe,dict) or recipe.get('format') not in
-                    ('purpose-domain-lists','purpose-url-table')
+                    ('purpose-domain-lists','purpose-url-table','domain-column-table','product-domain-statements')
                     or type(recipe.get('protect-from-reject',False)) is not bool):
                 raise rules.Invalid('服务依赖缺少官方用途清单：'+key)
             source_url(recipe['source'])
@@ -46,6 +51,9 @@ def attach(config,entries,data,report):
     from loon_rules.generation.ordering import route_order
     order=route_order(config,entries)
     index=RuleIndex(data,order)
+    reject_data={key:data.get(key,[]) for key,entry in entries.items()
+                 if 'priority' in entry and entry.get('mode')!='view' and entry.get('policy-hint')=='reject'}
+    reject_index=RuleIndex(reject_data)
     for key in expected:
         entry=entries[key];record=report[key]
         inputs=record.get('inputs')
@@ -66,10 +74,16 @@ def attach(config,entries,data,report):
             rows.extend(item['rules'])
         owners={}
         for row in rows:
+            if entry.get('privacy-override'):
+                intersections=reject_index.scope_intersection_bits(row)
+                if any(intersections&reject_index.bits[target] and entries[target]['priority']<=entry['priority']
+                       for target in reject_index.order):
+                    raise rules.Invalid('服务例外仍被更早的隐私范围部分覆盖：'+key+' '+row)
             matching=index.scope_bits(row)
             owner=next((candidate for candidate in order if matching&index.bits[candidate]),None)
             if owner is not None and entries[owner].get('policy-hint')=='reject':
-                raise rules.Invalid('官方共享依赖仍被常规拒绝表覆盖：'+key+' '+row)
+                if not entry.get('privacy-override') or entry['priority']>=entries[owner]['priority']:
+                    raise rules.Invalid('官方共享依赖仍被常规拒绝表覆盖：'+key+' '+row)
             owners[row]=owner
         entries[key]=dict(entry,**{'_dependency-scopes':compact(rows),
             '_dependency-owners':owners,'_dependency-sources':sources})
@@ -78,6 +92,9 @@ def attach(config,entries,data,report):
 def permits_shadow(entries,view,row,owner):
     entry=entries[view]
     targets={owner}|set(entries[owner].get('members',()))
+    if (entry.get('mode')=='view' and entry.get('privacy-override')
+            and entries[owner].get('policy-hint')=='reject' and entry['priority']<entries[owner]['priority']
+            and any(domains.covers(scope,row) for scope in entry.get('_dependency-scopes',()))):return True
     return entry.get('mode')=='view' and any(target in targets and domains.covers(scope,row)
         for scope,target in entry.get('_dependency-owners',{}).items())
 

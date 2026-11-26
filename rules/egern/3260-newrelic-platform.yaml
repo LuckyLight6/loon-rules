@@ -1,0 +1,26 @@
+# name: newrelic-platform
+# priority: 3260
+# section: development
+# description: New Relic 官网、控制台与专用资源
+# boundary: 识别官网、控制台与按用途确认的专用资源。nr-data.net遥测及共享依赖由0205域名服务例外承接，目的IP网络另在3290；不改常规追踪拦截。
+# created-at: 2026-11-26T20:13:18Z
+# updated-at: 2026-11-26T20:13:18Z
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# canonical-rule-count: 9
+# rule-count: 9
+# format: egern
+# canonical: rules/loon/3260-newrelic-platform.lsr
+
+domain_suffix_set:
+  - "newrelic.com"
+domain_set:
+  - "newrelic.github.io"
+  - "nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com"
+  - "nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com"
+  - "nr-synthetics-production.s3.amazonaws.com"
+  - "onenr.io"
+  - "pa-api.newrelic-external.com"
+domain_regex_set:
+  - "(?i)^.*\\.nr\\-assets\\.net$"
+  - "(?i)^.*\\.nr\\-ext\\.net$"

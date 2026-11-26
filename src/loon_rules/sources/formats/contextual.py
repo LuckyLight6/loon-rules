@@ -49,7 +49,8 @@ def purpose_domain_table(recipe,text):
         if table.found[section]!=1 or recipe['headers'] not in rows:
             raise Invalid('自营域名表缺少章节或标题列：'+section)
         for cells in rows:
-            if cells==recipe['headers'] or len(cells)!=2:continue
+            if cells==recipe['headers']:continue
+            if len(cells)!=2:raise Invalid('完整用途表出现缺列或额外列：'+section)
             if wanted and not any(cells[1].casefold().startswith(p) for p in wanted):continue
             for value in re.split(r'[,\s]+',cells[0].strip()):
                 if not value:continue

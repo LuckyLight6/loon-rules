@@ -1,9 +1,9 @@
 {
-  "checked-at": "2026-11-26T19:29:29Z",
-  "inputs-read": 618,
-  "critical": 936,
-  "inputs-requested": 618,
-  "profiles-checked": 1426063360,
+  "checked-at": "2026-11-26T20:47:09Z",
+  "inputs-read": 623,
+  "critical": 939,
+  "inputs-requested": 623,
+  "profiles-checked": 2852126720,
   "assigned-rules": {
     "apple-system-connectivity": {
       "DOMAIN-SUFFIX,appattest.apple.com": "apple-app-and-device-verification",
@@ -843,7 +843,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 355,
+    "routine-tables": 357,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -1083,6 +1083,8 @@
       "bugsnag-error-monitoring",
       "backstage-developer-portal",
       "spotify-advertising-and-analytics",
+      "newrelic-platform",
+      "newrelic-ingest-networks",
       "telegram-messaging",
       "discord-messaging-and-voice",
       "signal-messenger",
@@ -3210,14 +3212,15 @@
       },
       "other-products": {
         "sentry-error-monitoring": 2,
-        "hulu-streaming": 48
+        "hulu-streaming": 48,
+        "newrelic-platform": 1
       },
       "domain-scopes": 248,
       "selected-scopes": 3,
       "narrowed-scopes": 0,
       "selected-uncovered": 0,
       "product-scopes": 3,
-      "fallback-scopes": 22,
+      "fallback-scopes": 21,
       "privacy-scopes": 1,
       "shared-scopes": 3,
       "declared-exclusions": 0,
@@ -5387,8 +5390,8 @@
       "DOMAIN-SUFFIX,swdownload.apple.com",
       "DOMAIN-SUFFIX,updates-http.cdn-apple.com",
       "DOMAIN-SUFFIX,updates.cdn-apple.com",
-      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.g.aaplimg.com",
+      "DOMAIN,updates.g.aaplimg.com",
       "DOMAIN,updates-http.cdn-apple.com.edgesuite.net",
       "DOMAIN,swcdn.apple.com.edgesuite.net"
     ],
@@ -6195,8 +6198,8 @@
   },
   "source-mirrors-used": {},
   "public-suffix-state": {
-    "state": "retained-newer",
-    "source-version": "2026-11-25_18-55-17_UTC",
+    "state": "current",
+    "source-version": "2026-11-26_11-38-20_UTC",
     "active-version": "2026-11-26_11-38-20_UTC"
   },
   "shared-service-transfers": {
@@ -10387,6 +10390,107 @@
         }
       ],
       "directory": "https://cdn.paddle.com/paddle/v2/paddle.js"
+    },
+    "newrelic-ingest-networks": {
+      "method": "network-source-agreement",
+      "directory": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+      "documents": [
+        {
+          "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+          "recipes": [
+            {
+              "format": "section-network-blocks",
+              "section": "ingest-blocks",
+              "families": [
+                4
+              ],
+              "min-prefix": {
+                "4": 16,
+                "6": 28
+              }
+            },
+            {
+              "format": "section-network-blocks",
+              "section": "dualstack-ingest-blocks",
+              "families": [
+                4,
+                6
+              ],
+              "min-prefix": {
+                "4": 16,
+                "6": 28
+              }
+            }
+          ],
+          "retired-recipes": [
+            {
+              "format": "paragraph-network-list",
+              "prefix": "New Relic has discontinued the use of the following IP ranges:",
+              "until": "As of",
+              "min-prefix": {
+                "4": 16,
+                "6": 28
+              }
+            }
+          ],
+          "kind": "network-source-agreement",
+          "rows": [
+            "IP-CIDR,64.251.192.0/20,no-resolve",
+            "IP-CIDR,152.38.128.0/19,no-resolve",
+            "IP-CIDR,162.247.240.0/22,no-resolve",
+            "IP-CIDR,185.221.84.0/22,no-resolve",
+            "IP-CIDR,212.32.0.0/20,no-resolve",
+            "IP-CIDR6,2401:7c60::/32,no-resolve",
+            "IP-CIDR6,2602:816:5000::/40,no-resolve",
+            "IP-CIDR6,2620:16:4000::/48,no-resolve",
+            "IP-CIDR6,2a0d:8000::/29,no-resolve"
+          ],
+          "shared-rows": [],
+          "retired-rows": [
+            "IP-CIDR,3.27.118.128/25,no-resolve",
+            "IP-CIDR,3.77.79.0/25,no-resolve",
+            "IP-CIDR,3.145.244.128/25,no-resolve",
+            "IP-CIDR,4.197.217.128/25,no-resolve",
+            "IP-CIDR,18.246.82.0/25,no-resolve",
+            "IP-CIDR,20.51.136.0/25,no-resolve",
+            "IP-CIDR,158.177.65.64/29,no-resolve",
+            "IP-CIDR,159.122.103.184/29,no-resolve",
+            "IP-CIDR,161.156.125.32/28,no-resolve"
+          ],
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc"
+        },
+        {
+          "source": "https://nr-downloads-main.s3.us-east-1.amazonaws.com/networking/newrelic-ip-ranges.json",
+          "recipes": [
+            {
+              "format": "ip-network-map",
+              "fields": {
+                "New Relic IPv4": 4,
+                "New Relic IPv6": 6
+              },
+              "min-prefix": {
+                "4": 16,
+                "6": 28
+              }
+            }
+          ],
+          "kind": "network-source-agreement",
+          "rows": [
+            "IP-CIDR,64.251.192.0/20,no-resolve",
+            "IP-CIDR,152.38.128.0/19,no-resolve",
+            "IP-CIDR,162.247.240.0/22,no-resolve",
+            "IP-CIDR,185.221.84.0/22,no-resolve",
+            "IP-CIDR,212.32.0.0/20,no-resolve",
+            "IP-CIDR6,2401:7c60::/32,no-resolve",
+            "IP-CIDR6,2602:816:5000::/40,no-resolve",
+            "IP-CIDR6,2620:16:4000::/48,no-resolve",
+            "IP-CIDR6,2a0d:8000::/29,no-resolve"
+          ],
+          "shared-rows": [],
+          "retired-rows": [],
+          "sha256": "435fdbb0900a27e6f365035572660d68877363727b4029f9c56f7088a11a1bcb"
+        }
+      ]
     }
   },
   "maintenance": {
@@ -10697,7 +10801,8 @@
       1705,
       3595,
       1035,
-      1058
+      1058,
+      3260
     ],
     "已核清单": [
       210,
@@ -10742,7 +10847,9 @@
       1032,
       1033,
       1019,
-      1059
+      1059,
+      205,
+      206
     ],
     "按用途与来源家族自动补全": [
       1010,
@@ -10790,7 +10897,8 @@
     ],
     "从官方目录发现产品与版本，再读取服务端点": [
       2170,
-      2180
+      2180,
+      3290
     ],
     "随发布文件发现主机，保留版本依据": [
       3040,
@@ -13029,7 +13137,7 @@
             "protect-from-reject": true
           },
           "complete": true,
-          "sha256": "dac75965f0c893e5c5728f7b290189e45e5aee9480e9134e0d57984f10e20aa8",
+          "sha256": "5541306fc9be491804475d431b807a34ce7111d28a2ccb554b11d7651a233dd0",
           "rules": [
             "DOMAIN,android.chat.openai.com",
             "DOMAIN,auth0.openai.com",
@@ -13122,7 +13230,7 @@
             "protect-from-reject": true
           },
           "complete": true,
-          "sha256": "dac75965f0c893e5c5728f7b290189e45e5aee9480e9134e0d57984f10e20aa8",
+          "sha256": "5541306fc9be491804475d431b807a34ce7111d28a2ccb554b11d7651a233dd0",
           "rules": [
             "DOMAIN,android.chat.openai.com",
             "DOMAIN,auth0.openai.com",
@@ -13202,6 +13310,852 @@
             "DOMAIN-WILDCARD,*.individual.githubcopilot.com",
             "DOMAIN-WILDCARD,copilot-reports-*.b01.azurefd.net",
             "DOMAIN-WILDCARD,usagereports*.blob.core.windows.net"
+          ]
+        }
+      ]
+    },
+    "newrelic-service-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "user-facing-domains",
+            "headers": [
+              "Domain",
+              "Description"
+            ],
+            "column": "Domain",
+            "decode-escaped-wildcards": true,
+            "allow-tenant-wildcards": true
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,fonts.googleapis.com",
+            "DOMAIN,fonts.gstatic.com",
+            "DOMAIN,newrelic.github.io",
+            "DOMAIN,nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com",
+            "DOMAIN,nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com",
+            "DOMAIN,nr-synthetics-production.s3.amazonaws.com",
+            "DOMAIN,onenr.io",
+            "DOMAIN,pa-api.newrelic-external.com",
+            "DOMAIN,secure.gravatar.com",
+            "DOMAIN,www.google.com",
+            "DOMAIN,www.gstatic.com",
+            "DOMAIN-WILDCARD,*.newrelic.com",
+            "DOMAIN-WILDCARD,*.nr-assets.net",
+            "DOMAIN-WILDCARD,*.nr-data.net",
+            "DOMAIN-WILDCARD,*.nr-ext.net",
+            "DOMAIN-WILDCARD,*.typescript.azureedge.net"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "new-relic-endpoints",
+            "headers": [
+              "Capability",
+              "US data center endpoint (default)",
+              "EU data center endpoint",
+              "Japan data center endpoint"
+            ],
+            "columns": [
+              "US data center endpoint (default)",
+              "EU data center endpoint",
+              "Japan data center endpoint"
+            ],
+            "split-values": true,
+            "group-rows": [
+              "APM",
+              "AWS",
+              "Browser",
+              "IAST",
+              "Ingest APIs",
+              "Infrastructure",
+              "Agent Control (Fleet Control)",
+              "Lookup tables",
+              "Mobile",
+              "OpenTelemetry"
+            ]
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,aws-api.eu.newrelic.com",
+            "DOMAIN,aws-api.eu01.nr-data.net",
+            "DOMAIN,aws-api.jp.nr-data.net",
+            "DOMAIN,aws-api.newrelic.com",
+            "DOMAIN,bam-cell.nr-data.net",
+            "DOMAIN,bam.eu01.nr-data.net",
+            "DOMAIN,bam.jp.nr-data.net",
+            "DOMAIN,bam.nr-data.net",
+            "DOMAIN,cloud-collector.eu.newrelic.com",
+            "DOMAIN,cloud-collector.jp.nr-data.net",
+            "DOMAIN,cloud-collector.newrelic.com",
+            "DOMAIN,collector.eu.newrelic.com",
+            "DOMAIN,collector.eu01.nr-data.net",
+            "DOMAIN,collector.jp.nr-data.net",
+            "DOMAIN,collector.newrelic.com",
+            "DOMAIN,csec.eu01.nr-data.net",
+            "DOMAIN,csec.jp.nr-data.net",
+            "DOMAIN,csec.nr-data.net",
+            "DOMAIN,identity-api.eu.newrelic.com",
+            "DOMAIN,identity-api.jp.nr-data.net",
+            "DOMAIN,identity-api.newrelic.com",
+            "DOMAIN,infra-api.eu.newrelic.com",
+            "DOMAIN,infra-api.eu01.nr-data.net",
+            "DOMAIN,infra-api.jp.nr-data.net",
+            "DOMAIN,infra-api.newrelic.com",
+            "DOMAIN,infrastructure-command-api.eu.newrelic.com",
+            "DOMAIN,infrastructure-command-api.jp.nr-data.net",
+            "DOMAIN,infrastructure-command-api.newrelic.com",
+            "DOMAIN,insights-collector.eu01.nr-data.net",
+            "DOMAIN,insights-collector.jp.nr-data.net",
+            "DOMAIN,insights-collector.newrelic.com",
+            "DOMAIN,log-api.eu.newrelic.com",
+            "DOMAIN,log-api.jp.nr-data.net",
+            "DOMAIN,log-api.newrelic.com",
+            "DOMAIN,metric-api.eu.newrelic.com",
+            "DOMAIN,metric-api.jp.nr-data.net",
+            "DOMAIN,metric-api.newrelic.com",
+            "DOMAIN,mobile-collector.eu01.nr-data.net",
+            "DOMAIN,mobile-collector.jp.nr-data.net",
+            "DOMAIN,mobile-collector.newrelic.com",
+            "DOMAIN,mobile-crash.eu01.nr-data.net",
+            "DOMAIN,mobile-crash.jp.nr-data.net",
+            "DOMAIN,mobile-crash.newrelic.com",
+            "DOMAIN,mobile-symbol-upload.eu01.nr-data.net",
+            "DOMAIN,mobile-symbol-upload.jp.nr-data.net",
+            "DOMAIN,mobile-symbol-upload.newrelic.com",
+            "DOMAIN,nrql-lookup.service.eu.newrelic.com",
+            "DOMAIN,nrql-lookup.service.jp.newrelic.com",
+            "DOMAIN,nrql-lookup.service.newrelic.com",
+            "DOMAIN,opamp.service.eu.newrelic.com",
+            "DOMAIN,opamp.service.jp.newrelic.com",
+            "DOMAIN,opamp.service.newrelic.com",
+            "DOMAIN,otlp.eu01.nr-data.net",
+            "DOMAIN,otlp.jp.nr-data.net",
+            "DOMAIN,otlp.nr-data.net",
+            "DOMAIN,system-identity-oauth.service.eu.newrelic.com",
+            "DOMAIN,system-identity-oauth.service.jp.newrelic.com",
+            "DOMAIN,system-identity-oauth.service.newrelic.com",
+            "DOMAIN,trace-api.eu.newrelic.com",
+            "DOMAIN,trace-api.jp.nr-data.net",
+            "DOMAIN,trace-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "new-relic-dualstack-endpoints",
+            "headers": [
+              "Capability",
+              "US data center endpoint (default)",
+              "EU data center endpoint"
+            ],
+            "columns": [
+              "US data center endpoint (default)",
+              "EU data center endpoint"
+            ],
+            "split-values": true,
+            "group-rows": [
+              "APM",
+              "AWS",
+              "Browser",
+              "IAST",
+              "Ingest APIs",
+              "Infrastructure",
+              "Agent Control (Fleet Control)",
+              "Lookup tables",
+              "Mobile",
+              "OpenTelemetry"
+            ]
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,aws-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,aws-api.dualstack.nr-data.net",
+            "DOMAIN,bam.dualstack.eu01.nr-data.net",
+            "DOMAIN,bam.dualstack.nr-data.net",
+            "DOMAIN,cloud-collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,cloud-collector.dualstack.nr-data.net",
+            "DOMAIN,collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,collector.dualstack.nr-data.net",
+            "DOMAIN,identity-api.dualstack.eu.newrelic.com",
+            "DOMAIN,identity-api.dualstack.newrelic.com",
+            "DOMAIN,infra-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,infra-api.dualstack.nr-data.net",
+            "DOMAIN,infrastructure-command-api.dualstack.eu.newrelic.com",
+            "DOMAIN,infrastructure-command-api.dualstack.newrelic.com",
+            "DOMAIN,insights-collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,insights-collector.dualstack.nr-data.net",
+            "DOMAIN,log-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,log-api.dualstack.nr-data.net",
+            "DOMAIN,metric-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,metric-api.dualstack.nr-data.net",
+            "DOMAIN,mobile-collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,mobile-collector.dualstack.nr-data.net",
+            "DOMAIN,mobile-crash.dualstack.eu01.nr-data.net",
+            "DOMAIN,mobile-crash.dualstack.nr-data.net",
+            "DOMAIN,otlp.dualstack.eu01.nr-data.net",
+            "DOMAIN,otlp.dualstack.nr-data.net",
+            "DOMAIN,trace-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,trace-api.dualstack.nr-data.net"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+            "format": "domain-column-table",
+            "section": "agents",
+            "headers": [
+              "Endpoint",
+              "FedRAMP endpoint",
+              "Purpose and notes"
+            ],
+            "columns": [
+              "Endpoint",
+              "FedRAMP endpoint"
+            ],
+            "other-table-headers": [
+              [
+                "Language",
+                "Code or environment variable"
+              ],
+              [
+                "YAML config field",
+                "Endpoint URL"
+              ],
+              [
+                "Environment variable",
+                "Endpoint URL"
+              ],
+              [
+                "Agent",
+                "Code or environment variable"
+              ]
+            ],
+            "split-values": true,
+            "value-format": "domain-or-url",
+            "allow-bare-addresses": true,
+            "ignore-controls": true
+          },
+          "complete": true,
+          "sha256": "bcea4672d4c65a4a7b6404693d0b7bdcfff8f8dbd6afc95a03476525955c799c",
+          "rules": [
+            "DOMAIN,aws-api.newrelic.com",
+            "DOMAIN,bam.nr-data.net",
+            "DOMAIN,cloud-collector.newrelic.com",
+            "DOMAIN,collector.newrelic.com",
+            "DOMAIN,csec-gov.nr-data.net",
+            "DOMAIN,csec.nr-data.net",
+            "DOMAIN,gov-aws-api.newrelic.com",
+            "DOMAIN,gov-bam.nr-data.net",
+            "DOMAIN,gov-cloud-collector.newrelic.com",
+            "DOMAIN,gov-collector.newrelic.com",
+            "DOMAIN,gov-infra-api.newrelic.com",
+            "DOMAIN,gov-insights-collector.newrelic.com",
+            "DOMAIN,gov-log-api.newrelic.com",
+            "DOMAIN,gov-metric-api.newrelic.com",
+            "DOMAIN,gov-mobile-collector.newrelic.com",
+            "DOMAIN,gov-mobile-crash.newrelic.com",
+            "DOMAIN,gov-otlp.nr-data.net",
+            "DOMAIN,gov-trace-api.newrelic.com",
+            "DOMAIN,infra-api.newrelic.com",
+            "DOMAIN,insights-collector.newrelic.com",
+            "DOMAIN,log-api.newrelic.com",
+            "DOMAIN,metric-api.newrelic.com",
+            "DOMAIN,mobile-collector.newrelic.com",
+            "DOMAIN,mobile-crash.newrelic.com",
+            "DOMAIN,otlp.nr-data.net",
+            "DOMAIN,trace-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+            "format": "domain-column-table",
+            "section": "agents",
+            "headers": [
+              "YAML config field",
+              "Endpoint URL"
+            ],
+            "columns": [
+              "Endpoint URL"
+            ],
+            "other-table-headers": [
+              [
+                "Endpoint",
+                "FedRAMP endpoint",
+                "Purpose and notes"
+              ],
+              [
+                "Language",
+                "Code or environment variable"
+              ],
+              [
+                "Environment variable",
+                "Endpoint URL"
+              ],
+              [
+                "Agent",
+                "Code or environment variable"
+              ]
+            ],
+            "split-values": true,
+            "value-format": "domain-or-url",
+            "allow-bare-addresses": true,
+            "ignore-controls": true
+          },
+          "complete": true,
+          "sha256": "bcea4672d4c65a4a7b6404693d0b7bdcfff8f8dbd6afc95a03476525955c799c",
+          "rules": [
+            "DOMAIN,gov-identity-api.newrelic.com",
+            "DOMAIN,gov-infra-api.newrelic.com",
+            "DOMAIN,gov-infrastructure-command-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+            "format": "domain-column-table",
+            "section": "agents",
+            "headers": [
+              "Environment variable",
+              "Endpoint URL"
+            ],
+            "columns": [
+              "Endpoint URL"
+            ],
+            "other-table-headers": [
+              [
+                "Endpoint",
+                "FedRAMP endpoint",
+                "Purpose and notes"
+              ],
+              [
+                "Language",
+                "Code or environment variable"
+              ],
+              [
+                "YAML config field",
+                "Endpoint URL"
+              ],
+              [
+                "Agent",
+                "Code or environment variable"
+              ]
+            ],
+            "split-values": true,
+            "value-format": "domain-or-url",
+            "allow-bare-addresses": true,
+            "ignore-controls": true
+          },
+          "complete": true,
+          "sha256": "bcea4672d4c65a4a7b6404693d0b7bdcfff8f8dbd6afc95a03476525955c799c",
+          "rules": [
+            "DOMAIN,gov-identity-api.newrelic.com",
+            "DOMAIN,gov-infra-api.newrelic.com",
+            "DOMAIN,gov-infrastructure-command-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "agent-download",
+            "headers": [
+              "Purpose",
+              "Domain"
+            ],
+            "column": "Domain",
+            "split-values": true
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,auth.docker.io",
+            "DOMAIN,production.cloudfront.docker.com",
+            "DOMAIN,publickeys.eu.newrelic.com",
+            "DOMAIN,publickeys.jp.newrelic.com",
+            "DOMAIN,publickeys.newrelic.com",
+            "DOMAIN,registry-1.docker.io"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "purpose-domain-lists",
+            "labels": [
+              "The Pixie integration requires outbound network access to the following:"
+            ]
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,otlp.eu01.nr-data.net",
+            "DOMAIN,otlp.nr-data.net",
+            "DOMAIN,withpixie.ai",
+            "DOMAIN,work.withpixie.ai"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "product-domain-statements",
+            "paragraph-contains": [
+              "Pixie community project uses container images"
+            ],
+            "code-only": true
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,gcr.io"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/",
+            "format": "purpose-domain-lists",
+            "labels": [
+              "Use one of the following according to your region:"
+            ],
+            "item-address": "single-url"
+          },
+          "complete": true,
+          "sha256": "e5a7d34e9ae5137cd28ce120aacc9770b5527b74df1e9a2573f59995c8a6ccc2",
+          "rules": [
+            "DOMAIN,security-api.newrelic.com",
+            "DOMAIN,security-api.service.eu.newrelic.com",
+            "DOMAIN,security-api.service.jp.newrelic.com"
+          ]
+        }
+      ]
+    },
+    "newrelic-service-and-networks-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "user-facing-domains",
+            "headers": [
+              "Domain",
+              "Description"
+            ],
+            "column": "Domain",
+            "decode-escaped-wildcards": true,
+            "allow-tenant-wildcards": true
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,fonts.googleapis.com",
+            "DOMAIN,fonts.gstatic.com",
+            "DOMAIN,newrelic.github.io",
+            "DOMAIN,nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com",
+            "DOMAIN,nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com",
+            "DOMAIN,nr-synthetics-production.s3.amazonaws.com",
+            "DOMAIN,onenr.io",
+            "DOMAIN,pa-api.newrelic-external.com",
+            "DOMAIN,secure.gravatar.com",
+            "DOMAIN,www.google.com",
+            "DOMAIN,www.gstatic.com",
+            "DOMAIN-WILDCARD,*.newrelic.com",
+            "DOMAIN-WILDCARD,*.nr-assets.net",
+            "DOMAIN-WILDCARD,*.nr-data.net",
+            "DOMAIN-WILDCARD,*.nr-ext.net",
+            "DOMAIN-WILDCARD,*.typescript.azureedge.net"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "new-relic-endpoints",
+            "headers": [
+              "Capability",
+              "US data center endpoint (default)",
+              "EU data center endpoint",
+              "Japan data center endpoint"
+            ],
+            "columns": [
+              "US data center endpoint (default)",
+              "EU data center endpoint",
+              "Japan data center endpoint"
+            ],
+            "split-values": true,
+            "group-rows": [
+              "APM",
+              "AWS",
+              "Browser",
+              "IAST",
+              "Ingest APIs",
+              "Infrastructure",
+              "Agent Control (Fleet Control)",
+              "Lookup tables",
+              "Mobile",
+              "OpenTelemetry"
+            ]
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,aws-api.eu.newrelic.com",
+            "DOMAIN,aws-api.eu01.nr-data.net",
+            "DOMAIN,aws-api.jp.nr-data.net",
+            "DOMAIN,aws-api.newrelic.com",
+            "DOMAIN,bam-cell.nr-data.net",
+            "DOMAIN,bam.eu01.nr-data.net",
+            "DOMAIN,bam.jp.nr-data.net",
+            "DOMAIN,bam.nr-data.net",
+            "DOMAIN,cloud-collector.eu.newrelic.com",
+            "DOMAIN,cloud-collector.jp.nr-data.net",
+            "DOMAIN,cloud-collector.newrelic.com",
+            "DOMAIN,collector.eu.newrelic.com",
+            "DOMAIN,collector.eu01.nr-data.net",
+            "DOMAIN,collector.jp.nr-data.net",
+            "DOMAIN,collector.newrelic.com",
+            "DOMAIN,csec.eu01.nr-data.net",
+            "DOMAIN,csec.jp.nr-data.net",
+            "DOMAIN,csec.nr-data.net",
+            "DOMAIN,identity-api.eu.newrelic.com",
+            "DOMAIN,identity-api.jp.nr-data.net",
+            "DOMAIN,identity-api.newrelic.com",
+            "DOMAIN,infra-api.eu.newrelic.com",
+            "DOMAIN,infra-api.eu01.nr-data.net",
+            "DOMAIN,infra-api.jp.nr-data.net",
+            "DOMAIN,infra-api.newrelic.com",
+            "DOMAIN,infrastructure-command-api.eu.newrelic.com",
+            "DOMAIN,infrastructure-command-api.jp.nr-data.net",
+            "DOMAIN,infrastructure-command-api.newrelic.com",
+            "DOMAIN,insights-collector.eu01.nr-data.net",
+            "DOMAIN,insights-collector.jp.nr-data.net",
+            "DOMAIN,insights-collector.newrelic.com",
+            "DOMAIN,log-api.eu.newrelic.com",
+            "DOMAIN,log-api.jp.nr-data.net",
+            "DOMAIN,log-api.newrelic.com",
+            "DOMAIN,metric-api.eu.newrelic.com",
+            "DOMAIN,metric-api.jp.nr-data.net",
+            "DOMAIN,metric-api.newrelic.com",
+            "DOMAIN,mobile-collector.eu01.nr-data.net",
+            "DOMAIN,mobile-collector.jp.nr-data.net",
+            "DOMAIN,mobile-collector.newrelic.com",
+            "DOMAIN,mobile-crash.eu01.nr-data.net",
+            "DOMAIN,mobile-crash.jp.nr-data.net",
+            "DOMAIN,mobile-crash.newrelic.com",
+            "DOMAIN,mobile-symbol-upload.eu01.nr-data.net",
+            "DOMAIN,mobile-symbol-upload.jp.nr-data.net",
+            "DOMAIN,mobile-symbol-upload.newrelic.com",
+            "DOMAIN,nrql-lookup.service.eu.newrelic.com",
+            "DOMAIN,nrql-lookup.service.jp.newrelic.com",
+            "DOMAIN,nrql-lookup.service.newrelic.com",
+            "DOMAIN,opamp.service.eu.newrelic.com",
+            "DOMAIN,opamp.service.jp.newrelic.com",
+            "DOMAIN,opamp.service.newrelic.com",
+            "DOMAIN,otlp.eu01.nr-data.net",
+            "DOMAIN,otlp.jp.nr-data.net",
+            "DOMAIN,otlp.nr-data.net",
+            "DOMAIN,system-identity-oauth.service.eu.newrelic.com",
+            "DOMAIN,system-identity-oauth.service.jp.newrelic.com",
+            "DOMAIN,system-identity-oauth.service.newrelic.com",
+            "DOMAIN,trace-api.eu.newrelic.com",
+            "DOMAIN,trace-api.jp.nr-data.net",
+            "DOMAIN,trace-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "new-relic-dualstack-endpoints",
+            "headers": [
+              "Capability",
+              "US data center endpoint (default)",
+              "EU data center endpoint"
+            ],
+            "columns": [
+              "US data center endpoint (default)",
+              "EU data center endpoint"
+            ],
+            "split-values": true,
+            "group-rows": [
+              "APM",
+              "AWS",
+              "Browser",
+              "IAST",
+              "Ingest APIs",
+              "Infrastructure",
+              "Agent Control (Fleet Control)",
+              "Lookup tables",
+              "Mobile",
+              "OpenTelemetry"
+            ]
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,aws-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,aws-api.dualstack.nr-data.net",
+            "DOMAIN,bam.dualstack.eu01.nr-data.net",
+            "DOMAIN,bam.dualstack.nr-data.net",
+            "DOMAIN,cloud-collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,cloud-collector.dualstack.nr-data.net",
+            "DOMAIN,collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,collector.dualstack.nr-data.net",
+            "DOMAIN,identity-api.dualstack.eu.newrelic.com",
+            "DOMAIN,identity-api.dualstack.newrelic.com",
+            "DOMAIN,infra-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,infra-api.dualstack.nr-data.net",
+            "DOMAIN,infrastructure-command-api.dualstack.eu.newrelic.com",
+            "DOMAIN,infrastructure-command-api.dualstack.newrelic.com",
+            "DOMAIN,insights-collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,insights-collector.dualstack.nr-data.net",
+            "DOMAIN,log-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,log-api.dualstack.nr-data.net",
+            "DOMAIN,metric-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,metric-api.dualstack.nr-data.net",
+            "DOMAIN,mobile-collector.dualstack.eu01.nr-data.net",
+            "DOMAIN,mobile-collector.dualstack.nr-data.net",
+            "DOMAIN,mobile-crash.dualstack.eu01.nr-data.net",
+            "DOMAIN,mobile-crash.dualstack.nr-data.net",
+            "DOMAIN,otlp.dualstack.eu01.nr-data.net",
+            "DOMAIN,otlp.dualstack.nr-data.net",
+            "DOMAIN,trace-api.dualstack.eu01.nr-data.net",
+            "DOMAIN,trace-api.dualstack.nr-data.net"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+            "format": "domain-column-table",
+            "section": "agents",
+            "headers": [
+              "Endpoint",
+              "FedRAMP endpoint",
+              "Purpose and notes"
+            ],
+            "columns": [
+              "Endpoint",
+              "FedRAMP endpoint"
+            ],
+            "other-table-headers": [
+              [
+                "Language",
+                "Code or environment variable"
+              ],
+              [
+                "YAML config field",
+                "Endpoint URL"
+              ],
+              [
+                "Environment variable",
+                "Endpoint URL"
+              ],
+              [
+                "Agent",
+                "Code or environment variable"
+              ]
+            ],
+            "split-values": true,
+            "value-format": "domain-or-url",
+            "allow-bare-addresses": true,
+            "ignore-controls": true
+          },
+          "complete": true,
+          "sha256": "bcea4672d4c65a4a7b6404693d0b7bdcfff8f8dbd6afc95a03476525955c799c",
+          "rules": [
+            "DOMAIN,aws-api.newrelic.com",
+            "DOMAIN,bam.nr-data.net",
+            "DOMAIN,cloud-collector.newrelic.com",
+            "DOMAIN,collector.newrelic.com",
+            "DOMAIN,csec-gov.nr-data.net",
+            "DOMAIN,csec.nr-data.net",
+            "DOMAIN,gov-aws-api.newrelic.com",
+            "DOMAIN,gov-bam.nr-data.net",
+            "DOMAIN,gov-cloud-collector.newrelic.com",
+            "DOMAIN,gov-collector.newrelic.com",
+            "DOMAIN,gov-infra-api.newrelic.com",
+            "DOMAIN,gov-insights-collector.newrelic.com",
+            "DOMAIN,gov-log-api.newrelic.com",
+            "DOMAIN,gov-metric-api.newrelic.com",
+            "DOMAIN,gov-mobile-collector.newrelic.com",
+            "DOMAIN,gov-mobile-crash.newrelic.com",
+            "DOMAIN,gov-otlp.nr-data.net",
+            "DOMAIN,gov-trace-api.newrelic.com",
+            "DOMAIN,infra-api.newrelic.com",
+            "DOMAIN,insights-collector.newrelic.com",
+            "DOMAIN,log-api.newrelic.com",
+            "DOMAIN,metric-api.newrelic.com",
+            "DOMAIN,mobile-collector.newrelic.com",
+            "DOMAIN,mobile-crash.newrelic.com",
+            "DOMAIN,otlp.nr-data.net",
+            "DOMAIN,trace-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+            "format": "domain-column-table",
+            "section": "agents",
+            "headers": [
+              "YAML config field",
+              "Endpoint URL"
+            ],
+            "columns": [
+              "Endpoint URL"
+            ],
+            "other-table-headers": [
+              [
+                "Endpoint",
+                "FedRAMP endpoint",
+                "Purpose and notes"
+              ],
+              [
+                "Language",
+                "Code or environment variable"
+              ],
+              [
+                "Environment variable",
+                "Endpoint URL"
+              ],
+              [
+                "Agent",
+                "Code or environment variable"
+              ]
+            ],
+            "split-values": true,
+            "value-format": "domain-or-url",
+            "allow-bare-addresses": true,
+            "ignore-controls": true
+          },
+          "complete": true,
+          "sha256": "bcea4672d4c65a4a7b6404693d0b7bdcfff8f8dbd6afc95a03476525955c799c",
+          "rules": [
+            "DOMAIN,gov-identity-api.newrelic.com",
+            "DOMAIN,gov-infra-api.newrelic.com",
+            "DOMAIN,gov-infrastructure-command-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/",
+            "format": "domain-column-table",
+            "section": "agents",
+            "headers": [
+              "Environment variable",
+              "Endpoint URL"
+            ],
+            "columns": [
+              "Endpoint URL"
+            ],
+            "other-table-headers": [
+              [
+                "Endpoint",
+                "FedRAMP endpoint",
+                "Purpose and notes"
+              ],
+              [
+                "Language",
+                "Code or environment variable"
+              ],
+              [
+                "YAML config field",
+                "Endpoint URL"
+              ],
+              [
+                "Agent",
+                "Code or environment variable"
+              ]
+            ],
+            "split-values": true,
+            "value-format": "domain-or-url",
+            "allow-bare-addresses": true,
+            "ignore-controls": true
+          },
+          "complete": true,
+          "sha256": "bcea4672d4c65a4a7b6404693d0b7bdcfff8f8dbd6afc95a03476525955c799c",
+          "rules": [
+            "DOMAIN,gov-identity-api.newrelic.com",
+            "DOMAIN,gov-infra-api.newrelic.com",
+            "DOMAIN,gov-infrastructure-command-api.newrelic.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "domain-column-table",
+            "section": "agent-download",
+            "headers": [
+              "Purpose",
+              "Domain"
+            ],
+            "column": "Domain",
+            "split-values": true
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,auth.docker.io",
+            "DOMAIN,production.cloudfront.docker.com",
+            "DOMAIN,publickeys.eu.newrelic.com",
+            "DOMAIN,publickeys.jp.newrelic.com",
+            "DOMAIN,publickeys.newrelic.com",
+            "DOMAIN,registry-1.docker.io"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "purpose-domain-lists",
+            "labels": [
+              "The Pixie integration requires outbound network access to the following:"
+            ]
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,otlp.eu01.nr-data.net",
+            "DOMAIN,otlp.nr-data.net",
+            "DOMAIN,withpixie.ai",
+            "DOMAIN,work.withpixie.ai"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",
+            "format": "product-domain-statements",
+            "paragraph-contains": [
+              "Pixie community project uses container images"
+            ],
+            "code-only": true
+          },
+          "complete": true,
+          "sha256": "8384d7bb8af335a61abad31eb327fe6eebe9727bd5a2fa9477c2d41b8476d7bc",
+          "rules": [
+            "DOMAIN,gcr.io"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/",
+            "format": "purpose-domain-lists",
+            "labels": [
+              "Use one of the following according to your region:"
+            ],
+            "item-address": "single-url"
+          },
+          "complete": true,
+          "sha256": "e5a7d34e9ae5137cd28ce120aacc9770b5527b74df1e9a2573f59995c8a6ccc2",
+          "rules": [
+            "DOMAIN,security-api.newrelic.com",
+            "DOMAIN,security-api.service.eu.newrelic.com",
+            "DOMAIN,security-api.service.jp.newrelic.com"
           ]
         }
       ]
@@ -14096,7 +15050,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "ollama-cloud": {
@@ -14127,7 +15081,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "stackit-model-services": {
@@ -14158,7 +15112,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "stepfun-international": {
@@ -14200,7 +15154,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "xiaomi-international": {
@@ -14243,7 +15197,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -14278,7 +15232,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -14328,7 +15282,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -14369,7 +15323,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14610,7 +15564,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "npm-registry": {
@@ -14643,7 +15597,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14687,7 +15641,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14720,7 +15674,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14773,7 +15727,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "braintree-payments": {
@@ -14800,7 +15754,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "notion-workspace": {
@@ -14827,7 +15781,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "google-account-authentication": {
@@ -15035,7 +15989,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -15061,7 +16015,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "google-play-services": {
@@ -15097,7 +16051,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "google-play-games": {
@@ -15125,7 +16079,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "kimi-mainland": {
@@ -15156,7 +16110,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -15187,7 +16141,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -15230,7 +16184,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -15269,7 +16223,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795721238,
+      "last-read": 1795725959,
       "state": "current"
     }
   },
@@ -15277,7 +16231,7 @@
   "expanded-domain-cases": 226,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1386,
+  "business-domain-cases": 1389,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -15288,7 +16242,7 @@
   "shared-negatives": 19,
   "changed": [],
   "scope-negatives": 157,
-  "ip-cases": 44,
+  "ip-cases": 62,
   "ip-matching": {
     "local-links-and-addresses": {
       "intent": "per-rule",
@@ -15349,6 +16303,11 @@
       "intent": "allow-dns",
       "no-resolve": 0,
       "resolve-for-match": 1
+    },
+    "newrelic-ingest-networks": {
+      "intent": "target-ip",
+      "no-resolve": 9,
+      "resolve-for-match": 0
     }
   },
   "rules": {
@@ -15358,6 +16317,8 @@
     "tailscale-control-and-tailnet": 3,
     "ip-egress-checks": 22,
     "cloudflare-public-dns": 6,
+    "newrelic-service-all": 22,
+    "newrelic-service-and-networks-all": 31,
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
@@ -15502,7 +16463,7 @@
     "apple-device-registration": 2,
     "apple-feedback-and-diagnostics": 16,
     "apple-other-services": 6,
-    "overseas-development-all": 230,
+    "overseas-development-all": 239,
     "github-code-and-packages": 157,
     "gitlab-hosting": 4,
     "bitbucket-hosting": 1,
@@ -15529,6 +16490,8 @@
     "bugsnag-error-monitoring": 1,
     "backstage-developer-portal": 1,
     "spotify-advertising-and-analytics": 5,
+    "newrelic-platform": 9,
+    "newrelic-ingest-networks": 9,
     "overseas-social-all": 240,
     "telegram-messaging": 35,
     "discord-messaging-and-voice": 26,
@@ -15724,9 +16687,9 @@
     "github-pages-hosting": 1,
     "mux-data-analytics": 1,
     "mux-video-platform": 1,
-    "overseas-extra-all": 18597,
+    "overseas-extra-all": 18596,
     "overseas-media-extra": 139,
-    "overseas-sites-extra": 18472,
+    "overseas-sites-extra": 18471,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,

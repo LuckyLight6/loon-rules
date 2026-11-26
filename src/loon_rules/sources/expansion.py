@@ -10,6 +10,7 @@ from loon_rules.sources import sdk_pages as source_sdk_pages
 from loon_rules.sources import templates as source_templates
 from loon_rules.sources import profiles as source_profiles
 from loon_rules.sources import bags as source_bags
+from loon_rules.sources import network_agreement as source_networks
 from loon_rules.rules import Invalid
 from loon_rules.matching import merge_cases
 from loon_rules.sources.inputs import extract_rows
@@ -40,6 +41,11 @@ def version_policy(spec):
 def validate(config, entries):
     for key, entry in entries.items():
         if not (spec := entry.get('expand')):
+            continue
+        if spec.get('method')==source_networks.METHOD:
+            source_networks.validate(spec)
+            if entry['mode']!='compiled' or not {item['source'] for item in spec['inputs']}<=set(entry['sources']):
+                raise Invalid('网段核对来源未列入生成声明：'+key)
             continue
         if spec.get('method')==source_bags.METHOD:
             source_bags.validate(spec)
@@ -101,7 +107,9 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
     for key, entry in entries.items():
         if not (spec := entry.get('expand')):
             continue
-        if spec.get('method')==source_bags.METHOD:
+        if spec.get('method')==source_networks.METHOD:
+            plans[key]=source_networks.plan(spec)
+        elif spec.get('method')==source_bags.METHOD:
             plans[key]=source_bags.plan(spec)
         elif spec.get('method')==source_profiles.METHOD:
             plans[key]=source_profiles.plan(spec,downloaded[spec['source']])
@@ -115,7 +123,7 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
             plans[key]={'documents':plan(spec, downloaded[spec['source']])}
         for doc in plans[key]['documents']:
             if doc['source'] in jobs:
-                if (doc.get('kind') not in ('domain-registry',source_profiles.METHOD,source_bags.METHOD)
+                if (doc.get('kind') not in ('domain-registry',source_profiles.METHOD,source_bags.METHOD,source_networks.METHOD)
                         or jobs[doc['source']].get('kind')!=doc.get('kind')):
                     raise Invalid('API 目录的产品归属重叠：' + key)
             jobs[doc['source']] = doc
@@ -130,6 +138,9 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
     rows = {}
     report = {}
     for key, record in plans.items():
+        if record.get('method')==source_networks.METHOD:
+            rows[key],report[key]=source_networks.read(entries[key]['expand'],record,inputs)
+            continue
         if record.get('method')==source_bags.METHOD:
             rows[key],report[key]=source_bags.read(entries[key]['expand'],record,inputs,shared_hosts)
             continue
@@ -171,6 +182,10 @@ def verify_report(entries, data, report, *, shared_hosts=()):
                 kind,host,*flags=row.split(',')
                 if kind!='DOMAIN' or flags or domain_scope.public_host(host)!=host or host not in shared_hosts:
                     raise Invalid('发现文档的共用端点没有对应的范围依据：'+key)
+        if spec.get('method')==source_networks.METHOD:
+            source_networks.verify(spec,record)
+            source_networks.verify_coverage(key,data,record)
+            continue
         if spec.get('method')==source_bags.METHOD:
             source_bags.verify(spec,record)
             for doc in docs:verify_rows(key,doc['rows'],data)
@@ -224,6 +239,7 @@ def inventory_rows(report):
 def with_cases(config,data,report):
     cases={}
     for key,record in report.items():
+        if record.get('method')==source_networks.METHOD:continue
         for doc in record['documents']:
             verify_rows(key,doc['rows'],data)
             for row in doc['rows']:

@@ -2,10 +2,10 @@
 # priority: 3000
 # section: development
 # description: 海外开发合集
-# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅。New Relic 目的网络单列 3290，需要包含遥测和完整依赖时使用 0205 或 0206。
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T20:44:08Z
-# rule-count: 230
+# updated-at: 2026-11-26T20:13:18Z
+# rule-count: 239
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/GitHub.lsr
 # source: https://api.github.com/meta
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
@@ -43,6 +43,8 @@
 # source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
 # source: https://backstage.io/docs/overview/background/
 # source: https://newsroom.spotify.com/2023-06-13/evolving-brands-measurement-experience-with-all-new-spotify-ad-analytics/
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
 
 DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,git.io
@@ -274,3 +276,12 @@ DOMAIN,metarouter.pdst.io
 DOMAIN,podcast-graph-dot-adaptive-growth.appspot.com
 DOMAIN-SUFFIX,pdst.fm
 DOMAIN-SUFFIX,podsights.com
+DOMAIN-SUFFIX,newrelic.com
+DOMAIN,newrelic.github.io
+DOMAIN,nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com
+DOMAIN,nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com
+DOMAIN,nr-synthetics-production.s3.amazonaws.com
+DOMAIN,onenr.io
+DOMAIN,pa-api.newrelic-external.com
+DOMAIN-WILDCARD,*.nr-assets.net
+DOMAIN-WILDCARD,*.nr-ext.net

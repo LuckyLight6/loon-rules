@@ -1,0 +1,41 @@
+# name: newrelic-service-all
+# priority: 0205
+# section: development
+# description: New Relic 完整域名与必要遥测例外
+# boundary: 主动选用时优先于追踪拦截，完整覆盖官方所列公共域名、遥测与共享依赖。共享主机上的其他请求也随本表选路。目的IP另选3290，或改选0206；与3260及包含它的3000二选一。常规拦截本身不变，不纳入客户私有连接或整家云平台。
+# created-at: 2026-11-26T20:13:18Z
+# updated-at: 2026-11-26T20:13:18Z
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# source: https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/
+# source: https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/
+# canonical-rule-count: 22
+# rule-count: 22
+# format: egern
+# canonical: rules/loon/0205-newrelic-service-all.lsr
+
+domain_suffix_set:
+  - "newrelic.com"
+domain_set:
+  - "newrelic.github.io"
+  - "nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com"
+  - "nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com"
+  - "nr-synthetics-production.s3.amazonaws.com"
+  - "onenr.io"
+  - "pa-api.newrelic-external.com"
+  - "fonts.googleapis.com"
+  - "fonts.gstatic.com"
+  - "secure.gravatar.com"
+  - "www.google.com"
+  - "www.gstatic.com"
+  - "auth.docker.io"
+  - "production.cloudfront.docker.com"
+  - "registry-1.docker.io"
+  - "withpixie.ai"
+  - "work.withpixie.ai"
+  - "gcr.io"
+domain_regex_set:
+  - "(?i)^.*\\.nr\\-assets\\.net$"
+  - "(?i)^.*\\.nr\\-ext\\.net$"
+  - "(?i)^.*\\.nr\\-data\\.net$"
+  - "(?i)^.*\\.typescript\\.azureedge\\.net$"

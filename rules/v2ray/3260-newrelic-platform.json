@@ -1,0 +1,21 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:newrelic.com",
+          "full:newrelic.github.io",
+          "full:nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com",
+          "full:nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com",
+          "full:nr-synthetics-production.s3.amazonaws.com",
+          "full:onenr.io",
+          "full:pa-api.newrelic-external.com",
+          "regexp:(?i)^.*\\.nr\\-assets\\.net$",
+          "regexp:(?i)^.*\\.nr\\-ext\\.net$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -16,7 +16,7 @@ INVENTORY_FIELDS={'service-domain-groups':('path','groups','platform-domains','o
                   'section-code-domains':('sections',),
                   'json-document':('body-path','identity','document','decode-json'),
                   'purpose-domain-lists':('labels','allow-identical-duplicates','nested-subdomain-labels',
-                                          'item-purpose-prefixes','item-purpose-contains','item-purpose-style')}
+                                          'item-purpose-prefixes','item-purpose-contains','item-purpose-style','item-address')}
 
 
 def recipes(entry):

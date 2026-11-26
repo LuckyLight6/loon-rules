@@ -1,0 +1,38 @@
+# name: newrelic-service-all
+# priority: 0205
+# section: development
+# description: New Relic 完整域名与必要遥测例外
+# boundary: 主动选用时优先于追踪拦截，完整覆盖官方所列公共域名、遥测与共享依赖。共享主机上的其他请求也随本表选路。目的IP另选3290，或改选0206；与3260及包含它的3000二选一。常规拦截本身不变，不纳入客户私有连接或整家云平台。
+# created-at: 2026-11-26T20:13:18Z
+# updated-at: 2026-11-26T20:13:18Z
+# source: https://newrelic.com/
+# source: https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/
+# source: https://docs.newrelic.com/docs/security/security-privacy/compliance/fedramp-compliant-endpoints/
+# source: https://docs.newrelic.com/docs/data-apis/ingest-apis/security-data-api/
+# canonical-rule-count: 22
+# rule-count: 22
+# format: quantumult-x
+# canonical: rules/loon/0205-newrelic-service-all.lsr
+
+host-suffix,newrelic.com,proxy
+host,newrelic.github.io,proxy
+host,nr-synthetics-production-eu.s3.eu-central-1.amazonaws.com,proxy
+host,nr-synthetics-production-jp.s3.ap-northeast-1.amazonaws.com,proxy
+host,nr-synthetics-production.s3.amazonaws.com,proxy
+host,onenr.io,proxy
+host,pa-api.newrelic-external.com,proxy
+host-wildcard,*.nr-assets.net,proxy
+host-wildcard,*.nr-ext.net,proxy
+host,fonts.googleapis.com,proxy
+host,fonts.gstatic.com,proxy
+host,secure.gravatar.com,proxy
+host,www.google.com,proxy
+host,www.gstatic.com,proxy
+host-wildcard,*.nr-data.net,proxy
+host-wildcard,*.typescript.azureedge.net,proxy
+host,auth.docker.io,proxy
+host,production.cloudfront.docker.com,proxy
+host,registry-1.docker.io,proxy
+host,withpixie.ai,proxy
+host,work.withpixie.ai,proxy
+host,gcr.io,proxy

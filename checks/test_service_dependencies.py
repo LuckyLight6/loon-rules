@@ -74,3 +74,46 @@ class ServiceDependencies(PublicSourceExamples):
         rows=read_rules((ROOT/'rules/loon/1040-xai-connections.lsr').read_text())
         for host in ['accounts.spacexsi.com','auth.grokipedia.com']:
             with self.subTest(host=host):self.assertTrue(any(match_domain(host,row) for row in rows))
+
+    def test_explicit_early_service_override_keeps_normal_privacy_unchanged(self):
+        cfg=self.config();bundle=cfg['entries'][1];bundle['priority']=5;bundle['privacy-override']=True
+        bundle['dependency-inputs'][0]['protect-from-reject']=False
+        cfg['critical']['login.shared.example']=['ads'];cfg['critical']['new.shared.example']=['ads']
+        inputs={'https://vendor.example/network':self.page(),
+                'https://lists.example/ads':'DOMAIN,login.shared.example\nDOMAIN,new.shared.example\nDOMAIN,ads.other.example\n'}
+        with TemporaryDirectory() as temporary,patch.object(pipeline,'ROOT',prepare_workspace(temporary)),redirect_stdout(StringIO()):
+            root=Path(temporary);(root/'rules/loon').mkdir(parents=True)
+            entries=pipeline.validate_declarations(cfg)
+            (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
+            (root/'docs/rules.md').write_text(pipeline.render_index(cfg,entries))
+            initial={'ads':['DOMAIN,login.shared.example','DOMAIN,new.shared.example','DOMAIN,ads.other.example'],
+                'product':['DOMAIN-SUFFIX,product.example'],
+                'provider':['DOMAIN-SUFFIX,shared.example','DOMAIN,assets.sharedcdn.example'],
+                'provider-service-all':['DOMAIN-SUFFIX,shared.example','DOMAIN,assets.sharedcdn.example'],
+                'product-service-all':['DOMAIN-SUFFIX,product.example']}
+            for key,entry in entries.items():
+                (root/'rules/loon'/pipeline.rule_filename(entry)).write_text(pipeline.decorate(entry,initial[key],None,'2026-11-25T00:00:00Z'))
+            with patch.object(pipeline.transport,'download',side_effect=inputs.__getitem__):
+                pipeline.run()
+                inputs['https://vendor.example/network']=self.page('<li>new.shared.example</li>')
+                pipeline.run();pipeline.run(offline=True)
+                data={key:read_rules((root/'rules/loon'/pipeline.rule_filename(entry)).read_text()) for key,entry in entries.items()}
+                normal=pipeline.route_order(cfg,entries)
+                self.assertEqual(pipeline.ordered_route('login.shared.example',normal,data),'ads')
+                self.assertEqual(pipeline.ordered_route('new.shared.example',normal,data),'ads')
+                self.assertEqual(pipeline.ordered_route('new.shared.example',['product-service-all',*normal],data),'product-service-all')
+                self.assertIn('DOMAIN,login.shared.example',data['ads'])
+                self.assertIn('DOMAIN,new.shared.example',data['ads'])
+
+    def test_a_late_override_cannot_hide_an_earlier_partial_privacy_intersection(self):
+        from loon_rules.generation import dependencies
+        cfg=self.config();bundle=cfg['entries'][1];bundle['privacy-override']=True
+        bundle['dependency-inputs'][0]['protect-from-reject']=False
+        entries=pipeline.validate_declarations(cfg)
+        data={'ads':['DOMAIN,tracker.shared.example'],'product':['DOMAIN-SUFFIX,product.example'],
+              'provider':['DOMAIN-SUFFIX,shared.example','DOMAIN,assets.sharedcdn.example'],
+              'product-service-all':['DOMAIN-SUFFIX,product.example'],
+              'provider-service-all':['DOMAIN-SUFFIX,shared.example','DOMAIN,assets.sharedcdn.example']}
+        page='<p>Required hosts</p><ul><li>*.shared.example</li></ul>'
+        report=dependencies.read(entries,{'https://vendor.example/network':page})
+        with self.assertRaises(Invalid):dependencies.attach(cfg,entries,data,report)

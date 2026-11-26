@@ -4,7 +4,7 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-26T16:38:35Z
+# updated-at: 2026-11-26T20:13:18Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -12,8 +12,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18597
-# rule-count: 18597
+# canonical-rule-count: 18596
+# rule-count: 18596
 # format: quantumult-x
 # canonical: rules/loon/8200-overseas-extra-all.lsr
 
@@ -11036,7 +11036,6 @@ host-suffix,newlandmagazine.com.au,proxy
 host-suffix,newlineporn.com,proxy
 host-suffix,newmitbbs.com,proxy
 host-suffix,newnews.ca,proxy
-host-suffix,newrelic.com,proxy
 host-suffix,newrepublic.com,proxy
 host-suffix,news-postseven.com,proxy
 host-suffix,news.com.au,proxy
