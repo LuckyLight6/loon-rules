@@ -79,7 +79,7 @@ Netflix 3825 从[官方连接检查说明](https://help.netflix.com/en/node/1442
 
 `domain-column-table` 可以用 `other-table-headers` 明确记录同一章节里的其他表格；主表和陪同表都须各出现一次，全部数据行逐一检查列数。未知、缺失或重复表格，以及缺列、多列都会停止更新。`select` 按用途列的已核对说明选择范围，筛选前仍验证全部行。`decode-escaped-wildcards` 只解开 Markdown 的星号转义；`allow-tenant-wildcards` 只允许已能区分的单个托管租户，不接受整个共享平台。`value-format: domain-or-url` 与 `allow-bare-addresses` 用于官方混列的域名、HTTPS／WSS 和明确主机端口，结果只保留主机。
 
-`purpose-domain-lists` 的 `item-address: single-url` 读取地区说明中每项唯一的 HTTPS／WSS 地址；多地址、未知协议、凭据及查询参数停止更新。`site-identity` 的 `allowed-canonical-query` 仅能在独立产品根站声明公开参数及其固定值，不放开未知、重复或凭据参数。
+`purpose-domain-lists` 的 `item-address: single-url` 读取地区说明中每项唯一的 HTTPS／WSS 地址；多地址、未知协议、凭据及查询参数停止更新。`site-identity` 的 `allowed-canonical-query` 仅能在独立产品根站声明公开参数及固定值；参数对象的数组表示多个备选完整组合，必须完整命中其中一种，不能混用。未知、重复或凭据参数仍会停止更新。
 
 目的网段可以用 `network-source-agreement` 核对两份完整发布形式。每份 `inputs` 指明来源及 `recipes`，支持按方向读取的 `section-network-blocks` 和按地址族字段读取的 `ip-network-map`；后者拒绝重复字段、地址族混用、非公网或过宽范围。比较按实际地址空间进行，等价的相邻 CIDR 可以合并；一方新增、缺失或不一致时保留上一版。两份同厂商资料用于相互核对，不算两票独立社区证据。
 

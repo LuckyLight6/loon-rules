@@ -16619,9 +16619,14 @@
           "format": "site-identity",
           "scope": "source-root",
           "brand": "New Relic",
-          "allowed-canonical-query": {
-            "has_gdpr": "true"
-          }
+          "allowed-canonical-query": [
+            {
+              "has_gdpr": "true"
+            },
+            {
+              "is_us": "true"
+            }
+          ]
         },
         {
           "source": "https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/",

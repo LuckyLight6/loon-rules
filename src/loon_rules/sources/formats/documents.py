@@ -285,9 +285,16 @@ def parse_site_identity(recipe, text):
         if not (value==brand if match=='exact' else re.search(r'(?<!\w)'+re.escape(brand)+r'(?!\w)',value)):
             raise Invalid('产品站点的品牌标识不符')
         allowed_query=recipe.get('allowed-canonical-query',{})
-        if (not isinstance(allowed_query,dict) or any(not isinstance(key,str) or not key
-                or not isinstance(value,str) or not value for key,value in allowed_query.items())):
-            raise Invalid('canonical固定公开参数的名称或值无效')
+        allowed_queries=[allowed_query] if isinstance(allowed_query,dict) else allowed_query
+        if (not isinstance(allowed_queries,list) or not allowed_queries
+                or any(not isinstance(choice,dict) for choice in allowed_queries)):
+            raise Invalid('canonical固定公开参数缺少明确组合')
+        for choice in allowed_queries:
+            if any(not isinstance(key,str) or not key or not isinstance(value,str) or not value
+                   for key,value in choice.items()):
+                raise Invalid('canonical固定公开参数的名称或值无效')
+        if len({tuple(sorted(choice.items())) for choice in allowed_queries})!=len(allowed_queries):
+            raise Invalid('canonical固定公开参数组合重复')
         def root(value,*,canonical=False):
             url=urlsplit(value)
             if url.scheme!='https' or not url.hostname or url.username is not None or url.fragment:
@@ -295,8 +302,8 @@ def parse_site_identity(recipe, text):
             if url.query:
                 try:pairs=parse_qsl(url.query,keep_blank_values=True,strict_parsing=True,max_num_fields=16)
                 except ValueError as error:raise Invalid('产品canonical参数格式无效') from error
-                if not canonical or len(pairs)!=len(dict(pairs)) or dict(pairs)!=allowed_query:
-                    public_flags=','.join(name+'='+('true' if value=='true' else 'false' if value=='false' else '<unlisted>')
+                if not canonical or len(pairs)!=len(dict(pairs)) or dict(pairs) not in allowed_queries:
+                    public_flags=','.join(name+'='+(value if value in ('true','false') else '<unlisted>')
                                           for name,value in pairs)
                     raise Invalid('产品canonical出现未声明的参数、值或重复字段：'
                                   +recipe['brand']+' '+urlsplit(recipe['source']).hostname+' '+public_flags)
