@@ -67,3 +67,10 @@ class ServiceDependencies(PublicSourceExamples):
         text='<h2 id="network">Network</h2><table><tr><th>URL</th><th>Purpose</th></tr><tr><td>https://product-files-*.github.io/</td><td>Required downloads</td></tr></table>'
         self.assertEqual(extract_rows(recipe,text),{'DOMAIN-WILDCARD,product-files-*.github.io'})
         with self.assertRaises(Invalid):extract_rows(recipe,text.replace('product-files-*','*'))
+
+    def test_existing_xai_subscription_preserves_the_previously_published_login_hosts(self):
+        from loon_rules.project import ROOT
+        from loon_rules.rules import match_domain
+        rows=read_rules((ROOT/'rules/loon/1040-xai-connections.lsr').read_text())
+        for host in ['accounts.spacexsi.com','auth.grokipedia.com']:
+            with self.subTest(host=host):self.assertTrue(any(match_domain(host,row) for row in rows))

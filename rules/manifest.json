@@ -315,17 +315,17 @@
             "loon": "rules/loon/1035-grok-cursor-shared-authentication.lsr"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/loon/1040-xai-connections.lsr",
+          "path": "rules/loon/1045-xai-connections.lsr",
           "paths": {
-            "loon": "rules/loon/1040-xai-connections.lsr"
+            "loon": "rules/loon/1045-xai-connections.lsr"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -5404,17 +5404,17 @@
             "surge": "rules/surge/1035-grok-cursor-shared-authentication.list"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/surge/1040-xai-connections.list",
+          "path": "rules/surge/1045-xai-connections.list",
           "paths": {
-            "surge": "rules/surge/1040-xai-connections.list"
+            "surge": "rules/surge/1045-xai-connections.list"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -10512,18 +10512,18 @@
             "stash": "rules/stash/1035-grok-cursor-shared-authentication.yaml"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/mihomo/1040-xai-connections.yaml",
+          "path": "rules/mihomo/1045-xai-connections.yaml",
           "paths": {
-            "mihomo": "rules/mihomo/1040-xai-connections.yaml",
-            "stash": "rules/stash/1040-xai-connections.yaml"
+            "mihomo": "rules/mihomo/1045-xai-connections.yaml",
+            "stash": "rules/stash/1045-xai-connections.yaml"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -15973,17 +15973,17 @@
             "egern": "rules/egern/1035-grok-cursor-shared-authentication.yaml"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/egern/1040-xai-connections.yaml",
+          "path": "rules/egern/1045-xai-connections.yaml",
           "paths": {
-            "egern": "rules/egern/1040-xai-connections.yaml"
+            "egern": "rules/egern/1045-xai-connections.yaml"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -21054,17 +21054,17 @@
             "surfboard": "rules/surfboard/1035-grok-cursor-shared-authentication.list"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/surfboard/1040-xai-connections.list",
+          "path": "rules/surfboard/1045-xai-connections.list",
           "paths": {
-            "surfboard": "rules/surfboard/1040-xai-connections.list"
+            "surfboard": "rules/surfboard/1045-xai-connections.list"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -26135,17 +26135,17 @@
             "shadowrocket": "rules/shadowrocket/1035-grok-cursor-shared-authentication.list"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/shadowrocket/1040-xai-connections.list",
+          "path": "rules/shadowrocket/1045-xai-connections.list",
           "paths": {
-            "shadowrocket": "rules/shadowrocket/1040-xai-connections.list"
+            "shadowrocket": "rules/shadowrocket/1045-xai-connections.list"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -31192,17 +31192,17 @@
             "quantumult-x": "rules/quantumult-x/1035-grok-cursor-shared-authentication.list"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/quantumult-x/1040-xai-connections.list",
+          "path": "rules/quantumult-x/1045-xai-connections.list",
           "paths": {
-            "quantumult-x": "rules/quantumult-x/1040-xai-connections.list"
+            "quantumult-x": "rules/quantumult-x/1045-xai-connections.list"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -36217,17 +36217,17 @@
             "sing-box": "rules/sing-box/1035-grok-cursor-shared-authentication.json"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/sing-box/1040-xai-connections.json",
+          "path": "rules/sing-box/1045-xai-connections.json",
           "paths": {
-            "sing-box": "rules/sing-box/1040-xai-connections.json"
+            "sing-box": "rules/sing-box/1045-xai-connections.json"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -41230,17 +41230,17 @@
             "v2ray": "rules/v2ray/1035-grok-cursor-shared-authentication.json"
           }
         },
-        "1040-xai-connections": {
-          "source": "rules/loon/1040-xai-connections.lsr",
+        "1045-xai-connections": {
+          "source": "rules/loon/1045-xai-connections.lsr",
           "rule-count": 4,
           "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-26T16:57:37Z",
           "output-rule-count": 4,
           "status": "available",
-          "path": "rules/v2ray/1040-xai-connections.json",
+          "path": "rules/v2ray/1045-xai-connections.json",
           "paths": {
-            "v2ray": "rules/v2ray/1040-xai-connections.json"
+            "v2ray": "rules/v2ray/1045-xai-connections.json"
           }
         },
         "1050-grokipedia-encyclopedia": {
@@ -46026,5 +46026,8 @@
       "available": 372,
       "unsupported": 19
     }
+  },
+  "aliases": {
+    "1040-xai-connections": "1032-xai-service-all"
   }
 }

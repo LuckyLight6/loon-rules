@@ -1,0 +1,23 @@
+# name: xai-connections
+# priority: 1045
+# section: ai
+# description: Grok 对话、xAI 模型 API 与专用内容
+# boundary: Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032；已使用1040的订阅继续保留完整覆盖，分别选路时改用1045内容与1035登录。
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-26T16:57:37Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
+# source: https://cursor.com/help/troubleshooting/sign-in-domains
+# source: https://cursor.com/docs/enterprise/network-configuration
+# source: https://docs.x.ai/x-subscription/sign-in
+# source: https://docs.x.ai/developers/faq/accounts
+# canonical-rule-count: 4
+# rule-count: 4
+# format: clash-classical
+# canonical: rules/loon/1045-xai-connections.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,grok.com"
+  - "DOMAIN-SUFFIX,grok.x.com"
+  - "DOMAIN-SUFFIX,x.ai"
+  - "DOMAIN-REGEX,(?i)^.*\\.grokusercontent\\.com$"

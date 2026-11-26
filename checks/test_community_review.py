@@ -54,3 +54,41 @@ class CommunityReviewLifecycle(unittest.TestCase):
                 self.assertEqual(result['inputs-held'],1)
                 current=json.loads((root/'data/community-state.json').read_text())['inputs']['public-service']
                 self.assertEqual(current,good)
+
+    def test_parent_advancing_does_not_credit_an_unchanged_child_with_withdrawals(self):
+        with TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            (root/'config').mkdir();(root/'rules/loon').mkdir(parents=True);(root/'data').mkdir()
+            parent={'id':'parent','repository':'public/parent','ref':'release','path':'service.list','format':'classical','products':['service']}
+            builder=b'consume_rolling_upstream()'
+            child={**parent,'id':'child','repository':'public/child','upstream-inputs':['parent'],
+                   'lineage-proof':{'path':'build.py','sha256':hashlib.sha256(builder).hexdigest()}}
+            registry={'schema-version':1,'inputs':[parent,child],'queries':[]}
+            (root/'config/community-sources.json').write_text(json.dumps(registry))
+            (root/'config/catalog.json').write_text(json.dumps({'schema-version':2,'sections':[{'id':'products','title':'产品'}],
+                'entries':[{'id':'service','mode':'compiled','priority':10,'section':'products','description':'产品',
+                            'boundary':'专用服务','sources':['https://vendor.example/'],'include':['DOMAIN-SUFFIX,service.example']}],
+                'critical':{},'shared-negatives':[]}))
+            (root/'rules/loon/010-service.lsr').write_text('DOMAIN-SUFFIX,service.example\n')
+            revisions={'public/parent':'b'*40,'public/child':'a'*40}
+            bodies={'a'*40:b'DOMAIN,api.service.example\n','b'*40:b'DOMAIN,api.service.example\n',
+                    'c'*40:b'DOMAIN,api.service.example\nDOMAIN,new.service.example\n'}
+            def resolve(repository,ref):return {'revision':revisions[repository],'committed-at':'2026-11-27T00:00:00Z'}
+            def download(url):return builder if url.endswith('/build.py') else bodies[url.split('/')[5]]
+            with patch('loon_rules.community_review.resolve',side_effect=resolve),patch('loon_rules.community_review.download',side_effect=download):
+                run(root,search=False)
+                revisions['public/parent']='c'*40
+                run(root,search=False)
+                records=json.loads((root/'build/community-review/report.json').read_text())['inputs']
+                lineage=next(row['lineage'] for row in records if row['id']=='child')
+                self.assertEqual(lineage['independence'],'unverified')
+                self.assertEqual(lineage['removed-contributors'],[])
+                self.assertEqual(lineage['entries'][0]['contributors'],[])
+                child.update({'lineage-output-revision':'a'*40,'upstream-revisions':{'parent':'b'*40}})
+                (root/'config/community-sources.json').write_text(json.dumps(registry))
+                run(root,search=False)
+                records=json.loads((root/'build/community-review/report.json').read_text())['inputs']
+                lineage=next(row['lineage'] for row in records if row['id']=='child')
+                self.assertEqual(lineage['independence'],'compared-to-declared-upstreams')
+                self.assertEqual(lineage['removed'],[])
+                self.assertEqual(lineage['entries'][0]['inherited-from'],['parent'])

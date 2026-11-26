@@ -4,6 +4,8 @@
       {
         "type": "field",
         "domains": [
+          "full:accounts.spacexsi.com",
+          "full:auth.grokipedia.com",
           "domain:grok.com",
           "domain:grok.x.com",
           "domain:x.ai",

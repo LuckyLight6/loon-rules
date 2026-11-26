@@ -65,7 +65,10 @@ def run(check=False, offline=False, adopt_ads=False):
     names={path.stem:key for key,path in paths.items()}
     for alias,canonical in download_aliases.items():
         path=ROOT/'rules'/'loon'/(alias+'.lsr')
-        if path.is_file() and '# name: '+names[canonical] not in path.read_text().splitlines():
+        declaration=config.get('subscription-aliases',{}).get(alias)
+        allowed_names={names[canonical]}
+        if not offline and isinstance(declaration,dict):allowed_names.add(declaration['member'])
+        if path.is_file() and not any('# name: '+key in path.read_text().splitlines() for key in allowed_names):
             raise rules.Invalid('兼容下载地址不能覆盖其他产品：'+alias)
         if offline and (not path.is_file() or path.read_bytes()!=(ROOT/'rules'/'loon'/(canonical+'.lsr')).read_bytes()):
             raise rules.Invalid('兼容下载地址与当前成品不同步：'+alias)

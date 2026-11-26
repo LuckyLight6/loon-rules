@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:grok.com",
+          "domain:grok.x.com",
+          "domain:x.ai",
+          "regexp:(?i)^.*\\.grokusercontent\\.com$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

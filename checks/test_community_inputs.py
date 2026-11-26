@@ -47,3 +47,14 @@ class CommunityInputSemantics(unittest.TestCase):
         value=contributions('unverified',{'rules':['DOMAIN,a.example'],'products':['a']},None)
         self.assertEqual(value['independence'],'unverified')
         self.assertEqual(value['entries'][0]['contributors'],[])
+
+    def test_downstream_policy_change_keeps_its_own_contribution(self):
+        parent=normalize('quantumult-x','host,api.vendor.example,direct\n')
+        child=normalize('quantumult-x','host,api.vendor.example,proxy\n')
+        value=contributions('child',child,{'parent':parent})
+        row=value['entries'][0]
+        self.assertEqual(row['policy-contributors'],['child'])
+        self.assertIn('child',row['contributors'])
+        self.assertEqual(row['policy-change'],{'from':{'parent':'direct'},'to':'proxy'})
+        same=contributions('child',child,{'parent':child})['entries'][0]
+        self.assertEqual(same['policy-contributors'],[])

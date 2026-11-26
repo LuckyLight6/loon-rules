@@ -36,3 +36,22 @@ class ProductionScriptFollow(PublicSourceExamples):
         with self.assertRaises(Invalid):expansion.verify_report(entries,{'service':['DOMAIN-SUFFIX,vendor.example',*rows['service']]},report)
         bad=deepcopy(report);bad['service']['documents'][0]['source']='https://assets.vendor.example/old.js'
         with self.assertRaises(Invalid):sdk_pages.verify(spec,bad['service'])
+
+    def test_mutated_production_object_cannot_select_an_obsolete_child_script(self):
+        spec=self.spec(); entry={'id':'service','mode':'compiled','sources':[spec['source']],'expand':spec}
+        parent=self.parent('https://assets.vendor.example/old.js')
+        mutations=[
+            'live.scriptBase="https://assets.vendor.example/current.js";',
+            'live["scriptBase"]="https://assets.vendor.example/current.js";',
+            'live.scriptBase+="/current.js";',
+            'mutate({},live);',
+            'holder.defaults=live;holder.defaults.scriptBase="https://assets.vendor.example/current.js";',
+            'delete live.scriptBase;',
+            'Object.assign(live,{scriptBase:"https://assets.vendor.example/current.js"});',
+            'const alias=live;alias.scriptBase="https://assets.vendor.example/current.js";']
+        for mutation in mutations:
+            with self.subTest(mutation=mutation):
+                text=parent.replace('function Config()',mutation+'function Config()')
+                fetch=Mock(return_value=self.child())
+                with self.assertRaises(Invalid):expansion.collect({'service':entry},{spec['source']:text},fetch)
+                fetch.assert_not_called()

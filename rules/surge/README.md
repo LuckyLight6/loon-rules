@@ -25,7 +25,7 @@
 | 1032 | xai-service-all | Grok、xAI API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1032-xai-service-all.list) |
 | 1033 | cursor-service-all | Cursor 编辑器、API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1033-cursor-service-all.list) |
 | 1035 | grok-cursor-shared-authentication | Grok、Cursor 与 Grokipedia 共用账号登录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1035-grok-cursor-shared-authentication.list) |
-| 1040 | xai-connections | Grok 对话、xAI 模型 API 与专用内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1040-xai-connections.list) |
+| 1045 | xai-connections | Grok 对话、xAI 模型 API 与专用内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1045-xai-connections.list) |
 | 1050 | grokipedia-encyclopedia | Grokipedia AI 百科站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1050-grokipedia-encyclopedia.list) |
 | 1058 | foundry-local-voice-models | Foundry Local 语音模型目录、区域 API 与下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1058-foundry-local-voice-models.list) |
 | 1059 | github-copilot-service-all | GitHub Copilot、认证、实验与语音模型合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1059-github-copilot-service-all.list) |

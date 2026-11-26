@@ -1789,7 +1789,7 @@
       "mode": "managed",
       "policy-hint": "xai",
       "description": "Grok 对话、xAI 模型 API 与专用内容",
-      "boundary": "Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032，Cursor编辑器、百科内容与X社交分别处理。",
+      "boundary": "Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032；已使用1040的订阅继续保留完整覆盖，分别选路时改用1045内容与1035登录。",
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
         "https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py",
@@ -1804,7 +1804,7 @@
       "flags": [],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
-      "priority": 1040,
+      "priority": 1045,
       "section": "ai",
       "excluded-rules": [
         "DOMAIN-SUFFIX,grokbot.com",
@@ -16010,7 +16010,7 @@
       "routing-group": "overseas-ai",
       "mode": "view",
       "description": "Grok、xAI API 与登录合集",
-      "boundary": "替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。",
+      "boundary": "替代所列产品和共用账号成员，与其他包含同一账号成员的服务合集互斥。各应用目录内原1040-xai-connections是本组的同文兼容入口，保留原有登录覆盖；分别选路时使用1045内容与API、1035共用账号。",
       "members": [
         "grok-cursor-shared-authentication",
         "xai-connections"
@@ -19657,7 +19657,7 @@
         1032,
         1033,
         1035,
-        1040,
+        1045,
         1050,
         1058,
         1059,
@@ -27754,5 +27754,11 @@
       "mainland-networks",
       "mainland-geoip"
     ]
+  },
+  "subscription-aliases": {
+    "1040-xai-connections": {
+      "target": "xai-service-all",
+      "member": "xai-connections"
+    }
   }
 }

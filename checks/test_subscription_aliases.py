@@ -60,3 +60,14 @@ class SubscriptionAliases(unittest.TestCase):
             alias.write_text('# name: ads\nDOMAIN,stale.example\n')
             with self.assertRaisesRegex(Invalid, '兼容下载'):
                 pipeline.run(offline=True)
+
+    def test_a_complete_service_alias_must_include_the_original_product_member(self):
+        from loon_rules.catalog import subscription_aliases
+        config={'priority-width':4,'entries':[
+            {'id':'product','priority':1045,'mode':'compiled'},
+            {'id':'product-service-all','priority':1032,'mode':'view','members':['product']},
+            {'id':'unrelated-service-all','priority':1050,'mode':'view','members':['other']}],
+            'subscription-aliases':{'1040-product':{'target':'product-service-all','member':'product'}}}
+        self.assertEqual(subscription_aliases(config),{'1040-product':'1032-product-service-all'})
+        config['subscription-aliases']['1040-product']['target']='unrelated-service-all'
+        with self.assertRaises(Invalid):subscription_aliases(config)

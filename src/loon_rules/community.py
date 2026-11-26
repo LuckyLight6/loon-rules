@@ -196,9 +196,18 @@ def contributions(identity, current, upstreams):
         changed_category = bool(inherited) and any(set(upstreams[key].get('products', ())) != set(current.get('products', ()))
                                                    for key in inherited)
         change = 'inherited' if inherited else 'narrowed' if narrower else 'expanded' if wider else 'added'
+        policy=current.get('policies',{}).get(row)
+        prior_policies={key:upstreams[key].get('policies',{}).get(row) for key in inherited}
+        changed_policies={key:value for key,value in prior_policies.items()
+                          if policy is not None and value is not None and value!=policy}
+        contributors=list(inherited) if inherited else ([identity] if upstreams is not None else [])
+        if changed_policies:contributors.append(identity)
         entries.append({'rule': row, 'change': change, 'inherited-from': inherited,
-            'contributors': inherited if inherited else ([identity] if upstreams is not None else []),
+            'contributors': contributors,
             'classification-contributors': [identity] if changed_category else [],
+            'policy-contributors':[identity] if changed_policies else [],
+            'policy-change':{'from':changed_policies,'to':policy} if changed_policies else None,
+            'policy-context-complete':bool(prior_policies) and policy is not None and all(value is not None for value in prior_policies.values()),
             'scope-baseline': narrower or wider})
     removed = [row for row in baseline if not any(domains.covers(new, row) for new in current['rules'])]
     return {'independence': 'unverified' if upstreams is None else 'compared-to-declared-upstreams',

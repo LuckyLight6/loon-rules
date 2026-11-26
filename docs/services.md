@@ -86,7 +86,7 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | Grok、Cursor 与 Grokipedia 共用账号 | [1035 Grok、Cursor 与 Grokipedia 共用账号登录](rules.md#rule-grok-cursor-shared-authentication) |
-| Grok 对话与 xAI 模型 API | [1040 Grok 对话、xAI 模型 API 与专用内容](rules.md#rule-xai-connections) |
+| Grok 对话与 xAI 模型 API | [1045 Grok 对话、xAI 模型 API 与专用内容](rules.md#rule-xai-connections) |
 | Grokipedia AI 百科站点 | [1050 Grokipedia AI 百科站点](rules.md#rule-grokipedia-encyclopedia) |
 | X / Twitter 社交与图像视频 | [3350 X / Twitter 社交与图像视频](rules.md#rule-x-social-and-media) |
 

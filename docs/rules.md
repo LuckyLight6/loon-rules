@@ -85,7 +85,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 1032 | <a id="rule-xai-service-all"></a>`xai-service-all` | Grok、xAI API 与登录合集 | **合集：替代 1035–1040。** 替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。 |
+| 1032 | <a id="rule-xai-service-all"></a>`xai-service-all` | Grok、xAI API 与登录合集 | **合集：替代 1035–1045。** 替代所列产品和共用账号成员，与其他包含同一账号成员的服务合集互斥。各应用目录内原1040-xai-connections是本组的同文兼容入口，保留原有登录覆盖；分别选路时使用1045内容与API、1035共用账号。 |
 
 ### 3.7 Cursor 编辑器、API 与登录合集
 
@@ -98,7 +98,7 @@
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1035 | <a id="rule-grok-cursor-shared-authentication"></a>`grok-cursor-shared-authentication` | Grok、Cursor 与 Grokipedia 共用账号登录 | 从官方最小登录清单和网络用途表读取明确主机；仅合并不能按目的域名区分的共用认证，不接管 Grok 对话、Cursor 编辑器或百科内容。 |
-| 1040 | <a id="rule-xai-connections"></a>`xai-connections` | Grok 对话、xAI 模型 API 与专用内容 | Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032，Cursor编辑器、百科内容与X社交分别处理。 |
+| 1045 | <a id="rule-xai-connections"></a>`xai-connections` | Grok 对话、xAI 模型 API 与专用内容 | Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032；已使用1040的订阅继续保留完整覆盖，分别选路时改用1045内容与1035登录。 |
 | 1050 | <a id="rule-grokipedia-encyclopedia"></a>`grokipedia-encyclopedia` | Grokipedia AI 百科站点 | 百科页面与内容；共用登录主机由前置1035优先匹配。单份覆盖内容及登录可选1031。 |
 | 1058 | <a id="rule-foundry-local-voice-models"></a>`foundry-local-voice-models` | Foundry Local 语音模型目录、区域 API 与下载 | Copilot CLI 与 App 的本地语音功能需要的模型目录、区域选择和下载；共享模型目录不能再按具体模型区分。Blob 只收官方明确的有限租户前缀，不收整个 Azure 云。 |
 

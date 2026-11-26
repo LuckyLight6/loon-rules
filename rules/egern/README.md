@@ -25,7 +25,7 @@
 | 1032 | xai-service-all | Grok、xAI API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1032-xai-service-all.yaml) |
 | 1033 | cursor-service-all | Cursor 编辑器、API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1033-cursor-service-all.yaml) |
 | 1035 | grok-cursor-shared-authentication | Grok、Cursor 与 Grokipedia 共用账号登录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1035-grok-cursor-shared-authentication.yaml) |
-| 1040 | xai-connections | Grok 对话、xAI 模型 API 与专用内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1040-xai-connections.yaml) |
+| 1045 | xai-connections | Grok 对话、xAI 模型 API 与专用内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1045-xai-connections.yaml) |
 | 1050 | grokipedia-encyclopedia | Grokipedia AI 百科站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1050-grokipedia-encyclopedia.yaml) |
 | 1058 | foundry-local-voice-models | Foundry Local 语音模型目录、区域 API 与下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1058-foundry-local-voice-models.yaml) |
 | 1059 | github-copilot-service-all | GitHub Copilot、认证、实验与语音模型合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1059-github-copilot-service-all.yaml) |

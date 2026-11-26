@@ -70,7 +70,7 @@ def render_review(status,entries):
         for key in sorted(assigned_rules,key=lambda k:entries[k]['priority']):
             assigned=assigned_rules[key]
             e=entries[key]
-            summary.append(f"- [{priority_label(e)} {e['description']}](rules.md#rule-{e['id']})：{len(assigned)} 条交给常规表处理。")
+            summary.append(f"- [{priority_label(e)} {e['description']}](../docs/rules.md#rule-{e['id']})：{len(assigned)} 条交给常规表处理。")
         for key,counts in audit['optional-overlaps'].items():
             summary+=['',f"可选表 {priority_label(entries[key])} 与常规表有 {sum(counts.values())} 条相同规则（"+
                       '、'.join(f"{priority_label(entries[k])}：{n} 条" for k,n in counts.items())+
@@ -87,7 +87,7 @@ def render_review(status,entries):
         e=entries[k]; state=states[k]; filename=rule_filename(e)
         counts=(f"：新增 {state['new-matches']}，撤回 {state['missing-rules']}"
                 if state['state']=='review' else '')
-        lines.append(f"- [{priority_label(e)} {e['description']}](rules.md#rule-{e['id']})："
+        lines.append(f"- [{priority_label(e)} {e['description']}](../docs/rules.md#rule-{e['id']})："
                      +labels[state['state']]+counts)
     internal_pending={key:state for key,state in status['reviewed-inputs'].items()
                       if key in entries and 'priority' not in entries[key] and state['state']!='current'}
@@ -145,7 +145,7 @@ def render_review(status,entries):
                 '来源中的其他规则类型：'+('、'.join(f'{kind} {count} 条' for kind,count in sorted(other_types.items())) or '无')+'。类型和数量单独记录，IP 用途、ASN 运营者与进程适用设备另行核对。','',
                 '| 来源 | 当前产品 | 符合筛选 / 来源范围 | 其他产品 | 筛选外未覆盖 | 完整归属要求 |','|---|---|---:|---:|---:|---|']
         for source,state in projected.items():
-            products='、'.join(f"[{priority_label(entries[key])}](rules.md#rule-{key})" for key in state['products'])
+            products='、'.join(f"[{priority_label(entries[key])}](../docs/rules.md#rule-{key})" for key in state['products'])
             label=source.rstrip('/').rsplit('/',1)[-1]
             counts=f"{state['selected-scopes']} / {state['domain-scopes']}" if state['state']=='current' else {'unavailable':'未读到','invalid':'格式变化'}[state['state']]
             lines.append(f"| [{label}]({source}) | {products} | {counts} | "+
@@ -259,7 +259,7 @@ def render_review(status,entries):
                 '| 序号 | 英文名称 | 中文名称 | 固定声明 | 官方存在核对 |','|---|---|---|---:|---:|']
         for k in pure:
             e=entries[k]
-            lines.append(f"| {priority_label(e)} | [{k}](rules.md#rule-{e['id']}) | {e['description']} | {fixed.get(k,0)} | {maintenance['official-checks'].get(k,0)} |")
+            lines.append(f"| {priority_label(e)} | [{k}](../docs/rules.md#rule-{e['id']}) | {e['description']} | {fixed.get(k,0)} | {maintenance['official-checks'].get(k,0)} |")
         lines+=['',f"另有 {len(maintenance['baseline-managed'])} 份表以上一版已审内容为基线，按各自条件接纳或撤回变化；"
                 '其中有官方用途提取、交叉核对和连续确认，不是每份都能自动接纳所有上游新增项。','',
                 f"{len(maintenance['source-scoped'])} 份表按来源筛选，但产品根域、地区和用途边界仍由人工设定。"

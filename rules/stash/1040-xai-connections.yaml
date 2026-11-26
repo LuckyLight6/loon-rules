@@ -1,22 +1,24 @@
-# name: xai-connections
-# priority: 1040
+# name: xai-service-all
+# priority: 1032
 # section: ai
-# description: Grok 对话、xAI 模型 API 与专用内容
-# boundary: Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032，Cursor编辑器、百科内容与X社交分别处理。
-# created-at: 2026-11-19T10:51:17Z
+# description: Grok、xAI API 与登录合集
+# boundary: 替代所列产品和共用账号成员，与其他包含同一账号成员的服务合集互斥。各应用目录内原1040-xai-connections是本组的同文兼容入口，保留原有登录覆盖；分别选路时使用1045内容与API、1035共用账号。
+# created-at: 2026-11-26T16:57:37Z
 # updated-at: 2026-11-26T16:57:37Z
-# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
-# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://cursor.com/help/troubleshooting/sign-in-domains
 # source: https://cursor.com/docs/enterprise/network-configuration
 # source: https://docs.x.ai/x-subscription/sign-in
 # source: https://docs.x.ai/developers/faq/accounts
-# canonical-rule-count: 4
-# rule-count: 4
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
+# canonical-rule-count: 6
+# rule-count: 6
 # format: clash-classical
-# canonical: rules/loon/1040-xai-connections.lsr
+# canonical: rules/loon/1032-xai-service-all.lsr
 
 payload:
+  - "DOMAIN,accounts.spacexsi.com"
+  - "DOMAIN,auth.grokipedia.com"
   - "DOMAIN-SUFFIX,grok.com"
   - "DOMAIN-SUFFIX,grok.x.com"
   - "DOMAIN-SUFFIX,x.ai"

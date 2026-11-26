@@ -116,6 +116,43 @@ def environment_values(recipe, text):
                 raise Invalid('SDK 环境对象在声明后被重新赋值')
             value=found.child_by_field_name('value')
             if value is None:raise Invalid('SDK 环境绑定没有静态默认值')
+            if value.type=='object':
+                for use in all_nodes:
+                    if use.type!='identifier' or name(use)!=identifier or use==found.child_by_field_name('name'):
+                        continue
+                    scope=use.parent;bound=None
+                    while scope is not None:
+                        local=[candidate for candidate in candidates if binding_scope(candidate)==scope]
+                        if local:
+                            bound=local[0] if len(local)==1 else None
+                            break
+                        if scope.type in functions:
+                            parameters=scope.child_by_field_name('parameters')
+                            if parameters is not None and any(name(child)==identifier for child in parameters.named_children):break
+                        scope=scope.parent
+                    if bound!=found:continue
+                    parent=use.parent
+                    base=use
+                    while parent is not None and parent.type in ('member_expression','subscript_expression') and parent.child_by_field_name('object')==base:
+                        base=parent;parent=base.parent
+                    mutation=parent is not None and (
+                        parent.type in ('assignment_expression','augmented_assignment_expression') and parent.child_by_field_name('left')==base
+                        or parent.type=='update_expression'
+                        or parent.type=='unary_expression' and parent.text.lstrip().startswith(b'delete '))
+                    alias=parent is not None and (
+                        parent.type=='variable_declarator' and parent.child_by_field_name('value')==use
+                        or parent.type=='assignment_expression' and parent.child_by_field_name('right')==use and use!=selected[0]
+                        or parent.type in ('return_statement','pair','shorthand_property_identifier'))
+                    if mutation or alias:
+                        raise Invalid('SDK 环境对象在声明后被修改或交给别名')
+                    if parent is not None and parent.type=='arguments':
+                        arguments=[child for child in parent.named_children if child.type!='comment']
+                        call=parent.parent
+                        callee=call.child_by_field_name('function') if call is not None else None
+                        direct=callee is not None and callee.type=='member_expression' and name(callee.child_by_field_name('object'))=='Object' and name(callee.child_by_field_name('property'))=='assign'
+                        if (call!=selected[0] and not direct or len(arguments)!=2 or arguments[0].type!='object'
+                                or arguments[0].named_children or arguments[1]!=use):
+                            raise Invalid('SDK 环境对象传入未知调用，不能确认生产用途')
         return value
     value=selected[0]
     if value.type=='call_expression':

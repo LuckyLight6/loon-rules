@@ -39,9 +39,20 @@ runs:
       run: |
         python3 -B maintain.py --community-review --sing-box "$RUNNER_TEMP/loon-rule-native/sing-box"
         cat build/community-review/summary.md >> "$GITHUB_STEP_SUMMARY"
+    - name: Retain complete community comparison
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: community-review-${{ github.run_id }}-${{ github.run_attempt }}
+        path: |
+          build/community-review/report.json
+          build/community-review/summary.md
+        if-no-files-found: error
+        retention-days: 90
+        compression-level: 9
     - name: Summarize source changes
       shell: bash
-      run: cat build/verification.md >> "$GITHUB_STEP_SUMMARY"
+      run: |
+        sed "s#](../docs/#](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/main/docs/#g" build/verification.md >> "$GITHUB_STEP_SUMMARY"
     - name: Commit validated outputs
       shell: bash
       run: |

@@ -12,6 +12,7 @@ from tempfile import NamedTemporaryFile, TemporaryDirectory
 from urllib.parse import quote, urlencode
 
 from loon_rules import community, rules
+from loon_rules.domains import covers as rules_scope_covers
 from loon_rules.generation import pipeline
 from loon_rules.matching import RuleIndex
 
@@ -59,6 +60,12 @@ def validate(spec, entries):
                     or proof['path'].startswith('/') or '..' in Path(proof['path']).parts
                     or not re.fullmatch('[0-9a-f]{64}',proof.get('sha256',''))):
                 raise rules.Invalid('来源继承声明缺少已核对的构建定义指纹')
+        if 'upstream-revisions' in item or 'lineage-output-revision' in item:
+            consumed=item.get('upstream-revisions')
+            if (not isinstance(consumed,dict) or set(consumed)!=set(item.get('upstream-inputs',()))
+                    or not re.fullmatch('[0-9a-f]{40}',item.get('lineage-output-revision',''))
+                    or any(not isinstance(value,str) or not re.fullmatch('[0-9a-f]{40}',value) for value in consumed.values())):
+                raise rules.Invalid('来源贡献缺少对应下游成品与实际消耗的上游提交')
         seen.add(item['id'])
     for item in spec['inputs']:
         if set(item.get('upstream-inputs', ())) - seen or item['id'] in item.get('upstream-inputs', ()):
@@ -100,15 +107,24 @@ def read_body(item, body, folder, sing_box):
 def compare(rows, products, entries, data, index):
     outcomes = Counter()
     findings = []
+    targets=set()
+    pending=list(products)
+    while pending:
+        key=pending.pop()
+        if key in targets:continue
+        targets.add(key)
+        if entries[key].get('mode')=='view':pending.extend(entries[key]['members'])
     for row in rows:
         kind, value, *flags = row.split(',')
-        matching = 0
+        matching = intersections = 0
         if kind in ('DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-WILDCARD'):
             matching = index.scope_bits(row)
+            intersections = index.scope_intersection_bits(row)
         elif kind in ('IP-CIDR', 'IP-CIDR6'):
             literal = index.network_bits(value,literal=True)
             resolved = index.network_bits(value,literal=False)
             matching = literal
+            intersections = index.network_intersection_bits(value,literal=True)
             if literal != resolved:
                 outcomes['address-resolution-mode-needs-context'] += 1
         elif kind in ('IP-ASN', 'PROCESS-NAME', 'PROCESS-PATH', 'USER-AGENT', 'GEOIP'):
@@ -116,18 +132,32 @@ def compare(rows, products, entries, data, index):
                 if any(candidate.split(',')[:2] == [kind, value] for candidate in data[key]):
                     matching |= index.bits[key]
             outcomes['runtime-or-device-dependent'] += 1
+            intersections=matching
         else:
             outcomes['condition-needs-purpose-review'] += 1
             findings.append({'rule': row, 'state': 'condition-needs-purpose-review'})
             continue
         owner = next((key for key in index.order if matching & index.bits[key]), None)
-        state = ('unassigned-whole-scope' if owner is None else
+        earlier=[]
+        for key in index.order:
+            if key==owner:break
+            if intersections&index.bits[key]:earlier.append(key)
+        dependency_views=[key for key in targets if entries[key].get('mode')=='view'
+            and any(rules_scope_covers(scope,row) for scope in entries[key].get('_dependency-scopes',()))]
+        state = ('mixed-or-unverified-first-ownership' if earlier else
+            'unassigned-whole-scope' if owner is None else
             'privacy-owner' if entries[owner].get('policy-hint') == 'reject' else
             'supplement-owner' if entries[owner].get('fallback') or entries[owner].get('domain-remainder') else
-            'candidate-product-owner' if owner in products else 'other-product-or-shared-owner')
+            'candidate-product-owner' if owner in targets else
+            'documented-shared-dependency-owner' if dependency_views else 'other-product-or-shared-owner')
         outcomes[state] += 1
         if state != 'candidate-product-owner':
-            findings.append({'rule': row, 'state': state, 'actual-first-owner': owner})
+            finding={'rule': row, 'state': state, 'actual-first-owner':None if earlier else owner}
+            if earlier:
+                finding.update({'whole-scope-covering-owner':owner,'earlier-intersections':earlier,
+                    'complex-intersections-need-review':True})
+            if dependency_views:finding['documented-dependency-views']=sorted(dependency_views)
+            findings.append(finding)
     return {'outcomes': dict(outcomes), 'findings': findings}
 
 
@@ -153,6 +183,10 @@ def run(root, *, sing_box=None, search=True):
     inputs = validate(spec, entries)
     data = {item['id']: rules.read_rules((root / 'rules/loon' / pipeline.rule_filename(entries[item['id']])).read_text())
             for item in config['entries']}
+    if any(entry.get('dependency-inputs') for entry in entries.values()):
+        from loon_rules.generation import dependencies
+        maintenance=json.loads((root/'data/maintenance-state.json').read_text())
+        dependencies.attach(config,entries,data,maintenance.get('service-dependencies',{}))
     order = pipeline.route_order(config, entries)
     index = RuleIndex(data, order)
     index.network_bits('0.0.0.0/0',literal=True)
@@ -239,13 +273,31 @@ def run(root, *, sing_box=None, search=True):
             record.update(state='held', reason='声明的上游未完整读取，无法确认下游贡献',
                           previous_complete_retained=item['id'] in previous)
             continue
-        upstreams = None if parents is None else {key: {**by_id[key]['normalized'], 'products': by_id[key]['products']}
-                                                  for key in parents}
+        upstreams=None if parents is None else {}
+        consumed=item.get('upstream-revisions',{})
+        pinned=record['revision']==item.get('lineage-output-revision') and set(consumed)==set(parents or ())
+        if parents and not pinned:
+            upstreams=None
+            record['lineage-reason']='实际消耗的上游提交未确认；当前上游差异不能归功于下游'
+        elif parents:
+            try:
+                for key in parents:
+                    parent=next(candidate for candidate in inputs if candidate['id']==key)
+                    version=consumed[key]
+                    body=body_at(source_url(parent,version))
+                    upstreams[key]={**read_body(parent,body,folder,sing_box),'products':parent['products']}
+                record['consumed-upstreams']=dict(consumed)
+            except (rules.Invalid,OSError,ValueError,KeyError,UnicodeError,subprocess.TimeoutExpired):
+                record.update(state='held',reason='已声明的实际上游提交未完整读取，保留旧贡献记录',
+                              previous_complete_retained=item['id'] in previous)
+                continue
         record['lineage'] = community.contributions(item['id'],
             {**record['normalized'], 'products': item['products']}, upstreams)
         accepted[item['id']] = {key: record[key] for key in ('repository', 'ref', 'path', 'format', 'revision',
                                                            'committed-at', 'sha256', 'bytes')}
         if 'lineage-proof' in record:accepted[item['id']]['lineage-proof']=record['lineage-proof']
+        accepted[item['id']]['lineage-status']=record['lineage']['independence']
+        if 'consumed-upstreams' in record:accepted[item['id']]['consumed-upstreams']=record['consumed-upstreams']
         accepted[item['id']].update(rules=len(record['normalized']['rules']),
             conditional_rules=len(record['normalized']['conditions']), products=item['products'])
     from loon_rules.community_web import watch
@@ -277,7 +329,7 @@ def run(root, *, sing_box=None, search=True):
         '逐项核对完整输入、规则类型、原始条件、归属和首条命中。来源标签、数量和格式检查不能代替业务用途核实；'
         '这些比较不会把社区差异直接写入订阅。声明的继承、下游增删、收窄及分类修改分别记录，未知继承不计作独立证据。', '',
         f"对照涉及 {summary['repository-branches']} 个仓库分支、{summary['products-with-file-candidates']} 个产品的文件线索。"
-        '细项和原始资料保存在本轮 build/community-review，不进入公开提交。', '',
+        '本机细项保存在 build/community-review；定时运行的逐条公开来源报告由 Actions 工件留存90天，原始下载正文不上传，也不进入公开提交。', '',
         f"托管来源核对 {len(websites)} 处，整批保留待核 {summary['hosted-sources-held']} 处；构建元数据与每份文件的版本必须一致。", '']
     (folder / 'summary.md').write_text('\n'.join(lines))
     return summary

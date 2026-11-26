@@ -111,10 +111,21 @@ def subscription_aliases(config):
     width = priority_width(config)
     canonical = {rule_filename(entry, width=width).removesuffix('.lsr') for entry in entries.values()}
     result = {}
-    for name, identifier in aliases.items():
+    for name, declaration in aliases.items():
+        identifier=declaration
+        member=None
+        if isinstance(declaration,dict):
+            if set(declaration)!={'target','member'}:
+                raise Invalid('完整服务兼容入口须明确目标合集与原产品')
+            identifier=declaration['target'];member=declaration['member']
+            if (not isinstance(identifier,str) or identifier not in entries
+                    or not isinstance(member,str) or member not in entries
+                    or entries[identifier]['mode']!='view' or entries[member]['mode']=='view'
+                    or member not in entries[identifier].get('members',())):
+                raise Invalid('兼容合集必须完整包含原产品成员')
         if (not isinstance(name, str) or not re.fullmatch(r'[0-9]{3,4}-[a-z0-9]+(?:-[a-z0-9]+)*', name)
                 or not isinstance(identifier, str) or identifier not in entries
-                or name.partition('-')[2] != identifier or name in canonical):
+                or name.partition('-')[2] != (member or identifier) or name in canonical):
             raise Invalid('兼容下载地址不能越过目录、覆盖其他产品或代替当前地址')
         entry = entries[identifier]
         if type(entry['priority']) is not int or not 1 <= entry['priority'] < 10 ** width:

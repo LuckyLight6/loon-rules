@@ -79,6 +79,42 @@ class RuleIndex:
         self._scopes[row]=bits
         return bits
 
+    def scope_intersection_bits(self,row):
+        """Conservatively include partial intersections; complex globs still need review."""
+        kind,value,*flags=row.split(',')
+        if flags or kind not in ('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD'):return 0
+        if kind=='DOMAIN':return self.domain_bits(value)
+        if not hasattr(self,'_domain_descendants'):
+            self._domain_descendants={}
+            for table in (self._exact,self._suffix):
+                for host,bits in table.items():
+                    labels=host.split('.')
+                    for i in range(len(labels)):
+                        parent='.'.join(labels[i:])
+                        self._domain_descendants[parent]=self._domain_descendants.get(parent,0)|bits
+        tail=domain_scope.fixed_tail(value) if kind=='DOMAIN-WILDCARD' else value
+        bits=self.scope_bits(row)|self._domain_descendants.get(tail,0)
+        for pattern,host,_,owners in self._patterns:
+            other=domain_scope.fixed_tail(host)
+            if pattern=='DOMAIN-KEYWORD' or not tail or not other or tail==other or tail.endswith('.'+other) or other.endswith('.'+tail):
+                bits|=owners
+        return bits
+
+    def network_intersection_bits(self,target,*,literal):
+        """Include any intersecting prefix, respecting each DNS matching mode."""
+        if not hasattr(self,'_network_intersections'):self._network_intersections={}
+        key=(target,literal)
+        if key not in self._network_intersections:
+            network=ip_network(target);value=int(network.network_address);mask=int(network.netmask);bits=0
+            for prefix,(candidate_mask,addresses) in self._networks[literal][network.version].items():
+                if prefix<=network.prefixlen:
+                    bits|=addresses.get(value&candidate_mask,0)
+                else:
+                    for address,owners in addresses.items():
+                        if address&mask==value:bits|=owners
+            self._network_intersections[key]=bits
+        return self._network_intersections[key]
+
     def network_bits(self,target,*,literal):
         """Return groups covering an entire prefix, including adjacent ranges in one group."""
         if not hasattr(self,'_network_scopes'):
