@@ -93,7 +93,7 @@ def extract_rows(recipe, text, *, shared_hosts=()):
                                 'qt-host-predicate', 'next-service-urls', 'literal-object-urls',
                                 'security-program-domains', 'nested-purpose-domains', 'service-domain-groups',
                                 'json-service-urls', 'plist-service-fields', 'purpose-domain-table',
-                                'python-regional-hosts'))
+                                'python-regional-hosts', 'csp-origins'))
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

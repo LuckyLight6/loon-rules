@@ -200,18 +200,20 @@ def csp_origins(recipe, text):
                         or url.username is not None or url.query or url.fragment):
                     raise Invalid('CSP 来源包含无效或带凭据的连接地址')
                 host = url.hostname
+                row = public_domain_pattern(host)
+                if row is None:
+                    raise Invalid('CSP 包含未确认归属的共享托管范围，不能静默忽略')
                 tail = domain_scope.fixed_tail(host)
                 if prefixes := recipe.get('brand-prefixes'):
                     root = domain_scope.current().registrable(tail)
                     if not root or not any(root.split('.')[0].startswith(prefix) for prefix in prefixes):
                         continue
-                if row := public_domain_pattern(host):
-                    if scope == 'domain-and-subdomains':
-                        base = host.removeprefix('*.')
-                        if re.search(r'[*?\[\]]', base):
-                            raise Invalid('CSP 的整域匹配不接受主机前缀通配符')
-                        row = 'DOMAIN-SUFFIX,' + base
-                    result.add(row)
+                if scope == 'domain-and-subdomains':
+                    base = host.removeprefix('*.')
+                    if re.search(r'[*?\[\]]', base):
+                        raise Invalid('CSP 的整域匹配不接受主机前缀通配符')
+                    row = 'DOMAIN-SUFFIX,' + base
+                result.add(row)
     if not result:
         raise Invalid('CSP 来源没有所选用途的公开连接地址')
     return result

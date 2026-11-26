@@ -355,5 +355,5 @@ class ProviderSources(PublicSourceExamples):
         recipe = {'format': 'csp-origins', 'directives': ['connect-src']}
         body = ('<pre><code>connect-src https://api.vendor.example '
                 'https://resolver.shared.example;</code></pre>')
-        self.assertEqual(extract_rows(recipe, body, shared_hosts=['resolver.shared.example']),
-                         {'DOMAIN,api.vendor.example'})
+        with self.assertRaises(Invalid):
+            extract_rows(recipe, body, shared_hosts=['resolver.shared.example'])
