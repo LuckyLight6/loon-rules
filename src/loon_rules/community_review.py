@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import time
 from tempfile import NamedTemporaryFile, TemporaryDirectory
 from urllib.parse import quote, urlencode
 
@@ -163,7 +164,13 @@ def compare(rows, products, entries, data, index):
 
 def search_candidates(queries):
     results = []
+    next_query_at = 0.0
     for query in queries:
+        # Authenticated GitHub repository search allows 30 requests per minute.
+        delay = next_query_at - time.monotonic()
+        if delay > 0:
+            time.sleep(delay)
+        next_query_at = time.monotonic() + 2.1
         try:
             doc = api('search/repositories?' + urlencode({'q': query, 'sort': 'updated', 'per_page': 30}))
             if doc.get('incomplete_results'):

@@ -24,7 +24,19 @@
     "shadowrocket rules in:name,description archived:false",
     "egern rules in:name,description archived:false",
     "Stash ruleset in:name,description archived:false",
-    "Mihomo ruleset yaml in:name,description archived:false"
+    "Mihomo ruleset yaml in:name,description archived:false",
+    "Stash rules in:name,description archived:false",
+    "Surfboard rules in:name,description archived:false",
+    "Quantumult 分流 in:readme archived:false pushed:>=2026-01-01",
+    "Egern 规则 in:readme archived:false pushed:>=2026-01-01",
+    "sing-box rule-set in:description archived:false",
+    "mihomo 规则集 in:readme archived:false pushed:>=2026-01-01",
+    "Clash rule-providers in:description archived:false",
+    "Shadowrocket ruleset in:readme archived:false pushed:>=2026-01-01",
+    "mosdns geosite in:name,description archived:false",
+    "v2ray geosite in:name,description archived:false",
+    "topic:routing-rules archived:false",
+    "routing srs in:description archived:false"
   ],
   "source-websites": [
     {
@@ -715,7 +727,12 @@
     "tuohai57/egern-rules",
     "Repcz/EgernRules",
     "jnlaoshu/MySelf",
-    "YUDIDIFEI/Scripts"
+    "YUDIDIFEI/Scripts",
+    "8wfield/Personal",
+    "YuTalk/tool",
+    "tickcount/iplists",
+    "HuangSuWn/rule-set",
+    "25175/dinyue"
   ],
   "inputs": [
     {
@@ -29269,7 +29286,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Games/Epic.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "epic-games-services"
       ],
@@ -29281,7 +29298,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Games/Steam.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "steam-international-platform",
         "steam-mainland-downloads"
@@ -29294,7 +29311,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Domestic/BiliBili.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "bilibili-international-video",
         "bilibili-mainland-video"
@@ -29307,7 +29324,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Domestic/Douyin.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "douyin-mainland-video"
       ],
@@ -29319,7 +29336,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Domestic/NeteaseMusic.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "netease-music"
       ],
@@ -29331,7 +29348,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Domestic/Youku.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "youku-video"
       ],
@@ -29343,7 +29360,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Domestic/iQiyi.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "iqiyi-international",
         "iqiyi-mainland"
@@ -29356,7 +29373,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/AppleMusic.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "apple-video-and-fitness",
         "apple-tv-video-delivery",
@@ -29372,7 +29389,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/AppleTV.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "apple-tv-video-delivery"
       ],
@@ -29384,7 +29401,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/BBC.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "bbc-news-and-video"
       ],
@@ -29396,7 +29413,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/Bahamut.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "bahamut-video-and-community"
       ],
@@ -29408,7 +29425,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/DisneyPlus.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "disney-plus-streaming"
       ],
@@ -29420,7 +29437,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/HBO.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "hbo-streaming",
         "wbd-streaming-platform"
@@ -29433,7 +29450,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/Hulu.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "hulu-streaming"
       ],
@@ -29445,7 +29462,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/Netflix.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "netflix-video-and-delivery",
         "netflix-connection-tests"
@@ -29458,7 +29475,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/SoundCloud.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "soundcloud-audio"
       ],
@@ -29470,7 +29487,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/Spotify.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "spotify-audio",
         "spotify-advertising-and-analytics"
@@ -29483,7 +29500,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/Tiktok.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "tiktok-international-video"
       ],
@@ -29495,7 +29512,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/Twitch.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "twitch-live-video"
       ],
@@ -29507,7 +29524,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Media/Foreign/YouTube.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "youtube-video-and-cdn"
       ],
@@ -29519,7 +29536,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Region/ChinaIP.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "mainland-networks"
       ],
@@ -29531,7 +29548,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Amazon.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "amazon-mainland",
         "amazon-shared-services"
@@ -29544,7 +29561,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Apple.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "apple-and-ai-privacy-exceptions",
         "apple-intelligence-relays",
@@ -29591,7 +29608,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Cloudflare.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "cloudflare-public-dns",
         "cloudflare-mainland",
@@ -29605,7 +29622,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Github.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "github-copilot-connections",
         "github-code-and-packages",
@@ -29619,7 +29636,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Google.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "google-account-authentication",
         "google-gmail-mail",
@@ -29640,7 +29657,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Microsoft.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "microsoft-copilot-connections",
         "microsoft-account-authentication",
@@ -29665,7 +29682,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/Paypal.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "paypal-payments",
         "braintree-payments"
@@ -29678,7 +29695,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/Discord.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "discord-messaging-and-voice",
         "discord-activities-proxy"
@@ -29691,7 +29708,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/Facebook.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "meta-shared-services"
       ],
@@ -29703,7 +29720,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/Line.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "line-messenger"
       ],
@@ -29715,7 +29732,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/Telegram.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "telegram-messaging"
       ],
@@ -29727,7 +29744,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/Twitter.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "x-social-and-media"
       ],
@@ -29739,7 +29756,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/WeChat.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "wechat-international-portal",
         "wechat-shared-and-mainland",
@@ -29754,7 +29771,7 @@
       "repository": "sve1r/Rules-For-Quantumult-X",
       "ref": "main",
       "path": "Rules/Services/SNS/Weibo.list",
-      "format": "unverified",
+      "format": "quantumult-x",
       "products": [
         "weibo-social"
       ],
@@ -35998,6 +36015,172 @@
       ],
       "use": "complete-input-comparison",
       "initial-revision": "a8b79b28140d00cbab8c3060ec681d03176ee95b"
+    },
+    {
+      "id": "source-09d7f7010bb09d36e7ba",
+      "repository": "8wfield/Personal",
+      "ref": "main",
+      "path": "Egern/Rules/AI.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "bc7749544a41e3a360678208188ff85d699cf2b1"
+    },
+    {
+      "id": "source-ee094383fdf5a0bd00b4",
+      "repository": "8wfield/Personal",
+      "ref": "main",
+      "path": "Egern/Rules/Github.yaml",
+      "format": "egern",
+      "products": [
+        "github-code-and-packages",
+        "github-pages-hosting",
+        "github-copilot-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "bc7749544a41e3a360678208188ff85d699cf2b1"
+    },
+    {
+      "id": "source-cdc6f4abc75c743f2156",
+      "repository": "8wfield/Personal",
+      "ref": "main",
+      "path": "Egern/Rules/Telegram.yaml",
+      "format": "egern",
+      "products": [
+        "telegram-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "bc7749544a41e3a360678208188ff85d699cf2b1"
+    },
+    {
+      "id": "source-c837e92c7d504977bb61",
+      "repository": "YuTalk/tool",
+      "ref": "main",
+      "path": "rule/egern/AI_Part/AI_Part.yaml",
+      "format": "egern",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "9640a7eec5883cf6a03fce277545b6c3ca99607d"
+    },
+    {
+      "id": "source-e1b8e3357a63437ddc45",
+      "repository": "YuTalk/tool",
+      "ref": "main",
+      "path": "rule/egern/GitHub/GitHub.yaml",
+      "format": "egern",
+      "products": [
+        "github-code-and-packages",
+        "github-pages-hosting",
+        "github-copilot-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "9640a7eec5883cf6a03fce277545b6c3ca99607d"
+    },
+    {
+      "id": "source-eb467b4577cce83f416c",
+      "repository": "YuTalk/tool",
+      "ref": "main",
+      "path": "rule/egern/Telegram/Telegram.yaml",
+      "format": "egern",
+      "products": [
+        "telegram-messaging"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "9640a7eec5883cf6a03fce277545b6c3ca99607d"
+    },
+    {
+      "id": "source-dc9a77659cb577545490",
+      "repository": "tickcount/iplists",
+      "ref": "main",
+      "path": "rules/AI/domains.json",
+      "format": "sing-box",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "f651b3df19fbbac34ee5937517d21b26520e880c"
+    },
+    {
+      "id": "source-f204116fe0a6584a95e1",
+      "repository": "tickcount/iplists",
+      "ref": "main",
+      "path": "rules/GitHub/domains.json",
+      "format": "sing-box",
+      "products": [
+        "github-code-and-packages",
+        "github-pages-hosting",
+        "github-copilot-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "f651b3df19fbbac34ee5937517d21b26520e880c"
+    },
+    {
+      "id": "source-71333322e42265e34644",
+      "repository": "tickcount/iplists",
+      "ref": "main",
+      "path": "rules/AI/ip.json",
+      "format": "sing-box",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "f651b3df19fbbac34ee5937517d21b26520e880c"
+    },
+    {
+      "id": "source-5c1b1c3aea9cc7122568",
+      "repository": "tickcount/iplists",
+      "ref": "main",
+      "path": "rules/AI/ip-observed.json",
+      "format": "sing-box",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "f651b3df19fbbac34ee5937517d21b26520e880c"
+    },
+    {
+      "id": "source-cbf99478c590fc8ac1e6",
+      "repository": "HuangSuWn/rule-set",
+      "ref": "main",
+      "path": "rule/clash/geosite-github.yaml",
+      "format": "clash-domain",
+      "products": [
+        "github-code-and-packages",
+        "github-pages-hosting",
+        "github-copilot-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "54f415e58ed2100cd088c3e3d522bc359346f216"
+    },
+    {
+      "id": "source-1b4bcab6969b73b56ed1",
+      "repository": "HuangSuWn/rule-set",
+      "ref": "main",
+      "path": "rule/singbox/geosite-github.json",
+      "format": "sing-box",
+      "products": [
+        "github-code-and-packages",
+        "github-pages-hosting",
+        "github-copilot-connections"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "54f415e58ed2100cd088c3e3d522bc359346f216"
+    },
+    {
+      "id": "source-a361d80f0e9523fdfd79",
+      "repository": "25175/dinyue",
+      "ref": "main",
+      "path": "surge/generated/Rules/AIGC.list",
+      "format": "classical",
+      "products": [
+        "ai-overseas-all"
+      ],
+      "use": "complete-input-comparison",
+      "initial-revision": "6b1da79afe19b56a3f9a8c61d7fee9bee05981f2"
     }
   ]
 }
