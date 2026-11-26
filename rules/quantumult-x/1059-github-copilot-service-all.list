@@ -1,0 +1,41 @@
+# name: github-copilot-service-all
+# priority: 1059
+# section: ai
+# description: GitHub Copilot、认证、实验与语音模型合集
+# boundary: 替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。
+# created-at: 2026-11-26T17:47:39Z
+# updated-at: 2026-11-26T17:47:39Z
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
+# canonical-rule-count: 27
+# rule-count: 27
+# format: quantumult-x
+# canonical: rules/loon/1059-github-copilot-service-all.lsr
+
+host,ai.azure.com,proxy
+host,api.catalog.azureml.ms,proxy
+host-wildcard,*.api.azureml.ms,proxy
+host-wildcard,amlwlrt4*.blob.core.windows.net,proxy
+host,origin-tracker.githubusercontent.com,proxy
+host,copilot-proxy.githubusercontent.com,proxy
+host,copilot-workspace.githubnext.com,proxy
+host,production-copilot-host-westus.webpubsub.azure.com,proxy
+host,copilotprodattachments.blob.core.windows.net,proxy
+host-suffix,githubcopilot.com,proxy
+host,copilot-telemetry-service.githubusercontent.com,proxy
+host,copilot-telemetry.githubusercontent.com,proxy
+host,copilot-reports.github.com,proxy
+host,production-copilot-host-austriaeast.webpubsub.azure.com,proxy
+host,production-copilot-host-centralus-02.webpubsub.azure.com,proxy
+host,production-copilot-host-centralus.webpubsub.azure.com,proxy
+host,production-copilot-host-eastasia.webpubsub.azure.com,proxy
+host,production-copilot-host-westus3.webpubsub.azure.com,proxy
+host,production-copilot-host.webpubsub.azure.com,proxy
+host-wildcard,copilot-reports-*.b01.azurefd.net,proxy
+host-wildcard,usagereports*.blob.core.windows.net,proxy
+host,api.github.com,proxy
+host,avatars.githubusercontent.com,proxy
+host,collector.github.com,proxy
+host,default.exp-tas.com,proxy
+host,github.com,proxy
+host,github.githubassets.com,proxy

@@ -1,9 +1,9 @@
 {
-  "checked-at": "2026-11-26T13:10:06Z",
-  "inputs-read": 609,
-  "critical": 908,
-  "inputs-requested": 609,
-  "profiles-checked": 167772160,
+  "checked-at": "2026-11-26T18:21:43Z",
+  "inputs-read": 618,
+  "critical": 936,
+  "inputs-requested": 618,
+  "profiles-checked": 1426063360,
   "assigned-rules": {
     "apple-system-connectivity": {
       "DOMAIN-SUFFIX,appattest.apple.com": "apple-app-and-device-verification",
@@ -818,7 +818,6 @@
       "DOMAIN-SUFFIX,cpx.to": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,teads.tv": "general-ad-and-tracking",
       "DOMAIN-SUFFIX,admicro.vn": "general-ad-and-tracking",
-      "DOMAIN-SUFFIX,copilot-telemetry.githubusercontent.com": "github-copilot-connections",
       "DOMAIN-SUFFIX,slackb.com": "slack-workspaces",
       "DOMAIN-SUFFIX,bizographics.com": "linkedin-network",
       "DOMAIN-SUFFIX,gvt2.com": "google-platform-services",
@@ -844,7 +843,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 348,
+    "routine-tables": 355,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -947,7 +946,9 @@
       "claude-connections",
       "chatgpt-connections",
       "gemini-connections",
+      "grok-cursor-shared-authentication",
       "grokipedia-encyclopedia",
+      "foundry-local-voice-models",
       "github-copilot-connections",
       "microsoft-copilot-connections",
       "meta-ai-assistant",
@@ -1003,6 +1004,7 @@
       "pika-video-tools",
       "recraft-design-tools",
       "udio-music-tools",
+      "suno-music-generation",
       "duck-ai-chat",
       "langchain-agent-platform",
       "comfy-cloud-and-registry",
@@ -1107,6 +1109,8 @@
       "xoom-transfers",
       "wise-transfers",
       "tenpay-global-payments",
+      "paddle-subscription-payments",
+      "lemonsqueezy-subscription-payments",
       "binance-platform",
       "okx-platform",
       "gemini-exchange",
@@ -1250,6 +1254,8 @@
       "discord-activities-proxy",
       "disney-shared-services",
       "github-pages-hosting",
+      "mux-data-analytics",
+      "mux-video-platform",
       "netease-shared-services",
       "alibaba-shared-services",
       "tencent-shared-content-and-sdk",
@@ -5911,7 +5917,7 @@
       },
       "policy-excluded": 0,
       "reserved-owners": {
-        "xai-connections": 1
+        "grok-cursor-shared-authentication": 1
       },
       "state": "current"
     },
@@ -6190,8 +6196,8 @@
   "source-mirrors-used": {},
   "public-suffix-state": {
     "state": "current",
-    "source-version": "2026-11-25_18-55-17_UTC",
-    "active-version": "2026-11-25_18-55-17_UTC"
+    "source-version": "2026-11-26_11-38-20_UTC",
+    "active-version": "2026-11-26_11-38-20_UTC"
   },
   "shared-service-transfers": {
     "google-play-services": {
@@ -10179,7 +10185,7 @@
       "asset-prefix": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static",
       "documents": [
         {
-          "source": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static/_next/static/chunks/pages/apis/workflow-afb9fa1f374514ed.js",
+          "source": "https://liblibai-web-static.liblib.cloud/liblibai_v4_online/static/_next/static/chunks/pages/apis/workflow-77b07cf7770496e1.js",
           "roles": {
             "接口请求：": [
               "DOMAIN,openapi.liblibai.cloud"
@@ -10302,6 +10308,85 @@
         }
       ],
       "directory": "https://www.disneyplus.com/"
+    },
+    "paddle-subscription-payments": {
+      "method": "next-sdk",
+      "selection": {
+        "asset-roots": [
+          "profitwell.com",
+          "paddle.com",
+          "profitwell-events.com"
+        ],
+        "config": {
+          "dictionary-field": "defaults",
+          "environment": "PRODUCTION",
+          "fields": [
+            "checkoutBase",
+            "checkoutFrontEndBase",
+            "profitwellSnippetBase",
+            "apiBase"
+          ],
+          "script-field": "profitwellSnippetBase"
+        },
+        "document": {
+          "format": "javascript-method-urls",
+          "methods": [
+            "buildSingleDomain",
+            "buildSplitDomains"
+          ]
+        },
+        "max-documents": 1,
+        "source-format": "javascript-environment",
+        "inventory": {
+          "format": "javascript-url-literals"
+        },
+        "reviewed-outside": {
+          "DOMAIN,development-retain-widgets-api.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。",
+          "DOMAIN,development-retain-widgets.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。",
+          "DOMAIN,staging-retain-widgets-api.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。",
+          "DOMAIN,staging-retain-widgets.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。"
+        }
+      },
+      "source-sha256": "484dbfac7019734ca9c59eb384903985d11c95264c8de578051b7d8da1b0a8bb",
+      "script-fields": {
+        "checkoutBase": "https://create-checkout.paddle.com/checkout/product/",
+        "checkoutFrontEndBase": "https://buy.paddle.com",
+        "profitwellSnippetBase": "https://public.profitwell.com/js/profitwell.js",
+        "apiBase": "https://api.paddle.com"
+      },
+      "documents": [
+        {
+          "source": "https://public.profitwell.com/js/profitwell.js",
+          "purpose-rows": [
+            "DOMAIN,api.profitwell-events.com",
+            "DOMAIN,retain-api.profitwell.com",
+            "DOMAIN,www2.profitwell.com"
+          ],
+          "literal-rows": [
+            "DOMAIN,api.profitwell-events.com",
+            "DOMAIN,development-retain-widgets-api.paddle.dev",
+            "DOMAIN,development-retain-widgets.paddle.dev",
+            "DOMAIN,retain-api.profitwell.com",
+            "DOMAIN,retain-widgets-api.paddle.com",
+            "DOMAIN,retain-widgets.paddle.com",
+            "DOMAIN,sandbox-retain-widgets-api.paddle.com",
+            "DOMAIN,sandbox-retain-widgets.paddle.com",
+            "DOMAIN,staging-retain-widgets-api.paddle.dev",
+            "DOMAIN,staging-retain-widgets.paddle.dev",
+            "DOMAIN,www2.profitwell.com"
+          ],
+          "sha256": "09f6b0009402e02497e8a4b33060b48f8438f79b1ffdad2c990921efa67b43c4",
+          "asset-row": "DOMAIN,public.profitwell.com",
+          "rows": [
+            "DOMAIN,api.profitwell-events.com",
+            "DOMAIN,public.profitwell.com",
+            "DOMAIN,retain-api.profitwell.com",
+            "DOMAIN,www2.profitwell.com"
+          ],
+          "shared-rows": []
+        }
+      ],
+      "directory": "https://cdn.paddle.com/paddle/v2/paddle.js"
     }
   },
   "maintenance": {
@@ -10606,7 +10691,13 @@
       3825,
       8130,
       3855,
-      3960
+      3960,
+      8140,
+      8150,
+      1705,
+      3595,
+      1035,
+      1058
     ],
     "已核清单": [
       210,
@@ -10646,10 +10737,16 @@
       8210,
       8220,
       8400,
-      8600
+      8600,
+      1031,
+      1032,
+      1033,
+      1019,
+      1059
     ],
     "按用途与来源家族自动补全": [
       1010,
+      1040,
       1100,
       1110,
       1120,
@@ -10663,7 +10760,6 @@
       1210
     ],
     "随完整服务清单补入，间隔确认后撤回": [
-      1040,
       1230,
       1300,
       1340,
@@ -10715,12 +10811,14 @@
     ],
     "跟随产品页面的当前 SDK，读取生产配置": [
       8120
+    ],
+    "从发布 SDK 的生产字段跟随当前依赖脚本": [
+      3590
     ]
   },
   "reviewed-inputs": {
     "xai-connections": {
-      "state": "current",
-      "official-exact-additions": 0
+      "state": "current"
     },
     "cursor-editor-and-api": {
       "state": "current",
@@ -10784,9 +10882,9 @@
     },
     "mainland-networks": {
       "state": "current",
-      "accepted-prefixes": 1,
-      "unconfirmed-prefixes": 631,
-      "retired-prefixes": 102
+      "accepted-prefixes": 0,
+      "unconfirmed-prefixes": 526,
+      "retired-prefixes": 0
     },
     "mainland-geoip": {
       "state": "current"
@@ -10826,8 +10924,8 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 18003,
-      "admitted-rules": 88,
+      "not-whole-host-consensus": 17996,
+      "admitted-rules": 0,
       "retired-rules": 0
     }
   },
@@ -12812,6 +12910,301 @@
       "domain-scopes": 18,
       "outside-scope": 0,
       "other-rules": 0
+    },
+    "wbd-hbo-page-images": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "wbd-discovery-page-images": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "mux-data-analytics-purposes": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "mux-video-platform-purposes": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "mux-complete-csp": {
+      "state": "current",
+      "domain-scopes": 5,
+      "outside-scope": 0,
+      "other-rules": 0,
+      "reviewed-outside": 1
+    },
+    "suno-official-identity-1": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "suno-official-identity-2": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "suno-complete-community-service": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "suno-page-images": {
+      "state": "current",
+      "domain-scopes": 2,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "paddle-subscription-payments-official-identity-1": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "paddle-subscription-payments-official-identity-2": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "lemonsqueezy-subscription-payments-official-identity-1": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "grok-cursor-shared-authentication-official-purpose-1": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "grok-cursor-shared-authentication-official-purpose-2": {
+      "state": "current",
+      "domain-scopes": 1,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "paddle-production-sdk-endpoints": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "copilot-github-complete-network": {
+      "state": "current",
+      "domain-scopes": 23,
+      "outside-scope": 0,
+      "other-rules": 0
+    },
+    "copilot-voice-complete-model-network": {
+      "state": "current",
+      "domain-scopes": 4,
+      "outside-scope": 0,
+      "other-rules": 0
+    }
+  },
+  "service-dependencies": {
+    "ai-overseas-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+            "format": "purpose-domain-lists",
+            "labels": [
+              "OpenAI uses the following domains"
+            ],
+            "require-complete": true,
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "3947cacece5f296b9665b097ba67d4e83854f3d955e4c006676764c8de8153db",
+          "rules": [
+            "DOMAIN,android.chat.openai.com",
+            "DOMAIN,auth0.openai.com",
+            "DOMAIN,cdn.openaimerge.com",
+            "DOMAIN,cdn.platform.openai.com",
+            "DOMAIN,cdn.workos.com",
+            "DOMAIN,challenges.cloudflare.com",
+            "DOMAIN,chat.openai.com",
+            "DOMAIN,desktop.chat.openai.com",
+            "DOMAIN,forwarder.workos.com",
+            "DOMAIN,frontend-apps-multi-region.workos.com",
+            "DOMAIN,humb.apple.com",
+            "DOMAIN,images.workoscdn.com",
+            "DOMAIN,ios.chat.openai.com",
+            "DOMAIN,js.intercomcdn.com",
+            "DOMAIN,js.stripe.com",
+            "DOMAIN,o207216.ingest.sentry.io",
+            "DOMAIN,o33249.ingest.sentry.io",
+            "DOMAIN,rum.browser-intake-datadoghq.com",
+            "DOMAIN,setup.auth.openai.com",
+            "DOMAIN,setup.workos.com",
+            "DOMAIN,tcr9i.chat.openai.com",
+            "DOMAIN,workos.imgix.net",
+            "DOMAIN-WILDCARD,*.auth.openai.com",
+            "DOMAIN-WILDCARD,*.chatgpt.com",
+            "DOMAIN-WILDCARD,*.ct.sendgrid.net",
+            "DOMAIN-WILDCARD,*.intercom.io",
+            "DOMAIN-WILDCARD,*.intercomcdn.com",
+            "DOMAIN-WILDCARD,*.oaistatic.com",
+            "DOMAIN-WILDCARD,*.oaistatsig.com",
+            "DOMAIN-WILDCARD,*.oaiusercontent.com",
+            "DOMAIN-WILDCARD,*.openai.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+            "format": "purpose-url-table",
+            "section": "copilot-on-githubcom",
+            "headers": [
+              "URL",
+              "Purpose",
+              "Relevant wildcard in /meta response"
+            ],
+            "all-purposes": true,
+            "require-complete": true,
+            "allow-tenant-prefixes": true,
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "9fcd779f60ed2e84e75abced5360614fb0a52cac5c9d7cfb90ca74c31e069656",
+          "rules": [
+            "DOMAIN,api.github.com",
+            "DOMAIN,avatars.githubusercontent.com",
+            "DOMAIN,collector.github.com",
+            "DOMAIN,copilot-proxy.githubusercontent.com",
+            "DOMAIN,copilot-reports.github.com",
+            "DOMAIN,copilot-telemetry.githubusercontent.com",
+            "DOMAIN,default.exp-tas.com",
+            "DOMAIN,github.com",
+            "DOMAIN,github.githubassets.com",
+            "DOMAIN,origin-tracker.githubusercontent.com",
+            "DOMAIN,production-copilot-host-austriaeast.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-centralus-02.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-centralus.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-westus.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-westus3.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host.webpubsub.azure.com",
+            "DOMAIN-WILDCARD,*.business.githubcopilot.com",
+            "DOMAIN-WILDCARD,*.enterprise.githubcopilot.com",
+            "DOMAIN-WILDCARD,*.githubcopilot.com",
+            "DOMAIN-WILDCARD,*.individual.githubcopilot.com",
+            "DOMAIN-WILDCARD,copilot-reports-*.b01.azurefd.net",
+            "DOMAIN-WILDCARD,usagereports*.blob.core.windows.net"
+          ]
+        }
+      ]
+    },
+    "chatgpt-service-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+            "format": "purpose-domain-lists",
+            "labels": [
+              "OpenAI uses the following domains"
+            ],
+            "require-complete": true,
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "3947cacece5f296b9665b097ba67d4e83854f3d955e4c006676764c8de8153db",
+          "rules": [
+            "DOMAIN,android.chat.openai.com",
+            "DOMAIN,auth0.openai.com",
+            "DOMAIN,cdn.openaimerge.com",
+            "DOMAIN,cdn.platform.openai.com",
+            "DOMAIN,cdn.workos.com",
+            "DOMAIN,challenges.cloudflare.com",
+            "DOMAIN,chat.openai.com",
+            "DOMAIN,desktop.chat.openai.com",
+            "DOMAIN,forwarder.workos.com",
+            "DOMAIN,frontend-apps-multi-region.workos.com",
+            "DOMAIN,humb.apple.com",
+            "DOMAIN,images.workoscdn.com",
+            "DOMAIN,ios.chat.openai.com",
+            "DOMAIN,js.intercomcdn.com",
+            "DOMAIN,js.stripe.com",
+            "DOMAIN,o207216.ingest.sentry.io",
+            "DOMAIN,o33249.ingest.sentry.io",
+            "DOMAIN,rum.browser-intake-datadoghq.com",
+            "DOMAIN,setup.auth.openai.com",
+            "DOMAIN,setup.workos.com",
+            "DOMAIN,tcr9i.chat.openai.com",
+            "DOMAIN,workos.imgix.net",
+            "DOMAIN-WILDCARD,*.auth.openai.com",
+            "DOMAIN-WILDCARD,*.chatgpt.com",
+            "DOMAIN-WILDCARD,*.ct.sendgrid.net",
+            "DOMAIN-WILDCARD,*.intercom.io",
+            "DOMAIN-WILDCARD,*.intercomcdn.com",
+            "DOMAIN-WILDCARD,*.oaistatic.com",
+            "DOMAIN-WILDCARD,*.oaistatsig.com",
+            "DOMAIN-WILDCARD,*.oaiusercontent.com",
+            "DOMAIN-WILDCARD,*.openai.com"
+          ]
+        }
+      ]
+    },
+    "github-copilot-service-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+            "format": "purpose-url-table",
+            "section": "copilot-on-githubcom",
+            "headers": [
+              "URL",
+              "Purpose",
+              "Relevant wildcard in /meta response"
+            ],
+            "all-purposes": true,
+            "require-complete": true,
+            "allow-tenant-prefixes": true,
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "9fcd779f60ed2e84e75abced5360614fb0a52cac5c9d7cfb90ca74c31e069656",
+          "rules": [
+            "DOMAIN,api.github.com",
+            "DOMAIN,avatars.githubusercontent.com",
+            "DOMAIN,collector.github.com",
+            "DOMAIN,copilot-proxy.githubusercontent.com",
+            "DOMAIN,copilot-reports.github.com",
+            "DOMAIN,copilot-telemetry.githubusercontent.com",
+            "DOMAIN,default.exp-tas.com",
+            "DOMAIN,github.com",
+            "DOMAIN,github.githubassets.com",
+            "DOMAIN,origin-tracker.githubusercontent.com",
+            "DOMAIN,production-copilot-host-austriaeast.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-centralus-02.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-centralus.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-westus.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host-westus3.webpubsub.azure.com",
+            "DOMAIN,production-copilot-host.webpubsub.azure.com",
+            "DOMAIN-WILDCARD,*.business.githubcopilot.com",
+            "DOMAIN-WILDCARD,*.enterprise.githubcopilot.com",
+            "DOMAIN-WILDCARD,*.githubcopilot.com",
+            "DOMAIN-WILDCARD,*.individual.githubcopilot.com",
+            "DOMAIN-WILDCARD,copilot-reports-*.b01.azurefd.net",
+            "DOMAIN-WILDCARD,usagereports*.blob.core.windows.net"
+          ]
+        }
+      ]
     }
   },
   "security-program-history-version": 1,
@@ -13017,6 +13410,7 @@
     "agentn.global.api5.cursor.sh",
     "agentn.us.api5.cursor.sh",
     "ai-backend-service.docker.com",
+    "ai.azure.com",
     "albert.apple.com",
     "amp-api-edge.music.apple.com",
     "amp-api-preview.music.apple.com",
@@ -13043,6 +13437,7 @@
     "api.au.intercom.io",
     "api.binance.com",
     "api.braintreegateway.com",
+    "api.catalog.azureml.ms",
     "api.cline.bot",
     "api.cohere.com",
     "api.commandcode.ai",
@@ -13055,6 +13450,7 @@
     "api.eu.mistral.ai",
     "api.eu.residency.elevenlabs.io",
     "api.fireworks.ai",
+    "api.github.com",
     "api.groq.com",
     "api.in.residency.elevenlabs.io",
     "api.intercom.io",
@@ -13067,8 +13463,10 @@
     "api.novita.ai",
     "api.offload.docker.com",
     "api.openai-compat.model-serving.eu01.onstackit.cloud",
+    "api.paddle.com",
     "api.perplexity.ai",
     "api.poe.com",
+    "api.profitwell-events.com",
     "api.sandbox.braintreegateway.com",
     "api.sandboxes-cloud.docker.com",
     "api.sg.residency.elevenlabs.io",
@@ -13122,11 +13520,13 @@
     "authenticate.cursor.sh",
     "authentication.cursor.sh",
     "authenticator.cursor.sh",
+    "avatars.githubusercontent.com",
     "azcliprod.blob.core.windows.net",
     "baseten.co",
     "bitbucket.org",
     "blog.google",
     "bothub.ru",
+    "buy.paddle.com",
     "cdn.atlassian-us-gov-mod.com",
     "cdn.openaimerge.com",
     "cdn.platform.openai.com",
@@ -13135,6 +13535,7 @@
     "cerebras.ai",
     "certs-lb.apple.com.akadns.net",
     "certs.apple.com",
+    "challenges.cloudflare.com",
     "chat.openai.com",
     "chutes.ai",
     "cl2-cn.apple.com",
@@ -13145,17 +13546,20 @@
     "cloud.siliconflow.com",
     "cloudconfig.jetbrains.com",
     "code.visualstudio.com",
+    "collector.github.com",
     "commandcode.ai",
     "comments.app",
     "containers.pkg.github.com",
     "contest.com",
     "copilot-proxy.githubusercontent.com",
     "copilot-reports.github.com",
+    "copilot-telemetry.githubusercontent.com",
     "copilot.ai",
     "copilot.com",
     "copilot.microsoft.com",
     "cp4.cloudflare.com",
     "crates.io",
+    "create-checkout.paddle.com",
     "crl-lb.apple.com.akadns.net",
     "crl.apple.com",
     "crl3.digicert.com",
@@ -13167,6 +13571,7 @@
     "data-stream.binance.vision",
     "datasets-server.huggingface.co",
     "deepinfra.com",
+    "default.exp-tas.com",
     "desktop-release.notion-static.com",
     "desktop.chat.openai.com",
     "desktop.docker.com",
@@ -13220,6 +13625,7 @@
     "github-registry-files.githubusercontent.com",
     "github-releases.githubusercontent.com",
     "github.com",
+    "github.githubassets.com",
     "gmail.googleapis.com",
     "gmail.mtls.googleapis.com",
     "gmailpostmastertools.googleapis.com",
@@ -13236,6 +13642,7 @@
     "gstatic.sandbox.braintreegateway.com",
     "hub.docker.com",
     "huggingface.co",
+    "humb.apple.com",
     "identity.apple.com",
     "identity.ess.apple.com",
     "images.workoscdn.com",
@@ -13260,6 +13667,7 @@
     "iphonesubmissions.apple.com",
     "jira.com",
     "js.intercomcdn.com",
+    "js.stripe.com",
     "kg.qq.com",
     "kilo.ai",
     "liblibai-web-static.liblib.cloud",
@@ -13306,6 +13714,8 @@
     "npmregistryv2prod.blob.core.windows.net",
     "nuget.pkg.github.com",
     "nugetregistryv2prod.blob.core.windows.net",
+    "o207216.ingest.sentry.io",
+    "o33249.ingest.sentry.io",
     "oauth.account.jetbrains.com",
     "oauth2.googleapis.com",
     "objects-origin.githubusercontent.com",
@@ -13527,6 +13937,7 @@
     "productionresultssa8.blob.core.windows.net",
     "productionresultssa9.blob.core.windows.net",
     "profile.ess.apple.com",
+    "public.profitwell.com",
     "q.eu-central-1.amazonaws.com",
     "q.us-east-1.amazonaws.com",
     "query.ess.apple.com",
@@ -13536,8 +13947,10 @@
     "registry.scout.docker.com",
     "release-assets.githubusercontent.com",
     "repo42.cursor.sh",
+    "retain-api.profitwell.com",
     "rubygems.pkg.github.com",
     "rubygemsregistryv2prod.blob.core.windows.net",
+    "rum.browser-intake-datadoghq.com",
     "runnerghubeus1.actions.githubusercontent.com",
     "runnerghubeus20.actions.githubusercontent.com",
     "runnerghubeus21.actions.githubusercontent.com",
@@ -13640,47 +14053,11 @@
     "www.teamworkgraph.ai",
     "www.teamworkgraph.com",
     "www.ultimatemusic.cn",
+    "www2.profitwell.com",
     "xoom.com",
     "z.ai"
   ],
   "service-inventories": {
-    "xai-connections": {
-      "inputs": [
-        {
-          "source": "https://cursor.com/help/troubleshooting/sign-in-domains",
-          "format": "purpose-domain-lists",
-          "labels": [
-            "If your policy will not allow wildcards, allow at least:"
-          ],
-          "allow-identical-duplicates": true
-        },
-        {
-          "source": "https://cursor.com/docs/enterprise/network-configuration",
-          "format": "purpose-domain-lists",
-          "labels": [
-            "use the following list"
-          ],
-          "allow-identical-duplicates": true,
-          "nested-subdomain-labels": [
-            "These subdomains are also used:"
-          ],
-          "item-purpose-prefixes": [
-            "New sign-in page"
-          ]
-        }
-      ],
-      "observed": [
-        "DOMAIN,accounts.spacexsi.com",
-        "DOMAIN,auth.grok.com",
-        "DOMAIN,auth.grokipedia.com",
-        "DOMAIN,auth.grokusercontent.com"
-      ],
-      "retained": [],
-      "retired": [],
-      "first-absent": {},
-      "last-read": 1795698556,
-      "state": "current"
-    },
     "jetbrains-ai": {
       "inputs": [
         {
@@ -13719,7 +14096,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "ollama-cloud": {
@@ -13750,7 +14127,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "stackit-model-services": {
@@ -13781,7 +14158,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "stepfun-international": {
@@ -13823,7 +14200,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "xiaomi-international": {
@@ -13866,7 +14243,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -13901,7 +14278,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -13951,7 +14328,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -13992,7 +14369,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -14233,7 +14610,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "npm-registry": {
@@ -14266,7 +14643,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14310,7 +14687,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -14343,7 +14720,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -14396,7 +14773,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "braintree-payments": {
@@ -14423,7 +14800,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "notion-workspace": {
@@ -14450,7 +14827,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "google-account-authentication": {
@@ -14658,7 +15035,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -14684,7 +15061,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "google-play-services": {
@@ -14720,7 +15097,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "google-play-games": {
@@ -14748,7 +15125,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "kimi-mainland": {
@@ -14779,7 +15156,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -14810,7 +15187,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -14853,7 +15230,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -14892,15 +15269,15 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795698556,
+      "last-read": 1795717244,
       "state": "current"
     }
   },
-  "inventory-domain-cases": 465,
-  "expanded-domain-cases": 222,
+  "inventory-domain-cases": 461,
+  "expanded-domain-cases": 226,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1362,
+  "business-domain-cases": 1386,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -14910,9 +15287,8 @@
   },
   "shared-negatives": 19,
   "changed": [
-    "extended-ad-and-tracking",
-    "mainland-routing-all",
-    "mainland-networks"
+    "overseas-payments-all",
+    "paddle-subscription-payments"
   ],
   "scope-negatives": 157,
   "ip-cases": 44,
@@ -14970,7 +15346,7 @@
     "mainland-networks": {
       "intent": "allow-dns",
       "no-resolve": 0,
-      "resolve-for-match": 6993
+      "resolve-for-match": 6994
     },
     "mainland-geoip": {
       "intent": "allow-dns",
@@ -14988,14 +15364,21 @@
     "apple-and-ai-privacy-exceptions": 3,
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
-    "extended-ad-and-tracking": 44289,
-    "ai-overseas-all": 682,
+    "extended-ad-and-tracking": 44288,
+    "ai-overseas-all": 711,
     "claude-connections": 24,
+    "chatgpt-service-all": 475,
     "chatgpt-connections": 460,
     "gemini-connections": 52,
-    "xai-connections": 6,
+    "grokipedia-service-all": 4,
+    "xai-service-all": 6,
+    "cursor-service-all": 13,
+    "grok-cursor-shared-authentication": 4,
+    "xai-connections": 4,
     "grokipedia-encyclopedia": 1,
-    "github-copilot-connections": 15,
+    "foundry-local-voice-models": 4,
+    "github-copilot-service-all": 27,
+    "github-copilot-connections": 17,
     "microsoft-copilot-connections": 5,
     "meta-ai-assistant": 4,
     "muse-agent": 1,
@@ -15061,6 +15444,7 @@
     "pika-video-tools": 1,
     "recraft-design-tools": 1,
     "udio-music-tools": 1,
+    "suno-music-generation": 2,
     "duck-ai-chat": 1,
     "langchain-agent-platform": 1,
     "comfy-cloud-and-registry": 2,
@@ -15167,7 +15551,7 @@
     "xiaomi-international-services": 2,
     "linkedin-network": 12,
     "meta-shared-services": 19,
-    "overseas-payments-all": 18,
+    "overseas-payments-all": 25,
     "paypal-payments": 5,
     "stripe-payments": 3,
     "link-payments": 1,
@@ -15176,6 +15560,8 @@
     "xoom-transfers": 1,
     "wise-transfers": 2,
     "tenpay-global-payments": 1,
+    "paddle-subscription-payments": 6,
+    "lemonsqueezy-subscription-payments": 1,
     "overseas-crypto-all": 37,
     "binance-platform": 6,
     "okx-platform": 6,
@@ -15187,7 +15573,7 @@
     "ton-foundation-sites": 1,
     "toncenter-blockchain-api": 1,
     "fragment-digital-assets": 1,
-    "overseas-media-all": 219,
+    "overseas-media-all": 220,
     "hbo-streaming": 7,
     "netflix-video-and-delivery": 11,
     "netflix-connection-tests": 1,
@@ -15206,7 +15592,7 @@
     "twitch-live-video": 7,
     "bbc-news-and-video": 3,
     "bahamut-video-and-community": 5,
-    "wbd-streaming-platform": 2,
+    "wbd-streaming-platform": 3,
     "overseas-games-all": 51,
     "steam-international-platform": 12,
     "epic-games-services": 5,
@@ -15325,7 +15711,7 @@
     "youdao-products": 3,
     "aliyun-drive": 6,
     "wps-office": 13,
-    "global-platforms-all": 434,
+    "global-platforms-all": 436,
     "digitalocean-services": 6,
     "vultr-services": 1,
     "hetzner-services": 14,
@@ -15339,9 +15725,11 @@
     "discord-activities-proxy": 1,
     "disney-shared-services": 4,
     "github-pages-hosting": 1,
-    "overseas-extra-all": 18600,
+    "mux-data-analytics": 1,
+    "mux-video-platform": 1,
+    "overseas-extra-all": 18597,
     "overseas-media-extra": 139,
-    "overseas-sites-extra": 18475,
+    "overseas-sites-extra": 18472,
     "mainland-platforms-all": 528,
     "netease-shared-services": 39,
     "alibaba-shared-services": 4,
@@ -15354,9 +15742,9 @@
     "kingsoft-shared-services": 32,
     "sina-shared-image-assets": 2,
     "sina-web-and-shared-services": 7,
-    "mainland-routing-all": 19272,
+    "mainland-routing-all": 19273,
     "mainland-domains": 12278,
-    "mainland-networks": 6993,
+    "mainland-networks": 6994,
     "mainland-geoip": 1
   },
   "component-rules": {

@@ -70,7 +70,7 @@ def render_review(status,entries):
         for key in sorted(assigned_rules,key=lambda k:entries[k]['priority']):
             assigned=assigned_rules[key]
             e=entries[key]
-            summary.append(f"- [{priority_label(e)} {e['description']}](../rules/loon/{rule_filename(e)})：{len(assigned)} 条交给常规表处理。")
+            summary.append(f"- [{priority_label(e)} {e['description']}](rules.md#rule-{e['id']})：{len(assigned)} 条交给常规表处理。")
         for key,counts in audit['optional-overlaps'].items():
             summary+=['',f"可选表 {priority_label(entries[key])} 与常规表有 {sum(counts.values())} 条相同规则（"+
                       '、'.join(f"{priority_label(entries[k])}：{n} 条" for k,n in counts.items())+
@@ -87,7 +87,7 @@ def render_review(status,entries):
         e=entries[k]; state=states[k]; filename=rule_filename(e)
         counts=(f"：新增 {state['new-matches']}，撤回 {state['missing-rules']}"
                 if state['state']=='review' else '')
-        lines.append(f"- [{priority_label(e)} {e['description']}](../rules/loon/{filename})："
+        lines.append(f"- [{priority_label(e)} {e['description']}](rules.md#rule-{e['id']})："
                      +labels[state['state']]+counts)
     internal_pending={key:state for key,state in status['reviewed-inputs'].items()
                       if key in entries and 'priority' not in entries[key] and state['state']!='current'}
@@ -145,7 +145,7 @@ def render_review(status,entries):
                 '来源中的其他规则类型：'+('、'.join(f'{kind} {count} 条' for kind,count in sorted(other_types.items())) or '无')+'。类型和数量单独记录，IP 用途、ASN 运营者与进程适用设备另行核对。','',
                 '| 来源 | 当前产品 | 符合筛选 / 来源范围 | 其他产品 | 筛选外未覆盖 | 完整归属要求 |','|---|---|---:|---:|---:|---|']
         for source,state in projected.items():
-            products='、'.join(f"[{priority_label(entries[key])}](../rules/loon/{rule_filename(entries[key])})" for key in state['products'])
+            products='、'.join(f"[{priority_label(entries[key])}](rules.md#rule-{key})" for key in state['products'])
             label=source.rstrip('/').rsplit('/',1)[-1]
             counts=f"{state['selected-scopes']} / {state['domain-scopes']}" if state['state']=='current' else {'unavailable':'未读到','invalid':'格式变化'}[state['state']]
             lines.append(f"| [{label}]({source}) | {products} | {counts} | "+
@@ -259,7 +259,7 @@ def render_review(status,entries):
                 '| 序号 | 英文名称 | 中文名称 | 固定声明 | 官方存在核对 |','|---|---|---|---:|---:|']
         for k in pure:
             e=entries[k]
-            lines.append(f"| {priority_label(e)} | [{k}](../rules/loon/{rule_filename(e)}) | {e['description']} | {fixed.get(k,0)} | {maintenance['official-checks'].get(k,0)} |")
+            lines.append(f"| {priority_label(e)} | [{k}](rules.md#rule-{e['id']}) | {e['description']} | {fixed.get(k,0)} | {maintenance['official-checks'].get(k,0)} |")
         lines+=['',f"另有 {len(maintenance['baseline-managed'])} 份表以上一版已审内容为基线，按各自条件接纳或撤回变化；"
                 '其中有官方用途提取、交叉核对和连续确认，不是每份都能自动接纳所有上游新增项。','',
                 f"{len(maintenance['source-scoped'])} 份表按来源筛选，但产品根域、地区和用途边界仍由人工设定。"
@@ -312,7 +312,7 @@ def render_review(status,entries):
                 f"{entries[k]['description']} 有 {v} 条相交" for k,v in counts.items()))
     if ip:=status.get('ip-matching'):
         lines+=['','## 哪些 IP 规则会为了匹配而解析域名？','',
-                '这份表逐一检查所有含 IP 的独立订阅，合集不重复计数。域名规则未命中后，允许解析的 IP 规则才可能参与；解析器由 Loon 的 DNS 设置决定。',
+                '这份表逐一检查所有含 IP 的独立订阅，合集不重复计数。域名规则未命中后，允许解析的 IP 规则才可能参与；解析器由所用客户端的 DNS 设置决定。',
                 '', '| 规则 | 只匹配已有 IP | 允许解析后匹配 |','|---|---:|---:|']
         for k in sorted(ip,key=lambda k:entries[k]['priority']):
             v=ip[k]
@@ -328,13 +328,20 @@ def render_index(config, entries):
     optional=set(config['optional'])
     alternatives=set(config['alternatives'])
     views=set(config['views'])
-    base='https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/'
-    lines=['# Loon 规则订阅清单','','## 在 Loon 中怎么排','',
-           '从上往下读，就是订阅的匹配顺序。只选自己要用的行，保持它们的相对位置即可。'
-           '标题按章节编号，表中序号对应规则文件，也按匹配顺序递增，各类留有空号。英文名称对应文件名；点名称可看正文、来源和更新时间，在最后一列复制订阅地址。','',
-           '同一出口可以用合集；要分别选节点，就用它的成员，不要两者都开。'
-           'Loon 刷新订阅只更新正文，不会自动移动设备上已有的订阅。'
-           '本地规则和插件也可能先匹配。[怎么查实际命中](network-testing.md)','']
+    from loon_rules.exports.publishing import CLIENTS, FORMATS
+    lines=['# 规则订阅清单','','## 选择应用与规则','',
+           '先进入所用代理应用的目录，再按本页选择产品或合集。各应用共用分组、编号、来源和执行顺序；'
+           '实际语法、兼容状态和订阅地址在各自目录中列出。','',
+           '| 代理应用 | 下载目录 |','|---|---|']
+    for client, profile in CLIENTS.items():
+        title={'mihomo':'Mihomo','stash':'Stash'}.get(client,FORMATS[profile['format']][1])
+        lines.append(f'| {title} | [{client}](../rules/{client}/README.md) |')
+    lines+=['','从上往下读，就是订阅的匹配顺序。只选自己要用的行，保持相对位置即可。'
+            '序号和英文名称对应各应用中的同名规则文件，来源和正文更新时间可在文件或机器清单中查看。','',
+            '同一出口可以用合集；要分别选出口，就用成员。合集和它列出的成员二选一。'
+            '客户端刷新订阅通常只更新正文，已有订阅的位置和出口仍需在配置中核对。'
+            '本地规则、插件或重写也可能先匹配。[客户端格式与限制](clients.md) · '
+            '[检查实际命中](network-testing.md)','']
     bands=config.get('routing-bands') or [
         {'title':s['title'],'ids':[k for k,e in entries.items() if e['section']==s['id']]}
         for s in sections.values()]
@@ -366,12 +373,12 @@ def render_index(config, entries):
                 sub_number+=1
                 lines+=([''] if i else [])+[f'### {band_number}.{sub_number} '+subtitles[k],'']
             if i==0 or k in subtitles:
-                lines+=['| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |','|---:|---|---|---|---|']
+                lines+=['| 序号 | 英文名称 | 中文名称 | 用途与选择 |','|---:|---|---|---|']
             e=entries[k]; number=f'{priority_label(e)}';name=rule_filename(e)
             selection=(f'**合集：替代 {members_text(e["members"])}。** ' if k in views else
                        '**可选。** ' if k in optional or k in alternatives else '')
             desc=e.get('index-title',e['description']).rstrip('。')
-            lines.append(f'| {number} | [{k}](../rules/loon/{name}) | {desc} | {selection}{e["boundary"]} | [订阅地址]({base}{name}) |')
+            lines.append(f'| {number} | <a id="rule-{k}"></a>`{k}` | {desc} | {selection}{e["boundary"]} |')
         lines.append('')
     lines+=['产品专表已列在各业务下；统一出口用合集，分别选出口用其成员。'
             '[各组怎么选出口](routing.md) · [各类规则怎样更新](maintenance.md) · '

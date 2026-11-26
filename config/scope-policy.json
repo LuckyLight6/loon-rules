@@ -26,7 +26,9 @@
     "volces.com",
     "x.com",
     "azure-api.cn",
-    "chinacloudsites.cn"
+    "chinacloudsites.cn",
+    "storage.googleapis.com",
+    "s3.amazonaws.com"
   ],
   "protected-networks": [
     "17.0.0.0/8"
@@ -34,5 +36,9 @@
   "shared-hostnames": [
     "www.quora.com",
     "cloudflare-dns.com"
+  ],
+  "path-shared-hosts": [
+    "storage.googleapis.com",
+    "s3.amazonaws.com"
   ]
 }

@@ -20,6 +20,10 @@
       ],
       "domain_suffix": [
         "githubcopilot.com"
+      ],
+      "domain_regex": [
+        "(?i)^copilot\\-reports\\-.*\\.b01\\.azurefd\\.net$",
+        "(?i)^usagereports.*\\.blob\\.core\\.windows\\.net$"
       ]
     }
   ]

@@ -34,7 +34,12 @@ class SemanticCatalog(unittest.TestCase):
         self.assertLess(max(entries[key]['priority'] for key in foreign),entries['ai-cn-international-all']['priority'])
         index=pipeline.render_index(config,entries)
         ai=index.split('## 3 ',1)[1].split('## 4 ',1)[0]
-        self.assertEqual(sum(line.startswith('### ') for line in ai.splitlines()),4)
+        for key in foreign:
+            self.assertEqual(entries[key]['routing-group'],'overseas-ai')
+            self.assertIn('rule-'+key,ai)
+        for key in international:
+            self.assertEqual(entries[key]['routing-group'],'chinese-ai-international')
+            self.assertIn('rule-'+key,ai)
         for label in ('更多产品','更多国际入口','其他产品','其他国际产品','浏览器与开放代理'):
             self.assertNotIn(label,ai)
 

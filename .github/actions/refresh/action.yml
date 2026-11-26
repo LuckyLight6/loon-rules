@@ -1,4 +1,4 @@
-name: Maintain public Loon rules
+name: Maintain public proxy rules
 description: Verify, refresh and publish the public rule outputs from the checked-out main branch
 inputs:
   github-token:
@@ -32,17 +32,24 @@ runs:
         python3 -B maintain.py --export
         python3 -B maintain.py --check-exports
     - uses: ./.github/actions/native-formats
+    - name: Compare complete community inputs
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+      shell: bash
+      run: |
+        python3 -B maintain.py --community-review --sing-box "$RUNNER_TEMP/loon-rule-native/sing-box"
+        cat build/community-review/summary.md >> "$GITHUB_STEP_SUMMARY"
     - name: Summarize source changes
       shell: bash
       run: cat build/verification.md >> "$GITHUB_STEP_SUMMARY"
     - name: Commit validated outputs
       shell: bash
       run: |
-        git add -- rules/ plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json
+        git add -- rules/ plugins/public-services-doh.plugin data/public-suffix-list.dat data/maintenance-state.json data/community-state.json
         if git diff --cached --quiet; then
           exit 0
         fi
         git config user.name 'github-actions[bot]'
         git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-        git commit -m 'Refresh validated Loon rule files'
+        git commit -m 'Refresh validated proxy rule files'
         git push origin HEAD:refs/heads/main

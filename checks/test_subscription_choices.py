@@ -91,11 +91,13 @@ AZURE_PUBLIC_CLOUD = Cloud('AzureCloud',
             entry=es[key]
             row=next(line for line in index.splitlines()
                      if line.startswith('| '+lib.rule_filename(entry).split('-',1)[0]+' |'))
-            filename=lib.rule_filename(entry)
-            self.assertTrue(f'[{key}](../rules/loon/{filename})' in row,key+' 缺少正文链接')
-            self.assertTrue('[订阅地址](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/'+filename+')' in row,
-                            key+' 缺少订阅链接')
+            self.assertIn(f'<a id="rule-{key}"></a>',row)
+            self.assertNotIn('../rules/loon/',row)
+            self.assertNotIn('raw.githubusercontent.com',row)
             if key in optional:self.assertIn('**可选。**',row)
+        from loon_rules.exports.publishing import CLIENTS
+        for client in CLIENTS:
+            self.assertIn('../rules/'+client+'/README.md',index)
         self.assertNotIn('上游变更待核',index)
         self.assertIn('(routing.md)',index)
         components={e['id'] for e in cfg['source-components']}

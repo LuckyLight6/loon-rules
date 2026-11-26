@@ -9,10 +9,6 @@
       ],
       "domain_regex": [
         "(?i)^.*\\.grokusercontent\\.com$"
-      ],
-      "domain": [
-        "accounts.spacexsi.com",
-        "auth.grokipedia.com"
       ]
     }
   ]

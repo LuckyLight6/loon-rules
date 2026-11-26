@@ -1,7 +1,7 @@
 """Dispatch public input formats. Each reader returns rule rows, never policy names."""
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
-from . import api, contextual, documents, feeds, networks, python_regions, regions, structured, tables
+from . import api, contextual, documents, feeds, javascript, networks, python_regions, regions, structured, tables
 
 
 def security_program_rows(recipe, text):
@@ -40,6 +40,9 @@ READERS = {
     'labelled-networks': networks.parse_labelled_networks,
     'labelled-url-pairs': contextual.labelled_url_pairs,
     'literal-object-urls': api.literal_object_urls,
+    'javascript-environment-urls': javascript.environment_urls,
+    'javascript-method-urls': javascript.method_urls,
+    'javascript-url-literals': javascript.url_literals,
     'mail-autoconfig': feeds.parse_mail_autoconfig,
     'markdown-purpose-endpoints': contextual.markdown_purpose_endpoints,
     'named-hosts': feeds.parse_named_hosts,
@@ -93,7 +96,8 @@ def extract_rows(recipe, text, *, shared_hosts=()):
                                 'qt-host-predicate', 'next-service-urls', 'literal-object-urls',
                                 'security-program-domains', 'nested-purpose-domains', 'service-domain-groups',
                                 'json-service-urls', 'plist-service-fields', 'purpose-domain-table',
-                                'python-regional-hosts', 'csp-origins', 'domain-column-table'))
+                                'python-regional-hosts', 'csp-origins', 'domain-column-table',
+                                'javascript-environment-urls', 'javascript-method-urls', 'javascript-url-literals'))
     if (strict_scope or form in ('json-service-urls','plist-service-fields','section-code-domains','purpose-domain-lists',
                  'go-host-switch','c-function-url','csp-origins','domain-column-table','product-role-links','purpose-host-table')
             or form=='endpoint-sets' and recipe.get('all-hosts')

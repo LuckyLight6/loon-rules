@@ -1,5 +1,6 @@
 #!name = 公网服务分域 DoH
 #!desc = 按公开服务范围指定加密解析器，其余名称沿用原设置。DoH 连接出口与查询回落仍由 Loon 设置决定
+# 服务合集按产品成员生成 DNS 映射；额外共享依赖沿用原设置或其他已选规则组的映射
 # 海外代理服务：Cloudflare DNS；来源规则组 0150, 2040, 2060, 2020, 1010, 1020, 1030, 1040, 1000, 1800, 2030
 # 国内直连与普通 Apple 服务：阿里公共 DNS；来源规则组 6000, 2190, 2090, 2130, 2160, 2100, 2120, 2180, 2260, 2350, 2360, 2200
 
@@ -17,6 +18,7 @@
 *.anythingllm.com = server:https://1.1.1.1/dns-query
 *.ap-northeast-1.maas.aliyuncs.com = server:https://1.1.1.1/dns-query
 *.ap-southeast-1.maas.aliyuncs.com = server:https://1.1.1.1/dns-query
+*.api.azureml.ms = server:https://1.1.1.1/dns-query
 *.appattest.apple.com = server:https://223.5.5.5/dns-query
 *.apple.news = server:https://1.1.1.1/dns-query
 *.apps-marketplace.apple.com = server:https://223.5.5.5/dns-query
@@ -220,6 +222,8 @@
 *.stability.ai = server:https://1.1.1.1/dns-query
 *.stepfun.com = server:https://223.5.5.5/dns-query
 *.stitch.withgoogle.com = server:https://1.1.1.1/dns-query
+*.suno.ai = server:https://1.1.1.1/dns-query
+*.suno.com = server:https://1.1.1.1/dns-query
 *.swdist.apple.com = server:https://223.5.5.5/dns-query
 *.swscan.apple.com = server:https://223.5.5.5/dns-query
 *.synthesia.io = server:https://1.1.1.1/dns-query
@@ -250,6 +254,7 @@ account.apple.com = server:https://223.5.5.5/dns-query
 accounts.spacexsi.com = server:https://1.1.1.1/dns-query
 agent-stores.s3.amazonaws.com = server:https://1.1.1.1/dns-query
 agent-stores.s3.us-east-1.amazonaws.com = server:https://1.1.1.1/dns-query
+ai.azure.com = server:https://1.1.1.1/dns-query
 ai.com = server:https://1.1.1.1/dns-query
 ai.google.dev = server:https://1.1.1.1/dns-query
 ai.studio = server:https://1.1.1.1/dns-query
@@ -277,6 +282,7 @@ ap-southeast-1.maas.aliyuncs.com = server:https://1.1.1.1/dns-query
 api-inference.modelscope.cn = server:https://223.5.5.5/dns-query
 api.app.prod.grazie.aws.intellij.net = server:https://1.1.1.1/dns-query
 api.apple-cloudkit.com = server:https://223.5.5.5/dns-query
+api.catalog.azureml.ms = server:https://1.1.1.1/dns-query
 api.endpoints.huggingface.cloud = server:https://1.1.1.1/dns-query
 api.hunyuan.cloud.tencent.com = server:https://223.5.5.5/dns-query
 api.ipify.org = server:https://1.1.1.1/dns-query
@@ -312,7 +318,9 @@ ark.cn-beijing.volces.com = server:https://223.5.5.5/dns-query
 ark.volcengine.com = server:https://223.5.5.5/dns-query
 augmentcode.com = server:https://1.1.1.1/dns-query
 auth.ampcode.com = server:https://1.1.1.1/dns-query
+auth.grok.com = server:https://1.1.1.1/dns-query
 auth.grokipedia.com = server:https://1.1.1.1/dns-query
+auth.grokusercontent.com = server:https://1.1.1.1/dns-query
 auth.itunes.apple.com = server:https://223.5.5.5/dns-query
 bag.itunes.apple.com = server:https://223.5.5.5/dns-query
 baichuan-ai.com = server:https://223.5.5.5/dns-query
@@ -657,6 +665,8 @@ stepfun.com = server:https://223.5.5.5/dns-query
 stitch.withgoogle.com = server:https://1.1.1.1/dns-query
 su.itunes.apple.com = server:https://223.5.5.5/dns-query
 suconfig.apple.com = server:https://223.5.5.5/dns-query
+suno.ai = server:https://1.1.1.1/dns-query
+suno.com = server:https://1.1.1.1/dns-query
 swdist.apple.com = server:https://223.5.5.5/dns-query
 swdist.apple.com.akadns.net = server:https://223.5.5.5/dns-query
 swpost.apple.com = server:https://223.5.5.5/dns-query

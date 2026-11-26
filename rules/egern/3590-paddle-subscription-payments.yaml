@@ -1,0 +1,26 @@
+# name: paddle-subscription-payments
+# priority: 3590
+# section: payments
+# description: Paddle 订阅支付、结账、商家 API、账单与 Retain
+# boundary: 从 Paddle.js 生产环境字段跟随当前 Retain 脚本，覆盖结账、商家 API、账单与恢复支付接口；共享 ProfitWell 主机上的其他请求也随本表匹配。开发与预发布环境单独排除，其他支付处理方保留各自规则。
+# created-at: 2026-11-26T16:38:35Z
+# updated-at: 2026-11-26T17:30:39Z
+# source: https://www.paddle.com/
+# source: https://www.paddle.net/
+# source: https://developer.paddle.com/paddle-js/about/include-paddlejs/
+# source: https://cdn.paddle.com/paddle/v2/paddle.js
+# source: https://developer.paddle.com/build/retain/
+# source: https://www.paddle.com/vulnerability-disclosure-policy
+# canonical-rule-count: 6
+# rule-count: 6
+# format: egern
+# canonical: rules/loon/3590-paddle-subscription-payments.lsr
+
+domain_suffix_set:
+  - "paddle.com"
+  - "paddle.net"
+domain_set:
+  - "public.profitwell.com"
+  - "api.profitwell-events.com"
+  - "retain-api.profitwell.com"
+  - "www2.profitwell.com"

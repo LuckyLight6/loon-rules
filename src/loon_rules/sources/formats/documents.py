@@ -55,6 +55,8 @@ def parse_purpose_domain_lists(recipe, text):
         values=recipe.get(field)
         if not isinstance(values,list) or not values or any(not isinstance(value,str) or not value.strip() for value in values):
             raise Invalid('用途清单的 '+field+' 必须是非空文字数组')
+    if type(recipe.get('require-complete',False)) is not bool:
+        raise Invalid('用途清单的完整读取开关必须为布尔值')
     if 'allow-identical-duplicates' in recipe and type(recipe['allow-identical-duplicates']) is not bool:
         raise Invalid('用途清单的重复项开关必须为布尔值')
     if 'item-separator-required' in recipe and type(recipe['item-separator-required']) is not bool:
@@ -78,8 +80,10 @@ def parse_purpose_domain_lists(recipe, text):
             if style=='parentheses' and (not separator or not purpose.rstrip().endswith(')')):
                 raise Invalid('用途清单缺少完整的括号说明')
             for host in re.split('[,\\s]+', field.strip()):
-                if row:=public_domain_pattern(host):
-                    result.add(row)
+                row=public_domain_pattern(host)
+                if row is None and recipe.get('require-complete'):
+                    raise Invalid('完整用途清单包含共享托管范围，不能静默省略')
+                if row:result.add(row)
     if select:=recipe.get('select'):
         if (not isinstance(select,dict) or set(select)-{'roots','exact'}
                 or not any(select.get(field) for field in ('roots','exact'))):

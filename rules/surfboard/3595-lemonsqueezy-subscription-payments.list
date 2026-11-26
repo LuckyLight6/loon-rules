@@ -1,0 +1,16 @@
+# name: lemonsqueezy-subscription-payments
+# priority: 3595
+# section: payments
+# description: Lemon Squeezy 订阅支付、结账与商家 API
+# boundary: 官网身份核对支付平台的自有命名空间，覆盖结账和商家入口；商家的自定义域名及银行卡、PayPal、Apple Pay、Google Pay 等处理方仍按其实际服务匹配，不认领整家云平台。
+# created-at: 2026-11-26T16:38:35Z
+# updated-at: 2026-11-26T16:38:35Z
+# source: https://www.lemonsqueezy.com/
+# source: https://docs.lemonsqueezy.com/guides/developer-guide/taking-payments
+# source: https://docs.lemonsqueezy.com/help/checkout/checkout-overlay
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surfboard
+# canonical: rules/loon/3595-lemonsqueezy-subscription-payments.lsr
+
+DOMAIN-SUFFIX,lemonsqueezy.com

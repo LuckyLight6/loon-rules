@@ -30,6 +30,11 @@ class ImageOwnershipReview(PublicSourceExamples):
             'section': 'vendors', 'description': '图片供应商', 'boundary': '已核实的供应商空间',
             'sources': [self.fixture().recipe()['source']],
             'include': ['DOMAIN-SUFFIX,supplier.example']})
+        config['entries'].append({'id': 'remainder', 'mode': 'compiled', 'priority': 40,
+            'section': 'vendors', 'description': '补充范围', 'boundary': '已有补充来源',
+            'sources': [self.fixture().recipe()['source']], 'fallback': True, 'domain-remainder': True,
+            'include': ['DOMAIN-SUFFIX,video.example', 'DOMAIN-SUFFIX,images.vendor.example',
+                        'DOMAIN-SUFFIX,new-supplier.example']})
         return config
 
     def test_images_keep_existing_product_and_supplier_owners_and_can_move_to_a_new_supplier(self):
@@ -66,7 +71,7 @@ class ImageOwnershipReview(PublicSourceExamples):
                 self.assertNotIn('DOMAIN,preview.unlisted.supplier.example', data['media-all'])
                 self.assertNotIn('DOMAIN,images.video.example', data['images'])
                 # A later verified supplier namespace must safely take over an old image endpoint.
-                config['entries'][-1]['include'].append('DOMAIN-SUFFIX,new-supplier.example')
+                next(entry for entry in config['entries'] if entry['id'] == 'supplier')['include'].append('DOMAIN-SUFFIX,new-supplier.example')
                 (root / 'config/catalog.json').write_text(json.dumps(config))
                 pipeline.run()
                 publish(root)

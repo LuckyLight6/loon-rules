@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "domain:suno.com",
+          "domain:suno.ai"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

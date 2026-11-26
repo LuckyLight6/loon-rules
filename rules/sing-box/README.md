@@ -18,10 +18,17 @@
 | 0240 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/0240-extended-ad-and-tracking.json) |
 | 1000 | ai-overseas-all | 海外 AI 合集 | sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 1010 | claude-connections | Claude 登录、API、MCP、更新、附件和 Artifact | sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
+| 1019 | chatgpt-service-all | ChatGPT、Codex、API 与官方共享依赖合集 | sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 1020 | chatgpt-connections | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 1030 | gemini-connections | Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1030-gemini-connections.json) |
-| 1040 | xai-connections | xAI 账号、Grok 对话与模型 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1040-xai-connections.json) |
+| 1031 | grokipedia-service-all | Grokipedia 内容与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1031-grokipedia-service-all.json) |
+| 1032 | xai-service-all | Grok、xAI API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1032-xai-service-all.json) |
+| 1033 | cursor-service-all | Cursor 编辑器、API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1033-cursor-service-all.json) |
+| 1035 | grok-cursor-shared-authentication | Grok、Cursor 与 Grokipedia 共用账号登录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1035-grok-cursor-shared-authentication.json) |
+| 1040 | xai-connections | Grok 对话、xAI 模型 API 与专用内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1040-xai-connections.json) |
 | 1050 | grokipedia-encyclopedia | Grokipedia AI 百科站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1050-grokipedia-encyclopedia.json) |
+| 1058 | foundry-local-voice-models | Foundry Local 语音模型目录、区域 API 与下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1058-foundry-local-voice-models.json) |
+| 1059 | github-copilot-service-all | GitHub Copilot、认证、实验与语音模型合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1059-github-copilot-service-all.json) |
 | 1060 | github-copilot-connections | Copilot API、补全、对话及已证实的附件服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1060-github-copilot-connections.json) |
 | 1070 | microsoft-copilot-connections | Microsoft Copilot 个人版与工作版独立入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1070-microsoft-copilot-connections.json) |
 | 1080 | meta-ai-assistant | Meta AI 助手、Llama 与专用内容入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1080-meta-ai-assistant.json) |
@@ -88,6 +95,7 @@
 | 1680 | pika-video-tools | Pika 视频生成 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1680-pika-video-tools.json) |
 | 1690 | recraft-design-tools | Recraft 设计与图像 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1690-recraft-design-tools.json) |
 | 1700 | udio-music-tools | Udio 音乐生成 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1700-udio-music-tools.json) |
+| 1705 | suno-music-generation | Suno AI 音乐生成、作品播放与下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1705-suno-music-generation.json) |
 | 1710 | duck-ai-chat | Duck.ai 对话 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1710-duck-ai-chat.json) |
 | 1720 | langchain-agent-platform | LangChain 与代理平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1720-langchain-agent-platform.json) |
 | 1730 | comfy-cloud-and-registry | Comfy 云端与组件目录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1730-comfy-cloud-and-registry.json) |
@@ -203,6 +211,8 @@
 | 3560 | xoom-transfers | Xoom 汇款 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3560-xoom-transfers.json) |
 | 3570 | wise-transfers | Wise 转账与账户服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3570-wise-transfers.json) |
 | 3580 | tenpay-global-payments | TenPay Global 跨境支付与商户平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3580-tenpay-global-payments.json) |
+| 3590 | paddle-subscription-payments | Paddle 订阅支付、结账、商家 API、账单与 Retain | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3590-paddle-subscription-payments.json) |
+| 3595 | lemonsqueezy-subscription-payments | Lemon Squeezy 订阅支付、结账与商家 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3595-lemonsqueezy-subscription-payments.json) |
 | 3600 | overseas-crypto-all | 海外加密资产服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3600-overseas-crypto-all.json) |
 | 3610 | binance-platform | Binance 币安 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3610-binance-platform.json) |
 | 3620 | okx-platform | OKX 欧易 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/3620-okx-platform.json) |

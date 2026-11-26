@@ -1,5 +1,6 @@
 """Evidence-based updates of reviewed rule feeds."""
 from loon_rules import rules
+from loon_rules.generation import dependencies
 from loon_rules.generation import calibration
 from loon_rules.sources import policy as source_policy
 from loon_rules.generation.membership import compact,outside_domain_scopes,outside_tenant_scopes,stable_order,uncovered_count,without_protected
@@ -52,11 +53,12 @@ def calibration_urls(spec):
     raise rules.Invalid('未知校准方式')
 
 
-def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(), corroborated=(), official=(), tenant_roots=(), observation=None, revision=None, epoch=None, adopt_ads=False, admitted=(),discovery_state=None):
+def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), required_scopes=(), reserved=(), corroborated=(), official=(), tenant_roots=(), observation=None, revision=None, epoch=None, adopt_ads=False, admitted=(),discovery_state=None):
     """Report arbitrary source drift without publishing candidate names or addresses."""
     excluded=set(entry.get('excluded-rules',()))
     allowed=source_policy.publication_kinds(entry)
     permitted=set(entry.get('allowed-shared',()))
+    last=dependencies.outside(last,required_scopes)
     last=outside_domain_scopes(without_protected([
         r for r in last if r not in excluded and r.split(',')[0] in allowed
         and rules.aligned_network(r) and not overbroad(*r.split(',')[:2],permitted)
@@ -74,7 +76,7 @@ def refresh_reviewed_feed(entry, last, downloaded, *, protected=(), reserved=(),
         return last,{'state':'unavailable'}
     audit={}
     try:
-        now=without_protected(reviewed_input(entry,downloaded,audit=audit,tenant_roots=roots,official=official),protected)
+        now=dependencies.outside(without_protected(reviewed_input(entry,downloaded,audit=audit,tenant_roots=roots,official=official),protected),required_scopes)
         rules.verify_ip_options(entry,rules.ip_options(now))
     except rules.Invalid:
         return last,{'state':'invalid'}

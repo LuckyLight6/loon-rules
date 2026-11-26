@@ -1,0 +1,21 @@
+# name: grok-cursor-shared-authentication
+# priority: 1035
+# section: ai
+# description: Grok、Cursor 与 Grokipedia 共用账号登录
+# boundary: 从官方最小登录清单和网络用途表读取明确主机；仅合并不能按目的域名区分的共用认证，不接管 Grok 对话、Cursor 编辑器或百科内容。
+# created-at: 2026-11-26T16:57:37Z
+# updated-at: 2026-11-26T16:57:37Z
+# source: https://cursor.com/help/troubleshooting/sign-in-domains
+# source: https://cursor.com/docs/enterprise/network-configuration
+# source: https://docs.x.ai/x-subscription/sign-in
+# source: https://docs.x.ai/developers/faq/accounts
+# canonical-rule-count: 4
+# rule-count: 4
+# format: clash-classical
+# canonical: rules/loon/1035-grok-cursor-shared-authentication.lsr
+
+payload:
+  - "DOMAIN,accounts.spacexsi.com"
+  - "DOMAIN,auth.grok.com"
+  - "DOMAIN,auth.grokipedia.com"
+  - "DOMAIN,auth.grokusercontent.com"

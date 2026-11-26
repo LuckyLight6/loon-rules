@@ -235,6 +235,8 @@ def validate_declarations(config):
                 or any(e['section']!=entries[k]['section']
                        for k in e['members'])):
                 raise rules.Invalid('合并视图包含未归类成员：'+e['id'])
+    from loon_rules.generation import dependencies
+    dependencies.validate(entries)
     owners=service_directory.validate(config,entries)
     for key,owner in owners.items():
         entries[key]=dict(entries[key],vendor=owner)
@@ -254,7 +256,9 @@ def validate_declarations(config):
     for key in config['views']:
         view=entries[key]
         entries[key]=dict(view,sources=list(dict.fromkeys(
-            url for member in view['members'] for url in entries[member]['sources'])),
+            url for member in view['members'] for url in entries[member]['sources']))+list(dict.fromkeys(
+                recipe['source'] for recipe in view.get('dependency-inputs',())
+                if recipe['source'] not in {url for member in view['members'] for url in entries[member]['sources']})),
             **{'allowed-shared':sorted(set(view.get('allowed-shared',()))|{
                 host for member in view['members'] for host in entries[member].get('allowed-shared',())})})
     catalog_schema.subscription_aliases(config)

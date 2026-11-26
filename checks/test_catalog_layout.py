@@ -104,8 +104,8 @@ class CatalogLayout(unittest.TestCase):
         text=lib.decorate(entry,['DOMAIN,regular.example'],None,'2026-11-22T00:00:00Z')
         self.assertIn('# priority: 0020\n',text)
         index=lib.render_index(cfg,entries)
-        self.assertIn('| 0020 | [regular]',index)
-        self.assertIn('/main/rules/loon/0020-regular.lsr',index)
+        self.assertIn('| 0020 | <a id="rule-regular"></a>`regular`',index)
+        self.assertNotIn('/main/rules/loon/',index)
         self.assertEqual(rule_filename({'priority':61,'id':'legacy'}),'061-legacy.lsr')
 
     def test_four_digit_bands_allow_insertions_between_initial_tens(self):

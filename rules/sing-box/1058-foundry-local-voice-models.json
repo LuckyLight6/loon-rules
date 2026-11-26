@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ai.azure.com",
+        "api.catalog.azureml.ms"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.api\\.azureml\\.ms$",
+        "(?i)^amlwlrt4.*\\.blob\\.core\\.windows\\.net$"
+      ]
+    }
+  ]
+}

@@ -66,7 +66,10 @@ def build(catalog=None):
     else:
         routes=[spec]
     width=priority_width(catalog)
-    entries={e['id']:e for e in catalog['entries']}
+    entries={entry['id']:entry for entry in catalog['entries']}
+    if any(entry.get('dependency-inputs') for entry in entries.values()):
+        from loon_rules.generation.declarations import validate_declarations
+        entries=validate_declarations(catalog)
     hosts={};selected=set();notes=[]
     def domain_row(host):return ('DOMAIN-WILDCARD,' if host.startswith('*.') else 'DOMAIN,')+host
     for route in routes:
@@ -80,9 +83,13 @@ def build(catalog=None):
         notes.append('# '+label+'：'+provider+'；来源规则组 '+', '.join(priority_label(entries[name],width=width) for name in groups))
         scope=set()
         for name in groups:
-            f=ROOT/'rules'/'loon'/rule_filename(entries[name],width=width)
-            group_scope=names(f.read_text().splitlines(),catalog['shared-negatives'])
-            if not group_scope:raise ValueError('Selected group has no public DNS hosts: '+f.name)
+            entry=entries[name]
+            members=entry['members'] if entry.get('dependency-inputs') else [name]
+            group_scope=set()
+            for member in members:
+                f=ROOT/'rules'/'loon'/rule_filename(entries[member],width=width)
+                group_scope.update(names(f.read_text().splitlines(),catalog['shared-negatives']))
+            if not group_scope:raise ValueError('Selected group has no public DNS hosts: '+name)
             scope.update(group_scope)
         for host in sorted(scope):
             row=domain_row(host)
@@ -92,6 +99,7 @@ def build(catalog=None):
             hosts[host]=url
     return ('#!name = 公网服务分域 DoH\n'
             '#!desc = 按公开服务范围指定加密解析器，其余名称沿用原设置。DoH 连接出口与查询回落仍由 Loon 设置决定\n'+
+            '# 服务合集按产品成员生成 DNS 映射；额外共享依赖沿用原设置或其他已选规则组的映射\n'+
             '\n'.join(notes)+'\n\n[Host]\n'+
             ''.join(f'{host} = server:{url}\n' for host,url in sorted(hosts.items())))
 

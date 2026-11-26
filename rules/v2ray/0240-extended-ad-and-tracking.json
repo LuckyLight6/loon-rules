@@ -43496,8 +43496,6 @@
           "domain:proxima.midjourney.com",
           "domain:srtb.msn.com",
           "domain:metrics.mzstatic.com",
-          "domain:bzr.openai.com",
-          "domain:bzrcdn.openai.com",
           "domain:events.redditmedia.com",
           "domain:fourier.taobao.com",
           "full:tns.simba.taobao.com",
@@ -44292,7 +44290,8 @@
           "domain:pnyevyapfspdt.website",
           "domain:snevozufekhoj.website",
           "domain:zwrshdfaayjun.website",
-          "domain:hobres.xyz"
+          "domain:hobres.xyz",
+          "domain:yearlyartist.com"
         ],
         "outboundTag": "PROXY"
       }

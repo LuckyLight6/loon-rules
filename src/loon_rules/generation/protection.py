@@ -32,6 +32,13 @@ def functional_hostnames(entries,downloaded,*,aliases=None,dns_evidence=None,sha
                   if recipe.get('protect-from-reject')]
         selected.extend({**source['recipe'],'source':source['source']} for source in
                         entry.get('discovery',{}).get('inputs',()) if source.get('authority') and source.get('recipe'))
+        for recipe in entry.get('dependency-inputs',()):
+            if not recipe.get('protect-from-reject') or recipe['source'] not in downloaded:continue
+            for row in read_source_rows(recipe,downloaded[recipe['source']]):
+                kind,host,*_=row.split(',')
+                if kind in ('DOMAIN','DOMAIN-SUFFIX'):
+                    if host in SHARED_PARENT:raise rules.Invalid('服务依赖不能放行整个共享云平台')
+                    hosts.add(domain_scope.public_host(host))
         for recipe in selected:
             if recipe['source'] not in downloaded:continue
             try:rows=extract_rows(recipe,downloaded[recipe['source']],shared_hosts=shared_hosts)

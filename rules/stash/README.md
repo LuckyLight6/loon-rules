@@ -18,10 +18,17 @@
 | 0240 | extended-ad-and-tracking | 可选的扩展广告与统计拦截 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/0240-extended-ad-and-tracking.yaml) |
 | 1000 | ai-overseas-all | 海外 AI 合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1000-ai-overseas-all.yaml) |
 | 1010 | claude-connections | Claude 登录、API、MCP、更新、附件和 Artifact | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1010-claude-connections.yaml) |
+| 1019 | chatgpt-service-all | ChatGPT、Codex、API 与官方共享依赖合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1019-chatgpt-service-all.yaml) |
 | 1020 | chatgpt-connections | ChatGPT、Codex、OpenAI API、语音信令与媒体连接 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1020-chatgpt-connections.yaml) |
 | 1030 | gemini-connections | Gemini、AI Studio、NotebookLM、Google AI API 和专用 WebChannel | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1030-gemini-connections.yaml) |
-| 1040 | xai-connections | xAI 账号、Grok 对话与模型 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1040-xai-connections.yaml) |
+| 1031 | grokipedia-service-all | Grokipedia 内容与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1031-grokipedia-service-all.yaml) |
+| 1032 | xai-service-all | Grok、xAI API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1032-xai-service-all.yaml) |
+| 1033 | cursor-service-all | Cursor 编辑器、API 与登录合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1033-cursor-service-all.yaml) |
+| 1035 | grok-cursor-shared-authentication | Grok、Cursor 与 Grokipedia 共用账号登录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1035-grok-cursor-shared-authentication.yaml) |
+| 1040 | xai-connections | Grok 对话、xAI 模型 API 与专用内容 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1040-xai-connections.yaml) |
 | 1050 | grokipedia-encyclopedia | Grokipedia AI 百科站点 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1050-grokipedia-encyclopedia.yaml) |
+| 1058 | foundry-local-voice-models | Foundry Local 语音模型目录、区域 API 与下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1058-foundry-local-voice-models.yaml) |
+| 1059 | github-copilot-service-all | GitHub Copilot、认证、实验与语音模型合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1059-github-copilot-service-all.yaml) |
 | 1060 | github-copilot-connections | Copilot API、补全、对话及已证实的附件服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1060-github-copilot-connections.yaml) |
 | 1070 | microsoft-copilot-connections | Microsoft Copilot 个人版与工作版独立入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1070-microsoft-copilot-connections.yaml) |
 | 1080 | meta-ai-assistant | Meta AI 助手、Llama 与专用内容入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1080-meta-ai-assistant.yaml) |
@@ -88,6 +95,7 @@
 | 1680 | pika-video-tools | Pika 视频生成 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1680-pika-video-tools.yaml) |
 | 1690 | recraft-design-tools | Recraft 设计与图像 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1690-recraft-design-tools.yaml) |
 | 1700 | udio-music-tools | Udio 音乐生成 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1700-udio-music-tools.yaml) |
+| 1705 | suno-music-generation | Suno AI 音乐生成、作品播放与下载 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1705-suno-music-generation.yaml) |
 | 1710 | duck-ai-chat | Duck.ai 对话 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1710-duck-ai-chat.yaml) |
 | 1720 | langchain-agent-platform | LangChain 与代理平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1720-langchain-agent-platform.yaml) |
 | 1730 | comfy-cloud-and-registry | Comfy 云端与组件目录 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/1730-comfy-cloud-and-registry.yaml) |
@@ -203,6 +211,8 @@
 | 3560 | xoom-transfers | Xoom 汇款 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3560-xoom-transfers.yaml) |
 | 3570 | wise-transfers | Wise 转账与账户服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3570-wise-transfers.yaml) |
 | 3580 | tenpay-global-payments | TenPay Global 跨境支付与商户平台 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3580-tenpay-global-payments.yaml) |
+| 3590 | paddle-subscription-payments | Paddle 订阅支付、结账、商家 API、账单与 Retain | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3590-paddle-subscription-payments.yaml) |
+| 3595 | lemonsqueezy-subscription-payments | Lemon Squeezy 订阅支付、结账与商家 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3595-lemonsqueezy-subscription-payments.yaml) |
 | 3600 | overseas-crypto-all | 海外加密资产服务合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3600-overseas-crypto-all.yaml) |
 | 3610 | binance-platform | Binance 币安 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3610-binance-platform.yaml) |
 | 3620 | okx-platform | OKX 欧易 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/stash/3620-okx-platform.yaml) |

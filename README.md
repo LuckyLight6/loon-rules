@@ -1,6 +1,6 @@
-# Loon 分流规则与多客户端格式
+# 按服务和用途分流的多客户端规则
 
-按服务和用途选择出口的 Loon 订阅规则，覆盖 AI、Apple、Google、Microsoft，以及开发、通讯、支付、影音、游戏等产品。规则不包含节点；同一份订阅可以在不同设备上绑定不同策略，也可以把多份订阅交给同一个策略组。同时从同一套数据生成 Surge、Mihomo、Stash、Egern、Surfboard、Shadowrocket、Quantumult X、sing-box 和 V2Ray 格式，具体范围见[客户端格式与限制](docs/clients.md)。
+按服务和用途选择出口，覆盖 AI、Apple、Google、Microsoft，以及开发、通讯、支付、影音、游戏等产品。同一套来源与分类生成 Loon、Surge、Mihomo、Stash、Egern、Surfboard、Shadowrocket、Quantumult X、sing-box 和 V2Ray 格式。规则不包含节点，各设备可分别绑定出口；具体语法与兼容范围见[客户端说明](docs/clients.md)。
 
 [选择代理应用与下载规则](rules/README.md) · [规则清单](docs/rules.md) · [客户端说明](docs/clients.md) · [按厂商查产品](docs/services.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
 
@@ -8,14 +8,9 @@
 
 所有规则统一在 `rules/<代理应用>/`，每个应用目录都提供实际文件与订阅索引。旧的 `rules/` 平铺地址和 `dist/` 地址已停用；已有配置请改用对应应用目录中的新地址。
 
-以海外 AI 为例，在 Loon 新增规则订阅，复制 [1000 海外 AI 合集](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1000-ai-overseas-all.lsr)的地址，绑定已有的代理策略。直接编辑配置时，写在 `[Remote Rule]` 段，把 `PROXY` 换成实际策略名：
+先进入[所用代理应用的下载目录](rules/README.md)，按[规则清单](docs/rules.md)选择细分或合集，再按该应用的[使用说明](docs/clients.md)绑定已有出口。以海外 AI 为例，十个应用都提供同名的 `1000-ai-overseas-all`，文件格式和可用状态以各自目录为准。
 
-```ini
-[Remote Rule]
-https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1000-ai-overseas-all.lsr, policy=PROXY, tag=1000-ai-overseas-all, enabled=true
-```
-
-在原配置的副本里试用，保留最初的备份。按[清单顺序](docs/rules.md)排列所选订阅，再切到分流模式。订阅刷新只更新规则正文，不会替设备调整顺序或选择节点。部分规则使用 `DOMAIN-WILDCARD`，需要 Loon **build 1008 或更新版本**。[Loon 规则订阅文档](https://nsloon.app/docs/Rule/sub_rule/)
+按清单顺序排列所选规则。订阅刷新只更新正文，不会替设备调整顺序或选择节点。
 
 规则采用四位序号，初始每 10 递增，为新增规则预留空号。文件、清单和配置顺序使用同一套编号。
 
@@ -23,7 +18,7 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1000-ai
 
 | 使用方式 | 选择 |
 |---|---|
-| 海外 AI | 1000，或按 Claude、OpenAI、Gemini、xAI 等产品分别选择 |
+| 海外 AI | 1000；单用 ChatGPT 可选1019，单用 Copilot 可选1059，Grok、Grokipedia、Cursor 分别有1032、1031、1033服务合集；也可按产品细分 |
 | 国产 AI 国际版与国内版 | 1800 国际版；6000 国内版与共用入口 |
 | 海外 AI 中国区服务 | 6250，目前只含已核实的 JetBrains AI 中国区 API |
 | Apple 日常分流 | 2010 海外功能、2070 推送、2080 普通服务；全部统一出口则选 2000 |
@@ -36,22 +31,24 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1000-ai
 | 厂商共用范围 | 8000 全球厂商与云平台；8400 国内厂商，均在具体产品之后 |
 | 海外与国内补充 | 8200 海外补充；8600 国内补充，均可改用成员分别选路 |
 
-`-all` 从所列成员生成，**与成员二选一**。需要不同出口时改用细分规则；多份规则可以共用一个策略组，不必每份都建组。合集也不能重叠选择，例如 Apple 完整合集与日常拆分方案
+服务合集还可加入官方网络清单中明确列出的共享依赖。同一共享主机不能按发起应用区分；选择这类合集后，其他应用对该主机的请求也随它选路。每份表的范围在清单中说明。
+
+`-all` 从所列成员生成，**与成员二选一**。需要不同出口时改用细分规则；多份规则可以共用一个策略组，不必每份都建组。合集也不能重叠选择，例如 Apple 完整合集与日常拆分方案。
 
 ## 顺序与拦截
 
-网络接入与局域网、常规广告与隐私之后，依次处理海外与国际版 AI、Apple、海外具体产品、Google 和 Microsoft。跨国厂商的国内入口随后处理；国内具体产品再按业务排列。厂商通用父域、海外补充和国内补充放在后面，避免抢走具体业务
+网络接入与局域网、常规广告与隐私之后，依次处理海外与国际版 AI、Apple、海外具体产品、Google 和 Microsoft。跨国厂商的国内入口随后处理；国内具体产品再按业务排列。厂商通用父域、海外补充和国内补充放在后面，避免抢走具体业务。
 
 常规广告用 0220，0210 是已核实的 Apple 广告与 OpenAI 广告像素。0240 是默认关闭的扩展拦截；启用时放在具体产品前，保留正常网站和必需入口的保护。0230 只拦已列公共 STUN 端点，可能影响通话和会议，不能凭它宣称 WebRTC 已防泄漏。[实际命中与防泄漏测试](docs/network-testing.md)
 
-## DNS 插件单独选择
+## 可选的 Loon DNS 插件
 
-[公网服务分域 DoH 插件](plugins/public-services-doh.plugin)为所列海外业务使用 Cloudflare，为国产 AI 国内版和所列直连 Apple 服务使用阿里公共 DoH；其他名称沿用系统或 VPN 的解析器。插件只有域名映射，不解密 HTTPS，不运行脚本。DoH 连接的最终出口与失败回落要在设备上检查；选择加密上游不等于防泄漏已经通过。内网名称和私有网段只放在自己的配置里。[选择与测试 DNS](docs/network-testing.md#dns先看查询走了哪里)
+仓库另提供 Loon 的[公网服务分域 DoH 插件](plugins/public-services-doh.plugin)为所列海外业务使用 Cloudflare，为国产 AI 国内版和所列直连 Apple 服务使用阿里公共 DoH；其他名称沿用系统或 VPN 的解析器。插件只有域名映射，不解密 HTTPS，不运行脚本。DoH 连接的最终出口与失败回落要在设备上检查；选择加密上游不等于防泄漏已经通过。内网名称和私有网段只放在自己的配置里。[选择与测试 DNS](docs/network-testing.md#dns先看查询走了哪里)
 
 ## 更新与反馈
 
 仓库计划每天北京时间 **11:37 和 23:37** 更新，定时触发状态以 Actions 中的 `schedule` 记录为准。生成器读取官方用途资料和社区来源，检查新增、撤回、归属与首条命中，通过后才提交成品。源码、分类条件与维护依据都保留在仓库中；每轮检查摘要在 GitHub Actions，详细维护状态在 `data/maintenance-state.json`。[自动更新能做什么](docs/maintenance.md)
 
-反馈错分时，提供公开主机名、Loon 版本、命中规则、预期出口和操作结果即可。请勿提交完整配置、节点凭据、证书、内部名称或带登录信息的 URL。
+反馈错分时，提供公开主机名、代理应用及版本、命中规则、预期出口和操作结果即可。请勿提交完整配置、节点凭据、证书、内部名称或带登录信息的 URL。
 
 生成器代码使用 [MIT License](LICENSE)。规则与参考数据遵循各自来源的许可，见 [NOTICE](NOTICE.md) 和 `licenses/`。

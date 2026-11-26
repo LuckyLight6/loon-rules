@@ -187,11 +187,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/loon/0240-extended-ad-and-tracking.lsr",
           "paths": {
@@ -200,11 +200,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 682,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 711,
           "status": "available",
           "path": "rules/loon/1000-ai-overseas-all.lsr",
           "paths": {
@@ -222,6 +222,19 @@
           "path": "rules/loon/1010-claude-connections.lsr",
           "paths": {
             "loon": "rules/loon/1010-claude-connections.lsr"
+          }
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 475,
+          "status": "available",
+          "path": "rules/loon/1019-chatgpt-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/1019-chatgpt-service-all.lsr"
           }
         },
         "1020-chatgpt-connections": {
@@ -250,13 +263,65 @@
             "loon": "rules/loon/1030-gemini-connections.lsr"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/loon/1031-grokipedia-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/1031-grokipedia-service-all.lsr"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/loon/1032-xai-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/1032-xai-service-all.lsr"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/loon/1033-cursor-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/1033-cursor-service-all.lsr"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "paths": {
+            "loon": "rules/loon/1035-grok-cursor-shared-authentication.lsr"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/loon/1040-xai-connections.lsr",
           "paths": {
@@ -276,13 +341,39 @@
             "loon": "rules/loon/1050-grokipedia-encyclopedia.lsr"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "paths": {
+            "loon": "rules/loon/1058-foundry-local-voice-models.lsr"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/loon/1059-github-copilot-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/1059-github-copilot-service-all.lsr"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/loon/1060-github-copilot-connections.lsr",
           "paths": {
@@ -1132,6 +1223,19 @@
           "path": "rules/loon/1700-udio-music-tools.lsr",
           "paths": {
             "loon": "rules/loon/1700-udio-music-tools.lsr"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/loon/1705-suno-music-generation.lsr",
+          "paths": {
+            "loon": "rules/loon/1705-suno-music-generation.lsr"
           }
         },
         "1710-duck-ai-chat": {
@@ -2514,11 +2618,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/loon/3500-overseas-payments-all.lsr",
           "paths": {
@@ -2627,6 +2731,32 @@
           "path": "rules/loon/3580-tenpay-global-payments.lsr",
           "paths": {
             "loon": "rules/loon/3580-tenpay-global-payments.lsr"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "paths": {
+            "loon": "rules/loon/3590-paddle-subscription-payments.lsr"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "paths": {
+            "loon": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr"
           }
         },
         "3600-overseas-crypto-all": {
@@ -2774,11 +2904,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/loon/3800-overseas-media-all.lsr",
           "paths": {
@@ -3021,11 +3151,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/loon/3960-wbd-streaming-platform.lsr",
           "paths": {
@@ -4568,11 +4698,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/loon/8000-global-platforms-all.lsr",
           "paths": {
@@ -4748,13 +4878,39 @@
             "loon": "rules/loon/8130-github-pages-hosting.lsr"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/loon/8140-mux-data-analytics.lsr",
+          "paths": {
+            "loon": "rules/loon/8140-mux-data-analytics.lsr"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/loon/8150-mux-video-platform.lsr",
+          "paths": {
+            "loon": "rules/loon/8150-mux-video-platform.lsr"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/loon/8200-overseas-extra-all.lsr",
           "paths": {
@@ -4776,11 +4932,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/loon/8220-overseas-sites-extra.lsr",
           "paths": {
@@ -4945,11 +5101,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/loon/8600-mainland-routing-all.lsr",
           "paths": {
@@ -4971,11 +5127,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/loon/8620-mainland-networks.lsr",
           "paths": {
@@ -4996,7 +5152,7 @@
           }
         }
       },
-      "available": 379,
+      "available": 391,
       "unsupported": 0
     },
     "surge": {
@@ -5120,11 +5276,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/surge/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -5133,11 +5289,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 682,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 711,
           "status": "available",
           "path": "rules/surge/1000-ai-overseas-all.list",
           "paths": {
@@ -5155,6 +5311,19 @@
           "path": "rules/surge/1010-claude-connections.list",
           "paths": {
             "surge": "rules/surge/1010-claude-connections.list"
+          }
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 475,
+          "status": "available",
+          "path": "rules/surge/1019-chatgpt-service-all.list",
+          "paths": {
+            "surge": "rules/surge/1019-chatgpt-service-all.list"
           }
         },
         "1020-chatgpt-connections": {
@@ -5183,13 +5352,65 @@
             "surge": "rules/surge/1030-gemini-connections.list"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/surge/1031-grokipedia-service-all.list",
+          "paths": {
+            "surge": "rules/surge/1031-grokipedia-service-all.list"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/surge/1032-xai-service-all.list",
+          "paths": {
+            "surge": "rules/surge/1032-xai-service-all.list"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/surge/1033-cursor-service-all.list",
+          "paths": {
+            "surge": "rules/surge/1033-cursor-service-all.list"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/surge/1035-grok-cursor-shared-authentication.list",
+          "paths": {
+            "surge": "rules/surge/1035-grok-cursor-shared-authentication.list"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/surge/1040-xai-connections.list",
           "paths": {
@@ -5209,13 +5430,39 @@
             "surge": "rules/surge/1050-grokipedia-encyclopedia.list"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/surge/1058-foundry-local-voice-models.list",
+          "paths": {
+            "surge": "rules/surge/1058-foundry-local-voice-models.list"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/surge/1059-github-copilot-service-all.list",
+          "paths": {
+            "surge": "rules/surge/1059-github-copilot-service-all.list"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/surge/1060-github-copilot-connections.list",
           "paths": {
@@ -6065,6 +6312,19 @@
           "path": "rules/surge/1700-udio-music-tools.list",
           "paths": {
             "surge": "rules/surge/1700-udio-music-tools.list"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surge/1705-suno-music-generation.list",
+          "paths": {
+            "surge": "rules/surge/1705-suno-music-generation.list"
           }
         },
         "1710-duck-ai-chat": {
@@ -7447,11 +7707,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/surge/3500-overseas-payments-all.list",
           "paths": {
@@ -7560,6 +7820,32 @@
           "path": "rules/surge/3580-tenpay-global-payments.list",
           "paths": {
             "surge": "rules/surge/3580-tenpay-global-payments.list"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/surge/3590-paddle-subscription-payments.list",
+          "paths": {
+            "surge": "rules/surge/3590-paddle-subscription-payments.list"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surge/3595-lemonsqueezy-subscription-payments.list",
+          "paths": {
+            "surge": "rules/surge/3595-lemonsqueezy-subscription-payments.list"
           }
         },
         "3600-overseas-crypto-all": {
@@ -7707,11 +7993,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/surge/3800-overseas-media-all.list",
           "paths": {
@@ -7954,11 +8240,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/surge/3960-wbd-streaming-platform.list",
           "paths": {
@@ -9501,11 +9787,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/surge/8000-global-platforms-all.list",
           "paths": {
@@ -9681,13 +9967,39 @@
             "surge": "rules/surge/8130-github-pages-hosting.list"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surge/8140-mux-data-analytics.list",
+          "paths": {
+            "surge": "rules/surge/8140-mux-data-analytics.list"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surge/8150-mux-video-platform.list",
+          "paths": {
+            "surge": "rules/surge/8150-mux-video-platform.list"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/surge/8200-overseas-extra-all.list",
           "paths": {
@@ -9709,11 +10021,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/surge/8220-overseas-sites-extra.list",
           "paths": {
@@ -9878,11 +10190,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/surge/8600-mainland-routing-all.list",
           "paths": {
@@ -9904,11 +10216,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/surge/8620-mainland-networks.list",
           "paths": {
@@ -9929,7 +10241,7 @@
           }
         }
       },
-      "available": 379,
+      "available": 391,
       "unsupported": 0
     },
     "clash-classical": {
@@ -10062,11 +10374,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/mihomo/0240-extended-ad-and-tracking.yaml",
           "paths": {
@@ -10076,11 +10388,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 682,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 711,
           "status": "available",
           "path": "rules/mihomo/1000-ai-overseas-all.yaml",
           "paths": {
@@ -10100,6 +10412,20 @@
           "paths": {
             "mihomo": "rules/mihomo/1010-claude-connections.yaml",
             "stash": "rules/stash/1010-claude-connections.yaml"
+          }
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 475,
+          "status": "available",
+          "path": "rules/mihomo/1019-chatgpt-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1019-chatgpt-service-all.yaml",
+            "stash": "rules/stash/1019-chatgpt-service-all.yaml"
           }
         },
         "1020-chatgpt-connections": {
@@ -10130,13 +10456,69 @@
             "stash": "rules/stash/1030-gemini-connections.yaml"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/mihomo/1031-grokipedia-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1031-grokipedia-service-all.yaml",
+            "stash": "rules/stash/1031-grokipedia-service-all.yaml"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/mihomo/1032-xai-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1032-xai-service-all.yaml",
+            "stash": "rules/stash/1032-xai-service-all.yaml"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/mihomo/1033-cursor-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1033-cursor-service-all.yaml",
+            "stash": "rules/stash/1033-cursor-service-all.yaml"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/mihomo/1035-grok-cursor-shared-authentication.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1035-grok-cursor-shared-authentication.yaml",
+            "stash": "rules/stash/1035-grok-cursor-shared-authentication.yaml"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/mihomo/1040-xai-connections.yaml",
           "paths": {
@@ -10158,13 +10540,41 @@
             "stash": "rules/stash/1050-grokipedia-encyclopedia.yaml"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/mihomo/1058-foundry-local-voice-models.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1058-foundry-local-voice-models.yaml",
+            "stash": "rules/stash/1058-foundry-local-voice-models.yaml"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/mihomo/1059-github-copilot-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1059-github-copilot-service-all.yaml",
+            "stash": "rules/stash/1059-github-copilot-service-all.yaml"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/mihomo/1060-github-copilot-connections.yaml",
           "paths": {
@@ -11080,6 +11490,20 @@
           "paths": {
             "mihomo": "rules/mihomo/1700-udio-music-tools.yaml",
             "stash": "rules/stash/1700-udio-music-tools.yaml"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/mihomo/1705-suno-music-generation.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1705-suno-music-generation.yaml",
+            "stash": "rules/stash/1705-suno-music-generation.yaml"
           }
         },
         "1710-duck-ai-chat": {
@@ -12568,11 +12992,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/mihomo/3500-overseas-payments-all.yaml",
           "paths": {
@@ -12690,6 +13114,34 @@
           "paths": {
             "mihomo": "rules/mihomo/3580-tenpay-global-payments.yaml",
             "stash": "rules/stash/3580-tenpay-global-payments.yaml"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/mihomo/3590-paddle-subscription-payments.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/3590-paddle-subscription-payments.yaml",
+            "stash": "rules/stash/3590-paddle-subscription-payments.yaml"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/mihomo/3595-lemonsqueezy-subscription-payments.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/3595-lemonsqueezy-subscription-payments.yaml",
+            "stash": "rules/stash/3595-lemonsqueezy-subscription-payments.yaml"
           }
         },
         "3600-overseas-crypto-all": {
@@ -12848,11 +13300,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/mihomo/3800-overseas-media-all.yaml",
           "paths": {
@@ -13114,11 +13566,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/mihomo/3960-wbd-streaming-platform.yaml",
           "paths": {
@@ -14780,11 +15232,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/mihomo/8000-global-platforms-all.yaml",
           "paths": {
@@ -14974,13 +15426,41 @@
             "stash": "rules/stash/8130-github-pages-hosting.yaml"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/mihomo/8140-mux-data-analytics.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/8140-mux-data-analytics.yaml",
+            "stash": "rules/stash/8140-mux-data-analytics.yaml"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/mihomo/8150-mux-video-platform.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/8150-mux-video-platform.yaml",
+            "stash": "rules/stash/8150-mux-video-platform.yaml"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/mihomo/8200-overseas-extra-all.yaml",
           "paths": {
@@ -15004,11 +15484,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/mihomo/8220-overseas-sites-extra.yaml",
           "paths": {
@@ -15186,11 +15666,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/mihomo/8600-mainland-routing-all.yaml",
           "paths": {
@@ -15214,11 +15694,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/mihomo/8620-mainland-networks.yaml",
           "paths": {
@@ -15241,7 +15721,7 @@
           }
         }
       },
-      "available": 379,
+      "available": 391,
       "unsupported": 0
     },
     "egern": {
@@ -15365,11 +15845,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/egern/0240-extended-ad-and-tracking.yaml",
           "paths": {
@@ -15378,11 +15858,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 682,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 711,
           "status": "available",
           "path": "rules/egern/1000-ai-overseas-all.yaml",
           "paths": {
@@ -15400,6 +15880,19 @@
           "path": "rules/egern/1010-claude-connections.yaml",
           "paths": {
             "egern": "rules/egern/1010-claude-connections.yaml"
+          }
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 475,
+          "status": "available",
+          "path": "rules/egern/1019-chatgpt-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/1019-chatgpt-service-all.yaml"
           }
         },
         "1020-chatgpt-connections": {
@@ -15428,13 +15921,65 @@
             "egern": "rules/egern/1030-gemini-connections.yaml"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/egern/1031-grokipedia-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/1031-grokipedia-service-all.yaml"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/egern/1032-xai-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/1032-xai-service-all.yaml"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/egern/1033-cursor-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/1033-cursor-service-all.yaml"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/egern/1035-grok-cursor-shared-authentication.yaml",
+          "paths": {
+            "egern": "rules/egern/1035-grok-cursor-shared-authentication.yaml"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/egern/1040-xai-connections.yaml",
           "paths": {
@@ -15454,13 +15999,39 @@
             "egern": "rules/egern/1050-grokipedia-encyclopedia.yaml"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/egern/1058-foundry-local-voice-models.yaml",
+          "paths": {
+            "egern": "rules/egern/1058-foundry-local-voice-models.yaml"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/egern/1059-github-copilot-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/1059-github-copilot-service-all.yaml"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/egern/1060-github-copilot-connections.yaml",
           "paths": {
@@ -16310,6 +16881,19 @@
           "path": "rules/egern/1700-udio-music-tools.yaml",
           "paths": {
             "egern": "rules/egern/1700-udio-music-tools.yaml"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/egern/1705-suno-music-generation.yaml",
+          "paths": {
+            "egern": "rules/egern/1705-suno-music-generation.yaml"
           }
         },
         "1710-duck-ai-chat": {
@@ -17692,11 +18276,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/egern/3500-overseas-payments-all.yaml",
           "paths": {
@@ -17805,6 +18389,32 @@
           "path": "rules/egern/3580-tenpay-global-payments.yaml",
           "paths": {
             "egern": "rules/egern/3580-tenpay-global-payments.yaml"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/egern/3590-paddle-subscription-payments.yaml",
+          "paths": {
+            "egern": "rules/egern/3590-paddle-subscription-payments.yaml"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/egern/3595-lemonsqueezy-subscription-payments.yaml",
+          "paths": {
+            "egern": "rules/egern/3595-lemonsqueezy-subscription-payments.yaml"
           }
         },
         "3600-overseas-crypto-all": {
@@ -17952,11 +18562,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/egern/3800-overseas-media-all.yaml",
           "paths": {
@@ -18199,11 +18809,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/egern/3960-wbd-streaming-platform.yaml",
           "paths": {
@@ -19746,11 +20356,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/egern/8000-global-platforms-all.yaml",
           "paths": {
@@ -19926,13 +20536,39 @@
             "egern": "rules/egern/8130-github-pages-hosting.yaml"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/egern/8140-mux-data-analytics.yaml",
+          "paths": {
+            "egern": "rules/egern/8140-mux-data-analytics.yaml"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/egern/8150-mux-video-platform.yaml",
+          "paths": {
+            "egern": "rules/egern/8150-mux-video-platform.yaml"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/egern/8200-overseas-extra-all.yaml",
           "paths": {
@@ -19954,11 +20590,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/egern/8220-overseas-sites-extra.yaml",
           "paths": {
@@ -20123,11 +20759,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/egern/8600-mainland-routing-all.yaml",
           "paths": {
@@ -20149,11 +20785,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/egern/8620-mainland-networks.yaml",
           "paths": {
@@ -20174,7 +20810,7 @@
           }
         }
       },
-      "available": 379,
+      "available": 391,
       "unsupported": 0
     },
     "surfboard": {
@@ -20298,11 +20934,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/surfboard/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -20311,10 +20947,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -20326,6 +20962,19 @@
           "updated-at": "2026-11-24T04:48:27Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 475,
+          "status": "available",
+          "path": "rules/surfboard/1019-chatgpt-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1019-chatgpt-service-all.list"
+          }
         },
         "1020-chatgpt-connections": {
           "source": "rules/loon/1020-chatgpt-connections.lsr",
@@ -20353,13 +21002,65 @@
             "surfboard": "rules/surfboard/1030-gemini-connections.list"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/surfboard/1031-grokipedia-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1031-grokipedia-service-all.list"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/surfboard/1032-xai-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1032-xai-service-all.list"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/surfboard/1033-cursor-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1033-cursor-service-all.list"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/surfboard/1035-grok-cursor-shared-authentication.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1035-grok-cursor-shared-authentication.list"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/surfboard/1040-xai-connections.list",
           "paths": {
@@ -20379,13 +21080,39 @@
             "surfboard": "rules/surfboard/1050-grokipedia-encyclopedia.list"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/surfboard/1058-foundry-local-voice-models.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1058-foundry-local-voice-models.list"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/surfboard/1059-github-copilot-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1059-github-copilot-service-all.list"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/surfboard/1060-github-copilot-connections.list",
           "paths": {
@@ -21235,6 +21962,19 @@
           "path": "rules/surfboard/1700-udio-music-tools.list",
           "paths": {
             "surfboard": "rules/surfboard/1700-udio-music-tools.list"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surfboard/1705-suno-music-generation.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1705-suno-music-generation.list"
           }
         },
         "1710-duck-ai-chat": {
@@ -22609,11 +23349,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/surfboard/3500-overseas-payments-all.list",
           "paths": {
@@ -22722,6 +23462,32 @@
           "path": "rules/surfboard/3580-tenpay-global-payments.list",
           "paths": {
             "surfboard": "rules/surfboard/3580-tenpay-global-payments.list"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/surfboard/3590-paddle-subscription-payments.list",
+          "paths": {
+            "surfboard": "rules/surfboard/3590-paddle-subscription-payments.list"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surfboard/3595-lemonsqueezy-subscription-payments.list",
+          "paths": {
+            "surfboard": "rules/surfboard/3595-lemonsqueezy-subscription-payments.list"
           }
         },
         "3600-overseas-crypto-all": {
@@ -22869,11 +23635,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/surfboard/3800-overseas-media-all.list",
           "paths": {
@@ -23116,11 +23882,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/surfboard/3960-wbd-streaming-platform.list",
           "paths": {
@@ -24663,11 +25429,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/surfboard/8000-global-platforms-all.list",
           "paths": {
@@ -24843,13 +25609,39 @@
             "surfboard": "rules/surfboard/8130-github-pages-hosting.list"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surfboard/8140-mux-data-analytics.list",
+          "paths": {
+            "surfboard": "rules/surfboard/8140-mux-data-analytics.list"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surfboard/8150-mux-video-platform.list",
+          "paths": {
+            "surfboard": "rules/surfboard/8150-mux-video-platform.list"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/surfboard/8200-overseas-extra-all.list",
           "paths": {
@@ -24871,11 +25663,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/surfboard/8220-overseas-sites-extra.list",
           "paths": {
@@ -25040,11 +25832,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/surfboard/8600-mainland-routing-all.list",
           "paths": {
@@ -25066,11 +25858,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/surfboard/8620-mainland-networks.list",
           "paths": {
@@ -25091,7 +25883,7 @@
           }
         }
       },
-      "available": 375,
+      "available": 387,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -25215,11 +26007,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/shadowrocket/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -25228,11 +26020,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
-          "output-rule-count": 682,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 711,
           "status": "available",
           "path": "rules/shadowrocket/1000-ai-overseas-all.list",
           "paths": {
@@ -25250,6 +26042,19 @@
           "path": "rules/shadowrocket/1010-claude-connections.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/1010-claude-connections.list"
+          }
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 475,
+          "status": "available",
+          "path": "rules/shadowrocket/1019-chatgpt-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1019-chatgpt-service-all.list"
           }
         },
         "1020-chatgpt-connections": {
@@ -25278,13 +26083,65 @@
             "shadowrocket": "rules/shadowrocket/1030-gemini-connections.list"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/shadowrocket/1031-grokipedia-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1031-grokipedia-service-all.list"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/shadowrocket/1032-xai-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1032-xai-service-all.list"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/shadowrocket/1033-cursor-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1033-cursor-service-all.list"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/shadowrocket/1035-grok-cursor-shared-authentication.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1035-grok-cursor-shared-authentication.list"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/shadowrocket/1040-xai-connections.list",
           "paths": {
@@ -25304,13 +26161,39 @@
             "shadowrocket": "rules/shadowrocket/1050-grokipedia-encyclopedia.list"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/shadowrocket/1058-foundry-local-voice-models.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1058-foundry-local-voice-models.list"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/shadowrocket/1059-github-copilot-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1059-github-copilot-service-all.list"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/shadowrocket/1060-github-copilot-connections.list",
           "paths": {
@@ -26160,6 +27043,19 @@
           "path": "rules/shadowrocket/1700-udio-music-tools.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/1700-udio-music-tools.list"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/shadowrocket/1705-suno-music-generation.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1705-suno-music-generation.list"
           }
         },
         "1710-duck-ai-chat": {
@@ -27542,11 +28438,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/shadowrocket/3500-overseas-payments-all.list",
           "paths": {
@@ -27655,6 +28551,32 @@
           "path": "rules/shadowrocket/3580-tenpay-global-payments.list",
           "paths": {
             "shadowrocket": "rules/shadowrocket/3580-tenpay-global-payments.list"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/shadowrocket/3590-paddle-subscription-payments.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/3590-paddle-subscription-payments.list"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/shadowrocket/3595-lemonsqueezy-subscription-payments.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/3595-lemonsqueezy-subscription-payments.list"
           }
         },
         "3600-overseas-crypto-all": {
@@ -27802,11 +28724,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/shadowrocket/3800-overseas-media-all.list",
           "paths": {
@@ -28049,11 +28971,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/shadowrocket/3960-wbd-streaming-platform.list",
           "paths": {
@@ -29596,11 +30518,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/shadowrocket/8000-global-platforms-all.list",
           "paths": {
@@ -29776,13 +30698,39 @@
             "shadowrocket": "rules/shadowrocket/8130-github-pages-hosting.list"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/shadowrocket/8140-mux-data-analytics.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/8140-mux-data-analytics.list"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/shadowrocket/8150-mux-video-platform.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/8150-mux-video-platform.list"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/shadowrocket/8200-overseas-extra-all.list",
           "paths": {
@@ -29804,11 +30752,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/shadowrocket/8220-overseas-sites-extra.list",
           "paths": {
@@ -29973,11 +30921,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/shadowrocket/8600-mainland-routing-all.list",
           "paths": {
@@ -29999,11 +30947,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/shadowrocket/8620-mainland-networks.list",
           "paths": {
@@ -30024,7 +30972,7 @@
           }
         }
       },
-      "available": 379,
+      "available": 391,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -30132,11 +31080,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/quantumult-x/0240-extended-ad-and-tracking.list",
           "paths": {
@@ -30145,10 +31093,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -30158,6 +31106,15 @@
           "description": "Claude 登录、API、MCP、更新、附件和 Artifact",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-24T04:48:27Z",
+          "status": "unsupported",
+          "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -30183,13 +31140,65 @@
             "quantumult-x": "rules/quantumult-x/1030-gemini-connections.list"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/quantumult-x/1031-grokipedia-service-all.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1031-grokipedia-service-all.list"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/quantumult-x/1032-xai-service-all.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1032-xai-service-all.list"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/quantumult-x/1033-cursor-service-all.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1033-cursor-service-all.list"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/quantumult-x/1035-grok-cursor-shared-authentication.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1035-grok-cursor-shared-authentication.list"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/quantumult-x/1040-xai-connections.list",
           "paths": {
@@ -30209,13 +31218,39 @@
             "quantumult-x": "rules/quantumult-x/1050-grokipedia-encyclopedia.list"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/quantumult-x/1058-foundry-local-voice-models.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1058-foundry-local-voice-models.list"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/quantumult-x/1059-github-copilot-service-all.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1059-github-copilot-service-all.list"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/quantumult-x/1060-github-copilot-connections.list",
           "paths": {
@@ -31065,6 +32100,19 @@
           "path": "rules/quantumult-x/1700-udio-music-tools.list",
           "paths": {
             "quantumult-x": "rules/quantumult-x/1700-udio-music-tools.list"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/quantumult-x/1705-suno-music-generation.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1705-suno-music-generation.list"
           }
         },
         "1710-duck-ai-chat": {
@@ -32431,11 +33479,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/quantumult-x/3500-overseas-payments-all.list",
           "paths": {
@@ -32544,6 +33592,32 @@
           "path": "rules/quantumult-x/3580-tenpay-global-payments.list",
           "paths": {
             "quantumult-x": "rules/quantumult-x/3580-tenpay-global-payments.list"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/quantumult-x/3590-paddle-subscription-payments.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/3590-paddle-subscription-payments.list"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/quantumult-x/3595-lemonsqueezy-subscription-payments.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/3595-lemonsqueezy-subscription-payments.list"
           }
         },
         "3600-overseas-crypto-all": {
@@ -32691,11 +33765,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/quantumult-x/3800-overseas-media-all.list",
           "paths": {
@@ -32938,11 +34012,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/quantumult-x/3960-wbd-streaming-platform.list",
           "paths": {
@@ -34469,11 +35543,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/quantumult-x/8000-global-platforms-all.list",
           "paths": {
@@ -34649,13 +35723,39 @@
             "quantumult-x": "rules/quantumult-x/8130-github-pages-hosting.list"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/quantumult-x/8140-mux-data-analytics.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/8140-mux-data-analytics.list"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/quantumult-x/8150-mux-video-platform.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/8150-mux-video-platform.list"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/quantumult-x/8200-overseas-extra-all.list",
           "paths": {
@@ -34677,11 +35777,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/quantumult-x/8220-overseas-sites-extra.list",
           "paths": {
@@ -34846,11 +35946,11 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 19272,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 19273,
           "status": "available",
           "path": "rules/quantumult-x/8600-mainland-routing-all.list",
           "paths": {
@@ -34872,11 +35972,11 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 6993,
+          "updated-at": "2026-11-26T18:01:26Z",
+          "output-rule-count": 6994,
           "status": "available",
           "path": "rules/quantumult-x/8620-mainland-networks.list",
           "paths": {
@@ -34897,8 +35997,8 @@
           }
         }
       },
-      "available": 364,
-      "unsupported": 15
+      "available": 375,
+      "unsupported": 16
     },
     "sing-box": {
       "rules": {
@@ -35005,11 +36105,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/sing-box/0240-extended-ad-and-tracking.json",
           "paths": {
@@ -35018,10 +36118,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -35031,6 +36131,15 @@
           "description": "Claude 登录、API、MCP、更新、附件和 Artifact",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-24T04:48:27Z",
+          "status": "unsupported",
+          "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -35056,13 +36165,65 @@
             "sing-box": "rules/sing-box/1030-gemini-connections.json"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/sing-box/1031-grokipedia-service-all.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1031-grokipedia-service-all.json"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/sing-box/1032-xai-service-all.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1032-xai-service-all.json"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/sing-box/1033-cursor-service-all.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1033-cursor-service-all.json"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/sing-box/1035-grok-cursor-shared-authentication.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1035-grok-cursor-shared-authentication.json"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/sing-box/1040-xai-connections.json",
           "paths": {
@@ -35082,13 +36243,39 @@
             "sing-box": "rules/sing-box/1050-grokipedia-encyclopedia.json"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/sing-box/1058-foundry-local-voice-models.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1058-foundry-local-voice-models.json"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/sing-box/1059-github-copilot-service-all.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1059-github-copilot-service-all.json"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/sing-box/1060-github-copilot-connections.json",
           "paths": {
@@ -35938,6 +37125,19 @@
           "path": "rules/sing-box/1700-udio-music-tools.json",
           "paths": {
             "sing-box": "rules/sing-box/1700-udio-music-tools.json"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/sing-box/1705-suno-music-generation.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1705-suno-music-generation.json"
           }
         },
         "1710-duck-ai-chat": {
@@ -37304,11 +38504,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/sing-box/3500-overseas-payments-all.json",
           "paths": {
@@ -37417,6 +38617,32 @@
           "path": "rules/sing-box/3580-tenpay-global-payments.json",
           "paths": {
             "sing-box": "rules/sing-box/3580-tenpay-global-payments.json"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/sing-box/3590-paddle-subscription-payments.json",
+          "paths": {
+            "sing-box": "rules/sing-box/3590-paddle-subscription-payments.json"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/sing-box/3595-lemonsqueezy-subscription-payments.json",
+          "paths": {
+            "sing-box": "rules/sing-box/3595-lemonsqueezy-subscription-payments.json"
           }
         },
         "3600-overseas-crypto-all": {
@@ -37564,11 +38790,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/sing-box/3800-overseas-media-all.json",
           "paths": {
@@ -37811,11 +39037,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/sing-box/3960-wbd-streaming-platform.json",
           "paths": {
@@ -39342,11 +40568,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/sing-box/8000-global-platforms-all.json",
           "paths": {
@@ -39522,13 +40748,39 @@
             "sing-box": "rules/sing-box/8130-github-pages-hosting.json"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/sing-box/8140-mux-data-analytics.json",
+          "paths": {
+            "sing-box": "rules/sing-box/8140-mux-data-analytics.json"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/sing-box/8150-mux-video-platform.json",
+          "paths": {
+            "sing-box": "rules/sing-box/8150-mux-video-platform.json"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/sing-box/8200-overseas-extra-all.json",
           "paths": {
@@ -39550,11 +40802,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/sing-box/8220-overseas-sites-extra.json",
           "paths": {
@@ -39719,10 +40971,10 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
+          "updated-at": "2026-11-26T18:01:26Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -39741,10 +40993,10 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
+          "updated-at": "2026-11-26T18:01:26Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -39758,8 +41010,8 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 361,
-      "unsupported": 18
+      "available": 372,
+      "unsupported": 19
     },
     "v2ray": {
       "rules": {
@@ -39866,11 +41118,11 @@
         },
         "0240-extended-ad-and-tracking": {
           "source": "rules/loon/0240-extended-ad-and-tracking.lsr",
-          "rule-count": 44289,
+          "rule-count": 44288,
           "description": "可选的扩展广告与统计拦截",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
-          "output-rule-count": 44289,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 44288,
           "status": "available",
           "path": "rules/v2ray/0240-extended-ad-and-tracking.json",
           "paths": {
@@ -39879,10 +41131,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 682,
+          "rule-count": 711,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-24T20:44:08Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -39892,6 +41144,15 @@
           "description": "Claude 登录、API、MCP、更新、附件和 Artifact",
           "created-at": "2026-11-19T10:51:17Z",
           "updated-at": "2026-11-24T04:48:27Z",
+          "status": "unsupported",
+          "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
+        },
+        "1019-chatgpt-service-all": {
+          "source": "rules/loon/1019-chatgpt-service-all.lsr",
+          "rule-count": 475,
+          "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -39917,13 +41178,65 @@
             "v2ray": "rules/v2ray/1030-gemini-connections.json"
           }
         },
+        "1031-grokipedia-service-all": {
+          "source": "rules/loon/1031-grokipedia-service-all.lsr",
+          "rule-count": 4,
+          "description": "Grokipedia 内容与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/v2ray/1031-grokipedia-service-all.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1031-grokipedia-service-all.json"
+          }
+        },
+        "1032-xai-service-all": {
+          "source": "rules/loon/1032-xai-service-all.lsr",
+          "rule-count": 6,
+          "description": "Grok、xAI API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/v2ray/1032-xai-service-all.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1032-xai-service-all.json"
+          }
+        },
+        "1033-cursor-service-all": {
+          "source": "rules/loon/1033-cursor-service-all.lsr",
+          "rule-count": 13,
+          "description": "Cursor 编辑器、API 与登录合集",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 13,
+          "status": "available",
+          "path": "rules/v2ray/1033-cursor-service-all.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1033-cursor-service-all.json"
+          }
+        },
+        "1035-grok-cursor-shared-authentication": {
+          "source": "rules/loon/1035-grok-cursor-shared-authentication.lsr",
+          "rule-count": 4,
+          "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+          "created-at": "2026-11-26T16:57:37Z",
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/v2ray/1035-grok-cursor-shared-authentication.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1035-grok-cursor-shared-authentication.json"
+          }
+        },
         "1040-xai-connections": {
           "source": "rules/loon/1040-xai-connections.lsr",
-          "rule-count": 6,
-          "description": "xAI 账号、Grok 对话与模型 API",
+          "rule-count": 4,
+          "description": "Grok 对话、xAI 模型 API 与专用内容",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-24T14:17:53Z",
-          "output-rule-count": 6,
+          "updated-at": "2026-11-26T16:57:37Z",
+          "output-rule-count": 4,
           "status": "available",
           "path": "rules/v2ray/1040-xai-connections.json",
           "paths": {
@@ -39943,13 +41256,39 @@
             "v2ray": "rules/v2ray/1050-grokipedia-encyclopedia.json"
           }
         },
+        "1058-foundry-local-voice-models": {
+          "source": "rules/loon/1058-foundry-local-voice-models.lsr",
+          "rule-count": 4,
+          "description": "Foundry Local 语音模型目录、区域 API 与下载",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 4,
+          "status": "available",
+          "path": "rules/v2ray/1058-foundry-local-voice-models.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1058-foundry-local-voice-models.json"
+          }
+        },
+        "1059-github-copilot-service-all": {
+          "source": "rules/loon/1059-github-copilot-service-all.lsr",
+          "rule-count": 27,
+          "description": "GitHub Copilot、认证、实验与语音模型合集",
+          "created-at": "2026-11-26T17:47:39Z",
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 27,
+          "status": "available",
+          "path": "rules/v2ray/1059-github-copilot-service-all.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1059-github-copilot-service-all.json"
+          }
+        },
         "1060-github-copilot-connections": {
           "source": "rules/loon/1060-github-copilot-connections.lsr",
-          "rule-count": 15,
+          "rule-count": 17,
           "description": "Copilot API、补全、对话及已证实的附件服务",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-20T20:04:44Z",
-          "output-rule-count": 15,
+          "updated-at": "2026-11-26T17:47:39Z",
+          "output-rule-count": 17,
           "status": "available",
           "path": "rules/v2ray/1060-github-copilot-connections.json",
           "paths": {
@@ -40799,6 +42138,19 @@
           "path": "rules/v2ray/1700-udio-music-tools.json",
           "paths": {
             "v2ray": "rules/v2ray/1700-udio-music-tools.json"
+          }
+        },
+        "1705-suno-music-generation": {
+          "source": "rules/loon/1705-suno-music-generation.lsr",
+          "rule-count": 2,
+          "description": "Suno AI 音乐生成、作品播放与下载",
+          "created-at": "2026-11-26T16:32:15Z",
+          "updated-at": "2026-11-26T16:32:15Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/v2ray/1705-suno-music-generation.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1705-suno-music-generation.json"
           }
         },
         "1710-duck-ai-chat": {
@@ -42165,11 +43517,11 @@
         },
         "3500-overseas-payments-all": {
           "source": "rules/loon/3500-overseas-payments-all.lsr",
-          "rule-count": 18,
+          "rule-count": 25,
           "description": "海外支付合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T04:48:27Z",
-          "output-rule-count": 18,
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 25,
           "status": "available",
           "path": "rules/v2ray/3500-overseas-payments-all.json",
           "paths": {
@@ -42278,6 +43630,32 @@
           "path": "rules/v2ray/3580-tenpay-global-payments.json",
           "paths": {
             "v2ray": "rules/v2ray/3580-tenpay-global-payments.json"
+          }
+        },
+        "3590-paddle-subscription-payments": {
+          "source": "rules/loon/3590-paddle-subscription-payments.lsr",
+          "rule-count": 6,
+          "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T17:30:39Z",
+          "output-rule-count": 6,
+          "status": "available",
+          "path": "rules/v2ray/3590-paddle-subscription-payments.json",
+          "paths": {
+            "v2ray": "rules/v2ray/3590-paddle-subscription-payments.json"
+          }
+        },
+        "3595-lemonsqueezy-subscription-payments": {
+          "source": "rules/loon/3595-lemonsqueezy-subscription-payments.lsr",
+          "rule-count": 1,
+          "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+          "created-at": "2026-11-26T16:38:35Z",
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/v2ray/3595-lemonsqueezy-subscription-payments.json",
+          "paths": {
+            "v2ray": "rules/v2ray/3595-lemonsqueezy-subscription-payments.json"
           }
         },
         "3600-overseas-crypto-all": {
@@ -42425,11 +43803,11 @@
         },
         "3800-overseas-media-all": {
           "source": "rules/loon/3800-overseas-media-all.lsr",
-          "rule-count": 219,
+          "rule-count": 220,
           "description": "海外影音与内容合集",
           "created-at": "2026-11-19T09:33:57Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 219,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 220,
           "status": "available",
           "path": "rules/v2ray/3800-overseas-media-all.json",
           "paths": {
@@ -42672,11 +44050,11 @@
         },
         "3960-wbd-streaming-platform": {
           "source": "rules/loon/3960-wbd-streaming-platform.lsr",
-          "rule-count": 2,
-          "description": "HBO Max 与 Discovery 共用流媒体接口",
+          "rule-count": 3,
+          "description": "HBO Max 与 Discovery 共用流媒体接口和网页图片",
           "created-at": "2026-11-24T23:23:14Z",
-          "updated-at": "2026-11-24T23:23:14Z",
-          "output-rule-count": 2,
+          "updated-at": "2026-11-26T15:02:33Z",
+          "output-rule-count": 3,
           "status": "available",
           "path": "rules/v2ray/3960-wbd-streaming-platform.json",
           "paths": {
@@ -44203,11 +45581,11 @@
         },
         "8000-global-platforms-all": {
           "source": "rules/loon/8000-global-platforms-all.lsr",
-          "rule-count": 434,
+          "rule-count": 436,
           "description": "全球厂商与云平台共用服务合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-24T23:34:46Z",
-          "output-rule-count": 434,
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 436,
           "status": "available",
           "path": "rules/v2ray/8000-global-platforms-all.json",
           "paths": {
@@ -44383,13 +45761,39 @@
             "v2ray": "rules/v2ray/8130-github-pages-hosting.json"
           }
         },
+        "8140-mux-data-analytics": {
+          "source": "rules/loon/8140-mux-data-analytics.lsr",
+          "rule-count": 1,
+          "description": "Mux Data 播放质量监测与 SDK",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/v2ray/8140-mux-data-analytics.json",
+          "paths": {
+            "v2ray": "rules/v2ray/8140-mux-data-analytics.json"
+          }
+        },
+        "8150-mux-video-platform": {
+          "source": "rules/loon/8150-mux-video-platform.lsr",
+          "rule-count": 1,
+          "description": "Mux 视频播放、缩略图与平台接口",
+          "created-at": "2026-11-26T15:16:08Z",
+          "updated-at": "2026-11-26T15:16:08Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/v2ray/8150-mux-video-platform.json",
+          "paths": {
+            "v2ray": "rules/v2ray/8150-mux-video-platform.json"
+          }
+        },
         "8200-overseas-extra-all": {
           "source": "rules/loon/8200-overseas-extra-all.lsr",
-          "rule-count": 18600,
+          "rule-count": 18597,
           "description": "海外补充合集",
           "created-at": "2026-11-22T17:48:09Z",
-          "updated-at": "2026-11-25T00:37:42Z",
-          "output-rule-count": 18600,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18597,
           "status": "available",
           "path": "rules/v2ray/8200-overseas-extra-all.json",
           "paths": {
@@ -44411,11 +45815,11 @@
         },
         "8220-overseas-sites-extra": {
           "source": "rules/loon/8220-overseas-sites-extra.lsr",
-          "rule-count": 18475,
+          "rule-count": 18472,
           "description": "其他海外网站与受限站点",
           "created-at": "2026-11-19T17:59:30Z",
-          "updated-at": "2026-11-24T22:29:23Z",
-          "output-rule-count": 18475,
+          "updated-at": "2026-11-26T16:38:35Z",
+          "output-rule-count": 18472,
           "status": "available",
           "path": "rules/v2ray/8220-overseas-sites-extra.json",
           "paths": {
@@ -44580,10 +45984,10 @@
         },
         "8600-mainland-routing-all": {
           "source": "rules/loon/8600-mainland-routing-all.lsr",
-          "rule-count": 19272,
+          "rule-count": 19273,
           "description": "国内补充合集",
           "created-at": "2026-11-20T01:22:56Z",
-          "updated-at": "2026-11-26T13:10:06Z",
+          "updated-at": "2026-11-26T18:01:26Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -44602,10 +46006,10 @@
         },
         "8620-mainland-networks": {
           "source": "rules/loon/8620-mainland-networks.lsr",
-          "rule-count": 6993,
+          "rule-count": 6994,
           "description": "可按 IPv4 / IPv6 网段判断的国内地址",
           "created-at": "2026-11-19T10:51:17Z",
-          "updated-at": "2026-11-26T13:10:06Z",
+          "updated-at": "2026-11-26T18:01:26Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -44619,8 +46023,8 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 361,
-      "unsupported": 18
+      "available": 372,
+      "unsupported": 19
     }
   }
 }

@@ -5,7 +5,13 @@ from itertools import product
 def view_graph(config, entries):
     keys=tuple(config['views'])
     members={key:set(entries[key]['members']) for key in keys}
-    return keys,{key:{other for other in keys if other!=key and members[key]&members[other]} for key in keys}
+    from loon_rules import domains
+    def conflict(key,other):
+        if members[key]&members[other]:return True
+        return any(domains.covers(left,right) or domains.covers(right,left)
+            for left in entries[key].get('_dependency-scopes',())
+            for right in entries[other].get('_dependency-scopes',()))
+    return keys,{key:{other for other in keys if other!=key and conflict(key,other)} for key in keys}
 
 
 def view_selections(config, entries, *, maximal=False):

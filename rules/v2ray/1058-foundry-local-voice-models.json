@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:ai.azure.com",
+          "full:api.catalog.azureml.ms",
+          "regexp:(?i)^.*\\.api\\.azureml\\.ms$",
+          "regexp:(?i)^amlwlrt4.*\\.blob\\.core\\.windows\\.net$"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

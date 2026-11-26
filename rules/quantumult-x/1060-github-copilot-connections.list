@@ -2,13 +2,13 @@
 # priority: 1060
 # section: ai
 # description: Copilot API、补全、对话及已证实的附件服务
-# boundary: Copilot 专用接口、实时连接、附件、报告与遥测；必需接口另按用途核对，共用认证归 GitHub 代码托管表。实验、通用模型目录与跨租户云通配符不纳入
+# boundary: Copilot 专用接口、实时连接、附件、报告与遥测，包含官方有限前缀的下载回落；需单份包含 GitHub 认证和共享实验接口时选1059。编辑器网络及其他共用服务按其实际用途处理。
 # created-at: 2026-11-19T09:33:57Z
-# updated-at: 2026-11-20T20:04:44Z
+# updated-at: 2026-11-26T17:47:39Z
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
 # source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
-# canonical-rule-count: 15
-# rule-count: 15
+# canonical-rule-count: 17
+# rule-count: 17
 # format: quantumult-x
 # canonical: rules/loon/1060-github-copilot-connections.lsr
 
@@ -27,3 +27,5 @@ host,production-copilot-host-centralus.webpubsub.azure.com,proxy
 host,production-copilot-host-eastasia.webpubsub.azure.com,proxy
 host,production-copilot-host-westus3.webpubsub.azure.com,proxy
 host,production-copilot-host.webpubsub.azure.com,proxy
+host-wildcard,copilot-reports-*.b01.azurefd.net,proxy
+host-wildcard,usagereports*.blob.core.windows.net,proxy

@@ -1,0 +1,18 @@
+# name: suno-music-generation
+# priority: 1705
+# section: ai
+# description: Suno AI 音乐生成、作品播放与下载
+# boundary: 官网身份核对 Suno 当前域名和旧域别名，完整社区专用表核对范围；图片按实际请求主机补全并尊重既有供应商归属。第三方登录和支付按其依赖另行配置，不认领共用云平台或 ASN。
+# created-at: 2026-11-26T16:32:15Z
+# updated-at: 2026-11-26T16:32:15Z
+# source: https://suno.com/
+# source: https://suno.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/surge/suno.list
+# source: https://help.suno.com/en/articles/2408065
+# canonical-rule-count: 2
+# rule-count: 2
+# format: surfboard
+# canonical: rules/loon/1705-suno-music-generation.lsr
+
+DOMAIN-SUFFIX,suno.com
+DOMAIN-SUFFIX,suno.ai

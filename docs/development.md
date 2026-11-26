@@ -127,3 +127,5 @@ python3 -B checks/native_formats.py --mihomo /path/to/mihomo --sing-box /path/to
 ```
 
 CI 从官方发布下载固定版本到临时目录，检查 Mihomo Classical provider、sing-box source 编译和 V2Ray 配置片段；不把二进制程序或本机检查记录提交到仓库。使用方式和不能等价转换的范围见[客户端说明](clients.md)
+
+社区对照命令为 `python3 -B maintain.py --community-review --sing-box <已验证核心路径>`；只重跑已登记文件时加 `--community-no-search`。登记表中的产品名称用于查找差异，不直接证明业务归属。新增格式需要覆盖完整输入和会改变匹配语义的反例；不能为了提高成功率跳过未知行。

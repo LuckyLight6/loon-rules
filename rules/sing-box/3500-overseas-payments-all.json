@@ -18,11 +18,18 @@
         "xoom.com",
         "transferwise.com",
         "wise.com",
-        "tenpayglobal.com"
+        "tenpayglobal.com",
+        "paddle.com",
+        "paddle.net",
+        "lemonsqueezy.com"
       ],
       "domain": [
         "payments.braintree-api.com",
-        "payments.sandbox.braintree-api.com"
+        "payments.sandbox.braintree-api.com",
+        "public.profitwell.com",
+        "api.profitwell-events.com",
+        "retain-api.profitwell.com",
+        "www2.profitwell.com"
       ]
     }
   ]

@@ -1,5 +1,6 @@
 """Check business routes, IPs and subscription combinations."""
 from loon_rules import rules
+from loon_rules.generation.dependencies import documented,permits_shadow
 from loon_rules.generation import contracts as endpoint_contracts
 from loon_rules.domains import covers
 from loon_rules.matching import RuleIndex
@@ -61,6 +62,10 @@ def verify_combinations(config,entries,data,*,index=None):
     for target,matching,wanted in domains+addresses:
         expected=0
         for key in wanted:expected|=acceptable[key]
+        if target in config['critical']:
+            for view in config['views']:
+                if any(permits_shadow(entries,view,'DOMAIN,'+target,key) for key in wanted):
+                    expected|=bits[view]
         # 相同的匹配集合和预期归属在所有组合中等价；保留全部组合与不同预期。
         cases.setdefault((matching,expected),target)
     repeated={}
@@ -75,7 +80,8 @@ def verify_combinations(config,entries,data,*,index=None):
             other=[key for key,bit in bits.items() if key!=first and bit&together]
             ad_override=(first in extras and entries[first].get('policy-hint')=='reject'
                          and all(entries[key].get('fallback') and entries[key].get('policy-hint')!='reject' for key in other))
-            if not ad_override:raise rules.Invalid(f'存在合法订阅组合含重复规则：{row[0]},{row[1]}')
+            dependency_override=all(permits_shadow(entries,first,','.join([row[0],row[1],*row[2]]),key) for key in other)
+            if not ad_override and not dependency_override:raise rules.Invalid(f'存在合法订阅组合含重复规则：{row[0]},{row[1]}')
     for (matching,expected),target in cases.items():
         for selected in model.selections(matching):
             candidates=matching&selected;first=candidates&-candidates
@@ -108,7 +114,7 @@ def verify_selection_order(config, entries, data, index):
             else:continue
             while covers:
                 prior=covers&-covers;covers^=prior
-                if model.together(bit|prior):
+                if model.together(bit|prior) and not permits_shadow(entries,names[prior],row,key):
                     raise rules.Invalid(f'存在合法订阅组合使 {key} 的范围被 {names[prior]} 提前覆盖：{row}')
 
 
@@ -139,11 +145,15 @@ def verify_cases(config, entries, data, online, contracts=(), functional=()):
     for host in config['shared-negatives']:
         if any(rules.match_domain(host,r) for k in config['views']
                if entries[k]['section'] in protected and not entries[k].get('fallback')
+               and not documented(entries[k],'DOMAIN,'+host)
                for r in data.get(k,[])):
             raise rules.Invalid('合并视图劫持共享端点：'+host)
     for k,blocks in config.get('no-overlap',{}).items():
         for block in blocks:
-            if overlapping_rules(data[k],data[block]):
+            rows=[row for row in data[k] if not any(owner is not None and owner not in entries[k].get('members',())
+                  and covers(scope,row)
+                  for scope,owner in entries[k].get('_dependency-owners',{}).items())]
+            if overlapping_rules(rows,data[block]):
                 raise rules.Invalid('跨业务规则重叠：'+k+' / '+block)
     for case in config.get('ip-cases',()):
         want=case['rule']
@@ -171,7 +181,7 @@ def verify_cases(config, entries, data, online, contracts=(), functional=()):
             for host,wanted in config['critical'].items():
                 expected={replacements.get(k,k) for k in wanted}
                 got=index.route(host,combined)
-                if got not in expected:
+                if got not in expected and not (got is not None and any(permits_shadow(entries,got,'DOMAIN,'+host,key) for key in wanted)):
                     raise rules.Invalid(f'{scenario}: {host} 首条命中 {got!r}，应为 {sorted(expected)}')
             for case in config.get('ip-cases',()):
                 expected=replacements.get(case['rule'],case['rule'])

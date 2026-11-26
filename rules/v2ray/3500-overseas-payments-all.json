@@ -21,7 +21,14 @@
           "domain:xoom.com",
           "domain:transferwise.com",
           "domain:wise.com",
-          "domain:tenpayglobal.com"
+          "domain:tenpayglobal.com",
+          "domain:paddle.com",
+          "domain:paddle.net",
+          "full:public.profitwell.com",
+          "full:api.profitwell-events.com",
+          "full:retain-api.profitwell.com",
+          "full:www2.profitwell.com",
+          "domain:lemonsqueezy.com"
         ],
         "outboundTag": "PROXY"
       }

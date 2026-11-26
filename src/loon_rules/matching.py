@@ -1,6 +1,6 @@
 """Index a validated rule snapshot for repeated domain, IP and selection checks."""
 from fnmatch import translate
-from ipaddress import ip_address,ip_network
+from ipaddress import collapse_addresses,ip_address,ip_network
 import re
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
@@ -77,6 +77,25 @@ class RuleIndex:
             if kind=='DOMAIN-SUFFIX' and domain_scope.covers(parent,'DOMAIN-WILDCARD,*.'+value):descendants|=owners
         if kind=='DOMAIN-SUFFIX':bits|=self._exact.get(value,0)&descendants
         self._scopes[row]=bits
+        return bits
+
+    def network_bits(self,target,*,literal):
+        """Return groups covering an entire prefix, including adjacent ranges in one group."""
+        if not hasattr(self,'_network_scopes'):
+            scopes={False:{4:{},6:{}},True:{4:{},6:{}}}
+            for key,identities in self.identities.items():
+                for mode in (False,True):
+                    networks=[ip_network(value) for kind,value,flags in identities
+                              if kind in ('IP-CIDR','IP-CIDR6') and (mode or 'no-resolve' not in flags)]
+                    for version in (4,6):
+                        for network in collapse_addresses(n for n in networks if n.version==version):
+                            mask,addresses=scopes[mode][version].setdefault(network.prefixlen,(int(network.netmask),{}))
+                            address=int(network.network_address)
+                            addresses[address]=addresses.get(address,0)|self.bits[key]
+            self._network_scopes=scopes
+        network=ip_network(target);value=int(network.network_address);bits=0
+        for prefix,(mask,addresses) in self._network_scopes[literal][network.version].items():
+            if prefix<=network.prefixlen:bits|=addresses.get(value&mask,0)
         return bits
 
     def ip_bits(self,target,*,literal):

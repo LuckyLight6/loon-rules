@@ -48,13 +48,15 @@ class LibraryChecks(unittest.TestCase):
             order=library.route_order(c,entries,selection)
             data={k:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())
                   for k in order}
-            for host,wanted in {
-                'gemini.google.com':'ai-overseas-all',
-                'copilot.cloud.microsoft':'ai-overseas-all',
-                'www.youtube.com':'overseas-media-all',
-                'accounts.google.com':'google-all',
-                'outlook.live.com':'microsoft-all',
+            replacements={member:view for view in selection for member in entries[view]['members']}
+            for host,member in {
+                'gemini.google.com':'gemini-connections',
+                'copilot.cloud.microsoft':'microsoft-copilot-connections',
+                'www.youtube.com':'youtube-video-and-cdn',
+                'accounts.google.com':'google-account-authentication',
+                'outlook.live.com':'microsoft-outlook-mail',
             }.items():
+                wanted=replacements.get(member,member)
                 self.assertEqual(ordered_route(host,order,data),wanted,(selection,host))
 
     def test_merge_does_not_treat_ip_dns_options_as_duplicates(self):

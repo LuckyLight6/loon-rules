@@ -124,19 +124,27 @@ def outside_domain_scopes(rows,reserved):
     def lineage(host):
         labels=host.split('.')
         return ('.'.join(labels[i:]) for i in range(len(labels)))
-    exact=set(); suffix=set(); ancestors=set(); wild=set()
+    exact=set(); suffix=set(); ancestors=set(); wild=set(); patterns=[]
     for row in reserved:
         kind,host,*flags=row.casefold().split(',')
         if not flags and kind=='domain-wildcard' and host.startswith('*.') and not re.search(r'[*?\[\]]',host[2:]):
             wild.add(host[2:]);ancestors.update(lineage(host[2:]));continue
+        if not flags and kind=='domain-wildcard':
+            bounded=re.fullmatch(r'([a-z0-9][a-z0-9-]*)\*([a-z0-9-]*)\.([a-z0-9.-]+)',host)
+            if bounded:
+                tail=bounded[3];patterns.append((row,tail,bounded[2]))
+                ancestors.update(lineage(tail));continue
         if flags or kind not in ('domain','domain-suffix'):
-            raise rules.Invalid('预留范围只能使用域名、域名后缀或简单子域通配符')
+            raise rules.Invalid('预留范围只能使用域名、后缀、子域或有限租户前缀通配符')
         exact.add(host); ancestors.update(lineage(host))
         if kind=='domain-suffix': suffix.add(host)
     def keep(row):
         kind,host,*flags=row.casefold().split(',')
         if flags or kind not in ('domain','domain-suffix'):
             raise rules.Invalid('域名隔离不能用于混合匹配规则')
+        if any(rules.match_domain(host,pattern) or kind=='domain-suffix' and host.endswith('.'+tail)
+               and (not ending or host.endswith(ending+'.'+tail)) for pattern,tail,ending in patterns):
+            return False
         return host not in exact and not any(p in suffix for p in lineage(host)) and not any(
             p in wild for p in list(lineage(host))[1:]) and not (
             kind=='domain-suffix' and host in ancestors)
@@ -161,7 +169,8 @@ def product_rows(e,data):
 
 def merge_view(entry, data):
     excluded=set(entry.get('exclude',[]))
-    return compact(row for member in entry['members'] for row in data[member] if row not in excluded)
+    return compact([row for member in entry['members'] for row in data[member] if row not in excluded]
+                   +list(entry.get('_dependency-scopes',())))
 
 
 def domain_rows(data,keys):

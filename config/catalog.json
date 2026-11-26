@@ -77,10 +77,17 @@
       "ids": [
         "ai-overseas-all",
         "claude-connections",
+        "chatgpt-service-all",
         "chatgpt-connections",
         "gemini-connections",
+        "grokipedia-service-all",
+        "xai-service-all",
+        "cursor-service-all",
+        "grok-cursor-shared-authentication",
         "xai-connections",
         "grokipedia-encyclopedia",
+        "foundry-local-voice-models",
+        "github-copilot-service-all",
         "github-copilot-connections",
         "microsoft-copilot-connections",
         "meta-ai-assistant",
@@ -147,6 +154,7 @@
         "pika-video-tools",
         "recraft-design-tools",
         "udio-music-tools",
+        "suno-music-generation",
         "duck-ai-chat",
         "langchain-agent-platform",
         "comfy-cloud-and-registry",
@@ -352,7 +360,9 @@
         "venmo-payments",
         "xoom-transfers",
         "wise-transfers",
-        "tenpay-global-payments"
+        "tenpay-global-payments",
+        "paddle-subscription-payments",
+        "lemonsqueezy-subscription-payments"
       ],
       "subheadings": {
         "paypal-payments": "海外支付 · 产品细分"
@@ -1476,7 +1486,7 @@
       "mode": "view",
       "policy-hint": "global",
       "description": "海外 AI 合集",
-      "boundary": "合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅",
+      "boundary": "合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。",
       "priority": 1000,
       "section": "ai",
       "member-selection": {
@@ -1485,7 +1495,32 @@
           "overseas-ai"
         ]
       },
-      "routing-group": "overseas-ai"
+      "routing-group": "overseas-ai",
+      "dependency-inputs": [
+        {
+          "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "OpenAI uses the following domains"
+          ],
+          "require-complete": true,
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+          "format": "purpose-url-table",
+          "section": "copilot-on-githubcom",
+          "headers": [
+            "URL",
+            "Purpose",
+            "Relevant wildcard in /meta response"
+          ],
+          "all-purposes": true,
+          "require-complete": true,
+          "allow-tenant-prefixes": true,
+          "protect-from-reject": true
+        }
+      ]
     },
     {
       "id": "claude-connections",
@@ -1628,7 +1663,7 @@
       "mode": "compiled",
       "policy-hint": "chatgpt",
       "description": "ChatGPT、Codex、OpenAI API、语音信令与媒体连接",
-      "boundary": "登录、对话和文件按专用域名，语音媒体按官方公开的单个服务器 IP；IP 不为匹配触发 DNS。不把 LiveKit、Stripe、Cloudflare、Azure 或 Google 的共享域和网段一并代理",
+      "boundary": "ChatGPT、Codex、OpenAI API 与语音媒体的专用范围；需单份包含官方列出的共享登录、验证码、支付、支持与遥测接口时选1019，统一 AI 出口可选1000。共享主机不能按发起应用区分。",
       "sources": [
         "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
         "https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-Overseas.lsr",
@@ -1753,8 +1788,8 @@
       "id": "xai-connections",
       "mode": "managed",
       "policy-hint": "xai",
-      "description": "xAI 账号、Grok 对话与模型 API",
-      "boundary": "Grok、xAI API 及 Grok、Cursor、Grokipedia 共用账号；Cursor 编辑器、百科内容与 X 社交分别处理",
+      "description": "Grok 对话、xAI 模型 API 与专用内容",
+      "boundary": "Grok 对话、xAI 模型 API 和专用内容；共用登录主机由前置1035优先匹配。单份覆盖服务及登录可选1032，Cursor编辑器、百科内容与X社交分别处理。",
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
         "https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py",
@@ -1773,7 +1808,9 @@
       "section": "ai",
       "excluded-rules": [
         "DOMAIN-SUFFIX,grokbot.com",
-        "DOMAIN-SUFFIX,grokipedia.com"
+        "DOMAIN-SUFFIX,grokipedia.com",
+        "DOMAIN,accounts.spacexsi.com",
+        "DOMAIN,auth.grokipedia.com"
       ],
       "reconcile": "confirmed-withdrawals",
       "discovery": {
@@ -1817,34 +1854,6 @@
         ]
       },
       "selection": "detailed",
-      "official-hosts": true,
-      "official-inputs": [
-        {
-          "source": "https://cursor.com/help/troubleshooting/sign-in-domains",
-          "format": "purpose-domain-lists",
-          "labels": [
-            "If your policy will not allow wildcards, allow at least:"
-          ],
-          "allow-identical-duplicates": true,
-          "protect-from-reject": true
-        },
-        {
-          "source": "https://cursor.com/docs/enterprise/network-configuration",
-          "format": "purpose-domain-lists",
-          "labels": [
-            "use the following list"
-          ],
-          "allow-identical-duplicates": true,
-          "nested-subdomain-labels": [
-            "These subdomains are also used:"
-          ],
-          "item-purpose-prefixes": [
-            "New sign-in page"
-          ],
-          "protect-from-reject": true
-        }
-      ],
-      "inventory-refresh": true,
       "routing-group": "overseas-ai"
     },
     {
@@ -1853,7 +1862,7 @@
       "section": "ai",
       "mode": "compiled",
       "description": "Grokipedia AI 百科站点",
-      "boundary": "百科页面与内容；共用账号登录由 xAI 账号规则处理",
+      "boundary": "百科页面与内容；共用登录主机由前置1035优先匹配。单份覆盖内容及登录可选1031。",
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list",
         "https://grokipedia.com/"
@@ -1875,7 +1884,7 @@
       "mode": "compiled",
       "policy-hint": "ai-overseas",
       "description": "Copilot API、补全、对话及已证实的附件服务",
-      "boundary": "Copilot 专用接口、实时连接、附件、报告与遥测；必需接口另按用途核对，共用认证归 GitHub 代码托管表。实验、通用模型目录与跨租户云通配符不纳入",
+      "boundary": "Copilot 专用接口、实时连接、附件、报告与遥测，包含官方有限前缀的下载回落；需单份包含 GitHub 认证和共享实验接口时选1059。编辑器网络及其他共用服务按其实际用途处理。",
       "sources": [
         "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list",
         "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference"
@@ -1918,7 +1927,9 @@
             "API service for Copilot suggestions",
             "Real-time WebSocket connection"
           ],
-          "protect-from-reject": true
+          "protect-from-reject": true,
+          "allow-tenant-prefixes": true,
+          "require-complete": true
         }
       ],
       "routing-group": "overseas-ai"
@@ -15729,6 +15740,386 @@
         "storage.googleapis.com",
         "beam-images.warnermediacdn.com"
       ]
+    },
+    {
+      "id": "suno-music-generation",
+      "priority": 1705,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Suno AI 音乐生成、作品播放与下载",
+      "boundary": "官网身份核对 Suno 当前域名和旧域别名，完整社区专用表核对范围；图片按实际请求主机补全并尊重既有供应商归属。第三方登录和支付按其依赖另行配置，不认领共用云平台或 ASN。",
+      "sources": [
+        "https://suno.com/",
+        "https://suno.ai/",
+        "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/surge/suno.list",
+        "https://help.suno.com/en/articles/2408065"
+      ],
+      "extract": [
+        {
+          "format": "site-identity",
+          "source": "https://suno.com/",
+          "scope": "source-root",
+          "brand": "Suno"
+        },
+        {
+          "format": "site-identity",
+          "source": "https://suno.ai/",
+          "brand": "Suno",
+          "include-source-alias": true,
+          "canonical-parents": [
+            "suno.com"
+          ]
+        },
+        {
+          "format": "site-resource-hosts",
+          "source": "https://suno.com/",
+          "identity": {
+            "scope": "source-root",
+            "brand": "Suno"
+          },
+          "properties": [
+            "og:image"
+          ],
+          "image-attributes": [
+            "src",
+            "srcset",
+            "data-src",
+            "data-srcset"
+          ],
+          "respect-existing-owners": true
+        }
+      ],
+      "product-probes": [
+        "suno.com",
+        "suno.ai",
+        "cdn1.suno.ai"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "api.paddle.com",
+        "api.lemonsqueezy.com"
+      ]
+    },
+    {
+      "id": "paddle-subscription-payments",
+      "priority": 3590,
+      "section": "payments",
+      "routing-group": "overseas-payments",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Paddle 订阅支付、结账、商家 API、账单与 Retain",
+      "boundary": "从 Paddle.js 生产环境字段跟随当前 Retain 脚本，覆盖结账、商家 API、账单与恢复支付接口；共享 ProfitWell 主机上的其他请求也随本表匹配。开发与预发布环境单独排除，其他支付处理方保留各自规则。",
+      "sources": [
+        "https://www.paddle.com/",
+        "https://www.paddle.net/",
+        "https://developer.paddle.com/paddle-js/about/include-paddlejs/",
+        "https://cdn.paddle.com/paddle/v2/paddle.js",
+        "https://developer.paddle.com/build/retain/",
+        "https://www.paddle.com/vulnerability-disclosure-policy"
+      ],
+      "extract": [
+        {
+          "format": "site-identity",
+          "source": "https://www.paddle.com/",
+          "scope": "source-root",
+          "brand-field": "og:title",
+          "brand-match": "word",
+          "brand": "Paddle"
+        },
+        {
+          "format": "site-identity",
+          "source": "https://www.paddle.net/",
+          "scope": "source-root",
+          "brand-field": "html:title",
+          "brand": "Paddle.net"
+        },
+        {
+          "source": "https://cdn.paddle.com/paddle/v2/paddle.js",
+          "format": "javascript-environment-urls",
+          "dictionary-field": "defaults",
+          "environment": "PRODUCTION",
+          "fields": [
+            "checkoutBase",
+            "checkoutFrontEndBase",
+            "profitwellSnippetBase",
+            "apiBase"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "cdn.paddle.com",
+        "checkout.paddle.com",
+        "api.paddle.com",
+        "paddle.net",
+        "public.profitwell.com",
+        "retain-api.profitwell.com",
+        "api.profitwell-events.com",
+        "www2.profitwell.com"
+      ],
+      "product-negatives": [
+        "accounts.google.com",
+        "challenges.cloudflare.com",
+        "storage.googleapis.com"
+      ],
+      "expand": {
+        "method": "next-sdk",
+        "source": "https://cdn.paddle.com/paddle/v2/paddle.js",
+        "source-format": "javascript-environment",
+        "asset-roots": [
+          "profitwell.com",
+          "paddle.com",
+          "profitwell-events.com"
+        ],
+        "max-documents": 1,
+        "config": {
+          "dictionary-field": "defaults",
+          "environment": "PRODUCTION",
+          "fields": [
+            "checkoutBase",
+            "checkoutFrontEndBase",
+            "profitwellSnippetBase",
+            "apiBase"
+          ],
+          "script-field": "profitwellSnippetBase"
+        },
+        "document": {
+          "format": "javascript-method-urls",
+          "methods": [
+            "buildSingleDomain",
+            "buildSplitDomains"
+          ]
+        },
+        "inventory": {
+          "format": "javascript-url-literals"
+        },
+        "reviewed-outside": {
+          "DOMAIN,development-retain-widgets-api.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。",
+          "DOMAIN,development-retain-widgets.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。",
+          "DOMAIN,staging-retain-widgets-api.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。",
+          "DOMAIN,staging-retain-widgets.paddle.dev": "Retain 的开发或预发布环境，不属于生产支付接口。"
+        },
+        "protect-from-reject": true
+      }
+    },
+    {
+      "id": "lemonsqueezy-subscription-payments",
+      "priority": 3595,
+      "section": "payments",
+      "routing-group": "overseas-payments",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Lemon Squeezy 订阅支付、结账与商家 API",
+      "boundary": "官网身份核对支付平台的自有命名空间，覆盖结账和商家入口；商家的自定义域名及银行卡、PayPal、Apple Pay、Google Pay 等处理方仍按其实际服务匹配，不认领整家云平台。",
+      "sources": [
+        "https://www.lemonsqueezy.com/",
+        "https://docs.lemonsqueezy.com/guides/developer-guide/taking-payments",
+        "https://docs.lemonsqueezy.com/help/checkout/checkout-overlay"
+      ],
+      "extract": [
+        {
+          "format": "site-identity",
+          "source": "https://www.lemonsqueezy.com/",
+          "scope": "source-root",
+          "brand-field": "html:title",
+          "brand-match": "word",
+          "brand": "Lemon Squeezy"
+        }
+      ],
+      "product-probes": [
+        "app.lemonsqueezy.com",
+        "api.lemonsqueezy.com"
+      ],
+      "product-negatives": [
+        "accounts.google.com",
+        "challenges.cloudflare.com",
+        "storage.googleapis.com"
+      ]
+    },
+    {
+      "id": "grok-cursor-shared-authentication",
+      "priority": 1035,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Grok、Cursor 与 Grokipedia 共用账号登录",
+      "boundary": "从官方最小登录清单和网络用途表读取明确主机；仅合并不能按目的域名区分的共用认证，不接管 Grok 对话、Cursor 编辑器或百科内容。",
+      "sources": [
+        "https://cursor.com/help/troubleshooting/sign-in-domains",
+        "https://cursor.com/docs/enterprise/network-configuration",
+        "https://docs.x.ai/x-subscription/sign-in",
+        "https://docs.x.ai/developers/faq/accounts"
+      ],
+      "extract": [
+        {
+          "source": "https://cursor.com/help/troubleshooting/sign-in-domains",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "If your policy will not allow wildcards, allow at least:"
+          ],
+          "allow-identical-duplicates": true,
+          "protect-from-reject": true
+        },
+        {
+          "source": "https://cursor.com/docs/enterprise/network-configuration",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "use the following list"
+          ],
+          "allow-identical-duplicates": true,
+          "nested-subdomain-labels": [
+            "These subdomains are also used:"
+          ],
+          "item-purpose-prefixes": [
+            "New sign-in page"
+          ],
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "accounts.spacexsi.com",
+        "auth.grok.com",
+        "auth.grokusercontent.com",
+        "auth.grokipedia.com"
+      ]
+    },
+    {
+      "id": "grokipedia-service-all",
+      "priority": 1031,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "view",
+      "description": "Grokipedia 内容与登录合集",
+      "boundary": "替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。",
+      "members": [
+        "grok-cursor-shared-authentication",
+        "grokipedia-encyclopedia"
+      ]
+    },
+    {
+      "id": "xai-service-all",
+      "priority": 1032,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "view",
+      "description": "Grok、xAI API 与登录合集",
+      "boundary": "替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。",
+      "members": [
+        "grok-cursor-shared-authentication",
+        "xai-connections"
+      ]
+    },
+    {
+      "id": "cursor-service-all",
+      "priority": 1033,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "view",
+      "description": "Cursor 编辑器、API 与登录合集",
+      "boundary": "替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。",
+      "members": [
+        "grok-cursor-shared-authentication",
+        "cursor-editor-and-api"
+      ]
+    },
+    {
+      "id": "chatgpt-service-all",
+      "priority": 1019,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "view",
+      "policy-hint": "global",
+      "description": "ChatGPT、Codex、API 与官方共享依赖合集",
+      "boundary": "替代1020，包含官方网络清单中的 WorkOS、验证码、支付、支持和遥测接口；同一共享主机上的其他应用请求也随本表选路。与1000及1020二选一。",
+      "members": [
+        "chatgpt-connections"
+      ],
+      "dependency-inputs": [
+        {
+          "source": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+          "format": "purpose-domain-lists",
+          "labels": [
+            "OpenAI uses the following domains"
+          ],
+          "require-complete": true,
+          "protect-from-reject": true
+        }
+      ]
+    },
+    {
+      "id": "foundry-local-voice-models",
+      "priority": 1058,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "compiled",
+      "selection": "detailed",
+      "policy-hint": "global",
+      "description": "Foundry Local 语音模型目录、区域 API 与下载",
+      "boundary": "Copilot CLI 与 App 的本地语音功能需要的模型目录、区域选择和下载；共享模型目录不能再按具体模型区分。Blob 只收官方明确的有限租户前缀，不收整个 Azure 云。",
+      "sources": [
+        "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference"
+      ],
+      "extract": [
+        {
+          "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+          "format": "purpose-url-table",
+          "section": "copilot-voice-features",
+          "headers": [
+            "Domain and/or URL",
+            "Purpose"
+          ],
+          "all-purposes": true,
+          "require-complete": true,
+          "allow-tenant-prefixes": true,
+          "protect-from-reject": true
+        }
+      ],
+      "product-probes": [
+        "ai.azure.com",
+        "api.catalog.azureml.ms"
+      ],
+      "product-negatives": [
+        "storage.googleapis.com",
+        "s3.amazonaws.com",
+        "unrelated.blob.core.windows.net"
+      ]
+    },
+    {
+      "id": "github-copilot-service-all",
+      "priority": 1059,
+      "section": "ai",
+      "routing-group": "overseas-ai",
+      "mode": "view",
+      "policy-hint": "global",
+      "description": "GitHub Copilot、认证、实验与语音模型合集",
+      "boundary": "替代1058与1060，补入官方 GitHub.com 连接表的共享认证、资源、用户管理和实验接口；同一主机的其他 GitHub 请求也随本表选路。与1000及所列成员二选一，编辑器自身网络仍按所用编辑器处理。",
+      "members": [
+        "foundry-local-voice-models",
+        "github-copilot-connections"
+      ],
+      "dependency-inputs": [
+        {
+          "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+          "format": "purpose-url-table",
+          "section": "copilot-on-githubcom",
+          "headers": [
+            "URL",
+            "Purpose",
+            "Relevant wildcard in /meta response"
+          ],
+          "all-purposes": true,
+          "require-complete": true,
+          "allow-tenant-prefixes": true,
+          "protect-from-reject": true
+        }
+      ]
     }
   ],
   "detailed": [
@@ -15736,8 +16127,10 @@
     "claude-connections",
     "chatgpt-connections",
     "gemini-connections",
+    "grok-cursor-shared-authentication",
     "xai-connections",
     "grokipedia-encyclopedia",
+    "foundry-local-voice-models",
     "github-copilot-connections",
     "microsoft-copilot-connections",
     "meta-ai-assistant",
@@ -15804,6 +16197,7 @@
     "pika-video-tools",
     "recraft-design-tools",
     "udio-music-tools",
+    "suno-music-generation",
     "duck-ai-chat",
     "langchain-agent-platform",
     "comfy-cloud-and-registry",
@@ -15904,6 +16298,8 @@
     "xoom-transfers",
     "wise-transfers",
     "tenpay-global-payments",
+    "paddle-subscription-payments",
+    "lemonsqueezy-subscription-payments",
     "binance-platform",
     "okx-platform",
     "gemini-exchange",
@@ -16094,6 +16490,11 @@
   ],
   "views": [
     "ai-overseas-all",
+    "chatgpt-service-all",
+    "grokipedia-service-all",
+    "xai-service-all",
+    "cursor-service-all",
+    "github-copilot-service-all",
     "ai-cn-international-all",
     "apple-all",
     "apple-overseas-all",
@@ -18860,6 +19261,75 @@
     ],
     "image.mux.com": [
       "mux-video-platform"
+    ],
+    "suno.com": [
+      "suno-music-generation"
+    ],
+    "suno.ai": [
+      "suno-music-generation"
+    ],
+    "cdn1.suno.ai": [
+      "suno-music-generation"
+    ],
+    "cdn.paddle.com": [
+      "paddle-subscription-payments"
+    ],
+    "checkout.paddle.com": [
+      "paddle-subscription-payments"
+    ],
+    "api.paddle.com": [
+      "paddle-subscription-payments"
+    ],
+    "paddle.net": [
+      "paddle-subscription-payments"
+    ],
+    "app.lemonsqueezy.com": [
+      "lemonsqueezy-subscription-payments"
+    ],
+    "api.lemonsqueezy.com": [
+      "lemonsqueezy-subscription-payments"
+    ],
+    "accounts.spacexsi.com": [
+      "grok-cursor-shared-authentication"
+    ],
+    "auth.grok.com": [
+      "grok-cursor-shared-authentication"
+    ],
+    "auth.grokusercontent.com": [
+      "grok-cursor-shared-authentication"
+    ],
+    "auth.grokipedia.com": [
+      "grok-cursor-shared-authentication"
+    ],
+    "public.profitwell.com": [
+      "paddle-subscription-payments"
+    ],
+    "retain-api.profitwell.com": [
+      "paddle-subscription-payments"
+    ],
+    "api.profitwell-events.com": [
+      "paddle-subscription-payments"
+    ],
+    "www2.profitwell.com": [
+      "paddle-subscription-payments"
+    ],
+    "cdn.workos.com": [
+      "workos-authentication"
+    ],
+    "setup.workos.com": [
+      "workos-authentication"
+    ],
+    "challenges.cloudflare.com": [
+      "cloudflare-shared-services"
+    ],
+    "default.exp-tas.com": [
+      "microsoft-platform-services"
+    ],
+    "api.catalog.azureml.ms": [
+      "foundry-local-voice-models"
+    ],
+    "ai.azure.com": [
+      "foundry-local-voice-models"
     ]
   },
   "shared-negatives": [
@@ -18951,10 +19421,12 @@
       "ai-overseas-all"
     ],
     "files.oaiusercontent.com": [
-      "ai-overseas-all"
+      "ai-overseas-all",
+      "chatgpt-service-all"
     ],
     "grok.x.com": [
       "ai-overseas-all",
+      "xai-service-all",
       "overseas-social-all"
     ],
     "gemini.google.com": [
@@ -19032,6 +19504,71 @@
     ],
     "ai.com": [
       "ai-overseas-all"
+    ],
+    "accounts.spacexsi.com": [
+      "ai-overseas-all",
+      "grokipedia-service-all",
+      "xai-service-all",
+      "cursor-service-all"
+    ],
+    "auth.grok.com": [
+      "ai-overseas-all",
+      "grokipedia-service-all",
+      "xai-service-all",
+      "cursor-service-all"
+    ],
+    "auth.grokusercontent.com": [
+      "ai-overseas-all",
+      "grokipedia-service-all",
+      "xai-service-all",
+      "cursor-service-all"
+    ],
+    "auth.grokipedia.com": [
+      "ai-overseas-all",
+      "grokipedia-service-all",
+      "xai-service-all",
+      "cursor-service-all"
+    ],
+    "public.profitwell.com": [
+      "overseas-payments-all"
+    ],
+    "retain-api.profitwell.com": [
+      "overseas-payments-all"
+    ],
+    "api.profitwell-events.com": [
+      "overseas-payments-all"
+    ],
+    "www2.profitwell.com": [
+      "overseas-payments-all"
+    ],
+    "cdn.workos.com": [
+      "ai-overseas-all",
+      "chatgpt-service-all",
+      "overseas-development-all"
+    ],
+    "setup.workos.com": [
+      "ai-overseas-all",
+      "chatgpt-service-all",
+      "overseas-development-all"
+    ],
+    "challenges.cloudflare.com": [
+      "ai-overseas-all",
+      "chatgpt-service-all",
+      "global-platforms-all"
+    ],
+    "default.exp-tas.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "microsoft-all"
+    ],
+    "api.catalog.azureml.ms": [
+      "ai-overseas-all",
+      "github-copilot-service-all"
+    ],
+    "ai.azure.com": [
+      "ai-overseas-all",
+      "github-copilot-service-all",
+      "overseas-extra-all"
     ]
   },
   "sections": [
@@ -19113,10 +19650,17 @@
       "numbers": [
         1000,
         1010,
+        1019,
         1020,
         1030,
+        1031,
+        1032,
+        1033,
+        1035,
         1040,
         1050,
+        1058,
+        1059,
         1060,
         1070,
         1080,
@@ -19183,6 +19727,7 @@
         1680,
         1690,
         1700,
+        1705,
         1710,
         1720,
         1730,
@@ -19527,6 +20072,8 @@
         3560,
         3570,
         3580,
+        3590,
+        3595,
         6700,
         6710,
         6720,
@@ -23272,6 +23819,208 @@
       "reviewed-outside": {
         "DOMAIN,storage.googleapis.com": "官方说明这是 Direct Uploads 使用的 Google 公共存储请求主机；同一主机服务其他客户，不能归为 Mux 自有范围。用途依据：https://www.mux.com/docs/core/content-security-policy#upload-and-media-handling"
       }
+    },
+    {
+      "id": "suno-official-identity-1",
+      "source": "https://suno.com/",
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand": "Suno"
+      },
+      "owners": [
+        "suno-music-generation"
+      ]
+    },
+    {
+      "id": "suno-official-identity-2",
+      "source": "https://suno.ai/",
+      "recipe": {
+        "format": "site-identity",
+        "brand": "Suno",
+        "include-source-alias": true,
+        "canonical-parents": [
+          "suno.com"
+        ]
+      },
+      "owners": [
+        "suno-music-generation"
+      ]
+    },
+    {
+      "id": "suno-complete-community-service",
+      "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/surge/suno.list",
+      "recipe": {
+        "format": "domain-scope-list"
+      },
+      "owners": [
+        "suno-music-generation"
+      ]
+    },
+    {
+      "id": "suno-page-images",
+      "source": "https://suno.com/",
+      "recipe": {
+        "format": "site-resource-hosts",
+        "identity": {
+          "scope": "source-root",
+          "brand": "Suno"
+        },
+        "properties": [
+          "og:image"
+        ],
+        "image-attributes": [
+          "src",
+          "srcset",
+          "data-src",
+          "data-srcset"
+        ],
+        "respect-existing-owners": true
+      },
+      "owners": [
+        "suno-music-generation"
+      ],
+      "resource-owner": "suno-music-generation"
+    },
+    {
+      "id": "paddle-subscription-payments-official-identity-1",
+      "source": "https://www.paddle.com/",
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand-field": "og:title",
+        "brand-match": "word",
+        "brand": "Paddle"
+      },
+      "owners": [
+        "paddle-subscription-payments"
+      ]
+    },
+    {
+      "id": "paddle-subscription-payments-official-identity-2",
+      "source": "https://www.paddle.net/",
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand-field": "html:title",
+        "brand": "Paddle.net"
+      },
+      "owners": [
+        "paddle-subscription-payments"
+      ]
+    },
+    {
+      "id": "lemonsqueezy-subscription-payments-official-identity-1",
+      "source": "https://www.lemonsqueezy.com/",
+      "recipe": {
+        "format": "site-identity",
+        "scope": "source-root",
+        "brand-field": "html:title",
+        "brand-match": "word",
+        "brand": "Lemon Squeezy"
+      },
+      "owners": [
+        "lemonsqueezy-subscription-payments"
+      ]
+    },
+    {
+      "id": "grok-cursor-shared-authentication-official-purpose-1",
+      "source": "https://cursor.com/help/troubleshooting/sign-in-domains",
+      "recipe": {
+        "format": "purpose-domain-lists",
+        "labels": [
+          "If your policy will not allow wildcards, allow at least:"
+        ],
+        "allow-identical-duplicates": true,
+        "protect-from-reject": true
+      },
+      "owners": [
+        "grok-cursor-shared-authentication"
+      ]
+    },
+    {
+      "id": "grok-cursor-shared-authentication-official-purpose-2",
+      "source": "https://cursor.com/docs/enterprise/network-configuration",
+      "recipe": {
+        "format": "purpose-domain-lists",
+        "labels": [
+          "use the following list"
+        ],
+        "allow-identical-duplicates": true,
+        "nested-subdomain-labels": [
+          "These subdomains are also used:"
+        ],
+        "item-purpose-prefixes": [
+          "New sign-in page"
+        ],
+        "protect-from-reject": true
+      },
+      "owners": [
+        "grok-cursor-shared-authentication"
+      ]
+    },
+    {
+      "id": "paddle-production-sdk-endpoints",
+      "source": "https://cdn.paddle.com/paddle/v2/paddle.js",
+      "recipe": {
+        "source": "https://cdn.paddle.com/paddle/v2/paddle.js",
+        "format": "javascript-environment-urls",
+        "dictionary-field": "defaults",
+        "environment": "PRODUCTION",
+        "fields": [
+          "checkoutBase",
+          "checkoutFrontEndBase",
+          "profitwellSnippetBase",
+          "apiBase"
+        ],
+        "protect-from-reject": true
+      },
+      "owners": [
+        "paddle-subscription-payments"
+      ]
+    },
+    {
+      "id": "copilot-github-complete-network",
+      "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+      "recipe": {
+        "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+        "format": "purpose-url-table",
+        "section": "copilot-on-githubcom",
+        "headers": [
+          "URL",
+          "Purpose",
+          "Relevant wildcard in /meta response"
+        ],
+        "all-purposes": true,
+        "require-complete": true,
+        "allow-tenant-prefixes": true,
+        "protect-from-reject": true
+      },
+      "owners": [
+        "github-code-and-packages",
+        "github-copilot-connections",
+        "microsoft-platform-services"
+      ]
+    },
+    {
+      "id": "copilot-voice-complete-model-network",
+      "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+      "recipe": {
+        "source": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+        "format": "purpose-url-table",
+        "section": "copilot-voice-features",
+        "headers": [
+          "Domain and/or URL",
+          "Purpose"
+        ],
+        "all-purposes": true,
+        "require-complete": true,
+        "allow-tenant-prefixes": true,
+        "protect-from-reject": true
+      },
+      "owners": [
+        "foundry-local-voice-models"
+      ]
     }
   ],
   "source-alias-policies": {
@@ -23808,7 +24557,7 @@
         "name": "X / xAI",
         "products": [
           {
-            "name": "xAI 账号、Grok 对话与模型 API",
+            "name": "Grok 对话与 xAI 模型 API",
             "rules": [
               "xai-connections"
             ]
@@ -23823,6 +24572,12 @@
             "name": "X / Twitter 社交与图像视频",
             "rules": [
               "x-social-and-media"
+            ]
+          },
+          {
+            "name": "Grok、Cursor 与 Grokipedia 共用账号",
+            "rules": [
+              "grok-cursor-shared-authentication"
             ]
           }
         ]
@@ -23949,6 +24704,12 @@
             "name": "Azure 中国区登录与控制端点",
             "rules": [
               "microsoft-china-cloud-controls"
+            ]
+          },
+          {
+            "name": "Foundry Local 语音模型目录与下载",
+            "rules": [
+              "foundry-local-voice-models"
             ]
           }
         ]
@@ -25678,6 +26439,12 @@
             "rules": [
               "link-payments"
             ]
+          },
+          {
+            "name": "Lemon Squeezy 订阅结账与商家平台",
+            "rules": [
+              "lemonsqueezy-subscription-payments"
+            ]
           }
         ]
       },
@@ -26943,6 +27710,30 @@
             "name": "Mux 视频播放、缩略图与平台接口",
             "rules": [
               "mux-video-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "suno",
+        "name": "Suno",
+        "products": [
+          {
+            "name": "Suno AI 音乐生成与作品服务",
+            "rules": [
+              "suno-music-generation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "paddle",
+        "name": "Paddle",
+        "products": [
+          {
+            "name": "Paddle 订阅结账与商家平台",
+            "rules": [
+              "paddle-subscription-payments"
             ]
           }
         ]

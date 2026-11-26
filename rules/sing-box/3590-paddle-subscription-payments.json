@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "paddle.com",
+        "paddle.net"
+      ],
+      "domain": [
+        "public.profitwell.com",
+        "api.profitwell-events.com",
+        "retain-api.profitwell.com",
+        "www2.profitwell.com"
+      ]
+    }
+  ]
+}

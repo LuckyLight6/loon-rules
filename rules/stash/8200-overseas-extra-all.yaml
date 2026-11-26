@@ -4,7 +4,7 @@
 # description: 海外补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-25T00:37:42Z
+# updated-at: 2026-11-26T16:38:35Z
 # source: https://ruleset.skk.moe/List/non_ip/stream.conf
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyMedia.list
 # source: https://rules.xkww3n.cyou/classical/proxy.txt
@@ -12,8 +12,8 @@
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ProxyGFW.list
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://rules.xkww3n.cyou/classical/domestic.txt
-# canonical-rule-count: 18600
-# rule-count: 18600
+# canonical-rule-count: 18597
+# rule-count: 18597
 # format: clash-classical
 # canonical: rules/loon/8200-overseas-extra-all.lsr
 
@@ -11815,7 +11815,6 @@ payload:
   - "DOMAIN-SUFFIX,packetix.net"
   - "DOMAIN-SUFFIX,pacom.mil"
   - "DOMAIN-SUFFIX,pacopacomama.com"
-  - "DOMAIN-SUFFIX,paddle.com"
   - "DOMAIN-SUFFIX,paddleapi.com"
   - "DOMAIN-SUFFIX,padmanet.com"
   - "DOMAIN-SUFFIX,page.link"
@@ -14774,8 +14773,6 @@ payload:
   - "DOMAIN-SUFFIX,sunjidong.net"
   - "DOMAIN-SUFFIX,sunjournal.com"
   - "DOMAIN-SUFFIX,sunmedia.ca"
-  - "DOMAIN-SUFFIX,suno.ai"
-  - "DOMAIN-SUFFIX,suno.com"
   - "DOMAIN-SUFFIX,sunporno.com"
   - "DOMAIN-SUFFIX,sunskyforum.com"
   - "DOMAIN-SUFFIX,sunta.com.tw"

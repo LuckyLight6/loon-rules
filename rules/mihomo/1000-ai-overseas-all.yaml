@@ -2,9 +2,9 @@
 # priority: 1000
 # section: ai
 # description: 海外 AI 合集
-# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# boundary: 合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-24T20:44:08Z
+# updated-at: 2026-11-26T17:47:39Z
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
@@ -18,15 +18,15 @@
 # source: https://rules.xkww3n.cyou/classical/google-deepmind.txt
 # source: https://raw.githubusercontent.com/googleapis/googleapis/master/google/ai/generativelanguage/v1beta/generative_service.proto
 # source: https://ai.google.dev/gemma/docs
-# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
-# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://cursor.com/help/troubleshooting/sign-in-domains
 # source: https://cursor.com/docs/enterprise/network-configuration
 # source: https://docs.x.ai/x-subscription/sign-in
 # source: https://docs.x.ai/developers/faq/accounts
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
 # source: https://grokipedia.com/
-# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
 # source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/github-copilot.list
 # source: https://support.microsoft.com/en-us/microsoft-365-copilot/what-is-microsoft-copilot-app
 # source: https://learn.microsoft.com/en-us/copilot/plan/copilot-app-overview
 # source: https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/
@@ -147,6 +147,10 @@
 # source: https://recraft.ai/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/udio.list
 # source: https://udio.com/
+# source: https://suno.com/
+# source: https://suno.ai/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/surge/suno.list
+# source: https://help.suno.com/en/articles/2408065
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/duck-ai.list
 # source: https://duck.ai/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/langchain.list
@@ -165,8 +169,8 @@
 # source: https://diabrowser.com/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/openclaw.list
 # source: https://openclaw.ai/
-# canonical-rule-count: 682
-# rule-count: 682
+# canonical-rule-count: 711
+# rule-count: 711
 # format: clash-classical
 # canonical: rules/loon/1000-ai-overseas-all.lsr
 
@@ -707,12 +711,16 @@ payload:
   - "DOMAIN,webchannel-robinfrontend-pa.googleapis.com"
   - "DOMAIN,geminiweb-pa.googleapis.com"
   - "DOMAIN-SUFFIX,gemma.ai"
+  - "DOMAIN,accounts.spacexsi.com"
   - "DOMAIN-SUFFIX,grok.com"
   - "DOMAIN-SUFFIX,grok.x.com"
   - "DOMAIN-SUFFIX,x.ai"
   - "DOMAIN-REGEX,(?i)^.*\\.grokusercontent\\.com$"
-  - "DOMAIN,accounts.spacexsi.com"
   - "DOMAIN-SUFFIX,grokipedia.com"
+  - "DOMAIN,ai.azure.com"
+  - "DOMAIN,api.catalog.azureml.ms"
+  - "DOMAIN-REGEX,(?i)^.*\\.api\\.azureml\\.ms$"
+  - "DOMAIN-REGEX,(?i)^amlwlrt4.*\\.blob\\.core\\.windows\\.net$"
   - "DOMAIN,origin-tracker.githubusercontent.com"
   - "DOMAIN,copilot-proxy.githubusercontent.com"
   - "DOMAIN,copilot-workspace.githubnext.com"
@@ -728,6 +736,8 @@ payload:
   - "DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com"
   - "DOMAIN,production-copilot-host-westus3.webpubsub.azure.com"
   - "DOMAIN,production-copilot-host.webpubsub.azure.com"
+  - "DOMAIN-REGEX,(?i)^copilot\\-reports\\-.*\\.b01\\.azurefd\\.net$"
+  - "DOMAIN-REGEX,(?i)^usagereports.*\\.blob\\.core\\.windows\\.net$"
   - "DOMAIN,copilot.com"
   - "DOMAIN,www.copilot.com"
   - "DOMAIN,copilot.microsoft.com"
@@ -841,6 +851,8 @@ payload:
   - "DOMAIN-SUFFIX,pika.art"
   - "DOMAIN-SUFFIX,recraft.ai"
   - "DOMAIN-SUFFIX,udio.com"
+  - "DOMAIN-SUFFIX,suno.com"
+  - "DOMAIN-SUFFIX,suno.ai"
   - "DOMAIN-SUFFIX,duck.ai"
   - "DOMAIN-SUFFIX,langchain.com"
   - "DOMAIN-SUFFIX,comfy.org"
@@ -853,3 +865,24 @@ payload:
   - "DOMAIN-SUFFIX,diabrowser.com"
   - "DOMAIN-SUFFIX,diabrowser.engineering"
   - "DOMAIN-SUFFIX,openclaw.ai"
+  - "DOMAIN,cdn.workos.com"
+  - "DOMAIN,challenges.cloudflare.com"
+  - "DOMAIN,forwarder.workos.com"
+  - "DOMAIN,frontend-apps-multi-region.workos.com"
+  - "DOMAIN,humb.apple.com"
+  - "DOMAIN,images.workoscdn.com"
+  - "DOMAIN,js.stripe.com"
+  - "DOMAIN,o207216.ingest.sentry.io"
+  - "DOMAIN,o33249.ingest.sentry.io"
+  - "DOMAIN,rum.browser-intake-datadoghq.com"
+  - "DOMAIN,setup.workos.com"
+  - "DOMAIN,workos.imgix.net"
+  - "DOMAIN-REGEX,(?i)^.*\\.ct\\.sendgrid\\.net$"
+  - "DOMAIN-REGEX,(?i)^.*\\.intercom\\.io$"
+  - "DOMAIN-REGEX,(?i)^.*\\.intercomcdn\\.com$"
+  - "DOMAIN,api.github.com"
+  - "DOMAIN,avatars.githubusercontent.com"
+  - "DOMAIN,collector.github.com"
+  - "DOMAIN,default.exp-tas.com"
+  - "DOMAIN,github.com"
+  - "DOMAIN,github.githubassets.com"

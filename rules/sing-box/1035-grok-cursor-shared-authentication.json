@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "accounts.spacexsi.com",
+        "auth.grok.com",
+        "auth.grokipedia.com",
+        "auth.grokusercontent.com"
+      ]
+    }
+  ]
+}

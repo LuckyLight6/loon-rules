@@ -1,0 +1,21 @@
+# name: xai-service-all
+# priority: 1032
+# section: ai
+# description: Grok、xAI API 与登录合集
+# boundary: 替代所列产品和共用账号成员；与其他包含同一账号成员的服务合集互斥。多个服务统一出口可选1000，分别选路时使用内容细分和1035共用账号。
+# created-at: 2026-11-26T16:57:37Z
+# updated-at: 2026-11-26T16:57:37Z
+# rule-count: 6
+# source: https://cursor.com/help/troubleshooting/sign-in-domains
+# source: https://cursor.com/docs/enterprise/network-configuration
+# source: https://docs.x.ai/x-subscription/sign-in
+# source: https://docs.x.ai/developers/faq/accounts
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://raw.githubusercontent.com/xai-org/xai-sdk-python/main/src/xai_sdk/client.py
+
+DOMAIN,accounts.spacexsi.com
+DOMAIN,auth.grokipedia.com
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,grok.x.com
+DOMAIN-SUFFIX,x.ai
+DOMAIN-WILDCARD,*.grokusercontent.com

@@ -81,10 +81,10 @@ class BusinessOrder(unittest.TestCase):
         index=lib.render_index(cfg,entries)
         self.assertIn('## 1 网络接入与局域网',index)
         self.assertIn('### 3.1 ',index)
-        self.assertIn('| 序号 | 英文名称 | 中文名称 | 用途与选择 | 订阅地址 |',index)
+        self.assertIn('| 序号 | 英文名称 | 中文名称 | 用途与选择 |',index)
         for row in re.findall(r'^\| \d+ \| .+$',index,re.M):
-            self.assertEqual(len(row.split('|')[1:-1]),5)
-        self.assertIn('| '+priority_label(entries['claude-connections'])+' | [claude-connections]',index)
+            self.assertEqual(len(row.split('|')[1:-1]),4)
+        self.assertIn('| '+priority_label(entries['claude-connections'])+' | <a id="rule-claude-connections"></a>`claude-connections`',index)
 
     def test_each_aggregate_has_its_own_subheading_and_table(self):
         cfg=json.loads((lib.ROOT/'config/catalog.json').read_text())

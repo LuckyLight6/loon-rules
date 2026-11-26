@@ -4,7 +4,7 @@
 # description: 国内补充合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-20T01:22:56Z
-# updated-at: 2026-11-26T13:10:06Z
+# updated-at: 2026-11-26T18:01:26Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
 # source: https://www.mi.com/global/support/faq/details/KA-226613/
 # source: https://bigota.miwifi.com/xiaoqiang/sdk/docs/dev_guide.pdf
@@ -14,8 +14,8 @@
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/FILTER_REGION.list
-# canonical-rule-count: 19272
-# rule-count: 19272
+# canonical-rule-count: 19273
+# rule-count: 19273
 # format: egern
 # canonical: rules/loon/8600-mainland-routing-all.lsr
 
@@ -14376,6 +14376,7 @@ ip_cidr_set:
   - "163.227.40.0/23"
   - "163.228.0.0/16"
   - "163.47.4.0/22"
+  - "163.52.28.0/23"
   - "163.53.168.0/22"
   - "163.53.44.0/23"
   - "163.53.60.0/22"
@@ -16130,8 +16131,8 @@ ip_cidr6_set:
   - "2001:250::/30"
   - "2001:254::/33"
   - "2001:255::/32"
-  - "2001:4510:400::/40"
   - "2001:4510:1480::/41"
+  - "2001:4510:400::/40"
   - "2001:4511:1480::/41"
   - "2001:7fa:5::/48"
   - "2001:c68::/32"
@@ -16247,10 +16248,15 @@ ip_cidr6_set:
   - "2400:5a40::/32"
   - "2400:5a60:1000::/36"
   - "2400:5a60:100::/40"
+  - "2400:5a60:10::/44"
   - "2400:5a60:2000::/35"
   - "2400:5a60:200::/39"
+  - "2400:5a60:20::/43"
+  - "2400:5a60:3::/48"
   - "2400:5a60:4000::/34"
   - "2400:5a60:400::/38"
+  - "2400:5a60:40::/42"
+  - "2400:5a60:4::/46"
   - "2400:5a60:8001::/48"
   - "2400:5a60:8002::/47"
   - "2400:5a60:8004::/46"
@@ -16265,14 +16271,9 @@ ip_cidr6_set:
   - "2400:5a60:8200::/39"
   - "2400:5a60:8400::/38"
   - "2400:5a60:8800::/37"
+  - "2400:5a60:8::/45"
   - "2400:5a60:9000::/36"
   - "2400:5a60::/47"
-  - "2400:5a60:3::/48"
-  - "2400:5a60:4::/46"
-  - "2400:5a60:8::/45"
-  - "2400:5a60:10::/44"
-  - "2400:5a60:20::/43"
-  - "2400:5a60:40::/42"
   - "2400:5a60:a000::/35"
   - "2400:5a60:c000::/34"
   - "2400:5a60:c0::/43"

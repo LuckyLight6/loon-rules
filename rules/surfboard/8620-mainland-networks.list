@@ -4,12 +4,12 @@
 # description: 可按 IPv4 / IPv6 网段判断的国内地址
 # boundary: 域名未命中时按目标地址查网段，排在 GeoIP 之前，不替代国内域名表。每轮整表与 APNIC 中国分配记录和运营商清单取共同支持的范围；证据不足的地址继续由后续规则判断，不据此认定所在地
 # created-at: 2026-11-19T10:51:17Z
-# updated-at: 2026-11-26T13:10:06Z
+# updated-at: 2026-11-26T18:01:26Z
 # source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaIP.list
 # source: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 # source: https://gaoyifan.github.io/china-operator-ip/china46.txt
-# canonical-rule-count: 6993
-# rule-count: 6993
+# canonical-rule-count: 6994
+# rule-count: 6994
 # format: surfboard
 # canonical: rules/loon/8620-mainland-networks.lsr
 
@@ -2089,6 +2089,7 @@ IP-CIDR,163.204.0.0/16
 IP-CIDR,163.227.40.0/23
 IP-CIDR,163.228.0.0/16
 IP-CIDR,163.47.4.0/22
+IP-CIDR,163.52.28.0/23
 IP-CIDR,163.53.168.0/22
 IP-CIDR,163.53.44.0/23
 IP-CIDR,163.53.60.0/22
@@ -3842,8 +3843,8 @@ IP-CIDR,94.191.0.0/17
 IP-CIDR6,2001:250::/30
 IP-CIDR6,2001:254::/33
 IP-CIDR6,2001:255::/32
-IP-CIDR6,2001:4510:400::/40
 IP-CIDR6,2001:4510:1480::/41
+IP-CIDR6,2001:4510:400::/40
 IP-CIDR6,2001:4511:1480::/41
 IP-CIDR6,2001:7fa:5::/48
 IP-CIDR6,2001:c68::/32
@@ -3959,10 +3960,15 @@ IP-CIDR6,2400:5a00::/32
 IP-CIDR6,2400:5a40::/32
 IP-CIDR6,2400:5a60:1000::/36
 IP-CIDR6,2400:5a60:100::/40
+IP-CIDR6,2400:5a60:10::/44
 IP-CIDR6,2400:5a60:2000::/35
 IP-CIDR6,2400:5a60:200::/39
+IP-CIDR6,2400:5a60:20::/43
+IP-CIDR6,2400:5a60:3::/48
 IP-CIDR6,2400:5a60:4000::/34
 IP-CIDR6,2400:5a60:400::/38
+IP-CIDR6,2400:5a60:40::/42
+IP-CIDR6,2400:5a60:4::/46
 IP-CIDR6,2400:5a60:8001::/48
 IP-CIDR6,2400:5a60:8002::/47
 IP-CIDR6,2400:5a60:8004::/46
@@ -3977,14 +3983,9 @@ IP-CIDR6,2400:5a60:8100::/40
 IP-CIDR6,2400:5a60:8200::/39
 IP-CIDR6,2400:5a60:8400::/38
 IP-CIDR6,2400:5a60:8800::/37
+IP-CIDR6,2400:5a60:8::/45
 IP-CIDR6,2400:5a60:9000::/36
 IP-CIDR6,2400:5a60::/47
-IP-CIDR6,2400:5a60:3::/48
-IP-CIDR6,2400:5a60:4::/46
-IP-CIDR6,2400:5a60:8::/45
-IP-CIDR6,2400:5a60:10::/44
-IP-CIDR6,2400:5a60:20::/43
-IP-CIDR6,2400:5a60:40::/42
 IP-CIDR6,2400:5a60:a000::/35
 IP-CIDR6,2400:5a60:c000::/34
 IP-CIDR6,2400:5a60:c0::/43

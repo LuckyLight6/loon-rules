@@ -76,4 +76,6 @@ class ScopedDNS(unittest.TestCase):
         self.assertIn('gsa.apple.com = server:',text)
         self.assertNotIn('*.apple.com =',text)
         self.assertNotIn('*.googleapis.com =',text)
+        self.assertNotIn('challenges.cloudflare.com =',text)
+        self.assertNotIn('humb.apple.com = server:https://1.1.1.1',text)
         self.assertEqual([l for l in text.splitlines() if l.startswith('[')],['[Host]'])

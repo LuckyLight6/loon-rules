@@ -1,0 +1,17 @@
+# name: foundry-local-voice-models
+# priority: 1058
+# section: ai
+# description: Foundry Local 语音模型目录、区域 API 与下载
+# boundary: Copilot CLI 与 App 的本地语音功能需要的模型目录、区域选择和下载；共享模型目录不能再按具体模型区分。Blob 只收官方明确的有限租户前缀，不收整个 Azure 云。
+# created-at: 2026-11-26T17:47:39Z
+# updated-at: 2026-11-26T17:47:39Z
+# source: https://docs.github.com/en/copilot/reference/copilot-allowlist-reference
+# canonical-rule-count: 4
+# rule-count: 4
+# format: surfboard
+# canonical: rules/loon/1058-foundry-local-voice-models.lsr
+
+DOMAIN,ai.azure.com
+DOMAIN,api.catalog.azureml.ms
+DOMAIN-WILDCARD,*.api.azureml.ms
+DOMAIN-WILDCARD,amlwlrt4*.blob.core.windows.net

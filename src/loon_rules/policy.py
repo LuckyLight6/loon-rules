@@ -12,6 +12,8 @@ PROTECTED_NETWORKS=tuple(map(ip_network,SCOPE_POLICY["protected-networks"]))
 
 def overbroad(kind, value, allowed):
     value=value.casefold()
+    if kind=='DOMAIN':
+        return value in SCOPE_POLICY.get('path-shared-hosts',()) and value not in allowed
     if kind=='DOMAIN-SUFFIX':
         return (value in SHARED_PARENT or '.' not in value) and value not in allowed
     if kind=='DOMAIN-WILDCARD':

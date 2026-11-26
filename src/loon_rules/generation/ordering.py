@@ -2,6 +2,7 @@
 from ipaddress import ip_address, ip_network
 import re
 from loon_rules import rules
+from loon_rules.generation.dependencies import permits_shadow
 from loon_rules.generation.choices import view_selections
 
 
@@ -95,7 +96,7 @@ def shadowed_domains(order, data):
 
 def verify_domain_order(order, entries, data):
     for key,row,owner,by in shadowed_domains(order,data):
-        if not entries[key].get('fallback'):
+        if not entries[key].get('fallback') and not permits_shadow(entries,owner,row,key):
             raise rules.Invalid(f'专项被更早的规则整条覆盖：{key} {row} ← {owner} {by}')
 
 

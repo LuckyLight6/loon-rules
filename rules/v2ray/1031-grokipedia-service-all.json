@@ -1,0 +1,16 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:accounts.spacexsi.com",
+          "full:auth.grok.com",
+          "full:auth.grokusercontent.com",
+          "domain:grokipedia.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

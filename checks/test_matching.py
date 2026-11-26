@@ -67,3 +67,14 @@ class MatchingIndex(unittest.TestCase):
                          index.bits['whole']|index.bits['descendants']|index.bits['parent'])
         split=RuleIndex({'apex':['DOMAIN,service.example'],'children':['DOMAIN-WILDCARD,*.service.example']})
         self.assertEqual(split.scope_bits('DOMAIN-SUFFIX,service.example'),0)
+
+    def test_network_scope_bits_cover_whole_prefixes_and_preserve_dns_modes(self):
+        from loon_rules.matching import RuleIndex
+        index=RuleIndex({'one':['IP-CIDR,198.51.100.0/25,no-resolve','IP-CIDR,198.51.100.128/25,no-resolve'],
+            'left':['IP-CIDR,203.0.113.0/25'], 'right':['IP-CIDR,203.0.113.128/25'],
+            'six':['IP-CIDR6,2001:db8::/33','IP-CIDR6,2001:db8:8000::/33']})
+        self.assertEqual(index.network_bits('198.51.100.0/24',literal=True),index.bits['one'])
+        self.assertEqual(index.network_bits('198.51.100.0/24',literal=False),0)
+        self.assertEqual(index.network_bits('203.0.113.0/24',literal=True),0)
+        self.assertEqual(index.network_bits('203.0.113.0/25',literal=False),index.bits['left'])
+        self.assertEqual(index.network_bits('2001:db8::/32',literal=False),index.bits['six'])

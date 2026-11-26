@@ -94,6 +94,16 @@ class FallbackSourcePriority(PublicSourceExamples):
         except lib.rules.Invalid as error:self.fail('合法子域预留无法参与去重：'+str(error))
         self.assertEqual(actual,['DOMAIN,vendor.example'])
 
+    def test_reservations_keep_bounded_tenant_globs_without_treating_them_as_whole_clouds(self):
+        from loon_rules.generation.membership import outside_domain_scopes
+        rows=['DOMAIN,report-east.blob.example','DOMAIN,other.blob.example',
+              'DOMAIN-SUFFIX,blob.example','DOMAIN-SUFFIX,other.blob.example',
+              'DOMAIN-SUFFIX,unrelated.example']
+        self.assertEqual(outside_domain_scopes(rows,['DOMAIN-WILDCARD,report-*.blob.example']),
+                         ['DOMAIN,other.blob.example','DOMAIN-SUFFIX,unrelated.example'])
+        self.assertEqual(outside_domain_scopes(['DOMAIN-SUFFIX,other.blob.example'],
+                         ['DOMAIN-WILDCARD,report-*us.blob.example']),['DOMAIN-SUFFIX,other.blob.example'])
+
     def test_two_refreshes_keep_restricted_routes_and_remove_duplicate_domestic_rows(self):
         overseas='https://rules.vendor.example/restricted.list'
         mainland='https://rules.vendor.example/mainland.list'

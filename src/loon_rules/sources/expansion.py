@@ -186,6 +186,7 @@ def verify_report(entries, data, report, *, shared_hosts=()):
             continue
         if spec.get('method')==source_sdk_pages.METHOD:
             source_sdk_pages.verify(spec,record)
+            source_sdk_pages.verify_inventory(spec,record,data[key])
             for doc in docs:verify_rows(key,doc['rows'],data)
             continue
         if spec.get('method')=='host-templates':

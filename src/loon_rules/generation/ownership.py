@@ -74,7 +74,8 @@ def apply_domain_ownership(config,entries,data):
 
 def assign_resource_owners(entries, data, resources, order):
     """Keep source-declared images with an existing product or supplier scope."""
-    normal = [key for key in order if entries[key].get('policy-hint') != 'reject']
+    normal = [key for key in order if entries[key].get('policy-hint') != 'reject'
+              and not entries[key].get('fallback') and not entries[key].get('domain-remainder')]
     index = RuleIndex(data, normal)
     transfers = {}
     for key, rows in resources.items():

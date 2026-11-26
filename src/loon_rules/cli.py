@@ -11,6 +11,9 @@ def main():
     group.add_argument('--render-index',action='store_true',help='按清单重建带编号的规则索引')
     group.add_argument('--export',action='store_true',help='从已验证的规则生成各客户端格式')
     group.add_argument('--check-exports',action='store_true',help='检查客户端成品与原规则是否一致')
+    group.add_argument('--community-review',action='store_true',help='完整对照跨应用社区来源，保留变化与继承记录')
+    p.add_argument('--sing-box',help='社区二进制 SRS 的已验证解码核心')
+    p.add_argument('--community-no-search',action='store_true',help='本轮只对照登记输入，不搜索新仓库')
     p.add_argument('--adopt-ad-scope',action='store_true',help='审阅广告规则大幅变更后，一次性采用交叉核对范围，不适用于定时任务')
     args=p.parse_args()
     if args.adopt_ad_scope and not args.refresh: p.error('采纳范围变更须与 --refresh 同用')
@@ -18,6 +21,10 @@ def main():
         # Parse help before loading repository data; an installed command can
         # explain its usage even when the caller is outside a checkout.
         from loon_rules.generation import pipeline
+        if args.community_review:
+            from loon_rules.community_review import run
+            print(json.dumps(run(pipeline.ROOT,sing_box=args.sing_box,search=not args.community_no_search),ensure_ascii=False))
+            return 0
         if args.export or args.check_exports:
             from loon_rules.exports import publish
             if args.export:

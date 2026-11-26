@@ -1,7 +1,7 @@
 """Render companies and products from the same subscription declarations."""
 import re
 
-from loon_rules.catalog import priority_label, rule_filename
+from loon_rules.catalog import priority_label
 from loon_rules.rules import Invalid
 
 
@@ -55,7 +55,7 @@ def render(config, entries):
 
     def link(key):
         entry = entries[key]
-        return f"[{priority_label(entry)} {entry['description']}](../rules/loon/{rule_filename(entry)})"
+        return f"[{priority_label(entry)} {entry['description']}](rules.md#rule-{key})"
 
     def links(keys):
         return '、'.join(link(key) for key in sorted(keys, key=lambda key: entries[key]['priority']))
@@ -77,7 +77,7 @@ def render(config, entries):
              f"这里列出 {len(spec['vendors'])} 个厂商或项目、{product_count} 项产品与服务，均链接到现有细分规则。"
              '同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。', '',
              '厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；'
-             '从这里找到产品后，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。', '']
+             '从这里找到产品后，到[对应应用目录](../rules/README.md)取订阅地址，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。', '']
     if shared_views:
         lines += ['## 跨厂商合集', '', '| 用途 | 合集 | 成员数量 |', '|---|---|---:|']
         for key in sorted(shared_views, key=lambda key: entries[key]['priority']):

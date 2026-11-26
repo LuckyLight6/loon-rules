@@ -2,7 +2,7 @@
 # priority: 1020
 # section: ai
 # description: ChatGPT、Codex、OpenAI API、语音信令与媒体连接
-# boundary: 登录、对话和文件按专用域名，语音媒体按官方公开的单个服务器 IP；IP 不为匹配触发 DNS。不把 LiveKit、Stripe、Cloudflare、Azure 或 Google 的共享域和网段一并代理
+# boundary: ChatGPT、Codex、OpenAI API 与语音媒体的专用范围；需单份包含官方列出的共享登录、验证码、支付、支持与遥测接口时选1019，统一 AI 出口可选1000。共享主机不能按发起应用区分。
 # created-at: 2026-11-19T08:04:26Z
 # updated-at: 2026-11-24T20:44:08Z
 # rule-count: 460

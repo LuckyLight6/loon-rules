@@ -18,7 +18,9 @@
           "full:production-copilot-host-centralus.webpubsub.azure.com",
           "full:production-copilot-host-eastasia.webpubsub.azure.com",
           "full:production-copilot-host-westus3.webpubsub.azure.com",
-          "full:production-copilot-host.webpubsub.azure.com"
+          "full:production-copilot-host.webpubsub.azure.com",
+          "regexp:(?i)^copilot\\-reports\\-.*\\.b01\\.azurefd\\.net$",
+          "regexp:(?i)^usagereports.*\\.blob\\.core\\.windows\\.net$"
         ],
         "outboundTag": "PROXY"
       }

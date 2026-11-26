@@ -4,7 +4,7 @@
 # description: 海外支付合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-22T17:48:09Z
-# updated-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-26T17:30:39Z
 # source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/PayPal.lsr
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/stripe.list
 # source: https://www.link.com/
@@ -16,8 +16,17 @@
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wise.list
 # source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tencent.list
 # source: https://www.tenpayglobal.com/
-# canonical-rule-count: 18
-# rule-count: 18
+# source: https://www.paddle.com/
+# source: https://www.paddle.net/
+# source: https://developer.paddle.com/paddle-js/about/include-paddlejs/
+# source: https://cdn.paddle.com/paddle/v2/paddle.js
+# source: https://developer.paddle.com/build/retain/
+# source: https://www.paddle.com/vulnerability-disclosure-policy
+# source: https://www.lemonsqueezy.com/
+# source: https://docs.lemonsqueezy.com/guides/developer-guide/taking-payments
+# source: https://docs.lemonsqueezy.com/help/checkout/checkout-overlay
+# canonical-rule-count: 25
+# rule-count: 25
 # format: egern
 # canonical: rules/loon/3500-overseas-payments-all.lsr
 
@@ -38,6 +47,13 @@ domain_suffix_set:
   - "transferwise.com"
   - "wise.com"
   - "tenpayglobal.com"
+  - "paddle.com"
+  - "paddle.net"
+  - "lemonsqueezy.com"
 domain_set:
   - "payments.braintree-api.com"
   - "payments.sandbox.braintree-api.com"
+  - "public.profitwell.com"
+  - "api.profitwell-events.com"
+  - "retain-api.profitwell.com"
+  - "www2.profitwell.com"

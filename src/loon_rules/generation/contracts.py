@@ -6,6 +6,7 @@ import re
 from loon_rules.sources.formats.html import AppleTables
 
 from loon_rules import rules
+from loon_rules.generation.dependencies import documented,permits_shadow
 
 
 def _host(name):
@@ -182,7 +183,8 @@ def verify_routes(contracts, entries, order, data, replacements=None):
             want=replacements.get(owner,owner)
             for h in hosts:
                 actual=_whole_pattern_owner(_host(h),order,data)
-                if actual!=want:
+                row=('DOMAIN-WILDCARD,' if '*' in h else 'DOMAIN,')+h
+                if actual!=want and not (actual is not None and permits_shadow(entries,actual,row,owner)):
                     raise rules.Invalid(f'{name} {h} 应由 {want} 处理，实际：{actual or "未匹配"}')
         guarded=[key for key in order if entries[key]['section'] in contract.get('guard-sections',())
                  and not entries[key].get('fallback')]
@@ -191,4 +193,6 @@ def verify_routes(contracts, entries, order, data, replacements=None):
             if not reason or not scopes or not set(scopes)<={entry.get('section') for entry in entries.values()}:
                 raise rules.Invalid(f'{name} 的共享例外缺少理由或限制范围：{h}')
             if owner:=_whole_pattern_owner(_host(h),guarded,data):
+                row=('DOMAIN-WILDCARD,' if '*' in h else 'DOMAIN,')+h
+                if contract.get('source') and documented(entries[owner],row,source=contract['source']):continue
                 raise rules.Invalid(f'{name} 共享端点 {h} 被专项 {owner} 整段接管')

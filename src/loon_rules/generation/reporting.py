@@ -64,6 +64,7 @@ def audit_inventory(spec, downloaded, data, *, order=None, entries=None):
             matching = index.scope_bits(row)
             existing = next((key for key in order if key != collector
                              and entries[key].get('policy-hint') != 'reject'
+                             and not entries[key].get('fallback') and not entries[key].get('domain-remainder')
                              and matching & index.bits[key]), None)
             wanted = {existing or collector}
         if entries is not None:
@@ -135,7 +136,8 @@ def maintenance_method(entry):
         return ('随发布文件发现主机，保留版本依据' if entry.get('inventory-retention')=='published-artifacts'
                 else '随完整服务清单补入，间隔确认后撤回')
     if spec:=entry.get('expand'):
-        if spec['method']=='next-sdk':return '跟随产品页面的当前 SDK，读取生产配置'
+        if spec['method']=='next-sdk':return ('从发布 SDK 的生产字段跟随当前依赖脚本'
+            if spec.get('source-format')=='javascript-environment' else '跟随产品页面的当前 SDK，读取生产配置')
         return ('从产品页面的资源字段和请求示例读取入口' if spec['method']=='next-page'
                 else '从官方目录发现产品与版本，再读取服务端点')
     if entry.get('discovery'):return '按用途与来源家族自动补全'

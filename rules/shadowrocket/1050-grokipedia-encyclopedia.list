@@ -2,7 +2,7 @@
 # priority: 1050
 # section: ai
 # description: Grokipedia AI 百科站点
-# boundary: 百科页面与内容；共用账号登录由 xAI 账号规则处理
+# boundary: 百科页面与内容；共用登录主机由前置1035优先匹配。单份覆盖内容及登录可选1031。
 # created-at: 2026-11-19T10:51:17Z
 # updated-at: 2026-11-19T10:51:17Z
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list

@@ -1,0 +1,25 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:accounts.spacexsi.com",
+          "full:auth.grok.com",
+          "full:auth.grokipedia.com",
+          "full:auth.grokusercontent.com",
+          "domain:cursor-cdn.com",
+          "domain:cursor.com",
+          "domain:cursor.sh",
+          "domain:cursorapi.com",
+          "domain:cursorvm.com",
+          "full:agent-stores.s3.amazonaws.com",
+          "full:agent-stores.s3.us-east-1.amazonaws.com",
+          "full:anysphere-binaries.s3.us-east-1.amazonaws.com",
+          "full:cursor.blob.core.windows.net"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

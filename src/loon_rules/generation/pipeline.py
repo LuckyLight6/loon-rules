@@ -37,6 +37,10 @@ def run(check=False, offline=False, adopt_ads=False):
     contracts=json.loads((ROOT/'config/endpoint-contracts.json').read_text())
     catalog_schema.verify(config)
     entries=validate_declarations(config)
+    community_registry=ROOT/'config/community-sources.json'
+    if community_registry.is_file():
+        from loon_rules.community_review import validate as validate_community
+        validate_community(json.loads(community_registry.read_text()),entries)
     projection_owners=source_coverage.inventory_owners(config.get('source-inventories',()),entries)
     public={entry['id'] for entry in config['entries']}
     file_entries={key:entry for key,entry in entries.items() if key in public}
@@ -79,6 +83,8 @@ def run(check=False, offline=False, adopt_ads=False):
             rules.verify_ip_options(entries[k],rules.ip_options(rows),complete=True)
     if offline:
         report=json.loads((ROOT/'data/maintenance-state.json').read_text())
+        from loon_rules.generation import dependencies
+        dependencies.attach(config,entries,data,report.get('service-dependencies',{}))
         security_programs.verify_state_version(config.get('source-inventories', ()), report)
         if report.get('ip-matching')!=ip_summary(file_entries,data):
             raise rules.Invalid('IP 用途报告与正文不一致')
@@ -153,7 +159,7 @@ def run(check=False, offline=False, adopt_ads=False):
     urls={contract['source'] for contract in contracts}
     if source:=config.get('public-suffix-source'):urls.add(source)
     for e in file_entries.values():
-        urls.update(s['source'] for field in ('extract','projection','tenant-scope-inputs','official-inputs') for s in e.get(field,()))
+        urls.update(s['source'] for field in ('extract','projection','tenant-scope-inputs','official-inputs','dependency-inputs') for s in e.get(field,()))
         urls.update(p['parent-domains-source'] for p in e.get('projection',()) if p.get('parent-domains-source'))
         if e.get('cidr-source'):
             urls.add(e['cidr-source'])
@@ -188,6 +194,10 @@ def run(check=False, offline=False, adopt_ads=False):
     contracts=endpoint_contracts.resolve_additions(contracts,entries,downloaded,
         shared_hosts=SHARED_PARENT|shared_hosts)
     contract_status=endpoint_contracts.verify_sources(contracts,downloaded)
+    from loon_rules.generation import dependencies
+    dependency_status=dependencies.read(entries,downloaded)
+    required_scopes=[row for state in dependency_status.values() for item in state['inputs']
+                     if item['recipe'].get('protect-from-reject') for row in item['rules']]
     source_status={}
     compiled={};projection_inputs={};resource_inputs={}
     for k,e in file_entries.items():
@@ -294,7 +304,9 @@ def run(check=False, offline=False, adopt_ads=False):
         if e.get('domain-remainder'):
             previous=restore_assigned_rules(previous,prior_report.get('assigned-rules',{}).get(k,{}))
         data[k],source_status[k]=refresh_reviewed_feed(e,previous,downloaded,
-            protected=protected_hosts(e,config,entries,contracts,functional),reserved=reserved,adopt_ads=adopt_ads,
+            protected=protected_hosts(e,config,entries,contracts,functional),
+            required_scopes=required_scopes if e.get('policy-hint')=='reject' else (),
+            reserved=reserved,adopt_ads=adopt_ads,
             admitted=discovery_status.get(k,{}).get('proofs',{}),
             discovery_state=discovery_status.get(k,{}).get('state'),
             corroborated=domain_rows(data,e.get('confirm-additions-with',())),
@@ -312,6 +324,7 @@ def run(check=False, offline=False, adopt_ads=False):
         lint_content(key,rows,entries[key].get('allowed-shared',()))
         rules.verify_ip_options(entries[key],rules.ip_options(rows),complete=True)
     assignments=apply_domain_ownership(config,entries,data)
+    dependencies.attach(config,entries,data,dependency_status)
     for key in config['views']:
         e=entries[key]
         data[key]=merge_view(e,data)
@@ -383,6 +396,7 @@ def run(check=False, offline=False, adopt_ads=False):
             'expanded-inputs':expansion_status,
             'maintenance':methods,'reviewed-inputs':source_status,
             'official-endpoints':contract_status,'source-inventories':inventories,
+            'service-dependencies':dependency_status,
             security_programs.HISTORY_VERSION_FIELD: 1,
             'functional-hosts':sorted(functional),'service-inventories':inventory_status,
             'inventory-domain-cases':inventory_cases,

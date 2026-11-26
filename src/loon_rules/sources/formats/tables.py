@@ -4,6 +4,7 @@ from ipaddress import ip_address
 from urllib.parse import urlsplit
 from loon_rules import domains as domain_scope
 from loon_rules.sources.formats.html import HostTables, AppleTables
+from loon_rules import rules
 from loon_rules.rules import Invalid, valid_host
 from .common import within, DestinationTables, public_domain_pattern
 
@@ -279,17 +280,37 @@ def purpose_url_table(recipe,text):
     parser=HostTables();parser.feed(text)
     rows=parser.rows.get(recipe['section'],[])
     if recipe['headers'] not in rows:raise Invalid('用途 URL 表缺少章节或标题列')
+    complete=recipe.get('require-complete',False)
+    all_purposes=recipe.get('all-purposes',False)
+    if type(complete) is not bool or type(all_purposes) is not bool:
+        raise Invalid('用途表的完整读取开关必须为布尔值')
+    tenant_prefixes=recipe.get('allow-tenant-prefixes',False)
+    if type(tenant_prefixes) is not bool:raise Invalid('租户前缀开关必须为布尔值')
     result=set();seen=set()
-    wanted=[p.casefold() for p in recipe['purpose-prefixes']]
+    wanted=[p.casefold() for p in recipe.get('purpose-prefixes',())]
+    if not wanted and not all_purposes:raise Invalid('用途表缺少明确的用途选择')
     for cells in rows:
-        if len(cells)!=len(recipe['headers']):continue
+        if cells==recipe['headers']:continue
+        if len(cells)!=len(recipe['headers']):
+            if complete or all_purposes:raise Invalid('完整用途表出现缺列或额外列')
+            continue
         purpose=cells[1].casefold()
-        if not any(purpose.startswith(p) for p in wanted):continue
+        if not all_purposes and not any(purpose.startswith(p) for p in wanted):continue
         seen.add(purpose)
         url=urlsplit(cells[0])
         if (url.scheme not in ('https','wss') or not url.hostname or url.username is not None
                 or url.query or url.fragment):raise Invalid('所选用途的地址不是公开 HTTPS 或 WSS 连接')
-        if row:=public_domain_pattern(url.hostname):result.add(row)
+        row=public_domain_pattern(url.hostname)
+        if row is None and tenant_prefixes:
+            from loon_rules import domains
+            label,separator,parent=url.hostname.partition('.')
+            suffix,private=domains.current().suffix(domains.fixed_tail(url.hostname))
+            if (separator and private and re.fullmatch(r'[a-z0-9][a-z0-9-]*\*[a-z0-9-]*',label)
+                    and rules.valid_host(parent)):
+                row='DOMAIN-WILDCARD,'+url.hostname
+        if row is None and (complete or all_purposes):
+            raise Invalid('完整用途表包含整个共享托管范围，不能静默省略')
+        if row:result.add(row)
     if not result or any(not any(p.startswith(required.casefold()) for p in seen)
                          for required in recipe.get('required-prefixes',())):
         raise Invalid('用途 URL 表缺少必需的业务')

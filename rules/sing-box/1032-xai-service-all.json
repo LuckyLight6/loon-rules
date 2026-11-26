@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "accounts.spacexsi.com",
+        "auth.grokipedia.com"
+      ],
+      "domain_suffix": [
+        "grok.com",
+        "grok.x.com",
+        "x.ai"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.grokusercontent\\.com$"
+      ]
+    }
+  ]
+}
