@@ -1,0 +1,28 @@
+# name: apple-location-services
+# priority: 2170
+# section: apple
+# description: 定位查询、地图配置与信号定位数据
+# boundary: 定位服务与信号定位共用主机；Find My 由独立专表先匹配，账户、推送与 iCloud 文件各自处理
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://gdmf.apple.com/v2/pmv
+# source: https://configuration.ls.apple.com/config/defaults
+# source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
+# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
+# source: https://support.apple.com/en-us/104978
+# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
+# canonical-rule-count: 7
+# rule-count: 7
+# format: surfboard
+# canonical: rules/loon/2170-apple-location-services.lsr
+
+DOMAIN,gsp9-ssl.apple.com
+DOMAIN,gsp10-ssl.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,gs-loc.apple.com
+DOMAIN,cl2-cn.apple.com
+DOMAIN,cl4-cn.apple.com
+DOMAIN,gs-loc-cn.apple.com

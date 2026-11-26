@@ -1,0 +1,15 @@
+# name: bitbucket-hosting
+# priority: 3030
+# section: development
+# description: Atlassian Bitbucket
+# boundary: 代码托管与公共 API，不收整个 Atlassian、Jira 或用户站
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
+# source: https://support.atlassian.com/organization-administration/docs/ip-addresses-and-domains-for-atlassian-cloud-products/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surfboard
+# canonical: rules/loon/3030-bitbucket-hosting.lsr
+
+DOMAIN-SUFFIX,bitbucket.org

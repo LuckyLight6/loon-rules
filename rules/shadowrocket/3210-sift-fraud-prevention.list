@@ -1,0 +1,16 @@
+# name: sift-fraud-prevention
+# priority: 3210
+# section: development
+# description: Sift 反欺诈、设备与风险 API
+# boundary: Sift 自有站点、SDK 与旧品牌 API 命名空间；不接管使用风控服务的商户，不称为 Claude 自有认证
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://sift.com/
+# source: https://developers.sift.com/guides/payment-gateway
+# canonical-rule-count: 2
+# rule-count: 2
+# format: shadowrocket
+# canonical: rules/loon/3210-sift-fraud-prevention.lsr
+
+DOMAIN-SUFFIX,sift.com
+DOMAIN-SUFFIX,siftscience.com

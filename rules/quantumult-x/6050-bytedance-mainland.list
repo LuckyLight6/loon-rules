@@ -1,0 +1,20 @@
+# name: bytedance-mainland
+# priority: 6050
+# section: ai
+# description: 字节豆包、扣子与模型平台 · 国内入口
+# boundary: 按已核实的国内产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://docs.volcengine.com/docs/ark/responses-api-text-generation?lang=en
+# source: https://docs.coze.cn/guides_FAQ
+# source: https://docs.byteplus.com/en/docs/modelark/coding-plan-personal-ai-codex
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/loon/6050-bytedance-mainland.lsr
+
+host-suffix,doubao.com,proxy
+host-suffix,coze.cn,proxy
+host,ark.cn-beijing.volces.com,proxy
+host,ark.volcengine.com,proxy

@@ -1,0 +1,17 @@
+# name: replit-cloud-development
+# priority: 1450
+# section: ai
+# description: Replit 云端开发
+# boundary: 自营账户、编辑与 API；共享托管后缀不整段收入，用户应用按实际目标另行识别
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replit.list
+# source: https://replit.com/
+# canonical-rule-count: 3
+# rule-count: 3
+# format: surfboard
+# canonical: rules/loon/1450-replit-cloud-development.lsr
+
+DOMAIN-SUFFIX,repl.it
+DOMAIN-SUFFIX,replit.com
+DOMAIN-SUFFIX,replit.dev

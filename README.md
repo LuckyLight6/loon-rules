@@ -2,15 +2,17 @@
 
 按服务和用途选择出口的 Loon 订阅规则，覆盖 AI、Apple、Google、Microsoft，以及开发、通讯、支付、影音、游戏等产品。规则不包含节点；同一份订阅可以在不同设备上绑定不同策略，也可以把多份订阅交给同一个策略组。同时从同一套数据生成 Surge、Mihomo、Stash、Egern、Surfboard、Shadowrocket、Quantumult X、sing-box 和 V2Ray 格式，具体范围见[客户端格式与限制](docs/clients.md)。
 
-[规则清单与订阅地址](docs/rules.md) · [其他客户端](docs/clients.md) · [按厂商查产品](docs/services.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
+[选择代理应用与下载规则](rules/README.md) · [规则清单](docs/rules.md) · [客户端说明](docs/clients.md) · [按厂商查产品](docs/services.md) · [出口怎么选](docs/routing.md) · [怎样测试](docs/network-testing.md) · [自动更新方式](docs/maintenance.md) · [参与开发](docs/development.md)
 
 ## 开始使用
 
-以海外 AI 为例，在 Loon 新增规则订阅，复制 [1000 海外 AI 合集](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-overseas-all.lsr)的地址，绑定已有的代理策略。直接编辑配置时，写在 `[Remote Rule]` 段，把 `PROXY` 换成实际策略名：
+所有规则统一在 `rules/<代理应用>/`，每个应用目录都提供实际文件与订阅索引。旧的 `rules/` 平铺地址和 `dist/` 地址已停用；已有配置请改用对应应用目录中的新地址。
+
+以海外 AI 为例，在 Loon 新增规则订阅，复制 [1000 海外 AI 合集](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1000-ai-overseas-all.lsr)的地址，绑定已有的代理策略。直接编辑配置时，写在 `[Remote Rule]` 段，把 `PROXY` 换成实际策略名：
 
 ```ini
 [Remote Rule]
-https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1000-ai-overseas-all.lsr, policy=PROXY, tag=1000-ai-overseas-all, enabled=true
+https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1000-ai-overseas-all.lsr, policy=PROXY, tag=1000-ai-overseas-all, enabled=true
 ```
 
 在原配置的副本里试用，保留最初的备份。按[清单顺序](docs/rules.md)排列所选订阅，再切到分流模式。订阅刷新只更新规则正文，不会替设备调整顺序或选择节点。部分规则使用 `DOMAIN-WILDCARD`，需要 Loon **build 1008 或更新版本**。[Loon 规则订阅文档](https://nsloon.app/docs/Rule/sub_rule/)

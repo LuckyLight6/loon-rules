@@ -47,13 +47,13 @@ class CompleteCSPUpdates(PublicSourceExamples):
         inputs = {source: document()}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
             (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
             for entry in entries.values():
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(pipeline.decorate(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(pipeline.decorate(
                     entry, ['DOMAIN,api.vendor.example'], None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -61,10 +61,10 @@ class CompleteCSPUpdates(PublicSourceExamples):
                 pipeline.run()
                 publish(root)
                 for entry in entries.values():
-                    path = root / 'rules' / pipeline.rule_filename(entry)
+                    path = root / 'rules' / 'loon' / pipeline.rule_filename(entry)
                     self.assertIn('DOMAIN,files.unlisted-provider.example', pipeline.rules.read_rules(path.read_text()))
-                    self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
-                    output = root / 'dist/sing-box' / path.with_suffix('.json').name
+                    self.assertEqual(path.read_bytes(), (path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
+                    output = root / 'rules/sing-box' / path.with_suffix('.json').name
                     self.assertIn('files.unlisted-provider.example', output.read_text())
                 before = {path: path.read_bytes() for folder in ('rules', 'dist', 'data')
                           for path in (root / folder).rglob('*') if path.is_file()}

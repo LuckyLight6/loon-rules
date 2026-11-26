@@ -1,0 +1,32 @@
+# name: network-sign-in-and-probes
+# priority: 0130
+# section: network
+# description: 公共 Wi-Fi 登录、系统网络检查与必需安全连接
+# boundary: 合并 captive 与 bootstrap；精确放行会被拦截源误判的 Apple 安全浏览令牌。不会直连整个系统服务或广告域
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://rules.xkww3n.cyou/classical/captive.txt
+# source: https://raw.githubusercontent.com/oo226/egern-config/refs/heads/surge/Rules/Bootstrap-Direct.list
+# canonical-rule-count: 18
+# rule-count: 18
+# format: quantumult-x
+# canonical: rules/loon/0130-network-sign-in-and-probes.lsr
+
+host,www.msftconnecttest.com,proxy
+host,www.msftncsi.com,proxy
+host,dns.msftncsi.com,proxy
+host,easy-login.10099.com.cn,proxy
+host,open.e.189.cn,proxy
+host,token.safebrowsing.apple,proxy
+host,connectivitycheck.android.com,proxy
+host,captive.apple.com,proxy
+host,securelogin.arubanetworks.com,proxy
+host,connectivity.cloudflareclient.com,proxy
+host-suffix,cloudflarecp.com,proxy
+host-suffix,cloudflareok.com,proxy
+host-suffix,cloudflareportal.com,proxy
+host,detectportal.firefox.com,proxy
+host,connectivitycheck.gstatic.com,proxy
+host,ping.archlinux.org,proxy
+host,network-test.debian.org,proxy
+host,networkcheck.kde.org,proxy

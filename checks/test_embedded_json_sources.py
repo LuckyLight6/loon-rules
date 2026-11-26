@@ -117,13 +117,13 @@ class EmbeddedJSONServices(PublicSourceExamples):
         inputs = {source: self.html(self.document(records))}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
             (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
             for entry in entries.values():
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(pipeline.decorate(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(pipeline.decorate(
                     entry, ['DOMAIN,api.platform.example', 'DOMAIN,feature.platform.example'], None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -133,11 +133,11 @@ class EmbeddedJSONServices(PublicSourceExamples):
                     pipeline.run()
                     publish(root)
                     for stem in ('020-platform', '010-platforms-all'):
-                        file = root / 'rules' / (stem + '.lsr')
+                        file = root / 'rules' / 'loon' / (stem + '.lsr')
                         self.assertIn('DOMAIN,' + host, file.read_text())
-                        self.assertEqual(file.read_bytes(), file.with_suffix('.list').read_bytes())
-                        for client in ('sing-box', 'v2ray', 'clash-classical'):
-                            self.assertTrue(any(host in p.read_text() for p in (root / 'dist' / client).rglob('*') if p.is_file()))
+                        self.assertEqual(file.read_bytes(), (file.parent.with_name('surge') / file.with_suffix('.list').name).read_bytes())
+                        for client in ('sing-box', 'v2ray', 'mihomo'):
+                            self.assertTrue(any(host in p.read_text() for p in (root / 'rules' / client).rglob('*') if p.is_file()))
                     self.assertEqual(pipeline.run(offline=True), 0)
                 for changed in ('identity', 'role', 'shared-host', 'truncated-body'):
                     before = {p: p.read_bytes() for folder in ('rules', 'dist', 'data')

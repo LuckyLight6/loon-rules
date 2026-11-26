@@ -1,0 +1,15 @@
+# name: jetbrains-ai-mainland
+# priority: 6260
+# section: ai
+# description: JetBrains AI · 中国区 API
+# boundary: 只采用官方明确标注 for China 的 API 主机；不并入国产 AI 合集，不按 .cn 后缀推断其它服务或地区
+# created-at: 2026-11-20T23:14:01Z
+# updated-at: 2026-11-20T23:14:01Z
+# source: https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json
+# source: https://support.jetbrains.com/hc/en-us/articles/40250675463570-Firewall-or-proxy-allowlist-for-IntelliJ-based-IDEs-required-hosts-and-ports
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/loon/6260-jetbrains-ai-mainland.lsr
+
+host,api.ai.jetbrains.com.cn,proxy

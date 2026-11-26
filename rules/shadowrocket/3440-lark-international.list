@@ -1,0 +1,44 @@
+# name: lark-international
+# priority: 3440
+# section: social
+# description: Lark 国际版协作服务
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/lark-global.list
+# canonical-rule-count: 31
+# rule-count: 31
+# format: shadowrocket
+# canonical: rules/loon/3440-lark-international.lsr
+
+DOMAIN-SUFFIX,larkofficecdn.com
+DOMAIN-SUFFIX,larkofficepkg.com
+DOMAIN-SUFFIX,lark.cn
+DOMAIN-SUFFIX,larkcloud.com
+DOMAIN-SUFFIX,larkcloud.net
+DOMAIN-SUFFIX,larkfn.com
+DOMAIN-SUFFIX,larkmeetings.cn
+DOMAIN-SUFFIX,larkmeetings.com
+DOMAIN-SUFFIX,larkoffice.com
+DOMAIN-SUFFIX,thelarkcloud.com
+DOMAIN-SUFFIX,larkofficeapp-boe.com
+DOMAIN-SUFFIX,larkofficeapp-pre.com
+DOMAIN-SUFFIX,larkofficeapp.com
+DOMAIN-SUFFIX,larkofficeboe.com
+DOMAIN-SUFFIX,lark-passport-qa-sg.net
+DOMAIN-SUFFIX,statuslarkoffice.com
+DOMAIN-SUFFIX,larkrooms.cn
+DOMAIN-SUFFIX,larkofficepre.com
+DOMAIN-SUFFIX,larkofficeimg.com
+DOMAIN-SUFFIX,larkrooms.com
+DOMAIN-SUFFIX,larksuite-pre.com
+DOMAIN-SUFFIX,larksuite.com
+DOMAIN-SUFFIX,larkvc.com
+DOMAIN-SUFFIX,larksuiteimg.com
+DOMAIN-SUFFIX,larksuitecdn.com
+DOMAIN-SUFFIX,larksuiteimg-boe.com
+DOMAIN-SUFFIX,larksuiteimg-pre.com
+DOMAIN-SUFFIX,larksuite.com.ttdns2.com
+DOMAIN-SUFFIX,larksuite.com.ttdns1.com
+DOMAIN-SUFFIX,frontier-lark-lb-v3.lf.bytelb.net
+DOMAIN-SUFFIX,larkoffice.com.bytedns1.com

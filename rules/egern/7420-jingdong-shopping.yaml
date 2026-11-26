@@ -1,0 +1,18 @@
+# name: jingdong-shopping
+# priority: 7420
+# section: lifestyle
+# description: 京东购物、账户与商品素材
+# boundary: 不将整个京东云网络或金融产品一并转为购物匹配
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# canonical-rule-count: 4
+# rule-count: 4
+# format: egern
+# canonical: rules/loon/7420-jingdong-shopping.lsr
+
+domain_suffix_set:
+  - "360buy.com"
+  - "360buyimg.com"
+  - "jd.com"
+  - "jd.com.cn"

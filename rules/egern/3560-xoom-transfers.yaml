@@ -1,0 +1,15 @@
+# name: xoom-transfers
+# priority: 3560
+# section: payments
+# description: Xoom 汇款
+# boundary: 从官方产品站身份确认专用根域；PayPal、Braintree、其它钱包和商户网站各自匹配
+# created-at: 2026-11-20T22:47:04Z
+# updated-at: 2026-11-20T22:47:04Z
+# source: https://www.xoom.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/loon/3560-xoom-transfers.lsr
+
+domain_suffix_set:
+  - "xoom.com"

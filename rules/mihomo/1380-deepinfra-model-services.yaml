@@ -1,0 +1,16 @@
+# name: deepinfra-model-services
+# priority: 1380
+# section: ai
+# description: DeepInfra 模型服务
+# boundary: 只读已登记提供商的服务字段；自营产品域按已核对范围补充，不把文档中的共享云或第三方链接一起归入。自建实例另按目标地址处理
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://deepinfra.com/models
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/loon/1380-deepinfra-model-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,deepinfra.com"

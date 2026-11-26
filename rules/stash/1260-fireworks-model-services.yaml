@@ -1,0 +1,16 @@
+# name: fireworks-model-services
+# priority: 1260
+# section: ai
+# description: Fireworks 模型 API、产品门户与自营资源
+# boundary: 依据当前官方 API 示例识别 Fireworks 自营域，不把 OpenAI SDK 或第三方存储改归 Fireworks
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://docs.fireworks.ai/tools-sdks/openai-compatibility.md
+# source: https://docs.fireworks.ai/getting-started/quickstart.md
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/loon/1260-fireworks-model-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,fireworks.ai"

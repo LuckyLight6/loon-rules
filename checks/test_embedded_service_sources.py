@@ -126,13 +126,13 @@ class EmbeddedServiceSources(PublicSourceExamples):
         inputs = {recipe['source']: self.html(initial)}
         with TemporaryDirectory() as tmp, patch.object(lib, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = lib.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
             (root / 'docs/rules.md').write_text(lib.render_index(config, entries))
             for product in entries.values():
-                path = root / 'rules' / lib.rule_filename(product)
+                path = root / 'rules' / 'loon' / lib.rule_filename(product)
                 path.write_text(lib.decorate(product, ['DOMAIN,api.vendor.example'], None, '2026-11-20T00:00:00Z'))
             with patch.object(lib.transport, 'download', side_effect=inputs.__getitem__):
                 lib.run(); publish(root)
@@ -142,11 +142,11 @@ class EmbeddedServiceSources(PublicSourceExamples):
                 inputs[recipe['source']] = self.html(document)
                 lib.run(); publish(root)
                 for product in (entry, bundle):
-                    path = root / 'rules' / lib.rule_filename(product)
+                    path = root / 'rules' / 'loon' / lib.rule_filename(product)
                     for host in ('brand-new.other-provider.example', 'new-images.other-provider.example'):
                         self.assertIn('DOMAIN,' + host, lib.rules.read_rules(path.read_text()))
-                        self.assertIn(host, (root / 'dist/sing-box' / path.with_suffix('.json').name).read_text())
-                    self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
+                        self.assertIn(host, (root / 'rules/sing-box' / path.with_suffix('.json').name).read_text())
+                    self.assertEqual(path.read_bytes(), (path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
                 self.assertEqual(lib.run(offline=True), 0)
                 for changed in ('identity', 'type', 'truncated'):
                     before = {p: p.read_bytes() for folder in ('rules', 'dist', 'data')

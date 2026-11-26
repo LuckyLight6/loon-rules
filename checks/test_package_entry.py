@@ -27,7 +27,7 @@ class PackageEntry(unittest.TestCase):
         result=subprocess.run([sys.executable,'-B','-m','loon_rules','--verify-files'],
                               cwd=ROOT,capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stdout+result.stderr)
-        self.assertIn(str(len(list((ROOT/'rules').glob('*.lsr'))))+' 份',result.stdout)
+        self.assertIn(str(len(list((ROOT/'rules' / 'loon').glob('*.lsr'))))+' 份',result.stdout)
 
     def test_original_script_entry_still_checks_the_repository(self):
         with TemporaryDirectory() as outside:

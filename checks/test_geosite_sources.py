@@ -100,7 +100,7 @@ class GeositeSources(PublicSourceExamples):
         inputs = {source: 'company.example\n\n# Product\nproduct.example'}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = Path(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
@@ -109,7 +109,7 @@ class GeositeSources(PublicSourceExamples):
                 rows = ['DOMAIN-SUFFIX,product.example'] if key == 'product' else ['DOMAIN-SUFFIX,company.example']
                 if key == 'products-all':
                     rows.append('DOMAIN-SUFFIX,product.example')
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                     pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -119,10 +119,10 @@ class GeositeSources(PublicSourceExamples):
                 publish(root)
                 self.assertEqual(pipeline.run(offline=True), 0)
                 self.assertIn('DOMAIN-SUFFIX,new-service.example',
-                              (root / 'rules/020-product.lsr').read_text())
-                self.assertNotIn('new-company.example', (root / 'rules/020-product.lsr').read_text())
-                for path in ('rules/010-products-all.lsr', 'rules/010-products-all.list',
-                             'dist/sing-box/010-products-all.json'):
+                              (root / 'rules/loon/020-product.lsr').read_text())
+                self.assertNotIn('new-company.example', (root / 'rules/loon/020-product.lsr').read_text())
+                for path in ('rules/loon/010-products-all.lsr', 'rules/surge/010-products-all.list',
+                             'rules/sing-box/010-products-all.json'):
                     self.assertIn('new-service.example', (root / path).read_text())
                     self.assertIn('new-company.example', (root / path).read_text())
                 before = {path: path.read_bytes() for folder in ('rules', 'dist', 'data')
@@ -266,7 +266,7 @@ class GeositeSources(PublicSourceExamples):
                   base + 'child': 'child.example'}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
@@ -275,7 +275,7 @@ class GeositeSources(PublicSourceExamples):
                 rows = ['DOMAIN-SUFFIX,child.example'] if key == 'child-product' else ['DOMAIN-SUFFIX,product.example']
                 if key == 'products-all':
                     rows.append('DOMAIN-SUFFIX,child.example')
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                     pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -286,12 +286,12 @@ class GeositeSources(PublicSourceExamples):
                 publish(root)
                 self.assertEqual(pipeline.run(offline=True), 0)
                 for key in ('parent-product', 'products-all'):
-                    path = root / 'rules' / pipeline.rule_filename(entries[key])
+                    path = root / 'rules' / 'loon' / pipeline.rule_filename(entries[key])
                     self.assertIn('DOMAIN-SUFFIX,new-product-service.example', pipeline.rules.read_rules(path.read_text()))
-                    self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
-                    exported = root / 'dist/sing-box' / path.with_suffix('.json').name
+                    self.assertEqual(path.read_bytes(), (path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
+                    exported = root / 'rules/sing-box' / path.with_suffix('.json').name
                     self.assertIn('new-product-service.example', exported.read_text())
-                child = root / 'rules' / pipeline.rule_filename(entries['child-product'])
+                child = root / 'rules' / 'loon' / pipeline.rule_filename(entries['child-product'])
                 self.assertIn('DOMAIN,files.new-provider.example', pipeline.rules.read_rules(child.read_text()))
                 before = {path: path.read_bytes() for folder in ('rules', 'dist', 'data')
                           for path in (root / folder).rglob('*') if path.is_file()}

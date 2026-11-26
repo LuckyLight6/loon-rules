@@ -1,0 +1,21 @@
+# name: sina-web-and-shared-services
+# priority: 8495
+# section: vendors
+# description: 新浪网站、新闻、邮箱与网页服务
+# boundary: 新浪网站与共用网页范围；微博、AI 和共用图片按前表分别处理，不把整个新浪云租户平台当新闻网站
+# created-at: 2026-11-24T04:48:27Z
+# updated-at: 2026-11-24T04:48:27Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sina.list
+# source: https://www.sina.com.cn/
+# canonical-rule-count: 7
+# rule-count: 7
+# format: quantumult-x
+# canonical: rules/loon/8495-sina-web-and-shared-services.lsr
+
+host-suffix,sinajs.cn,proxy
+host-suffix,sina.cn,proxy
+host-suffix,sina.com,proxy
+host-suffix,sina.net,proxy
+host-suffix,sinaedge.com,proxy
+host-suffix,sinajs.com,proxy
+host-suffix,sina.com.cn,proxy

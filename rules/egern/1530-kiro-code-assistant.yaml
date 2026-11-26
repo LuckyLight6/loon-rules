@@ -1,0 +1,19 @@
+# name: kiro-code-assistant
+# priority: 1530
+# section: ai
+# description: Kiro 编程助手
+# boundary: Kiro 自营域与官方用途表列出的模型服务精确主机，地区入口随表更新；AWS 共用登录、CAPTCHA、支付与插件源分别归对应服务，不认领整个 AWS 命名空间
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-24T14:07:02Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/loon/1530-kiro-code-assistant.lsr
+
+domain_suffix_set:
+  - "kiro.dev"
+domain_set:
+  - "q.eu-central-1.amazonaws.com"
+  - "q.us-east-1.amazonaws.com"

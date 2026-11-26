@@ -13,7 +13,7 @@ class ScopedDNS(unittest.TestCase):
              'scoped-dns':{'provider':'Cloudflare','resolver':'https://1.1.1.1/dns-query',
                            'groups':['service']}}
         with TemporaryDirectory() as tmp,patch.object(scoped_dns,'ROOT',Path(tmp)):
-            folder=Path(tmp)/'rules';folder.mkdir()
+            folder=Path(tmp)/'rules' / 'loon';folder.mkdir(parents=True)
             (folder/'0110-service.lsr').write_text('DOMAIN,api.vendor.example\n')
             result=scoped_dns.build(cfg)
             self.assertIn('来源规则组 0110\n',result)
@@ -26,7 +26,7 @@ class ScopedDNS(unittest.TestCase):
                  {'label':'海外业务','provider':'Cloudflare','resolver':'https://1.1.1.1/dns-query','groups':['overseas']},
                  {'label':'国内业务','provider':'国内解析器','resolver':'https://doh.pub/dns-query','groups':['mainland']}]}}
         with TemporaryDirectory() as tmp,patch.object(scoped_dns,'ROOT',Path(tmp)):
-            folder=Path(tmp)/'rules';folder.mkdir()
+            folder=Path(tmp)/'rules' / 'loon';folder.mkdir(parents=True)
             (folder/'101-overseas.lsr').write_text('DOMAIN-SUFFIX,foreign.example.com\n')
             (folder/'501-mainland.lsr').write_text('DOMAIN,domestic.example.com\n')
             result=scoped_dns.build(cfg)

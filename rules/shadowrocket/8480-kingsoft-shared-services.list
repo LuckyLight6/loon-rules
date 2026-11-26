@@ -1,0 +1,45 @@
+# name: kingsoft-shared-services
+# priority: 8480
+# section: vendors
+# description: 金山与其他共用服务
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kingsoft.list
+# canonical-rule-count: 32
+# rule-count: 32
+# format: shadowrocket
+# canonical: rules/loon/8480-kingsoft-shared-services.lsr
+
+DOMAIN-SUFFIX,kimg.cn
+DOMAIN-SUFFIX,kingsoft-office-service.com
+DOMAIN-SUFFIX,kingsoft.com
+DOMAIN-SUFFIX,ks-live.com
+DOMAIN-SUFFIX,ksmobile.com
+DOMAIN-SUFFIX,ksord.com
+DOMAIN-SUFFIX,ksosoft.com
+DOMAIN-SUFFIX,kcdnvip.com
+DOMAIN-SUFFIX,ks-cdn.com
+DOMAIN-SUFFIX,ks-cdn1.com
+DOMAIN-SUFFIX,ksyun.com
+DOMAIN-SUFFIX,ksyuncdn.com
+DOMAIN-SUFFIX,ksyungslb.com
+DOMAIN-SUFFIX,cheetahfun.com
+DOMAIN-SUFFIX,cmcm.com
+DOMAIN-SUFFIX,cmcmcdn.com
+DOMAIN-SUFFIX,liebao.cn
+DOMAIN-SUFFIX,zhhainiao.com
+DOMAIN-SUFFIX,drivergenius.com
+DOMAIN-SUFFIX,duba.com
+DOMAIN-SUFFIX,duba.net
+DOMAIN-SUFFIX,ijinshan.com
+DOMAIN-SUFFIX,keniu.com
+DOMAIN-SUFFIX,yuanqidesk.com
+DOMAIN-SUFFIX,seasungames.cn
+DOMAIN-SUFFIX,seasungames.com
+DOMAIN-SUFFIX,seasunwbl.com
+DOMAIN-SUFFIX,xishanju.com
+DOMAIN-SUFFIX,xoyo.com
+DOMAIN-SUFFIX,xoyocdn.com
+DOMAIN-SUFFIX,cbjq.com
+DOMAIN-SUFFIX,testplus.cn

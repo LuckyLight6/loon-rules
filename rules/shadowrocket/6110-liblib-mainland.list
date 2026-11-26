@@ -1,0 +1,16 @@
+# name: liblib-mainland
+# priority: 6110
+# section: ai
+# description: 哩布哩布 · 国内入口
+# boundary: 哩布门户、官方 API 请求示例与页面明确声明的专用资源主机；不收集统计脚本、普通链接或整个共享云
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T19:34:55Z
+# source: https://www.liblib.art/apis/workflow
+# canonical-rule-count: 3
+# rule-count: 3
+# format: shadowrocket
+# canonical: rules/loon/6110-liblib-mainland.lsr
+
+DOMAIN-SUFFIX,liblib.art
+DOMAIN,openapi.liblibai.cloud
+DOMAIN,liblibai-web-static.liblib.cloud

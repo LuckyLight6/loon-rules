@@ -1,0 +1,52 @@
+# name: netease-shared-services
+# priority: 8410
+# section: vendors
+# description: 网易邮件、游戏、新闻与其他共用服务
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list
+# canonical-rule-count: 39
+# rule-count: 39
+# format: surfboard
+# canonical: rules/loon/8410-netease-shared-services.lsr
+
+DOMAIN-SUFFIX,lf127.net
+DOMAIN-SUFFIX,lofter.com
+DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,127.com
+DOMAIN-SUFFIX,127.net
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,163cn.tv
+DOMAIN-SUFFIX,163industry.com
+DOMAIN-SUFFIX,163jiasu.com
+DOMAIN-SUFFIX,163mail.com
+DOMAIN-SUFFIX,163qiyukf.com
+DOMAIN-SUFFIX,163yun.com
+DOMAIN-SUFFIX,166.com
+DOMAIN-SUFFIX,166.net
+DOMAIN-SUFFIX,188.com
+DOMAIN-SUFFIX,321fenx.com
+DOMAIN-SUFFIX,haowu.link
+DOMAIN-SUFFIX,icourse163.org
+DOMAIN-SUFFIX,kada.com
+DOMAIN-SUFFIX,lf126.net
+DOMAIN-SUFFIX,126.link
+DOMAIN-SUFFIX,nease.net
+DOMAIN-SUFFIX,126.com
+DOMAIN-SUFFIX,netease-inc.com
+DOMAIN-SUFFIX,netease.com
+DOMAIN-SUFFIX,netease.im
+DOMAIN-SUFFIX,netstatic.net
+DOMAIN-SUFFIX,qiyukf.com
+DOMAIN-SUFFIX,qiyukf.net
+DOMAIN-SUFFIX,yysls.cn
+DOMAIN-SUFFIX,static163.net
+DOMAIN-SUFFIX,weiyang.cn
+DOMAIN-SUFFIX,yeah.net
+DOMAIN-SUFFIX,yunxindns.com
+DOMAIN-SUFFIX,yunxinfw.com
+DOMAIN-SUFFIX,zhuanzfx.com
+DOMAIN-SUFFIX,yjwujian.cn
+DOMAIN-SUFFIX,qiyukf.net.cn
+DOMAIN-SUFFIX,youdaoads.com

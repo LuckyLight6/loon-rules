@@ -20,7 +20,7 @@ class ProductBundles(unittest.TestCase):
                 self.assertTrue(entry['members'])
                 for member in entry['members']:
                     self.assertNotEqual(entries[member]['mode'], 'view')
-                    self.assertTrue((pipeline.ROOT / 'rules' / pipeline.rule_filename(entries[member])).is_file())
+                    self.assertTrue((pipeline.ROOT / 'rules' / 'loon' / pipeline.rule_filename(entries[member])).is_file())
         self.assertIn('jetbrains-ai-mainland', entries['ai-overseas-mainland-all']['members'])
         self.assertNotIn('jetbrains-ai-mainland', entries['ai-cn-all']['members'])
         self.assertIn('steam-international-platform', entries['overseas-games-all']['members'])

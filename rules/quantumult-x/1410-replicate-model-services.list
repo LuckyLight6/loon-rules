@@ -1,0 +1,16 @@
+# name: replicate-model-services
+# priority: 1410
+# section: ai
+# description: Replicate 模型 API 与结果文件
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/replicate.list
+# source: https://replicate.com/
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/loon/1410-replicate-model-services.lsr
+
+host-suffix,replicate.com,proxy
+host-suffix,replicate.delivery,proxy

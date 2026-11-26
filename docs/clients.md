@@ -1,22 +1,25 @@
 # 在不同客户端使用同一套规则
 
-先按[规则清单](rules.md)选产品或合集，再到下表选择客户端格式。各格式共用来源、分类、编号和更新任务；已有 Loon 地址保持不变。订阅只提供匹配条件，出口、节点、DNS 和规则顺序仍由客户端配置决定
+先按[规则清单](rules.md)选产品或合集，再到下表进入对应代理应用的目录。全部订阅统一在 `rules/<代理应用>/`，共用来源、分类、编号和更新任务。订阅只提供匹配条件，出口、节点、DNS 和规则顺序仍由客户端配置决定
 
 | 客户端 | 格式与下载目录 | 本版范围 |
 |---|---|---|
-| Loon | [原有 `.lsr`](../dist/loon/README.md) | 完整保留现有语法与逐条 IP 参数 |
-| Surge | [`.list`](../dist/surge/README.md) | 直接使用无策略规则集，无需再维护一份文本 |
-| Mihomo、Stash | [Classical YAML](../dist/clash-classical/README.md) | 保留域名、IPv4、IPv6、ASN、GeoIP 和 `no-resolve`；通配符转为等价正则 |
-| Egern | [原生 YAML](../dist/egern/README.md) | 使用原生集合字段；混合 IP 解析用途分 OR 分支表达 |
-| Shadowrocket | [兼容文本](../dist/shadowrocket/README.md) | 输出兼容规则集；尚未在 Shadowrocket App 实测 |
-| Surfboard | [兼容文本](../dist/surfboard/README.md) | 不输出含 `IP-ASN` 的组；普通通配符需要支持该类型的版本 |
-| Quantumult X | [原生 filter](../dist/quantumult-x/README.md) | 通过 `force-policy` 绑定出口；含逐条 `no-resolve` 的组不转换 |
-| sing-box | [原生 source JSON](../dist/sing-box/README.md) | 只输出能够完整表达的域名组，不从混合组删去 IP、ASN 或 GeoIP |
-| V2Ray | [JSON 路由片段](../dist/v2ray/README.md) | 只输出能够完整表达的域名组；核心不直接订阅 HTTP 规则集，需合并路由配置 |
+| Loon | [`.lsr`](../rules/loon/README.md) | 完整保留现有语法与逐条 IP 参数 |
+| Surge | [`.list`](../rules/surge/README.md) | 直接使用无策略规则集，无需再维护一份文本 |
+| Mihomo | [Classical YAML](../rules/mihomo/README.md) | 保留域名、IPv4、IPv6、ASN、GeoIP 和 `no-resolve`；通配符转为等价正则 |
+| Stash | [Classical YAML](../rules/stash/README.md) | 使用与 Mihomo 相同的转换结果，实际文件位于 Stash 目录 |
+| Egern | [原生 YAML](../rules/egern/README.md) | 使用原生集合字段；混合 IP 解析用途分 OR 分支表达 |
+| Shadowrocket | [兼容文本](../rules/shadowrocket/README.md) | 输出兼容规则集；尚未在 Shadowrocket App 实测 |
+| Surfboard | [兼容文本](../rules/surfboard/README.md) | 不输出含 `IP-ASN` 的组；普通通配符需要支持该类型的版本 |
+| Quantumult X | [原生 filter](../rules/quantumult-x/README.md) | 通过 `force-policy` 绑定出口；含逐条 `no-resolve` 的组不转换 |
+| sing-box | [原生 source JSON](../rules/sing-box/README.md) | 只输出能够完整表达的域名组，不从混合组删去 IP、ASN 或 GeoIP |
+| V2Ray | [JSON 路由片段](../rules/v2ray/README.md) | 只输出能够完整表达的域名组；核心不直接订阅 HTTP 规则集，需合并路由配置 |
 
-每个下载目录逐项列出“订阅”或无法转换的原因。[机器可读清单](../dist/manifest.json)同时记录原文件、更新时间、原规则数、转换后规则数和兼容状态。JSON 文件不能带规则头注释，元数据放在这份清单中
+旧的平铺规则和 `dist/` 下载地址已经停用，已有配置需要换成下列应用目录的地址。
 
-Loon 使用 `.lsr`，Surge 使用正文相同的 `.list`；两者自动同步。Mihomo / Stash 共用 Classical 文件，Shadowrocket / Surfboard 共用可适用的兼容文本。没有分别维护十份域名名单。`-all` 仍由同一批细分成员生成，合集与成员二选一
+每个下载目录逐项列出“订阅”或无法转换的原因。[机器可读清单](../rules/manifest.json)同时记录原文件、更新时间、原规则数、转换后规则数和兼容状态。JSON 文件不能带规则头注释，元数据放在这份清单中
+
+Loon 使用 `.lsr`，Surge 使用正文相同的 `.list`；两者自动同步。Mihomo / Stash 使用同一份转换结果，分别在自己的目录提供文件；Shadowrocket / Surfboard 也按各自兼容范围分别输出。各应用都从同一批已校验规则生成。`-all` 仍由同一批细分成员生成，合集与成员二选一
 
 ## Loon、Surge、Shadowrocket 和 Surfboard
 
@@ -24,21 +27,28 @@ Loon 在 `[Remote Rule]` 引用原地址，并绑定现有策略：
 
 ```ini
 [Remote Rule]
-https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1030-gemini-connections.lsr, policy=PROXY, tag=1030-gemini-connections, enabled=true
+https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1030-gemini-connections.lsr, policy=PROXY, tag=1030-gemini-connections, enabled=true
 ```
 
 Surge 在 `[Rule]` 使用同一份无策略规则集：
 
 ```ini
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/1030-gemini-connections.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surge/1030-gemini-connections.list,PROXY
 ```
 
-Shadowrocket、Surfboard 使用兼容文本：
+Shadowrocket 使用本应用目录中的兼容文本：
 
 ```ini
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surge-compatible/1030-gemini-connections.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/shadowrocket/1030-gemini-connections.list,PROXY
+```
+
+Surfboard 使用自己的目录：
+
+```ini
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1030-gemini-connections.list,PROXY
 ```
 
 把 `PROXY` 换成自己的策略名，放在更宽泛的规则和兜底之前。Surfboard 的目录会排除含 ASN 的组，不要从 Shadowrocket 目录绕过这个限制
@@ -47,7 +57,7 @@ RULE-SET,https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/surg
 
 ## Mihomo 和 Stash
 
-使用 `classical`，不要把这份文件当成纯域名或纯 IP provider：
+使用 `classical`。下面是 Mihomo 地址；Stash 使用相同文件名，将目录改为 `rules/stash/`：
 
 ```yaml
 rule-providers:
@@ -55,7 +65,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/clash-classical/1030-gemini-connections.yaml
+    url: https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/mihomo/1030-gemini-connections.yaml
     path: ./rules/gemini.yaml
     interval: 86400
 
@@ -74,7 +84,7 @@ rules:
 ```yaml
 rules:
   - rule_set:
-      match: https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/egern/1030-gemini-connections.yaml
+      match: https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/egern/1030-gemini-connections.yaml
       policy: PROXY
       update_interval: 86400
 ```
@@ -89,7 +99,7 @@ rules:
 
 ```ini
 [filter_remote]
-https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/1030-gemini-connections.list, tag=Gemini, force-policy=PROXY, enabled=true
+https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/quantumult-x/1030-gemini-connections.list, tag=Gemini, force-policy=PROXY, enabled=true
 ```
 
 成品采用 `host`、`host-suffix`、`host-wildcard` 等原生写法，行内 `proxy` 由 `force-policy` 覆盖。文件不带 `final`，不会抢走其他订阅的兜底。字符范围会有限展开为等价条件，不把 `[0-9]` 粗略改成 `?`
@@ -108,7 +118,7 @@ https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/quantumult-x/
         "type": "remote",
         "tag": "gemini",
         "format": "source",
-        "url": "https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/sing-box/1030-gemini-connections.json",
+        "url": "https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1030-gemini-connections.json",
         "update_interval": "1d"
       }
     ],
@@ -128,7 +138,7 @@ Headless Rule 没有原生 ASN、GeoIP 条件，解析动作也不在规则集�
 成品是可合并的 `routing.rules` JSON 片段，不是节点订阅。下载所需文件，将 `outboundTag` 中的 `PROXY` 换成自己的出口，再把 `routing.rules` 按清单顺序加入已有配置
 
 ```sh
-curl -fL https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/dist/v2ray/1030-gemini-connections.json -o gemini-routing.json
+curl -fL https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/v2ray/1030-gemini-connections.json -o gemini-routing.json
 v2ray test -c base.json -c gemini-routing.json
 ```
 

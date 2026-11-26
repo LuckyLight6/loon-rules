@@ -1,0 +1,25 @@
+# name: microsoft-vscode
+# priority: 4790
+# section: microsoft
+# description: Microsoft Visual Studio Code
+# boundary: 编辑器、更新、专用资源和设置同步；共用 Marketplace 与 Visual Studio 下载由 Microsoft 共用服务处理，GitHub 文件和 Copilot 各有专项；实验和崩溃统计不按核心入口收录
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T20:04:44Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/microsoft.list
+# source: https://code.visualstudio.com/docs/setup/network
+# canonical-rule-count: 10
+# rule-count: 10
+# format: clash-classical
+# canonical: rules/loon/4790-microsoft-vscode.lsr
+
+payload:
+  - "DOMAIN,vscode.blob.core.windows.net"
+  - "DOMAIN-SUFFIX,vscode-cdn.net"
+  - "DOMAIN-SUFFIX,vscode-unpkg.net"
+  - "DOMAIN-SUFFIX,vscode-webview.net"
+  - "DOMAIN-SUFFIX,vscode.dev"
+  - "DOMAIN,code.visualstudio.com"
+  - "DOMAIN,update.code.visualstudio.com"
+  - "DOMAIN,vscode-sync-insiders.trafficmanager.net"
+  - "DOMAIN,vscode-sync.trafficmanager.net"
+  - "DOMAIN,vscode.download.prss.microsoft.com"

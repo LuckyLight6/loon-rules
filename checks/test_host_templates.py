@@ -118,11 +118,11 @@ class PublishedHostTemplates(PublicSourceExamples):
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()),\
                 patch.object(lib,'datetime',wraps=datetime) as clock:
             start=datetime(2026,11,21,tzinfo=timezone.utc);clock.now.return_value=start
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
             (root/'config/catalog.json').write_text(json.dumps(config));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(config,entries))
             for item in (entry,view):
-                (root/'rules'/lib.rule_filename(item)).write_text(lib.decorate(entries[item['id']],
+                (root/'rules' / 'loon'/lib.rule_filename(item)).write_text(lib.decorate(entries[item['id']],
                     ['DOMAIN,accounts.brand.com','DOMAIN,accounts.brand.co.uk'],None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=inputs.__getitem__):
                 lib.run()
@@ -132,7 +132,7 @@ class PublishedHostTemplates(PublicSourceExamples):
                 inputs[spec['registry-source']]+='.brand.net\n';lib.run();lib.run()
                 for item in (entry,view):
                     self.assertIn('DOMAIN,accounts.brand.net',lib.rules.read_rules(
-                        (root/'rules'/lib.rule_filename(item)).read_text()))
+                        (root/'rules' / 'loon'/lib.rule_filename(item)).read_text()))
                 report=json.loads((root/'data/maintenance-state.json').read_text())
                 self.assertEqual(report['inventory-domain-cases'],2)
                 self.assertEqual(report['business-domain-cases'],3)

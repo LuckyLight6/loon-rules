@@ -125,8 +125,8 @@ class ProjectionCoverage(PublicSourceExamples):
                 'shared-negatives':[],'sections':[{'id':'service','title':'服务'}]}
         inputs={source:'DOMAIN,api.vendor.example\nDOMAIN,unknown.outside.example\nUNSUPPORTED,not-a-domain'}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
-            path=root/'rules'/lib.rule_filename(entry)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
+            path=root/'rules' / 'loon'/lib.rule_filename(entry)
             path.write_text(lib.decorate(entry,['DOMAIN,api.vendor.example'],None,'2020-01-01T00:00:00Z'))
             (root/'config/catalog.json').write_text(json.dumps(config));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(config,entries))
@@ -195,8 +195,8 @@ class ProjectionCoverage(PublicSourceExamples):
                 'sections':[{'id':'service','title':'服务'}]}
         inputs={source:'DOMAIN-SUFFIX,social.example\nDOMAIN-SUFFIX,images.example'}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
-            path=root/'rules'/lib.rule_filename(social)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
+            path=root/'rules' / 'loon'/lib.rule_filename(social)
             path.write_text(lib.decorate(social,['DOMAIN-SUFFIX,social.example','DOMAIN-SUFFIX,images.example'],None,'2020-01-01T00:00:00Z'))
             (root/'config/endpoint-contracts.json').write_text('[]')
             def save():

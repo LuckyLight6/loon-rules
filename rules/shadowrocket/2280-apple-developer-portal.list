@@ -1,0 +1,14 @@
+# name: apple-developer-portal
+# priority: 2280
+# section: apple
+# description: Apple Developer 门户
+# boundary: 只认开发者门户；账户认证、App 公证和独立下载主机沿用各自规则
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://developer.apple.com/download/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: shadowrocket
+# canonical: rules/loon/2280-apple-developer-portal.lsr
+
+DOMAIN,developer.apple.com

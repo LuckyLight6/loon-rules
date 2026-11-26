@@ -1,0 +1,43 @@
+# name: discord-messaging-and-voice
+# priority: 3320
+# section: social
+# description: Discord 通讯、语音及自营服务
+# boundary: 通讯、语音、附件、开发入口及相关自营服务；Activities 第三方应用代理另行匹配。未使用的候选别名不自动新增，其他来源仍支持的已有入口保留；共享云与客服平台只匹配专用主机
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-24T16:40:58Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord
+# source: https://discord.com/security
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
+# canonical-rule-count: 26
+# rule-count: 26
+# format: egern
+# canonical: rules/loon/3320-discord-messaging-and-voice.lsr
+
+domain_suffix_set:
+  - "dis.gd"
+  - "discord-activities.com"
+  - "discord.co"
+  - "discord.com"
+  - "discord.gg"
+  - "discord.gift"
+  - "discord.gifts"
+  - "discord.media"
+  - "discordactivities.com"
+  - "discordapp.com"
+  - "discordapp.net"
+  - "discordcdn.com"
+  - "discordpartygames.com"
+  - "discordstatus.com"
+  - "airhorn.solutions"
+  - "airhornbot.com"
+  - "bigbeans.solutions"
+  - "discord.design"
+  - "discord.dev"
+  - "discord.new"
+  - "discord.store"
+  - "discord.tools"
+  - "discordmerch.com"
+  - "watchanimeattheoffice.com"
+domain_set:
+  - "discord-attachments-uploads-prd.storage.googleapis.com"
+  - "hammerandchisel.ssl.zendesk.com"

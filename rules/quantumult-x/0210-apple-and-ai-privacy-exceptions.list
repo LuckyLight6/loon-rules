@@ -1,0 +1,17 @@
+# name: apple-and-ai-privacy-exceptions
+# priority: 0210
+# section: privacy
+# description: Apple 广告与 OpenAI 广告像素的已核实拒绝项
+# boundary: 单独可选，不属于 Apple 或 AI 合集。只拦明确广告入口，不能以大后缀替代
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-19T08:04:26Z
+# source: https://developers.openai.com/ads/measurement-pixel
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: quantumult-x
+# canonical: rules/loon/0210-apple-and-ai-privacy-exceptions.lsr
+
+host,tr.iadsdk.apple.com,proxy
+host,bzr.openai.com,proxy
+host,bzrcdn.openai.com,proxy

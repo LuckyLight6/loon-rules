@@ -46,7 +46,7 @@ class LibraryChecks(unittest.TestCase):
         self.assertIn('microsoft-all',c['views'])
         for selection in view_selections(c,entries,maximal=True):
             order=library.route_order(c,entries,selection)
-            data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
+            data={k:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())
                   for k in order}
             for host,wanted in {
                 'gemini.google.com':'ai-overseas-all',
@@ -163,7 +163,7 @@ class LibraryChecks(unittest.TestCase):
         lan='local-links-and-addresses'
         config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
-        data={lan:read_rules((library.ROOT/'rules'/library.rule_filename(entries[lan])).read_text())}
+        data={lan:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[lan])).read_text())}
         self.assertIsNone(library.ordered_ip_route('169.254.0.2',[lan],data,literal=False))
         self.assertEqual(library.ordered_ip_route('169.254.0.2',[lan],data,literal=True),lan)
 
@@ -171,7 +171,7 @@ class LibraryChecks(unittest.TestCase):
         config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         order=library.route_order(config,entries)
-        data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
+        data={k:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())
               for k in order}
         for host,expected in {
             'www.okx.com':'okx-platform',
@@ -192,7 +192,7 @@ class LibraryChecks(unittest.TestCase):
         config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         lists=('apple-and-ai-privacy-exceptions','general-ad-and-tracking','extended-ad-and-tracking')
-        data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
+        data={k:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())
               for k in lists}
         for host in ('featuregates.org','api.statsigcdn.com','assetsconfigcdn.org',
                      'beyondwickedmapping.org','challenges.cloudflare.com','cloudflare-dns.com'):
@@ -203,7 +203,7 @@ class LibraryChecks(unittest.TestCase):
         config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
         order=library.route_order(config,entries)
-        data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
+        data={k:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())
               for k in order}
         for host,expected in {
             'fpinit.itunes.apple.com':'apple-store-transactions',
@@ -247,7 +247,7 @@ class LibraryChecks(unittest.TestCase):
         order=library.route_order(config,entries,config.get('recommended-views',()))
         routine=[k for k in order if entries[k]['section'] in ('overseas-fallback','mainland-fallback')]
         self.assertEqual(routine,['overseas-media-extra','overseas-sites-extra','mainland-routing-all'])
-        data={k:read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())
+        data={k:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())
               for k in routine}
         media,web,mainland=routine
         self.assertIsNone(ordered_route('hulu.com',routine,data))
@@ -259,7 +259,7 @@ class LibraryChecks(unittest.TestCase):
         self.assertIsNone(ordered_route('hulu.com',[web],data))
         member_names=('mainland-domains','mainland-networks','mainland-geoip')
         expected=[row for k in member_names for row in
-                  read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text())]
+                  read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text())]
         self.assertEqual(data[mainland],expected)
         self.assertEqual(data[mainland][-1],'GEOIP,CN')
 
@@ -293,7 +293,7 @@ class LibraryChecks(unittest.TestCase):
         lan='local-links-and-addresses'
         config=json.loads((library.ROOT/'config/catalog.json').read_text())
         entries=library.validate_declarations(config)
-        data={lan:read_rules((library.ROOT/'rules'/library.rule_filename(entries[lan])).read_text())}
+        data={lan:read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[lan])).read_text())}
         for address in ('64:ff9b::808:808','2002:808:808::1','2001::1','::ffff:8.8.8.8',
                         '192.0.0.9','192.0.0.10','2001:20::1'):
             for literal in (True, False):

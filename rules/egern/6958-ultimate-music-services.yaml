@@ -1,0 +1,18 @@
+# name: ultimate-music-services
+# priority: 6958
+# section: media
+# description: 爱听卓乐商用音乐服务
+# boundary: 按上游明确的产品块读取完整范围，并独立核对官方产品入口；不把集团其他产品并入本表
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent-tme
+# source: https://www.tencentmusic.com/en-us/
+# canonical-rule-count: 3
+# rule-count: 3
+# format: egern
+# canonical: rules/loon/6958-ultimate-music-services.lsr
+
+domain_suffix_set:
+  - "97ting.com"
+  - "tingmall.com"
+  - "ultimatemusic.cn"

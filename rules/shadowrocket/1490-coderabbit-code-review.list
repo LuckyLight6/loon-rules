@@ -1,0 +1,15 @@
+# name: coderabbit-code-review
+# priority: 1490
+# section: ai
+# description: CodeRabbit 代码审查
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/coderabbit.list
+# source: https://coderabbit.ai/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: shadowrocket
+# canonical: rules/loon/1490-coderabbit-code-review.lsr
+
+DOMAIN-SUFFIX,coderabbit.ai

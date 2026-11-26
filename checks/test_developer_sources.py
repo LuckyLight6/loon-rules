@@ -94,18 +94,18 @@ class DeveloperServiceSources(PublicSourceExamples):
         document={'domains':{'packages':['api.vendor.example']}}
         urls={src:json.dumps(document),ads:'DOMAIN,new-asset.other.example\nDOMAIN,ads.unrelated.example'}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
             for e,rows in [(product,['DOMAIN,api.vendor.example']),(ad,urls[ads].splitlines())]:
-                (root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2020-01-01T00:00:00Z'))
+                (root/'rules' / 'loon'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=urls.__getitem__):
                 lib.run()
                 document['domains']['packages'].append('new-asset.other.example');urls[src]=json.dumps(document)
                 lib.run();lib.run()
                 self.assertIn('DOMAIN,new-asset.other.example',
-                    lib.rules.read_rules((root/'rules'/lib.rule_filename(product)).read_text()))
-                self.assertEqual(lib.rules.read_rules((root/'rules'/lib.rule_filename(ad)).read_text()),
+                    lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(product)).read_text()))
+                self.assertEqual(lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(ad)).read_text()),
                                  ['DOMAIN,ads.unrelated.example'])
                 self.assertEqual(lib.run(offline=True),0)
                 before={p:p.read_bytes() for p in root.rglob('*') if p.is_file()}

@@ -160,16 +160,16 @@ class ScheduledRefresh(PublicSourceExamples):
         downloads={ad:'\n'.join(ad_rows),feed:'DOMAIN-SUFFIX,old.vendor.example',
                    sdk:'class Client:\n    def __init__(self):\n        base_url = "https://new-api.vendor.example/v1"\n'}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);(root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,{e['id']:e for e in cfg['entries']}))
             for e,rows in [(product,['DOMAIN-SUFFIX,old.vendor.example']),(ads,ad_rows)]:
-                (root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2020-01-01T00:00:00Z'))
+                (root/'rules' / 'loon'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=downloads.__getitem__):
                 lib.run()
                 lib.run()
-            self.assertEqual(lib.rules.read_rules((root/'rules'/lib.rule_filename(ads)).read_text()),['DOMAIN,ad.other.example'])
-            product_rows=lib.rules.read_rules((root/'rules'/lib.rule_filename(product)).read_text())
+            self.assertEqual(lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(ads)).read_text()),['DOMAIN,ad.other.example'])
+            product_rows=lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(product)).read_text())
             self.assertIn('DOMAIN,new-api.vendor.example',product_rows)
             self.assertEqual(lib.run(offline=True),0)
 
@@ -189,10 +189,10 @@ class ScheduledRefresh(PublicSourceExamples):
              'sections':[{'id':'service','title':'服务','from':30,'through':30}]}
         feed='DOMAIN,old.vendor.example\nDOMAIN-SUFFIX,new-product.example'
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);(root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,{'product':entry}))
-            output=root/'rules'/lib.rule_filename(entry)
+            output=root/'rules' / 'loon'/lib.rule_filename(entry)
             output.write_text(lib.decorate(entry,['DOMAIN,old.vendor.example'],None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect={a:feed,b:feed}.__getitem__):lib.run()
             self.assertIn('DOMAIN-SUFFIX,new-product.example',lib.rules.read_rules(output.read_text()))
@@ -221,13 +221,13 @@ class ScheduledRefresh(PublicSourceExamples):
         html='<h2 id="required"></h2><table><tr><th>Domains</th><th>Description</th></tr><tr><td>https://new-login.vendor.example</td><td>Authentication</td></tr></table>'
         downloaded={doc:html,feed:'DOMAIN,new-login.vendor.example\nDOMAIN,ads.other.example'}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);(root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,{e['id']:e for e in cfg['entries']}))
             for entry,rows in [(ads,downloaded[feed].splitlines()),(service,service['include'])]:
-                (root/'rules'/lib.rule_filename(entry)).write_text(lib.decorate(entry,rows,None,'2020-01-01T00:00:00Z'))
+                (root/'rules' / 'loon'/lib.rule_filename(entry)).write_text(lib.decorate(entry,rows,None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=downloaded.__getitem__):self.assertEqual(lib.run(),0)
-            output=lib.rules.read_rules((root/'rules'/lib.rule_filename(ads)).read_text())
+            output=lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(ads)).read_text())
             self.assertEqual(output,['DOMAIN,ads.other.example'])
             report=json.loads((root/'data/maintenance-state.json').read_text())
             self.assertIn('new-login.vendor.example',report['functional-hosts'])
@@ -248,11 +248,11 @@ class ScheduledRefresh(PublicSourceExamples):
              'shared-negatives':[],'sections':[{'id':'service','title':'服务','from':1,'through':1}]}
         old=['DOMAIN,api.example','DOMAIN-SUFFIX,azurewebsites.net']
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir()
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,{'platform':entry}))
-            path=root/'rules'/lib.rule_filename(entry)
+            path=root/'rules' / 'loon'/lib.rule_filename(entry)
             path.write_text(lib.decorate(entry,old,None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',return_value='\n'.join(old)):
                 self.assertEqual(lib.run(),0)
@@ -280,11 +280,11 @@ class ScheduledRefresh(PublicSourceExamples):
                 f'<tr><td>{h}</td><td>443</td><td>TCP</td><td>OS</td><td>Login</td></tr>'
                 for h in ('login.vendor.example',host))+'</table>'
         with TemporaryDirectory() as tmp, patch.object(lib,'ROOT',prepare_workspace(tmp)), redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp); (root/'rules').mkdir()
+            root=prepare_workspace(tmp); (root/'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text(json.dumps([contract]))
             (root/'docs/rules.md').write_text(lib.render_index(cfg,{'login':entry}))
-            path=root/'rules'/lib.rule_filename(entry)
+            path=root/'rules' / 'loon'/lib.rule_filename(entry)
             path.write_text(lib.decorate(entry,['DOMAIN,login.vendor.example'],None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',return_value=doc('new.vendor.example')):
                 self.assertEqual(lib.run(),0)

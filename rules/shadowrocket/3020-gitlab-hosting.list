@@ -1,0 +1,17 @@
+# name: gitlab-hosting
+# priority: 3020
+# section: development
+# description: GitLab.com
+# boundary: 仅 GitLab 公共托管平台；不接管自建 GitLab 或用户 Pages
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitlab.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: shadowrocket
+# canonical: rules/loon/3020-gitlab-hosting.lsr
+
+DOMAIN,gitlab-assets.oss-cn-hongkong.aliyuncs.com
+DOMAIN-SUFFIX,gitlab.com
+DOMAIN-SUFFIX,gitlab.net
+DOMAIN-SUFFIX,gitlab-static.net

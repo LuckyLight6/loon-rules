@@ -1,0 +1,147 @@
+# name: apple-direct-all
+# priority: 2080
+# section: apple
+# description: Apple 普通服务合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T11:56:41Z
+# updated-at: 2026-11-23T19:28:52Z
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppleID.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/hyperion-cs/appleseum/main/applekit/internal/httpx/trust.go
+# source: https://github.com/timlaing/pyicloud/blob/main/pyicloud/endpoints.py
+# source: https://github.com/timlaing/pyicloud/blob/main/pyicloud/services/account.py
+# source: https://dns.google/resolve?name=p181-acsegateway.icloud.com&type=CNAME
+# source: https://dns.google/resolve?name=p181-mcc.icloud.com&type=CNAME
+# source: https://dns.google/resolve?name=p181-quota.icloud.com&type=CNAME
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/Apple-Direct.list
+# source: https://raw.githubusercontent.com/KooriMoe/Surge-Rules/main/Apple-Direct.list
+# source: https://developer.apple.com/documentation/applepaywebmerchantregistrationapi
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/TestFlight.lsr
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/TestFlight.list
+# source: https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl
+# source: https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list
+# source: https://books.apple.com/us/charts
+# source: https://init.itunes.apple.com/bag.xml
+# source: https://royli.dev/blog/2019/better-proxy-rules-for-apple-services
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/elianokk/Shunt_Rules/main/rule/Loon/FindMy.lsr
+# source: https://support.apple.com/en-us/104978
+# source: https://dns.google/resolve?name=p01-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmipmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p01-fmfmobile.icloud.com&type=A
+# source: https://dns.google/resolve?name=p131-fmfmobile.icloud.com&type=A
+# source: https://gdmf.apple.com/v2/pmv
+# source: https://configuration.ls.apple.com/config/defaults
+# source: https://raw.githubusercontent.com/enriquephl/QuantumultX_config/main/ClashRuleSet/Loon/AppleExtra/LocationServices.list
+# source: https://init.ess.apple.com/WebObjects/VCInit.woa/wa/getBag?ix=3
+# source: https://support.apple.com/guide/security/sec70e68c949/web
+# source: https://github.com/OpenBubbles/rustpush/blob/master/src/util.rs
+# source: https://support.apple.com/zh-cn/111754
+# source: https://dns.google/resolve?name=icloud-content.com.cn&type=SOA
+# source: https://support.apple.com/en-us/118230
+# source: https://podcasts.apple.com/us/browse
+# source: https://rules.xkww3n.cyou/classical/apple-music.txt
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
+# source: https://raw.githubusercontent.com/Kianuni/AppleFlow/main/rules/surge/Siri-Direct.list
+# source: https://support.apple.com/en-hk/127893
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# source: https://beta.apple.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://developers.google.com/speed/public-dns/docs/doh/json
+# source: https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/
+# source: https://developer.apple.com/download/
+# source: https://developer.apple.com/account/
+# source: https://raw.githubusercontent.com/SukkaW/Surge/master/Source/non_ip/apple_services.conf
+# canonical-rule-count: 86
+# rule-count: 86
+# format: quantumult-x
+# canonical: rules/loon/2080-apple-direct-all.lsr
+
+host-suffix,appstore.com,proxy
+host-suffix,appsto.re,proxy
+host,app-site-association.networking.apple,proxy
+host-suffix,apzones.com,proxy
+host-suffix,icloud-content.com.cn,proxy
+host-suffix,icloud.com.cn,proxy
+host-suffix,icloud-content.com,proxy
+host,www-cdn.icloud.com.akadns.net,proxy
+host-suffix,apple-cloudkit.com,proxy
+host-suffix,apple-livephotoskit.com,proxy
+host-suffix,icloud.com,proxy
+host-suffix,me.com,proxy
+host-suffix,apple-dns.net,proxy
+host-suffix,applemusic.com,proxy
+host,gdmf-cdn.apple.com.akadns.net,proxy
+host,gdmf-cdn.origin-apple.com.akadns.net,proxy
+host,gdmf-lb.apple.com.akadns.net,proxy
+host,gdmf.apple.com.mwcname.com,proxy
+host,gg-cdn.apple.com.akadns.net,proxy
+host,gg-cdn.origin-apple.com.akadns.net,proxy
+host,gg-lb.apple.com.akadns.net,proxy
+host,gg.apple.com.akadns.net,proxy
+host,gg.apple.com.mwcname.com,proxy
+host,mesu-lb.apple.com.akadns.net,proxy
+host,mesu.apple.com.akadns.net,proxy
+host,mesu.apple.com.mwcname.com,proxy
+host,swscan-cdn.apple.com.akadns.net,proxy
+host,swscan-cdn.origin-apple.com.akadns.net,proxy
+host,swscan-lb.apple.com.akadns.net,proxy
+host,swscan.apple.com.akadns.net,proxy
+host,swscan.apple.com.mwcname.com,proxy
+host,xp-cdn.apple.com.akadns.net,proxy
+host,xp-cdn.origin-apple.com.akadns.net,proxy
+host,xp-lb.apple.com.akadns.net,proxy
+host,xp.apple.com.akadns.net,proxy
+host,xp.apple.com.mwcname.com,proxy
+host-suffix,gdmf.apple.com.akadns.net,proxy
+host-suffix,mesu-cdn.apple.com.akadns.net,proxy
+host-suffix,mesu-cdn.origin-apple.com.akadns.net,proxy
+host,configuration.apple.com.akadns.net,proxy
+host,swdist.apple.com.akadns.net,proxy
+host,appldnld.apple.com.mwcname.com,proxy
+host-suffix,appldnld.apple.com.akadns.net,proxy
+host,appldnld.apple.com.edgesuite.net,proxy
+host,updates-http.cdn-apple.com.akadns.net,proxy
+host,appldnld-cdn.apple.com.akadns.net,proxy
+host,appldnld-cdn.origin-apple.com.akadns.net,proxy
+host-suffix,appldnld-lb.apple.com.akadns.net,proxy
+host,oscdn.origin-apple.com.akadns.net,proxy
+host,updates-http.cdn-apple.com.edgesuite.net,proxy
+host,swcdn.apple.com.edgesuite.net,proxy
+host,adcdownload.apple.com.akadns.net,proxy
+host,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net,proxy
+host-suffix,mzstatic.com,proxy
+host,certs-lb.apple.com.akadns.net,proxy
+host,crl-lb.apple.com.akadns.net,proxy
+host,valid.origin-apple.com.akadns.net,proxy
+host,crl3.digicert.com,proxy
+host,crl4.digicert.com,proxy
+host,ocsp.digicert.cn,proxy
+host,ocsp.digicert.com,proxy
+host,ocsp-cdn.apple.com.akadns.net,proxy
+host,ocsp-cdn.origin-apple.com.akadns.net,proxy
+host,ocsp.apple.com.akadns.net,proxy
+host,ocsp.apple.com.mwcname.com,proxy
+host-suffix,ocsp-lb.apple.com.akadns.net,proxy
+host-suffix,apple-mapkit.com,proxy
+host,www.apple.com.cn,proxy
+host,upload.appleschoolcontent.com,proxy
+host,icons.axm-usercontent-apple.com,proxy
+host,iphonesubmissions-cdn.apple.com.akadns.net,proxy
+host,iphonesubmissions-cdn.origin-apple.com.akadns.net,proxy
+host,iphonesubmissions-lb.apple.com.akadns.net,proxy
+host,iphonesubmissions.apple.com.akadns.net,proxy
+host,iphonesubmissions.apple.com.mwcname.com,proxy
+host,radarsubmissions-cdn.apple.com.akadns.net,proxy
+host,radarsubmissions-cdn.origin-apple.com.akadns.net,proxy
+host,radarsubmissions-lb.apple.com.akadns.net,proxy
+host,radarsubmissions.apple.com.akadns.net,proxy
+host,radarsubmissions.apple.com.mwcname.com,proxy
+host-suffix,apple.com,proxy
+host-suffix,cdn-apple.com,proxy
+host-suffix,itunes.com,proxy
+host-suffix,aaplimg.com,proxy
+host-suffix,apple.co,proxy
+host-suffix,organicfruitapps.com,proxy

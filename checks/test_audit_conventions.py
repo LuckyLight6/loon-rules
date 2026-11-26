@@ -123,7 +123,7 @@ class AuditConventions(unittest.TestCase):
         permitted={'DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD','IP-CIDR','IP-CIDR6','IP-ASN'}
         for key in cfg['detailed']+cfg['general']:
             if entries[key].get('fallback'):continue
-            rows=lib.rules.read_rules((lib.ROOT/'rules'/lib.rule_filename(entries[key])).read_text())
+            rows=lib.rules.read_rules((lib.ROOT/'rules' / 'loon'/lib.rule_filename(entries[key])).read_text())
             with self.subTest(service=key):
                 self.assertFalse({r.split(',')[0] for r in rows}-permitted)
 
@@ -165,7 +165,7 @@ class AuditConventions(unittest.TestCase):
         cfg=json.loads((lib.ROOT/'config/catalog.json').read_text());entries=lib.validate_declarations(cfg)
         owners={}
         for key in lib.route_order(cfg,entries):
-            rows=lib.rules.read_rules((lib.ROOT/'rules'/lib.rule_filename(entries[key])).read_text())
+            rows=lib.rules.read_rules((lib.ROOT/'rules' / 'loon'/lib.rule_filename(entries[key])).read_text())
             for row in rows:
                 self.assertFalse(row in owners,(row,key,owners.get(row)))
                 owners[row]=key

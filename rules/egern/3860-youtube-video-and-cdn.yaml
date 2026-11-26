@@ -1,0 +1,27 @@
+# name: youtube-video-and-cdn
+# priority: 3860
+# section: media
+# description: YouTube 视频、音乐、频道与专用 CDN
+# boundary: 保留 youtubei、googlevideo 和 YouTube 静态域；不收整个 gvt2、Google IP 或 youtube 关键词
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/YouTube.list
+# canonical-rule-count: 12
+# rule-count: 12
+# format: egern
+# canonical: rules/loon/3860-youtube-video-and-cdn.lsr
+
+domain_set:
+  - "youtubei.googleapis.com"
+  - "yt3.ggpht.com"
+domain_suffix_set:
+  - "googlevideo.com"
+  - "withyoutube.com"
+  - "youtu.be"
+  - "youtube-nocookie.com"
+  - "youtube.com"
+  - "youtubeeducation.com"
+  - "youtubegaming.com"
+  - "youtubekids.com"
+  - "yt.be"
+  - "ytimg.com"

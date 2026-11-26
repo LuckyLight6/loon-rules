@@ -123,10 +123,10 @@ class RegistrySources(PublicSourceExamples):
              'routing-bands':[{'start':30,'title':'服务'}]}
         documents={self.recipe()['source']:json.dumps(self.document())}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
-            output=root/'rules'/lib.rule_filename(entry)
+            output=root/'rules' / 'loon'/lib.rule_filename(entry)
             output.write_text(lib.decorate(entry,['DOMAIN-SUFFIX,registry.example','DOMAIN,files.vendor.example'],None,'2026-11-20T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=documents.__getitem__):
                 lib.run()

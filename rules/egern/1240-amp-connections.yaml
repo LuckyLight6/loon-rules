@@ -1,0 +1,20 @@
+# name: amp-connections
+# priority: 1240
+# section: ai
+# description: Amp 登录、线程 WebSocket、CLI 与官方运行环境
+# boundary: 从当前官方网络允许列表读取，不复活已未列出的旧域名；代理须支持 WebSocket，第三方模型和用户访问的网站各自选路
+# created-at: 2026-11-21T11:39:00Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://ampcode.com/security
+# canonical-rule-count: 5
+# rule-count: 5
+# format: egern
+# canonical: rules/loon/1240-amp-connections.lsr
+
+domain_set:
+  - "ampcode.com"
+  - "auth.ampcode.com"
+  - "static.ampcode.com"
+  - "tunnel.ampcode.com"
+domain_regex_set:
+  - "(?i)^.*\\.onamp\\.dev$"

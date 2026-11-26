@@ -1,0 +1,14 @@
+# name: gitee-hosting
+# priority: 6310
+# section: development
+# description: Gitee 码云
+# boundary: 公共代码托管；不收自建服务或用户 Pages
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/gitee.list
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surfboard
+# canonical: rules/loon/6310-gitee-hosting.lsr
+
+DOMAIN-SUFFIX,gitee.com

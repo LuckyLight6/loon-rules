@@ -1,0 +1,82 @@
+# name: mainland-daily-services-all
+# priority: 7400
+# section: lifestyle
+# description: 国内购物、生活与办公合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-22T17:48:09Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# source: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/ChinaDomain.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/didi.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/netease.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/aliyun-drive.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/wps.list
+# canonical-rule-count: 63
+# rule-count: 63
+# format: quantumult-x
+# canonical: rules/loon/7400-mainland-daily-services-all.lsr
+
+host-suffix,taobao.com,proxy
+host-suffix,tmall.com,proxy
+host-suffix,idlefish.com,proxy
+host-suffix,goofish.com,proxy
+host-suffix,taobaocdn.com,proxy
+host-suffix,360buy.com,proxy
+host-suffix,360buyimg.com,proxy
+host-suffix,jd.com,proxy
+host-suffix,jd.com.cn,proxy
+host-suffix,12306.cn,proxy
+host-suffix,51ping.com,proxy
+host-suffix,baobaoaichi.cn,proxy
+host-suffix,dianping.com,proxy
+host-suffix,dpfile.com,proxy
+host-suffix,maoyan.com,proxy
+host-suffix,meituan.com,proxy
+host-suffix,meituan.net,proxy
+host-suffix,mtyun.com,proxy
+host-suffix,neixin.cn,proxy
+host-suffix,sankuai.com,proxy
+host-suffix,100.me,proxy
+host-suffix,ddcorp.net,proxy
+host-suffix,ddfresh.net,proxy
+host-suffix,ddimg.mobi,proxy
+host-suffix,ddmaicai.net,proxy
+host-suffix,ddmc.mobi,proxy
+host-suffix,dduser.mobi,proxy
+host-suffix,ddxq.mobi,proxy
+host-suffix,imaicai.mobi,proxy
+host-suffix,didi.cn,proxy
+host-suffix,didialift.com,proxy
+host-suffix,didichuxing.com,proxy
+host-suffix,didistatic.com,proxy
+host-suffix,udache.com,proxy
+host-suffix,xiaojukeji.com,proxy
+host-suffix,diditaxi.com.cn,proxy
+host-suffix,hongyibo.com.cn,proxy
+host-suffix,didi-food.com,proxy
+host-suffix,didiaustralia.blog,proxy
+host-suffix,didiglobal.com,proxy
+host-suffix,didimobility.co.jp,proxy
+host-suffix,ydshengxue.com,proxy
+host-suffix,ydstatic.com,proxy
+host-suffix,youdao.com,proxy
+host-suffix,alicloudccp.com,proxy
+host-suffix,alipan.com,proxy
+host-suffix,aliyundrive.cloud,proxy
+host-suffix,aliyundrive.com,proxy
+host-suffix,aliyundrive.net,proxy
+host-suffix,yunpan.aliyun.com,proxy
+host-suffix,wps.cn,proxy
+host-suffix,wps.com,proxy
+host-suffix,wpscdn.cn,proxy
+host-suffix,wpscdn.com,proxy
+host-suffix,qwps.cn,proxy
+host-suffix,kimxz.com,proxy
+host-suffix,51dzt.com,proxy
+host-suffix,iciba.com,proxy
+host-suffix,docer.com,proxy
+host-suffix,kdocs.cn,proxy
+host-suffix,wpsmail.net,proxy
+host-suffix,papocket.com,proxy
+host-suffix,wpspdf.cn,proxy

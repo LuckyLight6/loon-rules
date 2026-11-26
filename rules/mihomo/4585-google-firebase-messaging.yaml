@@ -1,0 +1,33 @@
+# name: google-firebase-messaging
+# priority: 4585
+# section: google
+# description: Google Firebase Cloud Messaging 推送与令牌注册
+# boundary: Web、iOS SDK 与官方 API 元数据读取推送专用主机；不把设备配置、Firebase 安装标识或 Google 网段都判作推送；iOS 通知的 APNs 接收路径仍在 Apple
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/googlefcm.list
+# source: https://raw.githubusercontent.com/googleapis/google-api-python-client/main/googleapiclient/discovery_cache/documents/fcm.v1.json
+# source: https://raw.githubusercontent.com/firebase/firebase-ios-sdk/main/FirebaseMessaging/Sources/FIRMessagingUtilities.m
+# source: https://raw.githubusercontent.com/firebase/firebase-js-sdk/master/packages/messaging/src/util/constants.ts
+# canonical-rule-count: 16
+# rule-count: 16
+# format: clash-classical
+# canonical: rules/loon/4585-google-firebase-messaging.lsr
+
+payload:
+  - "DOMAIN,alt7-mtalk.google.com"
+  - "DOMAIN,alt8-mtalk.google.com"
+  - "DOMAIN,mtalk-dev.google.com"
+  - "DOMAIN,mtalk-staging.google.com"
+  - "DOMAIN,mtalk4.google.com"
+  - "DOMAIN,alt1-mtalk.google.com"
+  - "DOMAIN,alt2-mtalk.google.com"
+  - "DOMAIN,alt3-mtalk.google.com"
+  - "DOMAIN,alt4-mtalk.google.com"
+  - "DOMAIN,alt5-mtalk.google.com"
+  - "DOMAIN,alt6-mtalk.google.com"
+  - "DOMAIN,mtalk.google.com"
+  - "DOMAIN,fcm.googleapis.com"
+  - "DOMAIN,fcm.mtls.googleapis.com"
+  - "DOMAIN,fcmtoken.googleapis.com"
+  - "DOMAIN,fcmregistrations.googleapis.com"

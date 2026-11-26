@@ -10,18 +10,18 @@
 
 | 测试对象 | 实际操作 | 通过条件 |
 |---|---|---|
-| Claude [1010](../rules/1010-claude-connections.lsr) | Safari 和 App 分别上传无敏感内容的 PDF，要求按附件连续回答；Desktop、Code 在实际运行的电脑另测 | 附件内容可读，流式回复持续到完成；专用登录、API 与附件用预期出口 |
-| OpenAI [1020](../rules/1020-chatgpt-connections.lsr)、Gemini [1030](../rules/1030-gemini-connections.lsr)、xAI [1040](../rules/1040-xai-connections.lsr) | 分别完成一次流式对话；OpenAI 再试持续语音 | 对话完成，规则与出口正确；语音实际使用的 UDP 或 TCP 路径能持续传输 |
-| Apple 账户 [2090](../rules/2090-apple-account-authentication.lsr)、商店 [2130](../rules/2130-apple-store-transactions.lsr)，或日常合集 [2080](../rules/2080-apple-direct-all.lsr) | 正常打开账户页面和商店，观察已有会话的认证或续签；不为测试反复退出登录 | 出现的认证与交易主机按预期选路；没有出现续签只能记未测到 |
-| Apple 官网与补充 [2370](../rules/2370-apple-other-services.lsr) | 打开官网、支持与隐私页面，再打开账户注册入口 | 官网由 [2370](../rules/2370-apple-other-services.lsr) 识别，账户与认证仍由 [2090](../rules/2090-apple-account-authentication.lsr) 识别；已有系统和内容直连例外没有被补充表抢走 |
-| App 包 [2140](../rules/2140-apple-app-package-downloads.lsr)、iCloud 内容 [2200](../rules/2200-apple-icloud-content-domains.lsr)／同步 [2210](../rules/2210-apple-cloud-sync.lsr)、更新检查 [2260](../rules/2260-apple-update-control.lsr)／更新包 [2270](../rules/2270-apple-update-downloads.lsr)，或日常合集 [2080](../rules/2080-apple-direct-all.lsr) | 下载小 App；上传小文件后在第二设备下载；检查更新 | 各操作按相应用途选择出口，[2080](../rules/2080-apple-direct-all.lsr) 默认直连。下载必须实际完成；只查更新没有测到系统包下载，[2210](../rules/2210-apple-cloud-sync.lsr) 也可能有上传下载 |
-| CloudKit 网关 [2210](../rules/2210-apple-cloud-sync.lsr)、证书检查 [2320](../rules/2320-apple-certificate-validation.lsr) | 在正常使用中观察 `gateway.icloud.com`、`ocsp2.apple.com` | 前者属于 CloudKit 内容连接，后者检查证书状态；均保留正常访问，不因请求频繁而拒绝 |
-| TV 门户 [2040](../rules/2040-apple-video-and-fitness.lsr)／视频 [2050](../rules/2050-apple-tv-video-delivery.lsr)、News [2060](../rules/2060-apple-news-and-sports.lsr) | 实际播放一段可用内容，打开有权阅读的新闻正文 | 播放与正文完成，门户及内容连接均走预期出口 |
-| Apple Intelligence [2020](../rules/2020-apple-intelligence-relays.lsr)，或海外功能 [2010](../rules/2010-apple-overseas-all.lsr) | 触发受支持的云端功能，再试系统 ChatGPT 扩展 | 实际产生的 PCC 或扩展连接命中 [2020](../rules/2020-apple-intelligence-relays.lsr) 或 [2010](../rules/2010-apple-overseas-all.lsr)；纯本地运算不算云端测试 |
-| GitHub [3010](../rules/3010-github-code-and-packages.lsr)、Docker [3070](../rules/3070-docker-hub.lsr) | 访问 API，下载公开文件；登录 Docker 并拉取公开镜像 | 业务成功，专用入口归属正确，广告规则没有拒绝必需主机 |
-| Telegram [3310](../rules/3310-telegram-messaging.lsr) | 打开 App 等待同步，发送文字并下载一个小文件 | 域名与直接使用的服务器 IP 都命中 Telegram 细分或所选通讯合集；只打开网页或 Bot API 不能代替 App 测试 |
-| 微信 [6510](../rules/6510-wechat-shared-and-mainland.lsr)、WeChat 国际入口 [3360](../rules/3360-wechat-international-portal.lsr) | 打开 App 等待同步，再试消息、图片与通话 | 检查实际连接，不能把 `wechat.com` 全当成网页；额外的 HTTPDNS 拦截插件可能先拒绝服务器发现请求 |
-| Meet [4530](../rules/4530-google-meet-meetings.lsr)、Teams [4730](../rules/4730-microsoft-teams-meetings.lsr) | 双向音视频并共享屏幕 | 声音、画面和共享持续传输，专用主机与媒体地址按预期选路 |
+| Claude [1010](../rules/loon/1010-claude-connections.lsr) | Safari 和 App 分别上传无敏感内容的 PDF，要求按附件连续回答；Desktop、Code 在实际运行的电脑另测 | 附件内容可读，流式回复持续到完成；专用登录、API 与附件用预期出口 |
+| OpenAI [1020](../rules/loon/1020-chatgpt-connections.lsr)、Gemini [1030](../rules/loon/1030-gemini-connections.lsr)、xAI [1040](../rules/loon/1040-xai-connections.lsr) | 分别完成一次流式对话；OpenAI 再试持续语音 | 对话完成，规则与出口正确；语音实际使用的 UDP 或 TCP 路径能持续传输 |
+| Apple 账户 [2090](../rules/loon/2090-apple-account-authentication.lsr)、商店 [2130](../rules/loon/2130-apple-store-transactions.lsr)，或日常合集 [2080](../rules/loon/2080-apple-direct-all.lsr) | 正常打开账户页面和商店，观察已有会话的认证或续签；不为测试反复退出登录 | 出现的认证与交易主机按预期选路；没有出现续签只能记未测到 |
+| Apple 官网与补充 [2370](../rules/loon/2370-apple-other-services.lsr) | 打开官网、支持与隐私页面，再打开账户注册入口 | 官网由 [2370](../rules/loon/2370-apple-other-services.lsr) 识别，账户与认证仍由 [2090](../rules/loon/2090-apple-account-authentication.lsr) 识别；已有系统和内容直连例外没有被补充表抢走 |
+| App 包 [2140](../rules/loon/2140-apple-app-package-downloads.lsr)、iCloud 内容 [2200](../rules/loon/2200-apple-icloud-content-domains.lsr)／同步 [2210](../rules/loon/2210-apple-cloud-sync.lsr)、更新检查 [2260](../rules/loon/2260-apple-update-control.lsr)／更新包 [2270](../rules/loon/2270-apple-update-downloads.lsr)，或日常合集 [2080](../rules/loon/2080-apple-direct-all.lsr) | 下载小 App；上传小文件后在第二设备下载；检查更新 | 各操作按相应用途选择出口，[2080](../rules/loon/2080-apple-direct-all.lsr) 默认直连。下载必须实际完成；只查更新没有测到系统包下载，[2210](../rules/loon/2210-apple-cloud-sync.lsr) 也可能有上传下载 |
+| CloudKit 网关 [2210](../rules/loon/2210-apple-cloud-sync.lsr)、证书检查 [2320](../rules/loon/2320-apple-certificate-validation.lsr) | 在正常使用中观察 `gateway.icloud.com`、`ocsp2.apple.com` | 前者属于 CloudKit 内容连接，后者检查证书状态；均保留正常访问，不因请求频繁而拒绝 |
+| TV 门户 [2040](../rules/loon/2040-apple-video-and-fitness.lsr)／视频 [2050](../rules/loon/2050-apple-tv-video-delivery.lsr)、News [2060](../rules/loon/2060-apple-news-and-sports.lsr) | 实际播放一段可用内容，打开有权阅读的新闻正文 | 播放与正文完成，门户及内容连接均走预期出口 |
+| Apple Intelligence [2020](../rules/loon/2020-apple-intelligence-relays.lsr)，或海外功能 [2010](../rules/loon/2010-apple-overseas-all.lsr) | 触发受支持的云端功能，再试系统 ChatGPT 扩展 | 实际产生的 PCC 或扩展连接命中 [2020](../rules/loon/2020-apple-intelligence-relays.lsr) 或 [2010](../rules/loon/2010-apple-overseas-all.lsr)；纯本地运算不算云端测试 |
+| GitHub [3010](../rules/loon/3010-github-code-and-packages.lsr)、Docker [3070](../rules/loon/3070-docker-hub.lsr) | 访问 API，下载公开文件；登录 Docker 并拉取公开镜像 | 业务成功，专用入口归属正确，广告规则没有拒绝必需主机 |
+| Telegram [3310](../rules/loon/3310-telegram-messaging.lsr) | 打开 App 等待同步，发送文字并下载一个小文件 | 域名与直接使用的服务器 IP 都命中 Telegram 细分或所选通讯合集；只打开网页或 Bot API 不能代替 App 测试 |
+| 微信 [6510](../rules/loon/6510-wechat-shared-and-mainland.lsr)、WeChat 国际入口 [3360](../rules/loon/3360-wechat-international-portal.lsr) | 打开 App 等待同步，再试消息、图片与通话 | 检查实际连接，不能把 `wechat.com` 全当成网页；额外的 HTTPDNS 拦截插件可能先拒绝服务器发现请求 |
+| Meet [4530](../rules/loon/4530-google-meet-meetings.lsr)、Teams [4730](../rules/loon/4730-microsoft-teams-meetings.lsr) | 双向音视频并共享屏幕 | 声音、画面和共享持续传输，专用主机与媒体地址按预期选路 |
 
 Google 安全浏览 API 从官方服务字段生成，并受必需端点保护。全球入口与 `googleapis-cn.com` 的已列入口交给 Google，腾讯入口保留国内选路，均不当作广告拦截。[Apple 说明 Safari 会使用 Google 与腾讯的安全浏览服务](https://www.apple.com/legal/privacy/data/en/safari/)。核对命中时不需要提交真实网址、浏览记录或 API 密钥。
 
@@ -65,7 +65,7 @@ Loon 可以并发查询多个加密上游，配置多个时应接受同一查询
 
 没有得到公网候选、STUN 超时或被拒绝，记为未测到，不能算通过。随后试一次实际语音或会议，确认处理方式没有破坏正常 UDP。0230 只是已列公共 STUN 端点的可选拒绝表，不能覆盖全部 WebRTC；不以封掉所有 UDP 作为通用修复。
 
-[0150 出口检测](../rules/0150-ip-egress-checks.lsr)可分别测试 [IPv4](https://api.ipify.org)和 [IPv6](https://api6.ipify.org)，同时核对命中和最终节点。IPv6 超时只说明该路径未测通。DDNS 客户端若靠检测站更新家庭公网地址，相关查询不应误走代理。
+[0150 出口检测](../rules/loon/0150-ip-egress-checks.lsr)可分别测试 [IPv4](https://api.ipify.org)和 [IPv6](https://api6.ipify.org)，同时核对命中和最终节点。IPv6 超时只说明该路径未测通。DDNS 客户端若靠检测站更新家庭公网地址，相关查询不应误走代理。
 
 ## 内网和其他 VPN
 

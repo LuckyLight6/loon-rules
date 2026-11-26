@@ -1,0 +1,33 @@
+# name: meituan-services
+# priority: 7440
+# section: lifestyle
+# description: 美团与大众点评服务
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meituan.list
+# canonical-rule-count: 19
+# rule-count: 19
+# format: clash-classical
+# canonical: rules/loon/7440-meituan-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,51ping.com"
+  - "DOMAIN-SUFFIX,baobaoaichi.cn"
+  - "DOMAIN-SUFFIX,dianping.com"
+  - "DOMAIN-SUFFIX,dpfile.com"
+  - "DOMAIN-SUFFIX,maoyan.com"
+  - "DOMAIN-SUFFIX,meituan.com"
+  - "DOMAIN-SUFFIX,meituan.net"
+  - "DOMAIN-SUFFIX,mtyun.com"
+  - "DOMAIN-SUFFIX,neixin.cn"
+  - "DOMAIN-SUFFIX,sankuai.com"
+  - "DOMAIN-SUFFIX,100.me"
+  - "DOMAIN-SUFFIX,ddcorp.net"
+  - "DOMAIN-SUFFIX,ddfresh.net"
+  - "DOMAIN-SUFFIX,ddimg.mobi"
+  - "DOMAIN-SUFFIX,ddmaicai.net"
+  - "DOMAIN-SUFFIX,ddmc.mobi"
+  - "DOMAIN-SUFFIX,dduser.mobi"
+  - "DOMAIN-SUFFIX,ddxq.mobi"
+  - "DOMAIN-SUFFIX,imaicai.mobi"

@@ -1,0 +1,16 @@
+# name: backstage-developer-portal
+# priority: 3240
+# section: development
+# description: Backstage 开发者门户项目
+# boundary: Backstage 项目网站与公开产品清单；用户自行部署的门户、GitHub 源码托管和 Spotify 音乐不归本组
+# created-at: 2026-11-24T20:44:08Z
+# updated-at: 2026-11-24T20:44:08Z
+# source: https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackerone_data.json
+# source: https://backstage.io/docs/overview/background/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: clash-classical
+# canonical: rules/loon/3240-backstage-developer-portal.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,backstage.io"

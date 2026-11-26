@@ -1,0 +1,17 @@
+# name: microsoft-windows-update-services
+# priority: 4760
+# section: microsoft
+# description: Windows Update 检查与传递优化协调
+# boundary: 更新服务、传递优化控制和内容调度，不把整个 Windows 或 Microsoft 后缀当更新
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-19T11:46:30Z
+# source: https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints
+# canonical-rule-count: 3
+# rule-count: 3
+# format: clash-classical
+# canonical: rules/loon/4760-microsoft-windows-update-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,update.microsoft.com"
+  - "DOMAIN-SUFFIX,prod.do.dsp.mp.microsoft.com"
+  - "DOMAIN,tsfe.trafficshaping.dsp.mp.microsoft.com"

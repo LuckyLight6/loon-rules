@@ -1,0 +1,14 @@
+# name: coding-platform
+# priority: 6320
+# section: development
+# description: 腾讯 CODING
+# boundary: 托管和构建平台；不接管构建任务访问的其他包源
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/coding.list
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/loon/6320-coding-platform.lsr
+
+host-suffix,coding.net,proxy

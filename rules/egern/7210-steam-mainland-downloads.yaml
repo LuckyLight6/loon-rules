@@ -1,0 +1,23 @@
+# name: steam-mainland-downloads
+# priority: 7210
+# section: games
+# description: Steam 中国下载镜像与蒸汽平台内容
+# boundary: 只收已确认的国内下载镜像；游戏账户、商店和社区归 Steam 国际平台规则，不按第三方 CDN 整域判断
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# canonical-rule-count: 8
+# rule-count: 8
+# format: egern
+# canonical: rules/loon/7210-steam-mainland-downloads.lsr
+
+domain_suffix_set:
+  - "cdn-ali.content.steamchina.com"
+  - "cdn-qc.content.steamchina.com"
+  - "cdn-ws.content.steamchina.com"
+domain_set:
+  - "dl.steam.clngaa.com"
+  - "dl.steam.ksyna.com"
+  - "st.dl.bscstorage.net"
+  - "st.dl.eccdnx.com"
+  - "st.dl.pinyuncloud.com"

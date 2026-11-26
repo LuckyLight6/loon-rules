@@ -1,0 +1,29 @@
+# name: microsoft-teams-meetings
+# priority: 4730
+# section: microsoft
+# description: Teams 会议及 Skype for Business 共用通信入口
+# boundary: 专用产品域和官方通信媒体网段先匹配；不扩到全部 Microsoft IP。Lync 与部分媒体为共用通信服务，不能凭相同入口区分发起应用
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-21T02:38:40Z
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+# source: https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints
+# canonical-rule-count: 10
+# rule-count: 10
+# format: egern
+# canonical: rules/loon/4730-microsoft-teams-meetings.lsr
+
+no_resolve: true
+domain_set:
+  - "teams.live.com"
+  - "statics.teams.cdn.live.net"
+  - "teams.cloud.microsoft"
+  - "teams.microsoft.com"
+domain_regex_set:
+  - "(?i)^.*\\.lync\\.com$"
+  - "(?i)^.*\\.teams\\.cloud\\.microsoft$"
+  - "(?i)^.*\\.teams\\.microsoft\\.com$"
+ip_cidr_set:
+  - "52.112.0.0/14"
+  - "52.122.0.0/15"
+ip_cidr6_set:
+  - "2603:1063::/38"

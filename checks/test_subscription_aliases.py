@@ -30,22 +30,22 @@ class SubscriptionAliases(unittest.TestCase):
                   'product-feed': 'DOMAIN-SUFFIX,product.example'}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
             (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
             for entry, body in ((ads, inputs['ads-feed']), (product, inputs['product-feed'])):
-                (root / 'rules' / pipeline.rule_filename(entries[entry['id']])).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entries[entry['id']])).write_text(
                     pipeline.decorate(entries[entry['id']], body.splitlines(), None, '2026-11-20T00:00:00Z'))
-            alias = root / 'rules/7800-ads.lsr'
+            alias = root / 'rules/loon/7800-ads.lsr'
             alias.write_text('# name: ads\nDOMAIN,previous.example\n')
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
                 pipeline.run()
-            canonical = root / 'rules/0240-ads.lsr'
+            canonical = root / 'rules/loon/0240-ads.lsr'
             self.assertEqual(alias.read_bytes(), canonical.read_bytes())
-            rows = {key: pipeline.rules.read_rules((root / 'rules' / pipeline.rule_filename(entry)).read_text())
+            rows = {key: pipeline.rules.read_rules((root / 'rules' / 'loon' / pipeline.rule_filename(entry)).read_text())
                     for key, entry in entries.items()}
             self.assertEqual(rows['ads'], ['DOMAIN-SUFFIX,ads.product.example'])
             order = pipeline.subscription_order(config, entries)
@@ -54,8 +54,8 @@ class SubscriptionAliases(unittest.TestCase):
             self.assertEqual(pipeline.ordered_route('ads.product.example', ['product'], rows), 'product')
             self.assertEqual(pipeline.run(offline=True), 0)
             publish(root)
-            self.assertEqual(alias.with_suffix('.list').read_bytes(), canonical.read_bytes())
-            manifest = json.loads((root / 'dist/manifest.json').read_text())
+            self.assertEqual((alias.parent.with_name('surge') / alias.with_suffix('.list').name).read_bytes(), canonical.read_bytes())
+            manifest = json.loads((root / 'rules/manifest.json').read_text())
             self.assertEqual(len(manifest['formats']['loon']['rules']), 2)
             alias.write_text('# name: ads\nDOMAIN,stale.example\n')
             with self.assertRaisesRegex(Invalid, '兼容下载'):

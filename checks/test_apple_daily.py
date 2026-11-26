@@ -59,7 +59,7 @@ class AppleDailyRouting(unittest.TestCase):
         self.assertTrue(set(chosen) <= set(entries), '缺少日常 Apple 直连与海外功能合集')
         data = {}
         for entry in config['entries']:
-            path = pipeline.ROOT / 'rules' / pipeline.rule_filename(entry)
+            path = pipeline.ROOT / 'rules' / 'loon' / pipeline.rule_filename(entry)
             if path.is_file():
                 data[entry['id']] = rules.read_rules(path.read_text())
         for key in chosen:

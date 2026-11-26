@@ -1,0 +1,17 @@
+# name: factory-coding-agents
+# priority: 1510
+# section: ai
+# description: Factory 编程代理
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/factory.list
+# source: https://factory.ai/
+# canonical-rule-count: 2
+# rule-count: 2
+# format: clash-classical
+# canonical: rules/loon/1510-factory-coding-agents.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,factory.ai"
+  - "DOMAIN-SUFFIX,factory.com"

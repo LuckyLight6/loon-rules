@@ -43,10 +43,10 @@ def run(check=False, offline=False, adopt_ads=False):
     components=set(entries)-public
     state_path=ROOT/'data/maintenance-state.json'
     previous_state=json.loads(state_path.read_text()) if state_path.is_file() else {}
-    paths={k:ROOT/'rules'/rule_filename(e) for k,e in file_entries.items()}
+    paths={k:ROOT/'rules'/'loon'/rule_filename(e) for k,e in file_entries.items()}
     download_aliases=catalog_schema.subscription_aliases(config)
-    alias_paths={ROOT/'rules'/(name+'.lsr') for name in download_aliases}
-    present=set((ROOT/'rules').glob('*.lsr'))-alias_paths
+    alias_paths={ROOT/'rules'/'loon'/(name+'.lsr') for name in download_aliases}
+    present=set((ROOT/'rules'/'loon').glob('*.lsr'))-alias_paths
     known=set()
     if not offline and set(paths.values())-present:
         known=set(json.loads((ROOT/'data/maintenance-state.json').read_text())['rules'])
@@ -60,10 +60,10 @@ def run(check=False, offline=False, adopt_ads=False):
     old={k:(None if k in missing else p.read_text()) for k,p in paths.items()}
     names={path.stem:key for key,path in paths.items()}
     for alias,canonical in download_aliases.items():
-        path=ROOT/'rules'/(alias+'.lsr')
+        path=ROOT/'rules'/'loon'/(alias+'.lsr')
         if path.is_file() and '# name: '+names[canonical] not in path.read_text().splitlines():
             raise rules.Invalid('兼容下载地址不能覆盖其他产品：'+alias)
-        if offline and (not path.is_file() or path.read_bytes()!=(ROOT/'rules'/(canonical+'.lsr')).read_bytes()):
+        if offline and (not path.is_file() or path.read_bytes()!=(ROOT/'rules'/'loon'/(canonical+'.lsr')).read_bytes()):
             raise rules.Invalid('兼容下载地址与当前成品不同步：'+alias)
     for key in components:
         rows=previous_state.get('component-rules',{}).get(key)
@@ -355,8 +355,8 @@ def run(check=False, offline=False, adopt_ads=False):
             tmp.replace(paths[key])
     if not check:
         for alias,canonical in download_aliases.items():
-            source=ROOT/'rules'/(canonical+'.lsr')
-            destination=ROOT/'rules'/(alias+'.lsr')
+            source=ROOT/'rules'/'loon'/(canonical+'.lsr')
+            destination=ROOT/'rules'/'loon'/(alias+'.lsr')
             text=source.read_text()
             if not destination.is_file() or destination.read_text()!=text:
                 temporary=destination.with_suffix('.new')

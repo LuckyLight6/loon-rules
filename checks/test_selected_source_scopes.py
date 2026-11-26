@@ -134,7 +134,7 @@ class SelectedSourceScopes(PublicSourceExamples):
         inputs = {source: json.dumps(document)}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root / 'config/endpoint-contracts.json').write_text('[]')
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
@@ -144,7 +144,7 @@ class SelectedSourceScopes(PublicSourceExamples):
                     'pages': ['DOMAIN-WILDCARD,*.github.io']}
             rows['development-all'] = rows['code'] + rows['pages']
             for key, entry in entries.items():
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                     pipeline.decorate(entry, rows[key], None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -154,14 +154,14 @@ class SelectedSourceScopes(PublicSourceExamples):
                     pipeline.run()
                     publish(root)
                     for name in ('020-code', '010-development-all'):
-                        file = root / 'rules' / (name + '.lsr')
+                        file = root / 'rules' / 'loon' / (name + '.lsr')
                         self.assertIn('DOMAIN,' + host, file.read_text())
-                        self.assertEqual(file.read_bytes(), file.with_suffix('.list').read_bytes())
-                        for client in ('sing-box', 'v2ray', 'clash-classical'):
-                            self.assertTrue(any(host in p.read_text() for p in (root / 'dist' / client).rglob('*') if p.is_file()))
-                    self.assertNotIn(host, (root / 'rules/030-pages.lsr').read_text())
+                        self.assertEqual(file.read_bytes(), (file.parent.with_name('surge') / file.with_suffix('.list').name).read_bytes())
+                        for client in ('sing-box', 'v2ray', 'mihomo'):
+                            self.assertTrue(any(host in p.read_text() for p in (root / 'rules' / client).rglob('*') if p.is_file()))
+                    self.assertNotIn(host, (root / 'rules/loon/030-pages.lsr').read_text())
                     self.assertEqual(pipeline.run(offline=True), 0)
-                bodies = {key: pipeline.rules.read_rules((root / 'rules' / pipeline.rule_filename(entry)).read_text())
+                bodies = {key: pipeline.rules.read_rules((root / 'rules' / 'loon' / pipeline.rule_filename(entry)).read_text())
                           for key, entry in entries.items()}
                 index = RuleIndex(bodies, ['code', 'pages'])
                 self.assertEqual(index.route('site.github.io', ['code', 'pages']), 'pages')

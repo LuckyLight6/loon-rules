@@ -1,0 +1,31 @@
+# name: nintendo-platform
+# priority: 4140
+# section: games
+# description: Nintendo 任天堂
+# boundary: 核心平台与官网地区门户；排除大陆专用域、共享基础设施和无法核实归属的游戏域名
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-24T08:00:02Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/nintendo.list
+# source: https://www.nintendo.com/regionselector/
+# source: https://www.nintendo.com/de-de/Rechtliche-Informationen/Webseiten-Datenschutzerklarung/Webseiten-Datenschutzerklarung-637785.html
+# canonical-rule-count: 15
+# rule-count: 15
+# format: egern
+# canonical: rules/loon/4140-nintendo-platform.lsr
+
+domain_suffix_set:
+  - "nintendo.com"
+  - "nintendo.net"
+  - "nintendo.co.jp"
+  - "nintendo.co.il"
+  - "nintendo.co.za"
+  - "nintendo.dk"
+  - "nintendo.fi"
+  - "nintendo.gr"
+  - "nintendo.hu"
+  - "nintendo.no"
+  - "nintendo.pl"
+  - "nintendo.sa"
+  - "nintendo.se"
+  - "nintendo.sk"
+  - "nintendo.de"

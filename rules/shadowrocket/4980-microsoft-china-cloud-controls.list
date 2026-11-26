@@ -1,0 +1,21 @@
+# name: microsoft-china-cloud-controls
+# priority: 4980
+# section: vendors
+# description: Microsoft Azure 中国区登录与控制端点
+# boundary: 从 Azure 官方中国云定义读取登录、管理、门户、目录与 Graph 入口；只收精确控制主机，不接管中国云租户存储或整个 chinacloudapi.cn
+# created-at: 2026-11-22T18:37:28Z
+# updated-at: 2026-11-22T18:37:28Z
+# source: https://raw.githubusercontent.com/Azure/azure-cli/dev/src/azure-cli-core/azure/cli/core/cloud.py
+# source: https://learn.microsoft.com/en-us/graph/deployments
+# source: https://docs.azure.cn/zh-cn/storage/common/storage-explorer-network
+# canonical-rule-count: 6
+# rule-count: 6
+# format: shadowrocket
+# canonical: rules/loon/4980-microsoft-china-cloud-controls.lsr
+
+DOMAIN,gallery.chinacloudapi.cn
+DOMAIN,login.chinacloudapi.cn
+DOMAIN,management.chinacloudapi.cn
+DOMAIN,management.core.chinacloudapi.cn
+DOMAIN,microsoftgraph.chinacloudapi.cn
+DOMAIN,portal.azure.cn

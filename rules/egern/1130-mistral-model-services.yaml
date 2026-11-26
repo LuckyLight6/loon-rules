@@ -1,0 +1,16 @@
+# name: mistral-model-services
+# priority: 1130
+# section: ai
+# description: Mistral 平台专用域名
+# boundary: 第三方推理平台按自己的入口归类
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/mistral-ai.list
+# source: https://raw.githubusercontent.com/mistralai/client-python/main/src/mistralai/client/sdkconfiguration.py
+# canonical-rule-count: 1
+# rule-count: 1
+# format: egern
+# canonical: rules/loon/1130-mistral-model-services.lsr
+
+domain_suffix_set:
+  - "mistral.ai"

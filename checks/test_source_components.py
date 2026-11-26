@@ -37,7 +37,7 @@ class SourceComponents(PublicSourceExamples):
         start=datetime(2026,11,21,tzinfo=timezone.utc)
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),\
                 redirect_stdout(StringIO()),patch.object(lib,'datetime',wraps=datetime) as clock:
-            root=Path(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=Path(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
@@ -45,7 +45,7 @@ class SourceComponents(PublicSourceExamples):
                 'component-rules':{'source-overseas':rows},
                 'component-metadata':{'source-overseas':{'created-at':'2020-01-01T00:00:00Z',
                                                         'updated-at':'2020-01-01T00:00:00Z'}}}))
-            output=root/'rules'/lib.rule_filename(entry)
+            output=root/'rules' / 'loon'/lib.rule_filename(entry)
             output.write_text(lib.decorate(entry,rows,None,'2020-01-01T00:00:00Z'))
             for time in (start,start+timedelta(hours=22)):
                 clock.now.return_value=time
@@ -70,15 +70,15 @@ class SourceComponents(PublicSourceExamples):
              'sections':[{'id':'overseas','title':'海外补充'}],
              'critical':{'www.service.vendor.example':['overseas-extra']},'shared-negatives':[]}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=Path(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=Path(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
             (root/'data/maintenance-state.json').write_text(json.dumps({'component-rules':{'source-overseas':[row]}}))
-            (root/'rules'/lib.rule_filename(entry)).write_text(lib.decorate(entry,[row],None,'2026-01-01T00:00:00Z'))
+            (root/'rules' / 'loon'/lib.rule_filename(entry)).write_text(lib.decorate(entry,[row],None,'2026-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=lambda url:row):
                 self.assertEqual(lib.run(),0)
-            self.assertEqual([p.name for p in (root/'rules').glob('*.lsr')],['675-overseas-extra.lsr'])
+            self.assertEqual([p.name for p in (root/'rules' / 'loon').glob('*.lsr')],['675-overseas-extra.lsr'])
             state=json.loads((root/'data/maintenance-state.json').read_text())
             self.assertEqual(state['component-rules'],{'source-overseas':[row]})
             self.assertEqual(set(state['rules']),{'overseas-extra'})

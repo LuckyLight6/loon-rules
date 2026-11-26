@@ -1,0 +1,19 @@
+# name: alipay-mainland-payments
+# priority: 6710
+# section: payments
+# description: 支付宝国内账户支付和静态资源
+# boundary: 不把 AlipayHK、Alipay+、第三方账户或整个阿里云归为国内支付宝
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AliPay/AliPay.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: surfboard
+# canonical: rules/loon/6710-alipay-mainland-payments.lsr
+
+DOMAIN-SUFFIX,alipay.cn
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipay.com.cn
+DOMAIN-SUFFIX,alipay.net
+DOMAIN-SUFFIX,alipayeshop.com
+DOMAIN-SUFFIX,alipayobjects.com

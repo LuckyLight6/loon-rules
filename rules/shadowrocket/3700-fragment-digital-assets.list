@@ -1,0 +1,14 @@
+# name: fragment-digital-assets
+# priority: 3700
+# section: crypto
+# description: Fragment 用户名与数字资产服务
+# boundary: 识别 Fragment 自营网站及服务；Telegram 登录和钱包连接按各自服务匹配，不视为 Telegram 消息流量
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://fragment.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: shadowrocket
+# canonical: rules/loon/3700-fragment-digital-assets.lsr
+
+DOMAIN-SUFFIX,fragment.com

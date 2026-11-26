@@ -59,14 +59,14 @@ class ProviderSources(PublicSourceExamples):
                   company: 'DOMAIN-SUFFIX,vendor.example', page: document('assets.images.example')}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
             (root / 'config/endpoint-contracts.json').write_text('[]')
             (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
             for entry in entries.values():
                 rows = ['DOMAIN-SUFFIX,vendor.example'] if entry['id'].startswith('mainland') else ['DOMAIN-SUFFIX,video.example']
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                     pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -76,13 +76,13 @@ class ProviderSources(PublicSourceExamples):
                 publish(root)
                 pipeline.run(offline=True)
                 for key in ('international', 'international-all'):
-                    path = root / 'rules' / pipeline.rule_filename(entries[key])
+                    path = root / 'rules' / 'loon' / pipeline.rule_filename(entries[key])
                     rows = pipeline.rules.read_rules(path.read_text())
                     self.assertIn('DOMAIN,runtime.new-region.vendor.example', rows)
                     self.assertIn('DOMAIN,cdn.new-images.example', rows)
                     self.assertNotIn('DOMAIN-SUFFIX,vendor.example', rows)
-                    self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
-                    output = root / 'dist/sing-box' / path.with_suffix('.json').name
+                    self.assertEqual(path.read_bytes(), (path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
+                    output = root / 'rules/sing-box' / path.with_suffix('.json').name
                     self.assertIn('runtime.new-region.vendor.example', output.read_text())
                 state = json.loads((root / 'data/maintenance-state.json').read_text())
                 self.assertEqual(state['subscription-audit']['duplicate-rules'], 0)
@@ -191,12 +191,12 @@ class ProviderSources(PublicSourceExamples):
                             'startAutnum':399358,'endAutnum':399358,'status':['active']}]}
         inputs={endpoint:document(),registry:json.dumps(record),feed:'DOMAIN,api.vendor.example'}
         with TemporaryDirectory() as tmp, patch.object(lib,'ROOT',prepare_workspace(tmp)), redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
             (root/'config/catalog.json').write_text(json.dumps(config))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(config,entries))
             for entry in entries.values():
-                (root/'rules'/lib.rule_filename(entry)).write_text(lib.decorate(entry,
+                (root/'rules' / 'loon'/lib.rule_filename(entry)).write_text(lib.decorate(entry,
                     ['DOMAIN,api.vendor.example','IP-ASN,399358,no-resolve'],None,'2026-11-20T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=inputs.__getitem__):
                 lib.run();publish(root)
@@ -207,13 +207,13 @@ class ProviderSources(PublicSourceExamples):
                 inputs[registry]=json.dumps(record)
                 lib.run();publish(root);lib.run();publish(root,check=True)
                 for entry in (service,combined):
-                    path=root/'rules'/lib.rule_filename(entry)
+                    path=root/'rules' / 'loon'/lib.rule_filename(entry)
                     rows=lib.rules.read_rules(path.read_text())
                     self.assertIn('DOMAIN,files.unlisted-provider.example',rows)
                     self.assertIn('IP-ASN,399359,no-resolve',rows)
                     self.assertNotIn('IP-ASN,399358,no-resolve',rows)
-                    self.assertEqual(path.read_bytes(),path.with_suffix('.list').read_bytes())
-                    yaml=(root/'dist/clash-classical'/path.with_suffix('.yaml').name).read_text()
+                    self.assertEqual(path.read_bytes(),(path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
+                    yaml=(root/'rules/mihomo'/path.with_suffix('.yaml').name).read_text()
                     self.assertIn('files.unlisted-provider.example',yaml)
                     self.assertIn('IP-ASN,399359,no-resolve',yaml)
                 before={p:p.read_bytes() for folder in ('rules','dist')

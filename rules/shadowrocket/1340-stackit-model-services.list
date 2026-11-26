@@ -1,0 +1,15 @@
+# name: stackit-model-services
+# priority: 1340
+# section: ai
+# description: STACKIT AI Model Serving
+# boundary: 只读 AI Model Serving 的精确 API 主机，不认领整个 STACKIT 云或 onstackit.cloud
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://docs.stackit.cloud/products/data-and-ai/ai-model-serving/basics/available-shared-models
+# canonical-rule-count: 1
+# rule-count: 1
+# format: shadowrocket
+# canonical: rules/loon/1340-stackit-model-services.lsr
+
+DOMAIN,api.openai-compat.model-serving.eu01.onstackit.cloud

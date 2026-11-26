@@ -1,0 +1,41 @@
+# name: ip-egress-checks
+# priority: 0150
+# section: network
+# description: 查询当前公网出口：国内检测页、IPv4、IPv6 和双栈 API
+# boundary: 只收用途明确的查询主机，不接管 IP 资料站、DNS、STUN 或多用途网站。设为代理后，用这些主机查地址的 DDNS 客户端也会看到代理出口
+# created-at: 2026-11-19T17:59:30Z
+# updated-at: 2026-11-20T02:48:32Z
+# source: https://2026.ip138.com/
+# source: https://my.ip.cn/
+# source: https://www.ipip.net/myip.html
+# source: https://raw.githubusercontent.com/qdm12/ddns-updater/master/README.md
+# source: https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-sg.html
+# source: https://www.ipify.org/
+# source: https://www.ip138.com/
+# canonical-rule-count: 22
+# rule-count: 22
+# format: surfboard
+# canonical: rules/loon/0150-ip-egress-checks.lsr
+
+DOMAIN,2026.ip138.com
+DOMAIN,my.ip.cn
+DOMAIN,myip.ipip.net
+DOMAIN,myip.la
+DOMAIN,www.myip.la
+DOMAIN,checkip.amazonaws.com
+DOMAIN,checkip.global.api.aws
+DOMAIN,api.ipify.org
+DOMAIN,api6.ipify.org
+DOMAIN,api64.ipify.org
+DOMAIN,checkip.spdyn.de
+DOMAIN,icanhazip.com
+DOMAIN,ident.me
+DOMAIN,ifconfig.io
+DOMAIN,ip.changeip.com
+DOMAIN,ip.nnev.de
+DOMAIN,ip4.nnev.de
+DOMAIN,ip6.nnev.de
+DOMAIN,ipv4.icanhazip.com
+DOMAIN,ipv6.icanhazip.com
+DOMAIN,v4.ident.me
+DOMAIN,v6.ident.me

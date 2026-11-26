@@ -1,0 +1,43 @@
+# name: claude-connections
+# priority: 1010
+# section: ai
+# description: Claude 登录、API、MCP、更新、附件和 Artifact
+# boundary: Claude 自有登录、API、MCP、附件、Artifact、更新及已核实的公开站点使用同一策略；网络地址只取官方入站章节和注册组织当前持有的 Anthropic ASN，使用 no-resolve；内部测试、外部 MCP、共享客服、验证、支付和遥测不整域归入 Claude
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-24T04:48:27Z
+# source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
+# source: https://code.claude.com/docs/en/network-config#network-access-requirements
+# source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/anthropic.list
+# source: https://platform.claude.com/docs/en/api/ip-addresses
+# source: https://academy.claude.com/products/platform
+# source: https://rdap.arin.net/registry/entity/AP-2440
+# canonical-rule-count: 24
+# rule-count: 24
+# format: shadowrocket
+# canonical: rules/loon/1010-claude-connections.lsr
+
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR,153.61.224.0/22,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
+IP-ASN,399358,no-resolve
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claude.new
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudeacademy.com
+IP-ASN,400243,no-resolve
+IP-ASN,401551,no-resolve
+IP-ASN,4167,no-resolve
+IP-ASN,60808,no-resolve

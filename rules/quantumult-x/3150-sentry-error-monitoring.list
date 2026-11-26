@@ -1,0 +1,17 @@
+# name: sentry-error-monitoring
+# priority: 3150
+# section: development
+# description: Sentry 错误监控、API 与 SDK
+# boundary: Sentry 共享平台、地区 API 和 SDK 素材；不把整个平台认作任一接入应用
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/sentry.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/loon/3150-sentry-error-monitoring.lsr
+
+host-suffix,getsentry.com,proxy
+host-suffix,sentry.dev,proxy
+host-suffix,sentry.io,proxy
+host-suffix,sentry-cdn.com,proxy

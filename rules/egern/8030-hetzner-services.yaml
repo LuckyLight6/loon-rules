@@ -1,0 +1,28 @@
+# name: hetzner-services
+# priority: 8030
+# section: vendors
+# description: Hetzner 云与存储平台
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/hetzner.list
+# canonical-rule-count: 14
+# rule-count: 14
+# format: egern
+# canonical: rules/loon/8030-hetzner-services.lsr
+
+domain_suffix_set:
+  - "first-ns.de"
+  - "hetzner-cloud.de"
+  - "hetzner.cloud"
+  - "hetzner.com"
+  - "hetzner.company"
+  - "hetzner.de"
+  - "hetzner.social"
+  - "htznr.li"
+  - "second-ns.com"
+  - "second-ns.de"
+  - "your-objectstorage.com"
+  - "your-server.de"
+  - "your-storagebox.de"
+  - "your-storageshare.de"

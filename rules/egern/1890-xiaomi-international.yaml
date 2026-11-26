@@ -1,0 +1,17 @@
+# name: xiaomi-international
+# priority: 1890
+# section: ai
+# description: 小米 MiMo · 新加坡与欧洲计划
+# boundary: 只读明确标注新加坡、欧洲计划的专用服务字段，不把整个 xiaomimimo.com 从国内或共用 API 接走
+# created-at: 2026-11-21T12:05:08Z
+# updated-at: 2026-11-21T12:05:08Z
+# source: https://models.dev/api.json
+# source: https://platform.xiaomimimo.com/
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/loon/1890-xiaomi-international.lsr
+
+domain_set:
+  - "token-plan-ams.xiaomimimo.com"
+  - "token-plan-sgp.xiaomimimo.com"

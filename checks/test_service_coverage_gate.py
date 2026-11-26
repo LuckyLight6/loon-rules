@@ -216,18 +216,18 @@ class ServiceCoverageGate(unittest.TestCase):
         with TemporaryDirectory() as tmp, redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
             with patch.object(pipeline, 'ROOT', root):
-                (root / 'rules').mkdir()
+                (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
                 entries = pipeline.validate_declarations(config)
                 for entry, rows in ((company, ['DOMAIN-SUFFIX,vendor.com']),
                                     (product, ['DOMAIN,other.example.com'])):
-                    (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                    (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                         pipeline.decorate(entry, rows, None, '2020-01-01T00:00:00Z'))
                 (root / 'config/catalog.json').write_text(json.dumps(config))
                 (root / 'config/endpoint-contracts.json').write_text(json.dumps([contract]))
                 (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
                 with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                     self.assertEqual(pipeline.run(), 0)
-                published = root / 'rules' / pipeline.rule_filename(company)
+                published = root / 'rules' / 'loon' / pipeline.rule_filename(company)
                 self.assertEqual(pipeline.rules.read_rules(published.read_text()), ['DOMAIN-SUFFIX,vendor.com'])
 
 

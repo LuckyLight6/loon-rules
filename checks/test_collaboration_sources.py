@@ -110,16 +110,16 @@ class CollaborationSources(PublicSourceExamples):
                     '<tr><td>*.cloud.other.example</td><td>Repository</td></tr></table>')
         urls={source:document()}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
             for e,rows in [(repo,['DOMAIN-SUFFIX,repo.vendor.example']),(shared,['DOMAIN-SUFFIX,common.example'])]:
-                (root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2026-11-20T00:00:00Z'))
+                (root/'rules' / 'loon'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2026-11-20T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=urls.__getitem__):
                 lib.run()
                 urls[source]=document('<tr><td>*.unlisted-repo.example</td><td>Repository</td></tr>')
                 lib.run();lib.run()
-            data={e['id']:lib.rules.read_rules((root/'rules'/lib.rule_filename(e)).read_text()) for e in [repo,shared]}
+            data={e['id']:lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(e)).read_text()) for e in [repo,shared]}
             self.assertEqual(lib.ordered_route('api.unlisted-repo.example',['repository','shared-cloud'],data),'repository')
             self.assertNotIn('DOMAIN-SUFFIX,unlisted-repo.example',data['shared-cloud'])
             self.assertIsNone(lib.ordered_route('api.cloud.other.example',['repository','shared-cloud'],data))

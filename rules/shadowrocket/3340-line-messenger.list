@@ -1,0 +1,18 @@
+# name: line-messenger
+# priority: 3340
+# section: social
+# description: LINE
+# boundary: LINE 消息、专用内容与已核实的加好友短链；不把 LINE Mobile、游戏、购物、电视或整个 Naver 当成通信连接
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-24T04:48:27Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/line.list
+# source: https://developers.line.biz/en/docs/messaging-api/try-rich-menu/
+# canonical-rule-count: 4
+# rule-count: 4
+# format: shadowrocket
+# canonical: rules/loon/3340-line-messenger.lsr
+
+DOMAIN-SUFFIX,line-apps.com
+DOMAIN-SUFFIX,line-scdn.net
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,lin.ee

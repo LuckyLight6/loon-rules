@@ -175,10 +175,10 @@ class InventoryLifecycle(PublicSourceExamples):
         urls=inputs(old);now=datetime(2026,11,21,tzinfo=timezone.utc)
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()),patch.object(lib,'datetime',wraps=datetime) as clock:
             clock.now.return_value=now
-            root=prepare_workspace(tmp);(root/'rules').mkdir();declared=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);declared=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,declared))
-            output=root/'rules'/lib.rule_filename(entry)
+            output=root/'rules' / 'loon'/lib.rule_filename(entry)
             output.write_text(lib.decorate(entry,old+[supplement],None,'2026-11-20T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=urls.__getitem__):
                 lib.run()

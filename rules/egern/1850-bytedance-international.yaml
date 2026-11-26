@@ -1,0 +1,26 @@
+# name: bytedance-international
+# priority: 1850
+# section: ai
+# description: 字节豆包、扣子与模型平台 · 国际入口
+# boundary: 按已核实的国际产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://docs.volcengine.com/docs/ark/responses-api-text-generation?lang=en
+# source: https://docs.coze.cn/guides_FAQ
+# source: https://docs.byteplus.com/en/docs/modelark/coding-plan-personal-ai-codex
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance-ai-%21cn.list
+# canonical-rule-count: 8
+# rule-count: 8
+# format: egern
+# canonical: rules/loon/1850-bytedance-international.lsr
+
+domain_set:
+  - "ark.ap-southeast.bytepluses.com"
+domain_suffix_set:
+  - "coze.com"
+  - "marscode.com"
+  - "trae.ai"
+  - "cici.com"
+  - "ciciai.com"
+  - "ciciaicdn.com"
+  - "dola.com"

@@ -1,0 +1,35 @@
+# name: apple-certificate-validation
+# priority: 2320
+# section: apple
+# description: Apple 设备的证书状态和撤销检查
+# boundary: 只用官方给出的证书端点及已知 Apple 主机别名，不扩到整个 DigiCert
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-20T17:51:12Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# source: https://support.apple.com/en-us/101555
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# canonical-rule-count: 18
+# rule-count: 18
+# format: quantumult-x
+# canonical: rules/loon/2320-apple-certificate-validation.lsr
+
+host,certs-lb.apple.com.akadns.net,proxy
+host,certs.apple.com,proxy
+host,crl-lb.apple.com.akadns.net,proxy
+host,crl.apple.com,proxy
+host,ocsp2.apple.com,proxy
+host,valid.apple.com,proxy
+host,valid.origin-apple.com.akadns.net,proxy
+host,crl3.digicert.com,proxy
+host,crl4.digicert.com,proxy
+host,ocsp.digicert.cn,proxy
+host,ocsp.digicert.com,proxy
+host,ocsp-cdn.apple.com.akadns.net,proxy
+host,ocsp-cdn.origin-apple.com.akadns.net,proxy
+host,ocsp.apple.com.akadns.net,proxy
+host,ocsp.apple.com.mwcname.com,proxy
+host-suffix,ocsp-lb.apple.com.akadns.net,proxy
+host-suffix,ocsp.apple.com,proxy
+host-suffix,ocsp.g.aaplimg.com,proxy

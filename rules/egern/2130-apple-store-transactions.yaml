@@ -1,0 +1,39 @@
+# name: apple-store-transactions
+# priority: 2130
+# section: apple
+# description: App Store API、搜索与提示、购买与安装指令、Apple Books 商店
+# boundary: 包括 iTunes 签名初始化、第三方市场安装入口和 Apple Books 门户。账户认证、App 下载和 TestFlight 分开，不包揽整个 itunes.apple.com
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-22T08:35:26Z
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/AppStore.list
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/rules/custom/TestFlight.list
+# source: https://raw.githubusercontent.com/geekdada/surge-list/master/surgio-snippet/apple.tpl
+# source: https://raw.githubusercontent.com/Bwy999/Surge/master/Ruleset/AppleService.list
+# source: https://books.apple.com/us/charts
+# source: https://support.apple.com/en-us/101555
+# source: https://init.itunes.apple.com/bag.xml
+# canonical-rule-count: 17
+# rule-count: 17
+# format: egern
+# canonical: rules/loon/2130-apple-store-transactions.lsr
+
+domain_regex_set:
+  - "(?i)^.*\\.apps\\.apple\\.com$"
+  - "(?i)^.*buy\\.itunes\\.apple\\.com$"
+domain_set:
+  - "sandbox.itunes.apple.com"
+  - "bag.itunes.apple.com"
+  - "se.itunes.apple.com"
+  - "se-edge.itunes.apple.com"
+  - "su.itunes.apple.com"
+  - "upp.itunes.apple.com"
+  - "apps.apple.com"
+  - "itunes.apple.com"
+  - "lookup-api.apple.com"
+  - "books.apple.com"
+  - "fpinit.itunes.apple.com"
+  - "search.itunes.apple.com"
+domain_suffix_set:
+  - "appstore.com"
+  - "appsto.re"
+  - "apps-marketplace.apple.com"

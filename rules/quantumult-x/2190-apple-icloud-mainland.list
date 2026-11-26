@@ -1,0 +1,18 @@
+# name: apple-icloud-mainland
+# priority: 2190
+# section: apple
+# description: 中国大陆 iCloud 服务和内容专用域
+# boundary: 只收官方标注的大陆服务域及 Apple DNS 委派的大陆内容域；不认为 Apple 账户、CloudKit 或共用域都在大陆
+# created-at: 2026-11-19T12:26:59Z
+# updated-at: 2026-11-19T12:26:59Z
+# source: https://support.apple.com/en-us/101555
+# source: https://support.apple.com/zh-cn/111754
+# source: https://dns.google/resolve?name=icloud-content.com.cn&type=SOA
+# canonical-rule-count: 3
+# rule-count: 3
+# format: quantumult-x
+# canonical: rules/loon/2190-apple-icloud-mainland.lsr
+
+host-suffix,apzones.com,proxy
+host-suffix,icloud-content.com.cn,proxy
+host-suffix,icloud.com.cn,proxy

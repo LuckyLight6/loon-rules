@@ -109,12 +109,12 @@ class ApiDirectoryExpansion(PublicSourceExamples):
               'ads':'DOMAIN,new.product.example\nDOMAIN,ad.other.example',
               'https://sources.vendor.example/apis/market.v1.json':api('market','api.vendor.example')}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();(root/'config/catalog.json').write_text(json.dumps(cfg))
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);(root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,{'store':entry,'ads':ads}))
-            output=root/'rules'/lib.rule_filename(entry)
+            output=root/'rules' / 'loon'/lib.rule_filename(entry)
             output.write_text(lib.decorate(entry,['DOMAIN,api.vendor.example'],None,'2020-01-01T00:00:00Z'))
-            adpath=root/'rules'/lib.rule_filename(ads)
+            adpath=root/'rules' / 'loon'/lib.rule_filename(ads)
             adpath.write_text(lib.decorate(ads,urls['ads'].splitlines(),None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=urls.__getitem__):
                 lib.run()
@@ -153,10 +153,10 @@ class ApiDirectoryExpansion(PublicSourceExamples):
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()),\
                 patch.object(lib,'datetime',wraps=datetime) as clock:
             start=datetime(2026,11,21,tzinfo=timezone.utc);clock.now.return_value=start
-            root=prepare_workspace(tmp);(root/'rules').mkdir();declared=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);declared=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,declared))
-            path=root/'rules'/lib.rule_filename(entry);adpath=root/'rules'/lib.rule_filename(ads)
+            path=root/'rules' / 'loon'/lib.rule_filename(entry);adpath=root/'rules' / 'loon'/lib.rule_filename(ads)
             path.write_text(lib.decorate(entry,['DOMAIN,old.provider.example'],None,'2020-01-01T00:00:00Z'))
             adpath.write_text(lib.decorate(ads,urls['ads'].splitlines(),None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=urls.__getitem__):

@@ -1,0 +1,28 @@
+# name: google-play-services
+# priority: 4550
+# section: google
+# description: Google Play 商店、应用管理与专用 API
+# boundary: 商店门户、企业应用管理、发布、完整性、报告及分组 API 随官方目录更新；游戏服务另列，共用 Android、FCM 和设备配置主机留给 Google 通用层
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-20T19:07:41Z
+# source: https://support.google.com/work/android/answer/10513641
+# source: https://www.googleapis.com/discovery/v1/apis
+# source: https://github.com/googleapis/google-api-python-client/tree/main/googleapiclient/discovery_cache/documents
+# canonical-rule-count: 13
+# rule-count: 13
+# format: quantumult-x
+# canonical: rules/loon/4550-google-play-services.lsr
+
+host,play.google.com,proxy
+host,androidenterprise.googleapis.com,proxy
+host,androidenterprise.mtls.googleapis.com,proxy
+host,androidpublisher.googleapis.com,proxy
+host,androidpublisher.mtls.googleapis.com,proxy
+host,playcustomapp.googleapis.com,proxy
+host,playcustomapp.mtls.googleapis.com,proxy
+host,playdeveloperreporting.googleapis.com,proxy
+host,playdeveloperreporting.mtls.googleapis.com,proxy
+host,playgrouping.googleapis.com,proxy
+host,playgrouping.mtls.googleapis.com,proxy
+host,playintegrity.googleapis.com,proxy
+host,playintegrity.mtls.googleapis.com,proxy

@@ -97,7 +97,7 @@ class RuleContracts(unittest.TestCase):
                 'DOMAIN,ai.google.dev', 'DOMAIN,geminiweb-pa.googleapis.com',
                 'DOMAIN,storage.googleapis.com', 'DOMAIN,openai.com.example.test']
         entries={e['id']:e for e in json.loads((library.ROOT/'config/catalog.json').read_text())['entries']}
-        owners=[(k,read_rules((library.ROOT/'rules'/library.rule_filename(entries[k])).read_text()))
+        owners=[(k,read_rules((library.ROOT/'rules' / 'loon'/library.rule_filename(entries[k])).read_text()))
                 for k in ('chatgpt-connections','gemini-connections')]
         self.assertEqual([first_policy(row.split(',')[1],owners) for row in body],
                          ['chatgpt-connections','chatgpt-connections',None,None,'gemini-connections','gemini-connections',None,None])

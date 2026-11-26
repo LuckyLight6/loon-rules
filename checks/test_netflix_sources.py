@@ -42,7 +42,7 @@ class NetflixSources(PublicSourceExamples):
         inputs = {source: self.document(), product['projection'][0]['source']: 'DOMAIN-SUFFIX,netflix.com'}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root / 'config/endpoint-contracts.json').write_text('[]')
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
@@ -50,7 +50,7 @@ class NetflixSources(PublicSourceExamples):
             for key, entry in entries.items():
                 rows = ['DOMAIN-SUFFIX,netflix.com'] if key == 'netflix-video-and-delivery' else ['DOMAIN-SUFFIX,fast.com']
                 if key == 'overseas-media-all': rows += ['DOMAIN-SUFFIX,netflix.com']
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                     pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -61,12 +61,12 @@ class NetflixSources(PublicSourceExamples):
                     pipeline.run()
                     publish(root)
                     for stem in ('3825-netflix-connection-tests', '3800-overseas-media-all'):
-                        path = root / 'rules' / (stem + '.lsr')
+                        path = root / 'rules' / 'loon' / (stem + '.lsr')
                         self.assertIn('DOMAIN-SUFFIX,' + host, path.read_text())
-                        self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
-                        for client in ('sing-box', 'clash-classical', 'v2ray'):
-                            self.assertTrue(any(host in file.read_text() for file in (root / 'dist' / client).rglob('*') if file.is_file()))
-                    self.assertNotIn(host, (root / 'rules/3820-netflix-video-and-delivery.lsr').read_text())
+                        self.assertEqual(path.read_bytes(), (path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
+                        for client in ('sing-box', 'mihomo', 'v2ray'):
+                            self.assertTrue(any(host in file.read_text() for file in (root / 'rules' / client).rglob('*') if file.is_file()))
+                    self.assertNotIn(host, (root / 'rules/loon/3820-netflix-video-and-delivery.lsr').read_text())
                     self.assertEqual(pipeline.run(offline=True), 0)
                 for change in ('missing-purpose', 'unowned-entry', 'shared-suffix', 'shared-host', 'address-type'):
                     before = {file: file.read_bytes() for folder in ('rules', 'dist', 'data')

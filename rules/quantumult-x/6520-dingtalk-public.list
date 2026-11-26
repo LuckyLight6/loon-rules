@@ -1,0 +1,16 @@
+# name: dingtalk-public
+# priority: 6520
+# section: social
+# description: 钉钉公共服务
+# boundary: 只匹配公共钉钉域；自建单点登录、专网和第三方企业应用不在内
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/dingtalk.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: quantumult-x
+# canonical: rules/loon/6520-dingtalk-public.lsr
+
+host-suffix,dingtalk.com,proxy
+host-suffix,dingtalkapps.com,proxy
+host-suffix,dingtalkcloud.com,proxy

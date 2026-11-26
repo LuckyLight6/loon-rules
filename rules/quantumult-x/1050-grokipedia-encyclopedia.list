@@ -1,0 +1,15 @@
+# name: grokipedia-encyclopedia
+# priority: 1050
+# section: ai
+# description: Grokipedia AI 百科站点
+# boundary: 百科页面与内容；共用账号登录由 xAI 账号规则处理
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/x-ai.list
+# source: https://grokipedia.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/loon/1050-grokipedia-encyclopedia.lsr
+
+host-suffix,grokipedia.com,proxy

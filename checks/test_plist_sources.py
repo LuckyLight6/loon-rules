@@ -144,11 +144,11 @@ class PlistSources(PublicSourceExamples):
              'shared-negatives':['storage.shared.example'],'sections':[{'id':'service','title':'服务'}]}
         inputs={source:self.encode(self.document())}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
             for item in (entry,view):
-                (root/'rules'/lib.rule_filename(item)).write_text(
+                (root/'rules' / 'loon'/lib.rule_filename(item)).write_text(
                     lib.decorate(entries[item['id']],entry['include'],None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=inputs.__getitem__):
                 lib.run()
@@ -157,7 +157,7 @@ class PlistSources(PublicSourceExamples):
                 lib.run();lib.run()
                 for item in (entry,view):
                     self.assertIn('DOMAIN,new.api-provider.example',
-                        lib.rules.read_rules((root/'rules'/lib.rule_filename(item)).read_text()))
+                        lib.rules.read_rules((root/'rules' / 'loon'/lib.rule_filename(item)).read_text()))
                 report=json.loads((root/'data/maintenance-state.json').read_text())
                 self.assertIn('new.api-provider.example',report['functional-hosts'])
                 self.assertNotIn('logs.unselected.example',report['functional-hosts'])

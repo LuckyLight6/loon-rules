@@ -31,12 +31,12 @@ class DiscoveryLifecycle(PublicSourceExamples):
             with self.subTest(failure=failure), TemporaryDirectory() as tmp, \
                     patch.object(lib, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
                 root = prepare_workspace(tmp)
-                (root / 'rules').mkdir()
+                (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
                 (root / 'config/endpoint-contracts.json').write_text('[]')
                 entries = lib.validate_declarations(config)
                 (root / 'config/catalog.json').write_text(json.dumps(config))
                 (root / 'docs/rules.md').write_text(lib.render_index(config, entries))
-                output = root / 'rules' / lib.rule_filename(entry)
+                output = root / 'rules' / 'loon' / lib.rule_filename(entry)
                 output.write_text(lib.decorate(entry, ['DOMAIN-SUFFIX,vendor.example'],
                                                 None, '2020-01-01T00:00:00Z'))
                 downloads = {feed: 'DOMAIN-SUFFIX,vendor.example',
@@ -78,9 +78,9 @@ class DiscoveryLifecycle(PublicSourceExamples):
             with self.subTest(failure=failure),TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),\
                     redirect_stdout(StringIO()),patch.object(lib,'datetime',wraps=datetime) as clock:
                 start=datetime(2026,11,21,tzinfo=timezone.utc);clock.now.return_value=start
-                root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
+                root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
                 (root/'config/catalog.json').write_text(json.dumps(config));(root/'config/endpoint-contracts.json').write_text('[]')
-                (root/'docs/rules.md').write_text(lib.render_index(config,entries));output=root/'rules'/lib.rule_filename(entry)
+                (root/'docs/rules.md').write_text(lib.render_index(config,entries));output=root/'rules' / 'loon'/lib.rule_filename(entry)
                 output.write_text(lib.decorate(entry,baseline,None,'2020-01-01T00:00:00Z'))
                 downloads={feed:'\n'.join(baseline),sdk:valid}
                 def read(url):

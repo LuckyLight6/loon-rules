@@ -61,14 +61,14 @@ class ConfigHistory(PublicSourceExamples):
                 with patch.object(lib.transport,'download',side_effect=self.read),patch.object(lib,'datetime',Clock):
                     return lib.run(**kwargs)
             def state(self):return json.loads((self.root/'data/maintenance-state.json').read_text())
-            def body(self,key):return lib.rules.read_rules((self.root/'rules'/lib.rule_filename(self.entries[key])).read_text())
+            def body(self,key):return lib.rules.read_rules((self.root/'rules' / 'loon'/lib.rule_filename(self.entries[key])).read_text())
             def snapshot(self):return {p:p.read_text() for p in self.root.rglob('*') if p.is_file()}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            w=Workspace(prepare_workspace(tmp));(w.root/'rules').mkdir();w.save()
+            w=Workspace(prepare_workspace(tmp));(w.root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);w.save()
             (w.root/'config/endpoint-contracts.json').write_text('[]')
             for e in w.entries.values():
                 rows=['DOMAIN,api.platform.example'] if e['id']=='other' else entry['include']
-                (w.root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2026-01-01T00:00:00Z'))
+                (w.root/'rules' / 'loon'/lib.rule_filename(e)).write_text(lib.decorate(e,rows,None,'2026-01-01T00:00:00Z'))
             yield w
 
     def test_missing_publisher_endpoint_does_not_stop_unrelated_updates(self):

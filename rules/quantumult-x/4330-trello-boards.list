@@ -1,0 +1,15 @@
+# name: trello-boards
+# priority: 4330
+# section: productivity
+# description: Trello
+# boundary: 看板和专用素材；不收整个 Atlassian 平台
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/atlassian.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/loon/4330-trello-boards.lsr
+
+host-suffix,trello.com,proxy
+host-suffix,trellocdn.com,proxy

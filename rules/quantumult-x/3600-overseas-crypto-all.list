@@ -1,0 +1,62 @@
+# name: overseas-crypto-all
+# priority: 3600
+# section: crypto
+# description: 海外加密资产服务合集
+# boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
+# created-at: 2026-11-22T17:48:09Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/binance.list
+# source: https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/rest-api.md
+# source: https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/web-socket-streams.md
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/okx.list
+# source: https://developer.gemini.com/rest
+# source: https://developer.gemini.com/get-started/sandbox
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kucoin.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/trustwallet.list
+# source: https://ton.org/
+# source: https://toncenter.com/
+# source: https://fragment.com/
+# canonical-rule-count: 37
+# rule-count: 37
+# format: quantumult-x
+# canonical: rules/loon/3600-overseas-crypto-all.lsr
+
+host-suffix,binance.com,proxy
+host-suffix,binance.info,proxy
+host-suffix,binance.net,proxy
+host-suffix,binance.us,proxy
+host,data-api.binance.vision,proxy
+host,data-stream.binance.vision,proxy
+host-suffix,okex.com,proxy
+host-suffix,okx-dns.com,proxy
+host-suffix,okx-dns1.com,proxy
+host-suffix,okx-dns2.com,proxy
+host-suffix,okx.com,proxy
+host,okx.com.cdn.cloudflare.net,proxy
+host-suffix,gemini.com,proxy
+host-suffix,kraken.com,proxy
+host-suffix,kraken.onl,proxy
+host,bybit-exchange.github.io,proxy
+host,bybit.ada.support,proxy
+host-suffix,bybit.com,proxy
+host-suffix,bycsi.com,proxy
+host-suffix,bytick.com,proxy
+host-suffix,byapis.com,proxy
+host-suffix,bycbe.com,proxy
+host-suffix,bymj.io,proxy
+host-suffix,byabcde.com,proxy
+host-suffix,byapps.net,proxy
+host-suffix,byd3c3.com,proxy
+host-suffix,bybit.biz,proxy
+host-suffix,bybdc6.com,proxy
+host-suffix,bybit-global.com,proxy
+host-suffix,bybit.cloud,proxy
+host-suffix,bybitglobal.com,proxy
+host-suffix,kucoin.com,proxy
+host-suffix,kucoin.plus,proxy
+host-suffix,trustwallet.com,proxy
+host-suffix,ton.org,proxy
+host-suffix,toncenter.com,proxy
+host-suffix,fragment.com,proxy

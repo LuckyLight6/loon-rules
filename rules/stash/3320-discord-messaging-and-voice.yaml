@@ -1,0 +1,42 @@
+# name: discord-messaging-and-voice
+# priority: 3320
+# section: social
+# description: Discord 通讯、语音及自营服务
+# boundary: 通讯、语音、附件、开发入口及相关自营服务；Activities 第三方应用代理另行匹配。未使用的候选别名不自动新增，其他来源仍支持的已有入口保留；共享云与客服平台只匹配专用主机
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-24T16:40:58Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/discord
+# source: https://discord.com/security
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Discord.lsr
+# canonical-rule-count: 26
+# rule-count: 26
+# format: clash-classical
+# canonical: rules/loon/3320-discord-messaging-and-voice.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,dis.gd"
+  - "DOMAIN-SUFFIX,discord-activities.com"
+  - "DOMAIN,discord-attachments-uploads-prd.storage.googleapis.com"
+  - "DOMAIN-SUFFIX,discord.co"
+  - "DOMAIN-SUFFIX,discord.com"
+  - "DOMAIN-SUFFIX,discord.gg"
+  - "DOMAIN-SUFFIX,discord.gift"
+  - "DOMAIN-SUFFIX,discord.gifts"
+  - "DOMAIN-SUFFIX,discord.media"
+  - "DOMAIN-SUFFIX,discordactivities.com"
+  - "DOMAIN-SUFFIX,discordapp.com"
+  - "DOMAIN-SUFFIX,discordapp.net"
+  - "DOMAIN-SUFFIX,discordcdn.com"
+  - "DOMAIN-SUFFIX,discordpartygames.com"
+  - "DOMAIN-SUFFIX,discordstatus.com"
+  - "DOMAIN,hammerandchisel.ssl.zendesk.com"
+  - "DOMAIN-SUFFIX,airhorn.solutions"
+  - "DOMAIN-SUFFIX,airhornbot.com"
+  - "DOMAIN-SUFFIX,bigbeans.solutions"
+  - "DOMAIN-SUFFIX,discord.design"
+  - "DOMAIN-SUFFIX,discord.dev"
+  - "DOMAIN-SUFFIX,discord.new"
+  - "DOMAIN-SUFFIX,discord.store"
+  - "DOMAIN-SUFFIX,discord.tools"
+  - "DOMAIN-SUFFIX,discordmerch.com"
+  - "DOMAIN-SUFFIX,watchanimeattheoffice.com"

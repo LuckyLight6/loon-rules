@@ -1,0 +1,25 @@
+# name: netflix-video-and-delivery
+# priority: 3820
+# section: media
+# description: Netflix 播放、设备 API 和内容分发
+# boundary: 保留 Netflix 服务域与 nflx* 中已确认的专用后缀；不接管 AWS 或来源不明的直播 IP
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Netflix.list
+# source: https://help.netflix.com/en/node/14424
+# canonical-rule-count: 11
+# rule-count: 11
+# format: surfboard
+# canonical: rules/loon/3820-netflix-video-and-delivery.lsr
+
+DOMAIN-SUFFIX,netflix.ca
+DOMAIN-SUFFIX,netflix.com
+DOMAIN-SUFFIX,netflix.com.au
+DOMAIN-SUFFIX,netflix.com.edgesuite.net
+DOMAIN-SUFFIX,netflix.net
+DOMAIN-SUFFIX,nflxext.com
+DOMAIN-SUFFIX,nflximg.com
+DOMAIN-SUFFIX,nflximg.net
+DOMAIN-SUFFIX,nflxsearch.net
+DOMAIN-SUFFIX,nflxso.net
+DOMAIN-SUFFIX,nflxvideo.net

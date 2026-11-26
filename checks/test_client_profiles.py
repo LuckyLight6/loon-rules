@@ -155,14 +155,14 @@ class PublicClientProfiles(PublicSourceExamples):
             if profile in unavailable:raise Invalid('unavailable public configuration')
             return plistlib.dumps(body).decode()
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir()
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             def save():
                 entries=lib.validate_declarations(config)
                 (root/'config/catalog.json').write_text(json.dumps(config));(root/'docs/rules.md').write_text(lib.render_index(config,entries))
                 return entries
             entries=save();(root/'config/endpoint-contracts.json').write_text('[]')
             for e,rows in ((entry,entry['include']),(view,entry['include'])):
-                (root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(entries[e['id']],rows,None,'2020-01-01T00:00:00Z'))
+                (root/'rules' / 'loon'/lib.rule_filename(e)).write_text(lib.decorate(entries[e['id']],rows,None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=read):
                 lib.run()
                 state=json.loads((root/'data/maintenance-state.json').read_text())

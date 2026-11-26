@@ -1,0 +1,25 @@
+# name: tencent-international
+# priority: 1870
+# section: ai
+# description: 腾讯混元、元宝与 TokenHub · 国际入口
+# boundary: 按已核实的国际产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://cloud.tencent.com/document/api/1823/132282
+# source: https://cloud.tencent.com/document/product/1729/111007
+# canonical-rule-count: 10
+# rule-count: 10
+# format: egern
+# canonical: rules/loon/1870-tencent-international.lsr
+
+domain_set:
+  - "tokenhub.ap-hongkong.tencentcloudapi.com"
+  - "tokenhub.ap-singapore.tencentcloudapi.com"
+  - "tokenhub.ap-jakarta.tencentcloudapi.com"
+  - "tokenhub.ap-bangkok.tencentcloudapi.com"
+  - "tokenhub.ap-seoul.tencentcloudapi.com"
+  - "tokenhub.ap-tokyo.tencentcloudapi.com"
+  - "tokenhub.na-ashburn.tencentcloudapi.com"
+  - "tokenhub.na-siliconvalley.tencentcloudapi.com"
+  - "tokenhub.sa-saopaulo.tencentcloudapi.com"
+  - "tokenhub.eu-frankfurt.tencentcloudapi.com"

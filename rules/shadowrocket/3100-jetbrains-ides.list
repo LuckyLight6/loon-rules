@@ -1,0 +1,16 @@
+# name: jetbrains-ides
+# priority: 3100
+# section: development
+# description: JetBrains IDE、授权与插件
+# boundary: IDE、授权、插件市场与设置同步；官方用途表补全当前主机。AI 专用后端、中国区 AI API、Node.js 与 ACP 注册表分别匹配，不把整套依赖都归给 IDE
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/jetbrains.list
+# source: https://support.jetbrains.com/api/v2/help_center/en-us/articles/40250675463570.json
+# source: https://support.jetbrains.com/hc/en-us/articles/40250675463570-Firewall-or-proxy-allowlist-for-IntelliJ-based-IDEs-required-hosts-and-ports
+# canonical-rule-count: 1
+# rule-count: 1
+# format: shadowrocket
+# canonical: rules/loon/3100-jetbrains-ides.lsr
+
+DOMAIN-SUFFIX,jetbrains.com

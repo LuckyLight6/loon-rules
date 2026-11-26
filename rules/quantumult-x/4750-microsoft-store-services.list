@@ -1,0 +1,17 @@
+# name: microsoft-store-services
+# priority: 4750
+# section: microsoft
+# description: Microsoft Store 商店目录与加载
+# boundary: 商店前端和目录请求；系统更新控制、账户、许可和文件下载各自匹配
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-20T04:32:59Z
+# source: https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/loon/4750-microsoft-store-services.lsr
+
+host,storeedgefd.dsx.mp.microsoft.com,proxy
+host,livetileedge.dsx.mp.microsoft.com,proxy
+host,displaycatalog.mp.microsoft.com,proxy
+host,share.microsoft.com,proxy

@@ -1,0 +1,16 @@
+# name: kraken-exchange
+# priority: 3640
+# section: crypto
+# description: Kraken 交易平台
+# boundary: 按所列维护来源识别该产品；只生成 Loon 域名规则，其他产品和厂商共用连接另行处理
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kraken.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/loon/3640-kraken-exchange.lsr
+
+domain_suffix_set:
+  - "kraken.com"
+  - "kraken.onl"

@@ -1,0 +1,33 @@
+# name: microsoft-account-authentication
+# priority: 4710
+# section: microsoft
+# description: Microsoft 个人账户与 Entra 登录
+# boundary: 只收个人账户、全球及美国政府云登录与 Entra 身份主机；Azure 中国云控制端点另列，不把整个 microsoftonline.com 或 Microsoft Graph 当认证
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-22T18:37:28Z
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+# source: https://raw.githubusercontent.com/Azure/azure-cli/dev/src/azure-cli-core/azure/cli/core/cloud.py
+# canonical-rule-count: 19
+# rule-count: 19
+# format: quantumult-x
+# canonical: rules/loon/4710-microsoft-account-authentication.lsr
+
+host,account.live.com,proxy
+host,login.live.com,proxy
+host,login.microsoftonline.com,proxy
+host,login.microsoft.com,proxy
+host,login.windows.net,proxy
+host,device.login.microsoftonline.com,proxy
+host,ccs.login.microsoftonline.com,proxy
+host-suffix,auth.microsoft.com,proxy
+host-suffix,msauth.net,proxy
+host-suffix,msftauth.net,proxy
+host,login-us.microsoftonline.com,proxy
+host,logincert.microsoftonline.com,proxy
+host,autologon.microsoftazuread-sso.com,proxy
+host,api.passwordreset.microsoftonline.com,proxy
+host,passwordreset.microsoftonline.com,proxy
+host-suffix,msftidentity.com,proxy
+host,login.microsoftonline-p.com,proxy
+host,loginex.microsoftonline.com,proxy
+host,login.microsoftonline.us,proxy

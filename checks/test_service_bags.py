@@ -92,11 +92,11 @@ class PublicServiceBags(PublicSourceExamples):
             if url!=source or kwargs!={'public_bag':True}:raise AssertionError('unexpected public request')
             return body
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
             (root/'config/catalog.json').write_text(json.dumps(config));(root/'docs/rules.md').write_text(lib.render_index(config,entries))
             (root/'config/endpoint-contracts.json').write_text('[]')
             for e in entries.values():
-                (root/'rules'/lib.rule_filename(e)).write_text(lib.decorate(e,entry['include'],None,'2020-01-01T00:00:00Z'))
+                (root/'rules' / 'loon'/lib.rule_filename(e)).write_text(lib.decorate(e,entry['include'],None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=read):
                 lib.run();self.assertEqual(requests,[(source,{'public_bag':True})])
                 state=json.loads((root/'data/maintenance-state.json').read_text())
@@ -113,7 +113,7 @@ class PublicServiceBags(PublicSourceExamples):
                 body=self.body('new.other-provider.example')
                 lib.run();self.assertEqual(lib.run(offline=True),0)
                 for e in entries.values():
-                    self.assertIn('DOMAIN,new.other-provider.example',(root/'rules'/lib.rule_filename(e)).read_text())
+                    self.assertIn('DOMAIN,new.other-provider.example',(root/'rules' / 'loon'/lib.rule_filename(e)).read_text())
                 state=json.loads((root/'data/maintenance-state.json').read_text())
                 self.assertIn('new.other-provider.example',state['functional-hosts'])
                 body=plistlib.dumps({}).decode()

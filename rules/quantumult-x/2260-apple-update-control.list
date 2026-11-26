@@ -1,0 +1,77 @@
+# name: apple-update-control
+# priority: 2260
+# section: apple
+# description: 系统更新目录、检查、授权与登记
+# boundary: 更新检查、签名授权、Beta 登记和运营商更新发现；反馈提交和二进制包体各有专表，不把整组当成匿名静态下载
+# created-at: 2026-11-19T08:04:26Z
+# updated-at: 2026-11-21T11:39:00Z
+# source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/SystemOTA/SystemOTA.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-update.list
+# source: https://support.apple.com/en-us/101555
+# source: https://beta.apple.com/
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-pki.list
+# canonical-rule-count: 59
+# rule-count: 59
+# format: quantumult-x
+# canonical: rules/loon/2260-apple-update-control.lsr
+
+host,gdmf-cdn.apple.com.akadns.net,proxy
+host,gdmf-cdn.origin-apple.com.akadns.net,proxy
+host,gdmf-lb.apple.com.akadns.net,proxy
+host,gdmf.apple.com.mwcname.com,proxy
+host,gdmf.g.aaplimg.com,proxy
+host,gg-cdn.apple.com.akadns.net,proxy
+host,gg-cdn.origin-apple.com.akadns.net,proxy
+host,gg-lb.apple.com.akadns.net,proxy
+host,gg.apple.com.akadns.net,proxy
+host,gg.apple.com.mwcname.com,proxy
+host,gg.g.aaplimg.com,proxy
+host,gnf-mdn.apple.com,proxy
+host,gnf-mr.apple.com,proxy
+host,mesu-lb.apple.com.akadns.net,proxy
+host,mesu.apple.com.akadns.net,proxy
+host,mesu.apple.com.mwcname.com,proxy
+host,ns.itunes.apple.com,proxy
+host,swpost.apple.com,proxy
+host,swscan-cdn.apple.com.akadns.net,proxy
+host,swscan-cdn.origin-apple.com.akadns.net,proxy
+host,swscan-lb.apple.com.akadns.net,proxy
+host,swscan.apple.com.akadns.net,proxy
+host,swscan.apple.com.mwcname.com,proxy
+host,swscan.g.aaplimg.com,proxy
+host,xp-cdn.apple.com.akadns.net,proxy
+host,xp-cdn.origin-apple.com.akadns.net,proxy
+host,xp-lb.apple.com.akadns.net,proxy
+host,xp.apple.com.akadns.net,proxy
+host,xp.apple.com.mwcname.com,proxy
+host,xp.g.aaplimg.com,proxy
+host-suffix,gdmf.apple.com,proxy
+host-suffix,gdmf.apple.com.akadns.net,proxy
+host-suffix,mesu-cdn.apple.com.akadns.net,proxy
+host-suffix,mesu-cdn.origin-apple.com.akadns.net,proxy
+host-suffix,mesu.apple.com,proxy
+host-suffix,mesu.g.aaplimg.com,proxy
+host-suffix,configuration.apple.com,proxy
+host-suffix,fcs-keys-pub-prod.cdn-apple.com,proxy
+host-suffix,gdmf-ados.apple.com,proxy
+host-suffix,gg.apple.com,proxy
+host-suffix,gs.apple.com,proxy
+host-suffix,gsra.apple.com,proxy
+host-suffix,ig.apple.com,proxy
+host-suffix,osrecovery.apple.com,proxy
+host-suffix,skl.apple.com,proxy
+host-suffix,swdist.apple.com,proxy
+host-suffix,swscan.apple.com,proxy
+host-suffix,wkms-public.apple.com,proxy
+host-suffix,xp.apple.com,proxy
+host,bpapi.apple.com,proxy
+host,itunes.com,proxy
+host,lcdn-locator.apple.com,proxy
+host,lcdn-registration.apple.com,proxy
+host,serverstatus.apple.com,proxy
+host,suconfig.apple.com,proxy
+host,xp-cdn.apple.com,proxy
+host,beta.apple.com,proxy
+host,configuration.apple.com.akadns.net,proxy
+host,swdist.apple.com.akadns.net,proxy

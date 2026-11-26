@@ -20,7 +20,7 @@ def command(arguments, *, timeout=30):
 
 
 def files(target):
-    manifest = json.loads((ROOT / 'dist/manifest.json').read_text())
+    manifest = json.loads((ROOT / 'rules/manifest.json').read_text())
     return [ROOT / item['path'] for item in manifest['formats'][target]['rules'].values()
             if item['status'] == 'available']
 

@@ -1,0 +1,20 @@
+# name: bytedance-shared-services
+# priority: 8440
+# section: vendors
+# description: 字节跳动国内与共用服务
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bytedance.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: clash-classical
+# canonical: rules/loon/8440-bytedance-shared-services.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,bytecdn.cn"
+  - "DOMAIN-SUFFIX,bytecdn.com"
+  - "DOMAIN-SUFFIX,bytedance.com"
+  - "DOMAIN-SUFFIX,bytedns.net"
+  - "DOMAIN-SUFFIX,bytetcc.com"
+  - "DOMAIN-SUFFIX,snssdk.com"

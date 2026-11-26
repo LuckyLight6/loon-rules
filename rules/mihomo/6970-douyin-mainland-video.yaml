@@ -1,0 +1,22 @@
+# name: douyin-mainland-video
+# priority: 6970
+# section: media
+# description: 抖音中国版短视频、直播、图片与素材
+# boundary: 只取抖音专有域和投放到该产品的 CDN；不纳入 TikTok、今日头条或整个字节基础设施
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/China-Direct.lsr
+# canonical-rule-count: 8
+# rule-count: 8
+# format: clash-classical
+# canonical: rules/loon/6970-douyin-mainland-video.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,douyin.com"
+  - "DOMAIN-SUFFIX,douyinliving.com"
+  - "DOMAIN-SUFFIX,amemv.com"
+  - "DOMAIN-SUFFIX,douyincdn.com"
+  - "DOMAIN-SUFFIX,douyinpic.com"
+  - "DOMAIN-SUFFIX,douyinstatic.com"
+  - "DOMAIN-SUFFIX,douyinvod.com"
+  - "DOMAIN-SUFFIX,idouyinvod.com"

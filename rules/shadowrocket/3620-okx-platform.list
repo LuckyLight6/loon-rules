@@ -1,0 +1,19 @@
+# name: okx-platform
+# priority: 3620
+# section: crypto
+# description: OKX 欧易
+# boundary: 交易平台及专用连接，不包括 OKLink 浏览器或整个 Cloudflare
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/okx.list
+# canonical-rule-count: 6
+# rule-count: 6
+# format: shadowrocket
+# canonical: rules/loon/3620-okx-platform.lsr
+
+DOMAIN-SUFFIX,okex.com
+DOMAIN-SUFFIX,okx-dns.com
+DOMAIN-SUFFIX,okx-dns1.com
+DOMAIN-SUFFIX,okx-dns2.com
+DOMAIN-SUFFIX,okx.com
+DOMAIN,okx.com.cdn.cloudflare.net

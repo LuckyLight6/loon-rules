@@ -1,0 +1,17 @@
+# name: kuaishou-video
+# priority: 6980
+# section: media
+# description: 快手
+# boundary: 国内产品和专用素材；Kwai 国际版不按同一品牌并入
+# created-at: 2026-11-20T06:40:36Z
+# updated-at: 2026-11-20T06:40:36Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/kuaishou.list
+# canonical-rule-count: 3
+# rule-count: 3
+# format: clash-classical
+# canonical: rules/loon/6980-kuaishou-video.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,gifshow.com"
+  - "DOMAIN-SUFFIX,kuaishou.com"
+  - "DOMAIN-SUFFIX,kwimgs.com"

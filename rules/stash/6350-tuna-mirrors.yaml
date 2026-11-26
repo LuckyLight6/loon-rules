@@ -1,0 +1,16 @@
+# name: tuna-mirrors
+# priority: 6350
+# section: development
+# description: 清华 TUNA 开源镜像
+# boundary: 只收镜像站与 PyPI 镜像，不接管校园网络
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/tuna/mirror-web/master/_helpz/local/pypi/tuna.zh.md
+# canonical-rule-count: 2
+# rule-count: 2
+# format: clash-classical
+# canonical: rules/loon/6350-tuna-mirrors.lsr
+
+payload:
+  - "DOMAIN,mirrors.tuna.tsinghua.edu.cn"
+  - "DOMAIN,pypi.tuna.tsinghua.edu.cn"

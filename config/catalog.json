@@ -26676,8 +26676,5 @@
       "mainland-networks",
       "mainland-geoip"
     ]
-  },
-  "subscription-aliases": {
-    "7800-extended-ad-and-tracking": "extended-ad-and-tracking"
   }
 }

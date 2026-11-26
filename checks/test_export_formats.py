@@ -15,25 +15,25 @@ class ExportFormats(unittest.TestCase):
         formats = self.exports()
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root / 'config').mkdir()
-            canonical = root / 'rules/0240-product.lsr'
+            canonical = root / 'rules/loon/0240-product.lsr'
             canonical.write_text('# name: product\nDOMAIN,api.product.example\n')
-            alias = root / 'rules/7800-product.lsr'
+            alias = root / 'rules/loon/7800-product.lsr'
             alias.write_text('# name: product\nDOMAIN,previous.product.example\n')
             config = {'priority-width': 4, 'entries': [{'id': 'product', 'priority': 240}],
                       'subscription-aliases': {'7800-product': 'product'}}
             (root / 'config/catalog.json').write_text(json.dumps(config))
             formats.publish(root)
-            manifest = json.loads((root / 'dist/manifest.json').read_text())
+            manifest = json.loads((root / 'rules/manifest.json').read_text())
             self.assertEqual(set(manifest['formats']['loon']['rules']), {'0240-product'})
             self.assertEqual(manifest['aliases'], {'7800-product': '0240-product'})
             self.assertEqual(alias.read_bytes(), canonical.read_bytes())
-            self.assertEqual(alias.with_suffix('.list').read_bytes(), canonical.read_bytes())
-            for folder, extension in [('clash-classical', 'yaml'), ('egern', 'yaml'),
+            self.assertEqual((alias.parent.with_name('surge') / alias.with_suffix('.list').name).read_bytes(), canonical.read_bytes())
+            for folder, extension in [('mihomo', 'yaml'), ('egern', 'yaml'),
                                       ('quantumult-x', 'list'), ('sing-box', 'json'), ('v2ray', 'json')]:
-                self.assertEqual((root / 'dist' / folder / ('7800-product.' + extension)).read_bytes(),
-                                 (root / 'dist' / folder / ('0240-product.' + extension)).read_bytes())
+                self.assertEqual((root / 'rules' / folder / ('7800-product.' + extension)).read_bytes(),
+                                 (root / 'rules' / folder / ('0240-product.' + extension)).read_bytes())
             canonical.write_text(canonical.read_text() + 'DOMAIN,new.product.example\n')
             with self.assertRaisesRegex(Invalid, '客户端'):
                 formats.publish(root, check=True)
@@ -45,13 +45,13 @@ class ExportFormats(unittest.TestCase):
         formats = self.exports()
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root / 'config').mkdir()
-            previous = root / 'rules/7800-product.lsr'
+            previous = root / 'rules/loon/7800-product.lsr'
             previous.write_text('# name: product\nDOMAIN,api.product.example\n')
             formats.publish(root)
-            before = {path: path.read_bytes() for path in (root / 'dist').rglob('*') if path.is_file()}
-            (root / 'rules/0240-product.lsr').write_text(previous.read_text() + 'IP-ASN,399358,no-resolve\n')
+            before = {path: path.read_bytes() for path in (root / 'rules').rglob('*') if path.is_file()}
+            (root / 'rules/loon/0240-product.lsr').write_text(previous.read_text() + 'IP-ASN,399358,no-resolve\n')
             config = {'priority-width': 4, 'entries': [{'id': 'product', 'priority': 240}],
                       'subscription-aliases': {'7800-product': 'product'}}
             (root / 'config/catalog.json').write_text(json.dumps(config))
@@ -194,8 +194,8 @@ class ExportFormats(unittest.TestCase):
         formats = self.exports()
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / 'rules').mkdir()
-            canonical = root / 'rules/1010-product.lsr'
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
+            canonical = root / 'rules/loon/1010-product.lsr'
             canonical.write_text('# name: product\n# updated-at: 2026-11-24T00:00:00Z\n'
                                  'DOMAIN,api.product.example\n')
             formats.publish(root)
@@ -204,17 +204,17 @@ class ExportFormats(unittest.TestCase):
             with self.assertRaisesRegex(Invalid, '客户端'):
                 formats.publish(root, check=True)
             formats.publish(root)
-            self.assertEqual(json.loads((root / 'dist/sing-box/1010-product.json').read_text())
+            self.assertEqual(json.loads((root / 'rules/sing-box/1010-product.json').read_text())
                              ['rules'][0]['domain'], ['api.product.example', 'new.product.example'])
-            manifest = json.loads((root / 'dist/manifest.json').read_text())
+            manifest = json.loads((root / 'rules/manifest.json').read_text())
             self.assertEqual(manifest['clients']['stash']['format'], 'clash-classical')
             self.assertEqual(manifest['clients']['mihomo']['format'], 'clash-classical')
             self.assertEqual(manifest['clients']['loon']['format'], 'loon')
             self.assertEqual(manifest['formats']['loon']['rules']['1010-product']['path'],
-                             'rules/1010-product.lsr')
+                             'rules/loon/1010-product.lsr')
             self.assertEqual(manifest['formats']['surge']['rules']['1010-product']['path'],
-                             'rules/1010-product.list')
-            subscription = root / 'rules/1010-product.list'
+                             'rules/surge/1010-product.list')
+            subscription = root / 'rules/surge/1010-product.list'
             self.assertEqual(subscription.read_bytes(), canonical.read_bytes())
             subscription.write_text('DOMAIN,stale.product.example\n')
             with self.assertRaisesRegex(Invalid, '客户端'):
@@ -226,11 +226,11 @@ class ExportFormats(unittest.TestCase):
         formats = self.exports()
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / 'rules').mkdir()
-            source = root / 'rules/1010-product.lsr'
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
+            source = root / 'rules/loon/1010-product.lsr'
             source.write_text('DOMAIN,api.product.example\n')
             formats.publish(root)
-            before = {p: p.read_bytes() for p in (root / 'dist').rglob('*') if p.is_file()}
+            before = {p: p.read_bytes() for p in (root / 'rules').rglob('*') if p.is_file() and p != source}
             source.write_text(source.read_text() + 'IP-ASN,399358,no-resolve\n')
             with self.assertRaisesRegex(Invalid, '已发布客户端订阅'):
                 formats.publish(root)
@@ -240,16 +240,16 @@ class ExportFormats(unittest.TestCase):
         formats = self.exports()
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / 'rules').mkdir()
-            (root / 'rules/2090-product.lsr').write_text(
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
+            (root / 'rules/loon/2090-product.lsr').write_text(
                 '# description: 登录\n# created-at: 2020-01-01T00:00:00Z\n'
                 '# updated-at: 2026-11-24T00:00:00Z\n# rule-count: 2\n'
                 'DOMAIN-WILDCARD,p[0-1][0-1].example\nDOMAIN,api.example\n')
             formats.publish(root)
-            output = (root / 'dist/surge-compatible/2090-product.list').read_text()
+            output = (root / 'rules/shadowrocket/2090-product.list').read_text()
             self.assertIn('# rule-count: 5\n', output)
             self.assertIn('# canonical-rule-count: 2\n', output)
-            manifest = json.loads((root / 'dist/manifest.json').read_text())
+            manifest = json.loads((root / 'rules/manifest.json').read_text())
             item = manifest['formats']['sing-box']['rules']['2090-product']
             self.assertEqual(item['updated-at'], '2026-11-24T00:00:00Z')
             self.assertEqual(item['description'], '登录')
@@ -258,13 +258,13 @@ class ExportFormats(unittest.TestCase):
         formats = self.exports()
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / 'rules').mkdir()
-            source = root / 'rules/1010-product.lsr'
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
+            source = root / 'rules/loon/1010-product.lsr'
             source.write_text('DOMAIN,api.product.example\n')
             formats.publish(root)
-            before = {p.relative_to(root): p.read_bytes() for p in (root / 'dist').rglob('*') if p.is_file()}
+            before = {p.relative_to(root): p.read_bytes() for p in (root / 'rules').rglob('*') if p.is_file() and p != source}
             source.write_text(source.read_text() + 'NOT-A-RULE,private.example\n')
             with self.assertRaises(Invalid):
                 formats.publish(root)
             self.assertEqual(before, {p.relative_to(root): p.read_bytes()
-                                     for p in (root / 'dist').rglob('*') if p.is_file()})
+                                     for p in (root / 'rules').rglob('*') if p.is_file() and p != source})

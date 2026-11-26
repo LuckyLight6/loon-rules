@@ -1,0 +1,18 @@
+# name: apple-shared-store-assets
+# priority: 2310
+# section: apple
+# description: Apple 商店与媒体共用的静态内容
+# boundary: mzstatic 也承载图标、书籍和音乐内容，不能当成纯安装包；s.mzstatic.com 应先命中商店交易规则，静态图片别名不保证专供大陆
+# created-at: 2026-11-19T10:51:17Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://support.apple.com/en-us/101555
+# source: https://royli.dev/blog/2019/better-proxy-rules-for-apple-services
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/apple-cn.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: clash-classical
+# canonical: rules/loon/2310-apple-shared-store-assets.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,mzstatic.com"
+  - "DOMAIN,store.storeimages.cdn-apple.com"

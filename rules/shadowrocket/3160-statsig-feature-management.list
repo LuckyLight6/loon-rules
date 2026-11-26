@@ -1,0 +1,26 @@
+# name: statsig-feature-management
+# priority: 3160
+# section: development
+# description: Statsig 功能开关、实验、配置与事件 API
+# boundary: 按官方服务清单跟随主机与专用存储租户；共享 DNS 另归解析器，不扩大到整个 Azure
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://docs.statsig.com/infrastructure/statsig_domains
+# canonical-rule-count: 13
+# rule-count: 13
+# format: shadowrocket
+# canonical: rules/loon/3160-statsig-feature-management.lsr
+
+DOMAIN,api.statsig.com
+DOMAIN,api.statsigcdn.com
+DOMAIN,assetsconfigcdn.org
+DOMAIN,beyondwickedmapping.org
+DOMAIN,events.statsigapi.net
+DOMAIN,featureassets.org
+DOMAIN,featuregates.org
+DOMAIN,prodregistryv2.org
+DOMAIN,statsigapi.net
+DOMAIN,cdn.console.statsig.com
+DOMAIN,console.statsig.com
+DOMAIN,console.statsigcdn.com
+DOMAIN,idliststorage.blob.core.windows.net

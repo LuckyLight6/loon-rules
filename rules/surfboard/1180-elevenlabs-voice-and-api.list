@@ -1,0 +1,16 @@
+# name: elevenlabs-voice-and-api
+# priority: 1180
+# section: ai
+# description: ElevenLabs 语音生成、WebSocket、文件与 MCP
+# boundary: 只收厂商专用根域，包含 API 与 ElevenLabs CDN，不扩到第三方语音或存储基础设施
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-20T17:51:12Z
+# source: https://elevenlabs.io/docs/eleven-api/resources/mcp-server
+# source: https://raw.githubusercontent.com/elevenlabs/elevenlabs-python/main/src/elevenlabs/environment.py
+# canonical-rule-count: 2
+# rule-count: 2
+# format: surfboard
+# canonical: rules/loon/1180-elevenlabs-voice-and-api.lsr
+
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabsusercontent.com

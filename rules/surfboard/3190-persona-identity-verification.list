@@ -1,0 +1,14 @@
+# name: persona-identity-verification
+# priority: 3190
+# section: development
+# description: Persona 身份、企业与年龄验证
+# boundary: Persona 自有服务命名空间；官方嵌入文档确认范围，不把第三方商户或客户账号归给 Persona
+# created-at: 2026-11-23T18:50:42Z
+# updated-at: 2026-11-23T18:50:42Z
+# source: https://docs.withpersona.com/embedded-flow-troubleshooting-common-issues
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surfboard
+# canonical: rules/loon/3190-persona-identity-verification.lsr
+
+DOMAIN-SUFFIX,withpersona.com

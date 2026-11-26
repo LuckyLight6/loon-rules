@@ -1,0 +1,14 @@
+# name: ton-foundation-sites
+# priority: 3680
+# section: crypto
+# description: TON 官方网站与开发资料
+# boundary: 识别 TON 自营注册域中的网站和开发资料；第三方 RPC、钱包、节点和 Telegram 消息不并入
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://ton.org/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/loon/3680-ton-foundation-sites.lsr
+
+host-suffix,ton.org,proxy

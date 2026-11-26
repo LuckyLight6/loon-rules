@@ -23,8 +23,8 @@ class ServiceDirectory(unittest.TestCase):
         text = render(config, entries)
         self.assertIn('## 示例厂商', text)
         self.assertIn('| 聊天应用 |', text)
-        self.assertIn('../rules/1010-chat.lsr', text)
-        self.assertIn('../rules/1000-vendor-all.lsr', text)
+        self.assertIn('../rules/loon/1010-chat.lsr', text)
+        self.assertIn('../rules/loon/1000-vendor-all.lsr', text)
         self.assertIn('rules.md', text)
 
     def test_every_real_subscription_needs_a_vendor_or_an_explicit_common_role(self):

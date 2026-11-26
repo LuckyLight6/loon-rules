@@ -104,8 +104,8 @@ class CnameAliasInventory(PublicSourceExamples):
                 'unavailable-lookups':len(names)-len(current)+len(incomplete),
                 'incomplete-hosts':incomplete.copy()}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(config)
-            path=root/'rules'/lib.rule_filename(entry)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(config)
+            path=root/'rules' / 'loon'/lib.rule_filename(entry)
             path.write_text(lib.decorate(entry,['DOMAIN,'+host],None,'2020-01-01T00:00:00Z'))
             (root/'config/catalog.json').write_text(json.dumps(config));(root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(config,entries))

@@ -1,0 +1,25 @@
+# name: microsoft-outlook-mail
+# priority: 4720
+# section: microsoft
+# description: Outlook 与 Exchange Online 邮箱入口
+# boundary: 个人和工作邮箱、邮件协议与 Outlook 移动客户端分别按官方服务行提取。共享 Entra 登录独立，不展开租户占位字段，不采用同页 IP
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-21T01:41:46Z
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+# source: https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com
+# source: https://support.microsoft.com/en-us/outlook/getstarted/what-version-of-outlook-do-i-have
+# canonical-rule-count: 10
+# rule-count: 10
+# format: quantumult-x
+# canonical: rules/loon/4720-microsoft-outlook-mail.lsr
+
+host,outlook.com,proxy
+host,outlook.live.com,proxy
+host,outlook.cloud.microsoft,proxy
+host,outlook.office.com,proxy
+host,outlook.office365.com,proxy
+host,smtp.office365.com,proxy
+host-suffix,acompli.net,proxy
+host-suffix,outlookmobile.com,proxy
+host-wildcard,*.mx.microsoft,proxy
+host-wildcard,*.outlook.com,proxy

@@ -230,7 +230,7 @@ class SecurityAssetSources(PublicSourceExamples):
         inputs = {source: json.dumps(document)}
         with TemporaryDirectory() as tmp, patch.object(pipeline, 'ROOT', prepare_workspace(tmp)), redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
-            (root / 'rules').mkdir()
+            (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
             (root / 'config/endpoint-contracts.json').write_text('[]')
             entries = pipeline.validate_declarations(config)
             (root / 'config/catalog.json').write_text(json.dumps(config))
@@ -238,7 +238,7 @@ class SecurityAssetSources(PublicSourceExamples):
             for key, entry in entries.items():
                 rows = ['DOMAIN-SUFFIX,audio.example', 'DOMAIN,cdn.tenant.example'] if key == 'audio' else ['DOMAIN-SUFFIX,portal.example']
                 if key == 'products-all': rows += ['DOMAIN-SUFFIX,audio.example', 'DOMAIN,cdn.tenant.example']
-                (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+                (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                     pipeline.decorate(entry, rows, None, '2026-11-20T00:00:00Z'))
             with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                 pipeline.run()
@@ -250,12 +250,12 @@ class SecurityAssetSources(PublicSourceExamples):
                     pipeline.run()
                     publish(root)
                     for name in ('020-audio', '010-products-all'):
-                        path = root / 'rules' / (name + '.lsr')
+                        path = root / 'rules' / 'loon' / (name + '.lsr')
                         self.assertIn('DOMAIN,' + host, path.read_text())
-                        self.assertEqual(path.read_bytes(), path.with_suffix('.list').read_bytes())
-                        for client in ('sing-box', 'clash-classical', 'v2ray'):
+                        self.assertEqual(path.read_bytes(), (path.parent.with_name('surge') / path.with_suffix('.list').name).read_bytes())
+                        for client in ('sing-box', 'mihomo', 'v2ray'):
                             with self.subTest(client=client):
-                                self.assertTrue(any(host in file.read_text() for file in (root / 'dist' / client).rglob('*') if file.is_file()))
+                                self.assertTrue(any(host in file.read_text() for file in (root / 'rules' / client).rglob('*') if file.is_file()))
                     self.assertEqual(pipeline.run(offline=True), 0)
                 accepted = copy.deepcopy(document)
                 for changed in ('new-product', 'changed-type', 'identity', 'shared-scope', 'lost-domain', 'truncated'):

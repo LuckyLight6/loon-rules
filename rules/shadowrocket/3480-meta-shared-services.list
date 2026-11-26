@@ -1,0 +1,32 @@
+# name: meta-shared-services
+# priority: 3480
+# section: social
+# description: Meta、Facebook 与 Messenger 共用服务
+# boundary: 跟随所列 Facebook、Messenger、Meta 与 Oculus 业务域范围；品牌拼写变体、买粉、周边站点和未确认用途不作为产品端点；Instagram、WhatsApp、Threads 与 Meta AI 先匹配各自专表
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T18:43:28Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/meta.list
+# canonical-rule-count: 19
+# rule-count: 19
+# format: shadowrocket
+# canonical: rules/loon/3480-meta-shared-services.lsr
+
+DOMAIN,fbcdn-a.akamaihd.net
+DOMAIN-SUFFIX,atmeta.com
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fbcdn.com
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,workplace.com
+DOMAIN-SUFFIX,accountkit.com
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,ocul.us
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,oculusvr.com

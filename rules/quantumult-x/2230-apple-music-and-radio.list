@@ -1,0 +1,19 @@
+# name: apple-music-and-radio
+# priority: 2230
+# section: apple
+# description: Apple Music、广播及共用 API 与应用门户
+# boundary: 保留 Music 门户、API 和不能据域名进一步切开的音乐视频流量；明确音频传输由 Apple Music 音频分发规则处理
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T10:51:17Z
+# source: https://rules.xkww3n.cyou/classical/apple-music.txt
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Apple-Media.lsr
+# source: https://init.itunes.apple.com/bag.xml
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/loon/2230-apple-music-and-radio.lsr
+
+host,amp-api.media.apple.com,proxy
+host,mvod.itunes.apple.com,proxy
+host-suffix,music.apple.com,proxy
+host-suffix,applemusic.com,proxy

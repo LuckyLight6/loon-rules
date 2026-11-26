@@ -117,14 +117,14 @@ class FallbackSourcePriority(PublicSourceExamples):
         inputs={overseas:'\n'.join(foreign_rows),mainland:'\n'.join(domestic_rows)}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),\
                 patch.object(lib.transport,'download',side_effect=inputs.__getitem__),redirect_stdout(StringIO()):
-            root=Path(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=Path(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg))
             (root/'config/endpoint-contracts.json').write_text('[]')
             (root/'docs/rules.md').write_text(lib.render_index(cfg,entries))
             (root/'data/maintenance-state.json').write_text(json.dumps({
                 'component-rules':{'source-gfw':foreign_rows}}))
             for entry,rows in [(foreign,foreign_rows),(domestic,domestic_rows)]:
-                (root/'rules'/lib.rule_filename(entry)).write_text(
+                (root/'rules' / 'loon'/lib.rule_filename(entry)).write_text(
                     lib.decorate(entry,rows,None,'2026-01-01T00:00:00Z'))
             for _ in range(2):
                 self.assertEqual(lib.run(),0)

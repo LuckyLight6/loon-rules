@@ -1,0 +1,16 @@
+# name: apple-testflight
+# priority: 2120
+# section: apple
+# description: TestFlight 测试版安装和分发
+# boundary: 剔除整个 TestFlight 关键词；商店生产环境和系统 OTA 分开
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/TestFlight.lsr
+# source: https://support.apple.com/en-us/101555
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/loon/2120-apple-testflight.lsr
+
+host-suffix,testflight.apple.com,proxy
+host,beta.itunes.apple.com,proxy

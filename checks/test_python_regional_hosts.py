@@ -112,13 +112,13 @@ class ProductIE:
         with TemporaryDirectory() as tmp, redirect_stdout(StringIO()):
             root = prepare_workspace(tmp)
             with patch.object(pipeline, 'ROOT', root):
-                (root / 'rules').mkdir()
+                (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
                 entries = pipeline.validate_declarations(config)
                 (root / 'config/catalog.json').write_text(json.dumps(config))
                 (root / 'config/endpoint-contracts.json').write_text('[]')
                 (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
                 for entry in entries.values():
-                    (root / 'rules' / pipeline.rule_filename(entry)).write_text(pipeline.decorate(
+                    (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(pipeline.decorate(
                         entry, sorted(extract_rows(recipe, self.source())), None, '2026-11-20T00:00:00Z'))
                 with patch.object(pipeline.transport, 'download', side_effect=inputs.__getitem__):
                     pipeline.run()
@@ -129,12 +129,12 @@ class ProductIE:
                         inputs[recipe['source']] = source
                         pipeline.run(); publish(root)
                         for stem in ('020-product', '010-products-all'):
-                            file = root / 'rules' / (stem + '.lsr')
-                            self.assertEqual(file.read_bytes(), file.with_suffix('.list').read_bytes())
+                            file = root / 'rules' / 'loon' / (stem + '.lsr')
+                            self.assertEqual(file.read_bytes(), (file.parent.with_name('surge') / file.with_suffix('.list').name).read_bytes())
                             for host in ('api.' + region + '.vendor.example', 'backend.api.' + region + '.vendor.example'):
                                 self.assertIn('DOMAIN,' + host, file.read_text())
-                                for client in ('sing-box', 'v2ray', 'clash-classical'):
-                                    self.assertTrue(any(host in p.read_text() for p in (root / 'dist' / client).rglob('*') if p.is_file()))
+                                for client in ('sing-box', 'v2ray', 'mihomo'):
+                                    self.assertTrue(any(host in p.read_text() for p in (root / 'rules' / client).rglob('*') if p.is_file()))
                     before = {p: p.read_bytes() for folder in ('rules', 'dist', 'data')
                               for p in (root / folder).rglob('*') if p.is_file()}
                     for changed in (source.replace('us|eu', '[a-z]+'),

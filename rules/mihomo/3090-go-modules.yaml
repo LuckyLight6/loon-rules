@@ -1,0 +1,16 @@
+# name: go-modules
+# priority: 3090
+# section: development
+# description: Go 模块与工具链
+# boundary: Go 项目、模块代理和校验服务；不扩到通用 Google APIs
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/golang.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: clash-classical
+# canonical: rules/loon/3090-go-modules.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,go.dev"
+  - "DOMAIN-SUFFIX,golang.org"

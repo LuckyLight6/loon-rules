@@ -1,0 +1,21 @@
+# name: signal-messenger
+# priority: 3330
+# section: social
+# description: Signal 消息、通话、贴纸、群组与用户名链接
+# boundary: 按官方网络说明生成当前客户端入口；不将第三方代理、公共中继或未确认的历史域名并入
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T10:24:10Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/signal.list
+# source: https://support.signal.org/hc/en-us/articles/360007320291-Firewall-and-Internet-settings
+# source: https://support.signal.org/api/v2/help_center/en-us/articles/360007320291.json
+# canonical-rule-count: 6
+# rule-count: 6
+# format: quantumult-x
+# canonical: rules/loon/3330-signal-messenger.lsr
+
+host-suffix,signal.group,proxy
+host-suffix,signal.link,proxy
+host-suffix,signal.me,proxy
+host-suffix,signal.org,proxy
+host-suffix,signal.art,proxy
+host-suffix,signal.tube,proxy

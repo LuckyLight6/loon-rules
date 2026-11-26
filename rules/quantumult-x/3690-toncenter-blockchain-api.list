@@ -1,0 +1,14 @@
+# name: toncenter-blockchain-api
+# priority: 3690
+# section: crypto
+# description: TON Center 区块链 API
+# boundary: 识别 TON Center 自营 API、主网与测试网入口；其他 RPC 提供商和 Telegram 消息分别匹配
+# created-at: 2026-11-24T17:50:37Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://toncenter.com/
+# canonical-rule-count: 1
+# rule-count: 1
+# format: quantumult-x
+# canonical: rules/loon/3690-toncenter-blockchain-api.lsr
+
+host-suffix,toncenter.com,proxy

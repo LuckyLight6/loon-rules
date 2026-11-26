@@ -1,0 +1,61 @@
+# name: xiaomi-shared-services
+# priority: 8470
+# section: vendors
+# description: 小米账户、设备与共用服务
+# boundary: 仅接住所列产品、地区专表之后的厂商共用范围；按来源更新，忽略进程、IP 和不兼容的正则，不把共用平台当成某个应用
+# created-at: 2026-11-22T15:05:24Z
+# updated-at: 2026-11-22T15:05:24Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/xiaomi.list
+# canonical-rule-count: 48
+# rule-count: 48
+# format: quantumult-x
+# canonical: rules/loon/8470-xiaomi-shared-services.lsr
+
+host-suffix,xiaomiprint.com,proxy
+host-suffix,mi-fds.com,proxy
+host-suffix,mi-idc.com,proxy
+host-suffix,mi-img.com,proxy
+host-suffix,mi.com,proxy
+host-suffix,mieco.net,proxy
+host-suffix,mifile.cn,proxy
+host-suffix,mijia.tech,proxy
+host-suffix,mioffice.cn,proxy
+host-suffix,mitvos.com,proxy
+host-suffix,miui.com,proxy
+host-suffix,mgslb.com,proxy
+host-suffix,xiaomi.cn,proxy
+host-suffix,xiaomi.com,proxy
+host-suffix,xiaomi.net,proxy
+host-suffix,xiaomicp.com,proxy
+host-suffix,xiaomidns.cn,proxy
+host-suffix,xiaomidns.com,proxy
+host-suffix,xiaomidns.net,proxy
+host-suffix,xiaomiev.com,proxy
+host-suffix,xiaomiinc.cn,proxy
+host-suffix,xiaomiinc.com,proxy
+host-suffix,xiaomiinc.net,proxy
+host-suffix,mi-dun.com,proxy
+host-suffix,miot-spec.org,proxy
+host-suffix,xiaomimobile.com,proxy
+host-suffix,xiaomisa.cn,proxy
+host-suffix,xiaomisa.com,proxy
+host-suffix,xiaomisa.net,proxy
+host-suffix,xiaomisa.org,proxy
+host-suffix,xiaomiwear.com,proxy
+host-suffix,xiaomixiaoai.com,proxy
+host-suffix,migames.com,proxy
+host-suffix,wali.com,proxy
+host-suffix,airstarfinance.net,proxy
+host-suffix,mipay.com,proxy
+host-suffix,duokan.com,proxy
+host-suffix,duokanbox.com,proxy
+host-suffix,xiaomiyoupin.com,proxy
+host-suffix,youpin.cn,proxy
+host-suffix,zmifi.com,proxy
+host-suffix,miaibox.com,proxy
+host-suffix,xiaominr.com,proxy
+host-suffix,xiaoaiassist.com,proxy
+host-suffix,xiaomimimo.com,proxy
+host-suffix,xiaomidns.com.cn,proxy
+host-suffix,xiaomiinc.com.cn,proxy
+host-suffix,youpin.com.cn,proxy

@@ -1,0 +1,20 @@
+# name: google-play-games
+# priority: 4560
+# section: google
+# description: Google Play 游戏、发布与管理 API
+# boundary: 从官方目录读取 Google Play Games 的游戏服务、发布和管理 API；不把游戏本体、共享下载或所有 Android 主机归入本组
+# created-at: 2026-11-20T19:07:41Z
+# updated-at: 2026-11-20T19:07:41Z
+# source: https://www.googleapis.com/discovery/v1/apis
+# source: https://github.com/googleapis/google-api-python-client/tree/main/googleapiclient/discovery_cache/documents
+# canonical-rule-count: 6
+# rule-count: 6
+# format: quantumult-x
+# canonical: rules/loon/4560-google-play-games.lsr
+
+host,games.googleapis.com,proxy
+host,games.mtls.googleapis.com,proxy
+host,gamesconfiguration.googleapis.com,proxy
+host,gamesconfiguration.mtls.googleapis.com,proxy
+host,gamesmanagement.googleapis.com,proxy
+host,gamesmanagement.mtls.googleapis.com,proxy

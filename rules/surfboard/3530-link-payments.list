@@ -1,0 +1,15 @@
+# name: link-payments
+# priority: 3530
+# section: payments
+# description: Link 快捷支付
+# boundary: Stripe 的独立快捷支付产品，从官方站点身份确认根域；Stripe 网关、商户网站和发卡行验证分别匹配
+# created-at: 2026-11-20T22:47:04Z
+# updated-at: 2026-11-20T22:47:04Z
+# source: https://www.link.com/
+# source: https://docs.stripe.com/payments/link
+# canonical-rule-count: 1
+# rule-count: 1
+# format: surfboard
+# canonical: rules/loon/3530-link-payments.lsr
+
+DOMAIN-SUFFIX,link.com

@@ -1,0 +1,27 @@
+# name: slack-workspaces
+# priority: 3370
+# section: social
+# description: Slack 工作区、消息及相关网站
+# boundary: 工作区、消息、文件、培训、演示和相关网站；外部登录单独匹配，日志域的产品归属不代表绕过隐私拦截，官方用途资料只保护明确的实时连接主机
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-24T16:40:58Z
+# source: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/slack
+# source: https://docs.slack.dev/faq/
+# source: https://slack.com/help/articles/115004846068-Slack-updates-and-changes
+# source: https://slack.com/help/articles/360001603387-Manage-Slack-connection-issues
+# canonical-rule-count: 11
+# rule-count: 11
+# format: shadowrocket
+# canonical: rules/loon/3370-slack-workspaces.lsr
+
+DOMAIN-SUFFIX,slack-core.com
+DOMAIN-SUFFIX,slack-edge.com
+DOMAIN-SUFFIX,slack-files.com
+DOMAIN-SUFFIX,slack-imgs.com
+DOMAIN-SUFFIX,slack-msgs.com
+DOMAIN-SUFFIX,slack.com
+DOMAIN-SUFFIX,slack-redir.net
+DOMAIN-SUFFIX,slackb.com
+DOMAIN-SUFFIX,slackcertified.com
+DOMAIN-SUFFIX,slackdemo.com
+DOMAIN-SUFFIX,slackhq.com

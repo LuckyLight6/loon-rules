@@ -1,0 +1,16 @@
+# name: sourcegraph-code-and-cody
+# priority: 1470
+# section: ai
+# description: Sourcegraph 与 Cody
+# boundary: Sourcegraph 官方站点、代码搜索与 Cody；旧 cody.dev 入口保留原来源依据，Amp 由自己的规则识别，不随旧列表混入
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://sourcegraph.com/
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/sourcegraph.list
+# canonical-rule-count: 2
+# rule-count: 2
+# format: shadowrocket
+# canonical: rules/loon/1470-sourcegraph-code-and-cody.lsr
+
+DOMAIN-SUFFIX,cody.dev
+DOMAIN-SUFFIX,sourcegraph.com

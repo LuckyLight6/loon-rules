@@ -141,9 +141,9 @@ class LabelledSources(PublicSourceExamples):
                     '</ul></div><p>Other service:</p><ul><li>wrong.other.example</li></ul>')
         urls={url:document()}
         with TemporaryDirectory() as tmp,patch.object(lib,'ROOT',prepare_workspace(tmp)),redirect_stdout(StringIO()):
-            root=prepare_workspace(tmp);(root/'rules').mkdir();entries=lib.validate_declarations(cfg)
+            root=prepare_workspace(tmp);(root/'rules' / 'loon').mkdir(parents=True, exist_ok=True);entries=lib.validate_declarations(cfg)
             (root/'config/catalog.json').write_text(json.dumps(cfg));(root/'config/endpoint-contracts.json').write_text('[]')
-            (root/'docs/rules.md').write_text(lib.render_index(cfg,entries));output=root/'rules'/lib.rule_filename(entry)
+            (root/'docs/rules.md').write_text(lib.render_index(cfg,entries));output=root/'rules' / 'loon'/lib.rule_filename(entry)
             output.write_text(lib.decorate(entry,entry['include'],None,'2020-01-01T00:00:00Z'))
             with patch.object(lib.transport,'download',side_effect=urls.__getitem__):
                 lib.run()

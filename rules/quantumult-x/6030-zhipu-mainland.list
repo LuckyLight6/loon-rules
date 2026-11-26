@@ -1,0 +1,18 @@
+# name: zhipu-mainland
+# priority: 6030
+# section: ai
+# description: 智谱 · 国内入口
+# boundary: 按已核实的国内产品入口生成；同一产品的网页、API 与附件不按功能拆开，共用云平台不收整域
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://docs.bigmodel.cn/cn/guide/start/quick-start
+# source: https://docs.z.ai/guides/overview/quick-start
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/AI-China-Direct.lsr
+# canonical-rule-count: 3
+# rule-count: 3
+# format: quantumult-x
+# canonical: rules/loon/6030-zhipu-mainland.lsr
+
+host-suffix,zhipuai.cn,proxy
+host-suffix,chatglm.cn,proxy
+host-suffix,bigmodel.cn,proxy

@@ -1,0 +1,16 @@
+# name: npm-registry
+# priority: 3040
+# section: development
+# description: npm 软件包
+# boundary: 官方注册表和产品站；国内镜像单列
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/npmjs.list
+# source: https://registry.npmjs.org/npm/latest
+# canonical-rule-count: 2
+# rule-count: 2
+# format: shadowrocket
+# canonical: rules/loon/3040-npm-registry.lsr
+
+DOMAIN-SUFFIX,npmjs.com
+DOMAIN-SUFFIX,npmjs.org

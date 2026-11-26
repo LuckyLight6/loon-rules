@@ -1,0 +1,55 @@
+# name: telegram-messaging
+# priority: 3310
+# section: social
+# description: Telegram 通讯、文件与官方关联工具
+# boundary: 消息、文件、评论工具与官方内容主机；不把外部客户端、通用链接白名单或 TON、Fragment 等其他产品并入；官方 CIDR 与注册组织持有的 ASN 只匹配已有目标 IP，使用 no-resolve
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-24T17:50:37Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Telegram.lsr
+# source: https://core.telegram.org/resources/cidr.txt
+# source: https://core.telegram.org/bug-bounty
+# source: https://rdap.db.ripe.net/entity/ORG-TMI4-RIPE
+# source: https://rdap.db.ripe.net/entity/ORG-TMI5-RIPE
+# source: https://telegram.org/blog/silent-messages-slow-mode
+# source: https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/SourceFiles/core/click_handler_types.cpp
+# canonical-rule-count: 35
+# rule-count: 35
+# format: clash-classical
+# canonical: rules/loon/3310-telegram-messaging.lsr
+
+payload:
+  - "DOMAIN-SUFFIX,cdn-telegram.org"
+  - "DOMAIN-SUFFIX,t.me"
+  - "DOMAIN-SUFFIX,tdesktop.com"
+  - "DOMAIN-SUFFIX,telegra.ph"
+  - "DOMAIN-SUFFIX,telegram.dog"
+  - "DOMAIN-SUFFIX,telegram.me"
+  - "DOMAIN-SUFFIX,telegram.org"
+  - "DOMAIN-SUFFIX,telegram.space"
+  - "DOMAIN-SUFFIX,telesco.pe"
+  - "DOMAIN-SUFFIX,tg.dev"
+  - "IP-CIDR,91.108.56.0/22,no-resolve"
+  - "IP-CIDR,91.108.4.0/22,no-resolve"
+  - "IP-CIDR,91.108.8.0/22,no-resolve"
+  - "IP-CIDR,91.108.16.0/22,no-resolve"
+  - "IP-CIDR,91.108.12.0/22,no-resolve"
+  - "IP-CIDR,149.154.160.0/20,no-resolve"
+  - "IP-CIDR,91.105.192.0/23,no-resolve"
+  - "IP-CIDR,91.108.20.0/22,no-resolve"
+  - "IP-CIDR,185.76.151.0/24,no-resolve"
+  - "IP-CIDR6,2001:b28:f23d::/48,no-resolve"
+  - "IP-CIDR6,2001:b28:f23f::/48,no-resolve"
+  - "IP-CIDR6,2001:67c:4e8::/48,no-resolve"
+  - "IP-CIDR6,2001:b28:f23c::/48,no-resolve"
+  - "IP-CIDR6,2a0a:f280::/32,no-resolve"
+  - "DOMAIN,contest.com"
+  - "DOMAIN,quiz.directory"
+  - "DOMAIN-REGEX,(?i)^.*\\.stel\\.com$"
+  - "IP-ASN,211157,no-resolve"
+  - "IP-ASN,44907,no-resolve"
+  - "IP-ASN,59930,no-resolve"
+  - "IP-ASN,62014,no-resolve"
+  - "IP-ASN,62041,no-resolve"
+  - "DOMAIN-SUFFIX,comments.app"
+  - "DOMAIN,graph.org"
+  - "DOMAIN,te.legra.ph"

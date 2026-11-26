@@ -1,0 +1,18 @@
+# name: epic-games-services
+# priority: 4120
+# section: games
+# description: Epic Games 商店、登录及 Unreal 服务
+# boundary: 保留游戏厂商的专用域，不接管客服 SaaS 或共享 Amazon/CloudFront 域
+# created-at: 2026-11-19T09:33:57Z
+# updated-at: 2026-11-19T09:33:57Z
+# source: https://raw.githubusercontent.com/o-ocn/loon-rules/main/dist/Gaming.lsr
+# canonical-rule-count: 5
+# rule-count: 5
+# format: quantumult-x
+# canonical: rules/loon/4120-epic-games-services.lsr
+
+host-suffix,epicgames.com,proxy
+host-suffix,epicgames.dev,proxy
+host-suffix,fortnite.com,proxy
+host-suffix,unrealengine.com,proxy
+host-suffix,unrealtournament.com,proxy

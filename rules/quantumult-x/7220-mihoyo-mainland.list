@@ -1,0 +1,17 @@
+# name: mihoyo-mainland
+# priority: 7220
+# section: games
+# description: 米哈游国服与米游社
+# boundary: 只选可区分的国服产品入口，不根据共享素材判断游戏区服
+# created-at: 2026-11-20T06:07:48Z
+# updated-at: 2026-11-20T06:07:48Z
+# source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/mihoyo.list
+# canonical-rule-count: 4
+# rule-count: 4
+# format: quantumult-x
+# canonical: rules/loon/7220-mihoyo-mainland.lsr
+
+host-suffix,miyoushe.com,proxy
+host-suffix,bh3.com,proxy
+host-suffix,bhsr.com,proxy
+host-suffix,yuanshen.com,proxy

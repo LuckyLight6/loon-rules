@@ -1,0 +1,35 @@
+# name: microsoft-account-authentication
+# priority: 4710
+# section: microsoft
+# description: Microsoft 个人账户与 Entra 登录
+# boundary: 只收个人账户、全球及美国政府云登录与 Entra 身份主机；Azure 中国云控制端点另列，不把整个 microsoftonline.com 或 Microsoft Graph 当认证
+# created-at: 2026-11-19T11:46:30Z
+# updated-at: 2026-11-22T18:37:28Z
+# source: https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges
+# source: https://raw.githubusercontent.com/Azure/azure-cli/dev/src/azure-cli-core/azure/cli/core/cloud.py
+# canonical-rule-count: 19
+# rule-count: 19
+# format: egern
+# canonical: rules/loon/4710-microsoft-account-authentication.lsr
+
+domain_set:
+  - "account.live.com"
+  - "login.live.com"
+  - "login.microsoftonline.com"
+  - "login.microsoft.com"
+  - "login.windows.net"
+  - "device.login.microsoftonline.com"
+  - "ccs.login.microsoftonline.com"
+  - "login-us.microsoftonline.com"
+  - "logincert.microsoftonline.com"
+  - "autologon.microsoftazuread-sso.com"
+  - "api.passwordreset.microsoftonline.com"
+  - "passwordreset.microsoftonline.com"
+  - "login.microsoftonline-p.com"
+  - "loginex.microsoftonline.com"
+  - "login.microsoftonline.us"
+domain_suffix_set:
+  - "auth.microsoft.com"
+  - "msauth.net"
+  - "msftauth.net"
+  - "msftidentity.com"

@@ -51,13 +51,13 @@ class SecurityAssetHistory(PublicSourceExamples):
                      'recipe': {'format': 'domain-scope-list'}}]}
 
     def workspace(self, root, config):
-        (root / 'rules').mkdir()
+        (root / 'rules' / 'loon').mkdir(parents=True, exist_ok=True)
         (root / 'config/endpoint-contracts.json').write_text('[]')
         entries = pipeline.validate_declarations(config)
         (root / 'config/catalog.json').write_text(json.dumps(config))
         (root / 'docs/rules.md').write_text(pipeline.render_index(config, entries))
         for entry in entries.values():
-            (root / 'rules' / pipeline.rule_filename(entry)).write_text(
+            (root / 'rules' / 'loon' / pipeline.rule_filename(entry)).write_text(
                 pipeline.decorate(entry, ['DOMAIN-SUFFIX,product.example'], None, '2026-11-20T00:00:00Z'))
 
     def outputs(self, root):
@@ -114,7 +114,7 @@ class SecurityAssetHistory(PublicSourceExamples):
                 document[0]['targets']['in_scope'].pop()  # Removing an SDK listing does not retire an API.
                 inputs[source] = json.dumps(document)
                 self.assertEqual(pipeline.run(), 0)
-                self.assertIn('DOMAIN-SUFFIX,product.example', (root / 'rules/020-product.lsr').read_text())
+                self.assertIn('DOMAIN-SUFFIX,product.example', (root / 'rules/loon/020-product.lsr').read_text())
                 before = self.outputs(root)
                 document[0]['targets']['out_of_scope'][0]['asset_type'] = 'SOURCE_CODE'
                 inputs[source] = json.dumps(document)

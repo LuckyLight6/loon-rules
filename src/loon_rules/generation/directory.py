@@ -55,7 +55,7 @@ def render(config, entries):
 
     def link(key):
         entry = entries[key]
-        return f"[{priority_label(entry)} {entry['description']}](../rules/{rule_filename(entry)})"
+        return f"[{priority_label(entry)} {entry['description']}](../rules/loon/{rule_filename(entry)})"
 
     def links(keys):
         return '、'.join(link(key) for key in sorted(keys, key=lambda key: entries[key]['priority']))

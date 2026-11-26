@@ -1,0 +1,17 @@
+# name: youmind-international
+# priority: 1900
+# section: ai
+# description: YouMind · 国际产品入口
+# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-21T12:39:08Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/youmind.list
+# source: https://youmind.com/
+# canonical-rule-count: 3
+# rule-count: 3
+# format: shadowrocket
+# canonical: rules/loon/1900-youmind-international.lsr
+
+DOMAIN-SUFFIX,youmind.ai
+DOMAIN-SUFFIX,youmind.com
+DOMAIN-SUFFIX,youmind.site

@@ -80,7 +80,7 @@ def build(catalog=None):
         notes.append('# '+label+'：'+provider+'；来源规则组 '+', '.join(priority_label(entries[name],width=width) for name in groups))
         scope=set()
         for name in groups:
-            f=ROOT/'rules'/rule_filename(entries[name],width=width)
+            f=ROOT/'rules'/'loon'/rule_filename(entries[name],width=width)
             group_scope=names(f.read_text().splitlines(),catalog['shared-negatives'])
             if not group_scope:raise ValueError('Selected group has no public DNS hosts: '+f.name)
             scope.update(group_scope)
