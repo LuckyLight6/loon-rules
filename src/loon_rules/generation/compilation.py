@@ -43,7 +43,7 @@ def compile_entry(entry, downloaded, *, shared_scopes=(), reserved_rows=(), extr
             source='\n'.join(line for line in lines if line.partition(',')[0].strip() in ('DOMAIN','DOMAIN-SUFFIX','DOMAIN-WILDCARD'))
         scope=dict(part)
         if part.get('exact-from-extract'):
-            hosts = {row.split(',')[1] for row in extracted
+            hosts = {row.split(',')[1] for row in [*extracted, *extra_rows]
                      if row.startswith('DOMAIN,') and row.count(',') == 1}
             if not hosts:
                 raise rules.Invalid('来源精确主机筛选缺少本轮用途字段：'+entry['id'])

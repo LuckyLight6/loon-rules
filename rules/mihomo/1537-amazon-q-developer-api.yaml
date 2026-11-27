@@ -1,0 +1,20 @@
+# name: amazon-q-developer-api
+# priority: 1537
+# section: ai
+# description: Amazon Q 功能与 IDE 集成 API
+# boundary: 官方features用途中的Q功能API及q-developer-标识的IDE集成端点；与Kiro共用的API交给1531。地区随官方profile说明和SDK联动；工具分发、身份、遥测及上传桶不归本组。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 2
+# rule-count: 2
+# format: clash-classical
+# canonical: rules/loon/1537-amazon-q-developer-api.lsr
+
+payload:
+  - "DOMAIN,codewhisperer.us-east-1.amazonaws.com"
+  - "DOMAIN,q-developer-integration.us-east-1.api.aws"

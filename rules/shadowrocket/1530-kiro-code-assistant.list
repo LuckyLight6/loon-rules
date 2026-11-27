@@ -1,17 +1,29 @@
-# name: kiro-code-assistant
-# priority: 1530
+# name: kiro-service-all
+# priority: 1526
 # section: ai
-# description: Kiro 编程助手
-# boundary: Kiro 自营域与官方用途表列出的模型服务精确主机，地区入口随表更新；AWS 共用登录、CAPTCHA、支付与插件源分别归对应服务，不认领整个 AWS 命名空间
-# created-at: 2026-11-21T12:39:08Z
-# updated-at: 2026-11-24T14:07:02Z
+# description: Kiro 编程、个人登录与依赖合集
+# boundary: 包含Kiro自有入口、1531共用API、官方个人登录与验证码、Stripe计费及插件/Powers依赖；共享主机上的其他应用请求也随本表选路。本组与细分或其他含1531的合集二选一。各应用目录内原1530入口与本组合文，保留原订阅覆盖；组织SSO和GovCloud旧Q端点仍在核实。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
 # source: https://kiro.dev/docs/privacy-and-security/firewalls/
-# canonical-rule-count: 3
-# rule-count: 3
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 11
+# rule-count: 11
 # format: shadowrocket
-# canonical: rules/loon/1530-kiro-code-assistant.lsr
+# canonical: rules/loon/1526-kiro-service-all.lsr
 
-DOMAIN-SUFFIX,kiro.dev
 DOMAIN,q.eu-central-1.amazonaws.com
 DOMAIN,q.us-east-1.amazonaws.com
+DOMAIN-SUFFIX,kiro.dev
+DOMAIN,cognito-identity.us-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.awswaf.com
+DOMAIN,billing.stripe.com
+DOMAIN,checkout.stripe.com
+DOMAIN,github.com
+DOMAIN,open-vsx.org
+DOMAIN,openvsx.eclipsecontent.org
+DOMAIN,raw.githubusercontent.com

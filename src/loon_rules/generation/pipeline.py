@@ -1,4 +1,5 @@
 """Coordinate source collection, generation, verification and output writes."""
+from loon_rules.sources import aws_coding
 from loon_rules.sources import transport, dns as source_dns, policy as source_policy, expansion as source_expansion, coverage as source_coverage, aliases as source_aliases, security_programs
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -88,6 +89,7 @@ def run(check=False, offline=False, adopt_ads=False):
         report=json.loads((ROOT/'data/maintenance-state.json').read_text())
         from loon_rules.generation import dependencies
         dependencies.attach(config,entries,data,report.get('service-dependencies',{}))
+        aws_coding.verify_contexts(entries,report.get('expanded-inputs',{}),report.get('service-dependencies',{}))
         security_programs.verify_state_version(config.get('source-inventories', ()), report)
         if report.get('ip-matching')!=ip_summary(file_entries,data):
             raise rules.Invalid('IP 用途报告与正文不一致')
@@ -168,6 +170,9 @@ def run(check=False, offline=False, adopt_ads=False):
             urls.add(e['cidr-source'])
         urls.update(e.get('aliases',{}).get('sources',()))
         if e.get('expand'):urls.add(e['expand']['source'])
+        if e.get('dependency-inputs'):
+            from loon_rules.generation.dependencies import source_urls as dependency_sources
+            urls.update(url for recipe in e['dependency-inputs'] for url in dependency_sources(recipe))
     bag_sources={e['expand']['source'] for e in entries.values()
                  if e.get('expand',{}).get('method')=='public-plist-bag'}
     def fetch(url):
@@ -199,6 +204,7 @@ def run(check=False, offline=False, adopt_ads=False):
     contract_status=endpoint_contracts.verify_sources(contracts,downloaded)
     from loon_rules.generation import dependencies
     dependency_status=dependencies.read(entries,downloaded)
+    aws_coding.verify_contexts(entries,expansion_status,dependency_status)
     required_scopes=[row for state in dependency_status.values() for item in state['inputs']
                      if item['recipe'].get('protect-from-reject') for row in item['rules']]
     source_status={}

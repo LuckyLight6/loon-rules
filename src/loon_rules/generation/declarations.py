@@ -235,7 +235,7 @@ def validate_declarations(config):
             if 'require-domain-closure' in part and type(part['require-domain-closure']) is not bool:
                 raise rules.Invalid('来源完整性要求必须为布尔值：'+e['id'])
             if 'exact-from-extract' in part and (type(part['exact-from-extract']) is not bool
-                    or part['exact-from-extract'] and (not e.get('extract') or part.get('all-domains'))):
+                    or part['exact-from-extract'] and (not (e.get('extract') or e.get('expand')) or part.get('all-domains'))):
                 raise rules.Invalid('动态精确筛选须有用途字段，不能用于整份域名来源：'+e['id'])
             if 'all-domains' in part and (type(part['all-domains']) is not bool or part['all-domains'] and (
                     part.get('roots') or part.get('exact')
@@ -286,8 +286,8 @@ def validate_declarations(config):
         view=entries[key]
         entries[key]=dict(view,sources=list(dict.fromkeys(
             url for member in view['members'] for url in entries[member]['sources']))+list(dict.fromkeys(
-                recipe['source'] for recipe in view.get('dependency-inputs',())
-                if recipe['source'] not in {url for member in view['members'] for url in entries[member]['sources']})),
+                url for recipe in view.get('dependency-inputs',()) for url in dependencies.source_urls(recipe)
+                if url not in {source for member in view['members'] for source in entries[member]['sources']})),
             **{'allowed-shared':sorted(set(view.get('allowed-shared',()))|{
                 host for member in view['members'] for host in entries[member].get('allowed-shared',())})})
     catalog_schema.subscription_aliases(config)

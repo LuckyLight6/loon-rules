@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "codewhisperer.us-east-1.amazonaws.com",
+        "q-developer-integration.us-east-1.api.aws"
+      ]
+    }
+  ]
+}

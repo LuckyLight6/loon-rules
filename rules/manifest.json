@@ -226,11 +226,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
-          "output-rule-count": 712,
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 786,
           "status": "available",
           "path": "rules/loon/1000-ai-overseas-all.lsr",
           "paths": {
@@ -1017,17 +1017,95 @@
             "loon": "rules/loon/1520-zed-editor-and-ai.lsr"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/loon/1530-kiro-code-assistant.lsr",
+          "path": "rules/loon/1526-kiro-service-all.lsr",
           "paths": {
-            "loon": "rules/loon/1530-kiro-code-assistant.lsr"
+            "loon": "rules/loon/1526-kiro-service-all.lsr"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/loon/1527-amazon-q-service-all.lsr",
+          "paths": {
+            "loon": "rules/loon/1527-amazon-q-service-all.lsr"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "paths": {
+            "loon": "rules/loon/1531-amazon-q-kiro-shared-api.lsr"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/loon/1535-kiro-code-assistant.lsr",
+          "paths": {
+            "loon": "rules/loon/1535-kiro-code-assistant.lsr"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "paths": {
+            "loon": "rules/loon/1537-amazon-q-developer-api.lsr"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "paths": {
+            "loon": "rules/loon/1538-amazon-q-code-reviews.lsr"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "paths": {
+            "loon": "rules/loon/1539-amazon-q-code-transformations.lsr"
           }
         },
         "1540-bolt-app-builder": {
@@ -5230,7 +5308,7 @@
           }
         }
       },
-      "available": 397,
+      "available": 403,
       "unsupported": 0
     },
     "surge": {
@@ -5393,11 +5471,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
-          "output-rule-count": 712,
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 786,
           "status": "available",
           "path": "rules/surge/1000-ai-overseas-all.list",
           "paths": {
@@ -6184,17 +6262,95 @@
             "surge": "rules/surge/1520-zed-editor-and-ai.list"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/surge/1530-kiro-code-assistant.list",
+          "path": "rules/surge/1526-kiro-service-all.list",
           "paths": {
-            "surge": "rules/surge/1530-kiro-code-assistant.list"
+            "surge": "rules/surge/1526-kiro-service-all.list"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/surge/1527-amazon-q-service-all.list",
+          "paths": {
+            "surge": "rules/surge/1527-amazon-q-service-all.list"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surge/1531-amazon-q-kiro-shared-api.list",
+          "paths": {
+            "surge": "rules/surge/1531-amazon-q-kiro-shared-api.list"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surge/1535-kiro-code-assistant.list",
+          "paths": {
+            "surge": "rules/surge/1535-kiro-code-assistant.list"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surge/1537-amazon-q-developer-api.list",
+          "paths": {
+            "surge": "rules/surge/1537-amazon-q-developer-api.list"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surge/1538-amazon-q-code-reviews.list",
+          "paths": {
+            "surge": "rules/surge/1538-amazon-q-code-reviews.list"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surge/1539-amazon-q-code-transformations.list",
+          "paths": {
+            "surge": "rules/surge/1539-amazon-q-code-transformations.list"
           }
         },
         "1540-bolt-app-builder": {
@@ -10397,7 +10553,7 @@
           }
         }
       },
-      "available": 397,
+      "available": 403,
       "unsupported": 0
     },
     "clash-classical": {
@@ -10572,11 +10728,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
-          "output-rule-count": 712,
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 786,
           "status": "available",
           "path": "rules/mihomo/1000-ai-overseas-all.yaml",
           "paths": {
@@ -11424,18 +11580,102 @@
             "stash": "rules/stash/1520-zed-editor-and-ai.yaml"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/mihomo/1530-kiro-code-assistant.yaml",
+          "path": "rules/mihomo/1526-kiro-service-all.yaml",
           "paths": {
-            "mihomo": "rules/mihomo/1530-kiro-code-assistant.yaml",
-            "stash": "rules/stash/1530-kiro-code-assistant.yaml"
+            "mihomo": "rules/mihomo/1526-kiro-service-all.yaml",
+            "stash": "rules/stash/1526-kiro-service-all.yaml"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/mihomo/1527-amazon-q-service-all.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1527-amazon-q-service-all.yaml",
+            "stash": "rules/stash/1527-amazon-q-service-all.yaml"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/mihomo/1531-amazon-q-kiro-shared-api.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1531-amazon-q-kiro-shared-api.yaml",
+            "stash": "rules/stash/1531-amazon-q-kiro-shared-api.yaml"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/mihomo/1535-kiro-code-assistant.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1535-kiro-code-assistant.yaml",
+            "stash": "rules/stash/1535-kiro-code-assistant.yaml"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/mihomo/1537-amazon-q-developer-api.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1537-amazon-q-developer-api.yaml",
+            "stash": "rules/stash/1537-amazon-q-developer-api.yaml"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/mihomo/1538-amazon-q-code-reviews.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1538-amazon-q-code-reviews.yaml",
+            "stash": "rules/stash/1538-amazon-q-code-reviews.yaml"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/mihomo/1539-amazon-q-code-transformations.yaml",
+          "paths": {
+            "mihomo": "rules/mihomo/1539-amazon-q-code-transformations.yaml",
+            "stash": "rules/stash/1539-amazon-q-code-transformations.yaml"
           }
         },
         "1540-bolt-app-builder": {
@@ -15961,7 +16201,7 @@
           }
         }
       },
-      "available": 397,
+      "available": 403,
       "unsupported": 0
     },
     "egern": {
@@ -16124,11 +16364,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
-          "output-rule-count": 712,
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 786,
           "status": "available",
           "path": "rules/egern/1000-ai-overseas-all.yaml",
           "paths": {
@@ -16915,17 +17155,95 @@
             "egern": "rules/egern/1520-zed-editor-and-ai.yaml"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/egern/1530-kiro-code-assistant.yaml",
+          "path": "rules/egern/1526-kiro-service-all.yaml",
           "paths": {
-            "egern": "rules/egern/1530-kiro-code-assistant.yaml"
+            "egern": "rules/egern/1526-kiro-service-all.yaml"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/egern/1527-amazon-q-service-all.yaml",
+          "paths": {
+            "egern": "rules/egern/1527-amazon-q-service-all.yaml"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/egern/1531-amazon-q-kiro-shared-api.yaml",
+          "paths": {
+            "egern": "rules/egern/1531-amazon-q-kiro-shared-api.yaml"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/egern/1535-kiro-code-assistant.yaml",
+          "paths": {
+            "egern": "rules/egern/1535-kiro-code-assistant.yaml"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/egern/1537-amazon-q-developer-api.yaml",
+          "paths": {
+            "egern": "rules/egern/1537-amazon-q-developer-api.yaml"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/egern/1538-amazon-q-code-reviews.yaml",
+          "paths": {
+            "egern": "rules/egern/1538-amazon-q-code-reviews.yaml"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/egern/1539-amazon-q-code-transformations.yaml",
+          "paths": {
+            "egern": "rules/egern/1539-amazon-q-code-transformations.yaml"
           }
         },
         "1540-bolt-app-builder": {
@@ -21128,7 +21446,7 @@
           }
         }
       },
-      "available": 397,
+      "available": 403,
       "unsupported": 0
     },
     "surfboard": {
@@ -21291,10 +21609,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
           "status": "unsupported",
           "reason": "Surfboard 官方规则类型未列出 IP-ASN"
         },
@@ -22074,17 +22392,95 @@
             "surfboard": "rules/surfboard/1520-zed-editor-and-ai.list"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/surfboard/1530-kiro-code-assistant.list",
+          "path": "rules/surfboard/1526-kiro-service-all.list",
           "paths": {
-            "surfboard": "rules/surfboard/1530-kiro-code-assistant.list"
+            "surfboard": "rules/surfboard/1526-kiro-service-all.list"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/surfboard/1527-amazon-q-service-all.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1527-amazon-q-service-all.list"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surfboard/1531-amazon-q-kiro-shared-api.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1531-amazon-q-kiro-shared-api.list"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/surfboard/1535-kiro-code-assistant.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1535-kiro-code-assistant.list"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surfboard/1537-amazon-q-developer-api.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1537-amazon-q-developer-api.list"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surfboard/1538-amazon-q-code-reviews.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1538-amazon-q-code-reviews.list"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/surfboard/1539-amazon-q-code-transformations.list",
+          "paths": {
+            "surfboard": "rules/surfboard/1539-amazon-q-code-transformations.list"
           }
         },
         "1540-bolt-app-builder": {
@@ -26279,7 +26675,7 @@
           }
         }
       },
-      "available": 393,
+      "available": 399,
       "unsupported": 4
     },
     "shadowrocket": {
@@ -26442,11 +26838,11 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
-          "output-rule-count": 712,
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 786,
           "status": "available",
           "path": "rules/shadowrocket/1000-ai-overseas-all.list",
           "paths": {
@@ -27233,17 +27629,95 @@
             "shadowrocket": "rules/shadowrocket/1520-zed-editor-and-ai.list"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/shadowrocket/1530-kiro-code-assistant.list",
+          "path": "rules/shadowrocket/1526-kiro-service-all.list",
           "paths": {
-            "shadowrocket": "rules/shadowrocket/1530-kiro-code-assistant.list"
+            "shadowrocket": "rules/shadowrocket/1526-kiro-service-all.list"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/shadowrocket/1527-amazon-q-service-all.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1527-amazon-q-service-all.list"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/shadowrocket/1531-amazon-q-kiro-shared-api.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1531-amazon-q-kiro-shared-api.list"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/shadowrocket/1535-kiro-code-assistant.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1535-kiro-code-assistant.list"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/shadowrocket/1537-amazon-q-developer-api.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1537-amazon-q-developer-api.list"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/shadowrocket/1538-amazon-q-code-reviews.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1538-amazon-q-code-reviews.list"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/shadowrocket/1539-amazon-q-code-transformations.list",
+          "paths": {
+            "shadowrocket": "rules/shadowrocket/1539-amazon-q-code-transformations.list"
           }
         },
         "1540-bolt-app-builder": {
@@ -31446,7 +31920,7 @@
           }
         }
       },
-      "available": 397,
+      "available": 403,
       "unsupported": 0
     },
     "quantumult-x": {
@@ -31589,10 +32063,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
           "status": "unsupported",
           "reason": "Quantumult X 没有已确认的逐条 no-resolve 参数：IP-CIDR"
         },
@@ -32364,17 +32838,95 @@
             "quantumult-x": "rules/quantumult-x/1520-zed-editor-and-ai.list"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/quantumult-x/1530-kiro-code-assistant.list",
+          "path": "rules/quantumult-x/1526-kiro-service-all.list",
           "paths": {
-            "quantumult-x": "rules/quantumult-x/1530-kiro-code-assistant.list"
+            "quantumult-x": "rules/quantumult-x/1526-kiro-service-all.list"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/quantumult-x/1527-amazon-q-service-all.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1527-amazon-q-service-all.list"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/quantumult-x/1531-amazon-q-kiro-shared-api.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1531-amazon-q-kiro-shared-api.list"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/quantumult-x/1535-kiro-code-assistant.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1535-kiro-code-assistant.list"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/quantumult-x/1537-amazon-q-developer-api.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1537-amazon-q-developer-api.list"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/quantumult-x/1538-amazon-q-code-reviews.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1538-amazon-q-code-reviews.list"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/quantumult-x/1539-amazon-q-code-transformations.list",
+          "paths": {
+            "quantumult-x": "rules/quantumult-x/1539-amazon-q-code-transformations.list"
           }
         },
         "1540-bolt-app-builder": {
@@ -36533,7 +37085,7 @@
           }
         }
       },
-      "available": 377,
+      "available": 383,
       "unsupported": 20
     },
     "sing-box": {
@@ -36676,10 +37228,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
           "status": "unsupported",
           "reason": "sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -37451,17 +38003,95 @@
             "sing-box": "rules/sing-box/1520-zed-editor-and-ai.json"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/sing-box/1530-kiro-code-assistant.json",
+          "path": "rules/sing-box/1526-kiro-service-all.json",
           "paths": {
-            "sing-box": "rules/sing-box/1530-kiro-code-assistant.json"
+            "sing-box": "rules/sing-box/1526-kiro-service-all.json"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/sing-box/1527-amazon-q-service-all.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1527-amazon-q-service-all.json"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/sing-box/1531-amazon-q-kiro-shared-api.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1531-amazon-q-kiro-shared-api.json"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/sing-box/1535-kiro-code-assistant.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1535-kiro-code-assistant.json"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/sing-box/1537-amazon-q-developer-api.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1537-amazon-q-developer-api.json"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/sing-box/1538-amazon-q-code-reviews.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1538-amazon-q-code-reviews.json"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/sing-box/1539-amazon-q-code-transformations.json",
+          "paths": {
+            "sing-box": "rules/sing-box/1539-amazon-q-code-transformations.json"
           }
         },
         "1540-bolt-app-builder": {
@@ -41608,7 +42238,7 @@
           "reason": "sing-box 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 374,
+      "available": 380,
       "unsupported": 23
     },
     "v2ray": {
@@ -41751,10 +42381,10 @@
         },
         "1000-ai-overseas-all": {
           "source": "rules/loon/1000-ai-overseas-all.lsr",
-          "rule-count": 712,
+          "rule-count": 786,
           "description": "海外 AI 合集",
           "created-at": "2026-11-19T08:04:26Z",
-          "updated-at": "2026-11-26T22:25:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
           "status": "unsupported",
           "reason": "v2ray 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         },
@@ -42526,17 +43156,95 @@
             "v2ray": "rules/v2ray/1520-zed-editor-and-ai.json"
           }
         },
-        "1530-kiro-code-assistant": {
-          "source": "rules/loon/1530-kiro-code-assistant.lsr",
-          "rule-count": 3,
-          "description": "Kiro 编程助手",
-          "created-at": "2026-11-21T12:39:08Z",
-          "updated-at": "2026-11-24T14:07:02Z",
-          "output-rule-count": 3,
+        "1526-kiro-service-all": {
+          "source": "rules/loon/1526-kiro-service-all.lsr",
+          "rule-count": 11,
+          "description": "Kiro 编程、个人登录与依赖合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 11,
           "status": "available",
-          "path": "rules/v2ray/1530-kiro-code-assistant.json",
+          "path": "rules/v2ray/1526-kiro-service-all.json",
           "paths": {
-            "v2ray": "rules/v2ray/1530-kiro-code-assistant.json"
+            "v2ray": "rules/v2ray/1526-kiro-service-all.json"
+          }
+        },
+        "1527-amazon-q-service-all": {
+          "source": "rules/loon/1527-amazon-q-service-all.lsr",
+          "rule-count": 70,
+          "description": "Amazon Q 编程、登录与上传合集",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 70,
+          "status": "available",
+          "path": "rules/v2ray/1527-amazon-q-service-all.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1527-amazon-q-service-all.json"
+          }
+        },
+        "1531-amazon-q-kiro-shared-api": {
+          "source": "rules/loon/1531-amazon-q-kiro-shared-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 与 Kiro 共用 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/v2ray/1531-amazon-q-kiro-shared-api.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1531-amazon-q-kiro-shared-api.json"
+          }
+        },
+        "1535-kiro-code-assistant": {
+          "source": "rules/loon/1535-kiro-code-assistant.lsr",
+          "rule-count": 1,
+          "description": "Kiro 自有入口与编程服务",
+          "created-at": "2026-11-21T12:39:08Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 1,
+          "status": "available",
+          "path": "rules/v2ray/1535-kiro-code-assistant.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1535-kiro-code-assistant.json"
+          }
+        },
+        "1537-amazon-q-developer-api": {
+          "source": "rules/loon/1537-amazon-q-developer-api.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 功能与 IDE 集成 API",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/v2ray/1537-amazon-q-developer-api.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1537-amazon-q-developer-api.json"
+          }
+        },
+        "1538-amazon-q-code-reviews": {
+          "source": "rules/loon/1538-amazon-q-code-reviews.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码审查上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/v2ray/1538-amazon-q-code-reviews.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1538-amazon-q-code-reviews.json"
+          }
+        },
+        "1539-amazon-q-code-transformations": {
+          "source": "rules/loon/1539-amazon-q-code-transformations.lsr",
+          "rule-count": 2,
+          "description": "Amazon Q 代码改写上传",
+          "created-at": "2026-11-27T03:04:23Z",
+          "updated-at": "2026-11-27T03:04:23Z",
+          "output-rule-count": 2,
+          "status": "available",
+          "path": "rules/v2ray/1539-amazon-q-code-transformations.json",
+          "paths": {
+            "v2ray": "rules/v2ray/1539-amazon-q-code-transformations.json"
           }
         },
         "1540-bolt-app-builder": {
@@ -46683,11 +47391,12 @@
           "reason": "v2ray 无法在这份独立规则中保留 GEOIP 的 ASN、GeoIP 或逐条 DNS 匹配行为"
         }
       },
-      "available": 374,
+      "available": 380,
       "unsupported": 23
     }
   },
   "aliases": {
-    "1040-xai-connections": "1032-xai-service-all"
+    "1040-xai-connections": "1032-xai-service-all",
+    "1530-kiro-code-assistant": "1526-kiro-service-all"
   }
 }

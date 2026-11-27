@@ -5,6 +5,7 @@ import re
 from loon_rules import domains, rules
 from loon_rules.matching import RuleIndex
 from loon_rules.sources.inputs import extract_rows
+from loon_rules.sources import aws_coding
 from loon_rules.sources.transport import source_url
 from loon_rules.generation.membership import compact
 from loon_rules.policy import SHARED_PARENT,overbroad
@@ -24,10 +25,22 @@ def validate(entries):
             raise rules.Invalid('官方共享依赖只能用于明确的替代合集：'+key)
         for recipe in recipes:
             if (not isinstance(recipe,dict) or recipe.get('format') not in
-                    ('purpose-domain-lists','purpose-url-table','domain-column-table','product-domain-statements')
+                    ('purpose-domain-lists','purpose-url-table','domain-column-table','product-domain-statements',aws_coding.DEPENDENCY_FORMAT)
                     or type(recipe.get('protect-from-reject',False)) is not bool):
                 raise rules.Invalid('服务依赖缺少官方用途清单：'+key)
             source_url(recipe['source'])
+            if recipe['format'] == aws_coding.DEPENDENCY_FORMAT:
+                aws_coding.validate(recipe, dependency=True)
+
+
+def source_urls(recipe):
+    return aws_coding.source_urls(recipe) if recipe['format'] == aws_coding.DEPENDENCY_FORMAT else [recipe['source']]
+
+
+def recipe_rows(recipe, downloaded):
+    if recipe['format'] == aws_coding.DEPENDENCY_FORMAT:
+        return aws_coding.dependency_rows(recipe, downloaded)
+    return extract_rows({**recipe, 'require-complete': True}, downloaded[recipe['source']])
 
 
 def read(entries,downloaded):
@@ -38,8 +51,17 @@ def read(entries,downloaded):
         records=[]
         for recipe in entry['dependency-inputs']:
             text=downloaded[recipe['source']]
-            rows=sorted(extract_rows({**recipe,'require-complete':True},text))
-            records.append({'recipe':recipe,'complete':True,'sha256':hashlib.sha256(text.encode()).hexdigest(),'rules':rows})
+            if recipe['format'] == aws_coding.DEPENDENCY_FORMAT:
+                facts = aws_coding.network_records(aws_coding.network_spec(recipe), downloaded)
+                rows = sorted(aws_coding.dependency_scopes(recipe, facts))
+            else:
+                rows = sorted(recipe_rows(recipe,downloaded))
+            record = {'recipe':recipe,'complete':True,'sha256':hashlib.sha256(text.encode()).hexdigest(),'rules':rows}
+            if recipe['format'] == aws_coding.DEPENDENCY_FORMAT:
+                record['network-facts'] = facts
+                record['context-sha256'] = {url: hashlib.sha256(downloaded[url].encode()).hexdigest()
+                                           for url in source_urls(recipe)}
+            records.append(record)
         report[key]={'inputs':records}
     return report
 
@@ -61,6 +83,8 @@ def attach(config,entries,data,report):
             raise rules.Invalid('服务依赖的来源用途与声明不一致：'+key)
         rows=[];sources={}
         for item in inputs:
+            if item['recipe']['format'] == aws_coding.DEPENDENCY_FORMAT:
+                aws_coding.verify_dependency(item['recipe'], item)
             if (item.get('complete') is not True or not re.fullmatch('[0-9a-f]{64}',item.get('sha256',''))
                     or not isinstance(item.get('rules'),list) or not item['rules']
                     or rules.read_rules('\n'.join(item['rules']))!=item['rules']):

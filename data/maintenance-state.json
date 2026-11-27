@@ -1,9 +1,9 @@
 {
-  "checked-at": "2026-11-27T00:39:32Z",
-  "inputs-read": 626,
-  "critical": 951,
-  "inputs-requested": 626,
-  "profiles-checked": 4991221760,
+  "checked-at": "2026-11-27T03:35:44Z",
+  "inputs-read": 630,
+  "critical": 953,
+  "inputs-requested": 630,
+  "profiles-checked": 12037652480,
   "assigned-rules": {
     "apple-system-connectivity": {
       "DOMAIN-SUFFIX,appattest.apple.com": "apple-app-and-device-verification",
@@ -843,7 +843,7 @@
     }
   },
   "subscription-audit": {
-    "routine-tables": 358,
+    "routine-tables": 362,
     "duplicate-rules": 0,
     "shadowed-domain-rules": 0,
     "optional-overlaps": {
@@ -986,7 +986,11 @@
       "tabnine-code-assistant",
       "factory-coding-agents",
       "zed-editor-and-ai",
+      "amazon-q-kiro-shared-api",
       "kiro-code-assistant",
+      "amazon-q-developer-api",
+      "amazon-q-code-reviews",
+      "amazon-q-code-transformations",
       "bolt-app-builder",
       "lovable-app-builder",
       "v0-app-builder",
@@ -1842,9 +1846,16 @@
     "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list": {
       "state": "current",
       "products": [
+        "amazon-q-kiro-shared-api",
         "kiro-code-assistant"
       ],
       "filters": {
+        "amazon-q-kiro-shared-api": [
+          {
+            "require-domain-closure": true,
+            "exact-from-extract": true
+          }
+        ],
         "kiro-code-assistant": [
           {
             "roots": [
@@ -6211,6 +6222,240 @@
     }
   },
   "expanded-inputs": {
+    "kiro-code-assistant": {
+      "method": "aws-coding-network",
+      "directory": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+      "scope": "kiro",
+      "network-facts": {
+        "regions": {
+          "dns-suffix": "amazonaws.com",
+          "sdk-partition": "aws",
+          "sdk-regions": [
+            "af-south-1",
+            "ap-east-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "profile-regions": [
+            "eu-central-1",
+            "us-east-1"
+          ],
+          "sso-regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "general-records": 17,
+        "storage-records": 2,
+        "general-purposes": {
+          "authentication": [
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "features": [
+            "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "ide-configuration": [
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+          ],
+          "ide-endpoints": [
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,q-developer-integration.us-east-1.api.aws"
+          ],
+          "language-processing": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+          ],
+          "telemetry": [
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+          ]
+        },
+        "storage-purposes": {
+          "code-reviews": [
+            "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+          ],
+          "code-transformations": [
+            "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+          ]
+        },
+        "kiro-core-services": [
+          "DOMAIN,app.kiro.dev",
+          "DOMAIN,assets.app.kiro.dev",
+          "DOMAIN,eu-central-1.app.kiro.dev",
+          "DOMAIN,management.eu-central-1.kiro.dev",
+          "DOMAIN,management.us-east-1.kiro.dev",
+          "DOMAIN,prod.download.desktop.kiro.dev",
+          "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com",
+          "DOMAIN,runtime.eu-central-1.kiro.dev",
+          "DOMAIN,runtime.us-east-1.kiro.dev",
+          "DOMAIN,telemetry.eu-central-1.kiro.dev",
+          "DOMAIN,telemetry.us-east-1.kiro.dev"
+        ],
+        "shared-services": [
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com"
+        ]
+      },
+      "documents": [
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+          "kind": "aws-coding-network",
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+          "kind": "aws-coding-network",
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rows": [
+            "DOMAIN,app.kiro.dev",
+            "DOMAIN,assets.app.kiro.dev",
+            "DOMAIN,eu-central-1.app.kiro.dev",
+            "DOMAIN,management.eu-central-1.kiro.dev",
+            "DOMAIN,management.us-east-1.kiro.dev",
+            "DOMAIN,prod.download.desktop.kiro.dev",
+            "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+            "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+            "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+            "DOMAIN,runtime.eu-central-1.kiro.dev",
+            "DOMAIN,runtime.us-east-1.kiro.dev",
+            "DOMAIN,telemetry.eu-central-1.kiro.dev",
+            "DOMAIN,telemetry.us-east-1.kiro.dev"
+          ],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+          "kind": "aws-coding-network",
+          "sha256": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe",
+          "rows": [],
+          "shared-rows": []
+        }
+      ]
+    },
     "apple-location-services": {
       "method": "ios-client-config",
       "directory": "https://gdmf.apple.com/v2/pmv",
@@ -10770,6 +11015,901 @@
           }
         }
       ]
+    },
+    "amazon-q-kiro-shared-api": {
+      "method": "aws-coding-network",
+      "directory": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+      "scope": "shared",
+      "network-facts": {
+        "regions": {
+          "dns-suffix": "amazonaws.com",
+          "sdk-partition": "aws",
+          "sdk-regions": [
+            "af-south-1",
+            "ap-east-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "profile-regions": [
+            "eu-central-1",
+            "us-east-1"
+          ],
+          "sso-regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "general-records": 17,
+        "storage-records": 2,
+        "general-purposes": {
+          "authentication": [
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "features": [
+            "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "ide-configuration": [
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+          ],
+          "ide-endpoints": [
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,q-developer-integration.us-east-1.api.aws"
+          ],
+          "language-processing": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+          ],
+          "telemetry": [
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+          ]
+        },
+        "storage-purposes": {
+          "code-reviews": [
+            "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+          ],
+          "code-transformations": [
+            "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+          ]
+        },
+        "kiro-core-services": [
+          "DOMAIN,app.kiro.dev",
+          "DOMAIN,assets.app.kiro.dev",
+          "DOMAIN,eu-central-1.app.kiro.dev",
+          "DOMAIN,management.eu-central-1.kiro.dev",
+          "DOMAIN,management.us-east-1.kiro.dev",
+          "DOMAIN,prod.download.desktop.kiro.dev",
+          "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com",
+          "DOMAIN,runtime.eu-central-1.kiro.dev",
+          "DOMAIN,runtime.us-east-1.kiro.dev",
+          "DOMAIN,telemetry.eu-central-1.kiro.dev",
+          "DOMAIN,telemetry.us-east-1.kiro.dev"
+        ],
+        "shared-services": [
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com"
+        ]
+      },
+      "documents": [
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+          "kind": "aws-coding-network",
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rows": [
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "shared-rows": []
+        },
+        {
+          "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+          "kind": "aws-coding-network",
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rows": [
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+          "kind": "aws-coding-network",
+          "sha256": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe",
+          "rows": [],
+          "shared-rows": []
+        }
+      ]
+    },
+    "amazon-q-developer-api": {
+      "method": "aws-coding-network",
+      "directory": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+      "scope": "api",
+      "network-facts": {
+        "regions": {
+          "dns-suffix": "amazonaws.com",
+          "sdk-partition": "aws",
+          "sdk-regions": [
+            "af-south-1",
+            "ap-east-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "profile-regions": [
+            "eu-central-1",
+            "us-east-1"
+          ],
+          "sso-regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "general-records": 17,
+        "storage-records": 2,
+        "general-purposes": {
+          "authentication": [
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "features": [
+            "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "ide-configuration": [
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+          ],
+          "ide-endpoints": [
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,q-developer-integration.us-east-1.api.aws"
+          ],
+          "language-processing": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+          ],
+          "telemetry": [
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+          ]
+        },
+        "storage-purposes": {
+          "code-reviews": [
+            "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+          ],
+          "code-transformations": [
+            "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+          ]
+        },
+        "kiro-core-services": [
+          "DOMAIN,app.kiro.dev",
+          "DOMAIN,assets.app.kiro.dev",
+          "DOMAIN,eu-central-1.app.kiro.dev",
+          "DOMAIN,management.eu-central-1.kiro.dev",
+          "DOMAIN,management.us-east-1.kiro.dev",
+          "DOMAIN,prod.download.desktop.kiro.dev",
+          "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com",
+          "DOMAIN,runtime.eu-central-1.kiro.dev",
+          "DOMAIN,runtime.us-east-1.kiro.dev",
+          "DOMAIN,telemetry.eu-central-1.kiro.dev",
+          "DOMAIN,telemetry.us-east-1.kiro.dev"
+        ],
+        "shared-services": [
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com"
+        ]
+      },
+      "documents": [
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+          "kind": "aws-coding-network",
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rows": [
+            "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+            "DOMAIN,q-developer-integration.us-east-1.api.aws"
+          ],
+          "shared-rows": []
+        },
+        {
+          "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+          "kind": "aws-coding-network",
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+          "kind": "aws-coding-network",
+          "sha256": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe",
+          "rows": [],
+          "shared-rows": []
+        }
+      ]
+    },
+    "amazon-q-code-reviews": {
+      "method": "aws-coding-network",
+      "directory": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+      "scope": "reviews",
+      "network-facts": {
+        "regions": {
+          "dns-suffix": "amazonaws.com",
+          "sdk-partition": "aws",
+          "sdk-regions": [
+            "af-south-1",
+            "ap-east-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "profile-regions": [
+            "eu-central-1",
+            "us-east-1"
+          ],
+          "sso-regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "general-records": 17,
+        "storage-records": 2,
+        "general-purposes": {
+          "authentication": [
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "features": [
+            "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "ide-configuration": [
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+          ],
+          "ide-endpoints": [
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,q-developer-integration.us-east-1.api.aws"
+          ],
+          "language-processing": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+          ],
+          "telemetry": [
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+          ]
+        },
+        "storage-purposes": {
+          "code-reviews": [
+            "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+          ],
+          "code-transformations": [
+            "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+          ]
+        },
+        "kiro-core-services": [
+          "DOMAIN,app.kiro.dev",
+          "DOMAIN,assets.app.kiro.dev",
+          "DOMAIN,eu-central-1.app.kiro.dev",
+          "DOMAIN,management.eu-central-1.kiro.dev",
+          "DOMAIN,management.us-east-1.kiro.dev",
+          "DOMAIN,prod.download.desktop.kiro.dev",
+          "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com",
+          "DOMAIN,runtime.eu-central-1.kiro.dev",
+          "DOMAIN,runtime.us-east-1.kiro.dev",
+          "DOMAIN,telemetry.eu-central-1.kiro.dev",
+          "DOMAIN,telemetry.us-east-1.kiro.dev"
+        ],
+        "shared-services": [
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com"
+        ]
+      },
+      "documents": [
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+          "kind": "aws-coding-network",
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rows": [
+            "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+          ],
+          "shared-rows": []
+        },
+        {
+          "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+          "kind": "aws-coding-network",
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+          "kind": "aws-coding-network",
+          "sha256": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe",
+          "rows": [],
+          "shared-rows": []
+        }
+      ]
+    },
+    "amazon-q-code-transformations": {
+      "method": "aws-coding-network",
+      "directory": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+      "scope": "transformations",
+      "network-facts": {
+        "regions": {
+          "dns-suffix": "amazonaws.com",
+          "sdk-partition": "aws",
+          "sdk-regions": [
+            "af-south-1",
+            "ap-east-1",
+            "ap-east-2",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "me-central-1",
+            "me-south-1",
+            "mx-central-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "profile-regions": [
+            "eu-central-1",
+            "us-east-1"
+          ],
+          "sso-regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ]
+        },
+        "general-records": 17,
+        "storage-records": 2,
+        "general-purposes": {
+          "authentication": [
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "features": [
+            "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "ide-configuration": [
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+          ],
+          "ide-endpoints": [
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,q-developer-integration.us-east-1.api.aws"
+          ],
+          "language-processing": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+          ],
+          "telemetry": [
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+          ]
+        },
+        "storage-purposes": {
+          "code-reviews": [
+            "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+          ],
+          "code-transformations": [
+            "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+          ]
+        },
+        "kiro-core-services": [
+          "DOMAIN,app.kiro.dev",
+          "DOMAIN,assets.app.kiro.dev",
+          "DOMAIN,eu-central-1.app.kiro.dev",
+          "DOMAIN,management.eu-central-1.kiro.dev",
+          "DOMAIN,management.us-east-1.kiro.dev",
+          "DOMAIN,prod.download.desktop.kiro.dev",
+          "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+          "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com",
+          "DOMAIN,runtime.eu-central-1.kiro.dev",
+          "DOMAIN,runtime.us-east-1.kiro.dev",
+          "DOMAIN,telemetry.eu-central-1.kiro.dev",
+          "DOMAIN,telemetry.us-east-1.kiro.dev"
+        ],
+        "shared-services": [
+          "DOMAIN,q.eu-central-1.amazonaws.com",
+          "DOMAIN,q.us-east-1.amazonaws.com"
+        ]
+      },
+      "documents": [
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+          "kind": "aws-coding-network",
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rows": [
+            "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+            "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+          ],
+          "shared-rows": []
+        },
+        {
+          "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+          "kind": "aws-coding-network",
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+          "kind": "aws-coding-network",
+          "sha256": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+          "rows": [],
+          "shared-rows": []
+        },
+        {
+          "source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+          "kind": "aws-coding-network",
+          "sha256": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe",
+          "rows": [],
+          "shared-rows": []
+        }
+      ]
     }
   },
   "maintenance": {
@@ -10820,7 +11960,6 @@
       1500,
       1510,
       1520,
-      1530,
       1540,
       1550,
       1560,
@@ -11129,7 +12268,9 @@
       1059,
       205,
       206,
-      3005
+      3005,
+      1526,
+      1527
     ],
     "按用途与来源家族自动补全": [
       1010,
@@ -11168,6 +12309,13 @@
       6160,
       6170,
       6260
+    ],
+    "跟随完整官方网络用途表与地区定义，核对共用API和业务桶": [
+      1535,
+      1531,
+      1537,
+      1538,
+      1539
     ],
     "官方业务端点自动补入": [
       2030,
@@ -11313,7 +12461,7 @@
     },
     "extended-ad-and-tracking": {
       "state": "current",
-      "not-whole-host-consensus": 18005,
+      "not-whole-host-consensus": 18002,
       "admitted-rules": 0,
       "retired-rules": 0
     }
@@ -11822,7 +12970,7 @@
     },
     "kiro-model-service-regions": {
       "state": "current",
-      "domain-scopes": 4,
+      "domain-scopes": 15,
       "outside-scope": 0,
       "other-rules": 0
     },
@@ -13430,7 +14578,7 @@
             "protect-from-reject": true
           },
           "complete": true,
-          "sha256": "7b859126c7052ce9911646686b0767342de930c92b248b76f55aedf2a7e26339",
+          "sha256": "981d57fd75bf72218763b409af75b12d3666b4e9b165572a3c78862723cd82cb",
           "rules": [
             "DOMAIN,android.chat.openai.com",
             "DOMAIN,auth0.openai.com",
@@ -13523,6 +14671,544 @@
           "rules": [
             "DOMAIN-SUFFIX,ghe.com"
           ]
+        },
+        {
+          "recipe": {
+            "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+            "kiro-source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "region-context": {
+              "profile-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+              "profile-heading": "Supported Regions for the Q Developer console and Q Developer profile",
+              "sso-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+              "sso-heading": "Supported Regions (enabled by default)",
+              "sdk-source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+              "partition": "aws",
+              "dns-suffix": "amazonaws.com"
+            },
+            "format": "aws-coding-dependencies",
+            "service": "q",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rules": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com",
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com",
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com",
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "network-facts": {
+            "regions": {
+              "dns-suffix": "amazonaws.com",
+              "sdk-partition": "aws",
+              "sdk-regions": [
+                "af-south-1",
+                "ap-east-1",
+                "ap-east-2",
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-south-2",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ap-southeast-3",
+                "ap-southeast-4",
+                "ap-southeast-5",
+                "ap-southeast-6",
+                "ap-southeast-7",
+                "ca-central-1",
+                "ca-west-1",
+                "eu-central-1",
+                "eu-central-2",
+                "eu-north-1",
+                "eu-south-1",
+                "eu-south-2",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "il-central-1",
+                "me-central-1",
+                "me-south-1",
+                "mx-central-1",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ],
+              "profile-regions": [
+                "eu-central-1",
+                "us-east-1"
+              ],
+              "sso-regions": [
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-north-1",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ]
+            },
+            "general-records": 17,
+            "storage-records": 2,
+            "general-purposes": {
+              "authentication": [
+                "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+                "DOMAIN,oidc.ap-south-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+                "DOMAIN,oidc.ca-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-north-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-2.amazonaws.com",
+                "DOMAIN,oidc.eu-west-3.amazonaws.com",
+                "DOMAIN,oidc.sa-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-2.amazonaws.com",
+                "DOMAIN,oidc.us-west-1.amazonaws.com",
+                "DOMAIN,oidc.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.aws.dev",
+                "DOMAIN-WILDCARD,*.awsapps.com",
+                "DOMAIN-WILDCARD,*.awsstatic.com",
+                "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+              ],
+              "features": [
+                "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+                "DOMAIN,q.eu-central-1.amazonaws.com",
+                "DOMAIN,q.us-east-1.amazonaws.com"
+              ],
+              "ide-configuration": [
+                "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+              ],
+              "ide-endpoints": [
+                "DOMAIN,idetoolkits.amazonwebservices.com",
+                "DOMAIN,q-developer-integration.us-east-1.api.aws"
+              ],
+              "language-processing": [
+                "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+                "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+              ],
+              "telemetry": [
+                "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+                "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+              ]
+            },
+            "storage-purposes": {
+              "code-reviews": [
+                "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+              ],
+              "code-transformations": [
+                "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+              ]
+            },
+            "kiro-core-services": [
+              "DOMAIN,app.kiro.dev",
+              "DOMAIN,assets.app.kiro.dev",
+              "DOMAIN,eu-central-1.app.kiro.dev",
+              "DOMAIN,management.eu-central-1.kiro.dev",
+              "DOMAIN,management.us-east-1.kiro.dev",
+              "DOMAIN,prod.download.desktop.kiro.dev",
+              "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com",
+              "DOMAIN,runtime.eu-central-1.kiro.dev",
+              "DOMAIN,runtime.us-east-1.kiro.dev",
+              "DOMAIN,telemetry.eu-central-1.kiro.dev",
+              "DOMAIN,telemetry.us-east-1.kiro.dev"
+            ],
+            "shared-services": [
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com"
+            ]
+          },
+          "context-sha256": {
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+            "https://kiro.dev/docs/privacy-and-security/firewalls/": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+            "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe"
+          }
+        },
+        {
+          "recipe": {
+            "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+            "kiro-source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "region-context": {
+              "profile-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+              "profile-heading": "Supported Regions for the Q Developer console and Q Developer profile",
+              "sso-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+              "sso-heading": "Supported Regions (enabled by default)",
+              "sdk-source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+              "partition": "aws",
+              "dns-suffix": "amazonaws.com"
+            },
+            "format": "aws-coding-dependencies",
+            "service": "kiro-core",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rules": [
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "network-facts": {
+            "regions": {
+              "dns-suffix": "amazonaws.com",
+              "sdk-partition": "aws",
+              "sdk-regions": [
+                "af-south-1",
+                "ap-east-1",
+                "ap-east-2",
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-south-2",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ap-southeast-3",
+                "ap-southeast-4",
+                "ap-southeast-5",
+                "ap-southeast-6",
+                "ap-southeast-7",
+                "ca-central-1",
+                "ca-west-1",
+                "eu-central-1",
+                "eu-central-2",
+                "eu-north-1",
+                "eu-south-1",
+                "eu-south-2",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "il-central-1",
+                "me-central-1",
+                "me-south-1",
+                "mx-central-1",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ],
+              "profile-regions": [
+                "eu-central-1",
+                "us-east-1"
+              ],
+              "sso-regions": [
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-north-1",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ]
+            },
+            "general-records": 17,
+            "storage-records": 2,
+            "general-purposes": {
+              "authentication": [
+                "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+                "DOMAIN,oidc.ap-south-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+                "DOMAIN,oidc.ca-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-north-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-2.amazonaws.com",
+                "DOMAIN,oidc.eu-west-3.amazonaws.com",
+                "DOMAIN,oidc.sa-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-2.amazonaws.com",
+                "DOMAIN,oidc.us-west-1.amazonaws.com",
+                "DOMAIN,oidc.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.aws.dev",
+                "DOMAIN-WILDCARD,*.awsapps.com",
+                "DOMAIN-WILDCARD,*.awsstatic.com",
+                "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+              ],
+              "features": [
+                "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+                "DOMAIN,q.eu-central-1.amazonaws.com",
+                "DOMAIN,q.us-east-1.amazonaws.com"
+              ],
+              "ide-configuration": [
+                "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+              ],
+              "ide-endpoints": [
+                "DOMAIN,idetoolkits.amazonwebservices.com",
+                "DOMAIN,q-developer-integration.us-east-1.api.aws"
+              ],
+              "language-processing": [
+                "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+                "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+              ],
+              "telemetry": [
+                "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+                "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+              ]
+            },
+            "storage-purposes": {
+              "code-reviews": [
+                "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+              ],
+              "code-transformations": [
+                "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+              ]
+            },
+            "kiro-core-services": [
+              "DOMAIN,app.kiro.dev",
+              "DOMAIN,assets.app.kiro.dev",
+              "DOMAIN,eu-central-1.app.kiro.dev",
+              "DOMAIN,management.eu-central-1.kiro.dev",
+              "DOMAIN,management.us-east-1.kiro.dev",
+              "DOMAIN,prod.download.desktop.kiro.dev",
+              "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com",
+              "DOMAIN,runtime.eu-central-1.kiro.dev",
+              "DOMAIN,runtime.us-east-1.kiro.dev",
+              "DOMAIN,telemetry.eu-central-1.kiro.dev",
+              "DOMAIN,telemetry.us-east-1.kiro.dev"
+            ],
+            "shared-services": [
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com"
+            ]
+          },
+          "context-sha256": {
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+            "https://kiro.dev/docs/privacy-and-security/firewalls/": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+            "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe"
+          }
+        },
+        {
+          "recipe": {
+            "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "format": "domain-column-table",
+            "section": "social-sign-in",
+            "headers": [
+              "URL",
+              "Purpose"
+            ],
+            "column": "URL",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rules": [
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.awswaf.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "format": "domain-column-table",
+            "section": "subscription-management",
+            "headers": [
+              "URL",
+              "Purpose"
+            ],
+            "column": "URL",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rules": [
+            "DOMAIN,billing.stripe.com",
+            "DOMAIN,checkout.stripe.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "format": "domain-column-table",
+            "section": "optional-urls",
+            "headers": [
+              "URL",
+              "Feature",
+              "Purpose"
+            ],
+            "column": "URL",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rules": [
+            "DOMAIN,github.com",
+            "DOMAIN,open-vsx.org",
+            "DOMAIN,openvsx.eclipsecontent.org",
+            "DOMAIN,raw.githubusercontent.com"
+          ]
         }
       ]
     },
@@ -13539,7 +15225,7 @@
             "protect-from-reject": true
           },
           "complete": true,
-          "sha256": "7b859126c7052ce9911646686b0767342de930c92b248b76f55aedf2a7e26339",
+          "sha256": "981d57fd75bf72218763b409af75b12d3666b4e9b165572a3c78862723cd82cb",
           "rules": [
             "DOMAIN,android.chat.openai.com",
             "DOMAIN,auth0.openai.com",
@@ -14484,6 +16170,552 @@
           ]
         }
       ]
+    },
+    "kiro-service-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+            "kiro-source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "region-context": {
+              "profile-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+              "profile-heading": "Supported Regions for the Q Developer console and Q Developer profile",
+              "sso-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+              "sso-heading": "Supported Regions (enabled by default)",
+              "sdk-source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+              "partition": "aws",
+              "dns-suffix": "amazonaws.com"
+            },
+            "format": "aws-coding-dependencies",
+            "service": "kiro-core",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rules": [
+            "DOMAIN,q.eu-central-1.amazonaws.com",
+            "DOMAIN,q.us-east-1.amazonaws.com"
+          ],
+          "network-facts": {
+            "regions": {
+              "dns-suffix": "amazonaws.com",
+              "sdk-partition": "aws",
+              "sdk-regions": [
+                "af-south-1",
+                "ap-east-1",
+                "ap-east-2",
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-south-2",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ap-southeast-3",
+                "ap-southeast-4",
+                "ap-southeast-5",
+                "ap-southeast-6",
+                "ap-southeast-7",
+                "ca-central-1",
+                "ca-west-1",
+                "eu-central-1",
+                "eu-central-2",
+                "eu-north-1",
+                "eu-south-1",
+                "eu-south-2",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "il-central-1",
+                "me-central-1",
+                "me-south-1",
+                "mx-central-1",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ],
+              "profile-regions": [
+                "eu-central-1",
+                "us-east-1"
+              ],
+              "sso-regions": [
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-north-1",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ]
+            },
+            "general-records": 17,
+            "storage-records": 2,
+            "general-purposes": {
+              "authentication": [
+                "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+                "DOMAIN,oidc.ap-south-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+                "DOMAIN,oidc.ca-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-north-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-2.amazonaws.com",
+                "DOMAIN,oidc.eu-west-3.amazonaws.com",
+                "DOMAIN,oidc.sa-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-2.amazonaws.com",
+                "DOMAIN,oidc.us-west-1.amazonaws.com",
+                "DOMAIN,oidc.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.aws.dev",
+                "DOMAIN-WILDCARD,*.awsapps.com",
+                "DOMAIN-WILDCARD,*.awsstatic.com",
+                "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+              ],
+              "features": [
+                "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+                "DOMAIN,q.eu-central-1.amazonaws.com",
+                "DOMAIN,q.us-east-1.amazonaws.com"
+              ],
+              "ide-configuration": [
+                "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+              ],
+              "ide-endpoints": [
+                "DOMAIN,idetoolkits.amazonwebservices.com",
+                "DOMAIN,q-developer-integration.us-east-1.api.aws"
+              ],
+              "language-processing": [
+                "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+                "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+              ],
+              "telemetry": [
+                "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+                "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+              ]
+            },
+            "storage-purposes": {
+              "code-reviews": [
+                "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+              ],
+              "code-transformations": [
+                "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+              ]
+            },
+            "kiro-core-services": [
+              "DOMAIN,app.kiro.dev",
+              "DOMAIN,assets.app.kiro.dev",
+              "DOMAIN,eu-central-1.app.kiro.dev",
+              "DOMAIN,management.eu-central-1.kiro.dev",
+              "DOMAIN,management.us-east-1.kiro.dev",
+              "DOMAIN,prod.download.desktop.kiro.dev",
+              "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com",
+              "DOMAIN,runtime.eu-central-1.kiro.dev",
+              "DOMAIN,runtime.us-east-1.kiro.dev",
+              "DOMAIN,telemetry.eu-central-1.kiro.dev",
+              "DOMAIN,telemetry.us-east-1.kiro.dev"
+            ],
+            "shared-services": [
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com"
+            ]
+          },
+          "context-sha256": {
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+            "https://kiro.dev/docs/privacy-and-security/firewalls/": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+            "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe"
+          }
+        },
+        {
+          "recipe": {
+            "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "format": "domain-column-table",
+            "section": "social-sign-in",
+            "headers": [
+              "URL",
+              "Purpose"
+            ],
+            "column": "URL",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rules": [
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.awswaf.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "format": "domain-column-table",
+            "section": "subscription-management",
+            "headers": [
+              "URL",
+              "Purpose"
+            ],
+            "column": "URL",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rules": [
+            "DOMAIN,billing.stripe.com",
+            "DOMAIN,checkout.stripe.com"
+          ]
+        },
+        {
+          "recipe": {
+            "source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "format": "domain-column-table",
+            "section": "optional-urls",
+            "headers": [
+              "URL",
+              "Feature",
+              "Purpose"
+            ],
+            "column": "URL",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+          "rules": [
+            "DOMAIN,github.com",
+            "DOMAIN,open-vsx.org",
+            "DOMAIN,openvsx.eclipsecontent.org",
+            "DOMAIN,raw.githubusercontent.com"
+          ]
+        }
+      ]
+    },
+    "amazon-q-service-all": {
+      "inputs": [
+        {
+          "recipe": {
+            "source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md",
+            "kiro-source": "https://kiro.dev/docs/privacy-and-security/firewalls/",
+            "region-context": {
+              "profile-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md",
+              "profile-heading": "Supported Regions for the Q Developer console and Q Developer profile",
+              "sso-source": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md",
+              "sso-heading": "Supported Regions (enabled by default)",
+              "sdk-source": "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json",
+              "partition": "aws",
+              "dns-suffix": "amazonaws.com"
+            },
+            "format": "aws-coding-dependencies",
+            "service": "q",
+            "protect-from-reject": true
+          },
+          "complete": true,
+          "sha256": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+          "rules": [
+            "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+            "DOMAIN,aws-toolkit-language-servers.amazonaws.com",
+            "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+            "DOMAIN,cognito-identity.us-east-1.amazonaws.com",
+            "DOMAIN,idetoolkits-hostedfiles.amazonaws.com",
+            "DOMAIN,idetoolkits.amazonwebservices.com",
+            "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+            "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+            "DOMAIN,oidc.ap-south-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+            "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+            "DOMAIN,oidc.ca-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-central-1.amazonaws.com",
+            "DOMAIN,oidc.eu-north-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-1.amazonaws.com",
+            "DOMAIN,oidc.eu-west-2.amazonaws.com",
+            "DOMAIN,oidc.eu-west-3.amazonaws.com",
+            "DOMAIN,oidc.sa-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-1.amazonaws.com",
+            "DOMAIN,oidc.us-east-2.amazonaws.com",
+            "DOMAIN,oidc.us-west-1.amazonaws.com",
+            "DOMAIN,oidc.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.aws.dev",
+            "DOMAIN-WILDCARD,*.awsapps.com",
+            "DOMAIN-WILDCARD,*.awsstatic.com",
+            "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+            "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+          ],
+          "network-facts": {
+            "regions": {
+              "dns-suffix": "amazonaws.com",
+              "sdk-partition": "aws",
+              "sdk-regions": [
+                "af-south-1",
+                "ap-east-1",
+                "ap-east-2",
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-south-2",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ap-southeast-3",
+                "ap-southeast-4",
+                "ap-southeast-5",
+                "ap-southeast-6",
+                "ap-southeast-7",
+                "ca-central-1",
+                "ca-west-1",
+                "eu-central-1",
+                "eu-central-2",
+                "eu-north-1",
+                "eu-south-1",
+                "eu-south-2",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "il-central-1",
+                "me-central-1",
+                "me-south-1",
+                "mx-central-1",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ],
+              "profile-regions": [
+                "eu-central-1",
+                "us-east-1"
+              ],
+              "sso-regions": [
+                "ap-northeast-1",
+                "ap-northeast-2",
+                "ap-northeast-3",
+                "ap-south-1",
+                "ap-southeast-1",
+                "ap-southeast-2",
+                "ca-central-1",
+                "eu-central-1",
+                "eu-north-1",
+                "eu-west-1",
+                "eu-west-2",
+                "eu-west-3",
+                "sa-east-1",
+                "us-east-1",
+                "us-east-2",
+                "us-west-1",
+                "us-west-2"
+              ]
+            },
+            "general-records": 17,
+            "storage-records": 2,
+            "general-purposes": {
+              "authentication": [
+                "DOMAIN,oidc.ap-northeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-2.amazonaws.com",
+                "DOMAIN,oidc.ap-northeast-3.amazonaws.com",
+                "DOMAIN,oidc.ap-south-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-1.amazonaws.com",
+                "DOMAIN,oidc.ap-southeast-2.amazonaws.com",
+                "DOMAIN,oidc.ca-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-central-1.amazonaws.com",
+                "DOMAIN,oidc.eu-north-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-1.amazonaws.com",
+                "DOMAIN,oidc.eu-west-2.amazonaws.com",
+                "DOMAIN,oidc.eu-west-3.amazonaws.com",
+                "DOMAIN,oidc.sa-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-1.amazonaws.com",
+                "DOMAIN,oidc.us-east-2.amazonaws.com",
+                "DOMAIN,oidc.us-west-1.amazonaws.com",
+                "DOMAIN,oidc.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.aws.dev",
+                "DOMAIN-WILDCARD,*.awsapps.com",
+                "DOMAIN-WILDCARD,*.awsstatic.com",
+                "DOMAIN-WILDCARD,*.console.aws.a2z.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com",
+                "DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com"
+              ],
+              "features": [
+                "DOMAIN,codewhisperer.us-east-1.amazonaws.com",
+                "DOMAIN,q.eu-central-1.amazonaws.com",
+                "DOMAIN,q.us-east-1.amazonaws.com"
+              ],
+              "ide-configuration": [
+                "DOMAIN,idetoolkits-hostedfiles.amazonaws.com"
+              ],
+              "ide-endpoints": [
+                "DOMAIN,idetoolkits.amazonwebservices.com",
+                "DOMAIN,q-developer-integration.us-east-1.api.aws"
+              ],
+              "language-processing": [
+                "DOMAIN,aws-language-servers.us-east-1.amazonaws.com",
+                "DOMAIN,aws-toolkit-language-servers.amazonaws.com"
+              ],
+              "telemetry": [
+                "DOMAIN,client-telemetry.us-east-1.amazonaws.com",
+                "DOMAIN,cognito-identity.us-east-1.amazonaws.com"
+              ]
+            },
+            "storage-purposes": {
+              "code-reviews": [
+                "DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+              ],
+              "code-transformations": [
+                "DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+                "DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+              ]
+            },
+            "kiro-core-services": [
+              "DOMAIN,app.kiro.dev",
+              "DOMAIN,assets.app.kiro.dev",
+              "DOMAIN,eu-central-1.app.kiro.dev",
+              "DOMAIN,management.eu-central-1.kiro.dev",
+              "DOMAIN,management.us-east-1.kiro.dev",
+              "DOMAIN,prod.download.desktop.kiro.dev",
+              "DOMAIN,prod.eu-central-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.auth.desktop.kiro.dev",
+              "DOMAIN,prod.us-east-1.telemetry.desktop.kiro.dev",
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com",
+              "DOMAIN,runtime.eu-central-1.kiro.dev",
+              "DOMAIN,runtime.us-east-1.kiro.dev",
+              "DOMAIN,telemetry.eu-central-1.kiro.dev",
+              "DOMAIN,telemetry.us-east-1.kiro.dev"
+            ],
+            "shared-services": [
+              "DOMAIN,q.eu-central-1.amazonaws.com",
+              "DOMAIN,q.us-east-1.amazonaws.com"
+            ]
+          },
+          "context-sha256": {
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md": "9ebe07521393db06758c63562d1f2deb2c0b3e0f9be28f76a39eaefcbc3c3288",
+            "https://kiro.dev/docs/privacy-and-security/firewalls/": "afbb769ee3377b8a1e637eb2e34d2e4112d05d25c82bb75b4e118729ecad641c",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md": "b2611e6cec3af502ff0e09f4764a67675ccc0704789950ad20bfba489464903a",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md": "a3f580995331610331223d3f1f52d503f90951a96407df8a75e110e9b47ca9ca",
+            "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json": "19e3aa3020dc23c0b4ba81a048802196aee532211c10bd0be7eddd8e73aeedfe"
+          }
+        }
+      ]
     }
   },
   "security-program-history-version": 1,
@@ -14800,8 +17032,11 @@
     "authentication.cursor.sh",
     "authenticator.cursor.sh",
     "avatars.githubusercontent.com",
+    "aws-language-servers.us-east-1.amazonaws.com",
+    "aws-toolkit-language-servers.amazonaws.com",
     "azcliprod.blob.core.windows.net",
     "baseten.co",
+    "billing.stripe.com",
     "bitbucket.org",
     "blog.google",
     "bothub.ru",
@@ -14816,15 +17051,18 @@
     "certs.apple.com",
     "challenges.cloudflare.com",
     "chat.openai.com",
+    "checkout.stripe.com",
     "chutes.ai",
     "cl2-cn.apple.com",
     "cl4-cn.apple.com",
     "claude.dev",
+    "client-telemetry.us-east-1.amazonaws.com",
     "cline.bot",
     "cloud.siliconflow.cn",
     "cloud.siliconflow.com",
     "cloudconfig.jetbrains.com",
     "code.visualstudio.com",
+    "cognito-identity.us-east-1.amazonaws.com",
     "collector.github.com",
     "commandcode.ai",
     "comments.app",
@@ -14925,6 +17163,8 @@
     "humb.apple.com",
     "identity.apple.com",
     "identity.ess.apple.com",
+    "idetoolkits-hostedfiles.amazonaws.com",
+    "idetoolkits.amazonwebservices.com",
     "images.workoscdn.com",
     "imap.gmail.com",
     "img.notionusercontent.com",
@@ -15012,13 +17252,32 @@
     "ocsp2.apple.com",
     "office-f-net.trafficmanager.net",
     "officecdn.microsoft.com.delivery.microsoft.com",
+    "oidc.ap-northeast-1.amazonaws.com",
+    "oidc.ap-northeast-2.amazonaws.com",
+    "oidc.ap-northeast-3.amazonaws.com",
+    "oidc.ap-south-1.amazonaws.com",
+    "oidc.ap-southeast-1.amazonaws.com",
+    "oidc.ap-southeast-2.amazonaws.com",
+    "oidc.ca-central-1.amazonaws.com",
+    "oidc.eu-central-1.amazonaws.com",
+    "oidc.eu-north-1.amazonaws.com",
+    "oidc.eu-west-1.amazonaws.com",
+    "oidc.eu-west-2.amazonaws.com",
+    "oidc.eu-west-3.amazonaws.com",
+    "oidc.sa-east-1.amazonaws.com",
+    "oidc.us-east-1.amazonaws.com",
+    "oidc.us-east-2.amazonaws.com",
+    "oidc.us-west-1.amazonaws.com",
+    "oidc.us-west-2.amazonaws.com",
     "ollama.com",
+    "open-vsx.org",
     "open.spotify.com",
     "openai.bothub.ru",
     "openapi.liblibai.cloud",
     "opencode.ai",
     "openidconnect.googleapis.com",
     "openrouter.ai",
+    "openvsx.eclipsecontent.org",
     "origin-tracker.githubusercontent.com",
     "oscdn.apple.com",
     "oscdn.origin-apple.com.akadns.net",
@@ -15222,6 +17481,7 @@
     "q.us-east-1.amazonaws.com",
     "query.ess.apple.com",
     "quiz.directory",
+    "raw.githubusercontent.com",
     "registry-1.docker.io",
     "registry.npmjs.org",
     "registry.scout.docker.com",
@@ -15241,8 +17501,6 @@
     "runnerproxjpw1.actions.githubusercontent.com",
     "runnerproxsdc1.actions.githubusercontent.com",
     "runnerproxweu1.actions.githubusercontent.com",
-    "runtime.eu-central-1.kiro.dev",
-    "runtime.us-east-1.kiro.dev",
     "safebrowsing.googleapis.com",
     "safebrowsing.mtls.googleapis.com",
     "sandbox.braintreegateway.com",
@@ -15376,7 +17634,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "ollama-cloud": {
@@ -15407,7 +17665,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "stackit-model-services": {
@@ -15438,7 +17696,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "stepfun-international": {
@@ -15480,7 +17738,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "xiaomi-international": {
@@ -15523,7 +17781,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "apple-video-and-fitness": {
@@ -15558,7 +17816,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "apple-store-transactions": {
@@ -15608,7 +17866,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "apple-music-and-radio": {
@@ -15649,7 +17907,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "github-code-and-packages": {
@@ -15890,7 +18148,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "npm-registry": {
@@ -15923,7 +18181,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -15967,7 +18225,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current",
       "retention": "published-artifacts",
       "artifact-hosts": {
@@ -16000,7 +18258,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "jetbrains-ides": {
@@ -16053,7 +18311,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "braintree-payments": {
@@ -16080,7 +18338,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "notion-workspace": {
@@ -16107,7 +18365,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "google-account-authentication": {
@@ -16315,7 +18573,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "google-gmail-mail": {
@@ -16341,7 +18599,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "google-play-services": {
@@ -16377,7 +18635,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "google-play-games": {
@@ -16405,7 +18663,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "kimi-mainland": {
@@ -16436,7 +18694,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "modelscope-mainland": {
@@ -16467,7 +18725,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "xiaomi-mainland-and-shared": {
@@ -16510,7 +18768,7 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     },
     "jetbrains-ai-mainland": {
@@ -16549,15 +18807,15 @@
       "retained": [],
       "retired": [],
       "first-absent": {},
-      "last-read": 1795739899,
+      "last-read": 1795750408,
       "state": "current"
     }
   },
   "inventory-domain-cases": 461,
-  "expanded-domain-cases": 226,
+  "expanded-domain-cases": 247,
   "config-endpoint-history": {},
   "config-history-domain-cases": 0,
-  "business-domain-cases": 1401,
+  "business-domain-cases": 1420,
   "fallback-conflicts": {
     "overseas-sites-extra": {
       "source-xkww3n-overseas": 1,
@@ -16654,7 +18912,7 @@
     "general-ad-and-tracking": 2533,
     "privacy-public-stun-endpoints": 2,
     "extended-ad-and-tracking": 44564,
-    "ai-overseas-all": 712,
+    "ai-overseas-all": 786,
     "claude-connections": 24,
     "chatgpt-service-all": 475,
     "chatgpt-connections": 460,
@@ -16715,7 +18973,13 @@
     "tabnine-code-assistant": 1,
     "factory-coding-agents": 2,
     "zed-editor-and-ai": 1,
-    "kiro-code-assistant": 3,
+    "kiro-service-all": 11,
+    "amazon-q-service-all": 70,
+    "amazon-q-kiro-shared-api": 2,
+    "kiro-code-assistant": 1,
+    "amazon-q-developer-api": 2,
+    "amazon-q-code-reviews": 2,
+    "amazon-q-code-transformations": 2,
     "bolt-app-builder": 1,
     "lovable-app-builder": 1,
     "v0-app-builder": 2,

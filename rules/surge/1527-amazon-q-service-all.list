@@ -1,0 +1,85 @@
+# name: amazon-q-service-all
+# priority: 1527
+# section: ai
+# description: Amazon Q 编程、登录与上传合集
+# boundary: 合并Q功能API、1531共用API、代码审查与改写上传，以及官方网络用途表中的认证、工具分发和遥测依赖。profile与SSO地区分别按官方用途展开；共享身份和工具命名空间上的其他应用请求也会随本表选路。与细分或其他含1531的合集二选一。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
+# rule-count: 70
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+
+DOMAIN,q.eu-central-1.amazonaws.com
+DOMAIN,q.us-east-1.amazonaws.com
+DOMAIN,codewhisperer.us-east-1.amazonaws.com
+DOMAIN,q-developer-integration.us-east-1.api.aws
+DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com
+DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com
+DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com
+DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com
+DOMAIN,aws-language-servers.us-east-1.amazonaws.com
+DOMAIN,aws-toolkit-language-servers.amazonaws.com
+DOMAIN,client-telemetry.us-east-1.amazonaws.com
+DOMAIN,cognito-identity.us-east-1.amazonaws.com
+DOMAIN,idetoolkits-hostedfiles.amazonaws.com
+DOMAIN,idetoolkits.amazonwebservices.com
+DOMAIN,oidc.ap-northeast-1.amazonaws.com
+DOMAIN,oidc.ap-northeast-2.amazonaws.com
+DOMAIN,oidc.ap-northeast-3.amazonaws.com
+DOMAIN,oidc.ap-south-1.amazonaws.com
+DOMAIN,oidc.ap-southeast-1.amazonaws.com
+DOMAIN,oidc.ap-southeast-2.amazonaws.com
+DOMAIN,oidc.ca-central-1.amazonaws.com
+DOMAIN,oidc.eu-central-1.amazonaws.com
+DOMAIN,oidc.eu-north-1.amazonaws.com
+DOMAIN,oidc.eu-west-1.amazonaws.com
+DOMAIN,oidc.eu-west-2.amazonaws.com
+DOMAIN,oidc.eu-west-3.amazonaws.com
+DOMAIN,oidc.sa-east-1.amazonaws.com
+DOMAIN,oidc.us-east-1.amazonaws.com
+DOMAIN,oidc.us-east-2.amazonaws.com
+DOMAIN,oidc.us-west-1.amazonaws.com
+DOMAIN,oidc.us-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.aws.dev
+DOMAIN-WILDCARD,*.awsapps.com
+DOMAIN-WILDCARD,*.awsstatic.com
+DOMAIN-WILDCARD,*.console.aws.a2z.com
+DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com

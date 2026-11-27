@@ -2,12 +2,22 @@
   "version": 1,
   "rules": [
     {
+      "domain": [
+        "q.eu-central-1.amazonaws.com",
+        "q.us-east-1.amazonaws.com",
+        "cognito-identity.us-east-1.amazonaws.com",
+        "billing.stripe.com",
+        "checkout.stripe.com",
+        "github.com",
+        "open-vsx.org",
+        "openvsx.eclipsecontent.org",
+        "raw.githubusercontent.com"
+      ],
       "domain_suffix": [
         "kiro.dev"
       ],
-      "domain": [
-        "q.eu-central-1.amazonaws.com",
-        "q.us-east-1.amazonaws.com"
+      "domain_regex": [
+        "(?i)^.*\\.awswaf\\.com$"
       ]
     }
   ]

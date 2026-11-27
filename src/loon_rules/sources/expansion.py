@@ -9,6 +9,7 @@ from loon_rules.sources import pages as source_pages
 from loon_rules.sources import sdk_pages as source_sdk_pages
 from loon_rules.sources import templates as source_templates
 from loon_rules.sources import profiles as source_profiles
+from loon_rules.sources import aws_coding as source_aws
 from loon_rules.sources import bags as source_bags
 from loon_rules.sources import network_agreement as source_networks
 from loon_rules.rules import Invalid
@@ -41,6 +42,11 @@ def version_policy(spec):
 def validate(config, entries):
     for key, entry in entries.items():
         if not (spec := entry.get('expand')):
+            continue
+        if spec.get('method') == source_aws.METHOD:
+            source_aws.validate(spec)
+            if entry['mode'] != 'compiled' or not set(source_aws.source_urls(spec)) <= set(entry['sources']):
+                raise Invalid('AWS编程服务缺少完整用途上下文来源：' + key)
             continue
         if spec.get('method')==source_networks.METHOD:
             source_networks.validate(spec)
@@ -107,7 +113,9 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
     for key, entry in entries.items():
         if not (spec := entry.get('expand')):
             continue
-        if spec.get('method')==source_networks.METHOD:
+        if spec.get('method') == source_aws.METHOD:
+            plans[key] = source_aws.plan(spec)
+        elif spec.get('method')==source_networks.METHOD:
             plans[key]=source_networks.plan(spec)
         elif spec.get('method')==source_bags.METHOD:
             plans[key]=source_bags.plan(spec)
@@ -123,7 +131,7 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
             plans[key]={'documents':plan(spec, downloaded[spec['source']])}
         for doc in plans[key]['documents']:
             if doc['source'] in jobs:
-                if (doc.get('kind') not in ('domain-registry',source_profiles.METHOD,source_bags.METHOD,source_networks.METHOD)
+                if (doc.get('kind') not in ('domain-registry',source_profiles.METHOD,source_bags.METHOD,source_networks.METHOD,source_aws.METHOD)
                         or jobs[doc['source']].get('kind')!=doc.get('kind')):
                     raise Invalid('API 目录的产品归属重叠：' + key)
             jobs[doc['source']] = doc
@@ -138,6 +146,9 @@ def collect(entries, downloaded, download, *, shared_hosts=()):
     rows = {}
     report = {}
     for key, record in plans.items():
+        if record.get('method') == source_aws.METHOD:
+            rows[key], report[key] = source_aws.read(entries[key]['expand'], record, inputs)
+            continue
         if record.get('method')==source_networks.METHOD:
             rows[key],report[key]=source_networks.read(entries[key]['expand'],record,inputs)
             continue
@@ -182,6 +193,11 @@ def verify_report(entries, data, report, *, shared_hosts=()):
                 kind,host,*flags=row.split(',')
                 if kind!='DOMAIN' or flags or domain_scope.public_host(host)!=host or host not in shared_hosts:
                     raise Invalid('发现文档的共用端点没有对应的范围依据：'+key)
+        if spec.get('method') == source_aws.METHOD:
+            source_aws.verify(spec, record)
+            for doc in docs:
+                verify_rows(key, doc['rows'], data)
+            continue
         if spec.get('method')==source_networks.METHOD:
             source_networks.verify(spec,record)
             source_networks.verify_coverage(key,data,record)

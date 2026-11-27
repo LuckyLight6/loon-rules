@@ -79,7 +79,13 @@
 | 1500 | tabnine-code-assistant | Tabnine 编程助手 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1500-tabnine-code-assistant.lsr) |
 | 1510 | factory-coding-agents | Factory 编程代理 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1510-factory-coding-agents.lsr) |
 | 1520 | zed-editor-and-ai | Zed 编辑器与自营 AI | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1520-zed-editor-and-ai.lsr) |
-| 1530 | kiro-code-assistant | Kiro 编程助手 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1530-kiro-code-assistant.lsr) |
+| 1526 | kiro-service-all | Kiro 编程、个人登录与依赖合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1526-kiro-service-all.lsr) |
+| 1527 | amazon-q-service-all | Amazon Q 编程、登录与上传合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1527-amazon-q-service-all.lsr) |
+| 1531 | amazon-q-kiro-shared-api | Amazon Q 与 Kiro 共用 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1531-amazon-q-kiro-shared-api.lsr) |
+| 1535 | kiro-code-assistant | Kiro 自有入口与编程服务 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1535-kiro-code-assistant.lsr) |
+| 1537 | amazon-q-developer-api | Amazon Q 功能与 IDE 集成 API | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1537-amazon-q-developer-api.lsr) |
+| 1538 | amazon-q-code-reviews | Amazon Q 代码审查上传 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1538-amazon-q-code-reviews.lsr) |
+| 1539 | amazon-q-code-transformations | Amazon Q 代码改写上传 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1539-amazon-q-code-transformations.lsr) |
 | 1540 | bolt-app-builder | Bolt 应用构建 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1540-bolt-app-builder.lsr) |
 | 1550 | lovable-app-builder | Lovable 应用构建 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1550-lovable-app-builder.lsr) |
 | 1560 | v0-app-builder | Vercel v0 应用构建 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/loon/1560-v0-app-builder.lsr) |

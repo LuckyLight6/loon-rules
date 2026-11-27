@@ -1,6 +1,6 @@
 # 按厂商查产品与服务
 
-这里列出 200 个厂商或项目、356 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
+这里列出 199 个厂商或项目、358 项产品与服务，均链接到现有细分规则。同一连接范围服务多个产品时可以共用一份表，无法可靠区分的部分合并说明。
 
 厂商按首份规则编号排列，产品按规则编号排列。[订阅的实际执行顺序](rules.md)仍由同一份分类声明生成；从这里找到产品后，到[对应应用目录](../rules/README.md)取订阅地址，按规则清单的位置订阅。合集替代所列成员，细分表继续保留。
 
@@ -8,7 +8,7 @@
 
 | 用途 | 合集 | 成员数量 |
 |---|---|---:|
-| 海外 AI 合集 | [1000 海外 AI 合集](rules.md#rule-ai-overseas-all) | 83 |
+| 海外 AI 合集 | [1000 海外 AI 合集](rules.md#rule-ai-overseas-all) | 87 |
 | Cursor 编辑器、API 与登录合集 | [1033 Cursor 编辑器、API 与登录合集](rules.md#rule-cursor-service-all) | 2 |
 | 国产 AI 国际版合集 | [1800 国产 AI 国际版合集](rules.md#rule-ai-cn-international-all) | 12 |
 | 海外开发合集 | [3000 海外开发合集](rules.md#rule-overseas-development-all) | 27 |
@@ -401,11 +401,20 @@
 |---|---|
 | Zed 编辑器与自营 AI | [1520 Zed 编辑器与自营 AI](rules.md#rule-zed-editor-and-ai) |
 
-## Kiro
+## Amazon / AWS
+
+可用合集：[1526 Kiro 编程、个人登录与依赖合集](rules.md#rule-kiro-service-all)、[1527 Amazon Q 编程、登录与上传合集](rules.md#rule-amazon-q-service-all)
 
 | 产品或服务 | 对应规则 |
 |---|---|
-| Kiro 编程助手 | [1530 Kiro 编程助手](rules.md#rule-kiro-code-assistant) |
+| Amazon Q 与 Kiro 共用 API | [1531 Amazon Q 与 Kiro 共用 API](rules.md#rule-amazon-q-kiro-shared-api) |
+| Kiro 自有入口与编程服务 | [1535 Kiro 自有入口与编程服务](rules.md#rule-kiro-code-assistant) |
+| Amazon Q 编程、代码审查与改写 | [1537 Amazon Q 功能与 IDE 集成 API](rules.md#rule-amazon-q-developer-api)、[1538 Amazon Q 代码审查上传](rules.md#rule-amazon-q-code-reviews)、[1539 Amazon Q 代码改写上传](rules.md#rule-amazon-q-code-transformations) |
+| Prime Video 视频 API 和内容 | [3840 Prime Video 视频 API 和内容](rules.md#rule-prime-video-streaming) |
+| Twitch 直播、聊天室和内容 CDN | [3930 Twitch 直播、聊天室和内容 CDN](rules.md#rule-twitch-live-video) |
+| Amazon 与 AWS 中国区入口 | [4970 Amazon 与 AWS 中国区入口](rules.md#rule-amazon-mainland) |
+| Amazon 商城、Kindle 与其他共用服务 | [8100 Amazon、AWS 与共用云平台](rules.md#rule-amazon-shared-services) |
+| AWS 与共用云平台 | [8100 Amazon、AWS 与共用云平台](rules.md#rule-amazon-shared-services) |
 
 ## StackBlitz
 
@@ -1013,16 +1022,6 @@
 |---|---|
 | Disney+ 播放及其专用交付 | [3830 Disney+ 播放及其专用交付](rules.md#rule-disney-plus-streaming) |
 | MyDisney 账户及跨产品登录组件 | [8120 Disney 共用账户、登录组件与日志](rules.md#rule-disney-shared-services) |
-
-## Amazon / AWS
-
-| 产品或服务 | 对应规则 |
-|---|---|
-| Prime Video 视频 API 和内容 | [3840 Prime Video 视频 API 和内容](rules.md#rule-prime-video-streaming) |
-| Twitch 直播、聊天室和内容 CDN | [3930 Twitch 直播、聊天室和内容 CDN](rules.md#rule-twitch-live-video) |
-| Amazon 与 AWS 中国区入口 | [4970 Amazon 与 AWS 中国区入口](rules.md#rule-amazon-mainland) |
-| Amazon 商城、Kindle 与其他共用服务 | [8100 Amazon、AWS 与共用云平台](rules.md#rule-amazon-shared-services) |
-| AWS 与共用云平台 | [8100 Amazon、AWS 与共用云平台](rules.md#rule-amazon-shared-services) |
 
 ## Hulu
 

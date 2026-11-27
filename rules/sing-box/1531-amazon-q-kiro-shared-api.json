@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "q.eu-central-1.amazonaws.com",
+        "q.us-east-1.amazonaws.com"
+      ]
+    }
+  ]
+}

@@ -167,3 +167,21 @@ class CompleteDomainTables(PublicSourceExamples):
         body='<h2 id="assets">Assets</h2><table><tr><th>Host</th><th>Purpose</th></tr><tr><td>new-tenant.s3.amazonaws.com</td><td>Dedicated product assets in a new region</td></tr><tr><td>fonts.shared.example</td><td>Shared fonts</td></tr></table>'
         self.assertEqual(extract_rows(recipe,body),{'DOMAIN,new-tenant.s3.amazonaws.com'})
         with self.assertRaises(Invalid):extract_rows(recipe,body.replace('fonts.shared.example','127.0.0.1'))
+
+    def test_explicit_repeated_tables_consume_each_complete_table_in_the_section(self):
+        recipe = {'format': 'domain-column-table', 'section': 'core', 'headers': ['URL', 'Purpose'],
+                  'column': 'URL', 'allow-repeated-tables': True}
+        first = '<table><tr><th>URL</th><th>Purpose</th></tr><tr><td>app.product.example</td><td>Login</td></tr></table>'
+        second = '<table><tr><th>URL</th><th>Purpose</th></tr><tr><td>api.product.example</td><td>Service</td></tr></table>'
+        body = '<h2 id="core">Core</h2>' + first + second
+        try:
+            result = extract_rows(recipe, body)
+        except Invalid as error:
+            self.fail('显式多表声明尚未完整读取：' + str(error))
+        self.assertEqual(result, {'DOMAIN,app.product.example', 'DOMAIN,api.product.example'})
+        for changed in (body.replace('api.product.example', '127.0.0.1'),
+                        body.replace('<td>Service</td>', ''),
+                        body + second.replace('<th>Purpose</th>', '<th>Unclassified</th>'),
+                        body + '<table><tr><th>URL</th><th>Purpose</th></tr></table>'):
+            with self.subTest(changed=changed), self.assertRaises(Invalid):
+                extract_rows(recipe, changed)

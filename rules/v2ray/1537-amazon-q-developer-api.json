@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:codewhisperer.us-east-1.amazonaws.com",
+          "full:q-developer-integration.us-east-1.api.aws"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

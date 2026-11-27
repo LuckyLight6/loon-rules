@@ -1,0 +1,19 @@
+# name: amazon-q-code-reviews
+# priority: 1538
+# section: ai
+# description: Amazon Q 代码审查上传
+# boundary: 官方用途表明确列出的代码审查服务桶；每个URL与ARN核对后保留精确虚拟主机，不接管S3平台、用户桶或代码改写上传。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/loon/1538-amazon-q-code-reviews.lsr
+
+host,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com,proxy
+host,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com,proxy

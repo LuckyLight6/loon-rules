@@ -1,0 +1,23 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:q.eu-central-1.amazonaws.com",
+          "full:q.us-east-1.amazonaws.com",
+          "domain:kiro.dev",
+          "full:cognito-identity.us-east-1.amazonaws.com",
+          "regexp:(?i)^.*\\.awswaf\\.com$",
+          "full:billing.stripe.com",
+          "full:checkout.stripe.com",
+          "full:github.com",
+          "full:open-vsx.org",
+          "full:openvsx.eclipsecontent.org",
+          "full:raw.githubusercontent.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+# name: kiro-service-all
+# priority: 1526
+# section: ai
+# description: Kiro 编程、个人登录与依赖合集
+# boundary: 包含Kiro自有入口、1531共用API、官方个人登录与验证码、Stripe计费及插件/Powers依赖；共享主机上的其他应用请求也随本表选路。本组与细分或其他含1531的合集二选一。各应用目录内原1530入口与本组合文，保留原订阅覆盖；组织SSO和GovCloud旧Q端点仍在核实。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 11
+# rule-count: 11
+# format: egern
+# canonical: rules/loon/1526-kiro-service-all.lsr
+
+domain_set:
+  - "q.eu-central-1.amazonaws.com"
+  - "q.us-east-1.amazonaws.com"
+  - "cognito-identity.us-east-1.amazonaws.com"
+  - "billing.stripe.com"
+  - "checkout.stripe.com"
+  - "github.com"
+  - "open-vsx.org"
+  - "openvsx.eclipsecontent.org"
+  - "raw.githubusercontent.com"
+domain_suffix_set:
+  - "kiro.dev"
+domain_regex_set:
+  - "(?i)^.*\\.awswaf\\.com$"

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+        "amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+      ]
+    }
+  ]
+}

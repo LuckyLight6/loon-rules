@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com",
+          "full:amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

@@ -68,7 +68,7 @@
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
-| 1000 | <a id="rule-ai-overseas-all"></a>`ai-overseas-all` | 海外 AI 合集 | **合集：替代 1010、1020–1030、1035–1058、1060–1790。** 合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。 |
+| 1000 | <a id="rule-ai-overseas-all"></a>`ai-overseas-all` | 海外 AI 合集 | **合集：替代 1010、1020–1030、1035–1058、1060–1520、1531–1790。** 合并本类细分，以及 OpenAI、Copilot、Amazon Q 与 Kiro 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。 |
 
 ### 4.2 海外 AI · 产品细分
 
@@ -174,7 +174,28 @@
 | 1500 | <a id="rule-tabnine-code-assistant"></a>`tabnine-code-assistant` | Tabnine 编程助手 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1510 | <a id="rule-factory-coding-agents"></a>`factory-coding-agents` | Factory 编程代理 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1520 | <a id="rule-zed-editor-and-ai"></a>`zed-editor-and-ai` | Zed 编辑器与自营 AI | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
-| 1530 | <a id="rule-kiro-code-assistant"></a>`kiro-code-assistant` | Kiro 编程助手 | Kiro 自营域与官方用途表列出的模型服务精确主机，地区入口随表更新；AWS 共用登录、CAPTCHA、支付与插件源分别归对应服务，不认领整个 AWS 命名空间 |
+
+### 4.11 Kiro 编程、个人登录与依赖合集
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 1526 | <a id="rule-kiro-service-all"></a>`kiro-service-all` | Kiro 编程、个人登录与依赖合集 | **合集：替代 1531–1535。** 包含Kiro自有入口、1531共用API、官方个人登录与验证码、Stripe计费及插件/Powers依赖；共享主机上的其他应用请求也随本表选路。本组与细分或其他含1531的合集二选一。各应用目录内原1530入口与本组合文，保留原订阅覆盖；组织SSO和GovCloud旧Q端点仍在核实。 |
+
+### 4.12 Amazon Q 编程、登录与上传合集
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 1527 | <a id="rule-amazon-q-service-all"></a>`amazon-q-service-all` | Amazon Q 编程、登录与上传合集 | **合集：替代 1531、1537–1539。** 合并Q功能API、1531共用API、代码审查与改写上传，以及官方网络用途表中的认证、工具分发和遥测依赖。profile与SSO地区分别按官方用途展开；共享身份和工具命名空间上的其他应用请求也会随本表选路。与细分或其他含1531的合集二选一。 |
+
+### 4.13 细分规则
+
+| 序号 | 英文名称 | 中文名称 | 用途与选择 |
+|---:|---|---|---|
+| 1531 | <a id="rule-amazon-q-kiro-shared-api"></a>`amazon-q-kiro-shared-api` | Amazon Q 与 Kiro 共用 API | 两个产品的官方网络清单同时列出的精确API；共用范围按完整用途表求交集。不能按目的域名区分调用产品；分别选路时单独配置本组，不接管其他AWS服务或API子域。 |
+| 1535 | <a id="rule-kiro-code-assistant"></a>`kiro-code-assistant` | Kiro 自有入口与编程服务 | 保留社区专表的kiro.dev范围，并从官方完整Core用途表读取自有精确主机；与Amazon Q共用API交给1531。个人登录、计费、插件及共用身份依赖由1526合集带入；组织SSO与GovCloud旧客户端依赖仍需核实，不把AWS整个平台认作Kiro。 |
+| 1537 | <a id="rule-amazon-q-developer-api"></a>`amazon-q-developer-api` | Amazon Q 功能与 IDE 集成 API | 官方features用途中的Q功能API及q-developer-标识的IDE集成端点；与Kiro共用的API交给1531。地区随官方profile说明和SDK联动；工具分发、身份、遥测及上传桶不归本组。 |
+| 1538 | <a id="rule-amazon-q-code-reviews"></a>`amazon-q-code-reviews` | Amazon Q 代码审查上传 | 官方用途表明确列出的代码审查服务桶；每个URL与ARN核对后保留精确虚拟主机，不接管S3平台、用户桶或代码改写上传。 |
+| 1539 | <a id="rule-amazon-q-code-transformations"></a>`amazon-q-code-transformations` | Amazon Q 代码改写上传 | 官方用途表明确列出的代码改写服务桶；每个URL与ARN核对后保留精确虚拟主机，不接管S3平台、用户桶或代码审查上传。 |
 | 1540 | <a id="rule-bolt-app-builder"></a>`bolt-app-builder` | Bolt 应用构建 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1550 | <a id="rule-lovable-app-builder"></a>`lovable-app-builder` | Lovable 应用构建 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1560 | <a id="rule-v0-app-builder"></a>`v0-app-builder` | Vercel v0 应用构建 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
@@ -203,13 +224,13 @@
 | 1780 | <a id="rule-dia-browser-services"></a>`dia-browser-services` | Dia 浏览器自营服务 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 | 1790 | <a id="rule-openclaw-product-services"></a>`openclaw-product-services` | OpenClaw 产品与发布服务 | 只识别产品自营公网服务；本地推理、自建实例和用户选择的模型提供商按实际目标处理 |
 
-### 4.11 国产 AI 国际版合集
+### 4.14 国产 AI 国际版合集
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|
 | 1800 | <a id="rule-ai-cn-international-all"></a>`ai-cn-international-all` | 国产 AI 国际版合集 | **合集：替代 1810–1920。** 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅 |
 
-### 4.12 国产 AI · 国际版产品细分
+### 4.15 国产 AI · 国际版产品细分
 
 | 序号 | 英文名称 | 中文名称 | 用途与选择 |
 |---:|---|---|---|

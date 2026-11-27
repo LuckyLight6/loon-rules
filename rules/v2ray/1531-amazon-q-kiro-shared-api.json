@@ -1,0 +1,14 @@
+{
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domains": [
+          "full:q.eu-central-1.amazonaws.com",
+          "full:q.us-east-1.amazonaws.com"
+        ],
+        "outboundTag": "PROXY"
+      }
+    ]
+  }
+}

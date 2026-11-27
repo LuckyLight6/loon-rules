@@ -2,10 +2,10 @@
 # priority: 1000
 # section: ai
 # description: 海外 AI 合集
-# boundary: 合并本类细分，以及 OpenAI、Copilot 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。
+# boundary: 合并本类细分，以及 OpenAI、Copilot、Amazon Q 与 Kiro 官方网络清单列出的共享依赖。共享主机上的其他应用请求也会按本合集匹配；需分别选路时改用产品细分和共享服务规则，合集与成员二选一。 含官方所列GHE公共命名空间，同一空间内的其他企业请求也随本表选路；企业专用Azure依赖不从公共云父域推断。
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-26T22:25:08Z
-# rule-count: 712
+# updated-at: 2026-11-27T03:04:23Z
+# rule-count: 786
 # source: https://raw.githubusercontent.com/erwanjun/surge-claude-rules/main/Surge/Claude-Core.list
 # source: https://code.claude.com/docs/en/network-config#network-access-requirements
 # source: https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/src/anthropic/_client.py
@@ -113,7 +113,11 @@
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/zed.list
 # source: https://zed.dev/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
 # source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/bolt.list
 # source: https://bolt.new/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovable.list
@@ -826,9 +830,15 @@ DOMAIN-SUFFIX,tabnine.com
 DOMAIN-SUFFIX,factory.ai
 DOMAIN-SUFFIX,factory.com
 DOMAIN-SUFFIX,zed.dev
-DOMAIN-SUFFIX,kiro.dev
 DOMAIN,q.eu-central-1.amazonaws.com
 DOMAIN,q.us-east-1.amazonaws.com
+DOMAIN-SUFFIX,kiro.dev
+DOMAIN,codewhisperer.us-east-1.amazonaws.com
+DOMAIN,q-developer-integration.us-east-1.api.aws
+DOMAIN,amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com
+DOMAIN,amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com
+DOMAIN,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com
+DOMAIN,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com
 DOMAIN-SUFFIX,bolt.new
 DOMAIN-SUFFIX,lovable.dev
 DOMAIN-SUFFIX,v0.app
@@ -884,3 +894,71 @@ DOMAIN,default.exp-tas.com
 DOMAIN,github.com
 DOMAIN,github.githubassets.com
 DOMAIN-SUFFIX,ghe.com
+DOMAIN,aws-language-servers.us-east-1.amazonaws.com
+DOMAIN,aws-toolkit-language-servers.amazonaws.com
+DOMAIN,client-telemetry.us-east-1.amazonaws.com
+DOMAIN,cognito-identity.us-east-1.amazonaws.com
+DOMAIN,idetoolkits-hostedfiles.amazonaws.com
+DOMAIN,idetoolkits.amazonwebservices.com
+DOMAIN,oidc.ap-northeast-1.amazonaws.com
+DOMAIN,oidc.ap-northeast-2.amazonaws.com
+DOMAIN,oidc.ap-northeast-3.amazonaws.com
+DOMAIN,oidc.ap-south-1.amazonaws.com
+DOMAIN,oidc.ap-southeast-1.amazonaws.com
+DOMAIN,oidc.ap-southeast-2.amazonaws.com
+DOMAIN,oidc.ca-central-1.amazonaws.com
+DOMAIN,oidc.eu-central-1.amazonaws.com
+DOMAIN,oidc.eu-north-1.amazonaws.com
+DOMAIN,oidc.eu-west-1.amazonaws.com
+DOMAIN,oidc.eu-west-2.amazonaws.com
+DOMAIN,oidc.eu-west-3.amazonaws.com
+DOMAIN,oidc.sa-east-1.amazonaws.com
+DOMAIN,oidc.us-east-1.amazonaws.com
+DOMAIN,oidc.us-east-2.amazonaws.com
+DOMAIN,oidc.us-west-1.amazonaws.com
+DOMAIN,oidc.us-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.aws.dev
+DOMAIN-WILDCARD,*.awsapps.com
+DOMAIN-WILDCARD,*.awsstatic.com
+DOMAIN-WILDCARD,*.console.aws.a2z.com
+DOMAIN-WILDCARD,*.sso-portal.ap-northeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-northeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-northeast-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-south-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-southeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ap-southeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.ca-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-north-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.eu-west-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.sa-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-east-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso-portal.us-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-northeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-northeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-northeast-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-south-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-southeast-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ap-southeast-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.ca-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-central-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-north-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.eu-west-3.amazonaws.com
+DOMAIN-WILDCARD,*.sso.sa-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-east-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-east-2.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-west-1.amazonaws.com
+DOMAIN-WILDCARD,*.sso.us-west-2.amazonaws.com
+DOMAIN-WILDCARD,*.awswaf.com
+DOMAIN,billing.stripe.com
+DOMAIN,checkout.stripe.com
+DOMAIN,open-vsx.org
+DOMAIN,openvsx.eclipsecontent.org
+DOMAIN,raw.githubusercontent.com

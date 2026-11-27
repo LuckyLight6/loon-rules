@@ -1,0 +1,19 @@
+# name: kiro-code-assistant
+# priority: 1535
+# section: ai
+# description: Kiro 自有入口与编程服务
+# boundary: 保留社区专表的kiro.dev范围，并从官方完整Core用途表读取自有精确主机；与Amazon Q共用API交给1531。个人登录、计费、插件及共用身份依赖由1526合集带入；组织SSO与GovCloud旧客户端依赖仍需核实，不把AWS整个平台认作Kiro。
+# created-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-27T03:04:23Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 1
+# rule-count: 1
+# format: shadowrocket
+# canonical: rules/loon/1535-kiro-code-assistant.lsr
+
+DOMAIN-SUFFIX,kiro.dev

@@ -1,0 +1,21 @@
+# name: amazon-q-kiro-shared-api
+# priority: 1531
+# section: ai
+# description: Amazon Q 与 Kiro 共用 API
+# boundary: 两个产品的官方网络清单同时列出的精确API；共用范围按完整用途表求交集。不能按目的域名区分调用产品；分别选路时单独配置本组，不接管其他AWS服务或API子域。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
+# source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/kiro.list
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 2
+# rule-count: 2
+# format: egern
+# canonical: rules/loon/1531-amazon-q-kiro-shared-api.lsr
+
+domain_set:
+  - "q.eu-central-1.amazonaws.com"
+  - "q.us-east-1.amazonaws.com"

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "amazonq-code-scan-eu-central-1-9374e402cc5.s3.amazonaws.com",
+        "amazonq-code-scan-us-east-1-29121b44f7b.s3.amazonaws.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# name: amazon-q-code-transformations
+# priority: 1539
+# section: ai
+# description: Amazon Q 代码改写上传
+# boundary: 官方用途表明确列出的代码改写服务桶；每个URL与ARN核对后保留精确虚拟主机，不接管S3平台、用户桶或代码审查上传。
+# created-at: 2026-11-27T03:04:23Z
+# updated-at: 2026-11-27T03:04:23Z
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/firewall.md
+# source: https://kiro.dev/docs/privacy-and-security/firewalls/
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-setup-subscribe-regions.md
+# source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.md
+# source: https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json
+# canonical-rule-count: 2
+# rule-count: 2
+# format: quantumult-x
+# canonical: rules/loon/1539-amazon-q-code-transformations.lsr
+
+host,amazonq-code-transformation-eu-central-1-a0a89cc2b94.s3.amazonaws.com,proxy
+host,amazonq-code-transformation-us-east-1-c6160f047e0.s3.amazonaws.com,proxy

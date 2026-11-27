@@ -24,6 +24,7 @@ def domain_column_table(recipe, text):
     controls=recipe.get('ignore-controls',False)
     bare_addresses=recipe.get('allow-bare-addresses',False)
     other_headers=recipe.get('other-table-headers')
+    repeated=recipe.get('allow-repeated-tables',False)
     if (not isinstance(headers, list) or not headers
             or any(not isinstance(value, str) or not value.strip() for value in headers)
             or len(set(headers)) != len(headers)
@@ -37,6 +38,7 @@ def domain_column_table(recipe, text):
             or scope not in ('listed', 'domain-and-subdomains')
             or type(escaped) is not bool or type(tenant_wildcards) is not bool
             or type(controls) is not bool or type(bare_addresses) is not bool
+            or type(repeated) is not bool or repeated and other_headers is not None
             or bare_addresses and value_format!='domain-or-url'
             or value_format not in ('domain', 'url', 'domain-or-url')
             or value_format == 'url' and (scope != 'listed' or split_values)):
@@ -86,6 +88,18 @@ def domain_column_table(recipe, text):
         if seen!=declared or len(selected)!=1:
             raise Invalid('已声明的完整用途表格缺失或重复')
         rows=selected[0]
+    if repeated:
+        tables = table.tables.get(recipe['section'], [])
+        if not tables:
+            raise Invalid('域名用途章节没有完整表格')
+        rows = [headers]
+        for current in tables:
+            values = current['rows']
+            if current['nested'] or len(values) < 2 or values[0] != headers:
+                raise Invalid('重复用途表格中出现未知标题、嵌套或空表')
+            if any(cells == headers or len(cells) != len(headers) for cells in values[1:]):
+                raise Invalid('重复用途表格的数据列不完整')
+            rows.extend(values[1:])
     if rows.count(headers) != 1:
         raise Invalid('域名表的章节或标题列缺失、重复')
     result = set()
