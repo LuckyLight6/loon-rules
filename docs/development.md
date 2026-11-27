@@ -2,8 +2,6 @@
 
 修错分时，先确认错误来自哪里：来源缺少入口、分类条件不对，还是更早的规则抢先命中。修改声明或生成逻辑，再生成订阅；直接改 `rules/` 中的成品，下次更新会被覆盖。
 
-代码和规则在 `main` 分支维护。`readme` 是 GitHub 首页的默认展示分支，只保留空 README 和定时更新入口。
-
 ## 在本地检查和生成
 
 需要 Python 3.10 或更新版本，联网更新还需要 `curl`。在虚拟环境安装本仓包，会一并安装 Tree-sitter 和 Markdown 解析器，用于读取 SDK 静态配置及公开资产说明，不执行下载的代码。源码布局使用 [`src/`](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)：
@@ -51,12 +49,12 @@ python3 -B -m loon_rules --check-exports
 | `src/loon_rules/catalog.py`、`policy.py` | 分类声明、生成字段和共同边界 |
 | `src/loon_rules/cli.py`、`src/loon_rules/plugins/` | 命令入口与分域 DNS 插件生成 |
 | `checks/` | 来源解析、连续更新、错误输入、范围归属与优先级测试 |
-| `rules/<代理应用>/`、`rules/manifest.json`、`plugins/` | 各应用的实际规则与索引、机器清单、可选插件；规范 Loon 成品在 `rules/loon/` |
+| `rules/<代理应用>/`、`rules/manifest.json`、`plugins/` | 各应用的实际规则与索引、机器清单、可选插件 |
 | `data/` | 公共后缀表及下一轮更新必需的维护状态 |
 | `docs/` | 使用、选路、测试和开发说明 |
 | `build/` | 本轮检查输出，已忽略，不提交 |
 
-根目录的 `maintain.py`、`scoped_dns.py` 保留命令兼容，具体实现均在 `src/loon_rules/`。`source-components` 是生成器内部的来源比对输入，不带订阅编号，不生成额外 `.lsr`；它们的已核对正文和时间保存在维护状态中。
+根目录的 `maintain.py`、`scoped_dns.py` 保留命令兼容，具体实现均在 `src/loon_rules/`。`source-components` 是生成器内部的来源比对输入，不带订阅编号，不生成额外订阅文件；它们的已核对正文和时间保存在维护状态中。
 
 `scoped-dns.routes` 为每个服务范围声明 `resolver`、`provider` 和 `groups`，可分别更换加密解析器；旧的单上游声明仍可使用。不同上游的域名范围相交时生成失败，避免同一名称被两套设置接管。它只生成 Host 映射，设备上的 DoH 出口和回落另行验证。
 
