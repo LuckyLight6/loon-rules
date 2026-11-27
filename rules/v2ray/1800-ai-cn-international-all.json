@@ -47,6 +47,8 @@
           "domain:youmind.com",
           "domain:youmind.site",
           "domain:qoder.com",
+          "regexp:(?i)^.*\\.qoder\\.com\\.cn$",
+          "regexp:(?i)^.*\\.qoder\\.sh$",
           "domain:lovart.ai"
         ],
         "outboundTag": "PROXY"

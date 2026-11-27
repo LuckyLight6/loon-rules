@@ -4,7 +4,7 @@
 # description: 国产 AI 国际版合集
 # boundary: 合并本类已列细分范围，统一出口时使用；与成员二选一，细分仍可分别订阅
 # created-at: 2026-11-19T08:04:26Z
-# updated-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-27T00:11:30Z
 # source: https://www.alibabacloud.com/help/en/model-studio/base-url
 # source: https://www.qianwen.com/
 # source: https://platform.kimi.com/docs/get-api-key
@@ -29,10 +29,12 @@
 # source: https://youmind.com/
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list
 # source: https://qoder.com/
+# source: https://api.qoder.com/v1/public/meta
+# source: https://docs.qoder.com/account/teams/openapi/service-egress-ips
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/lovart.list
 # source: https://lovart.ai/
-# canonical-rule-count: 44
-# rule-count: 44
+# canonical-rule-count: 46
+# rule-count: 46
 # format: surfboard
 # canonical: rules/loon/1800-ai-cn-international-all.lsr
 
@@ -79,4 +81,6 @@ DOMAIN-SUFFIX,youmind.ai
 DOMAIN-SUFFIX,youmind.com
 DOMAIN-SUFFIX,youmind.site
 DOMAIN-SUFFIX,qoder.com
+DOMAIN-WILDCARD,*.qoder.com.cn
+DOMAIN-WILDCARD,*.qoder.sh
 DOMAIN-SUFFIX,lovart.ai

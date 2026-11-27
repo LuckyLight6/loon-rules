@@ -118,7 +118,7 @@
 | 1880 | stepfun-international | 阶跃星辰 StepFun · 国际入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1880-stepfun-international.list) |
 | 1890 | xiaomi-international | 小米 MiMo · 新加坡与欧洲计划 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1890-xiaomi-international.list) |
 | 1900 | youmind-international | YouMind · 国际产品入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1900-youmind-international.list) |
-| 1910 | qoder-international | Qoder · 国际产品入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1910-qoder-international.list) |
+| 1910 | qoder-international | Qoder 国际产品、自有 API 与插件市场 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1910-qoder-international.list) |
 | 1920 | lovart-international | Lovart · 国际产品入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/1920-lovart-international.list) |
 | 2000 | apple-all | Apple 生态完整合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/2000-apple-all.list) |
 | 2010 | apple-overseas-all | Apple 海外功能合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/surfboard/2010-apple-overseas-all.list) |

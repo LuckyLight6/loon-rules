@@ -26,6 +26,10 @@
 | 原生 geosite 产品清单 | `geosite-domain-list` 读取裸域名、`domain:` 与 `full:`，核对属性、子分类引用和共享范围的归属；不使用固定根域白名单代替整份来源 | Spotify 3910、Reddit 3380、Slack 3370、Discord 3320 |
 | 官网资源元数据 | `site-resource-hosts` 先用 `identity` 核对站点，再从 `properties` 指定的 Open Graph 图片、音频或视频 URL 取精确主机 | 3880 的独立完整性检查核对官网实际引用的素材；不扫描页面全部链接、广告或脚本 |
 
+`public-network-metadata` 读取 Qoder 的完整公开网络元数据。先核对 `domains`、每个可选 `details` 和 `egressIps` 的完整结构，再按来源注册域与 `brand-label` 选择自有注册域；同品牌新命名空间由来源自动发现，未知共享范围停止更新。`shared-patterns` 逐项声明已核实的共享粗范围，配套 `all-patterns: true` 的 `source-inventories` 必须核对同一份筛选前数据。精确域名和 `*.` 通配保持原语义，不把通配改成父域后缀。 这一格式只支持编译产品的顶层 `extract` 与完整 `source-inventories`；自动发现、JSON包裹和其他读取位置直接拒绝，生产产品不能启用 `all-patterns`，避免绕过完整核对而收进共享云范围。
+
+官方明确 `domains[].pattern` 才是完整允许范围，`details` 可缺省，不能把详情当完整清单。1910 已补入官方国际业务使用的 `*.qoder.sh` 与 `*.qoder.com.cn`；后者不会因 `.com.cn` 被误分到国内版。9类共享范围仍须继续核实验证码、静态资源与插件市场的必要粒度，这一批自有域名补全不代表整个服务依赖已闭合。`egressIps` 是服务端出站地址，只验证，不生成客户端目的IP规则。维护每轮重新请求无参数的 `GET https://api.qoder.com/v1/public/meta`，遵守来源的 `Cache-Control: no-store`。
+
 例如 GitHub 开发平台读取网站、软件包和 Actions 域名，把 Pages 托管范围交给单独的 8130：
 
 ```json

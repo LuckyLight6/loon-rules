@@ -28,6 +28,8 @@ Apple 软件版本和服务配置使用 Apple 的证书链。Linux 工作流从 
 
 例如 Apple 商店、音乐和视频从同一份公开配置读取各自的 API 字段；Google 登录结合官方地区模板与注册域清单；GitHub 读取 Meta API 的网站、软件包和 Actions 域名。代码、原始内容与开发平台归 3010；Pages 默认网站托管归 8130，进入全球平台共用合集，先让具体产品识别自己的专用租户主机。选中的服务字段先完整核对，再划分产品；无法处理的新平台范围会停止更新。读取的是业务字段，不是页面中的全部链接。各文件头的 `source` 列出资料，动态展开的逐份文档和采用依据记在维护状态里。
 
+Qoder 1910 同时对照社区产品专表与[官方完整网络元数据](https://docs.qoder.com/account/teams/openapi/service-egress-ips)。自有 `*.qoder.sh`、`*.qoder.com.cn` 按官方国际产品用途补全；维护跟随完整 `pattern`，不把可省略的详细主机列表当完整来源。所有共享范围与出站地址也先校验，未知范围或结构变化停止更新。阿里云、验证码、外部插件市场及论坛CDN的服务依赖仍在核实，不能用其他组有匹配代替单服务覆盖。
+
 GHE 数据驻留企业云另从 [GitHub 官方网络说明](https://docs.github.com/en/enterprise-cloud%40latest/admin/data-residency/network-details-for-ghecom)读取公共命名空间和地区网段。3010 保留完整域名方案；3295 只含客户端访问的入站目的网络，3005 合并二者。网络按 `no-resolve` 匹配，不能等价保留它的客户端不提供网络组，可用3010。网页与官方原始 Markdown 的全部地区、入站和出站列须一致，生成时只取入站；不把服务器出站网段、普通 GitHub.com 网络或整家 Azure 加入这一表。GHE 企业内 Pages 随企业命名空间，普通公共 `github.io` 托管仍在8130。
 
 Copilot 的完整服务组按官方说明包含 GHE 公共命名空间；同一空间的其他企业请求也会选择该出口。企业专用存储与 WebSocket 主机需要对应企业的正式清单，不能用公共云父域推断。

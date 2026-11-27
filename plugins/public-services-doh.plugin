@@ -203,6 +203,8 @@
 *.pplx.ai = server:https://1.1.1.1/dns-query
 *.proactivebackend-pa.googleapis.com = server:https://1.1.1.1/dns-query
 *.qoder.com = server:https://1.1.1.1/dns-query
+*.qoder.com.cn = server:https://1.1.1.1/dns-query
+*.qoder.sh = server:https://1.1.1.1/dns-query
 *.qwen.ai = server:https://1.1.1.1/dns-query
 *.recraft.ai = server:https://1.1.1.1/dns-query
 *.repl.it = server:https://1.1.1.1/dns-query

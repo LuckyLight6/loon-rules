@@ -25,8 +25,29 @@ def section_for(config, rank):
     return matches[0]
 
 
+def validate_network_metadata_locations(config):
+    """Keep full network metadata in its explicit audit path, never a product wrapper."""
+    def visit(value, path=()):
+        if isinstance(value, dict):
+            if value.get('format') == 'public-network-metadata':
+                product = (len(path) == 4 and path[0] == 'entries' and path[2] == 'extract'
+                           and config['entries'][path[1]].get('mode') == 'compiled'
+                           and not value.get('all-patterns', False))
+                inventory = (len(path) == 3 and path[0] == 'source-inventories' and path[2] == 'recipe'
+                             and value.get('all-patterns') is True)
+                if not product and not inventory:
+                    raise rules.Invalid('公开网络元数据仅支持产品顶层extract和完整source-inventories，不能嵌套或改用其他读取入口')
+            for key, child in value.items():
+                visit(child, (*path, key))
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                visit(child, (*path, index))
+    visit(config)
+
+
 def validate_declarations(config):
     catalog_schema.materialize(config)
+    validate_network_metadata_locations(config)
     width=catalog_schema.priority_width(config)
     entries={}
     priorities=set()
@@ -131,6 +152,14 @@ def validate_declarations(config):
         for recipe in e.get('extract',()):
             if recipe['source'] not in e['sources']:
                 raise rules.Invalid('提取来源未列入文件说明：'+e['id'])
+            if recipe.get('format') == 'public-network-metadata':
+                whole = {field: value for field, value in recipe.items()
+                         if field not in ('source', 'protect-from-reject')}
+                whole['all-patterns'] = True
+                if recipe.get('all-patterns') or not any(
+                        spec['source'] == recipe['source'] and e['id'] in spec['owners']
+                        and spec.get('recipe') == whole for spec in config.get('source-inventories', ())):
+                    raise rules.Invalid('公开网络元数据缺少筛选前同范围的完整用途核对：' + e['id'])
             if recipe.get('format') == 'python-regional-hosts':
                 if not any(spec['source'] == recipe['source'] and e['id'] in spec['owners']
                            and spec.get('recipe', {}).get('format') == recipe['format']

@@ -49,6 +49,10 @@
         "api.stepfun.ai",
         "token-plan-ams.xiaomimimo.com",
         "token-plan-sgp.xiaomimimo.com"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.qoder\\.com\\.cn$",
+        "(?i)^.*\\.qoder\\.sh$"
       ]
     }
   ]

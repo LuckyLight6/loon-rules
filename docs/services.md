@@ -575,7 +575,7 @@
 | 产品或服务 | 对应规则 |
 |---|---|
 | 阿里千问与百炼 · 国际入口 | [1810 阿里千问与百炼 · 国际入口](rules.md#rule-qwen-international) |
-| Qoder · 国际产品入口 | [1910 Qoder · 国际产品入口](rules.md#rule-qoder-international) |
+| Qoder 国际产品、自有 API 与插件市场 | [1910 Qoder 国际产品、自有 API 与插件市场](rules.md#rule-qoder-international) |
 | 阿里千问与百炼 · 国内入口 | [6010 阿里千问与百炼 · 国内入口](rules.md#rule-qwen-mainland) |
 | 魔搭 ModelScope · 模型 API | [6160 魔搭 ModelScope · 模型 API](rules.md#rule-modelscope-mainland) |
 | npmmirror 国内镜像 | [6340 npmmirror 国内镜像](rules.md#rule-npmmirror-registry) |

@@ -5247,26 +5247,53 @@
       "mode": "compiled",
       "selection": "detailed",
       "policy-hint": "ai-cn-international",
-      "description": "Qoder · 国际产品入口",
-      "boundary": "只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类",
+      "description": "Qoder 国际产品、自有 API 与插件市场",
+      "boundary": "保留产品专表的qoder.com范围，并按官方完整网络元数据跟随自有域名及*.通配范围；qoder.com.cn中的Global端点属于国际产品，不按后缀误分。阿里云、验证码和外部插件市场等共享范围未并入，本表尚不等同完整服务依赖。服务端出站IP不作为客户端目的地址。",
       "sources": [
         "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
-        "https://qoder.com/"
+        "https://qoder.com/",
+        "https://api.qoder.com/v1/public/meta",
+        "https://docs.qoder.com/account/teams/openapi/service-egress-ips"
       ],
       "license": "MIT",
       "notice": "VPSDance--ai-proxy-rules.txt",
       "product-probes": [
-        "qoder.com"
+        "qoder.com",
+        "api.qoder.sh",
+        "marketplace.qoder.sh",
+        "global.qoder.com.cn",
+        "api5.qoder.com.cn"
       ],
       "product-negatives": [
         "api.cloudflare.com",
-        "storage.googleapis.com"
+        "storage.googleapis.com",
+        "qoder.sh",
+        "qoder.com.cn",
+        "sg-pum.alibabachengdun.com",
+        "cloudauth-device.aliyuncs.com",
+        "ms-python.gallery.vsassets.io"
       ],
       "routing-group": "chinese-ai-international",
       "extract": [
         {
           "source": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list",
           "format": "domain-scope-list"
+        },
+        {
+          "source": "https://api.qoder.com/v1/public/meta",
+          "format": "public-network-metadata",
+          "brand-label": "qoder",
+          "shared-patterns": [
+            "sg-pum.alibabachengdun.com",
+            "sg-pum.alibabachengdun.net",
+            "*.aliyuncs.com",
+            "canada1.discourse-cdn.com",
+            "*.alicdn.com",
+            "www.googletagmanager.com",
+            "*.gallery.vsassets.io",
+            "*.gallerycdn.vsassets.io",
+            "*.gallerycdn.azure.cn"
+          ]
         }
       ]
     },
@@ -20096,6 +20123,36 @@
     ],
     "auth.ghe.com": [
       "github-code-and-packages"
+    ],
+    "api.qoder.sh": [
+      "qoder-international"
+    ],
+    "api1.qoder.sh": [
+      "qoder-international"
+    ],
+    "center.qoder.sh": [
+      "qoder-international"
+    ],
+    "openapi.qoder.sh": [
+      "qoder-international"
+    ],
+    "qts2.qoder.sh": [
+      "qoder-international"
+    ],
+    "repo2.qoder.sh": [
+      "qoder-international"
+    ],
+    "global.qoder.com.cn": [
+      "qoder-international"
+    ],
+    "api5.qoder.com.cn": [
+      "qoder-international"
+    ],
+    "api6.qoder.com.cn": [
+      "qoder-international"
+    ],
+    "marketplace.qoder.sh": [
+      "qoder-international"
     ]
   },
   "shared-negatives": [
@@ -20713,6 +20770,39 @@
       "github-copilot-service-all",
       "overseas-development-all",
       "github-domains-and-ghe-ingress-all"
+    ],
+    "qoder.com": [
+      "ai-cn-international-all"
+    ],
+    "api.qoder.sh": [
+      "ai-cn-international-all"
+    ],
+    "api1.qoder.sh": [
+      "ai-cn-international-all"
+    ],
+    "center.qoder.sh": [
+      "ai-cn-international-all"
+    ],
+    "openapi.qoder.sh": [
+      "ai-cn-international-all"
+    ],
+    "qts2.qoder.sh": [
+      "ai-cn-international-all"
+    ],
+    "repo2.qoder.sh": [
+      "ai-cn-international-all"
+    ],
+    "global.qoder.com.cn": [
+      "ai-cn-international-all"
+    ],
+    "api5.qoder.com.cn": [
+      "ai-cn-international-all"
+    ],
+    "api6.qoder.com.cn": [
+      "ai-cn-international-all"
+    ],
+    "marketplace.qoder.sh": [
+      "ai-cn-international-all"
     ]
   },
   "sections": [
@@ -25425,6 +25515,40 @@
       "owners": [
         "github-code-and-packages"
       ]
+    },
+    {
+      "id": "qoder-public-network-metadata",
+      "source": "https://api.qoder.com/v1/public/meta",
+      "recipe": {
+        "format": "public-network-metadata",
+        "brand-label": "qoder",
+        "shared-patterns": [
+          "sg-pum.alibabachengdun.com",
+          "sg-pum.alibabachengdun.net",
+          "*.aliyuncs.com",
+          "canada1.discourse-cdn.com",
+          "*.alicdn.com",
+          "www.googletagmanager.com",
+          "*.gallery.vsassets.io",
+          "*.gallerycdn.vsassets.io",
+          "*.gallerycdn.azure.cn"
+        ],
+        "all-patterns": true
+      },
+      "owners": [
+        "qoder-international"
+      ],
+      "shared": {
+        "DOMAIN,sg-pum.alibabachengdun.com": "官方列为安全服务API；是共享安全服务，单服务登录依赖方案仍待核实。",
+        "DOMAIN,sg-pum.alibabachengdun.net": "官方列为安全服务API；是共享安全服务，单服务登录依赖方案仍待核实。",
+        "DOMAIN-WILDCARD,*.aliyuncs.com": "阿里云共享命名空间，详情包含登录验证码及旧安装包；不能整段归为Qoder，所需依赖粒度仍待核实。",
+        "DOMAIN,canada1.discourse-cdn.com": "论坛反馈使用的Discourse共享CDN主机，不作为Qoder专用命名空间；依赖方案仍待核实。",
+        "DOMAIN-WILDCARD,*.alicdn.com": "登录静态资源使用的阿里共享CDN，不能整段归为Qoder；依赖方案仍待核实。",
+        "DOMAIN,www.googletagmanager.com": "网站统计共享主机，不作为Qoder专用命名空间。",
+        "DOMAIN-WILDCARD,*.gallery.vsassets.io": "插件市场共享命名空间，不能作为Qoder自有范围；依赖方案仍待核实。",
+        "DOMAIN-WILDCARD,*.gallerycdn.vsassets.io": "插件市场共享CDN命名空间，不能作为Qoder自有范围；依赖方案仍待核实。",
+        "DOMAIN-WILDCARD,*.gallerycdn.azure.cn": "插件市场共享CDN命名空间；详情可缺省，不能据此省略这一完整粗范围，依赖方案仍待核实。"
+      }
     }
   ],
   "source-alias-policies": {
@@ -26573,7 +26697,7 @@
             ]
           },
           {
-            "name": "Qoder · 国际产品入口",
+            "name": "Qoder 国际产品、自有 API 与插件市场",
             "rules": [
               "qoder-international"
             ]

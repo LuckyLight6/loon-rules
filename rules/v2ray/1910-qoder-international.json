@@ -4,7 +4,9 @@
       {
         "type": "field",
         "domains": [
-          "domain:qoder.com"
+          "domain:qoder.com",
+          "regexp:(?i)^.*\\.qoder\\.com\\.cn$",
+          "regexp:(?i)^.*\\.qoder\\.sh$"
         ],
         "outboundTag": "PROXY"
       }

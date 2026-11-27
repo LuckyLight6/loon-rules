@@ -4,6 +4,10 @@
     {
       "domain_suffix": [
         "qoder.com"
+      ],
+      "domain_regex": [
+        "(?i)^.*\\.qoder\\.com\\.cn$",
+        "(?i)^.*\\.qoder\\.sh$"
       ]
     }
   ]

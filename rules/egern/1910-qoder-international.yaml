@@ -1,16 +1,21 @@
 # name: qoder-international
 # priority: 1910
 # section: ai
-# description: Qoder · 国际产品入口
-# boundary: 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类
+# description: Qoder 国际产品、自有 API 与插件市场
+# boundary: 保留产品专表的qoder.com范围，并按官方完整网络元数据跟随自有域名及*.通配范围；qoder.com.cn中的Global端点属于国际产品，不按后缀误分。阿里云、验证码和外部插件市场等共享范围未并入，本表尚不等同完整服务依赖。服务端出站IP不作为客户端目的地址。
 # created-at: 2026-11-21T12:39:08Z
-# updated-at: 2026-11-21T12:39:08Z
+# updated-at: 2026-11-27T00:11:30Z
 # source: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/loon/qoder.list
 # source: https://qoder.com/
-# canonical-rule-count: 1
-# rule-count: 1
+# source: https://api.qoder.com/v1/public/meta
+# source: https://docs.qoder.com/account/teams/openapi/service-egress-ips
+# canonical-rule-count: 3
+# rule-count: 3
 # format: egern
 # canonical: rules/loon/1910-qoder-international.lsr
 
 domain_suffix_set:
   - "qoder.com"
+domain_regex_set:
+  - "(?i)^.*\\.qoder\\.com\\.cn$"
+  - "(?i)^.*\\.qoder\\.sh$"

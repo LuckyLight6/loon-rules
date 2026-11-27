@@ -223,7 +223,7 @@
 | 1880 | <a id="rule-stepfun-international"></a>`stepfun-international` | 阶跃星辰 StepFun · 国际入口 | 国际模型 API 与国际 Step Plan；国内 stepfun.com 继续独立，不按厂商合并两版 |
 | 1890 | <a id="rule-xiaomi-international"></a>`xiaomi-international` | 小米 MiMo · 新加坡与欧洲计划 | 只读明确标注新加坡、欧洲计划的专用服务字段，不把整个 xiaomimimo.com 从国内或共用 API 接走 |
 | 1900 | <a id="rule-youmind-international"></a>`youmind-international` | YouMind · 国际产品入口 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
-| 1910 | <a id="rule-qoder-international"></a>`qoder-international` | Qoder · 国际产品入口 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
+| 1910 | <a id="rule-qoder-international"></a>`qoder-international` | Qoder 国际产品、自有 API 与插件市场 | 保留产品专表的qoder.com范围，并按官方完整网络元数据跟随自有域名及*.通配范围；qoder.com.cn中的Global端点属于国际产品，不按后缀误分。阿里云、验证码和外部插件市场等共享范围未并入，本表尚不等同完整服务依赖。服务端出站IP不作为客户端目的地址。 |
 | 1920 | <a id="rule-lovart-international"></a>`lovart-international` | Lovart · 国际产品入口 | 只从产品专表选取已核对的自营范围；共享云、第三方服务、进程名和用户自建地址不随产品整段归类 |
 
 ## 5 Apple 生态

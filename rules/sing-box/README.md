@@ -118,7 +118,7 @@
 | 1880 | stepfun-international | 阶跃星辰 StepFun · 国际入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1880-stepfun-international.json) |
 | 1890 | xiaomi-international | 小米 MiMo · 新加坡与欧洲计划 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1890-xiaomi-international.json) |
 | 1900 | youmind-international | YouMind · 国际产品入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1900-youmind-international.json) |
-| 1910 | qoder-international | Qoder · 国际产品入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1910-qoder-international.json) |
+| 1910 | qoder-international | Qoder 国际产品、自有 API 与插件市场 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1910-qoder-international.json) |
 | 1920 | lovart-international | Lovart · 国际产品入口 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/1920-lovart-international.json) |
 | 2000 | apple-all | Apple 生态完整合集 | sing-box 无法在这份独立规则中保留 IP-CIDR 的 ASN、GeoIP 或逐条 DNS 匹配行为 |
 | 2010 | apple-overseas-all | Apple 海外功能合集 | [订阅](https://raw.githubusercontent.com/LuckyLight6/loon-rules/main/rules/sing-box/2010-apple-overseas-all.json) |

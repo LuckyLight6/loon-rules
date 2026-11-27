@@ -1,7 +1,7 @@
 """Dispatch public input formats. Each reader returns rule rows, never policy names."""
 from loon_rules import domains as domain_scope
 from loon_rules.rules import Invalid
-from . import api, contextual, documents, feeds, javascript, networks, python_regions, regions, structured, tables
+from . import api, contextual, documents, feeds, javascript, network_metadata, networks, python_regions, regions, structured, tables
 
 
 def security_program_rows(recipe, text):
@@ -54,6 +54,7 @@ READERS = {
     'openid-discovery': feeds.parse_openid_discovery,
     'plist-service-fields': structured.plist_service_fields,
     'product-domain-statements': documents.parse_product_domain_statements,
+    'public-network-metadata': network_metadata.read,
     'product-entrypoints': documents.parse_product_entrypoints,
     'product-role-links': documents.parse_product_role_links,
     'purpose-domain-lists': documents.parse_purpose_domain_lists,
@@ -94,7 +95,8 @@ def extract_rows(recipe, text, *, shared_hosts=()):
         raise Invalid('未知端点资料格式：' + form)
     result=set(READERS[form](recipe,text))
     source_alias=form=='site-identity' and recipe.get('include-source-alias')
-    strict_scope = (source_alias or form == 'python-sdk-endpoints' and 'dictionary-host-fields' in recipe
+    strict_scope = (source_alias or form == 'public-network-metadata' and not recipe.get('all-patterns')
+                    or form == 'python-sdk-endpoints' and 'dictionary-host-fields' in recipe
                     or form in ('domain-scope-list', 'geosite-domain-list', 'site-resource-hosts',
                                 'qt-host-predicate', 'next-service-urls', 'literal-object-urls',
                                 'security-program-domains', 'nested-purpose-domains', 'service-domain-groups',
